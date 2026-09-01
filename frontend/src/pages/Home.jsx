@@ -615,38 +615,30 @@ export default function Home({ addToCart, cart }) {
                 </div>
               </div>
 
-              {/* Right Section: Information & Action */}
+              {/* Right Column: Title, Metadata, Description & Pill Buttons */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
                 
-                {/* 1. Small feature/category badges at the top */}
+                {/* Badges / Tags */}
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                  <span style={{
-                    padding: '4px 10px',
-                    borderRadius: '99px',
-                    backgroundColor: theme.badgeBg,
-                    color: theme.badgeColor,
-                    fontSize: '10px',
-                    fontWeight: '700',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px'
-                  }}>
-                    {template.category.name}
-                  </span>
-                  <span style={{
-                    padding: '4px 10px',
-                    borderRadius: '99px',
-                    backgroundColor: template.templateType === 'FREE' ? 'rgba(34, 197, 94, 0.08)' : 'rgba(234, 179, 8, 0.08)',
-                    color: template.templateType === 'FREE' ? '#22c55e' : '#ca8a04',
-                    fontSize: '10px',
-                    fontWeight: '700',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px'
-                  }}>
-                    {template.templateType === 'FREE' ? 'Free' : 'Premium'}
-                  </span>
+                  {(template.tags || [
+                    template.category?.name || 'FEATURED',
+                    'RESPONSIVE LAYOUT',
+                    template.templateType === 'FREE' ? 'FREE DOWNLOAD' : 'PREMIUM'
+                  ]).map((tag, idx) => (
+                    <span key={idx} style={{
+                      padding: '4px 10px',
+                      borderRadius: '99px',
+                      backgroundColor: '#eff6ff',
+                      color: '#1d4ed8',
+                      fontSize: '10px',
+                      fontWeight: '700',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px'
+                    }}>{tag}</span>
+                  ))}
                 </div>
 
-                {/* 2. Template Name & details link */}
+                {/* Typography */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <h3 style={{
                     fontSize: '1.6rem',
@@ -656,14 +648,14 @@ export default function Home({ addToCart, cart }) {
                     fontFamily: 'var(--font-title)',
                     lineHeight: '1.25'
                   }}>
-                    <Link 
-                      to={`/templates/${template.slug}`} 
+                    <a 
+                      href={template.demoUrl || `/templates/${template.slug}`} 
                       style={{ color: '#0f172a', transition: 'color 0.2s', textDecoration: 'none' }}
-                      onMouseEnter={(e) => e.currentTarget.style.color = theme.accent}
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#0066ff'}
                       onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
                     >
                       {template.name}
-                    </Link>
+                    </a>
                   </h3>
                   
                   {/* Updated metadata */}
@@ -672,31 +664,6 @@ export default function Home({ addToCart, cart }) {
                     <span>Updated recently</span>
                   </div>
 
-                  {/* Display Technologies, Page Count and Features */}
-                  <div style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: '15px',
-                    alignItems: 'center',
-                    marginTop: '6px',
-                    padding: '8px 0',
-                    borderTop: '1px solid #f1f5f9',
-                    borderBottom: '1px solid #f1f5f9'
-                  }}>
-                    <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
-                      <strong>Pages:</strong> {template.pagesCount || 1}
-                    </div>
-                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
-                    <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
-                      <strong>Stack:</strong> {template.bootstrapVersion}
-                    </div>
-                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
-                    <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
-                      <strong>Downloads:</strong> {template.downloadsCount}
-                    </div>
-                  </div>
-
-                  {/* 4. Short Description of the Template */}
                   <p style={{
                     fontSize: '0.88rem',
                     color: '#64748b',
@@ -708,17 +675,19 @@ export default function Home({ addToCart, cart }) {
                   </p>
                 </div>
 
-                {/* 5. Live Demo Button */}
-                <div style={{ marginTop: '10px' }}>
-                  <a
-                    href={template.demoUrl}
+                {/* Action Buttons */}
+                <div style={{
+                  marginTop: '10px'
+                }}>
+                  <a 
+                    href={template.demoUrl || `/templates/${template.slug}`} 
                     style={{
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       gap: '6px',
                       padding: '12px 24px',
-                      backgroundColor: theme.accent,
+                      backgroundColor: '#1e40af',
                       color: 'white',
                       borderRadius: '99px',
                       border: 'none',
@@ -727,13 +696,13 @@ export default function Home({ addToCart, cart }) {
                       cursor: 'pointer',
                       transition: 'all 0.2s',
                       textDecoration: 'none',
-                      boxShadow: `0 4px 12px ${theme.accent}40`
+                      boxShadow: '0 4px 12px rgba(30, 64, 175, 0.25)'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.filter = 'brightness(1.15)';
+                      e.currentTarget.style.backgroundColor = '#1d4ed8';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.filter = 'none';
+                      e.currentTarget.style.backgroundColor = '#1e40af';
                     }}
                   >
                     Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>

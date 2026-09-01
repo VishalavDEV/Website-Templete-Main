@@ -3,198 +3,122 @@ import { useParams, useSearchParams, Link, useNavigate } from 'react-router-dom'
 import { api } from '../services/api';
 import { Search, SlidersHorizontal } from 'lucide-react';
 
-const categoryThemes = {
-  travels: {
-    accent: '#0284c7',
-    background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
-    cardBorder: 'rgba(2, 132, 199, 0.18)',
-    cardHoverBorder: 'rgba(2, 132, 199, 0.45)',
-    badgeColor: '#0284c7',
-    badgeBg: '#f0f9ff'
-  },
-  ecommerce: {
-    accent: '#ec4899',
-    background: 'linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%)',
-    cardBorder: 'rgba(236, 72, 153, 0.18)',
-    cardHoverBorder: 'rgba(236, 72, 153, 0.45)',
-    badgeColor: '#ec4899',
-    badgeBg: '#fdf2f8'
+const CATEGORY_META = {
+  admin: {
+    icon: '📊',
+    title: 'Admin Templates',
+    subtitle: 'Discover high-performance admin dashboards, dark/light analytical layouts, modular charts, and role-based management portals.'
   },
   medical: {
-    accent: '#0d9488',
-    background: 'linear-gradient(135deg, #f0fdf4 0%, #ccfbf1 100%)',
-    cardBorder: 'rgba(13, 148, 136, 0.18)',
-    cardHoverBorder: 'rgba(13, 148, 136, 0.45)',
-    badgeColor: '#0d9488',
-    badgeBg: '#f0fdf4'
+    icon: '🩺',
+    title: 'Medical & Healthcare Templates',
+    subtitle: 'Explore clean, clinical healthcare web templates designed for hospitals, clinics, doctor appointments, and medical practices.'
   },
-  photography: {
-    accent: '#8b5cf6',
-    background: 'linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%)',
-    cardBorder: 'rgba(139, 92, 246, 0.18)',
-    cardHoverBorder: 'rgba(139, 92, 246, 0.45)',
-    badgeColor: '#8b5cf6',
-    badgeBg: '#faf5ff'
+  'block-magazine': {
+    icon: '📰',
+    title: 'Block Magazine Templates',
+    subtitle: 'Discover modern editorial magazine, news portal, tech blog, and multi-category publication layouts.'
+  },
+  'comming-soon': {
+    icon: '⏳',
+    title: 'Coming Soon Templates',
+    subtitle: 'Explore sleek countdown timers, product launch teasers, newsletter capture, and animated coming soon pages.'
+  },
+  travels: {
+    icon: '✈️',
+    title: 'Travel & Tourism Templates',
+    subtitle: 'Explore immersive travel agency, tour booking, destination guide, and holiday resort templates with modern interactive maps.'
   },
   hotel: {
-    accent: '#d97706',
-    background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)',
-    cardBorder: 'rgba(217, 119, 6, 0.18)',
-    cardHoverBorder: 'rgba(217, 119, 6, 0.45)',
-    badgeColor: '#d97706',
-    badgeBg: '#fffbeb'
+    icon: '🏨',
+    title: 'Hotel & Lodging Templates',
+    subtitle: 'Discover luxury hotel, boutique resort, spa retreat, and hospitality booking templates with responsive booking inquiries.'
   },
-  default: {
-    accent: '#0066ff',
-    background: '#f8fafc',
-    cardBorder: '#e2e8f0',
-    cardHoverBorder: 'rgba(0, 102, 255, 0.35)',
-    badgeColor: '#1d4ed8',
-    badgeBg: '#eff6ff'
+  events: {
+    icon: '🎟️',
+    title: 'Events & Conferences Templates',
+    subtitle: 'Explore conference schedules, speaker profiles, ticketing landing pages, and corporate event templates.'
+  },
+  photography: {
+    icon: '📷',
+    title: 'Photography Templates',
+    subtitle: 'Discover isolated, production-ready, dark minimalist layouts tailored for visual storytellers, freelance portfolios, and photography studios.'
+  },
+  construction: {
+    icon: '🏗️',
+    title: 'Construction & Architecture Templates',
+    subtitle: 'Explore heavy-duty architectural, civil engineering, contractor, and real estate construction templates.'
+  },
+  education: {
+    icon: '🎓',
+    title: 'Education & LMS Templates',
+    subtitle: 'Discover online learning platforms, course catalogs, university portals, and academy landing pages.'
+  },
+  restaurant: {
+    icon: '🍽️',
+    title: 'Restaurant & Food Templates',
+    subtitle: 'Discover mouth-watering restaurant menus, chef showcases, table reservations, and culinary landing pages.'
+  },
+  ecommerce: {
+    icon: '🛍️',
+    title: 'Ecommerce & Retail Templates',
+    subtitle: 'Explore modern online storefronts, retail catalogs, checkout flows, and product showcase templates.'
+  },
+  buisness: {
+    icon: '💼',
+    title: 'Business & Corporate Templates',
+    subtitle: 'Explore corporate enterprise, financial advisory, consulting, and business landing pages.'
+  },
+  agency: {
+    icon: '🚀',
+    title: 'Agency & Studio Templates',
+    subtitle: 'Discover cutting-edge digital agency, creative studio, and marketing portfolio templates with dynamic animations.'
+  },
+  portfolio: {
+    icon: '🎨',
+    title: 'Portfolio Templates',
+    subtitle: 'Discover personal portfolios, developer showcases, visual designer resumes, and creative project galleries.'
+  },
+  personal: {
+    icon: '👤',
+    title: 'Personal & Resume Templates',
+    subtitle: 'Discover sleek resume portfolios, personal branding pages, and interactive bio showcases.'
+  },
+  'real-estate': {
+    icon: '🏡',
+    title: 'Real Estate Templates',
+    subtitle: 'Explore property listings, luxury villa showcases, broker portals, and real estate agency layouts.'
+  },
+  resume: {
+    icon: '📄',
+    title: 'Resume & CV Templates',
+    subtitle: 'Explore modern curriculum vitae layouts, career milestones, skill bars, and contact cards.'
+  },
+  transportation: {
+    icon: '🚚',
+    title: 'Transportation & Logistics Templates',
+    subtitle: 'Explore freight forwarding, cargo fleet, logistics management, and delivery service templates.'
+  },
+  onepage: {
+    icon: '📄',
+    title: 'One Page Templates',
+    subtitle: 'Discover sleek single-page landing layouts, smooth scroll sections, and high-conversion hero blocks.'
+  },
+  'landing-page': {
+    icon: '🎯',
+    title: 'Landing Page Templates',
+    subtitle: 'Discover high-converting product showcases, app downloads, SaaS marketing, and startup landing pages.'
+  },
+  cooperate: {
+    icon: '🏢',
+    title: 'Corporate Templates',
+    subtitle: 'Explore enterprise corporate portals, investor relations, consulting firms, and business profiles.'
+  },
+  all: {
+    icon: '📁',
+    title: 'Browse Website Templates',
+    subtitle: 'Discover modern, responsive layouts for your next business, dashboard or creative project.'
   }
-};
-
-const renderCategoryAnimation = (categorySlug) => {
-  if (categorySlug === 'travels') {
-    return (
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        pointerEvents: 'none',
-        zIndex: 10,
-        overflow: 'hidden'
-      }}>
-        {/* Airplane drift */}
-        <div style={{
-          position: 'absolute',
-          top: '20px',
-          left: '-50px',
-          animation: 'planeCruise 8s linear infinite',
-          fontSize: '24px'
-        }}>✈️</div>
-        {/* Cloud drift */}
-        <div style={{
-          position: 'absolute',
-          top: '60px',
-          left: '110%',
-          animation: 'cloudDrift 14s linear infinite',
-          opacity: 0.35,
-          fontSize: '32px'
-        }}>☁️</div>
-        <div style={{
-          position: 'absolute',
-          bottom: '20px',
-          left: '110%',
-          animation: 'cloudDrift 19s linear infinite',
-          animationDelay: '-5s',
-          opacity: 0.25,
-          fontSize: '24px'
-        }}>☁️</div>
-      </div>
-    );
-  }
-  if (categorySlug === 'ecommerce') {
-    return (
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        pointerEvents: 'none',
-        zIndex: 10,
-        overflow: 'hidden'
-      }}>
-        {/* Floating shopping cart */}
-        <div style={{
-          position: 'absolute',
-          bottom: '15px',
-          left: '-40px',
-          animation: 'cartSlide 6s ease-in-out infinite',
-          fontSize: '22px'
-        }}>🛒</div>
-        {/* Sparkly discounts */}
-        <div style={{
-          position: 'absolute',
-          top: '15px',
-          right: '15px',
-          animation: 'sparkleRotate 3s linear infinite',
-          fontSize: '20px'
-        }}>🏷️</div>
-      </div>
-    );
-  }
-  if (categorySlug === 'medical') {
-    return (
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        pointerEvents: 'none',
-        zIndex: 10,
-        overflow: 'hidden'
-      }}>
-        {/* Pulsing heart */}
-        <div style={{
-          position: 'absolute',
-          top: '15px',
-          left: '15px',
-          animation: 'pulseScale 2s ease-in-out infinite',
-          fontSize: '24px'
-        }}>❤️</div>
-        {/* Healthcare cross */}
-        <div style={{
-          position: 'absolute',
-          bottom: '15px',
-          right: '15px',
-          animation: 'pulseScale 2s ease-in-out infinite',
-          animationDelay: '1s',
-          fontSize: '22px'
-        }}>🏥</div>
-      </div>
-    );
-  }
-  if (categorySlug === 'photography') {
-    return (
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        pointerEvents: 'none',
-        zIndex: 10,
-        overflow: 'hidden'
-      }}>
-        {/* Rotating aperture */}
-        <div style={{
-          position: 'absolute',
-          top: '15px',
-          right: '15px',
-          animation: 'rotateAperture 4s linear infinite',
-          fontSize: '22px'
-        }}>📷</div>
-        {/* Flash bulb glow */}
-        <div style={{
-          position: 'absolute',
-          top: '30%',
-          left: '20%',
-          width: '60px',
-          height: '60px',
-          background: 'rgba(139, 92, 246, 0.08)',
-          borderRadius: '50%',
-          filter: 'blur(8px)',
-          animation: 'flashGlow 4s infinite'
-        }} />
-      </div>
-    );
-  }
-  return null;
 };
 
 export default function Templates() {
@@ -212,19 +136,16 @@ export default function Templates() {
   const [sortBy, setSortBy] = useState('popular');
 
   useEffect(() => {
-    // Sync state if search params or route params change
     setSearchQuery(searchParams.get('search') || '');
     setSelectedCategory(categorySlug || searchParams.get('category') || 'all');
     setSelectedType(searchParams.get('type') || 'all');
   }, [searchParams, categorySlug]);
 
   useEffect(() => {
-    // Fetch categories
     api.getCategories().then(setCategories).catch(err => console.error(err));
   }, []);
 
   useEffect(() => {
-    // Fetch filtered templates
     const filterParams = {};
     if (selectedCategory !== 'all') filterParams.category = selectedCategory;
     if (selectedType !== 'all') filterParams.type = selectedType;
@@ -280,11 +201,45 @@ export default function Templates() {
     return 0;
   });
 
+  const matchedCatObj = categories.find(c => c.slug === selectedCategory);
+  const currentCategorySlug = selectedCategory;
+  const currentMeta = CATEGORY_META[currentCategorySlug] || {
+    icon: '📁',
+    title: matchedCatObj ? `${matchedCatObj.name} Templates` : 'Website Templates',
+    subtitle: 'Discover modern, production-ready, responsive layouts tailored for modern businesses and creators.'
+  };
+
+  const headerBadgeText = selectedCategory === 'all' 
+    ? 'All Categories' 
+    : `Category: ${matchedCatObj ? matchedCatObj.name : selectedCategory} Templates`;
+
   return (
-    <div style={{ animation: 'fadeIn 0.5s ease-out', padding: '30px 0' }}>
+    <div style={{ animation: 'fadeIn 0.5s ease-out', padding: '30px 0', maxWidth: '1100px', margin: '0 auto' }}>
+      
+      {/* Uniform Category Header */}
       <div style={{ marginBottom: 35 }}>
-        <h1 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: 8, letterSpacing: '-0.5px' }}>Browse Website Templates</h1>
-        <p style={{ color: 'var(--text-muted)' }}>Discover modern, responsive layouts for your next business, dashboard or creative project.</p>
+        <div style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '6px',
+          padding: '4px 12px',
+          borderRadius: '99px',
+          backgroundColor: 'rgba(84, 78, 232, 0.08)',
+          color: '#544ee8',
+          fontSize: '0.75rem',
+          fontWeight: 700,
+          textTransform: 'uppercase',
+          marginBottom: '12px',
+          letterSpacing: '0.5px'
+        }}>
+          {currentMeta.icon} {headerBadgeText}
+        </div>
+        <h1 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: 8, letterSpacing: '-0.5px', color: '#0f172a' }}>
+          {currentMeta.title}
+        </h1>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', margin: 0, lineHeight: '1.6' }}>
+          {currentMeta.subtitle}
+        </p>
       </div>
 
       <div>
@@ -295,12 +250,12 @@ export default function Templates() {
           alignItems: 'center',
           flexWrap: 'wrap',
           gap: 20,
-          marginBottom: 25,
+          marginBottom: 35,
           background: 'white',
           padding: '16px 24px',
           borderRadius: '16px',
-          border: '1px solid var(--border-color)',
-          boxShadow: 'var(--shadow-sm)'
+          border: '1px solid #e2e8f0',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.02)'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 15 }}>
             {/* Filter Toggle Button */}
@@ -375,15 +330,16 @@ export default function Templates() {
 
         {/* Collapsible Dropdown Filter Panel */}
         {showFilterPanel && (
-          <div className="glass-panel" style={{
+          <div style={{
             padding: '24px',
             background: 'white',
             borderRadius: '16px',
-            border: '1px solid var(--border-color)',
+            border: '1px solid #e2e8f0',
             marginBottom: 30,
-            animation: 'fadeIn 0.2s ease-out'
+            animation: 'fadeIn 0.2s ease-out',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.03)'
           }}>
-            <div className="filter-panel-layout" style={{
+            <div style={{
               display: 'grid',
               gridTemplateColumns: '3fr 1fr',
               gap: 40,
@@ -391,7 +347,7 @@ export default function Templates() {
             }}>
               {/* Categories Grid */}
               <div>
-                <h4 style={{ fontSize: '0.95rem', fontWeight: 800, marginBottom: 15, color: 'var(--secondary-color)' }}>Categories</h4>
+                <h4 style={{ fontSize: '0.95rem', fontWeight: 800, marginBottom: 15, color: '#0f172a' }}>Categories</h4>
                 <div style={{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
@@ -443,7 +399,7 @@ export default function Templates() {
 
               {/* License Settings */}
               <div style={{ borderLeft: '1px solid #f1f5f9', paddingLeft: 30 }}>
-                <h4 style={{ fontSize: '0.95rem', fontWeight: 800, marginBottom: 15, color: 'var(--secondary-color)' }}>License Type</h4>
+                <h4 style={{ fontSize: '0.95rem', fontWeight: 800, marginBottom: 15, color: '#0f172a' }}>License Type</h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   <label style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.85rem', cursor: 'pointer', fontWeight: 500 }}>
                     <input
@@ -481,24 +437,27 @@ export default function Templates() {
           </div>
         )}
 
-        {/* Vertical Stack of Large Horizontal Cards */}
+        {/* Uniform Vertical Stack of Template Cards matching Screenshot */}
         {sortedTemplates.length > 0 ? (
           <div style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 40,
-            maxWidth: '1000px',
-            margin: '0 auto'
+            gap: '36px',
+            width: '100%'
           }}>
             {sortedTemplates.map(template => {
-              const categorySlug = template.category.slug;
-              const theme = categoryThemes[categorySlug] || categoryThemes.default;
+              const tags = template.tags || [
+                template.category?.name || 'FEATURED',
+                'RESPONSIVE LAYOUT',
+                template.templateType === 'FREE' ? 'FREE DOWNLOAD' : 'PREMIUM'
+              ];
+
               return (
                 <div
                   key={template.id}
                   style={{
                     backgroundColor: '#ffffff',
-                    border: `1px solid ${theme.cardBorder}`,
+                    border: '1px solid #e2e8f0',
                     borderRadius: '24px',
                     padding: '32px',
                     display: 'grid',
@@ -511,15 +470,15 @@ export default function Templates() {
                     boxSizing: 'border-box'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = theme.cardHoverBorder;
+                    e.currentTarget.style.borderColor = 'rgba(84, 78, 232, 0.2)';
                     e.currentTarget.style.boxShadow = '0 10px 30px rgba(15, 23, 42, 0.06)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = theme.cardBorder;
+                    e.currentTarget.style.borderColor = '#e2e8f0';
                     e.currentTarget.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.03)';
                   }}
                 >
-                  {/* Left Section: Responsive Multi-Device CSS Mockup */}
+                  {/* Left Column: Responsive Multi-Device CSS Mockup */}
                   <div style={{
                     position: 'relative',
                     width: '100%',
@@ -527,16 +486,13 @@ export default function Templates() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    background: theme.background,
+                    background: '#f8fafc',
                     borderRadius: '16px',
                     overflow: 'hidden',
                     border: '1px solid #f1f5f9',
                     boxSizing: 'border-box',
                     padding: '24px'
                   }}>
-                    {/* Category-specific animation overlay */}
-                    {renderCategoryAnimation(categorySlug)}
-
                     {/* 1. Laptop Mockup Frame */}
                     <div style={{
                       position: 'relative',
@@ -551,39 +507,21 @@ export default function Templates() {
                       transform: 'translateX(-8%)',
                       boxSizing: 'border-box'
                     }}>
-                      <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative', background: '#ffffff' }}>
-                        {template.demoUrl ? (
-                          <iframe 
-                            src={template.demoUrl} 
-                            title={`${template.name} Desktop Preview`}
-                            style={{ 
-                              width: '1280px', 
-                              height: '800px', 
-                              border: 'none', 
-                              transform: 'scale(0.24)', 
-                              transformOrigin: 'top left',
-                              pointerEvents: 'none',
-                              position: 'absolute',
-                              top: 0,
-                              left: 0
-                            }} 
-                          />
-                        ) : (
-                          <img 
-                            src={template.previewImage} 
-                            alt={`${template.name} Desktop Preview`} 
-                            style={{ 
-                              width: '100%', 
-                              height: '112%', 
-                              objectFit: 'cover', 
-                              objectPosition: 'top',
-                              marginTop: '-12%' 
-                            }} 
-                            onError={(e) => {
-                              e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                            }}
-                          />
-                        )}
+                      <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative' }}>
+                        <img 
+                          src={template.previewImage} 
+                          alt={`${template.name} Desktop Preview`} 
+                          style={{ 
+                            width: '100%', 
+                            height: '112%', 
+                            objectFit: 'cover', 
+                            objectPosition: 'top',
+                            marginTop: '-12%' 
+                          }} 
+                          onError={(e) => {
+                            e.target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80';
+                          }}
+                        />
                       </div>
                       {/* Keyboard Base thin border */}
                       <div style={{
@@ -623,39 +561,21 @@ export default function Templates() {
                         background: '#334155',
                         zIndex: 10
                       }} />
-                      <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative', background: '#ffffff' }}>
-                        {template.demoUrl ? (
-                          <iframe 
-                            src={template.demoUrl} 
-                            title={`${template.name} Tablet Preview`}
-                            style={{ 
-                              width: '768px', 
-                              height: '1024px', 
-                              border: 'none', 
-                              transform: 'scale(0.18)', 
-                              transformOrigin: 'top left',
-                              pointerEvents: 'none',
-                              position: 'absolute',
-                              top: 0,
-                              left: 0
-                            }} 
-                          />
-                        ) : (
-                          <img 
-                            src={template.previewImage} 
-                            alt={`${template.name} Tablet Preview`} 
-                            style={{ 
-                              width: '100%', 
-                              height: '112%', 
-                              objectFit: 'cover', 
-                              objectPosition: 'top',
-                              marginTop: '-12%' 
-                            }} 
-                            onError={(e) => {
-                              e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                            }}
-                          />
-                        )}
+                      <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+                        <img 
+                          src={template.previewImage} 
+                          alt={`${template.name} Tablet Preview`} 
+                          style={{ 
+                            width: '100%', 
+                            height: '112%', 
+                            objectFit: 'cover', 
+                            objectPosition: 'top',
+                            marginTop: '-12%' 
+                          }} 
+                          onError={(e) => {
+                            e.target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80';
+                          }}
+                        />
                       </div>
                     </div>
 
@@ -686,75 +606,45 @@ export default function Templates() {
                         background: '#1e293b',
                         zIndex: 10
                       }} />
-                      <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative', background: '#ffffff' }}>
-                        {template.demoUrl ? (
-                          <iframe 
-                            src={template.demoUrl} 
-                            title={`${template.name} Mobile Preview`}
-                            style={{ 
-                              width: '375px', 
-                              height: '812px', 
-                              border: 'none', 
-                              transform: 'scale(0.18)', 
-                              transformOrigin: 'top left',
-                              pointerEvents: 'none',
-                              position: 'absolute',
-                              top: 0,
-                              left: 0
-                            }} 
-                          />
-                        ) : (
-                          <img 
-                            src={template.previewImage} 
-                            alt={`${template.name} Mobile Preview`} 
-                            style={{ 
-                              width: '100%', 
-                              height: '112%', 
-                              objectFit: 'cover', 
-                              objectPosition: 'top',
-                              marginTop: '-12%' 
-                            }} 
-                            onError={(e) => {
-                              e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                            }}
-                          />
-                        )}
+                      <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+                        <img 
+                          src={template.previewImage} 
+                          alt={`${template.name} Mobile Preview`} 
+                          style={{ 
+                            width: '100%', 
+                            height: '112%', 
+                            objectFit: 'cover', 
+                            objectPosition: 'top',
+                            marginTop: '-12%' 
+                          }} 
+                          onError={(e) => {
+                            e.target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80';
+                          }}
+                        />
                       </div>
                     </div>
                   </div>
 
-                  {/* Right Section: Information & Action */}
+                  {/* Right Column: Title, Metadata, Description & Pill Buttons */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
                     
-                    {/* 1. Small feature/category badges at the top */}
+                    {/* Badges / Tags */}
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                      <span style={{
-                        padding: '4px 10px',
-                        borderRadius: '99px',
-                        backgroundColor: theme.badgeBg,
-                        color: theme.badgeColor,
-                        fontSize: '10px',
-                        fontWeight: '700',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px'
-                      }}>
-                        {template.category.name}
-                      </span>
-                      <span style={{
-                        padding: '4px 10px',
-                        borderRadius: '99px',
-                        backgroundColor: template.templateType === 'FREE' ? 'rgba(34, 197, 94, 0.08)' : 'rgba(234, 179, 8, 0.08)',
-                        color: template.templateType === 'FREE' ? '#22c55e' : '#ca8a04',
-                        fontSize: '10px',
-                        fontWeight: '700',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px'
-                      }}>
-                        {template.templateType === 'FREE' ? 'Free' : 'Premium'}
-                      </span>
+                      {tags.map((tag, idx) => (
+                        <span key={idx} style={{
+                          padding: '4px 10px',
+                          borderRadius: '99px',
+                          backgroundColor: '#eff6ff',
+                          color: '#1d4ed8',
+                          fontSize: '10px',
+                          fontWeight: '700',
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.5px'
+                        }}>{tag}</span>
+                      ))}
                     </div>
 
-                    {/* 2. Template Name & details link */}
+                    {/* Typography */}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                       <h3 style={{
                         fontSize: '1.6rem',
@@ -764,14 +654,14 @@ export default function Templates() {
                         fontFamily: 'var(--font-title)',
                         lineHeight: '1.25'
                       }}>
-                        <Link 
-                          to={`/templates/${template.slug}`} 
+                        <a 
+                          href={template.demoUrl || `/templates/${template.slug}`} 
                           style={{ color: '#0f172a', transition: 'color 0.2s', textDecoration: 'none' }}
-                          onMouseEnter={(e) => e.currentTarget.style.color = theme.accent}
+                          onMouseEnter={(e) => e.currentTarget.style.color = '#0066ff'}
                           onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
                         >
                           {template.name}
-                        </Link>
+                        </a>
                       </h3>
                       
                       {/* Updated metadata */}
@@ -780,31 +670,6 @@ export default function Templates() {
                         <span>Updated recently</span>
                       </div>
 
-                      {/* Display Technologies, Page Count and Features */}
-                      <div style={{
-                        display: 'flex',
-                        flexWrap: 'wrap',
-                        gap: '15px',
-                        alignItems: 'center',
-                        marginTop: '6px',
-                        padding: '8px 0',
-                        borderTop: '1px solid #f1f5f9',
-                        borderBottom: '1px solid #f1f5f9'
-                      }}>
-                        <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
-                          <strong>Pages:</strong> {template.pagesCount || 1}
-                        </div>
-                        <div style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
-                        <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
-                          <strong>Stack:</strong> {template.bootstrapVersion}
-                        </div>
-                        <div style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
-                        <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
-                          <strong>Downloads:</strong> {template.downloadsCount}
-                        </div>
-                      </div>
-
-                      {/* 4. Short Description of the Template */}
                       <p style={{
                         fontSize: '0.88rem',
                         color: '#64748b',
@@ -816,17 +681,19 @@ export default function Templates() {
                       </p>
                     </div>
 
-                    {/* 5. Live Demo Button */}
-                    <div style={{ marginTop: '10px' }}>
-                      <a
-                        href={template.demoUrl}
+                    {/* Action Buttons */}
+                    <div style={{
+                      marginTop: '10px'
+                    }}>
+                      <a 
+                        href={template.demoUrl || `/templates/${template.slug}`} 
                         style={{
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
                           gap: '6px',
                           padding: '12px 24px',
-                          backgroundColor: theme.accent,
+                          backgroundColor: '#1e40af',
                           color: 'white',
                           borderRadius: '99px',
                           border: 'none',
@@ -835,13 +702,13 @@ export default function Templates() {
                           cursor: 'pointer',
                           transition: 'all 0.2s',
                           textDecoration: 'none',
-                          boxShadow: `0 4px 12px ${theme.accent}40`
+                          boxShadow: '0 4px 12px rgba(30, 64, 175, 0.25)'
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.filter = 'brightness(1.15)';
+                          e.currentTarget.style.backgroundColor = '#1d4ed8';
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.filter = 'none';
+                          e.currentTarget.style.backgroundColor = '#1e40af';
                         }}
                       >
                         Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
@@ -849,6 +716,7 @@ export default function Templates() {
                     </div>
 
                   </div>
+
                 </div>
               );
             })}
