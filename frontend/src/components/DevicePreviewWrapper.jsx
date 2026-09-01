@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
+import { Monitor, Tablet, Smartphone, RotateCcw, RotateCw, ArrowLeft, Download } from 'lucide-react';
 
 export default function DevicePreviewWrapper({ children }) {
   const [searchParams] = useSearchParams();
   const location = useLocation();
   const isIframe = window.self !== window.top;
-  const [viewMode, setViewMode] = useState('desktop');
+  const [viewMode, setViewMode] = useState('desktop'); // default to desktop view
+  const [orientation, setOrientation] = useState('portrait'); // portrait or landscape
+  const iframeRef = useRef(null);
 
-  // If it's loaded inside the iframe, render the template directly without header wrapper
+  // If loaded inside the iframe, render the template directly without wrapper
   if (isIframe) {
     return <>{children}</>;
   }
 
-  // Determine template slug for download link
+  // Determine template slug for download / back link
   const pathParts = location.pathname.split('/').filter(Boolean);
-  // Path is /templates/photography/wedding-template or /templates/photography/wedding-template/index.html
-  let templateSlug = 'wedding-template';
+  let templateSlug = 'template';
   if (pathParts.length > 0) {
     const lastPart = pathParts[pathParts.length - 1];
     if (lastPart === 'index.html' && pathParts.length > 1) {
@@ -27,6 +29,16 @@ export default function DevicePreviewWrapper({ children }) {
 
   const iframeSrc = `${location.pathname}?iframe=true${location.hash || ''}`;
 
+  const toggleOrientation = () => {
+    setOrientation(prev => prev === 'portrait' ? 'landscape' : 'portrait');
+  };
+
+  const handleRefresh = () => {
+    if (iframeRef.current) {
+      iframeRef.current.src = iframeSrc;
+    }
+  };
+
   return (
     <div style={{
       height: '100vh',
@@ -34,13 +46,15 @@ export default function DevicePreviewWrapper({ children }) {
       display: 'flex',
       flexDirection: 'column',
       overflow: 'hidden',
-      backgroundColor: '#f1f5f9',
+      backgroundColor: '#f8fafc',
+      backgroundImage: 'radial-gradient(#cbd5e1 1.2px, transparent 1.2px)',
+      backgroundSize: '20px 20px',
       margin: 0,
       padding: 0,
       boxSizing: 'border-box'
     }}>
-      {/* 1. Preview Top Bar Switcher Header */}
-      <div id="technosprint-preview-header" style={{
+      {/* 1. Sleek Floating Viewport Header Toolbar */}
+      <header style={{
         height: '64px',
         minHeight: '64px',
         background: '#ffffff',
@@ -49,152 +63,347 @@ export default function DevicePreviewWrapper({ children }) {
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: '0 24px',
-        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
+        boxShadow: '0 1px 4px rgba(0, 0, 0, 0.04)',
         fontFamily: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
         zIndex: 99999,
         position: 'relative',
         boxSizing: 'border-box'
       }}>
-        {/* Left Side Brand Logo */}
-        <div>
-          <a href="/templates" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+        {/* Left: Brand Logo & Back link */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <a href="/templates" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }} title="Back to Templates">
             <img src="/logo.jpg" alt="TechnoSprint Logo" style={{ height: '32px', borderRadius: '6px', border: '1px solid #e2e8f0' }} />
+          </a>
+          <a
+            href="/templates"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              fontSize: '0.82rem',
+              color: '#64748b',
+              textDecoration: 'none',
+              fontWeight: 600,
+              padding: '6px 12px',
+              borderRadius: '8px',
+              background: '#f8fafc',
+              border: '1px solid #e2e8f0',
+              transition: 'all 0.2s'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.color = '#0f172a'}
+            onMouseLeave={(e) => e.currentTarget.style.color = '#64748b'}
+          >
+            <ArrowLeft size={14} /> Back
           </a>
         </div>
 
-        {/* Center Device Toggles */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <button 
+        {/* Center: Segmented Device Switcher (Desktop / Tablet / Mobile) */}
+        <div style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          background: '#ffffff',
+          border: '1px solid #e2e8f0',
+          borderRadius: '12px',
+          padding: '4px',
+          gap: '4px',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.04)'
+        }}>
+          {/* Desktop Button */}
+          <button
             onClick={() => setViewMode('desktop')}
             style={{
-              background: viewMode === 'desktop' ? '#eff6ff' : '#ffffff',
-              color: viewMode === 'desktop' ? '#1e40af' : '#475569',
-              borderColor: viewMode === 'desktop' ? '#bfdbfe' : '#e2e8f0',
-              borderStyle: 'solid',
-              borderWidth: '1px',
-              padding: '8px 16px',
+              background: viewMode === 'desktop' ? '#eff6ff' : 'transparent',
+              color: viewMode === 'desktop' ? '#2563eb' : '#64748b',
+              border: viewMode === 'desktop' ? '1px solid #bfdbfe' : '1px solid transparent',
+              padding: '6px 14px',
               borderRadius: '8px',
               fontSize: '0.85rem',
-              fontWeight: viewMode === 'desktop' ? '600' : '500',
+              fontWeight: viewMode === 'desktop' ? 600 : 500,
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              transition: 'all 0.2s',
+              transition: 'all 0.15s ease-in-out',
               outline: 'none',
-              boxSizing: 'border-box'
+              boxShadow: viewMode === 'desktop' ? '0 1px 2px rgba(37,99,235,0.08)' : 'none'
             }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            <Monitor size={15} />
             Desktop
           </button>
 
-          <button 
+          {/* Tablet Button */}
+          <button
             onClick={() => setViewMode('tablet')}
             style={{
-              background: viewMode === 'tablet' ? '#eff6ff' : '#ffffff',
-              color: viewMode === 'tablet' ? '#1e40af' : '#475569',
-              borderColor: viewMode === 'tablet' ? '#bfdbfe' : '#e2e8f0',
-              borderStyle: 'solid',
-              borderWidth: '1px',
-              padding: '8px 16px',
+              background: viewMode === 'tablet' ? '#eff6ff' : 'transparent',
+              color: viewMode === 'tablet' ? '#2563eb' : '#64748b',
+              border: viewMode === 'tablet' ? '1px solid #bfdbfe' : '1px solid transparent',
+              padding: '6px 14px',
               borderRadius: '8px',
               fontSize: '0.85rem',
-              fontWeight: viewMode === 'tablet' ? '600' : '500',
+              fontWeight: viewMode === 'tablet' ? 600 : 500,
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              transition: 'all 0.2s',
+              transition: 'all 0.15s ease-in-out',
               outline: 'none',
-              boxSizing: 'border-box'
+              boxShadow: viewMode === 'tablet' ? '0 1px 2px rgba(37,99,235,0.08)' : 'none'
             }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            <Tablet size={15} />
             Tablet
           </button>
 
-          <button 
+          {/* Mobile Button */}
+          <button
             onClick={() => setViewMode('mobile')}
             style={{
-              background: viewMode === 'mobile' ? '#eff6ff' : '#ffffff',
-              color: viewMode === 'mobile' ? '#1e40af' : '#475569',
-              borderColor: viewMode === 'mobile' ? '#bfdbfe' : '#e2e8f0',
-              borderStyle: 'solid',
-              borderWidth: '1px',
-              padding: '8px 16px',
+              background: viewMode === 'mobile' ? '#eff6ff' : 'transparent',
+              color: viewMode === 'mobile' ? '#2563eb' : '#64748b',
+              border: viewMode === 'mobile' ? '1px solid #bfdbfe' : '1px solid transparent',
+              padding: '6px 14px',
               borderRadius: '8px',
               fontSize: '0.85rem',
-              fontWeight: viewMode === 'mobile' ? '600' : '500',
+              fontWeight: viewMode === 'mobile' ? 600 : 500,
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              transition: 'all 0.2s',
+              transition: 'all 0.15s ease-in-out',
               outline: 'none',
-              boxSizing: 'border-box'
+              boxShadow: viewMode === 'mobile' ? '0 1px 2px rgba(37,99,235,0.08)' : 'none'
             }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            <Smartphone size={15} />
             Mobile
           </button>
         </div>
 
-        {/* Right Side Action Button */}
-        <div>
-          <a 
-            id="download-btn-header" 
-            href={`/templates/${templateSlug}?action=download`}
+        {/* Right: Orientation Toggle, Refresh & Download */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          {/* Portrait / Landscape Orientation Toggle */}
+          {(viewMode === 'mobile' || viewMode === 'tablet') && (
+            <button
+              onClick={toggleOrientation}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                background: '#ffffff',
+                border: '1px solid #e2e8f0',
+                borderRadius: '8px',
+                padding: '6px 12px',
+                fontSize: '0.82rem',
+                color: '#475569',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'all 0.15s',
+                outline: 'none',
+                boxShadow: '0 1px 2px rgba(0,0,0,0.03)'
+              }}
+              title="Toggle Portrait / Landscape"
+            >
+              <RotateCw size={14} />
+              {orientation === 'portrait' ? 'Portrait' : 'Landscape'}
+            </button>
+          )}
+
+          {/* Refresh Iframe */}
+          <button
+            onClick={handleRefresh}
             style={{
-              background: '#0066ff',
-              color: '#ffffff',
-              textDecoration: 'none',
-              fontSize: '0.85rem',
-              fontSpread: 'none',
-              fontWeight: '600',
-              padding: '10px 20px',
-              borderRadius: '99px',
-              boxShadow: '0 4px 12px rgba(0, 102, 255, 0.15)',
-              transition: 'all 0.2s ease-in-out',
               display: 'flex',
               alignItems: 'center',
-              gap: '8px',
-              letterSpacing: '0.5px',
-              boxSizing: 'border-box'
+              justifyContent: 'center',
+              background: '#ffffff',
+              border: '1px solid #e2e8f0',
+              borderRadius: '8px',
+              width: '34px',
+              height: '34px',
+              color: '#475569',
+              cursor: 'pointer',
+              transition: 'all 0.15s',
+              outline: 'none',
+              boxShadow: '0 1px 2px rgba(0,0,0,0.03)'
             }}
+            title="Reload Preview"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            Download Template
+            <RotateCcw size={14} />
+          </button>
+
+          {/* Download Action */}
+          <a
+            href={`/templates/${templateSlug}?action=download`}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              background: '#2563eb',
+              color: '#ffffff',
+              textDecoration: 'none',
+              fontSize: '0.82rem',
+              fontWeight: 600,
+              padding: '7px 16px',
+              borderRadius: '99px',
+              boxShadow: '0 2px 8px rgba(37,99,235,0.2)',
+              transition: 'all 0.2s',
+              marginLeft: '4px'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
+          >
+            <Download size={14} />
+            Download
           </a>
         </div>
-      </div>
+      </header>
 
-      {/* 2. Resizable Iframe Viewport Container */}
-      <div style={{
+      {/* 2. Centered Device Preview Canvas */}
+      <main style={{
         flex: 1,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#f1f5f9',
-        padding: '20px',
+        padding: '24px',
+        overflow: 'auto',
         boxSizing: 'border-box',
-        overflow: 'hidden'
+        position: 'relative'
       }}>
-        <iframe
-          id="preview-iframe"
-          src={iframeSrc}
-          style={{
-            width: viewMode === 'desktop' ? '100%' : viewMode === 'tablet' ? '768px' : '375px',
+        {/* DESKTOP VIEW */}
+        {viewMode === 'desktop' && (
+          <div style={{
+            width: '100%',
             height: '100%',
-            maxHeight: '100%',
-            border: 'none',
-            borderRadius: '12px',
-            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-            background: '#ffffff',
-            transition: 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-          }}
-        />
-      </div>
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+          }}>
+            <iframe
+              ref={iframeRef}
+              id="preview-iframe"
+              src={iframeSrc}
+              title="Desktop Preview"
+              style={{
+                width: '100%',
+                height: '100%',
+                border: 'none',
+                borderRadius: '12px',
+                boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04)',
+                background: '#ffffff',
+                transition: 'all 0.3s ease'
+              }}
+            />
+          </div>
+        )}
+
+        {/* TABLET VIEW */}
+        {viewMode === 'tablet' && (
+          <div style={{
+            width: orientation === 'portrait' ? '768px' : '980px',
+            height: orientation === 'portrait' ? '920px' : '680px',
+            maxHeight: 'calc(100vh - 120px)',
+            maxWidth: 'calc(100vw - 60px)',
+            backgroundColor: '#0f172a',
+            border: '14px solid #0f172a',
+            borderRadius: '38px',
+            boxShadow: '0 25px 50px -12px rgba(15, 23, 42, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.1) inset',
+            position: 'relative',
+            display: 'flex',
+            flexDirection: 'column',
+            overflow: 'hidden',
+            boxSizing: 'border-box',
+            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+          }}>
+            {/* Tablet Camera sensor */}
+            <div style={{
+              position: 'absolute',
+              top: orientation === 'portrait' ? '5px' : '50%',
+              left: orientation === 'portrait' ? '50%' : '5px',
+              transform: orientation === 'portrait' ? 'translateX(-50%)' : 'translateY(-50%)',
+              width: '6px',
+              height: '6px',
+              borderRadius: '50%',
+              backgroundColor: '#334155',
+              zIndex: 20
+            }} />
+            <iframe
+              ref={iframeRef}
+              id="preview-iframe"
+              src={iframeSrc}
+              title="Tablet Preview"
+              style={{
+                width: '100%',
+                height: '100%',
+                border: 'none',
+                borderRadius: '24px',
+                background: '#ffffff'
+              }}
+            />
+          </div>
+        )}
+
+        {/* MOBILE VIEW (Matching the Reference Screenshot) */}
+        {viewMode === 'mobile' && (
+          <div style={{
+            width: orientation === 'portrait' ? '390px' : '780px',
+            height: orientation === 'portrait' ? '800px' : '390px',
+            maxHeight: 'calc(100vh - 110px)',
+            maxWidth: 'calc(100vw - 40px)',
+            backgroundColor: '#0f172a',
+            border: '12px solid #0f172a',
+            borderRadius: '48px',
+            boxShadow: '0 25px 50px -12px rgba(15, 23, 42, 0.38), 0 0 0 1px rgba(255, 255, 255, 0.12) inset',
+            position: 'relative',
+            display: 'flex',
+            flexDirection: 'column',
+            overflow: 'hidden',
+            boxSizing: 'border-box',
+            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+          }}>
+            {/* Dynamic Island / Speaker Notch Header */}
+            {orientation === 'portrait' && (
+              <div style={{
+                position: 'absolute',
+                top: '8px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '96px',
+                height: '24px',
+                backgroundColor: '#0f172a',
+                borderRadius: '99px',
+                zIndex: 20,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '0 10px',
+                boxSizing: 'border-box'
+              }}>
+                {/* Camera lens */}
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#1e293b' }} />
+                {/* Sensor dot */}
+                <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#090d16' }} />
+              </div>
+            )}
+
+            <iframe
+              ref={iframeRef}
+              id="preview-iframe"
+              src={iframeSrc}
+              title="Mobile Preview"
+              style={{
+                width: '100%',
+                height: '100%',
+                border: 'none',
+                borderRadius: '36px',
+                background: '#ffffff'
+              }}
+            />
+          </div>
+        )}
+      </main>
     </div>
   );
 }
