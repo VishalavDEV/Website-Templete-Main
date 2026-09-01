@@ -1,0 +1,60 @@
+-- NEURA Dashboard MySQL Database Schema Initialization
+
+CREATE TABLE IF NOT EXISTS users (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(20) NOT NULL DEFAULT 'USER',
+    avatar VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS orders (
+    id VARCHAR(50) PRIMARY KEY,
+    customer_name VARCHAR(100) NOT NULL,
+    product_name VARCHAR(100) NOT NULL,
+    amount DECIMAL(10, 2) NOT NULL,
+    status VARCHAR(20) NOT NULL,
+    created_date DATE NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS products (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    rank_num INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    revenue VARCHAR(50) NOT NULL,
+    units_sold INT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS tasks (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    status VARCHAR(20) NOT NULL,
+    due_date VARCHAR(50) NOT NULL,
+    priority VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS activities (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    text VARCHAR(255) NOT NULL,
+    event_time VARCHAR(50) NOT NULL,
+    type VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS transactions (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    amount VARCHAR(50) NOT NULL,
+    tx_date VARCHAR(50) NOT NULL,
+    positive BOOLEAN NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS team_members (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    role VARCHAR(100) NOT NULL,
+    status VARCHAR(20) NOT NULL,
+    avatar VARCHAR(255)
+);

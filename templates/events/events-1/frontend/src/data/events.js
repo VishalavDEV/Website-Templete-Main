@@ -1,0 +1,80 @@
+export const eventsData = [
+  {
+    id: "tech-summit-2026",
+    title: "Tech Innovation Summit 2026",
+    category: "Technology",
+    date: "September 20–22, 2026",
+    location: "Chennai Convention Centre, India",
+    price: "₹999",
+    attendees: "2,500+",
+    featured: true,
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
+    description: "The flagship technology event bringing together global CTOs, cloud architects, and software visionaries for 3 days of high-impact learning and masterclasses.",
+    highlights: ["Frontier AI Keynotes", "Serverless Architecture Labs", "Executive Networking Lounge", "Startup Pitch Competition"]
+  },
+  {
+    id: "ai-future-conf",
+    title: "AI Future & Generative Models Conference",
+    category: "AI",
+    date: "October 14–15, 2026",
+    location: "Bangalore International Exhibition Centre",
+    price: "₹1,299",
+    attendees: "1,800+",
+    featured: true,
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
+    description: "Explore frontier artificial intelligence developments, multimodal LLMs, autonomous agentic workflows, and ethical AI governance with industry pioneers.",
+    highlights: ["LLM Fine-Tuning Workshops", "Neural Hardware Demos", "Ethical AI Governance Panel", "Research Paper Track"]
+  },
+  {
+    id: "startup-connect-2026",
+    title: "Startup Connect & Venture Gala",
+    category: "Startup",
+    date: "November 05, 2026",
+    location: "Cyber City Auditorium, Hyderabad",
+    price: "₹799",
+    attendees: "1,200+",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80",
+    description: "Connecting early-stage founders with venture capital funds, angel syndicates, and corporate accelerator partners.",
+    highlights: ["1-on-1 VC Pitching", "Bootstrapping Masterclass", "Equity Funding Playbook", "Founder Speed Networking"]
+  },
+  {
+    id: "digital-transformation-forum",
+    title: "Global Digital Transformation Forum",
+    category: "Business",
+    date: "December 01–02, 2026",
+    location: "Jio World Convention Centre, Mumbai",
+    price: "₹1,499",
+    attendees: "3,000+",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+    description: "Unlocking enterprise modernization through cloud migrations, automated DevOps pipelines, and data platform governance.",
+    highlights: ["Enterprise Cloud Migration", "Cybersecurity Resilience", "Data Mesh Architecture", "CIO Executive Roundtable"]
+  },
+  {
+    id: "cloud-devops-summit",
+    title: "Cloud & DevOps Architecture Summit",
+    category: "Cloud",
+    date: "January 18–19, 2027",
+    location: "HITEC City Trade Center, Hyderabad",
+    price: "₹1,199",
+    attendees: "1,500+",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+    description: "Master Kubernetes orchestration, zero-trust cloud security, observability stacks, and infrastructure-as-code automation.",
+    highlights: ["Kubernetes Deep Dives", "GitOps Implementation", "FinOps & Cost Optimization", "Zero-Trust Mesh"]
+  },
+  {
+    id: "future-leaders-conf",
+    title: "Future Tech Leaders & Product Summit",
+    category: "Leadership",
+    date: "February 22, 2027",
+    location: "Leela Palace Convention Hall, New Delhi",
+    price: "₹899",
+    attendees: "950+",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80",
+    description: "Inspiring the next generation of engineering VPs, product directors, and technical leaders with actionable management strategies.",
+    highlights: ["Engineering Management 101", "Product Roadmapping", "Scaling High-Velocity Teams", "Diversity in Tech Panel"]
+  }
+];

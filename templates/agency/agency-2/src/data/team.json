@@ -1,0 +1,62 @@
+[
+  {
+    "id": "maya-chen",
+    "name": "Maya Chen",
+    "role": "Creative Director & Co-Founder",
+    "bio": "Former Design Lead at Pentagram & Stink Studios. Maya champions tactile minimalism, variable typographic systems, and cinematic editorial direction.",
+    "specialty": "Art Direction & Brand Identity",
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+    "socials": [
+      { "platform": "Twitter", "url": "https://twitter.com" },
+      { "platform": "LinkedIn", "url": "https://linkedin.com" },
+      { "platform": "ReadCV", "url": "https://read.cv" }
+    ]
+  },
+  {
+    "id": "arun-patel",
+    "name": "Arun Patel",
+    "role": "Strategy Director",
+    "bio": "Previously Head of Brand Architecture at Wolff Olins. Arun transforms complex institutional and tech landscapes into sharp, evocative market narratives.",
+    "specialty": "Market Whitespace & Brand Thesis",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+    "socials": [
+      { "platform": "LinkedIn", "url": "https://linkedin.com" },
+      { "platform": "Substack", "url": "https://substack.com" }
+    ]
+  },
+  {
+    "id": "sofia-laurent",
+    "name": "Sofia Laurent",
+    "role": "Design Director",
+    "bio": "Educated in Lausanne and Basel. Sofia leads visual systems, spatial interaction design, and editorial digital architectures with Swiss precision.",
+    "specialty": "Spatial UI & Design Systems",
+    "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+    "socials": [
+      { "platform": "Dribbble", "url": "https://dribbble.com" },
+      { "platform": "LinkedIn", "url": "https://linkedin.com" }
+    ]
+  },
+  {
+    "id": "daniel-reed",
+    "name": "Daniel Reed",
+    "role": "Technical Director",
+    "bio": "Creative technologist with 12+ years building WebGL shaders, real-time audio visualizers, and ultra-high performance React/Vite architectures.",
+    "specialty": "WebGL, Creative Coding & Motion",
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
+    "socials": [
+      { "platform": "GitHub", "url": "https://github.com" },
+      { "platform": "Twitter", "url": "https://twitter.com" }
+    ]
+  },
+  {
+    "id": "elena-vance",
+    "name": "Elena Vance",
+    "role": "Executive Producer",
+    "bio": "Overseeing global client engagements across London, New York, and Tokyo with surgical delivery timelines and bespoke client care.",
+    "specialty": "Production & Client Alliances",
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+    "socials": [
+      { "platform": "LinkedIn", "url": "https://linkedin.com" }
+    ]
+  }
+]

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography Templates Directory  -  SnapFolio Showcase</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Plus Jakarta Sans Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #121212;
+      color: #f3f4f6;
+    }
+
+    #toast {
+      transform: translateY(100px) scale(0.9);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    #toast.show {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-indigo-500/30 selection:text-indigo-200">
+  <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+  <script>
+    (function() {
+      const isPlatform = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const isTop = window.self === window.top;
+      const urlParams = new URLSearchParams(window.location.search);
+      const isIframe = urlParams.get('iframe') === 'true';
+      
+      if (isPlatform && isTop && !isIframe) {
+        document.documentElement.style.visibility = 'hidden';
+        
+        window.addEventListener('DOMContentLoaded', () => {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.searchParams.set('iframe', 'true');
+          
+          const body = document.body;
+          body.innerHTML = '';
+          body.style.margin = '0';
+          body.style.padding = '0';
+          body.style.height = '100vh';
+          body.style.width = '100vw';
+          body.style.display = 'flex';
+          body.style.flexDirection = 'column';
+          body.style.overflow = 'hidden';
+          body.style.backgroundColor = '#f1f5f9';
+          
+          // Build Top Bar
+          const topBar = document.createElement('div');
+          topBar.id = 'technosprint-preview-header';
+          topBar.style.height = '64px';
+          topBar.style.background = '#ffffff';
+          topBar.style.borderBottom = '1px solid #e2e8f0';
+          topBar.style.display = 'flex';
+          topBar.style.alignItems = 'center';
+          topBar.style.justifyContent = 'space-between';
+          topBar.style.padding = '0 24px';
+          topBar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+          topBar.style.fontFamily = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+          topBar.style.zIndex = '99999';
+          topBar.style.position = 'relative';
+          topBar.style.boxSizing = 'border-box';
+          
+          // Left side logo
+          const logoDiv = document.createElement('div');
+          logoDiv.innerHTML = '<a href="/templates" style="display: flex; align-items: center; text-decoration: none;"><img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" /></a>';
+          topBar.appendChild(logoDiv);
+          
+          // Center Template Name
+          const titleDiv = document.createElement('div');
+          titleDiv.style.fontWeight = '600';
+          titleDiv.style.fontSize = '0.9rem';
+          titleDiv.style.color = '#334155';
+          titleDiv.innerText = '< ' + (document.title || 'Template Preview') + ' >';
+          topBar.appendChild(titleDiv);
+          
+          // Right view switcher buttons
+          const rightDiv = document.createElement('div');
+          rightDiv.style.display = 'flex';
+          rightDiv.style.alignItems = 'center';
+          rightDiv.style.gap = '8px';
+          rightDiv.innerHTML = '' +
+            '<button id="view-desktop" style="' +
+            '  background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;' +
+            '  padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;' +
+            '  cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;' +
+            '  outline: none; box-sizing: border-box;' +
+            '">' +
+            '  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>' +
+            '  Desktop' +
+            '</button>' +
+            '<button id="view-tablet" style="' +
+            '  background: #ffffff; color: #475569; border: 1px solid #e2e8f0;' +
+            '  padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;' +
+            '  cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;' +
+            '  outline: none; box-sizing: border-box;' +
+            '">' +
+            '  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>' +
+            '  Tablet' +
+            '</button>' +
+            '<button id="view-mobile" style="' +
+            '  background: #ffffff; color: #475569; border: 1px solid #e2e8f0;' +
+            '  padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;' +
+            '  cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;' +
+            '  outline: none; box-sizing: border-box;' +
+            '">' +
+            '  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>' +
+            '  Mobile' +
+            '</button>';
+          topBar.appendChild(rightDiv);
+          body.appendChild(topBar);
+          
+          // Create Iframe Container
+          const iframeContainer = document.createElement('div');
+          iframeContainer.style.flex = '1';
+          iframeContainer.style.display = 'flex';
+          iframeContainer.style.alignItems = 'center';
+          iframeContainer.style.justifyContent = 'center';
+          iframeContainer.style.background = '#f1f5f9';
+          iframeContainer.style.padding = '20px';
+          iframeContainer.style.boxSizing = 'border-box';
+          iframeContainer.style.overflow = 'hidden';
+          
+          const iframe = document.createElement('iframe');
+          iframe.id = 'preview-iframe';
+          iframe.src = currentUrl.toString();
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.border = 'none';
+          iframe.style.borderRadius = '12px';
+          iframe.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+          iframe.style.background = '#ffffff';
+          iframe.style.transition = 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+          
+          iframeContainer.appendChild(iframe);
+          body.appendChild(iframeContainer);
+          
+          // Interactivity
+          const btnDesktop = body.querySelector('#view-desktop');
+          const btnTablet = body.querySelector('#view-tablet');
+          const btnMobile = body.querySelector('#view-mobile');
+          
+          let activeMode = 'desktop';
+          
+          function setView(mode) {
+            activeMode = mode;
+            [btnDesktop, btnTablet, btnMobile].forEach(btn => {
+              btn.style.background = '#ffffff';
+              btn.style.color = '#475569';
+              btn.style.borderColor = '#e2e8f0';
+              btn.style.fontWeight = '500';
+            });
+            
+            if (mode === 'desktop') {
+              btnDesktop.style.background = '#eff6ff';
+              btnDesktop.style.color = '#1e40af';
+              btnDesktop.style.borderColor = '#bfdbfe';
+              btnDesktop.style.fontWeight = '600';
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+              iframe.style.borderRadius = '12px';
+              iframe.style.border = 'none';
+            } else if (mode === 'tablet') {
+              btnTablet.style.background = '#eff6ff';
+              btnTablet.style.color = '#1e40af';
+              btnTablet.style.borderColor = '#bfdbfe';
+              btnTablet.style.fontWeight = '600';
+              iframe.style.width = '768px';
+              iframe.style.height = '1024px';
+              iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '24px';
+              iframe.style.border = '12px solid #0f172a';
+            } else if (mode === 'mobile') {
+              btnMobile.style.background = '#eff6ff';
+              btnMobile.style.color = '#1e40af';
+              btnMobile.style.borderColor = '#bfdbfe';
+              btnMobile.style.fontWeight = '600';
+              iframe.style.width = '375px';
+              iframe.style.height = '667px';
+              iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '32px';
+              iframe.style.border = '14px solid #0f172a';
+            }
+          }
+          
+          btnDesktop.addEventListener('click', () => setView('desktop'));
+          btnTablet.addEventListener('click', () => setView('tablet'));
+          btnMobile.addEventListener('click', () => setView('mobile'));
+          
+          const btns = [
+            { btn: btnDesktop, mode: 'desktop' },
+            { btn: btnTablet, mode: 'tablet' },
+            { btn: btnMobile, mode: 'mobile' }
+          ];
+          
+          btns.forEach(item => {
+            item.btn.addEventListener('mouseenter', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#f8fafc';
+                item.btn.style.borderColor = '#cbd5e1';
+              }
+            });
+            item.btn.addEventListener('mouseleave', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#ffffff';
+                item.btn.style.borderColor = '#e2e8f0';
+              }
+            });
+          });
+          
+          document.documentElement.style.visibility = 'visible';
+        });
+      }
+    })();
+  </script>
+
+
+  <!-- Header -->
+  <header class="border-b border-zinc-800/80 bg-zinc-950/40 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-[#544ee8] flex items-center justify-center text-white font-extrabold text-lg">W</div>
+        <div>
+          <h1 class="font-extrabold text-base tracking-tight text-white">WebTemplates</h1>
+          <p class="text-[10px] text-zinc-500 font-semibold uppercase tracking-wider">Premium Dashboard</p>
+        </div>
+      </div>
+      <a href="/templates" class="text-sm font-semibold text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
+        <i class="fa-solid fa-arrow-left"></i> Back to Templates
+      </a>
+    </div>
+  </header>
+
+  <!-- Showcase Content -->
+  <main class="flex-1 max-w-7xl mx-auto px-6 py-16 w-full space-y-12">
+    <!-- Showcase Intro Header -->
+    <div class="space-y-4 max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#2a2744] border border-indigo-500/20 text-indigo-300 text-xs font-semibold">
+        <i class="fa-solid fa-camera"></i> Category Showcase: Photography
+      </div>
+      <h2 class="text-4xl md:text-5xl font-black tracking-tight text-white leading-tight">
+        Photography Templates Catalog
+      </h2>
+      <p class="text-zinc-400 text-lg leading-relaxed">
+        Discover isolated, production-ready, dark minimalist layouts tailored for visual storytellers, freelance portfolios, and photography studios.
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Card: SnapFolio Premium Card Showcase -->
+      <div class="bg-[#1e1e1e] border border-white/10 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:border-white/20 hover:shadow-2xl hover:shadow-indigo-500/5">
+        <div class="space-y-5">
+          <!-- Thumbnail cover wrapper with live demo hover preview link -->
+          <a href="./snapfolio-template/index.html" target="_blank" class="block relative group overflow-hidden rounded-2xl bg-zinc-900 border border-white/5 aspect-[16/10]">
+            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80" alt="SnapFolio Template Cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <span class="px-5 py-2.5 rounded-xl bg-white text-zinc-955 text-xs font-bold shadow-lg flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                Live Preview <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </span>
+            </div>
+          </a>
+
+          <!-- Details -->
+          <div class="space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 rounded-full bg-[#2a2744] text-indigo-300 text-[10px] font-semibold uppercase tracking-wider">Dark Theme</span>
+              <span class="px-2.5 py-1 rounded-full bg-[#2a2744] text-indigo-300 text-[10px] font-semibold uppercase tracking-wider">Masonry Gallery</span>
+              <span class="px-2.5 py-1 rounded-full bg-[#2a2744] text-indigo-300 text-[10px] font-semibold uppercase tracking-wider">Lightbox Modal</span>
+            </div>
+            
+            <div class="space-y-2">
+              <h3 class="text-xl font-bold text-white hover:text-indigo-400 transition-colors">
+                <a href="./snapfolio-template/index.html" target="_blank">SnapFolio  -  Dark Minimalist Portfolio</a>
+              </h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">
+                A dark-themed photography portfolio featuring a floating glass sidebar navigation, animated typewriter hero headlines, responsive masonry layouts, next/prev arrow keyboard navigation lightbox, and integrated booking validation feedback.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Triggers -->
+        <div class="mt-6 grid grid-cols-2 gap-4">
+          <a href="./snapfolio-template/index.html" target="_blank" class="py-3 px-5 text-center bg-[#262626] hover:bg-[#333333] text-white rounded-xl font-medium border border-white/10 text-xs flex items-center justify-center gap-2 transition-colors">
+            Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </a>
+          <button id="download-btn" onclick="downloadTemplate()" class="py-3 px-5 text-center bg-[#544ee8] hover:bg-[#433cc8] text-white rounded-xl font-medium shadow-md text-xs flex items-center justify-center gap-2 transition-colors">
+            Download <i class="fa-solid fa-download"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-800/80 bg-zinc-950/20 py-8">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-zinc-500 font-medium">&copy; 2026 WebTemplates Showcase. All rights reserved.</p>
+      <div class="flex items-center gap-6 text-xs text-zinc-400 font-semibold">
+        <a href="#" class="hover:text-white transition-colors">Documentation</a>
+        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 max-w-sm w-full bg-zinc-900 border border-zinc-800 p-4 rounded-2xl shadow-2xl flex items-center z-50">
+    <svg class="w-5 h-5 text-green-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+    </svg>
+    <div class="text-sm font-semibold text-zinc-100 flex-1 pr-2" id="toast-message">Action processed!</div>
+  </div>
+
+  <!-- JSZip Library CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  
+  <script>
+    // Toast Helper
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toast-message');
+    
+    function showToast(message, isError = false) {
+      toastMessage.textContent = message;
+      const svg = toast.querySelector('svg');
+      if (isError) {
+        toast.classList.remove('border-green-500/30', 'bg-green-500/10');
+        toast.classList.add('border-red-500/30', 'bg-red-500/10');
+        svg.outerHTML = `<svg class="w-5 h-5 text-red-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>`;
+      } else {
+        toast.classList.remove('border-red-500/30', 'bg-red-500/10');
+        toast.classList.add('border-green-500/30', 'bg-green-500/10');
+        svg.outerHTML = `<svg class="w-5 h-5 text-green-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`;
+      }
+      
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+
+    const TEMPLATE_FILES = {
+      'snapfolio-template': [
+        'package.json', 'vite.config.js', 'index.html',
+        'src/main.jsx', 'src/App.jsx', 'src/index.css'
+      ],
+      'photo-template': [
+        'package.json', 'vite.config.js', 'index.html',
+        'src/main.jsx', 'src/App.jsx', 'src/index.css'
+      ],
+      'wedding-template': [
+        'package.json', 'vite.config.js', 'index.html',
+        'src/main.jsx', 'src/App.jsx', 'src/index.css'
+      ],
+      'fineart-template': [
+        'package.json', 'vite.config.js', 'index.html',
+        'src/main.jsx', 'src/App.jsx', 'src/index.css',
+        'src/components/CollectionCircle.jsx',
+        'src/components/CollectionsGrid.jsx',
+        'src/components/FeatureBlock.jsx',
+        'src/components/Footer.jsx',
+        'src/components/Hero.jsx',
+        'src/components/Navbar.jsx',
+        'src/components/Newsletter.jsx',
+        'src/data/config.js'
+      ],
+      'cinematic-wedding': [
+        'package.json', 'vite.config.js', 'index.html',
+        'src/main.jsx', 'src/App.jsx', 'src/index.css',
+        'src/components/About.jsx',
+        'src/components/FeaturedStories.jsx',
+        'src/components/Footer.jsx',
+        'src/components/Gallery.jsx',
+        'src/components/Hero.jsx',
+        'src/components/Navbar.jsx',
+        'src/components/ScrollReveal.jsx',
+        'src/components/Services.jsx',
+        'src/components/Testimonials.jsx',
+        'src/data/config.js'
+      ],
+      'kairo-template': [
+        'package.json', 'vite.config.js', 'index.html',
+        'src/main.jsx', 'src/App.jsx', 'src/index.css',
+        'src/components/AboutSection.jsx',
+        'src/components/CameraModel.jsx',
+        'src/components/ContactSection.jsx',
+        'src/components/Footer.jsx',
+        'src/components/Hero3DScene.jsx',
+        'src/components/HeroContent.jsx',
+        'src/components/HeroGrid.jsx',
+        'src/components/Navbar.jsx',
+        'src/components/ParticleField.jsx',
+        'src/components/Scene3D.jsx',
+        'src/components/ServicesSection.jsx'
+      ],
+      'isteady-template': [
+        'package.json', 'vite.config.js', 'index.html',
+        'src/main.jsx', 'src/App.jsx', 'src/index.css',
+        'src/components/AboutSection.jsx',
+        'src/components/ContactSection.jsx',
+        'src/components/Footer.jsx',
+        'src/components/HeroContent.jsx',
+        'src/components/Navbar.jsx',
+        'src/components/ParticleField.jsx',
+        'src/components/PortfolioGrid.jsx',
+        'src/components/Scene3D.jsx',
+        'src/components/ServicesSection.jsx',
+        'src/components/Testimonials.jsx'
+      ]
+    };
+
+    // Client-side ZIP Bundler and Downloader
+    async function downloadTemplate(slug) {
+      const zip = new JSZip();
+      const filesToDownload = TEMPLATE_FILES[slug] || [];
+      const btnId = slug === 'cinematic-wedding' ? 'download-cinematic' :
+                    slug === 'isteady-template' ? 'download-isteady' :
+                    slug === 'kairo-template' ? 'download-kairo' :
+                    slug === 'fineart-template' ? 'download-fineart' :
+                    'download-' + slug.replace('-template', '');
+      const btn = document.getElementById(btnId) || document.activeElement;
+      const originalText = btn.innerHTML;
+      
+      // Enter Loading State
+      btn.disabled = true;
+      btn.innerHTML = `<i class="fa-solid fa-circle-notch animate-spin"></i> Zipping...`;
+      
+      try {
+        for (const filePath of filesToDownload) {
+          const fileUrl = `./${slug}/${filePath}`;
+          const response = await fetch(fileUrl);
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status} when fetching ${filePath}`);
+          const text = await response.text();
+          zip.file(filePath, text);
+        }
+        
+        // Generate Zip Blob
+        const blob = await zip.generateAsync({ type: 'blob' });
+        
+        // Trigger client-side save
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'snapfolio-template.zip';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        showToast('Template zip downloaded successfully!');
+      } catch (error) {
+        console.error('Error preparing zip package:', error);
+        showToast('Failed to bundle template files.', true);
+      } finally {
+        // Exit Loading State
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    }
+  </script>
+</body>
+</html>

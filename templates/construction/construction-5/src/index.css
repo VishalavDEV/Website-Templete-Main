@@ -1,0 +1,1513 @@
+/* ==========================================================================
+   TEMPLATE 7: NEW HOUSE — LUXURY MODERNIST VILLA BUILDER
+   Aesthetic: Minimalist Dark Architectural Luxury + Copper / Warm Timber Accents
+   ========================================================================== */
+
+:root {
+  --color-copper: #c88a58;
+  --color-copper-light: #dfa87d;
+  --color-copper-glow: rgba(200, 138, 88, 0.35);
+  --color-copper-subtle: rgba(200, 138, 88, 0.12);
+
+  --bg-pure-black: #060606;
+  --bg-matte-black: #0c0c0c;
+  --bg-card: #121212;
+  --bg-card-hover: #181818;
+  --border-hairline: rgba(255, 255, 255, 0.08);
+  --border-copper: rgba(200, 138, 88, 0.4);
+
+  --text-main: #ffffff;
+  --text-body: #a1a1aa;
+  --text-muted: #71717a;
+
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+
+  --transition-luxe: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-pure-black);
+  color: var(--text-body);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 48px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   HERO BANNER — EXACT MATCH TO REFERENCE SCREENSHOT
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 720px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background: #080808;
+}
+
+.water-svg-filter {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.hero-image-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+}
+
+/* Authentic Liquid Water Layer — Fixed Exclusively to Pool Geometry */
+.pool-liquid-layer {
+  position: absolute;
+  bottom: 0;
+  left: 19%;
+  width: 62%;
+  height: 42%;
+  z-index: 2;
+  overflow: hidden;
+  clip-path: polygon(9% 0%, 91% 0%, 100% 100%, 0% 100%);
+  pointer-events: none;
+}
+
+.liquid-water-img {
+  width: 161.3%;
+  height: 238%;
+  object-fit: cover;
+  object-position: center bottom;
+  position: absolute;
+  bottom: 0;
+  left: -30.6%;
+  filter: url(#liquidWaterFilter) brightness(0.95) contrast(1.08);
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+/* Continuous Light Caustic Waves flowing across water */
+.water-caustic-stream {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, rgba(200, 138, 88, 0.28) 0%, transparent 70%);
+  mix-blend-mode: screen;
+  animation: causticOscillate 4s ease-in-out infinite alternate;
+}
+
+@keyframes causticOscillate {
+  0% { transform: translateY(-4px) scale(0.98); opacity: 0.5; }
+  100% { transform: translateY(6px) scale(1.02); opacity: 0.85; }
+}
+
+.water-surface-flow {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0px,
+    rgba(200, 138, 88, 0.09) 14px,
+    transparent 28px
+  );
+  animation: waterFlowDown 8s linear infinite;
+  mix-blend-mode: overlay;
+  opacity: 0.65;
+}
+
+@keyframes waterFlowDown {
+  0% { transform: translateY(-40px); }
+  100% { transform: translateY(40px); }
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 6, 6, 0.45) 0%,
+    transparent 35%,
+    rgba(6, 6, 6, 0.85) 90%,
+    #060606 100%
+  );
+  z-index: 3;
+}
+
+/* Reflection Pool Interactive Water Canvas — Strictly Locked to Pool */
+.reflection-canvas {
+  position: absolute;
+  bottom: 0;
+  left: 19%;
+  width: 62%;
+  height: 42%;
+  z-index: 4;
+  pointer-events: auto;
+  cursor: crosshair;
+  clip-path: polygon(9% 0%, 91% 0%, 100% 100%, 0% 100%);
+}
+
+/* Top Minimalist Header Matching Screenshot */
+.hero-top-header {
+  position: relative;
+  z-index: 10;
+  padding: 36px 0;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.hero-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-family: var(--font-main);
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.brand-sub {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.02em;
+  margin-top: 4px;
+}
+
+/* Navigation Links */
+.hero-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  background: rgba(12, 12, 12, 0.7);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 28px;
+  border-radius: 99px;
+}
+
+.h-nav-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  transition: var(--transition-luxe);
+}
+
+.h-nav-link:hover {
+  color: var(--color-copper-light);
+}
+
+.nav-arrow {
+  font-size: 0.65rem;
+  color: var(--color-copper);
+}
+
+/* Dropdown Menu inside Nav */
+.nav-dropdown-item {
+  position: relative;
+}
+
+.h-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: -20px;
+  width: 230px;
+  background: rgba(12, 12, 12, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-copper);
+  border-radius: 12px;
+  padding: 12px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: var(--transition-luxe);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  z-index: 50;
+}
+
+.nav-dropdown-item:hover .h-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.h-drop-link {
+  display: block;
+  padding: 8px 18px;
+  font-size: 0.82rem;
+  color: #d4d4d8;
+  transition: var(--transition-luxe);
+}
+
+.h-drop-link:hover {
+  background: rgba(200, 138, 88, 0.12);
+  color: var(--color-copper-light);
+  padding-left: 22px;
+}
+
+/* Est. Year & Theme Toggle Box */
+.header-right-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nh-theme-toggle {
+  background: rgba(200, 138, 88, 0.15);
+  border: 1px solid var(--border-copper);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 99px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-luxe);
+}
+
+.nh-theme-toggle:hover {
+  background: var(--color-copper);
+  color: #060606;
+}
+
+.hero-year-tag {
+  font-family: var(--font-main);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.05em;
+}
+
+/* Hero Bottom Overlay: Company Developer Matching Screenshot */
+.hero-bottom-overlay {
+  position: relative;
+  z-index: 10;
+  padding-bottom: 55px;
+}
+
+.accent-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.copper-vertical-line {
+  width: 3px;
+  height: 52px;
+  background: var(--color-copper);
+  border-radius: 2px;
+  box-shadow: 0 0 12px var(--color-copper-glow);
+}
+
+.company-dev-title {
+  font-family: var(--font-main);
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.company-dev-sub {
+  font-size: 1.05rem;
+  color: #d4d4d8;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   SECTION 2: MINIMALIST DARK SPLIT GRID (EXACT MATCH TO REFERENCE)
+   ========================================================================== */
+.about-split-section {
+  position: relative;
+  background: var(--bg-pure-black);
+  padding: 110px 0 130px 0;
+  border-top: 1px solid var(--border-hairline);
+  overflow: hidden;
+}
+
+/* Center Vertical Hairline Copper Divider */
+.center-vertical-divider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 85%;
+  background: linear-gradient(180deg, var(--color-copper) 0%, rgba(200, 138, 88, 0.2) 80%, transparent 100%);
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.about-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  position: relative;
+  z-index: 5;
+}
+
+.about-left-col {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-right: 40px;
+  padding-top: 10px;
+}
+
+.about-title-line-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-title-label {
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.copper-horiz-line {
+  width: 120px;
+  height: 1.5px;
+  background: var(--color-copper);
+}
+
+.about-right-col {
+  padding-left: 40px;
+  max-width: 500px;
+}
+
+.about-lead-desc {
+  font-size: 1.05rem;
+  color: #e4e4e7;
+  line-height: 1.75;
+  margin-bottom: 40px;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  border-top: 1px solid var(--border-hairline);
+  padding-top: 24px;
+}
+
+.a-stat-item strong {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-copper);
+  margin-bottom: 2px;
+}
+
+.a-stat-item span {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Bottom Center ANIMATION Tag Matching Screenshot */
+.animation-center-tag {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.anim-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.anim-scroll-indicator {
+  width: 14px;
+  height: 24px;
+  border: 1px solid var(--color-copper);
+  border-radius: 99px;
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.anim-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-copper);
+  animation: animDotBounce 1.6s infinite ease-in-out;
+}
+
+@keyframes animDotBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(10px); opacity: 1; }
+}
+
+/* ==========================================================================
+   ARCHITECTURAL CONTINUOUS KINETIC TEXT TRACK (DUAL STREAM)
+   ========================================================================== */
+.architectural-texttrack-wrapper {
+  background: #030303;
+  padding: 32px 0;
+  border-top: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  user-select: none;
+}
+
+.texttrack-stream {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.stream-left {
+  animation: textTrackLeft 30s linear infinite;
+}
+
+.stream-right {
+  animation: textTrackRight 36s linear infinite;
+}
+
+.architectural-texttrack-wrapper:hover .stream-left,
+.architectural-texttrack-wrapper:hover .stream-right {
+  animation-play-state: paused;
+}
+
+@keyframes textTrackLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes textTrackRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.texttrack-content {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-right: 28px;
+}
+
+.tt-solid {
+  font-family: var(--font-main);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.tt-outline {
+  font-family: var(--font-main);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: transparent;
+  -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  transition: var(--transition-luxe);
+}
+
+.texttrack-content:hover .tt-outline {
+  -webkit-text-stroke-color: var(--color-copper);
+}
+
+.tt-copper {
+  font-family: var(--font-mono);
+  font-size: clamp(1.8rem, 3.5vw, 3.0rem);
+  font-weight: 800;
+  color: var(--color-copper);
+}
+
+.tt-separator {
+  color: var(--color-copper);
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+/* Secondary Micro-Stream */
+.tt-micro {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #a1a1aa;
+  text-transform: uppercase;
+}
+
+.tt-dot {
+  color: var(--color-copper);
+  font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   EDITORIAL SECTION HEADERS
+   ========================================================================== */
+.section-header-editorial {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: 28px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.editorial-title {
+  font-family: var(--font-main);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-top: 6px;
+}
+
+.editorial-sub-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 380px;
+  text-align: right;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   SECTION 3: EDITORIAL ASYMMETRIC VILLA PORTFOLIO
+   ========================================================================== */
+.portfolio-section {
+  padding: 120px 0;
+  background: var(--bg-matte-black);
+}
+
+/* Feature Master Villa 01 */
+.villa-feature-hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  background: #0d0d0d;
+  border: 1px solid var(--border-hairline);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  transition: var(--transition-luxe);
+}
+
+.villa-feature-hero:hover {
+  border-color: var(--color-copper);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+}
+
+.villa-feature-visual {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+}
+
+.feature-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.villa-feature-hero:hover .feature-img {
+  transform: scale(1.04);
+}
+
+.feature-badge-top {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(6, 6, 6, 0.85);
+  border: 1px solid var(--border-copper);
+  color: var(--color-copper-light);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 4px;
+  backdrop-filter: blur(10px);
+}
+
+.feature-tag-price {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(6, 6, 6, 0.9);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.villa-feature-info {
+  padding: 50px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.v-num-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-copper);
+  letter-spacing: 0.16em;
+  margin-bottom: 12px;
+}
+
+.feature-villa-title {
+  font-family: var(--font-main);
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.feature-villa-desc {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.feature-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  border-top: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+  padding: 20px 0;
+  margin-bottom: 32px;
+}
+
+.spec-cell strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--color-copper);
+  font-weight: 800;
+}
+
+.spec-cell span {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.btn-editorial-explore {
+  display: inline-block;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid var(--color-copper);
+  font-family: var(--font-main);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 14px 28px;
+  border-radius: 6px;
+  text-align: center;
+  transition: var(--transition-luxe);
+}
+
+.btn-editorial-explore:hover {
+  background: var(--color-copper);
+  color: #060606;
+}
+
+/* Secondary Dual Asymmetric Grid */
+.villas-dual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.villa-compact-card {
+  background: #0d0d0d;
+  border: 1px solid var(--border-hairline);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: var(--transition-luxe);
+}
+
+.villa-compact-card:hover {
+  border-color: var(--color-copper);
+  transform: translateY(-6px);
+}
+
+.v-compact-img-box {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+}
+
+.v-compact-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.villa-compact-card:hover .v-compact-img-box img {
+  transform: scale(1.05);
+}
+
+.compact-geo-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(6, 6, 6, 0.8);
+  color: var(--color-copper-light);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border-copper);
+}
+
+.v-compact-body {
+  padding: 28px;
+}
+
+.v-mini-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.v-mini-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-copper);
+  font-weight: 700;
+}
+
+.v-mini-price {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.v-compact-title {
+  font-family: var(--font-main);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.v-compact-desc {
+  font-size: 0.88rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.v-compact-tags {
+  font-size: 0.78rem;
+  color: var(--color-copper-light);
+  border-top: 1px solid var(--border-hairline);
+  padding-top: 14px;
+}
+
+/* ==========================================================================
+   SECTION 4: TACTILE MATERIAL SPECIMEN STUDIO
+   ========================================================================== */
+.specimen-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.specimen-card {
+  background: #0e0e0e;
+  border: 1px solid var(--border-hairline);
+  border-radius: 12px;
+  padding: 24px;
+  transition: var(--transition-luxe);
+}
+
+.specimen-card:hover {
+  border-color: var(--color-copper);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+.specimen-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.spec-code {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-copper);
+  font-weight: 700;
+}
+
+.spec-rating {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #a1a1aa;
+  border: 1px solid var(--border-hairline);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.specimen-swatch-box {
+  position: relative;
+  height: 90px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.swatch-wood {
+  background: linear-gradient(135deg, #2b1f17 0%, #17110d 50%, #3d2b1f 100%);
+}
+
+.swatch-glass {
+  background: linear-gradient(135deg, #16242c 0%, #0d151a 50%, #1f333f 100%);
+}
+
+.swatch-stone {
+  background: linear-gradient(135deg, #262626 0%, #141414 50%, #303030 100%);
+}
+
+.swatch-water {
+  background: linear-gradient(135deg, #091a24 0%, #040d12 50%, #133347 100%);
+}
+
+.swatch-glimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(200, 138, 88, 0.25) 50%, transparent 100%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.specimen-card:hover .swatch-glimmer {
+  transform: translateX(100%);
+}
+
+.specimen-name {
+  font-family: var(--font-main);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.specimen-detail {
+  font-size: 0.82rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.specimen-meta-row {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-copper-light);
+  border-top: 1px solid var(--border-hairline);
+  padding-top: 10px;
+}
+
+/* ==========================================================================
+   SECTION 5: BLUEPRINT HUD CONFIGURATOR
+   ========================================================================== */
+.blueprint-hud-container {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr;
+  background: #0a0a0a;
+  border: 1.5px solid var(--border-copper);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
+}
+
+.blueprint-preview-col {
+  background: #060606;
+  border-right: 1px solid var(--border-hairline);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blueprint-hud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.hud-chip {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-copper);
+  letter-spacing: 0.12em;
+}
+
+.hud-coords {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.blueprint-canvas-box {
+  position: relative;
+  height: 320px;
+  background: #030303;
+  border: 1px dashed rgba(200, 138, 88, 0.35);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.bp-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.bp-floorplan-visual {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  height: 85%;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: 1.2fr 0.8fr;
+  gap: 8px;
+}
+
+.bp-room {
+  border: 1.5px solid var(--color-copper);
+  background: rgba(200, 138, 88, 0.06);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  text-align: center;
+  transition: var(--transition-luxe);
+}
+
+.bp-pool-zone {
+  grid-column: span 2;
+  border: 1.5px dashed #4fc3f7;
+  background: rgba(79, 195, 247, 0.08);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-luxe);
+}
+
+.room-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #e4e4e7;
+  letter-spacing: 0.06em;
+}
+
+.blueprint-hud-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  border-top: 1px solid var(--border-hairline);
+  padding-top: 20px;
+  margin-top: 24px;
+}
+
+.b-spec-item strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  color: var(--color-copper);
+}
+
+.b-spec-item span {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* Controls Column */
+.blueprint-controls-col {
+  padding: 45px;
+}
+
+.config-hud-title {
+  font-family: var(--font-main);
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.config-hud-desc {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.config-fields-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.cfg-lbl {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--color-copper);
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+
+.slider-scale-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.hud-invoice-card {
+  background: rgba(200, 138, 88, 0.08);
+  border: 1.5px solid var(--color-copper);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.inv-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-body);
+  letter-spacing: 0.1em;
+}
+
+.inv-price {
+  font-family: var(--font-main);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--color-copper);
+  line-height: 1.1;
+  margin: 2px 0;
+}
+
+.inv-note {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.btn-hud-commission {
+  background: var(--color-copper);
+  color: #060606;
+  font-family: var(--font-main);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 14px 26px;
+  border-radius: 6px;
+  transition: var(--transition-luxe);
+}
+
+.btn-hud-commission:hover {
+  background: var(--color-copper-light);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SECTION 6: DISCRETE ARCHITECTURAL ATELIER CONTACT
+   ========================================================================== */
+.contact-minimal-section {
+  padding: 120px 0;
+  background: var(--bg-pure-black);
+}
+
+.atelier-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 70px;
+}
+
+.atelier-lead-text {
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin: 16px 0 36px 0;
+}
+
+.atelier-locations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loc-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #0d0d0d;
+  border: 1px solid var(--border-hairline);
+  border-radius: 8px;
+}
+
+.loc-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-copper);
+  margin-top: 6px;
+  box-shadow: 0 0 8px var(--color-copper-glow);
+}
+
+.loc-card strong {
+  display: block;
+  color: #ffffff;
+  font-size: 0.92rem;
+  margin-bottom: 2px;
+}
+
+.loc-card span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Luxury Dark Floating Underline Form */
+.atelier-minimal-form {
+  background: #0a0a0a;
+  border: 1px solid var(--border-hairline);
+  border-radius: 16px;
+  padding: 45px;
+}
+
+.form-heading {
+  font-family: var(--font-main);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.form-subheading {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+.floating-field {
+  position: relative;
+  margin-bottom: 26px;
+}
+
+.f-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid var(--border-hairline);
+  color: #ffffff;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  padding: 10px 0;
+  outline: none;
+  transition: var(--transition-luxe);
+}
+
+.f-textarea {
+  resize: vertical;
+}
+
+.f-label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  pointer-events: none;
+  transition: var(--transition-luxe);
+}
+
+.f-input:focus,
+.f-input:not(:placeholder-shown) {
+  border-bottom-color: var(--color-copper);
+}
+
+.f-input:focus ~ .f-label,
+.f-input:not(:placeholder-shown) ~ .f-label {
+  top: -14px;
+  font-size: 0.65rem;
+  color: var(--color-copper);
+  font-weight: 700;
+}
+
+.btn-atelier-submit {
+  width: 100%;
+  background: var(--color-copper);
+  color: #060606;
+  font-family: var(--font-main);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 16px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition-luxe);
+  margin-top: 10px;
+}
+
+.btn-atelier-submit:hover {
+  background: var(--color-copper-light);
+}
+
+/* ==========================================================================
+   LIGHT MODE OVERRIDES (DEFAULT THEME)
+   ========================================================================== */
+body.light-mode {
+  --bg-pure-black: #f8fafc;
+  --bg-matte-black: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --border-hairline: rgba(0, 0, 0, 0.09);
+  --border-copper: rgba(180, 105, 45, 0.5);
+
+  --text-main: #0f172a;
+  --text-body: #475569;
+  --text-muted: #64748b;
+
+  --color-copper: #a86532;
+  --color-copper-light: #c27d48;
+
+  background-color: var(--bg-pure-black);
+  color: var(--text-body);
+}
+
+body.light-mode .hero-nav {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .h-nav-link {
+  color: #0f172a;
+}
+
+body.light-mode .h-dropdown-menu {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .h-drop-link {
+  color: #334155;
+}
+
+body.light-mode .about-split-section {
+  background: #ffffff;
+}
+
+body.light-mode .about-title-label {
+  color: #0f172a;
+}
+
+body.light-mode .about-lead-desc {
+  color: #1e293b;
+}
+
+body.light-mode .anim-label {
+  color: #0f172a;
+}
+
+body.light-mode .architectural-texttrack-wrapper {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+body.light-mode .tt-solid {
+  color: #0f172a;
+}
+
+body.light-mode .tt-outline {
+  -webkit-text-stroke-color: rgba(15, 23, 42, 0.35);
+}
+
+body.light-mode .villa-feature-hero,
+body.light-mode .villa-compact-card,
+body.light-mode .specimen-card,
+body.light-mode .blueprint-hud-container,
+body.light-mode .atelier-minimal-form,
+body.light-mode .loc-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.09);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+body.light-mode .blueprint-preview-col {
+  background: #f8fafc;
+}
+
+body.light-mode .blueprint-canvas-box {
+  background: #ffffff;
+}
+
+body.light-mode .room-lbl {
+  color: #1e293b;
+}
+
+body.light-mode .editorial-title,
+body.light-mode .feature-villa-title,
+body.light-mode .v-compact-title,
+body.light-mode .specimen-name,
+body.light-mode .config-hud-title,
+body.light-mode .form-heading,
+body.light-mode .loc-card strong {
+  color: #0f172a;
+}
+
+body.light-mode .f-input {
+  color: #0f172a;
+}
+
+body.light-mode .villa-select-trigger {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+body.light-mode .villa-select-dropdown {
+  background: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .v-opt strong {
+  color: #0f172a;
+}
+
+body.light-mode .newhouse-footer {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+body.light-mode .f-brand strong {
+  color: #0f172a;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .villa-feature-hero { grid-template-columns: 1fr; }
+  .villas-dual-grid { grid-template-columns: 1fr; }
+  .specimen-grid-4 { grid-template-columns: 1fr 1fr; }
+  .blueprint-hud-container { grid-template-columns: 1fr; }
+  .atelier-contact-grid { grid-template-columns: 1fr; }
+  .editorial-sub-text { text-align: left; }
+}
+
+@media (max-width: 768px) {
+  .specimen-grid-4 { grid-template-columns: 1fr; }
+  .feature-specs-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .blueprint-controls-col, .blueprint-preview-col { padding: 24px; }
+  .atelier-minimal-form { padding: 24px; }
+}
+

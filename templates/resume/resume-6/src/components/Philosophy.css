@@ -1,0 +1,69 @@
+/* ================================================================
+   Philosophy.css — scoped under .em-portfolio
+   ================================================================ */
+
+.em-portfolio .em-philosophy {
+  background: var(--em-ivory-warm);
+  border-top: 1px solid var(--em-gray-border);
+  border-bottom: 1px solid var(--em-gray-border);
+  padding: clamp(5rem, 12vh, 10rem) 0;
+}
+
+.em-portfolio .em-philosophy__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.em-portfolio .em-philosophy__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.em-portfolio .em-philosophy__eyebrow-line {
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: var(--em-gray-border);
+}
+
+.em-portfolio .em-philosophy__quote {
+  font-family: var(--em-font-serif);
+  font-size: clamp(2rem, 4.5vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--em-charcoal);
+  letter-spacing: -0.025em;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.em-portfolio .em-philosophy__quote em {
+  font-style: italic;
+  color: var(--em-burgundy);
+}
+
+.em-portfolio .em-philosophy__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-align: left;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.em-portfolio .em-philosophy__body .body-lg {
+  color: var(--em-charcoal-muted);
+  line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+  .em-portfolio .em-philosophy__quote { font-size: clamp(1.75rem, 7vw, 2.5rem); }
+  .em-portfolio .em-philosophy__eyebrow-line { max-width: 40px; }
+}

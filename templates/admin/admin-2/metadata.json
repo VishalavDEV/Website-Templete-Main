@@ -1,0 +1,6 @@
+{
+  "name": "Elemental - Editorial Command Center",
+  "description": "An Artistic Flair editorial command center, science archive, and modern content operating system for Elemental Magazine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

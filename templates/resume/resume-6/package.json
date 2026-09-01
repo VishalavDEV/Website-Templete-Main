@@ -1,0 +1,21 @@
+{
+  "name": "template-elena-marlowe-creative-director",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Template 2 — Elena Marlowe Creative Director & Brand Strategist portfolio. Fictional editorial CV website.",
+  "scripts": {
+    "dev": "vite --port 5175",
+    "build": "vite build",
+    "preview": "vite preview --port 5175"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "typescript": "~6.0.2",
+    "vite": "^5.4.21"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  }
+}

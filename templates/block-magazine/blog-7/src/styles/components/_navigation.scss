@@ -1,0 +1,48 @@
+@use '../abstracts/variables' as *;
+
+.nav-link-editorial {
+  position: relative;
+  padding: 0.5rem 0;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: $text-primary;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: $text-primary;
+    transition: width 0.25s ease;
+  }
+
+  &:hover::after,
+  &.active::after {
+    width: 100%;
+  }
+}
+
+.breaking-ticker-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.breaking-ticker-content {
+  display: inline-block;
+  animation: ticker 35s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}

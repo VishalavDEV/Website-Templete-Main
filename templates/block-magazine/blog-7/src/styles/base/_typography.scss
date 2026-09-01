@@ -1,0 +1,141 @@
+@use '../abstracts/variables' as *;
+
+.font-display {
+  font-family: $font-display;
+  letter-spacing: 0.04em;
+}
+
+.font-serif-headline {
+  font-family: $font-serif-headline;
+}
+
+.font-serif-reading {
+  font-family: $font-serif-reading;
+}
+
+.font-sans-ui {
+  font-family: $font-sans;
+}
+
+.font-mono-meta {
+  font-family: $font-mono;
+}
+
+/* Editorial Drop Cap */
+.editorial-drop-cap::first-letter {
+  float: left;
+  font-family: $font-serif-headline;
+  font-size: 4.5rem;
+  line-height: 0.78;
+  padding-top: 6px;
+  padding-right: 14px;
+  padding-bottom: 2px;
+  color: $text-primary;
+  font-weight: 800;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.05);
+}
+
+/* Editorial Pull Quote */
+.editorial-pull-quote {
+  font-family: $font-serif-headline;
+  font-style: italic;
+  font-size: 1.75rem;
+  line-height: 1.35;
+  color: $text-primary;
+  position: relative;
+  padding-left: 2.25rem;
+  border-left: 3.5px solid $accent-crimson;
+  margin: 3rem 0;
+
+  @media (min-width: 768px) {
+    font-size: 2.125rem;
+  }
+
+  &::before {
+    content: '“';
+    position: absolute;
+    top: -1.5rem;
+    left: 0.5rem;
+    font-size: 4rem;
+    color: rgba(212, 56, 37, 0.15);
+    font-family: Georgia, serif;
+    line-height: 1;
+    pointer-events: none;
+  }
+}
+
+/* Editorial Kicker */
+.editorial-kicker {
+  font-family: $font-sans;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+/* Double Hairline Rule */
+.editorial-double-rule {
+  border-top: 3px double $border-medium;
+  margin: 1.5rem 0;
+}
+
+.editorial-single-rule {
+  border-top: 1px solid $border-subtle;
+}
+
+/* Clean Editorial Tables */
+.editorial-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.8125rem;
+  text-align: left;
+
+  th {
+    font-family: $font-sans;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 0.875rem 1rem;
+    border-bottom: 2px solid $border-strong;
+    color: $text-primary;
+    background-color: #FAF9F5;
+  }
+
+  td {
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid $border-subtle;
+    color: $text-secondary;
+    vertical-align: middle;
+  }
+
+  tr:hover td {
+    background-color: #FAF9F5;
+    color: $text-primary;
+  }
+}
+
+/* Soundwave Audio Equalizer Bar Animation */
+.equalizer-bar {
+  display: inline-block;
+  width: 2.5px;
+  background-color: #D43825;
+  border-radius: 1px;
+  animation: equalize 1.2s ease-in-out infinite;
+
+  &:nth-child(1) { height: 12px; animation-delay: 0.1s; }
+  &:nth-child(2) { height: 18px; animation-delay: 0.3s; }
+  &:nth-child(3) { height: 8px; animation-delay: 0.15s; }
+  &:nth-child(4) { height: 15px; animation-delay: 0.4s; }
+  &:nth-child(5) { height: 10px; animation-delay: 0.25s; }
+}
+
+@keyframes equalize {
+  0%, 100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1.2);
+  }
+}

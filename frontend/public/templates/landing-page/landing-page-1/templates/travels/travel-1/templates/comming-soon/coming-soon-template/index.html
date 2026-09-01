@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange 16  -  Something Powerful Is Coming | Orange</title>
+    <meta name="description" content="A new experience of performance, photography and design is about to arrive. Explore the revolutionary Orange 16 with White and Black Titanium craft, O18 Pro chip, slow-motion video, and exploded engineering architecture.">
+    <meta name="keywords" content="Orange 16, Orange, Orange 16 Pro, Launch, Coming Soon, Smartphone, Technology, Slow Motion Video, White Titanium, Black Titanium, O18 Pro">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+
+  <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+  <script>
+    (function() {
+      const isPlatform = window.location.host === 'localhost:5173' || window.location.host === '127.0.0.1:5173';
+      const isTop = window.self === window.top;
+      const urlParams = new URLSearchParams(window.location.search);
+      const isIframe = urlParams.get('iframe') === 'true';
+      
+      if (isPlatform && isTop && !isIframe) {
+        document.documentElement.style.visibility = 'hidden';
+        
+        window.addEventListener('DOMContentLoaded', () => {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.searchParams.set('iframe', 'true');
+          
+          const body = document.body;
+          body.innerHTML = '';
+          body.style.margin = '0';
+          body.style.padding = '0';
+          body.style.height = '100vh';
+          body.style.width = '100vw';
+          body.style.display = 'flex';
+          body.style.flexDirection = 'column';
+          body.style.overflow = 'hidden';
+          body.style.backgroundColor = '#0f172a';
+          
+          // Build Top Bar
+          const topBar = document.createElement('div');
+          topBar.id = 'technosprint-preview-header';
+          topBar.style.height = '64px';
+          topBar.style.background = '#ffffff';
+          topBar.style.borderBottom = '1px solid #e2e8f0';
+          topBar.style.display = 'flex';
+          topBar.style.alignItems = 'center';
+          topBar.style.justifyContent = 'space-between';
+          topBar.style.padding = '0 24px';
+          topBar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.06)';
+          topBar.style.fontFamily = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+          topBar.style.zIndex = '99999';
+          topBar.style.position = 'relative';
+          topBar.style.boxSizing = 'border-box';
+          
+          // Left side: TechnoSprint Logo + Template Title
+          const leftDiv = document.createElement('div');
+          leftDiv.style.display = 'flex';
+          leftDiv.style.alignItems = 'center';
+          leftDiv.style.gap = '16px';
+          leftDiv.innerHTML = `
+            <a href="/templates" style="display: flex; align-items: center; text-decoration: none; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+              <img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 34px; border-radius: 6px; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05);" />
+            </a>
+            <div style="height: 20px; width: 1px; background: #e2e8f0;"></div>
+            <span style="font-size: 0.88rem; font-weight: 600; color: #1e293b; letter-spacing: -0.01em;">${document.title.split(' - ')[0] || 'Coming Soon Template'}</span>
+          `;
+          topBar.appendChild(leftDiv);
+          
+          // Center: Laptop, Tab, Phone Responsive Device View Buttons
+          const centerDiv = document.createElement('div');
+          centerDiv.style.display = 'flex';
+          centerDiv.style.alignItems = 'center';
+          centerDiv.style.gap = '8px';
+          centerDiv.style.background = '#f1f5f9';
+          centerDiv.style.padding = '4px 6px';
+          centerDiv.style.borderRadius = '10px';
+          centerDiv.innerHTML = `
+            <button id="view-desktop" title="Laptop / Desktop View" style="
+              background: #ffffff; color: #0f172a; border: 1px solid transparent;
+              padding: 7px 16px; border-radius: 7px; font-size: 0.85rem; font-weight: 600;
+              cursor: pointer; display: flex; align-items: center; gap: 7px; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+              outline: none; box-shadow: 0 1px 3px rgba(0,0,0,0.08); box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              <span>Laptop</span>
+            </button>
+            <button id="view-tablet" title="Tab / Tablet View" style="
+              background: transparent; color: #64748b; border: 1px solid transparent;
+              padding: 7px 16px; border-radius: 7px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 7px; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              <span>Tab</span>
+            </button>
+            <button id="view-mobile" title="Phone / Mobile View" style="
+              background: transparent; color: #64748b; border: 1px solid transparent;
+              padding: 7px 16px; border-radius: 7px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 7px; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              <span>Phone</span>
+            </button>
+          `;
+          topBar.appendChild(centerDiv);
+          
+          // Right: Website & Download Buttons
+          const rightDiv = document.createElement('div');
+          rightDiv.style.display = 'flex';
+          rightDiv.style.alignItems = 'center';
+          rightDiv.style.gap = '12px';
+          rightDiv.innerHTML = `
+            <a href="/templates" style="
+              color: #475569;
+              background: #f8fafc;
+              border: 1px solid #e2e8f0;
+              text-decoration: none;
+              font-size: 0.84rem;
+              font-weight: 600;
+              padding: 8px 16px;
+              border-radius: 8px;
+              transition: all 0.2s ease;
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+            " onmouseover="this.style.background='#f1f5f9';this.style.color='#0f172a'" onmouseout="this.style.background='#f8fafc';this.style.color='#475569'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span>All Templates</span>
+            </a>
+            <a href="/templates?category=comming-soon" style="
+              background: linear-gradient(135deg, #2563eb, #1d4ed8);
+              color: #ffffff;
+              text-decoration: none;
+              font-size: 0.84rem;
+              font-weight: 600;
+              padding: 8px 18px;
+              border-radius: 8px;
+              box-shadow: 0 3px 10px rgba(37, 99, 235, 0.25);
+              transition: all 0.2s ease-in-out;
+              display: inline-flex;
+              align-items: center;
+              gap: 7px;
+            " onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 5px 14px rgba(37, 99, 235, 0.35)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 3px 10px rgba(37, 99, 235, 0.25)'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Download</span>
+            </a>
+          `;
+          topBar.appendChild(rightDiv);
+          body.appendChild(topBar);
+          
+          // Create Iframe Container
+          const iframeContainer = document.createElement('div');
+          iframeContainer.style.flex = '1';
+          iframeContainer.style.display = 'flex';
+          iframeContainer.style.alignItems = 'center';
+          iframeContainer.style.justifyContent = 'center';
+          iframeContainer.style.background = '#0b0f19';
+          iframeContainer.style.padding = '20px';
+          iframeContainer.style.boxSizing = 'border-box';
+          iframeContainer.style.overflow = 'hidden';
+          iframeContainer.style.transition = 'all 0.3s ease';
+          
+          const iframe = document.createElement('iframe');
+          iframe.id = 'preview-iframe';
+          iframe.src = currentUrl.toString();
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.border = 'none';
+          iframe.style.borderRadius = '8px';
+          iframe.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.5)';
+          iframe.style.background = '#ffffff';
+          iframe.style.transition = 'width 0.35s cubic-bezier(0.4, 0, 0.2, 1), height 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.35s ease, border 0.35s ease';
+          
+          iframeContainer.appendChild(iframe);
+          body.appendChild(iframeContainer);
+          
+          // Interactivity for Laptop, Tab, Phone buttons
+          const btnDesktop = body.querySelector('#view-desktop');
+          const btnTablet = body.querySelector('#view-tablet');
+          const btnMobile = body.querySelector('#view-mobile');
+          
+          let activeMode = 'desktop';
+          
+          function setView(mode) {
+            activeMode = mode;
+            [btnDesktop, btnTablet, btnMobile].forEach(btn => {
+              btn.style.background = 'transparent';
+              btn.style.color = '#64748b';
+              btn.style.boxShadow = 'none';
+              btn.style.fontWeight = '500';
+            });
+            
+            if (mode === 'desktop') {
+              btnDesktop.style.background = '#ffffff';
+              btnDesktop.style.color = '#0f172a';
+              btnDesktop.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
+              btnDesktop.style.fontWeight = '600';
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+              iframe.style.borderRadius = '8px';
+              iframe.style.border = 'none';
+            } else if (mode === 'tablet') {
+              btnTablet.style.background = '#ffffff';
+              btnTablet.style.color = '#0f172a';
+              btnTablet.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
+              btnTablet.style.fontWeight = '600';
+              iframe.style.width = '768px';
+              iframe.style.height = '1024px';
+              iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '24px';
+              iframe.style.border = '10px solid #1e293b';
+            } else if (mode === 'mobile') {
+              btnMobile.style.background = '#ffffff';
+              btnMobile.style.color = '#0f172a';
+              btnMobile.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
+              btnMobile.style.fontWeight = '600';
+              iframe.style.width = '390px';
+              iframe.style.height = '844px';
+              iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '32px';
+              iframe.style.border = '12px solid #1e293b';
+            }
+          }
+          
+          btnDesktop.addEventListener('click', () => setView('desktop'));
+          btnTablet.addEventListener('click', () => setView('tablet'));
+          btnMobile.addEventListener('click', () => setView('mobile'));
+          
+          const btns = [
+            { btn: btnDesktop, mode: 'desktop' },
+            { btn: btnTablet, mode: 'tablet' },
+            { btn: btnMobile, mode: 'mobile' }
+          ];
+          
+          btns.forEach(item => {
+            item.btn.addEventListener('mouseenter', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.color = '#1e293b';
+                item.btn.style.background = 'rgba(255, 255, 255, 0.5)';
+              }
+            });
+            item.btn.addEventListener('mouseleave', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.color = '#64748b';
+                item.btn.style.background = 'transparent';
+              }
+            });
+          });
+          
+          document.documentElement.style.visibility = 'visible';
+        });
+      }
+    })();
+  </script>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"><span class="cursor-text" id="cursor-text"></span></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Studio Follow Light -->
+    <div class="studio-follow-light" id="follow-light"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar-container" id="navbar">
+        <nav class="navbar">
+            <a href="#hero" class="nav-logo">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <span class="logo-text">Orange 16</span>
+            </a>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#hero" class="nav-link active">Overview</a>
+                <a href="#experience" class="nav-link">Engineering & Slomo</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#specifications" class="nav-link">Specifications</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="#notify" class="btn btn-primary btn-sm magnetic-btn">Notify Me</a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="#hero" class="mobile-nav-link">Overview</a>
+            <a href="#experience" class="mobile-nav-link">Engineering & Slomo</a>
+            <a href="#features" class="mobile-nav-link">Features</a>
+            <a href="#specifications" class="mobile-nav-link">Specifications</a>
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- 1. HERO SECTION  -  COMING SOON -->
+        <section class="hero-section" id="hero">
+            <div class="hero-bg-glow"></div>
+            <div class="hero-grid-lines"></div>
+
+            <div class="hero-content">
+                <div class="hero-pill-badge fade-in-element">
+                    <span class="pulse-dot"></span> THE NEXT GENERATION
+                </div>
+                
+                <h1 class="hero-title editorial-text fade-in-element">Something powerful is coming.</h1>
+                <p class="hero-subtitle fade-in-element">A new experience of performance, photography and titanium design is about to arrive.</p>
+
+                <!-- Live Countdown Timer -->
+                <div class="hero-countdown-wrapper fade-in-element">
+                    <div class="countdown-label">LAUNCHING IN</div>
+                    <div class="countdown-grid" id="hero-countdown">
+                        <div class="countdown-card">
+                            <span class="countdown-val" id="hero-days">28</span>
+                            <span class="countdown-unit">DAYS</span>
+                        </div>
+                        <div class="countdown-card">
+                            <span class="countdown-val" id="hero-hours">14</span>
+                            <span class="countdown-unit">HOURS</span>
+                        </div>
+                        <div class="countdown-card">
+                            <span class="countdown-val" id="hero-mins">36</span>
+                            <span class="countdown-unit">MIN</span>
+                        </div>
+                        <div class="countdown-card">
+                            <span class="countdown-val" id="hero-secs">52</span>
+                            <span class="countdown-unit">SEC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero CTAs -->
+                <div class="hero-cta-group fade-in-element">
+                    <a href="#notify" class="btn btn-primary magnetic-btn">
+                        <span>Notify Me</span>
+                        <i class="fa-solid fa-bell btn-icon"></i>
+                    </a>
+                    <a href="#experience" class="btn btn-glass magnetic-btn">
+                        <span>Explore Orange 16 Slomo</span>
+                        <i class="fa-solid fa-play btn-icon"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Floating 3D Image Preview -->
+            <div class="hero-visual-preview cursor-interactive" data-cursor="EXPLORE">
+                <div class="phone-glow-aura"></div>
+                <img src="ezgif-2795d339821dd144-jpg/ezgif-frame-001.jpg" alt="Orange 16 Floating Studio View" class="hero-phone-img HD-image" id="hero-phone">
+            </div>
+
+            <!-- Floating Scroll Indicator -->
+            <div class="scroll-indicator">
+                <span class="scroll-text">SCROLL TO EXPLORE</span>
+                <div class="scroll-animated-line"></div>
+            </div>
+        </section>
+
+
+        <!-- 2. SCROLL-DRIVEN & SLOW-MOTION VIDEO CINEMATIC EXPERIENCE -->
+        <section class="experience-sticky-container" id="experience">
+            <div class="sticky-viewport">
+                
+                <!-- Canvas & Video Render Container -->
+                <div class="canvas-wrapper cursor-interactive" data-cursor="EXPLORE">
+                    <canvas id="exploded-canvas" class="HD-canvas"></canvas>
+
+                    <!-- HTML5 Video Player Option -->
+                    <video id="slomo-video" class="slomo-video-element hidden" loop muted playsinline poster="ezgif-2795d339821dd144-jpg/ezgif-frame-001.jpg">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-circuit-board-elements-41584-large.mp4" type="video/mp4">
+                    </video>
+
+                    <!-- CINEMA SLOMO CONTROLS BAR -->
+                    <div class="cinema-controls-wrapper">
+
+                        <!-- Speed Controls -->
+                        <div class="speed-selector">
+                            <span class="speed-lbl">SPEED:</span>
+                            <button class="speed-btn active" data-speed="0.25">0.25x</button>
+                            <button class="speed-btn" data-speed="0.5">0.5x</button>
+                            <button class="speed-btn" data-speed="1.0">1.0x</button>
+                        </div>
+
+                        <!-- X-Ray Mode Toggle -->
+                        <button class="xray-btn" id="xray-btn" aria-label="Toggle X-Ray View">
+                            <i class="fa-solid fa-eye"></i>
+                            <span id="xray-label">X-RAY: OFF</span>
+                        </button>
+
+                        <!-- Mode Switcher: Canvas vs Video Player -->
+                        <button class="mode-switch-btn" id="mode-switch-btn">
+                            <i class="fa-solid fa-film"></i>
+                            <span id="mode-switch-text">VIDEO PLAYER MODE</span>
+                        </button>
+                    </div>
+
+                    <!-- Drag Hint Overlay -->
+                    <div class="canvas-drag-hint" id="drag-hint">
+                        <i class="fa-solid fa-hand-pointer"></i>
+                        <span>SCROLL, DRAG, OR PRESS SLOMO AUTO-PLAY</span>
+                    </div>
+
+                    <!-- Frame Loading Overlay -->
+                    <div class="canvas-loader" id="canvas-loader">
+                        <div class="loader-spinner"></div>
+                        <p class="loader-text">Loading High-Res 3D Slow-Motion Studio Frames...</p>
+                        <div class="loader-bar-bg"><div class="loader-bar-fill" id="loader-bar"></div></div>
+                    </div>
+                </div>
+
+                <!-- Interactive Hotspots ("Inside Orange 16" Engineering Museum) -->
+                <div class="hotspots-container" id="hotspots-container">
+                    
+                    <!-- Camera Hotspot -->
+                    <div class="hotspot-item cursor-interactive" data-cursor="INSPECT" style="top: 25%; left: 38%;" data-inspect="camera">
+                        <div class="hotspot-dot"></div>
+                        <svg class="hotspot-line-svg" width="140" height="80">
+                            <line x1="0" y1="40" x2="140" y2="10" stroke="rgba(59,130,246,0.6)" stroke-width="1.5" stroke-dasharray="4,4"/>
+                        </svg>
+                        <div class="hotspot-card glass-card">
+                            <span class="hotspot-tag">48MP FUSION CAMERA (CLICK TO INSPECT)</span>
+                            <h4>Anti-Reflective Optical Optics</h4>
+                            <p>2nd-gen Sensor-Shift OIS & 5x periscope lens.</p>
+                        </div>
+                    </div>
+
+                    <!-- Motherboard Hotspot -->
+                    <div class="hotspot-item cursor-interactive" data-cursor="INSPECT" style="top: 45%; left: 52%;" data-inspect="performance">
+                        <div class="hotspot-dot"></div>
+                        <svg class="hotspot-line-svg" width="140" height="80">
+                            <line x1="0" y1="20" x2="140" y2="70" stroke="rgba(59,130,246,0.6)" stroke-width="1.5" stroke-dasharray="4,4"/>
+                        </svg>
+                        <div class="hotspot-card glass-card">
+                            <span class="hotspot-tag">A18 PRO BIONIC CHIP (CLICK TO INSPECT)</span>
+                            <h4>3nm Silicon Architecture</h4>
+                            <p>6-Core GPU with 35 TOPS Neural NPU.</p>
+                        </div>
+                    </div>
+
+                    <!-- Battery Hotspot -->
+                    <div class="hotspot-item cursor-interactive" data-cursor="INSPECT" style="top: 60%; left: 45%;" data-inspect="battery">
+                        <div class="hotspot-dot"></div>
+                        <svg class="hotspot-line-svg" width="140" height="80">
+                            <line x1="0" y1="10" x2="140" y2="40" stroke="rgba(59,130,246,0.6)" stroke-width="1.5" stroke-dasharray="4,4"/>
+                        </svg>
+                        <div class="hotspot-card glass-card">
+                            <span class="hotspot-tag">HIGH-DENSITY BATTERY (CLICK TO INSPECT)</span>
+                            <h4>Stacked Cell Technology</h4>
+                            <p>MagSafe 25W wireless charging integration.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Stage HUD / Stage Headline Badge -->
+                <div class="stage-hud" id="stage-hud">
+                    <span class="hud-stage-number" id="hud-stage-num">01 / 06</span>
+                    <h3 class="hud-stage-title" id="hud-stage-title">Meet Orange 16.</h3>
+                    <p class="hud-stage-desc" id="hud-stage-desc">From one beautiful device to everything inside it.</p>
+                </div>
+
+                <!-- Pinned Overlay Text Cards -->
+                <div class="scroll-cards-container">
+                    
+                    <div class="scroll-card active" data-stage="1">
+                        <span class="card-tag">01 - ARCHITECTURAL OVERVIEW</span>
+                        <h2>Meet Orange 16.</h2>
+                        <p>Forged in Grade 5 Titanium with a micro-blasted satin texture. Experience slow-motion assembly controls.</p>
+                    </div>
+
+                    <div class="scroll-card" data-stage="2">
+                        <span class="card-tag">02 - ROTATION & CHASSIS</span>
+                        <h2>Designed around every detail.</h2>
+                        <p>Contoured titanium edges with zero-margin micro bezels form the sleekest profile ever created for an Orange Phone.</p>
+                    </div>
+
+                    <div class="scroll-card" data-stage="3">
+                        <span class="card-tag">03 - REAR CERAMIC DETACHMENT</span>
+                        <h2>Precision inside. Beauty outside.</h2>
+                        <p>The dual-ion exchange rear glass panel gently separates, exposing the thermal graphite diffusion plates within.</p>
+                    </div>
+
+                    <div class="scroll-card" data-stage="4">
+                        <span class="card-tag">04 - EXPANDED INTERNAL LAYERS</span>
+                        <h2>Engineered from the inside out.</h2>
+                        <p>The 48MP Fusion camera system, O18 Pro silicon board, stacked battery, and haptic modules float suspended in zero-gravity space.</p>
+                    </div>
+
+                    <div class="scroll-card" data-stage="5">
+                        <span class="card-tag">05 - COMPLETE TECHNICAL BLUEPRINT</span>
+                        <h2>Symmetrical Harmony.</h2>
+                        <p>50 micro-component layers aligned in calibrated technical symmetry. Every connector, bracket, and sensor engineered in unison.</p>
+                    </div>
+
+                    <div class="scroll-card" data-stage="6">
+                        <span class="card-tag">06 - RECONSTRUCTION</span>
+                        <h2>Everything comes together.</h2>
+                        <p>Ready for what's next. As you continue, every component seamlessly retracts into one unified masterpiece.</p>
+                    </div>
+
+                </div>
+
+                <!-- Progress Indicator Bar -->
+                <div class="scroll-progress-bar">
+                    <div class="scroll-progress-fill" id="experience-progress-fill"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 3. FEATURE SECTIONS ("Built for what matters.") -->
+        <section class="features-section" id="features">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">INNOVATION MATRIX</span>
+                    <h2 class="section-title editorial-text">Built for what matters.</h2>
+                    <p class="section-description">A complete leap forward in photography, processing power, visual fidelity, and physical craft.</p>
+                </div>
+
+                <!-- Large Editorial Feature 1: Camera -->
+                <div class="editorial-feature-row">
+                    <div class="editorial-text-box">
+                        <span class="feature-num-badge">CAMERA SYSTEM</span>
+                        <h3 class="editorial-feature-title">Capture more of the moment.</h3>
+                        <p class="editorial-feature-desc">
+                            The new 48MP Fusion camera system features anti-reflective optical coatings and a custom periscope telephoto lens array, delivering 5x optical zoom with zero detail loss.
+                        </p>
+                        <div class="editorial-bullets">
+                            <span><i class="fa-solid fa-check"></i> 48MP Spatial Video Capture</span>
+                            <span><i class="fa-solid fa-check"></i> 2nd-Gen Sensor-Shift OIS</span>
+                        </div>
+                        <button class="btn btn-glass btn-sm mt-4 inspect-btn" data-inspect="camera">Inspect Optics Deep-Dive <i class="fa-solid fa-magnifying-glass-plus"></i></button>
+                    </div>
+                    <div class="editorial-visual-box glass-card cursor-interactive inspect-btn" data-cursor="INSPECT" data-inspect="camera">
+                        <img src="ezgif-2795d339821dd144-jpg/ezgif-frame-004.jpg" alt="Orange 16 Camera Optics Detail" class="editorial-img HD-image">
+                    </div>
+                </div>
+
+                <!-- Large Editorial Feature 2: Performance -->
+                <div class="editorial-feature-row reverse">
+                    <div class="editorial-text-box">
+                        <span class="feature-num-badge">A18 PRO CHIP</span>
+                        <h3 class="editorial-feature-title">Power that keeps up with you.</h3>
+                        <p class="editorial-feature-desc">
+                            Built on TSMC's 2nd-generation 3-nanometer silicon technology, the O18 Pro Bionic features a 6-core GPU with hardware ray tracing and a 16-core Neural Engine.
+                        </p>
+                        <div class="editorial-bullets">
+                            <span><i class="fa-solid fa-check"></i> 35 TOPS Neural NPU</span>
+                            <span><i class="fa-solid fa-check"></i> 2x Faster Hardware Ray Tracing</span>
+                        </div>
+                        <button class="btn btn-glass btn-sm mt-4 inspect-btn" data-inspect="performance">Inspect Silicon Chip <i class="fa-solid fa-microchip"></i></button>
+                    </div>
+                    <div class="editorial-visual-box glass-card cursor-interactive inspect-btn" data-cursor="INSPECT" data-inspect="performance">
+                        <img src="ezgif-2795d339821dd144-jpg/ezgif-frame-038.jpg" alt="O18 Pro Internal Silicon Board" class="editorial-img HD-image">
+                    </div>
+                </div>
+
+                <!-- Large Editorial Feature 3: Display -->
+                <div class="editorial-feature-row">
+                    <div class="editorial-text-box">
+                        <span class="feature-num-badge">SUPER RETINA XDR</span>
+                        <h3 class="editorial-feature-title">Every detail, beautifully presented.</h3>
+                        <p class="editorial-feature-desc">
+                            Always-On ProMotion 120Hz OLED display reaching up to 2,000 nits peak outdoor brightness. Front glass shielded by Ceramic Shield 2.0.
+                        </p>
+                        <div class="editorial-bullets">
+                            <span><i class="fa-solid fa-check"></i> 2,000 Nits Outdoor Peak</span>
+                            <span><i class="fa-solid fa-check"></i> 1Hz to 120Hz ProMotion</span>
+                        </div>
+                        <button class="btn btn-glass btn-sm mt-4 inspect-btn" data-inspect="display">Inspect Display Matrix <i class="fa-solid fa-display"></i></button>
+                    </div>
+                    <div class="editorial-visual-box glass-card cursor-interactive inspect-btn" data-cursor="INSPECT" data-inspect="display">
+                        <img src="ezgif-2795d339821dd144-jpg/ezgif-frame-042.jpg" alt="Super Retina XDR Display" class="editorial-img HD-image">
+                    </div>
+                </div>
+
+                <!-- Large Editorial Feature 4: Battery (REDESIGNED 3D BATTERY GAUGE WIDGET) -->
+                <div class="editorial-feature-row reverse">
+                    <div class="editorial-text-box">
+                        <span class="feature-num-badge">ALL-DAY POWER</span>
+                        <h3 class="editorial-feature-title">Made to keep going.</h3>
+                        <p class="editorial-feature-desc">
+                            Re-engineered battery cell architecture offering up to 29 hours of continuous video playback, supported by 25W MagSafe fast wireless charging.
+                        </p>
+
+                        <!-- APPLE 3D BATTERY GAUGE WIDGET -->
+                        <div class="apple-battery-widget glass-card mt-4">
+                            <div class="battery-widget-header">
+                                <div class="battery-status-badge">
+                                    <span class="magsafe-pulse"></span>
+                                    <span>MagSafe 25W Charging Active</span>
+                                </div>
+                                <span class="battery-percentage" id="battery-pct-text">100%</span>
+                            </div>
+                            
+                            <!-- 10 Segmented Glowing Power Cells -->
+                            <div class="battery-segments-grid" id="battery-segments">
+                                <div class="b-segment active"></div>
+                                <div class="b-segment active"></div>
+                                <div class="b-segment active"></div>
+                                <div class="b-segment active"></div>
+                                <div class="b-segment active"></div>
+                                <div class="b-segment active"></div>
+                                <div class="b-segment active"></div>
+                                <div class="b-segment active"></div>
+                                <div class="b-segment active"></div>
+                                <div class="b-segment active"></div>
+                            </div>
+
+                            <div class="battery-metrics-row">
+                                <div class="b-metric">
+                                    <span class="bm-val" id="battery-hours">29 hrs</span>
+                                    <span class="bm-lbl">Video Playback</span>
+                                </div>
+                                <div class="b-metric">
+                                    <span class="bm-val">30 mins</span>
+                                    <span class="bm-lbl">50% Fast Charge</span>
+                                </div>
+                                <div class="b-metric">
+                                    <span class="bm-val">100%</span>
+                                    <span class="bm-lbl">Recycled Cobalt</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-glass btn-sm mt-4 inspect-btn" data-inspect="battery">Inspect Battery Architecture <i class="fa-solid fa-battery-full"></i></button>
+                    </div>
+                    <div class="editorial-visual-box glass-card cursor-interactive inspect-btn" data-cursor="INSPECT" data-inspect="battery">
+                        <img src="ezgif-2795d339821dd144-jpg/ezgif-frame-032.jpg" alt="Internal Battery Cell" class="editorial-img HD-image">
+                    </div>
+                </div>
+
+
+                <!-- Horizontal Interactive Feature Cards -->
+                <div class="horizontal-cards-header">
+                    <h3 class="editorial-text">Explore Feature Breakdown</h3>
+                </div>
+
+                <div class="horizontal-cards-grid">
+                    
+                    <div class="h-card glass-card inspect-btn" data-inspect="camera">
+                        <span class="h-card-num">01</span>
+                        <h4>CAMERA</h4>
+                        <p>Capture stunning photos and cinematic video with spatial recording.</p>
+                    </div>
+
+                    <div class="h-card glass-card inspect-btn" data-inspect="performance">
+                        <span class="h-card-num">02</span>
+                        <h4>PERFORMANCE</h4>
+                        <p>Fast, responsive, and ready for on-device generative AI models.</p>
+                    </div>
+
+                    <div class="h-card glass-card inspect-btn" data-inspect="display">
+                        <span class="h-card-num">03</span>
+                        <h4>DISPLAY</h4>
+                        <p>Immersive OLED visuals with ultra-thin micro-bezel geometry.</p>
+                    </div>
+
+                    <div class="h-card glass-card inspect-btn" data-inspect="design">
+                        <span class="h-card-num">04</span>
+                        <h4>DESIGN</h4>
+                        <p>Aerospace Grade 5 titanium chassis with micro-blasted finish.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Color Showcase Section Removed -->
+
+
+
+        <!-- 5. TECHNICAL SPECIFICATIONS ("The details behind the experience.") -->
+        <section class="specs-section" id="specifications">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">HARDWARE MATRIX</span>
+                    <h2 class="section-title editorial-text">The details behind the experience.</h2>
+                    <p class="section-description">Comprehensive engineering specifications powering Orange 16 Pro.</p>
+                </div>
+
+                <!-- Interactive Dimension & Weight Comparison Tool -->
+                <div class="model-comparison-box glass-card mb-5">
+                    <div class="comp-header">
+                        <span class="comp-badge"><i class="fa-solid fa-ruler-combined"></i> INTERACTIVE SIZE & WEIGHT COMPARISON</span>
+                        <h3>Compare Orange 16 Pro Models & Predecessors</h3>
+                    </div>
+                    <div class="comp-selector">
+                        <button class="comp-btn active" data-model="16pro">Orange 16 Pro (6.3")</button>
+                        <button class="comp-btn" data-model="16promax">Orange 16 Pro Max (6.9")</button>
+                        <button class="comp-btn" data-model="15pro">Orange Phone 15 Pro (6.1")</button>
+                    </div>
+                    <div class="comp-metrics-grid" id="comp-metrics">
+                        <div class="metric-card">
+                            <span class="m-val" id="comp-screen">6.3"</span>
+                            <span class="m-lbl">Display Diagonal</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="m-val" id="comp-weight">199 g</span>
+                            <span class="m-lbl">Weight</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="m-val" id="comp-thick">8.25 mm</span>
+                            <span class="m-lbl">Thickness</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="m-val" id="comp-bezel">0.8 mm</span>
+                            <span class="m-lbl">Bezel Width</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spec Tabs -->
+                <div class="specs-tabs">
+                    <button class="spec-tab-btn active" data-category="display">Display</button>
+                    <button class="spec-tab-btn" data-category="camera">Camera</button>
+                    <button class="spec-tab-btn" data-category="performance">Performance</button>
+                    <button class="spec-tab-btn" data-category="battery">Battery</button>
+                    <button class="spec-tab-btn" data-category="connectivity">Connectivity</button>
+                    <button class="spec-tab-btn" data-category="design">Design</button>
+                </div>
+
+                <!-- Spec Editorial 2-Column Layout -->
+                <div class="specs-grid-wrapper">
+                    
+                    <!-- Display Specs -->
+                    <div class="spec-category-content active" id="spec-display">
+                        <div class="specs-grid">
+                            <div class="spec-card glass-card inspect-btn" data-inspect="display">
+                                <span class="spec-card-lbl">Display Technology</span>
+                                <h4 class="spec-card-val">Super Retina XDR OLED</h4>
+                                <p class="spec-card-desc">All‑screen OLED display with 2868-by-1320-pixel resolution at 460 ppi</p>
+                            </div>
+                            <div class="spec-card glass-card inspect-btn" data-inspect="display">
+                                <span class="spec-card-lbl">Refresh Rate</span>
+                                <h4 class="spec-card-val">ProMotion 120Hz</h4>
+                                <p class="spec-card-desc">Adaptive refresh rates from 1Hz up to 120Hz for fluid scrolling</p>
+                            </div>
+                            <div class="spec-card glass-card inspect-btn" data-inspect="display">
+                                <span class="spec-card-lbl">Peak Brightness</span>
+                                <h4 class="spec-card-val">2,000 Nits</h4>
+                                <p class="spec-card-desc">1,000 nits max typical, 1,600 nits peak HDR, 2,000 nits peak outdoor</p>
+                            </div>
+                            <div class="spec-card glass-card inspect-btn" data-inspect="display">
+                                <span class="spec-card-lbl">Glass Coating</span>
+                                <h4 class="spec-card-val">Ceramic Shield 2.0</h4>
+                                <p class="spec-card-desc">2x tougher than any smartphone glass on the market</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Camera Specs -->
+                    <div class="spec-category-content" id="spec-camera">
+                        <div class="specs-grid">
+                            <div class="spec-card glass-card inspect-btn" data-inspect="camera">
+                                <span class="spec-card-lbl">Main Sensor</span>
+                                <h4 class="spec-card-val">48MP Fusion</h4>
+                                <p class="spec-card-desc">24mm, ƒ/1.78 aperture, 2nd-gen sensor-shift OIS, 100% Focus Pixels</p>
+                            </div>
+                            <div class="spec-card glass-card inspect-btn" data-inspect="camera">
+                                <span class="spec-card-lbl">Ultra Wide</span>
+                                <h4 class="spec-card-val">48MP Ultra Wide</h4>
+                                <p class="spec-card-desc">13mm, ƒ/2.2 aperture, 120° field of view, Hybrid Focus Pixels</p>
+                            </div>
+                            <div class="spec-card glass-card inspect-btn" data-inspect="camera">
+                                <span class="spec-card-lbl">Telephoto Zoom</span>
+                                <h4 class="spec-card-val">5x Lossless Zoom</h4>
+                                <p class="spec-card-desc">120mm, ƒ/2.8 aperture, 3D sensor-shift optical image stabilization</p>
+                            </div>
+                            <div class="spec-card glass-card inspect-btn" data-inspect="camera">
+                                <span class="spec-card-lbl">Video Recording</span>
+                                <h4 class="spec-card-val">4K Dolby Vision 120 FPS</h4>
+                                <p class="spec-card-desc">Spatial video capture, Cinematic mode up to 4K HDR at 60 fps</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Specs -->
+                    <div class="spec-category-content" id="spec-performance">
+                        <div class="specs-grid">
+                            <div class="spec-card glass-card inspect-btn" data-inspect="performance">
+                                <span class="spec-card-lbl">Processor Silicon</span>
+                                <h4 class="spec-card-val">O18 Pro Bionic</h4>
+                                <p class="spec-card-desc">6-core CPU with 2 performance cores and 4 efficiency cores</p>
+                            </div>
+                            <div class="spec-card glass-card inspect-btn" data-inspect="performance">
+                                <span class="spec-card-lbl">Graphics Unit</span>
+                                <h4 class="spec-card-val">6-Core GPU</h4>
+                                <p class="spec-card-desc">Hardware-accelerated ray tracing 2x faster than previous generation</p>
+                            </div>
+                            <div class="spec-card glass-card inspect-btn" data-inspect="performance">
+                                <span class="spec-card-lbl">Neural NPU</span>
+                                <h4 class="spec-card-val">16-Core NPU</h4>
+                                <p class="spec-card-desc">35 Trillion operations per second for on-device generative AI</p>
+                            </div>
+                            <div class="spec-card glass-card inspect-btn" data-inspect="performance">
+                                <span class="spec-card-lbl">Fabrication Node</span>
+                                <h4 class="spec-card-val">3nm Generation 2</h4>
+                                <p class="spec-card-desc">Industry leading TSMC 3-nanometer silicon technology</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Battery Specs -->
+                    <div class="spec-category-content" id="spec-battery">
+                        <div class="specs-grid">
+                            <div class="spec-card glass-card inspect-btn" data-inspect="battery">
+                                <span class="spec-card-lbl">Playback Hours</span>
+                                <h4 class="spec-card-val">Up to 29 Hours</h4>
+                                <p class="spec-card-desc">Extended energy capacity for continuous video streaming</p>
+                            </div>
+                            <div class="spec-card glass-card inspect-btn" data-inspect="battery">
+                                <span class="spec-card-lbl">Wireless Charge</span>
+                                <h4 class="spec-card-val">MagSafe 25W</h4>
+                                <p class="spec-card-desc">Up to 50% charge in around 30 minutes with 30W adapter</p>
+                            </div>
+                            <div class="spec-card glass-card inspect-btn" data-inspect="battery">
+                                <span class="spec-card-lbl">Wired Data Port</span>
+                                <h4 class="spec-card-val">USB-C 3.0 (10Gbps)</h4>
+                                <p class="spec-card-desc">High-speed file transfer speeds and DisplayPort 4K video out</p>
+                            </div>
+                            <div class="spec-card glass-card inspect-btn" data-inspect="battery">
+                                <span class="spec-card-lbl">Sustainability</span>
+                                <h4 class="spec-card-val">100% Recycled Cobalt</h4>
+                                <p class="spec-card-desc">Environmentally conscious interior battery cell composition</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Connectivity Specs -->
+                    <div class="spec-category-content" id="spec-connectivity">
+                        <div class="specs-grid">
+                            <div class="spec-card glass-card">
+                                <span class="spec-card-lbl">Wi-Fi Protocol</span>
+                                <h4 class="spec-card-val">Wi-Fi 7 (802.11be)</h4>
+                                <p class="spec-card-desc">2x2 MIMO with multi-link operation for ultra-low latency</p>
+                            </div>
+                            <div class="spec-card glass-card">
+                                <span class="spec-card-lbl">Cellular Data</span>
+                                <h4 class="spec-card-val">5G Advanced</h4>
+                                <p class="spec-card-desc">Sub-6 GHz and mmWave with 4x4 MIMO for global connectivity</p>
+                            </div>
+                            <div class="spec-card glass-card">
+                                <span class="spec-card-lbl">Ultra Wideband</span>
+                                <h4 class="spec-card-val">2nd-Gen UWB Chip</h4>
+                                <p class="spec-card-desc">Precision finding for AirTags and Find My friends at 3x range</p>
+                            </div>
+                            <div class="spec-card glass-card">
+                                <span class="spec-card-lbl">Satellite Features</span>
+                                <h4 class="spec-card-val">Emergency SOS</h4>
+                                <p class="spec-card-desc">Roadside Assistance & Messaging via Satellite outside cell range</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Design Specs -->
+                    <div class="spec-category-content" id="spec-design">
+                        <div class="specs-grid">
+                            <div class="spec-card glass-card inspect-btn" data-inspect="design">
+                                <span class="spec-card-lbl">Enclosure Material</span>
+                                <h4 class="spec-card-val">Grade 5 Titanium</h4>
+                                <p class="spec-card-desc">Micro-blasted finish in White, Space Black, Natural, and Desert</p>
+                            </div>
+                            <div class="spec-card glass-card inspect-btn" data-inspect="design">
+                                <span class="spec-card-lbl">Protection Rating</span>
+                                <h4 class="spec-card-val">IP68 Water Resistant</h4>
+                                <p class="spec-card-desc">Submersible up to 6 meters for 30 minutes under IEC standard</p>
+                            </div>
+                            <div class="spec-card glass-card inspect-btn" data-inspect="design">
+                                <span class="spec-card-lbl">Custom Keys</span>
+                                <h4 class="spec-card-val">Action Button & Camera Control</h4>
+                                <p class="spec-card-desc">Haptic touch surface with pressure-sensitive slide controls</p>
+                            </div>
+                            <div class="spec-card glass-card inspect-btn" data-inspect="design">
+                                <span class="spec-card-lbl">Dimensions & Weight</span>
+                                <h4 class="spec-card-val">149.6 x 71.5 x 8.25 mm</h4>
+                                <p class="spec-card-desc">Lightweight 199 grams engineering balance</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 6. ABOUT SECTION ("More than a phone.") -->
+        <section class="about-section" id="about">
+            <div class="section-container">
+                <div class="about-editorial-wrapper text-center">
+                    <span class="section-badge">PRODUCT PHILOSOPHY</span>
+                    <h2 class="about-heading editorial-text">More than a phone.</h2>
+                    
+                    <div class="about-quote-box">
+                        <p class="quote-large">"Technology should feel simple."</p>
+                        <p class="quote-sub">The complexity stays inside. The experience stays effortless.</p>
+                    </div>
+
+                    <div class="about-columns-grid">
+                        <div class="about-col">
+                            <h4>Design Philosophy</h4>
+                            <p>Every millimeter of Orange 16 Pro has been evaluated to optimize structural stiffness while minimizing total device weight through Grade 5 titanium alloying.</p>
+                        </div>
+
+                        <div class="about-col">
+                            <h4>Privacy-First AI</h4>
+                            <p>On-device neural execution ensures that generative machine learning algorithms operate with 100% local encryption and zero external data leaks.</p>
+                        </div>
+
+                        <div class="about-col">
+                            <h4>Sustainable Engineering</h4>
+                            <p>Constructed using 100% recycled aluminum internal subframes and 100% recycled cobalt in the battery cell matrix.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 7. LAUNCH COUNTDOWN SECTION -->
+        <section class="launch-countdown-section" id="countdown">
+            <div class="section-container text-center">
+                <span class="section-badge">WORLDWIDE RELEASE</span>
+                <h2 class="countdown-heading editorial-text">The wait is almost over.</h2>
+                
+                <div class="launch-clock-container" id="launch-clock">
+                    <div class="clock-box glass-card">
+                        <span class="clock-number" id="clock-days">28</span>
+                        <span class="clock-label">DAYS</span>
+                    </div>
+                    <div class="clock-box glass-card">
+                        <span class="clock-number" id="clock-hours">14</span>
+                        <span class="clock-label">HOURS</span>
+                    </div>
+                    <div class="clock-box glass-card">
+                        <span class="clock-number" id="clock-mins">36</span>
+                        <span class="clock-label">MINUTES</span>
+                    </div>
+                    <div class="clock-box glass-card">
+                        <span class="clock-number" id="clock-secs">52</span>
+                        <span class="clock-label">SECONDS</span>
+                    </div>
+                </div>
+
+                <div class="launch-status-msg hidden" id="launch-status-msg">
+                    <h3 class="status-active-title">Orange 16 is here.</h3>
+                    <a href="#features" class="btn btn-primary magnetic-btn mt-4">Explore the experience →</a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 8. NOTIFY ME SECTION -->
+        <section class="notify-section" id="notify">
+            <div class="section-container">
+                <div class="notify-card glass-card text-center">
+                    <span class="section-badge">VIP LAUNCH UPDATES</span>
+                    <h2 class="editorial-text">Be the first to know.</h2>
+                    <p class="notify-desc">Get launch updates and product news delivered directly to your inbox.</p>
+
+                    <form class="notify-form" id="notify-form">
+                        <div class="notify-input-group">
+                            <input type="email" id="notify-email" class="notify-input" placeholder="Enter your email address" required>
+                            <button type="submit" class="btn btn-primary magnetic-btn" id="notify-btn">
+                                <span>Notify Me</span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="notify-success hidden" id="notify-success">
+                        <i class="fa-solid fa-circle-check success-icon"></i>
+                        <h3>You're on the list.</h3>
+                        <p>We'll send you an invitation the moment pre-orders open.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 9. CONTACT SECTION -->
+        <section class="contact-section" id="contact">
+            <div class="section-container">
+                <div class="contact-grid">
+                    
+                    <div class="contact-info-col">
+                        <span class="section-badge">GET IN TOUCH</span>
+                        <h2 class="contact-heading editorial-text">Let's stay connected.</h2>
+                        <p class="contact-sub">Reach out to our global launch support team for media, press, or enterprise inquiries.</p>
+
+                        <div class="contact-detail-list">
+                            <div class="detail-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <div>
+                                    <span class="detail-label">Email</span>
+                                    <a href="mailto:hello@example.com" class="detail-val">hello@example.com</a>
+                                </div>
+                            </div>
+
+                            <div class="detail-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <div>
+                                    <span class="detail-label">Phone</span>
+                                    <span class="detail-val">+91 XXX XXX XXXX</span>
+                                </div>
+                            </div>
+
+                            <div class="detail-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div>
+                                    <span class="detail-label">Location</span>
+                                    <span class="detail-val">India</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-col">
+                        <form class="contact-form glass-card" id="contact-form">
+                            <div class="form-group">
+                                <label for="contact-name" class="form-label">Name</label>
+                                <input type="text" id="contact-name" class="form-input" placeholder="Your full name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-email" class="form-label">Email</label>
+                                <input type="email" id="contact-email" class="form-input" placeholder="name@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-subject" class="form-label">Subject</label>
+                                <input type="text" id="contact-subject" class="form-input" placeholder="e.g. Enterprise Pre-Order Interest">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-message" class="form-label">Message</label>
+                                <textarea id="contact-message" class="form-input form-textarea" placeholder="Your message..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block magnetic-btn" id="contact-submit-btn">
+                                <span>Send Message</span>
+                                <i class="fa-solid fa-paper-plane btn-icon"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Interactive Component Deep-Dive Inspection Modal -->
+    <div class="inspector-modal-overlay" id="inspector-modal">
+        <div class="inspector-modal-content glass-card">
+            <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Inspector Modal"><i class="fa-solid fa-xmark"></i></button>
+
+            <div class="modal-body-grid">
+                <div class="modal-visual-col">
+                    <img src="ezgif-2795d339821dd144-jpg/ezgif-frame-038.jpg" alt="Component Inspection" id="modal-img" class="modal-img HD-image">
+                    <span class="modal-badge-label" id="modal-tag">A18 PRO SILICON CORE</span>
+                </div>
+                
+                <div class="modal-info-col">
+                    <h2 class="modal-title" id="modal-title">O18 Pro Bionic Architecture</h2>
+                    <p class="modal-desc" id="modal-desc">Engineered on industry-leading 3nm silicon with 16-core NPU executing 35 trillion neural operations per second.</p>
+                    
+                    <div class="modal-specs-list" id="modal-specs-list">
+                        <div class="modal-spec-row">
+                            <span class="lbl">Fabrication Node</span>
+                            <span class="val">TSMC 3nm Gen 2</span>
+                        </div>
+                        <div class="modal-spec-row">
+                            <span class="lbl">Transistor Count</span>
+                            <span class="val">19 Billion</span>
+                        </div>
+                        <div class="modal-spec-row">
+                            <span class="lbl">Neural TOPS</span>
+                            <span class="val">35 Trillion Ops/Sec</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-comparison">
+                        <span class="comp-label">Generation Performance Gain</span>
+                        <div class="comp-bar-container">
+                            <div class="comp-bar-fill" id="modal-comp-bar" style="width: 85%;"></div>
+                        </div>
+                        <span class="comp-subtext" id="modal-comp-sub">+20% CPU speed vs previous A17 Pro generation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <i class="fa-solid fa-mobile-screen-button footer-logo"></i>
+                    <span class="footer-title">Orange 16</span>
+                </div>
+                <p class="footer-tagline">The next chapter starts here.</p>
+            </div>
+            
+            <div class="footer-links-row">
+                <a href="#hero">Overview</a>
+                <a href="#features">Features</a>
+                <a href="#experience">Technology</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+
+            <div class="footer-bottom">
+                <span class="footer-copy">Copyright © 2026 Orange Mobile Inc. All rights reserved.</span>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- GSAP & ScrollTrigger Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Application Logic -->
+    <script src="app.js"></script>
+</body>
+</html>

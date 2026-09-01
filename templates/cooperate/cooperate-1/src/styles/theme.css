@@ -1,0 +1,89 @@
+/* ==========================================================================
+   NEXORA WARM LUXURY TECHNOLOGY DESIGN SYSTEM & THEME TOKENS
+   Charcoal + Ivory + Champagne Gold + Muted Sage
+   ========================================================================== */
+
+:root {
+  /* Color Palette - Warm Luxury Technology Palette */
+  --bg-primary: #11110F;
+  --bg-secondary: #181714;
+  --surface: #211F1A;
+  --surface-elevated: #28251F;
+  --bg-card: #211F1A;
+  --bg-card-hover: #28251F;
+  --bg-glass: rgba(33, 31, 26, 0.75);
+  --bg-glass-heavy: rgba(17, 17, 15, 0.85);
+
+  /* Typography Colors */
+  --text-primary: #F4F0E8;
+  --text-secondary: #AAA59A;
+  --text-muted: #777268;
+  --text-inverse: #11110F;
+
+  /* Accent & Highlight Colors - Champagne Gold & Muted Sage */
+  --accent: #C8A96B;
+  --accent-light: #E2C98D;
+  --accent-highlight: #E2C98D;
+  --accent-secondary: #8FA7A0; /* Soft Sage */
+  --accent-glow: rgba(200, 169, 107, 0.20);
+  --accent-soft: rgba(200, 169, 107, 0.12);
+  --accent-dark: #A58444;
+
+  --color-sage: #8FA7A0;
+  --color-gold: #C8A96B;
+  --color-emerald: #8FA7A0;
+  --color-amber: #D4AF37;
+
+  /* Borders */
+  --border: rgba(244, 240, 232, 0.10);
+  --border-subtle: rgba(244, 240, 232, 0.07);
+  --border-medium: rgba(244, 240, 232, 0.15);
+  --border-card: rgba(244, 240, 232, 0.08);
+  --border-bright: rgba(200, 169, 107, 0.40);
+  --border-glow: rgba(226, 201, 141, 0.50);
+
+  /* Light Section Tokens (Visual Rhythm) */
+  --bg-light: #F0ECE3;
+  --bg-light-surface: #F8F5EE;
+  --bg-light-alt: #EFEAE0;
+  --bg-light-warm: #E7E1D5;
+  --text-light-primary: #171613;
+  --text-light-secondary: #625E55;
+  --text-light-muted: #8A857B;
+  --accent-light-mode: #9B7840;
+  --border-light: rgba(23, 22, 19, 0.10);
+  --border-light-subtle: rgba(23, 22, 19, 0.06);
+
+  /* Shadows & Depth */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 24px 56px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 35px rgba(200, 169, 107, 0.16);
+  --shadow-glow-lg: 0 0 65px rgba(200, 169, 107, 0.22);
+
+  /* Typography - Manrope Exclusive System */
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Grotesk', 'Manrope', monospace;
+
+  /* Spacing & Dimensions */
+  --container: 1380px;
+  --max-width-site: 1380px;
+  --max-width-content: 720px;
+  --max-width-heading: 900px;
+  --header-height: 84px;
+  --header-height-mobile: 72px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Border Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+}

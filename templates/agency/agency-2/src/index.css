@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-paper: #F7F4EE;
+    --bg-warm-white: #FFFDF9;
+    --text-primary: #181818;
+    --text-secondary: #68635C;
+    --accent-coral: #E86F51;
+    --accent-lavender: #C8B6FF;
+    --soft-coral: #F1D8CF;
+    --soft-lavender: #E8E1F4;
+    --border-subtle: rgba(24, 24, 24, 0.12);
+  }
+
+  html {
+    background-color: #F7F4EE;
+    color: #181818;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #F7F4EE;
+    overflow-x: hidden;
+    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  }
+
+  ::selection {
+    background: #E86F51;
+    color: #FFFFFF;
+  }
+}
+
+/* Custom Typography Utilities */
+.font-display {
+  font-family: "Space Grotesk", sans-serif;
+}
+.font-body {
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+}
+.font-mono {
+  font-family: "Space Mono", monospace;
+}
+
+/* Custom Colors */
+.bg-paper { background-color: #F7F4EE; }
+.bg-warm-white { background-color: #FFFDF9; }
+.text-ink-primary { color: #181818; }
+.text-ink-secondary { color: #68635C; }
+.text-ink-muted { color: rgba(24, 24, 24, 0.55); }
+.border-ink-border { border-color: rgba(24, 24, 24, 0.12); }
+.text-accent-coral { color: #E86F51; }
+.bg-accent-coral { background-color: #E86F51; }
+.border-accent-coral { border-color: #E86F51; }
+.text-accent-lavender { color: #C8B6FF; }
+.bg-accent-lavender { background-color: #C8B6FF; }
+.border-accent-lavender { border-color: #C8B6FF; }
+
+/* Light Glassmorphism and Materials */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(24, 24, 24, 0.10);
+  box-shadow: 0 12px 40px rgba(60, 45, 30, 0.06);
+}
+
+.glass-panel-subtle {
+  background: rgba(255, 253, 249, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(24, 24, 24, 0.08);
+}
+
+.glass-panel-strong {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(24, 24, 24, 0.12);
+  box-shadow: 0 16px 48px rgba(60, 45, 30, 0.09);
+}
+
+/* Atmospheric Gradients */
+.bg-mesh-editorial {
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(232, 111, 81, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(200, 182, 255, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(241, 216, 207, 0.04) 0%, transparent 60%);
+}
+
+.bg-mesh-subtle {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(200, 182, 255, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 20% 90%, rgba(232, 111, 81, 0.05) 0%, transparent 50%);
+}
+
+/* Hide scrollbar for clean horizontal reels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Scrollbar for desktop */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F4EE;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(24, 24, 24, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E86F51;
+}
+
+/* Editorial typography outline */
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(24, 24, 24, 0.35);
+  color: transparent;
+}
+
+.text-stroke-strong {
+  -webkit-text-stroke: 1.5px rgba(24, 24, 24, 0.85);
+  color: transparent;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.25s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.3s ease-out forwards;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print, header, footer, nav, .fixed {
+    display: none !important;
+  }
+  .glass-panel, .glass-panel-strong {
+    background: none !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+}

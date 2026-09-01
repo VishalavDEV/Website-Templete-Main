@@ -1,0 +1,98 @@
+[
+  {
+    "rank": 1,
+    "entity": "OpenAI",
+    "type": "Lab / Enterprise",
+    "innovationScore": 99,
+    "impactScore": 100,
+    "momentumScore": 96,
+    "category": "Foundation Models",
+    "valuation": "$157B",
+    "change": "+0",
+    "highlights": "Pioneered ChatGPT, GPT-4o omni models, o1/o3 reasoning paradigm, and Sora."
+  },
+  {
+    "rank": 2,
+    "entity": "Nvidia",
+    "type": "Hardware / Compute",
+    "innovationScore": 97,
+    "impactScore": 100,
+    "momentumScore": 99,
+    "category": "Compute & Infrastructure",
+    "valuation": "$3.4T",
+    "change": "+0",
+    "highlights": "Exclusive supplier of Hopper and Blackwell GPU architectures powering 90%+ of AI training."
+  },
+  {
+    "rank": 3,
+    "entity": "Anthropic",
+    "type": "Research Lab",
+    "innovationScore": 98,
+    "impactScore": 95,
+    "momentumScore": 98,
+    "category": "Foundation Models",
+    "valuation": "$40B",
+    "change": "+1",
+    "highlights": "Created Claude 3.5 Sonnet, dominating coding benchmarks and pioneering Computer Use."
+  },
+  {
+    "rank": 4,
+    "entity": "Google DeepMind",
+    "type": "Research Lab",
+    "innovationScore": 96,
+    "impactScore": 96,
+    "momentumScore": 94,
+    "category": "Frontier Science",
+    "valuation": "Alphabet Subsidiary",
+    "change": "-1",
+    "highlights": "Breakthroughs in AlphaFold 3 protein prediction, AlphaProof math reasoning, and 2M token context."
+  },
+  {
+    "rank": 5,
+    "entity": "Meta AI (FAIR)",
+    "type": "Open Science Lab",
+    "innovationScore": 95,
+    "impactScore": 94,
+    "momentumScore": 95,
+    "category": "Open Weights",
+    "valuation": "Meta Subsidiary",
+    "change": "+2",
+    "highlights": "Spearheading the open-source revolution with Llama 3.1 405B and Segment Anything."
+  },
+  {
+    "rank": 6,
+    "entity": "DeepSeek AI",
+    "type": "Research Lab",
+    "innovationScore": 97,
+    "impactScore": 93,
+    "momentumScore": 100,
+    "category": "Open Weights",
+    "valuation": "High-Flyer Startup",
+    "change": "+4",
+    "highlights": "Invented Multi-head Latent Attention and DeepSeek-R1 reinforcement reasoning at 1/20th compute cost."
+  },
+  {
+    "rank": 7,
+    "entity": "Figure AI",
+    "type": "Robotics Lab",
+    "innovationScore": 94,
+    "impactScore": 88,
+    "momentumScore": 96,
+    "category": "Physical AI & Robotics",
+    "valuation": "$2.6B",
+    "change": "+1",
+    "highlights": "Deploying Figure 02 humanoids in commercial BMW factory assembly lines with voice autonomy."
+  },
+  {
+    "rank": 8,
+    "entity": "Mistral AI",
+    "type": "Research Lab",
+    "innovationScore": 92,
+    "impactScore": 89,
+    "momentumScore": 92,
+    "category": "Open Weights",
+    "valuation": "$6.2B",
+    "change": "-2",
+    "highlights": "Europe's leading AI powerhouse producing Mistral Large 2, Codestral, and Pixtral."
+  }
+]

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080b12" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    
+    <!-- VERTEX Brand Gradient -->
+    <linearGradient id="vGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="50%" stop-color="#7000ff" />
+      <stop offset="100%" stop-color="#e0aaff" />
+    </linearGradient>
+    
+    <!-- Accent Gradients -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#0088ff" />
+    </linearGradient>
+    <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff007f" />
+      <stop offset="100%" stop-color="#9d4edd" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="coreGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Container Base with Neon Rim -->
+  <rect width="512" height="512" rx="120" fill="url(#bgGrad)" stroke="url(#cyanGrad)" stroke-width="10" />
+
+  <!-- Quantum Orbits (Quantum Computing & AI Theme) -->
+  <ellipse cx="256" cy="256" rx="200" ry="75" fill="none" stroke="url(#cyanGrad)" stroke-width="7" stroke-dasharray="14 10" opacity="0.65" transform="rotate(-30 256 256)" />
+  <ellipse cx="256" cy="256" rx="200" ry="75" fill="none" stroke="url(#pinkGrad)" stroke-width="7" stroke-dasharray="14 10" opacity="0.65" transform="rotate(30 256 256)" />
+
+  <!-- Orbit Nodes -->
+  <circle cx="102" cy="168" r="14" fill="#00f0ff" filter="url(#coreGlow)" />
+  <circle cx="410" cy="168" r="14" fill="#00f0ff" filter="url(#coreGlow)" />
+  <circle cx="256" cy="430" r="15" fill="#ff007f" filter="url(#coreGlow)" />
+
+  <!-- Stylized VERTEX "V" Logo Mark -->
+  <!-- Left Leg -->
+  <path d="M 115 135 L 235 390 L 275 390 L 195 135 Z" fill="url(#vGrad)" filter="url(#glow)" />
+  <!-- Right Leg -->
+  <path d="M 397 135 L 277 390 L 237 390 L 317 135 Z" fill="url(#vGrad)" filter="url(#glow)" />
+
+  <!-- Tech Circuit Node Core (Robotics & Quantum Central Vertex) -->
+  <polygon points="256,155 292,215 256,275 220,215" fill="url(#cyanGrad)" filter="url(#coreGlow)" />
+  <polygon points="256,175 277,215 256,255 235,215" fill="#ffffff" />
+  
+  <!-- Circuit Trace Connections -->
+  <line x1="115" y1="135" x2="220" y2="215" stroke="#00f0ff" stroke-width="6" opacity="0.8" />
+  <line x1="397" y1="135" x2="292" y2="215" stroke="#00f0ff" stroke-width="6" opacity="0.8" />
+  <line x1="256" y1="275" x2="256" y2="415" stroke="#ff007f" stroke-width="6" opacity="0.8" />
+
+  <!-- Center Quantum Particle -->
+  <circle cx="256" cy="215" r="7" fill="#080b12" />
+</svg>

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURELIA CHRONOS | 18K Solid Gold Haute Horlogerie - Global Premiere</title>
+    <meta name="description" content="A luxurious 18k golden watch floating with antigravity levitation against an obsidian studio backdrop. Interactive 360-degree turntable, material customizer, and 28,800 vph escapement audio.">
+    <meta name="keywords" content="Aurelia Chronos, Luxury Gold Watch, Haute Horlogerie, Swiss Automatic, 18K Solid Gold, Coming Soon, Antigravity 3D, Geneva Premiere">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#fff9e6',
+                            200: '#fae8b4',
+                            300: '#f3cf7a',
+                            400: '#e5b342',
+                            500: '#cca028',
+                            600: '#a98018',
+                            700: '#7e5c0e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        cinzel: ['"Cinzel"', 'serif'],
+                        decorative: ['"Cinzel Decorative"', '"Cinzel"', 'serif'],
+                        mono: ['"Space Mono"', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#040508] text-slate-100 overflow-x-hidden font-sans">
+
+  <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+  <script>
+    (function() {
+      const isPlatform = window.location.host === 'localhost:5173' || window.location.host === '127.0.0.1:5173';
+      const isTop = window.self === window.top;
+      const urlParams = new URLSearchParams(window.location.search);
+      const isIframe = urlParams.get('iframe') === 'true';
+      
+      if (isPlatform && isTop && !isIframe) {
+        document.documentElement.style.visibility = 'hidden';
+        
+        window.addEventListener('DOMContentLoaded', () => {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.searchParams.set('iframe', 'true');
+          
+          const body = document.body;
+          body.innerHTML = '';
+          body.style.margin = '0';
+          body.style.padding = '0';
+          body.style.height = '100vh';
+          body.style.width = '100vw';
+          body.style.display = 'flex';
+          body.style.flexDirection = 'column';
+          body.style.overflow = 'hidden';
+          body.style.backgroundColor = '#05070a';
+          
+          // Build Top Bar
+          const topBar = document.createElement('div');
+          topBar.id = 'technosprint-preview-header';
+          topBar.style.height = '64px';
+          topBar.style.background = '#090d16';
+          topBar.style.borderBottom = '1px solid rgba(229, 179, 66, 0.25)';
+          topBar.style.display = 'flex';
+          topBar.style.alignItems = 'center';
+          topBar.style.justifyContent = 'space-between';
+          topBar.style.padding = '0 24px';
+          topBar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.8)';
+          topBar.style.fontFamily = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+          topBar.style.zIndex = '99999';
+          topBar.style.position = 'relative';
+          topBar.style.boxSizing = 'border-box';
+          
+          // Left side: TechnoSprint Logo + Template Title
+          const leftDiv = document.createElement('div');
+          leftDiv.style.display = 'flex';
+          leftDiv.style.alignItems = 'center';
+          leftDiv.style.gap = '16px';
+          leftDiv.innerHTML = `
+            <a href="/templates" style="display: flex; align-items: center; text-decoration: none; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+              <img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 34px; border-radius: 6px; border: 1px solid rgba(229, 179, 66, 0.4); box-shadow: 0 1px 4px rgba(0,0,0,0.6);" />
+            </a>
+            <div style="height: 20px; width: 1px; background: rgba(229, 179, 66, 0.3);"></div>
+            <span style="font-size: 0.88rem; font-weight: 600; color: #fae8b4; letter-spacing: -0.01em;">Aurelia Chronos — 18K Luxury Horology Launch</span>
+          `;
+          topBar.appendChild(leftDiv);
+          
+          // Center: Device View Switcher
+          const centerDiv = document.createElement('div');
+          centerDiv.style.display = 'flex';
+          centerDiv.style.alignItems = 'center';
+          centerDiv.style.gap = '8px';
+          centerDiv.style.background = '#0e1422';
+          centerDiv.style.padding = '4px 6px';
+          centerDiv.style.borderRadius = '10px';
+          centerDiv.style.border = '1px solid rgba(229, 179, 66, 0.2)';
+          centerDiv.innerHTML = `
+            <button id="view-desktop" title="Laptop / Desktop View" style="
+              background: linear-gradient(135deg, #e5b342 0%, #a98018 100%); color: #040508; border: 1px solid transparent;
+              padding: 7px 16px; border-radius: 7px; font-size: 0.85rem; font-weight: 700;
+              cursor: pointer; display: flex; align-items: center; gap: 7px; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+              outline: none; box-shadow: 0 1px 4px rgba(0,0,0,0.5); box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              <span>Laptop</span>
+            </button>
+            <button id="view-tablet" title="Tab / Tablet View" style="
+              background: transparent; color: #94a3b8; border: 1px solid transparent;
+              padding: 7px 16px; border-radius: 7px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 7px; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              <span>Tab</span>
+            </button>
+            <button id="view-mobile" title="Phone / Mobile View" style="
+              background: transparent; color: #94a3b8; border: 1px solid transparent;
+              padding: 7px 16px; border-radius: 7px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 7px; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              <span>Phone</span>
+            </button>
+          `;
+          topBar.appendChild(centerDiv);
+          
+          // Right: Navigation
+          const rightDiv = document.createElement('div');
+          rightDiv.style.display = 'flex';
+          rightDiv.style.alignItems = 'center';
+          rightDiv.style.gap = '10px';
+          rightDiv.innerHTML = `
+            <a href="/" style="
+              text-decoration: none; color: #cbd5e1; font-size: 0.84rem; font-weight: 500;
+              padding: 7px 14px; border-radius: 7px; border: 1px solid rgba(229, 179, 66, 0.25);
+              display: flex; align-items: center; gap: 6px; transition: all 0.2s; background: rgba(14, 20, 32, 0.8);
+            " onmouseover="this.style.borderColor='#e5b342';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(229, 179, 66, 0.25)';this.style.color='#cbd5e1'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              <span>Home</span>
+            </a>
+            <a href="/templates" style="
+              text-decoration: none; color: #040508; font-size: 0.84rem; font-weight: 700;
+              padding: 8px 18px; border-radius: 7px; background: linear-gradient(135deg, #fae8b4 0%, #e5b342 100%);
+              display: flex; align-items: center; gap: 7px; transition: all 0.2s; box-shadow: 0 2px 8px rgba(229,179,66,0.35);
+            " onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 4px 12px rgba(229,179,66,0.5)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(229,179,66,0.35)'">
+              <span>All Templates</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          `;
+          topBar.appendChild(rightDiv);
+          
+          body.appendChild(topBar);
+          
+          // Responsive Iframe Container
+          const iframeContainer = document.createElement('div');
+          iframeContainer.id = 'technosprint-iframe-wrapper';
+          iframeContainer.style.flex = '1';
+          iframeContainer.style.width = '100%';
+          iframeContainer.style.display = 'flex';
+          iframeContainer.style.justifyContent = 'center';
+          iframeContainer.style.alignItems = 'center';
+          iframeContainer.style.background = '#020305';
+          iframeContainer.style.padding = '20px';
+          iframeContainer.style.boxSizing = 'border-box';
+          
+          const iframe = document.createElement('iframe');
+          iframe.src = currentUrl.toString();
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.border = 'none';
+          iframe.style.borderRadius = '12px';
+          iframe.style.boxShadow = '0 12px 45px rgba(0,0,0,0.9)';
+          iframe.style.transition = 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+          
+          iframeContainer.appendChild(iframe);
+          body.appendChild(iframeContainer);
+          
+          // Device Viewport Event Handlers
+          const btnDesktop = document.getElementById('view-desktop');
+          const btnTablet = document.getElementById('view-tablet');
+          const btnMobile = document.getElementById('view-mobile');
+          
+          function setDevice(device) {
+            [btnDesktop, btnTablet, btnMobile].forEach(btn => {
+              btn.style.background = 'transparent';
+              btn.style.color = '#94a3b8';
+              btn.style.fontWeight = '500';
+              btn.style.boxShadow = 'none';
+            });
+            
+            if (device === 'desktop') {
+              btnDesktop.style.background = 'linear-gradient(135deg, #e5b342 0%, #a98018 100%)';
+              btnDesktop.style.color = '#040508';
+              btnDesktop.style.fontWeight = '700';
+              btnDesktop.style.boxShadow = '0 1px 4px rgba(0,0,0,0.5)';
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+            } else if (device === 'tablet') {
+              btnTablet.style.background = 'linear-gradient(135deg, #e5b342 0%, #a98018 100%)';
+              btnTablet.style.color = '#040508';
+              btnTablet.style.fontWeight = '700';
+              btnTablet.style.boxShadow = '0 1px 4px rgba(0,0,0,0.5)';
+              iframe.style.width = '768px';
+              iframe.style.height = '1024px';
+              iframe.style.maxHeight = '100%';
+            } else if (device === 'mobile') {
+              btnMobile.style.background = 'linear-gradient(135deg, #e5b342 0%, #a98018 100%)';
+              btnMobile.style.color = '#040508';
+              btnMobile.style.fontWeight = '700';
+              btnMobile.style.boxShadow = '0 1px 4px rgba(0,0,0,0.5)';
+              iframe.style.width = '375px';
+              iframe.style.height = '667px';
+              iframe.style.maxHeight = '100%';
+            }
+          }
+          
+          btnDesktop.addEventListener('click', () => setDevice('desktop'));
+          btnTablet.addEventListener('click', () => setDevice('tablet'));
+          btnMobile.addEventListener('click', () => setDevice('mobile'));
+          
+          document.documentElement.style.visibility = 'visible';
+        });
+      }
+    })();
+  </script>
+
+  <!-- Ambient Light Spotlight & Canvas Particles -->
+  <canvas id="gold-particles-canvas"></canvas>
+  <div id="cursor-light-flare" class="cursor-light-flare"></div>
+
+  <!-- Main Content Wrapper -->
+  <div class="relative z-10 min-h-screen flex flex-col justify-between">
+
+    <!-- Top Luxury Navigation Bar -->
+    <header class="w-full border-b border-amber-500/20 bg-[#05070c]/85 backdrop-blur-xl sticky top-0 z-50 shadow-[0_4px_30px_rgba(0,0,0,0.85)]">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        
+        <!-- Brand Monogram -->
+        <a href="#hero" class="flex items-center gap-3.5 group">
+          <div class="w-10 h-10 rounded-full border border-amber-400/50 bg-gradient-to-br from-amber-500/20 to-black flex items-center justify-center text-amber-300 font-cinzel font-bold text-lg group-hover:border-amber-300 group-hover:shadow-[0_0_20px_rgba(229,179,66,0.6)] transition-all">
+            ✦
+          </div>
+          <div>
+            <div class="font-cinzel text-base tracking-[0.22em] text-amber-200 uppercase font-bold">Aurelia Chronos</div>
+            <div class="text-[0.62rem] tracking-[0.3em] text-amber-400/80 uppercase font-mono">Haute Horlogerie • Geneve</div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8 text-xs font-cinzel tracking-widest text-slate-300 uppercase font-semibold">
+          <a href="#hero" class="hover:text-amber-300 transition-colors">Showroom</a>
+          <a href="#customizer" class="hover:text-amber-300 transition-colors">Customizer</a>
+          <a href="#macro-gallery" class="hover:text-amber-300 transition-colors">Macro Lens</a>
+          <a href="#calibre" class="hover:text-amber-300 transition-colors">Calibre 9080</a>
+        </nav>
+
+        <!-- Right Controls: Audio Synthesizer & VIP Vault -->
+        <div class="flex items-center gap-3">
+          <button id="haute-audio-btn" class="px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-slate-900/80 hover:bg-slate-800 text-xs font-mono text-slate-300 flex items-center gap-2.5 transition-all cursor-pointer shadow-sm" title="Toggle Mechanical Escapement Audio (28,800 vph)">
+            <div id="audio-eq-bars" class="eq-container">
+              <div class="eq-bar"></div>
+              <div class="eq-bar"></div>
+              <div class="eq-bar"></div>
+              <div class="eq-bar"></div>
+            </div>
+            <span id="haute-audio-label" class="hidden sm:inline">Audio: Muted</span>
+          </button>
+
+          <a href="#reserve" class="btn-primary-vault !py-2.5 !px-5 text-xs">
+            <span>VIP Vault</span>
+            <i class="fas fa-crown text-[10px]"></i>
+          </a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- HERO SECTION: INTERACTIVE 3D SPLIT SHOWROOM -->
+    <section id="hero" class="pt-10 pb-16 md:pt-14 md:pb-24 px-6 max-w-7xl mx-auto">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left Side: Editorial Typography & Customizer -->
+        <div class="lg:col-span-5 text-left space-y-6">
+          
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-full border border-amber-400/40 bg-amber-950/20 text-xs font-mono text-amber-200 uppercase tracking-widest font-semibold">
+            <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+            <span>Ref. 1884-AU • Geneva Premiere</span>
+          </div>
+
+          <h1 class="font-decorative text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.08] gold-heading-gradient">
+            Gravitational Mastery.
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 font-serif italic leading-relaxed font-light">
+            A weightless 18K solid gold timepiece suspended in mid-air. Crafted with hand-turned sunburst guilloché, 28,800 vph Swiss calibre, and 100-meter screw-down crown architecture.
+          </p>
+
+          <!-- BESPOKE MATERIAL CUSTOMIZER -->
+          <div class="luxury-glass-panel p-5 space-y-3" id="customizer">
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="text-slate-400 uppercase tracking-wider">Select Metallurgy:</span>
+              <span id="current-material-name" class="text-amber-300 font-bold">18K Yellow Gold (2N Classic)</span>
+            </div>
+
+            <div class="flex items-center gap-3 pt-1">
+              <!-- Swatch 1: Yellow Gold -->
+              <button class="material-swatch active bg-gradient-to-br from-[#ffe680] to-[#cca028]" data-material="yellow-gold" title="18K Yellow Gold"></button>
+              <!-- Swatch 2: Everose Gold -->
+              <button class="material-swatch bg-gradient-to-br from-[#ffd5ca] to-[#e89882]" data-material="everose" title="18K Everose Gold"></button>
+              <!-- Swatch 3: Platinum 950 -->
+              <button class="material-swatch bg-gradient-to-br from-[#d8edfa] to-[#9ec8e5]" data-material="platinum" title="950 Platinum"></button>
+              <!-- Swatch 4: Obsidian DLC -->
+              <button class="material-swatch bg-gradient-to-br from-[#94a3b8] to-[#1e293b]" data-material="stealth" title="Obsidian DLC Carbon"></button>
+            </div>
+          </div>
+
+          <!-- Escapement Frequency Switcher -->
+          <div class="flex items-center justify-between p-3.5 rounded-xl bg-[#0a0d16] border border-amber-500/20 text-xs font-mono">
+            <div class="flex items-center gap-2 text-slate-400">
+              <i class="fas fa-wave-square text-amber-400"></i>
+              <span>Oscillation Cadence:</span>
+            </div>
+            <button id="audio-freq-toggle" class="px-3 py-1 rounded bg-amber-500/20 text-amber-300 font-bold border border-amber-500/30 hover:bg-amber-500/30 cursor-pointer transition-all">
+              4Hz (28.8k vph)
+            </button>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-center gap-4 pt-2">
+            <a href="#reserve" class="btn-primary-vault w-full sm:w-auto">
+              <i class="fas fa-certificate"></i>
+              <span>Claim Allocation</span>
+            </a>
+            <button class="haute-inspect-trigger btn-secondary-vault w-full sm:w-auto" data-view="crown">
+              <i class="fas fa-search-plus"></i>
+              <span>Inspect Crown Lens</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right Side: 3D ANTIGRAVITY STAGE WITH HOTSPOT ANNOTATIONS -->
+        <div class="lg:col-span-7">
+          <div class="luxury-glass-panel p-6 sm:p-10 relative overflow-hidden">
+            
+            <div class="watch-stage-container" id="watch-stage-container">
+              
+              <!-- Hotspot 1: Bezel -->
+              <div class="watch-hotspot top-12 left-1/2 -translate-x-1/2" data-view="dial" title="Click to inspect Guilloché Dial">
+                <i class="fas fa-plus text-[10px]"></i>
+                <div class="watch-hotspot-card">
+                  <div class="text-[10px] font-mono text-amber-400 uppercase font-bold">18K Solid Bezel</div>
+                  <div class="text-xs text-slate-200 font-semibold mt-0.5">Sunburst Guilloché Dial</div>
+                  <div class="text-[10px] text-slate-400 mt-1">Diamond-polished faceted dauphine hands with double AR sapphire.</div>
+                </div>
+              </div>
+
+              <!-- Hotspot 2: Crown -->
+              <div class="watch-hotspot top-1/2 right-12 sm:right-20 -translate-y-1/2" data-view="crown" title="Click to inspect Crown">
+                <i class="fas fa-plus text-[10px]"></i>
+                <div class="watch-hotspot-card">
+                  <div class="text-[10px] font-mono text-amber-400 uppercase font-bold">Fluted Crown</div>
+                  <div class="text-xs text-slate-200 font-semibold mt-0.5">Screw-Down Architecture</div>
+                  <div class="text-[10px] text-slate-400 mt-1">Dual internal O-ring pressure seals certified to 100m depth.</div>
+                </div>
+              </div>
+
+              <!-- Hotspot 3: Calibre Escapement -->
+              <div class="watch-hotspot bottom-14 left-1/2 -translate-x-1/2" data-view="caseback" title="Click to inspect Calibre 9080">
+                <i class="fas fa-plus text-[10px]"></i>
+                <div class="watch-hotspot-card">
+                  <div class="text-[10px] font-mono text-amber-400 uppercase font-bold">Swiss Movement</div>
+                  <div class="text-xs text-slate-200 font-semibold mt-0.5">Calibre TS-9080 Automatic</div>
+                  <div class="text-[10px] text-slate-400 mt-1">Solid gold skeleton rotor, 28,800 vph, and 72-hour reserve.</div>
+                </div>
+              </div>
+
+              <!-- Floating Watch Visual Actor -->
+              <div class="watch-floating-actor" id="watch-floating-actor">
+                <img id="watch-hero-render" src="watch-hero.jpg" alt="Aurelia Chronos 18K Solid Gold Floating Watch" class="watch-hero-render">
+              </div>
+
+            </div>
+
+            <!-- 360 Drag & Zoom Control Bar -->
+            <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-amber-500/20">
+              
+              <div class="flex items-center gap-2 flex-wrap justify-center">
+                <button class="turntable-btn active" data-angle="0">0° Front</button>
+                <button class="turntable-btn" data-angle="45">45° Orbit</button>
+                <button class="turntable-btn" data-angle="90">90° Flank</button>
+                <button class="turntable-btn" data-angle="180">180° Back</button>
+              </div>
+
+              <!-- Optical Zoom Slider -->
+              <div class="flex items-center gap-3 bg-[#0a0d16] px-3.5 py-1.5 rounded-xl border border-amber-500/20 text-xs font-mono text-slate-400">
+                <i class="fas fa-magnifying-glass text-amber-400"></i>
+                <span>Zoom:</span>
+                <input type="range" id="watch-zoom-slider" min="0.9" max="1.6" step="0.05" value="1.0" class="w-20 accent-amber-400 cursor-pointer">
+                <span id="zoom-val-text" class="text-amber-300 font-bold min-w-[32px]">1.0x</span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- LIVE CHRONOMETER COUNTDOWN -->
+    <section class="py-8 px-6 max-w-7xl mx-auto">
+      <div class="luxury-glass-panel p-8 sm:p-10 relative overflow-hidden">
+        <div class="text-xs font-cinzel tracking-[0.3em] text-amber-300 uppercase font-bold mb-6 flex items-center justify-center gap-3 text-center">
+          <span class="h-[1px] w-12 bg-amber-500/40"></span>
+          <span>Geneva Premiere & Allocation Vault Countdown</span>
+          <span class="h-[1px] w-12 bg-amber-500/40"></span>
+        </div>
+
+        <div class="grid grid-cols-5 gap-2 sm:gap-4 max-w-xl mx-auto">
+          <div class="p-4 rounded-xl bg-slate-950/80 border border-amber-500/25 text-center">
+            <div id="cd-days" class="font-mono text-2xl sm:text-4xl font-bold text-amber-200">42</div>
+            <div class="text-[0.65rem] sm:text-xs font-mono uppercase tracking-wider text-slate-400 mt-1 font-semibold">Days</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-950/80 border border-amber-500/25 text-center">
+            <div id="cd-hours" class="font-mono text-2xl sm:text-4xl font-bold text-amber-200">18</div>
+            <div class="text-[0.65rem] sm:text-xs font-mono uppercase tracking-wider text-slate-400 mt-1 font-semibold">Hours</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-950/80 border border-amber-500/25 text-center">
+            <div id="cd-minutes" class="font-mono text-2xl sm:text-4xl font-bold text-amber-200">35</div>
+            <div class="text-[0.65rem] sm:text-xs font-mono uppercase tracking-wider text-slate-400 mt-1 font-semibold">Mins</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-950/80 border border-amber-500/50 text-center">
+            <div id="cd-seconds" class="font-mono text-2xl sm:text-4xl font-bold text-amber-400">09</div>
+            <div class="text-[0.65rem] sm:text-xs font-mono uppercase tracking-wider text-amber-400 mt-1 font-semibold">Secs</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-950/80 border border-amber-500/25 text-center">
+            <div id="cd-ms" class="font-mono text-2xl sm:text-4xl font-bold text-slate-400">72</div>
+            <div class="text-[0.65rem] sm:text-xs font-mono uppercase tracking-wider text-slate-400 mt-1 font-semibold">MS</div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center justify-center gap-2 text-xs font-mono text-slate-400 text-center">
+          <i class="fas fa-crown text-amber-400"></i>
+          <span>Only <strong class="text-amber-300 font-bold text-sm">24</strong> of 100 Hand-Numbered Allocations Unclaimed</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTICAL MACRO FILMSTRIP GALLERY -->
+    <section id="macro-gallery" class="py-16 px-6 max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <div class="text-xs font-mono text-amber-400 uppercase tracking-widest mb-2 font-semibold">Optical Studio Macro Dossier</div>
+        <h2 class="font-decorative text-3xl sm:text-4xl font-bold text-slate-100">Micro-Sculpted Metallurgical Perfection</h2>
+        <p class="font-serif italic text-slate-400 text-base mt-2">Select any reference view below to inspect with the optical studio zoom lens.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- View 1: Crown & Bezel Knurling -->
+        <div class="luxury-glass-panel p-6 cursor-pointer group haute-inspect-trigger" data-view="crown">
+          <div class="h-60 rounded-xl bg-black border border-amber-500/30 overflow-hidden relative mb-5 shadow-inner">
+            <img src="watch-crown.jpg" alt="Macro Fluted Crown" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 right-3 bg-black/80 backdrop-blur-sm border border-amber-500/40 px-2.5 py-1 rounded text-[10px] font-mono text-amber-300 font-semibold">Macro Lens • Crown</div>
+          </div>
+          <h3 class="font-cinzel text-lg font-bold text-slate-100 group-hover:text-amber-300 transition-colors">Fluted Crown & Bezel</h3>
+          <p class="text-xs font-serif italic text-amber-400/90 mb-2 font-medium">18K Solid Gold Knurled Profile</p>
+          <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">Micro-machined grip ridges with triple-gasket screw-down architecture sealed to 100m depth.</p>
+          <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-amber-400 font-mono font-semibold">
+            <span>Inspect Optical Detail</span>
+            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </div>
+
+        <!-- View 2: Guilloché Dial -->
+        <div class="luxury-glass-panel p-6 cursor-pointer group haute-inspect-trigger" data-view="dial">
+          <div class="h-60 rounded-xl bg-black border border-amber-500/30 overflow-hidden relative mb-5 shadow-inner">
+            <img src="watch-dial.jpg" alt="Sunburst Guilloché Dial" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 right-3 bg-black/80 backdrop-blur-sm border border-amber-500/40 px-2.5 py-1 rounded text-[10px] font-mono text-amber-300 font-semibold">Macro Lens • Dial</div>
+          </div>
+          <h3 class="font-cinzel text-lg font-bold text-slate-100 group-hover:text-amber-300 transition-colors">Guilloché Sunburst Dial</h3>
+          <p class="text-xs font-serif italic text-amber-400/90 mb-2 font-medium">Hand-Turned Rose Engine Engraving</p>
+          <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">Faceted dauphine solid gold hands and diamond-polished applied indices with double AR sapphire glass.</p>
+          <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-amber-400 font-mono font-semibold">
+            <span>Inspect Optical Detail</span>
+            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </div>
+
+        <!-- View 3: Exhibition Caseback -->
+        <div class="luxury-glass-panel p-6 cursor-pointer group haute-inspect-trigger" data-view="caseback">
+          <div class="h-60 rounded-xl bg-black border border-amber-500/30 overflow-hidden relative mb-5 shadow-inner">
+            <img src="watch-caseback.jpg" alt="Exhibition Sapphire Caseback" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 right-3 bg-black/80 backdrop-blur-sm border border-amber-500/40 px-2.5 py-1 rounded text-[10px] font-mono text-amber-300 font-semibold">Calibre TS-9080</div>
+          </div>
+          <h3 class="font-cinzel text-lg font-bold text-slate-100 group-hover:text-amber-300 transition-colors">Exhibition Caseback</h3>
+          <p class="text-xs font-serif italic text-amber-400/90 mb-2 font-medium">Swiss Automatic High-Beat Calibre</p>
+          <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">Solid gold skeleton rotor, Côte de Genève perlage finishing, 28,800 vph escapement, and 72-hour reserve.</p>
+          <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-amber-400 font-mono font-semibold">
+            <span>Inspect Optical Detail</span>
+            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CALIBRE TS-9080 SPECIFICATIONS GRID -->
+    <section id="calibre" class="py-16 px-6 max-w-6xl mx-auto">
+      <div class="luxury-glass-panel p-8 sm:p-12 relative overflow-hidden">
+        
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-10 pb-6 border-b border-amber-500/20">
+          <div>
+            <div class="text-xs font-mono text-amber-400 uppercase tracking-widest font-semibold">Geneva Manufacture Dossier</div>
+            <h2 class="font-cinzel text-3xl font-bold text-slate-100 mt-1">Calibre TS-9080 Architecture</h2>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/35 text-amber-300 text-xs font-mono font-semibold">COSC Chronometer Certified</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-5 rounded-xl bg-slate-950/70 border border-slate-800">
+            <div class="text-xs font-mono text-slate-400 uppercase">Case Metallurgy</div>
+            <div class="font-cinzel text-lg font-bold text-amber-200 mt-1">18K Solid Gold</div>
+            <p class="text-xs text-slate-400 mt-1">38.5mm diameter, 10.2mm thickness, mirror & satin brushed.</p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-slate-950/70 border border-slate-800">
+            <div class="text-xs font-mono text-slate-400 uppercase">Oscillation Cadence</div>
+            <div class="font-cinzel text-lg font-bold text-amber-200 mt-1">28,800 VPH (4Hz)</div>
+            <p class="text-xs text-slate-400 mt-1">Glucydur balance with silicon hairspring anti-magnetic core.</p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-slate-950/70 border border-slate-800">
+            <div class="text-xs font-mono text-slate-400 uppercase">Power Autonomy</div>
+            <div class="font-cinzel text-lg font-bold text-amber-200 mt-1">72 Hours Reserve</div>
+            <p class="text-xs text-slate-400 mt-1">Dual mainspring barrels with bidirectional winding rotor.</p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-slate-950/70 border border-slate-800">
+            <div class="text-xs font-mono text-slate-400 uppercase">Water Resistance</div>
+            <div class="font-cinzel text-lg font-bold text-amber-200 mt-1">10 ATM / 100M</div>
+            <p class="text-xs text-slate-400 mt-1">Screw-down fluted crown with sapphire caseback gasket.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LIVE FOIL CERTIFICATE & RESERVATION VAULT -->
+    <section id="reserve" class="py-16 px-6 max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left: Live Updating Gold Foil Certificate -->
+        <div class="lg:col-span-6">
+          <div class="foil-certificate-card text-left space-y-4">
+            
+            <div class="flex items-center justify-between pb-3 border-b border-amber-500/30">
+              <div class="font-cinzel text-xs tracking-widest text-amber-300 font-bold uppercase">Certificate of Allocation</div>
+              <span id="cert-metal-badge" class="px-2.5 py-0.5 rounded bg-amber-500/20 text-amber-200 font-mono text-[10px] font-bold">18K YELLOW GOLD</span>
+            </div>
+
+            <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Bearer & Registered Collector:</div>
+            <div id="cert-collector-name" class="font-cinzel text-2xl sm:text-3xl font-bold text-white tracking-wide">YOUR NAME HERE</div>
+
+            <div class="grid grid-cols-2 gap-4 pt-3 border-t border-slate-800/80">
+              <div>
+                <div class="text-[10px] font-mono text-slate-400 uppercase">Numbered Serial</div>
+                <div id="cert-serial-number" class="font-mono text-base font-bold text-amber-400">#042 / 100</div>
+              </div>
+              <div>
+                <div class="text-[10px] font-mono text-slate-400 uppercase">Calibre Grade</div>
+                <div class="font-mono text-base font-bold text-amber-200">TS-9080 GENEVA</div>
+              </div>
+            </div>
+
+            <div class="pt-2 text-[10px] font-mono text-slate-400 italic">
+              ✦ Certified by Aurelia Chronos Horology Council, Geneva, Switzerland.
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: Form to Claim Allocation -->
+        <div class="lg:col-span-6">
+          <div class="luxury-glass-panel p-8 text-left space-y-4">
+            <h3 class="font-decorative text-2xl font-bold text-white">Claim Your Allocation</h3>
+            <p class="text-xs text-slate-300 font-serif italic">Enter your details below to generate and issue your registered digital certificate.</p>
+
+            <form id="allocation-vault-form" class="space-y-4 pt-2">
+              <div>
+                <label class="block text-[11px] font-mono text-slate-300 uppercase mb-1">Collector Full Name</label>
+                <input type="text" id="collector-name" required placeholder="Lord / Lady / Dr. / Mr. Name" class="w-full px-4 py-3 rounded-lg bg-slate-950/90 border border-amber-500/30 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-sm">
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-mono text-slate-300 uppercase mb-1">Private Email for Vault Confirmation</label>
+                <input type="email" id="collector-email" required placeholder="collector@private.luxury" class="w-full px-4 py-3 rounded-lg bg-slate-950/90 border border-amber-500/30 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-sm">
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-mono text-slate-300 uppercase mb-1">Selected Metal Specification</label>
+                <select id="collector-metal" class="w-full px-4 py-3 rounded-lg bg-slate-950/90 border border-amber-500/30 text-slate-100 focus:outline-none focus:border-amber-400 text-sm">
+                  <option value="18K Yellow Gold (2N Classic)">18K Yellow Gold (2N Classic)</option>
+                  <option value="18K Everose Gold (5N Pink)">18K Everose Gold (5N Pink)</option>
+                  <option value="950 Platinum (Ice Blue Core)">950 Platinum (Ice Blue Core)</option>
+                  <option value="Obsidian DLC Carbon (All-Black)">Obsidian DLC Carbon (All-Black)</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn-primary-vault w-full mt-2 text-sm !py-3.5">
+                <span>Issue & Register Allocation</span>
+                <i class="fas fa-lock text-xs"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-amber-500/20 bg-[#040508] py-8 px-6 text-center text-xs font-mono text-slate-400">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          © 2026 Aurelia Chronos Haute Horlogerie. Geneva • Zurich • London.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#hero" class="hover:text-amber-300 transition-colors">Back to Top</a>
+          <a href="/templates" class="text-amber-400 font-semibold hover:underline">TechnoSprint Templates</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- MACRO LIGHTBOX MODAL -->
+  <div id="vault-modal" class="vault-modal">
+    <div class="luxury-glass-panel p-6 max-w-4xl w-full relative flex flex-col md:flex-row gap-6 items-center">
+      <button id="modal-close-btn" class="absolute top-4 right-4 text-slate-400 hover:text-amber-300 text-xl font-bold w-8 h-8 flex items-center justify-center rounded-full bg-slate-900 border border-slate-700 cursor-pointer">&times;</button>
+      
+      <div class="w-full md:w-3/5 rounded-xl overflow-hidden bg-black border border-amber-500/30">
+        <img id="modal-img" src="watch-crown.jpg" alt="Macro Inspector" class="w-full h-auto object-cover max-h-[480px]">
+      </div>
+
+      <div class="w-full md:w-2/5 space-y-3 text-left">
+        <div class="text-[10px] font-mono text-amber-400 uppercase tracking-widest font-semibold">Optical Studio Macro Lens</div>
+        <h3 id="modal-title" class="font-cinzel text-xl font-bold text-slate-100">Knurled Fluted Crown</h3>
+        <p id="modal-desc" class="text-xs text-slate-300 leading-relaxed font-sans">Micro-lathed fluted grip ridges with double internal O-ring pressure seals and solid gold crown flank protection.</p>
+        <div class="pt-4 border-t border-slate-800">
+          <a href="#reserve" onclick="document.getElementById('vault-modal').classList.remove('active')" class="btn-primary-vault !py-2.5 !px-4 text-xs w-full text-center justify-center">
+            <span>Reserve This Reference</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="vault-toast" class="vault-toast">
+    <div class="w-9 h-9 rounded-full bg-amber-400 text-black flex items-center justify-center font-bold text-base flex-shrink-0">
+      ✦
+    </div>
+    <div id="vault-toast-msg" class="text-xs font-mono font-medium text-amber-200">
+      Allocation confirmed!
+    </div>
+  </div>
+
+  <!-- Custom JavaScript Engine -->
+  <script src="app.js"></script>
+</body>
+</html>

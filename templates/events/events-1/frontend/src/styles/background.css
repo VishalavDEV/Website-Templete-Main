@@ -1,0 +1,226 @@
+/* Full-Website AI, Cloud & Robotics Animated Background Styles */
+
+.animated-bg-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Precision Cybernetic Tech Mesh */
+.bg-grid-mesh {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(108, 92, 231, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(108, 92, 231, 0.12) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at 50% 35%, black 40%, rgba(0, 0, 0, 0.3) 85%);
+  -webkit-mask-image: radial-gradient(circle at 50% 35%, black 40%, rgba(0, 0, 0, 0.3) 85%);
+}
+
+[data-theme="light"] .bg-grid-mesh {
+  background-image: 
+    linear-gradient(to right, rgba(108, 92, 231, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(108, 92, 231, 0.1) 1px, transparent 1px);
+}
+
+/* AI, Cloud & Robotics Background Artwork Overlays */
+.bg-tech-image {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.2;
+  filter: blur(1.5px);
+}
+
+.image-ai-cloud {
+  top: -5%;
+  right: -5%;
+  width: 55vw;
+  height: 55vh;
+  animation: floatTechImg1 25s ease-in-out infinite alternate;
+}
+
+.image-robotics {
+  bottom: -10%;
+  left: -5%;
+  width: 50vw;
+  height: 55vh;
+  animation: floatTechImg2 30s ease-in-out infinite alternate;
+}
+
+@keyframes floatTechImg1 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-30px, 40px) scale(1.05) rotate(1deg);
+  }
+  100% {
+    transform: translate(20px, -20px) scale(0.98) rotate(-1deg);
+  }
+}
+
+@keyframes floatTechImg2 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(40px, -30px) scale(1.06) rotate(-1.5deg);
+  }
+  100% {
+    transform: translate(-20px, 30px) scale(0.95) rotate(1deg);
+  }
+}
+
+/* Floating AI / Cloud / Robotics SVG Icons */
+.tech-float-icon {
+  position: absolute;
+  color: var(--primary);
+  opacity: 0.25;
+  filter: drop-shadow(0 0 12px rgba(108, 92, 231, 0.4));
+  animation: floatIcon 16s ease-in-out infinite alternate;
+}
+
+[data-theme="light"] .tech-float-icon {
+  opacity: 0.22;
+}
+
+.icon-ai-brain {
+  top: 18%;
+  left: 8%;
+  width: 64px;
+  height: 64px;
+  animation-delay: 0s;
+}
+
+.icon-cloud-compute {
+  top: 45%;
+  right: 6%;
+  width: 72px;
+  height: 72px;
+  animation-delay: -5s;
+}
+
+.icon-robotics-chip {
+  bottom: 15%;
+  right: 25%;
+  width: 60px;
+  height: 60px;
+  animation-delay: -10s;
+}
+
+@keyframes floatIcon {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(8deg);
+  }
+  100% {
+    transform: translateY(20px) rotate(-6deg);
+  }
+}
+
+/* Ambient Floating Glowing Tech Orbs */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(95px);
+  opacity: 0.4;
+  animation: floatOrb 18s ease-in-out infinite alternate;
+}
+
+[data-theme="light"] .bg-orb {
+  opacity: 0.28;
+}
+
+.orb-primary {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(108, 92, 231, 0.6) 0%, rgba(108, 92, 231, 0) 70%);
+  top: -100px;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.orb-secondary {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 184, 148, 0.5) 0%, rgba(0, 184, 148, 0) 70%);
+  top: 40%;
+  right: -100px;
+  animation-delay: -6s;
+}
+
+.orb-accent {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(232, 67, 147, 0.4) 0%, rgba(232, 67, 147, 0) 70%);
+  bottom: -50px;
+  left: 10%;
+  animation-delay: -12s;
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(60px, 40px) scale(1.1);
+  }
+  100% {
+    transform: translate(-40px, 80px) scale(0.95);
+  }
+}
+
+/* Animated Grid Laser Scan Line */
+.bg-scan-line {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(108, 92, 231, 0.1) 20%,
+    rgba(6, 182, 212, 0.7) 50%,
+    rgba(108, 92, 231, 0.1) 80%,
+    transparent 100%
+  );
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.7);
+  animation: gridScan 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes gridScan {
+  0% {
+    top: -5%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 105%;
+    opacity: 0;
+  }
+}
+
+/* Interactive Canvas Overlay */
+.bg-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}

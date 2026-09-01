@@ -1,0 +1,108 @@
+[
+  {
+    "id": "issue-sep-2026",
+    "slug": "september-2026",
+    "number": "Vol. 142 · No. 3",
+    "month": "September",
+    "year": "2026",
+    "title": "THE UNKNOWN EARTH",
+    "subtitle": "Unmapped hydrological systems and planetary respiration.",
+    "editorialNote": "In this issue, we journey three kilometers beneath the Antarctic ice sheet into Lake Mercer, chart the continent-spanning atmospheric rivers produced by the Siberian Taiga, and look to the vanishing frontiers of zero-light skies.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=90",
+    "storyCount": 8,
+    "isCurrent": true,
+    "stories": [
+      { "title": "Beneath a World of Ice", "slug": "beneath-a-world-of-ice", "author": "Dr. Elena Vance", "category": "Science" },
+      { "title": "The Breathing Forests", "slug": "the-breathing-forests", "author": "Sarah Lin", "category": "Planet" },
+      { "title": "The Last Dark Skies", "slug": "the-last-dark-skies", "author": "Dr. Arjun Patel", "category": "Space" },
+      { "title": "Beneath the Ice Giants", "slug": "beneath-the-ice-giants", "author": "Marcus Thorne", "category": "Wildlife" }
+    ]
+  },
+  {
+    "id": "issue-aug-2026",
+    "slug": "august-2026",
+    "number": "Vol. 142 · No. 2",
+    "month": "August",
+    "year": "2026",
+    "title": "FRONTIERS OF ICE",
+    "subtitle": "Apex predators and survival across the polar extremes.",
+    "editorialNote": "Svalbard's melting sea floes test the evolutionary plasticity of polar bear lineages, while autonomous ocean gliders measure Atlantic water intrusion beneath Greenland's marine-terminating glaciers.",
+    "coverImage": "https://images.unsplash.com/photo-1589656966895-2f33e7653819?auto=format&fit=crop&w=1200&q=90",
+    "storyCount": 7,
+    "isCurrent": false,
+    "stories": [
+      { "title": "Beneath the Ice Giants", "slug": "beneath-the-ice-giants", "author": "Marcus Thorne", "category": "Wildlife" },
+      { "title": "Into the Abyssal Canyon", "slug": "into-the-abyssal-canyon", "author": "Maya Sørensen", "category": "Exploration" },
+      { "title": "The Volcano Chaser", "slug": "the-volcano-chaser", "author": "Dr. Elena Vance", "category": "Planet" }
+    ]
+  },
+  {
+    "id": "issue-jul-2026",
+    "slug": "july-2026",
+    "number": "Vol. 142 · No. 1",
+    "month": "July",
+    "year": "2026",
+    "title": "BURIED EMPIRES",
+    "subtitle": "Radar archaeology and ancient trade corridors in the desert.",
+    "editorialNote": "Satellite synthetic aperture radar penetrates the Rub' al Khali sand dunes to uncover an interconnected prehistoric water system, while indigenous guardians deploy bio-acoustic edge sensors in Ecuador.",
+    "coverImage": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=90",
+    "storyCount": 9,
+    "isCurrent": false,
+    "stories": [
+      { "title": "Secrets of the Sand Sea", "slug": "secrets-of-the-sand-sea", "author": "Tariq Al-Mansoor", "category": "History" },
+      { "title": "Guardians of the Cloud Forest", "slug": "guardians-of-the-cloud-forest", "author": "Mateo Silva", "category": "Culture" },
+      { "title": "The Last Light of the Desert", "slug": "the-last-light-of-the-desert", "author": "Chloé Dubois", "category": "Photography" }
+    ]
+  },
+  {
+    "id": "issue-jun-2026",
+    "slug": "june-2026",
+    "number": "Vol. 141 · No. 6",
+    "month": "June",
+    "year": "2026",
+    "title": "THE HADAL REALM",
+    "subtitle": "Extreme pressure biology eight kilometers down.",
+    "editorialNote": "Humanity has sent twelve people to the Moon, but fewer have visited the hadal trenches. We chronicle the submersible descent into the Puerto Rico Trench and sperm whale linguistics.",
+    "coverImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=90",
+    "storyCount": 8,
+    "isCurrent": false,
+    "stories": [
+      { "title": "Into the Abyssal Canyon", "slug": "into-the-abyssal-canyon", "author": "Maya Sørensen", "category": "Exploration" },
+      { "title": "The Acoustic Secret of Sperm Whales", "slug": "whispers-of-the-ocean-deep", "author": "Maya Sørensen", "category": "Wildlife" }
+    ]
+  },
+  {
+    "id": "issue-may-2026",
+    "slug": "may-2026",
+    "number": "Vol. 141 · No. 5",
+    "month": "May",
+    "year": "2026",
+    "title": "QUANTUM EARTH",
+    "subtitle": "Subatomic principles orchestrating living organisms.",
+    "editorialNote": "How quantum coherence enables avian magnetoreception, and the search for prebiotic chemical architectures inside meteoritic carbonaceous chondrites.",
+    "coverImage": "https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1200&q=90",
+    "storyCount": 8,
+    "isCurrent": false,
+    "stories": [
+      { "title": "Quantum Coherence in Avian Migration", "slug": "quantum-horizons-in-biology", "author": "Dr. Arjun Patel", "category": "Science" },
+      { "title": "The Search for Ocean Worlds", "slug": "the-search-for-ocean-worlds", "author": "Dr. Arjun Patel", "category": "Space" }
+    ]
+  },
+  {
+    "id": "issue-apr-2026",
+    "slug": "april-2026",
+    "number": "Vol. 141 · No. 4",
+    "month": "April",
+    "year": "2026",
+    "title": "SACRED BEDROCK",
+    "subtitle": "Subterranean architecture of medieval Ethiopia.",
+    "editorialNote": "A photographic exploration of the monolithic rock churches of Lalibela, followed by the nocturnal transformation of modern urban megacities.",
+    "coverImage": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=90",
+    "storyCount": 7,
+    "isCurrent": false,
+    "stories": [
+      { "title": "The Forgotten Monoliths of Lalibela", "slug": "in-the-footsteps-of-ancient-kings", "author": "Tariq Al-Mansoor", "category": "History" },
+      { "title": "Metropolis Under the Moon", "slug": "cities-after-dark", "author": "Sarah Lin", "category": "Culture" }
+    ]
+  }
+]

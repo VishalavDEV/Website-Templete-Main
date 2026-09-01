@@ -1,0 +1,33 @@
+.photo-essays-section {
+  padding: 7rem 0 6rem;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 230, 180, 0.18) 0%, rgba(250, 248, 242, 0.7) 80%);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-essays-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+}
+
+.photo-essays-header .atlas-section-eyebrow {
+  justify-content: center;
+}
+
+.photo-essays-header .atlas-section-eyebrow::after {
+  display: none;
+}
+
+.photo-essays-carousel-wrap {
+  height: 540px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .photo-essays-carousel-wrap {
+    height: 420px;
+  }
+}

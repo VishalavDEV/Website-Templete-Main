@@ -1,0 +1,277 @@
+/* ================================================================
+   Hero.css — scoped under .em-portfolio
+   Template 2: Elena Marlowe
+   ================================================================ */
+
+.em-portfolio .em-hero {
+  min-height: 100vh;
+  padding-top: 72px;
+  background-color: var(--em-ivory);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.em-portfolio .em-hero__container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 0.75fr;
+  gap: 3rem;
+  align-items: center;
+  padding-top: clamp(3rem, 8vh, 6rem);
+  padding-bottom: clamp(3rem, 8vh, 6rem);
+}
+
+/* ── Left Content ── */
+.em-portfolio .em-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.em-portfolio .em-hero__content--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.em-portfolio .em-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.em-portfolio .em-hero__eyebrow-line {
+  flex: 1;
+  height: 1px;
+  background: var(--em-gray-border);
+  max-width: 120px;
+}
+
+/* Headline */
+.em-portfolio .em-hero__headline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  font-family: var(--em-font-serif);
+  font-size: clamp(3.5rem, 7vw, 7.5rem);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: var(--em-charcoal);
+  margin: 0;
+}
+
+.em-portfolio .em-hero__headline-line { display: block; }
+
+.em-portfolio .em-hero__headline-line--2 {
+  color: var(--em-burgundy);
+}
+
+.em-portfolio .em-hero__headline-ampersand {
+  display: block;
+  font-family: var(--em-font-display);
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--em-gold);
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+.em-portfolio .em-hero__headline-line--4 {
+  color: var(--em-charcoal-muted);
+}
+
+/* Name */
+.em-portfolio .em-hero__name-block {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.em-portfolio .em-hero__name-line {
+  width: 48px;
+  height: 2px;
+  background: var(--em-burgundy);
+  flex-shrink: 0;
+}
+
+.em-portfolio .em-hero__name {
+  font-family: var(--em-font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--em-charcoal-muted);
+}
+
+/* Tagline */
+.em-portfolio .em-hero__tagline {
+  color: var(--em-charcoal-muted);
+  font-family: var(--em-font-display);
+  font-size: clamp(1.2rem, 2vw, 1.75rem);
+  font-style: italic;
+  line-height: 1.3;
+  max-width: 520px;
+}
+
+/* Intro */
+.em-portfolio .em-hero__intro {
+  max-width: 480px;
+  color: var(--em-charcoal-muted);
+}
+
+/* CTAs */
+.em-portfolio .em-hero__ctas {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* ── Right Visual ── */
+.em-portfolio .em-hero__visual {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 1.2s ease 0.3s, transform 1.2s ease 0.3s;
+}
+
+.em-portfolio .em-hero__visual--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Portrait */
+.em-portfolio .em-hero__portrait-wrap {
+  position: relative;
+  flex: 1;
+  max-width: 440px;
+}
+
+.em-portfolio .em-hero__portrait-frame {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: var(--em-ivory-deep);
+}
+
+.em-portfolio .em-hero__portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.em-portfolio .em-hero__portrait-wrap:hover .em-hero__portrait-img {
+  transform: scale(1.03);
+}
+
+.em-portfolio .em-hero__portrait-accent {
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  width: 80px;
+  height: 80px;
+  border: 1.5px solid var(--em-burgundy);
+  z-index: -1;
+}
+
+/* Details Column */
+.em-portfolio .em-hero__details {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3rem;
+  min-width: 130px;
+}
+
+.em-portfolio .em-hero__detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.25rem 0;
+}
+
+.em-portfolio .em-hero__detail-value {
+  font-family: var(--em-font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--em-charcoal);
+  line-height: 1.4;
+}
+
+.em-portfolio .em-hero__detail-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--em-gray-border);
+}
+
+/* Scroll Indicator */
+.em-portfolio .em-hero__scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: var(--em-container-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity 1s ease 1.5s;
+}
+
+.em-portfolio .em-hero__scroll--visible {
+  opacity: 1;
+}
+
+.em-portfolio .em-hero__scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, transparent, var(--em-gray-mid));
+  animation: em-scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes em-scrollPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .em-portfolio .em-hero__container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .em-portfolio .em-hero__visual {
+    flex-direction: row;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .em-portfolio .em-hero__portrait-wrap { max-width: 320px; }
+  .em-portfolio .em-hero__scroll { display: none; }
+}
+
+@media (max-width: 640px) {
+  .em-portfolio .em-hero__headline { font-size: clamp(2.8rem, 12vw, 4rem); }
+  .em-portfolio .em-hero__visual { flex-direction: column; align-items: center; }
+  .em-portfolio .em-hero__details {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 0;
+    width: 100%;
+  }
+  .em-portfolio .em-hero__detail-item {
+    flex: 1;
+    min-width: 140px;
+    padding: 0.75rem 0;
+  }
+  .em-portfolio .em-hero__detail-divider { display: none; }
+}

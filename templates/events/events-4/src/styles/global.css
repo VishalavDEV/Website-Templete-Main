@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,800;0,900;1,900&family=Outfit:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-yellow: #FFE600;
+  --color-yellow-glow: rgba(255, 230, 0, 0.4);
+  --color-purple: #8A2BE2;
+  --color-purple-dark: #4A0E80;
+  --color-purple-glow: rgba(138, 43, 226, 0.4);
+  --color-bg-black: #08080A;
+  --color-bg-dark: #101015;
+  --color-bg-card: #16161F;
+  --color-bg-card-hover: #1E1E2B;
+  --color-metallic: #2A2A38;
+  --color-metallic-light: #3D3D4F;
+  --color-text-main: #FFFFFF;
+  --color-text-muted: #A0A0B8;
+  
+  --font-heading: 'Montserrat', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --gradient-yellow: linear-gradient(135deg, #FFE600 0%, #FF9900 100%);
+  --gradient-purple: linear-gradient(135deg, #9D4EDD 0%, #5C0099 100%);
+  --gradient-hybrid: linear-gradient(135deg, #FFE600 0%, #8A2BE2 100%);
+  --gradient-dark: linear-gradient(180deg, #101015 0%, #08080A 100%);
+
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--color-bg-black);
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--color-bg-black);
+  min-height: 100vh;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #09090D;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-metallic);
+  border-radius: 4px;
+  border: 2px solid #09090D;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-yellow);
+}
+
+/* Typography Utility */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 1.1;
+  font-weight: 900;
+}
+
+.text-yellow { color: var(--color-yellow); }
+.text-purple { color: var(--color-purple); }
+.text-gradient-yellow {
+  background: var(--gradient-yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-hybrid {
+  background: var(--gradient-hybrid);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heading-huge {
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+  letter-spacing: 2px;
+}
+
+.heading-section {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 0.75rem;
+  position: relative;
+  display: inline-block;
+}
+
+.subheading {
+  color: var(--color-yellow);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.subheading::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: var(--color-yellow);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-padding {
+  padding: 6rem 0;
+  position: relative;
+}
+
+/* Diagonal Cutouts & Background Accents */
+.diagonal-bg-yellow {
+  background: var(--color-yellow);
+  color: #000;
+  clip-path: polygon(0 4%, 100% 0, 100% 96%, 0 100%);
+  padding: 7rem 0;
+}
+
+.diagonal-bg-dark {
+  background: var(--color-bg-dark);
+  clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0 calc(100% - 3vw));
+  padding: 7rem 0;
+}
+
+.diagonal-card {
+  position: relative;
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 8% 100%, 0 92%);
+  transition: var(--transition-normal);
+}
+
+.diagonal-card:hover {
+  border-color: var(--color-yellow);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px var(--color-yellow-glow);
+}
+
+.diagonal-card-purple:hover {
+  border-color: var(--color-purple);
+  box-shadow: 0 15px 35px var(--color-purple-glow);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2.2rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  transition: var(--transition-fast);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.btn-primary {
+  background: var(--color-yellow);
+  color: #08080A;
+  box-shadow: 0 0 20px var(--color-yellow-glow);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: #FFF000;
+  box-shadow: 0 0 30px var(--color-yellow);
+}
+
+.btn-purple {
+  background: var(--color-purple);
+  color: #FFFFFF;
+  box-shadow: 0 0 20px var(--color-purple-glow);
+}
+
+.btn-purple:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: #9D4EDD;
+  box-shadow: 0 0 30px var(--color-purple);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #FFFFFF;
+  border: 2px solid var(--color-yellow);
+}
+
+.btn-outline:hover {
+  background: var(--color-yellow);
+  color: #08080A;
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px var(--color-yellow-glow);
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: var(--color-yellow);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease-out, width 0.2s, height 0.2s, background 0.2s;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor.expanded {
+  width: 50px;
+  height: 50px;
+  background: rgba(138, 43, 226, 0.8);
+}
+
+.custom-cursor.view-mode::after {
+  content: 'VIEW';
+  font-family: var(--font-heading);
+  font-size: 10px;
+  color: #FFF;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: rgba(22, 22, 31, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}

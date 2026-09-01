@@ -1,0 +1,14 @@
+# Dependency directories
+frontend/node_modules/
+backend/target/
+frontend/dist/
+
+# IDE / System configs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store

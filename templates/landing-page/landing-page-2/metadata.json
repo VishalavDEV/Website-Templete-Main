@@ -1,0 +1,6 @@
+{
+  "name": "Busy Status Bar - Productivity Multi-Tool",
+  "description": "Productivity multi-tool device with an LED pixel screen, Pomodoro timer, and developer API.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

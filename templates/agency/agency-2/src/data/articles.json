@@ -1,0 +1,92 @@
+[
+  {
+    "id": "why-great-brands-feel-different",
+    "title": "Why Great Brands Feel Different: The Physics of Tactile Perception",
+    "category": "BRANDING",
+    "author": "Maya Chen",
+    "authorRole": "Creative Director",
+    "authorImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    "date": "FEB 18, 2026",
+    "readTime": "6 MIN READ",
+    "excerpt": "When every digital interface uses the same neo-grotesque sans, gradient buttons, and Bento grids, distinction becomes an act of deliberate restraint and material tactility.",
+    "heroImage": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
+    "tags": ["Branding", "Editorial Design", "Tactile UI", "Typography"],
+    "body": [
+      "In modern brand design, homogeneity has become the default. The proliferation of UI kits, algorithmically generated aesthetics, and trend cycles has compressed visual culture into a predictable pasteboard of rounded corners and purple gradients.",
+      "True distinction does not come from doing more; it comes from having a viewpoint. When a brand possesses an authentic philosophical stance, its design choices reflect physical materials, spatial architecture, and timeless typography rather than fleeting software fads.",
+      "Consider the difference between a mass-market paperback and a linen-bound monograph from Steidl. Both convey text, yet one commands reverence before a single word is read. We bring that same reverence to digital experiences."
+    ]
+  },
+  {
+    "id": "designing-for-attention",
+    "title": "Designing for Attention in an Era of Cognitive Overload",
+    "category": "DESIGN",
+    "author": "Sofia Laurent",
+    "authorRole": "Design Director",
+    "authorImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
+    "date": "JAN 29, 2026",
+    "readTime": "8 MIN READ",
+    "excerpt": "Attention is not grabbed with flashing popups; it is earned through editorial pacing, whitespace confidence, and rewarding interactions.",
+    "heroImage": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+    "tags": ["Interaction Design", "Cognitive Load", "Whitespace", "UI/UX"],
+    "body": [
+      "Modern users are exposed to thousands of visual impulses every hour. Most software responds by shouting louder—adding badges, animations, and high-saturation colors.",
+      "However, human psychology responds far more deeply to silence. When an interface creates space and gives the viewer room to breathe, the focal elements carry extraordinary weight.",
+      "Editorial rhythm means understanding that what you leave out is as critical as what you put in. By choreographing content into an intentional sequence, users move through your narrative with genuine curiosity."
+    ]
+  },
+  {
+    "id": "future-of-brand-systems",
+    "title": "The Future of Brand Systems: From Static Manuals to Living Software",
+    "category": "STRATEGY",
+    "author": "Arun Patel",
+    "authorRole": "Strategy Director",
+    "authorImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    "date": "JAN 12, 2026",
+    "readTime": "5 MIN READ",
+    "excerpt": "The 200-page brand PDF is dead. In its place are reactive design tokens, algorithmic motion primitives, and programmable spatial identities.",
+    "heroImage": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=1200&q=80",
+    "tags": ["Design Tokens", "Brand Systems", "Software Architecture", "Strategy"],
+    "body": [
+      "For decades, the standard deliverable of an agency was a monolithic PDF guidelines manual that went unread in corporate intranets.",
+      "Today, brands operate across smart watches, VR headsets, web applications, and interactive outdoor media simultaneously. A static guideline cannot keep up.",
+      "We build living brand systems where design tokens, typographic curves, and color palettes exist directly in code repositories, synchronizing seamlessly from Figma to production web applications."
+    ]
+  },
+  {
+    "id": "building-digital-experiences-that-matter",
+    "title": "Building Digital Experiences That Matter: Beyond the 3-Second Scroll",
+    "category": "TECHNOLOGY",
+    "author": "Daniel Reed",
+    "authorRole": "Technical Director",
+    "authorImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+    "date": "DEC 04, 2025",
+    "readTime": "7 MIN READ",
+    "excerpt": "How we combine Canvas 2D frame extraction, WebGL shader pipelines, and sub-100ms response times without compromising mobile battery life.",
+    "heroImage": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    "tags": ["WebGL", "Performance", "Creative Tech", "GSAP"],
+    "body": [
+      "There is a misconception that cinematic web experiences must be heavy and sluggish. When engineered with precision, high-touch animations can run at a constant 60 frames per second on everyday devices.",
+      "By leveraging offscreen canvas frame rendering, hardware-accelerated transforms, and adaptive device-pixel-ratio scaling, we create smooth cinematic narratives that load instantaneously.",
+      "Performance is not merely a technical checkbox; it is the fundamental prerequisite of elegance."
+    ]
+  },
+  {
+    "id": "cultural-resonance-in-tech",
+    "title": "Cultural Resonance in Deep Technology & Science",
+    "category": "CULTURE",
+    "author": "Elena Vance",
+    "authorRole": "Executive Producer",
+    "authorImage": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
+    "date": "NOV 20, 2025",
+    "readTime": "6 MIN READ",
+    "excerpt": "Why deep-tech and climate ventures require high-craft art direction to convince institutions and world-class talent to believe in radical futures.",
+    "heroImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+    "tags": ["Deep Tech", "Storytelling", "Culture", "Fundraising"],
+    "body": [
+      "Groundbreaking science often suffers from dry, inscrutable presentations. Complex equations and raw data fail to ignite human excitement.",
+      "When we work with synthetic biology or geothermal companies, our role is to translate scientific marvels into intuitive visual stories that capture public imagination.",
+      "Art direction turns hard science into a cultural movement."
+    ]
+  }
+]

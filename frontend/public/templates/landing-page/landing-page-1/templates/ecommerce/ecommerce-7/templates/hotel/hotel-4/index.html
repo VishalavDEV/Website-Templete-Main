@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solitude Haven</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+  <script>
+    (function() {
+      const isPlatform = window.location.host === 'localhost:5173' || window.location.host === '127.0.0.1:5173';
+      const isTop = window.self === window.top;
+      const urlParams = new URLSearchParams(window.location.search);
+      const isIframe = urlParams.get('iframe') === 'true';
+      
+      if (isPlatform && isTop && !isIframe) {
+        document.documentElement.style.visibility = 'hidden';
+        
+        window.addEventListener('DOMContentLoaded', () => {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.searchParams.set('iframe', 'true');
+          
+          const body = document.body;
+          body.innerHTML = '';
+          body.style.margin = '0';
+          body.style.padding = '0';
+          body.style.height = '100vh';
+          body.style.width = '100vw';
+          body.style.display = 'flex';
+          body.style.flexDirection = 'column';
+          body.style.overflow = 'hidden';
+          body.style.backgroundColor = '#f1f5f9';
+          
+          // Build Top Bar (White background, Blue branding elements)
+          const topBar = document.createElement('div');
+          topBar.id = 'technosprint-preview-header';
+          topBar.style.height = '64px';
+          topBar.style.background = '#ffffff';
+          topBar.style.borderBottom = '1px solid #e2e8f0';
+          topBar.style.display = 'flex';
+          topBar.style.alignItems = 'center';
+          topBar.style.justifyContent = 'space-between';
+          topBar.style.padding = '0 24px';
+          topBar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+          topBar.style.fontFamily = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+          topBar.style.zIndex = '99999';
+          topBar.style.position = 'relative';
+          topBar.style.boxSizing = 'border-box';
+          
+          // Left side logo
+          const logoDiv = document.createElement('div');
+          logoDiv.innerHTML = `
+            <a href="/templates" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="./logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" />
+            </a>
+          `;
+          topBar.appendChild(logoDiv);
+          
+          // Center view switcher buttons
+          const centerDiv = document.createElement('div');
+          centerDiv.style.display = 'flex';
+          centerDiv.style.alignItems = 'center';
+          centerDiv.style.gap = '8px';
+          centerDiv.innerHTML = `
+            <button id="view-desktop" style="
+              background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              Desktop
+            </button>
+            <button id="view-tablet" style="
+              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Tablet
+            </button>
+            <button id="view-mobile" style="
+              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Mobile
+            </button>
+          `;
+          topBar.appendChild(centerDiv);
+          
+          // Right side download button
+          const rightDiv = document.createElement('div');
+          const pathParts = window.location.pathname.split('/');
+          const templateSlug = pathParts[pathParts.length - 2] || 'photo-template';
+          
+          rightDiv.innerHTML = `
+            <a id="download-btn-header" href="/templates/\${templateSlug}?action=download" style="
+              background: #0066ff;
+              color: #ffffff;
+              text-decoration: none;
+              font-size: 0.85rem;
+              font-weight: 600;
+              padding: 10px 20px;
+              border-radius: 99px;
+              box-shadow: 0 4px 12px rgba(0, 102, 255, 0.15);
+              transition: all 0.2s ease-in-out;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              letter-spacing: 0.5px;
+              box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download Template
+            </a>
+          `;
+          topBar.appendChild(rightDiv);
+          body.appendChild(topBar);
+          
+          // Create Iframe Container
+          const iframeContainer = document.createElement('div');
+          iframeContainer.style.flex = '1';
+          iframeContainer.style.display = 'flex';
+          iframeContainer.style.alignItems = 'center';
+          iframeContainer.style.justifyContent = 'center';
+          iframeContainer.style.background = '#f1f5f9';
+          iframeContainer.style.padding = '20px';
+          iframeContainer.style.boxSizing = 'border-box';
+          iframeContainer.style.overflow = 'hidden';
+          
+          const iframe = document.createElement('iframe');
+          iframe.id = 'preview-iframe';
+          iframe.src = currentUrl.toString();
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.border = 'none';
+          iframe.style.borderRadius = '12px';
+          iframe.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+          iframe.style.background = '#ffffff';
+          iframe.style.transition = 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+          
+          iframeContainer.appendChild(iframe);
+          body.appendChild(iframeContainer);
+          
+          // Interactivity
+          const btnDesktop = body.querySelector('#view-desktop');
+          const btnTablet = body.querySelector('#view-tablet');
+          const btnMobile = body.querySelector('#view-mobile');
+          const downloadBtn = body.querySelector('#download-btn-header');
+          
+          let activeMode = 'desktop';
+          
+          function setView(mode) {
+            activeMode = mode;
+            [btnDesktop, btnTablet, btnMobile].forEach(btn => {
+              btn.style.background = '#ffffff';
+              btn.style.color = '#475569';
+              btn.style.borderColor = '#e2e8f0';
+              btn.style.fontWeight = '500';
+            });
+            
+            if (mode === 'desktop') {
+              btnDesktop.style.background = '#eff6ff';
+              btnDesktop.style.color = '#1e40af';
+              btnDesktop.style.borderColor = '#bfdbfe';
+              btnDesktop.style.fontWeight = '600';
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+            } else if (mode === 'tablet') {
+              btnTablet.style.background = '#eff6ff';
+              btnTablet.style.color = '#1e40af';
+              btnTablet.style.borderColor = '#bfdbfe';
+              btnTablet.style.fontWeight = '600';
+              iframe.style.width = '768px';
+              iframe.style.height = '1024px';
+              iframe.style.maxHeight = '100%';
+            } else if (mode === 'mobile') {
+              btnMobile.style.background = '#eff6ff';
+              btnMobile.style.color = '#1e40af';
+              btnMobile.style.borderColor = '#bfdbfe';
+              btnMobile.style.fontWeight = '600';
+              iframe.style.width = '375px';
+              iframe.style.height = '667px';
+              iframe.style.maxHeight = '100%';
+            }
+          }
+          
+          btnDesktop.addEventListener('click', () => setView('desktop'));
+          btnTablet.addEventListener('click', () => setView('tablet'));
+          btnMobile.addEventListener('click', () => setView('mobile'));
+          
+          const btns = [
+            { btn: btnDesktop, mode: 'desktop' },
+            { btn: btnTablet, mode: 'tablet' },
+            { btn: btnMobile, mode: 'mobile' }
+          ];
+          
+          btns.forEach(item => {
+            item.btn.addEventListener('mouseenter', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#f8fafc';
+                item.btn.style.borderColor = '#cbd5e1';
+              }
+            });
+            item.btn.addEventListener('mouseleave', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#ffffff';
+                item.btn.style.borderColor = '#e2e8f0';
+              }
+            });
+          });
+          
+          downloadBtn.addEventListener('mouseenter', () => {
+            downloadBtn.style.background = '#0256d6';
+            downloadBtn.style.boxShadow = '0 6px 16px rgba(0, 102, 255, 0.3)';
+          });
+          downloadBtn.addEventListener('mouseleave', () => {
+            downloadBtn.style.background = '#0066ff';
+            downloadBtn.style.boxShadow = '0 4px 12px rgba(0, 102, 255, 0.15)';
+          });
+          
+          document.documentElement.style.visibility = 'visible';
+        });
+      }
+    })();
+  </script>
+
+  <div class="sh-root">
+    
+    <!-- 0. SENSORY IMMERSION CONTROLLER -->
+    <div class="sh-ambience-dock">
+      <button 
+        id="toggle-ambience-btn"
+        class="sh-ambience-btn"
+        title="Toggle forest background atmosphere"
+      >
+        <i data-lucide="volume-x" id="ambience-icon" style="width: 16px; height: 16px;"></i>
+        <span id="ambience-text">SOUNDSCAPES</span>
+        <span class="sh-visualizer-wave" id="visualizer-wave" style="display: none;">
+          <span class="sh-wave-bar"></span>
+          <span class="sh-wave-bar"></span>
+          <span class="sh-wave-bar"></span>
+        </span>
+      </button>
+    </div>
+
+    <!-- 1. HERO SECTION & NAVBAR -->
+    <header class="sh-hero-wrap">
+      <div 
+        class="sh-hero-bg" 
+        style="background-image: url('https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1600&q=80')"
+      ></div>
+      
+      <div class="sh-container">
+        <nav class="sh-navbar">
+          <a href="#" class="sh-logo">
+            Solitude <em>Haven</em>
+          </a>
+          
+          <ul class="sh-nav-links">
+            <li>
+              <button onclick="document.getElementById('accommodations').scrollIntoView({ behavior: 'smooth' })" class="sh-nav-link">
+                Accommodations
+              </button>
+            </li>
+            <li>
+              <button onclick="document.getElementById('experiences').scrollIntoView({ behavior: 'smooth' })" class="sh-nav-link">
+                Experience
+              </button>
+            </li>
+            <li>
+              <button onclick="document.getElementById('wellness').scrollIntoView({ behavior: 'smooth' })" class="sh-nav-link">
+                Wellness
+              </button>
+            </li>
+            <li>
+              <a href="#footer" class="sh-nav-link">
+                Journal
+              </a>
+            </li>
+          </ul>
+          
+          <div>
+            <button 
+              class="sh-btn-pill btn-book-stay"
+            >
+              Book Your Stay
+            </button>
+          </div>
+          
+          <button 
+            id="mobile-menu-open-btn"
+            class="sh-menu-btn"
+            aria-label="Open menu"
+          >
+            <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+          </button>
+        </nav>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobile-drawer" class="sh-mobile-drawer">
+        <div class="sh-drawer-header">
+          <span class="sh-logo">Solitude</span>
+          <button id="mobile-menu-close-btn" aria-label="Close menu">
+            <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+          </button>
+        </div>
+        
+        <ul class="sh-drawer-links">
+          <li>
+            <button class="sh-drawer-link" onclick="document.getElementById('accommodations').scrollIntoView({ behavior: 'smooth' }); document.getElementById('mobile-drawer').classList.remove('sh-open');">
+              Accommodations
+            </button>
+          </li>
+          <li>
+            <button class="sh-drawer-link" onclick="document.getElementById('experiences').scrollIntoView({ behavior: 'smooth' }); document.getElementById('mobile-drawer').classList.remove('sh-open');">
+              Experience
+            </button>
+          </li>
+          <li>
+            <button class="sh-drawer-link" onclick="document.getElementById('wellness').scrollIntoView({ behavior: 'smooth' }); document.getElementById('mobile-drawer').classList.remove('sh-open');">
+              Wellness
+            </button>
+          </li>
+          <li>
+            <a href="#footer" class="sh-drawer-link" onclick="document.getElementById('mobile-drawer').classList.remove('sh-open');">
+              Journal
+            </a>
+          </li>
+        </ul>
+
+        <div>
+          <button 
+            class="sh-btn-pill btn-book-stay"
+            style="width: 100%"
+          >
+            Book Your Stay
+          </button>
+        </div>
+      </div>
+
+      <!-- Hero Banner Content -->
+      <div class="sh-container">
+        <div class="sh-hero-content sh-animate-fadeup">
+          <div class="sh-hero-left">
+            <div class="sh-hero-display-bg">DISCOVER</div>
+            
+            <div class="sh-hero-badge">
+              <span class="sh-badge-glass">
+                <span class="sh-hero-pill-dot"></span> Ultra-private Sanctuary
+              </span>
+            </div>
+            
+            <h1 class="sh-hero-title">
+              More than a destination — <br />
+              it’s a <em>sanctuary</em>.
+            </h1>
+            
+            <p class="sh-hero-subtitle">
+              A luxury refuge set in wild forests and silent waters
+            </p>
+            
+            <div class="sh-hero-buttons">
+              <button class="sh-btn-pill btn-book-stay">
+                Book Your Stay
+              </button>
+              <button 
+                onclick="document.getElementById('accommodations').scrollIntoView({ behavior: 'smooth' })"
+                class="sh-btn-pill-translucent"
+              >
+                Explore Suites →
+              </button>
+            </div>
+          </div>
+          
+          <div class="sh-hero-right">
+            <div class="sh-hero-pill-badge">
+              <span class="sh-hero-pill-dot"></span> 100% Off-Grid Luxury
+            </div>
+            <div class="sh-hero-pill-badge">
+              <span class="sh-hero-pill-dot"></span> Michelin Gastronomy
+            </div>
+            <div class="sh-hero-pill-badge">
+              <span class="sh-hero-pill-dot"></span> 360° Forest Views
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Footer -->
+      <div class="sh-container">
+        <div class="sh-hero-bottom">
+          <button 
+            onclick="document.getElementById('accommodations').scrollIntoView({ behavior: 'smooth' })"
+            class="sh-hero-scroll-indicator"
+          >
+            <span class="sh-hero-scroll-line"></span> Scroll to explore
+          </button>
+          
+          <div class="sh-coordinates-tag">
+            46.2044° N, 6.1432° E · Elev. 1,420m
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. EDITORIAL STORY SECTION -->
+    <section class="sh-atmosphere-sec sh-section-spacing">
+      <div class="sh-container">
+        <div class="sh-atmosphere-grid">
+          
+          <!-- Left Image & Tour Button -->
+          <div class="sh-atmosphere-left sh-reveal">
+            <div class="sh-atmosphere-img-frame">
+              <img 
+                src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1000&q=80" 
+                alt="Pool looking at mountain trees" 
+              />
+            </div>
+            
+            <button 
+              id="open-tour-btn"
+              class="sh-tour-badge-circle magnetic-btn"
+            >
+              <i data-lucide="play" fill="#ffffff" style="margin-left: 4px; width: 20px; height: 20px;"></i>
+              <span class="sh-tour-badge-spin-text">Play Tour</span>
+            </button>
+          </div>
+          
+          <!-- Right Story Text -->
+          <div class="sh-atmosphere-right sh-reveal">
+            <span class="sh-section-number">01. ATMOSPHERE</span>
+            
+            <h2 class="sh-editorial-statement">
+              Nestled in untouched valleys, designed for <span>absolute serenity</span> and endless night skies.
+            </h2>
+            
+            <p class="sh-editorial-description">
+              Solitude Haven is an intentional retreat where nature guides the architecture. Crafted with local pine, heavy granite slabs, and vast structural glass, our residences exist in perfect balance with the landscape. Here, cellular connection fades, and the natural cycle of light, wind, and silent alpine water takes over.
+            </p>
+            
+            <!-- Climate Station Sensor Card -->
+            <div class="sh-sensor-card">
+              <div class="sh-sensor-item">
+                <span class="sh-sensor-label"><i data-lucide="compass" style="margin-right: 6px; width: 12px; height: 12px;"></i> Active Clock</span>
+                <span class="sh-sensor-value" id="live-time">10:45:00 AM</span>
+              </div>
+              <div class="sh-sensor-item">
+                <span class="sh-sensor-label"><i data-lucide="thermometer" style="margin-right: 6px; width: 12px; height: 12px;"></i> Temperature</span>
+                <span class="sh-sensor-value"><span id="temperature">16.4</span>°C <span class="sh-sensor-pulse"></span></span>
+              </div>
+              <div class="sh-sensor-item">
+                <span class="sh-sensor-label"><i data-lucide="wind" style="margin-right: 6px; width: 12px; height: 12px;"></i> Wind Speed</span>
+                <span class="sh-sensor-value"><span id="wind-speed">4</span> km/h S</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SIGNATURE SUITES SECTION -->
+    <section id="accommodations" class="sh-suites-sec sh-section-spacing">
+      <div class="sh-container">
+        
+        <div class="sh-suites-header">
+          <div class="sh-suites-title-area sh-reveal">
+            <span class="sh-section-number">02. HABITATS</span>
+            <h2 class="sh-suites-title">Our Signature Suites</h2>
+          </div>
+          
+          <div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-end;">
+            <p class="sh-suites-subtext sh-reveal">
+              Immersive spaces featuring custom oak joinery, glass ceilings, and personal hot spring baths.
+            </p>
+            
+            <div class="sh-slider-controls sh-reveal">
+              <button 
+                id="suite-prev-btn"
+                class="sh-slider-arrow magnetic-btn"
+                disabled
+                aria-label="Previous Suite"
+              >
+                <i data-lucide="arrow-left" style="width: 20px; height: 20px;"></i>
+              </button>
+              <button 
+                id="suite-next-btn"
+                class="sh-slider-arrow magnetic-btn"
+                aria-label="Next Suite"
+              >
+                <i data-lucide="arrow-right" style="width: 20px; height: 20px;"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slider Content -->
+        <div class="sh-suites-track-container">
+          <div id="suites-track" class="sh-suites-track">
+            
+            <!-- Suite 1 -->
+            <div class="sh-suite-card">
+              <div class="sh-suite-img-box">
+                <img src="https://images.unsplash.com/photo-1508333706533-1ab43ecb1606?auto=format&fit=crop&w=1000&q=80" alt="The Glass Villa" />
+                <span class="sh-suite-tag">Signature Suite</span>
+              </div>
+              
+              <div class="sh-suite-info">
+                <div class="sh-suite-meta">
+                  <span>90 m² · </span>
+                  <span>2 Guests · </span>
+                  <span>100% Glass Roof</span>
+                </div>
+                
+                <h3 class="sh-suite-name">The Glass Villa</h3>
+                
+                <div class="sh-habitat-tabs-nav suite-tabs-nav" data-suite="0">
+                  <button class="sh-habitat-tab-btn sh-active" data-tab="overview">
+                    <i data-lucide="info" style="width: 11px; height: 11px;"></i> Overview
+                  </button>
+                  <button class="sh-habitat-tab-btn" data-tab="floorplan">
+                    <i data-lucide="layers" style="width: 11px; height: 11px;"></i> Floorplan
+                  </button>
+                  <button class="sh-habitat-tab-btn" data-tab="inclusions">
+                    <i data-lucide="eye" style="width: 11px; height: 11px;"></i> Inclusions
+                  </button>
+                </div>
+
+                <div class="sh-habitat-tab-content" id="suite-content-0">
+                  <p class="sh-suite-desc sh-tab-fade" data-content="overview">An architectural marvel offering unobstructed views of the redwood canopy and the starry night sky. Featuring a private outdoor hot tub and reflection telescope.</p>
+                  
+                  <div class="sh-floorplan-panel sh-tab-fade" data-content="floorplan" style="display: none;">
+                    <svg viewBox="0 0 100 100" class="sh-floorplan-svg">
+                      <path d="M 10 10 H 90 V 90 H 10 Z" fill="none" stroke="currentColor" stroke-width="0.8" stroke-dasharray="300" />
+                      <circle cx="50" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="0.8" stroke-dasharray="120" />
+                      <line x1="10" y1="65" x2="40" y2="65" stroke="currentColor" stroke-width="0.6" />
+                      <line x1="60" y1="65" x2="90" y2="65" stroke="currentColor" stroke-width="0.6" />
+                      <rect x="25" y="25" width="12" height="12" fill="none" stroke="currentColor" stroke-width="0.6" />
+                      <circle cx="75" cy="75" r="6" fill="none" stroke="currentColor" stroke-width="0.6" />
+                      <text x="50" y="52" font-size="4" text-anchor="middle" fill="currentColor" opacity="0.6">BEDROOM</text>
+                      <text x="31" y="32" font-size="3" text-anchor="middle" fill="currentColor" opacity="0.6">BATH</text>
+                      <text x="75" y="77" font-size="3" text-anchor="middle" fill="currentColor" opacity="0.6">SPA</text>
+                    </svg>
+                    <span class="sh-floorplan-annotation">Animated Architectural Layout</span>
+                  </div>
+                  
+                  <div class="sh-inclusions-grid sh-tab-fade" data-content="inclusions" style="display: none;">
+                    <div class="sh-inclusion-item"><i data-lucide="check" class="sh-gold-check" style="width: 11px; height: 11px;"></i><span>Starlight telescope</span></div>
+                    <div class="sh-inclusion-item"><i data-lucide="check" class="sh-gold-check" style="width: 11px; height: 11px;"></i><span>Private cedar tub</span></div>
+                    <div class="sh-inclusion-item"><i data-lucide="check" class="sh-gold-check" style="width: 11px; height: 11px;"></i><span>Heated stone floors</span></div>
+                    <div class="sh-inclusion-item"><i data-lucide="check" class="sh-gold-check" style="width: 11px; height: 11px;"></i><span>Greenhouse minibar</span></div>
+                  </div>
+                </div>
+                
+                <div class="sh-suite-footer">
+                  <div class="sh-suite-price">
+                    $850 <span>/ NIGHT</span>
+                  </div>
+                  <button class="sh-suite-action btn-book-suite" data-suite-id="glass-villa">
+                    Reserve <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Suite 2 -->
+            <div class="sh-suite-card">
+              <div class="sh-suite-img-box">
+                <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1000&q=80" alt="The Forest Pavilion" />
+                <span class="sh-suite-tag">Elevated Sanctuary</span>
+              </div>
+              
+              <div class="sh-suite-info">
+                <div class="sh-suite-meta">
+                  <span>75 m² · </span>
+                  <span>2 Guests · </span>
+                  <span>Suspended Pine Deck</span>
+                </div>
+                
+                <h3 class="sh-suite-name">The Forest Pavilion</h3>
+                
+                <div class="sh-habitat-tabs-nav suite-tabs-nav" data-suite="1">
+                  <button class="sh-habitat-tab-btn sh-active" data-tab="overview">
+                    <i data-lucide="info" style="width: 11px; height: 11px;"></i> Overview
+                  </button>
+                  <button class="sh-habitat-tab-btn" data-tab="floorplan">
+                    <i data-lucide="layers" style="width: 11px; height: 11px;"></i> Floorplan
+                  </button>
+                  <button class="sh-habitat-tab-btn" data-tab="inclusions">
+                    <i data-lucide="eye" style="width: 11px; height: 11px;"></i> Inclusions
+                  </button>
+                </div>
+
+                <div class="sh-habitat-tab-content" id="suite-content-1">
+                  <p class="sh-suite-desc sh-tab-fade" data-content="overview">Suspended 5 meters above the forest floor. Built with aromatic pine and granite slabs, this pavilion features a wood fireplace and an outdoor copper tub.</p>
+                  
+                  <div class="sh-floorplan-panel sh-tab-fade" data-content="floorplan" style="display: none;">
+                    <svg viewBox="0 0 100 100" class="sh-floorplan-svg">
+                      <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="0.8" stroke-dasharray="260" />
+                      <rect x="35" y="35" width="30" height="25" fill="none" stroke="currentColor" stroke-width="0.8" />
+                      <line x1="18" y1="50" x2="35" y2="50" stroke="currentColor" stroke-width="0.6" />
+                      <line x1="65" y1="50" x2="82" y2="50" stroke="currentColor" stroke-width="0.6" />
+                      <circle cx="50" cy="22" r="6" fill="none" stroke="currentColor" stroke-width="0.6" />
+                      <text x="50" y="47" font-size="4" text-anchor="middle" fill="currentColor" opacity="0.6">LIVING</text>
+                      <text x="50" y="24" font-size="3" text-anchor="middle" fill="currentColor" opacity="0.6">FIRE</text>
+                    </svg>
+                    <span class="sh-floorplan-annotation">Animated Architectural Layout</span>
+                  </div>
+                  
+                  <div class="sh-inclusions-grid sh-tab-fade" data-content="inclusions" style="display: none;">
+                    <div class="sh-inclusion-item"><i data-lucide="check" class="sh-gold-check" style="width: 11px; height: 11px;"></i><span>Copper soaking tub</span></div>
+                    <div class="sh-inclusion-item"><i data-lucide="check" class="sh-gold-check" style="width: 11px; height: 11px;"></i><span>Granite fireplace</span></div>
+                    <div class="sh-inclusion-item"><i data-lucide="check" class="sh-gold-check" style="width: 11px; height: 11px;"></i><span>Mountain view balcony</span></div>
+                    <div class="sh-inclusion-item"><i data-lucide="check" class="sh-gold-check" style="width: 11px; height: 11px;"></i><span>Artisan tea bar</span></div>
+                  </div>
+                </div>
+                
+                <div class="sh-suite-footer">
+                  <div class="sh-suite-price">
+                    $620 <span>/ NIGHT</span>
+                  </div>
+                  <button class="sh-suite-action btn-book-suite" data-suite-id="forest-pavilion">
+                    Reserve <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Suite 3 -->
+            <div class="sh-suite-card">
+              <div class="sh-suite-img-box">
+                <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=1000&q=80" alt="Overwater Sanctuary" />
+                <span class="sh-suite-tag">Lakeside Retreat</span>
+              </div>
+              
+              <div class="sh-suite-info">
+                <div class="sh-suite-meta">
+                  <span>140 m² · </span>
+                  <span>4 Guests · </span>
+                  <span>Private Lake Jetty</span>
+                </div>
+                
+                <h3 class="sh-suite-name">Overwater Sanctuary</h3>
+                
+                <div class="sh-habitat-tabs-nav suite-tabs-nav" data-suite="2">
+                  <button class="sh-habitat-tab-btn sh-active" data-tab="overview">
+                    <i data-lucide="info" style="width: 11px; height: 11px;"></i> Overview
+                  </button>
+                  <button class="sh-habitat-tab-btn" data-tab="floorplan">
+                    <i data-lucide="layers" style="width: 11px; height: 11px;"></i> Floorplan
+                  </button>
+                  <button class="sh-habitat-tab-btn" data-tab="inclusions">
+                    <i data-lucide="eye" style="width: 11px; height: 11px;"></i> Inclusions
+                  </button>
+                </div>
+
+                <div class="sh-habitat-tab-content" id="suite-content-2">
+                  <p class="sh-suite-desc sh-tab-fade" data-content="overview">Hovering over the crystal clear lake waters. Built with expansive glass panes, featuring a private wellness sauna, outdoor plunge pool, and kayak launch deck.</p>
+                  
+                  <div class="sh-floorplan-panel sh-tab-fade" data-content="floorplan" style="display: none;">
+                    <svg viewBox="0 0 100 100" class="sh-floorplan-svg">
+                      <path d="M 5 20 H 95 V 80 H 5 Z" fill="none" stroke="currentColor" stroke-width="0.8" stroke-dasharray="320" />
+                      <line x1="33" y1="20" x2="33" y2="80" stroke="currentColor" stroke-width="0.8" />
+                      <line x1="66" y1="20" x2="66" y2="80" stroke="currentColor" stroke-width="0.8" />
+                      <circle cx="16" cy="50" r="10" fill="none" stroke="currentColor" stroke-width="0.6" />
+                      <circle cx="84" cy="50" r="8" fill="none" stroke="currentColor" stroke-width="0.6" />
+                      <text x="50" y="52" font-size="4" text-anchor="middle" fill="currentColor" opacity="0.6">SAUNA & SPA</text>
+                      <text x="16" y="52" font-size="3" text-anchor="middle" fill="currentColor" opacity="0.6">SUITE A</text>
+                      <text x="84" y="52" font-size="3" text-anchor="middle" fill="currentColor" opacity="0.6">SUITE B</text>
+                    </svg>
+                    <span class="sh-floorplan-annotation">Animated Architectural Layout</span>
+                  </div>
+                  
+                  <div class="sh-inclusions-grid sh-tab-fade" data-content="inclusions" style="display: none;">
+                    <div class="sh-inclusion-item"><i data-lucide="check" class="sh-gold-check" style="width: 11px; height: 11px;"></i><span>Lakeside sauna</span></div>
+                    <div class="sh-inclusion-item"><i data-lucide="check" class="sh-gold-check" style="width: 11px; height: 11px;"></i><span>Plunge pool</span></div>
+                    <div class="sh-inclusion-item"><i data-lucide="check" class="sh-gold-check" style="width: 11px; height: 11px;"></i><span>Private kayaks</span></div>
+                    <div class="sh-inclusion-item"><i data-lucide="check" class="sh-gold-check" style="width: 11px; height: 11px;"></i><span>Espresso cellar</span></div>
+                  </div>
+                </div>
+                
+                <div class="sh-suite-footer">
+                  <div class="sh-suite-price">
+                    $1100 <span>/ NIGHT</span>
+                  </div>
+                  <button class="sh-suite-action btn-book-suite" data-suite-id="overwater-sanctuary">
+                    Reserve <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slider Progress Bar -->
+        <div class="sh-slider-progress-container sh-reveal">
+          <div id="suite-progress-bar" class="sh-slider-progress-bar" style="width: 33.3333%;"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. FACILITIES & CURATED EXPERIENCES -->
+    <section id="experiences" class="sh-exp-sec sh-section-spacing">
+      <div class="sh-container">
+        
+        <div class="sh-exp-header sh-reveal">
+          <span class="sh-section-number">03. ESCAPES</span>
+          <h2 class="sh-exp-title">Experiences & Amenities</h2>
+        </div>
+        
+        <div class="sh-exp-grid">
+          <!-- Left Column: Image Feature Card -->
+          <div class="sh-exp-featured-card sh-reveal">
+            <div id="exp-bg" class="sh-exp-featured-bg sh-tab-fade" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=80')"></div>
+            
+            <div class="sh-exp-featured-content">
+              <span id="exp-tag" class="sh-exp-featured-label">WELLNESS RITUALS</span>
+              <h3 id="exp-title" class="sh-exp-featured-title">Hydrotherapy & Forest Spa</h3>
+              <p id="exp-desc" class="sh-exp-featured-desc">Thermal stone massages, pine-scented steam chambers, and natural cedar hot tubs fed by pure alpine mineral springs. Designed to synchronize with the forest atmosphere.</p>
+            </div>
+          </div>
+          
+          <!-- Right Column: Switcher index list -->
+          <div class="sh-exp-index-list sh-reveal">
+            <!-- Items injected by JS -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. TESTIMONIALS SECTION -->
+    <section id="wellness" class="sh-test-sec sh-section-spacing">
+      <div class="sh-test-bg-text">SILENCE</div>
+      
+      <div class="sh-container">
+        <div class="sh-test-container sh-reveal">
+          <div class="sh-test-quote-icon">“</div>
+          
+          <blockquote id="test-quote" class="sh-test-quote">
+            Solitude Haven is an otherworldly retreat. Sleeping under the starlit sky inside the Glass Villa felt like floating in the cosmos. Every detail was absolute perfection.
+          </blockquote>
+          
+          <div id="test-author" class="sh-test-author">Evelyn & Liam K.</div>
+          <div id="test-date" class="sh-test-date">The Glass Villa · July 2026</div>
+          
+          <div class="sh-test-dots" id="test-dots">
+            <!-- Dots injected by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer class="sh-footer" id="footer">
+      <div class="sh-container">
+        <div class="sh-footer-grid">
+          
+          <div class="sh-footer-brand">
+            <span class="sh-logo" style="font-size: 1.4rem;">
+              Solitude <em>Haven</em>
+            </span>
+            <p class="sh-footer-tagline">
+              An editorial sanctuary built in perfect union with pine forests, mountain mists, and deep silence.
+            </p>
+            <div class="sh-footer-coords">
+              46.2044° N, 6.1432° E · Elevation 1,420m
+            </div>
+          </div>
+          
+          <div class="sh-footer-nav">
+            <h4 class="sh-footer-heading">DIRECTORY</h4>
+            <ul class="sh-footer-links">
+              <li>
+                <button onclick="document.getElementById('accommodations').scrollIntoView({ behavior: 'smooth' })" class="sh-footer-link">
+                  Residences
+                </button>
+              </li>
+              <li>
+                <button onclick="document.getElementById('experiences').scrollIntoView({ behavior: 'smooth' })" class="sh-footer-link">
+                  The Wilderness
+                </button>
+              </li>
+              <li>
+                <button onclick="document.getElementById('wellness').scrollIntoView({ behavior: 'smooth' })" class="sh-footer-link">
+                  Hydrotherapy
+                </button>
+              </li>
+              <li>
+                <a href="#" class="sh-footer-link">
+                  Estate Journal
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="sh-footer-newsletter">
+            <h4 class="sh-footer-heading">THE DISPATCH</h4>
+            <p class="sh-newsletter-text">
+              Subscribe to receive seasonal retreat schedules, culinary announcements, and forest updates.
+            </p>
+            
+            <form id="newsletter-form" class="sh-newsletter-form">
+              <input 
+                type="email" 
+                id="newsletter-email"
+                class="sh-newsletter-input" 
+                placeholder="ENTER YOUR EMAIL" 
+                required
+              />
+              <button type="submit" class="sh-newsletter-submit" aria-label="Subscribe">
+                <i data-lucide="mail" style="width: 16px; height: 16px;"></i>
+              </button>
+            </form>
+            
+            <div id="newsletter-success" class="sh-newsletter-msg" style="display: none;">
+              <i data-lucide="check" style="margin-right: 4px; vertical-align: middle; width: 12px; height: 12px;"></i> Subscription confirmed.
+            </div>
+          </div>
+
+        </div>
+
+        <div class="sh-footer-bottom">
+          <span class="sh-copyright" id="copyright-year">
+            © 2026 SOLITUDE HAVEN RESORT. DESIGNED FOR AN UNCONNECTED WORLD.
+          </span>
+          
+          <div class="sh-footer-socials">
+            <a href="#" class="sh-social-link">Instagram</a>
+            <a href="#" class="sh-social-link">Vimeo</a>
+            <a href="#" class="sh-social-link">Pinterest</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 7. INTERACTIVE LIGHTBOX & DRAWER -->
+
+    <!-- Tour Lightbox Cinematic Modal -->
+    <div id="tour-modal" class="sh-lightbox-overlay" style="display: none;">
+      <div class="sh-lightbox-content sh-tour-panel" id="tour-panel">
+        
+        <!-- Top Multi-segmented Progress Bar -->
+        <div class="sh-tour-progress-container" id="tour-progress-container">
+          <!-- Injected by JS -->
+        </div>
+
+        <!-- Slideshow background layers -->
+        <div class="sh-tour-slideshow" id="tour-slideshow">
+          <!-- Injected by JS -->
+        </div>
+
+        <!-- Top right close button -->
+        <button id="close-tour-btn" class="sh-tour-close-btn">
+          <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+        </button>
+
+        <!-- Floating Editorial Subtitle Card -->
+        <div class="sh-tour-caption-box">
+          <span class="sh-tour-badge">SOLITUDE TOUR</span>
+          <h3 id="tour-title" class="sh-tour-title"></h3>
+          <p id="tour-desc" class="sh-tour-desc"></p>
+          
+          <!-- Media Controls -->
+          <div class="sh-tour-controls">
+            <button id="tour-prev-btn" class="sh-tour-ctrl-btn" title="Previous Scene">
+              <i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i>
+            </button>
+            
+            <button id="tour-play-pause-btn" class="sh-tour-ctrl-btn sh-tour-play-btn" title="Pause Tour">
+              <!-- Dynamically updated icon -->
+              <span class="sh-pause-icon"></span>
+            </button>
+
+            <button id="tour-next-btn" class="sh-tour-ctrl-btn" title="Next Scene">
+              <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Booking Side Panel Reservation Drawer -->
+    <div id="booking-modal" class="sh-booking-overlay" style="display: none;">
+      <div class="sh-booking-panel" id="booking-panel">
+        
+        <div class="sh-booking-header">
+          <h3 class="sh-booking-title">Reserve Habitat</h3>
+          <button id="close-booking-btn" class="sh-booking-close">
+            <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+          </button>
+        </div>
+        
+        <!-- Form view -->
+        <form id="booking-form" class="sh-booking-form">
+          
+          <div class="sh-form-group">
+            <label class="sh-form-label">SELECT RESIDENCE</label>
+            <select id="booking-suite" class="sh-form-select">
+              <option value="glass-villa">The Glass Villa ($850 / night)</option>
+              <option value="forest-pavilion">The Forest Pavilion ($620 / night)</option>
+              <option value="overwater-sanctuary">Overwater Sanctuary ($1100 / night)</option>
+            </select>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="sh-form-group">
+              <label class="sh-form-label"><i data-lucide="calendar" style="margin-right: 4px; width: 11px; height: 11px;"></i> CHECK-IN</label>
+              <input type="date" class="sh-form-input" required value="2026-09-10" />
+            </div>
+            <div class="sh-form-group">
+              <label class="sh-form-label"><i data-lucide="calendar" style="margin-right: 4px; width: 11px; height: 11px;"></i> CHECK-OUT</label>
+              <input type="date" class="sh-form-input" required value="2026-09-15" />
+            </div>
+          </div>
+          
+          <div class="sh-form-group">
+            <label class="sh-form-label"><i data-lucide="users" style="margin-right: 4px; width: 11px; height: 11px;"></i> ADULT GUESTS</label>
+            <select class="sh-form-select">
+              <option value="1">1 Guest</option>
+              <option value="2" selected>2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+            </select>
+          </div>
+          
+          <div class="sh-form-group" style="margin-top: 20px;">
+            <label class="sh-form-label">OFF-GRID REQUESTS</label>
+            <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.8rem; color: rgba(255,255,255,0.7);">
+              <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                <input type="checkbox" checked style="accent-color: var(--sh-accent-gold);" />
+                No-WiFi Digital Detox Box
+              </label>
+              <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                <input type="checkbox" style="accent-color: var(--sh-accent-gold);" />
+                Botanical Spa Ritual Pre-booking
+              </label>
+              <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                <input type="checkbox" checked style="accent-color: var(--sh-accent-gold);" />
+                Greenhouse Michelin Breakfast Basket
+              </label>
+            </div>
+          </div>
+          
+          <button type="submit" class="sh-booking-submit">
+            Request Reservation
+          </button>
+        </form>
+        
+        <!-- Success view -->
+        <div id="booking-success" class="sh-booking-success" style="display: none;">
+          <div class="sh-success-icon">
+            <i data-lucide="star" fill="var(--sh-accent-gold)" style="width: 32px; height: 32px; stroke: var(--sh-accent-gold)"></i>
+          </div>
+          <h4 class="sh-success-title">Reservation Requested</h4>
+          <p class="sh-success-desc">
+            Our estate curator will review your request for the <strong id="booked-suite-name">The Glass Villa</strong> and contact you within 2 hours to confirm your off-grid ritual itinerary.
+          </p>
+          <button id="return-sanctuary-btn" class="sh-btn-pill">
+            Return to Sanctuary
+          </button>
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

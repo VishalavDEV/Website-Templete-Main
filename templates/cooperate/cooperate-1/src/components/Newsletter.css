@@ -1,0 +1,117 @@
+.luxury-newsletter-section {
+  position: relative;
+  background-color: var(--bg-secondary);
+}
+
+.luxury-newsletter-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: clamp(3rem, 5vw, 5rem) 2.5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.news-ambient-glow {
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(200, 169, 107, 0.16) 0%, transparent 65%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.news-content-box {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.news-card-title {
+  font-size: clamp(1.8rem, 2.7vw, 2.4rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.news-card-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+
+.news-single-line-form {
+  display: flex;
+  align-items: center;
+  border-bottom: 1.5px solid var(--border-medium);
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.25rem;
+  transition: border-color var(--transition-fast);
+}
+
+.news-single-line-form:focus-within {
+  border-color: var(--accent);
+}
+
+.news-line-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  padding: 0.5rem 0;
+}
+
+.news-line-input:focus {
+  outline: none;
+}
+
+.news-line-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  transition: all var(--transition-fast);
+}
+
+.news-line-btn:hover {
+  color: var(--accent-light);
+  transform: translateX(3px);
+}
+
+.news-success-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(143, 167, 160, 0.15);
+  border: 1px solid rgba(143, 167, 160, 0.35);
+  border-radius: var(--radius-sm);
+  color: #8FA7A0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.news-privacy-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+@media (max-width: 640px) {
+  .luxury-newsletter-card {
+    padding: 2.5rem 1.5rem;
+  }
+}

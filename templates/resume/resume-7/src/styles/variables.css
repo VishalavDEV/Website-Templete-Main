@@ -1,0 +1,42 @@
+:root {
+  /* Primary Warm Neutral Backgrounds */
+  --bg-primary: #FAF8F5;
+  --bg-cream: #F5F2EC;
+  --bg-parchment: #EFECE6;
+  --bg-beige-subtle: #EAE6DF;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FDFBF7;
+
+  /* Accent Color Tokens (Used sparingly) */
+  --color-wine: #6B1D2F;
+  --color-olive: #4A5D4E;
+  --color-terracotta: #C86D51;
+  --color-charcoal: #2B2927;
+  --color-charcoal-light: #524F4B;
+  --color-charcoal-muted: #7A7670;
+  
+  /* Borders & Dividers */
+  --border-fine: 1px solid rgba(43, 41, 39, 0.12);
+  --border-wine-subtle: 1px solid rgba(107, 29, 47, 0.2);
+  --border-olive-subtle: 1px solid rgba(74, 93, 78, 0.2);
+  --border-dark: 1px solid #2B2927;
+
+  /* Typography Fonts */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-script: 'Alex Brush', cursive;
+
+  /* Shadows */
+  --shadow-subtle: 0 4px 20px rgba(43, 41, 39, 0.04);
+  --shadow-medium: 0 12px 36px rgba(43, 41, 39, 0.08);
+  --shadow-hover: 0 20px 48px rgba(43, 41, 39, 0.12);
+
+  /* Spacing Tokens */
+  --section-padding: 7rem 2rem;
+  --section-padding-mobile: 4rem 1.25rem;
+  --container-max-width: 1280px;
+
+  /* Transition Speeds */
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s ease-out;
+}

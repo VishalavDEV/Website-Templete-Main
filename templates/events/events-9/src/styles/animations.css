@@ -1,0 +1,181 @@
+/* AVELUNE VOWS - ANIMATIONS & INTERACTIVE EFFECTS */
+
+/* SCROLL PROGRESS INDICATOR BAR */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background-color: var(--accent);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
+/* CUSTOM DESKTOP CURSOR */
+@media (min-width: 1025px) {
+  body.has-custom-cursor {
+    cursor: none;
+  }
+  
+  a, button, input, select, textarea, .clickable {
+    cursor: none !important;
+  }
+
+  .custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #ff3344;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 0 10px rgba(255, 51, 68, 0.6);
+  }
+
+  .custom-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid #ff3344;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+  }
+
+  .custom-cursor-ring.hovered {
+    width: 60px;
+    height: 60px;
+    border-color: #ff1a2d;
+    background-color: rgba(255, 51, 68, 0.15);
+  }
+}
+
+/* FLOATING PETALS ANIMATION */
+.petals-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -10%;
+  border-radius: 150% 0 150% 0;
+  background: linear-gradient(135deg, #fceade 0%, #f4acb7 100%);
+  opacity: 0.6;
+  animation: floatPetal 14s linear infinite;
+}
+
+@keyframes floatPetal {
+  0% {
+    transform: translateY(0) rotate(0deg) translateX(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg) translateX(50px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg) translateX(-30px);
+    opacity: 0;
+  }
+}
+
+/* BACK TO TOP BUTTON */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--text);
+  color: var(--cream);
+  border: 1px solid var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 990;
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-fast);
+}
+
+.back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top-btn:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+/* FLOATING MUSIC TOGGLE BUTTON */
+.music-toggle-btn {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--cream);
+  color: var(--text);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 990;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-fast);
+}
+
+.music-toggle-btn:hover {
+  border-color: var(--accent);
+  background-color: var(--background);
+}
+
+.music-toggle-btn.playing {
+  background-color: var(--text);
+  color: var(--cream);
+  border-color: var(--text);
+}
+
+/* FADE IN ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

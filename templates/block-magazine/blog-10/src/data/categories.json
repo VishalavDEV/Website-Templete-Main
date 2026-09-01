@@ -1,0 +1,90 @@
+[
+  {
+    "id": "cat-wildlife",
+    "slug": "wildlife",
+    "name": "WILDLIFE",
+    "tagline": "The secret intelligence of the living world.",
+    "description": "The behavior, survival strategies, and hidden cognitive lives of Earth's most extraordinary species.",
+    "heroImage": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?auto=format&fit=crop&w=2000&q=85",
+    "accentColor": "#d97736",
+    "iconName": "Flame",
+    "storyCount": 42
+  },
+  {
+    "id": "cat-planet",
+    "slug": "planet",
+    "name": "PLANET",
+    "tagline": "Geological forces, deep currents, and shifting ecosystems.",
+    "description": "Oceans, climate dynamics, tectonic frontiers, and the ancient planetary systems shaping our living biosphere.",
+    "heroImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=85",
+    "accentColor": "#2b8a78",
+    "iconName": "Globe",
+    "storyCount": 38
+  },
+  {
+    "id": "cat-science",
+    "slug": "science",
+    "name": "SCIENCE",
+    "tagline": "Discoveries redefining the boundaries of reality.",
+    "description": "Frontier physics, neurobiology, synthetic genomics, and the fundamental questions of matter and consciousness.",
+    "heroImage": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=2000&q=85",
+    "accentColor": "#3b82f6",
+    "iconName": "Atom",
+    "storyCount": 51
+  },
+  {
+    "id": "cat-space",
+    "slug": "space",
+    "name": "SPACE",
+    "tagline": "The cosmological expanse beyond our pale blue dot.",
+    "description": "Exoplanetary atmospheres, stellar evolution, radio astronomy, and humanity's silent voyage through the cosmos.",
+    "heroImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=85",
+    "accentColor": "#8b5cf6",
+    "iconName": "Compass",
+    "storyCount": 34
+  },
+  {
+    "id": "cat-history",
+    "slug": "history",
+    "name": "HISTORY",
+    "tagline": "Lost civilizations and stories buried beneath millennia.",
+    "description": "Submerged cities, LiDAR archaeology, forgotten empires, and the long evolutionary journey of human ingenuity.",
+    "heroImage": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=2000&q=85",
+    "accentColor": "#c29d59",
+    "iconName": "Scroll",
+    "storyCount": 29
+  },
+  {
+    "id": "cat-culture",
+    "slug": "culture",
+    "name": "CULTURE",
+    "tagline": "Living traditions, indigenous wisdom, and modern diaspora.",
+    "description": "Rituals of remote communities, sonic languages, nomadic identities, and the shifting mosaic of human heritage.",
+    "heroImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2000&q=85",
+    "accentColor": "#e11d48",
+    "iconName": "Users",
+    "storyCount": 27
+  },
+  {
+    "id": "cat-exploration",
+    "slug": "exploration",
+    "name": "EXPLORATION",
+    "tagline": "Journeys to the geographic and psychological edges.",
+    "description": "Speleology in unmapped caverns, polar transits, volcanic descents, and endurance at the extremes of Earth.",
+    "heroImage": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=85",
+    "accentColor": "#059669",
+    "iconName": "Mountain",
+    "storyCount": 36
+  },
+  {
+    "id": "cat-photography",
+    "slug": "photography",
+    "name": "PHOTOGRAPHY",
+    "tagline": "Visual narratives that capture the raw truth of existence.",
+    "description": "Extraordinary visual essays from field photojournalists, remote optical expeditions, and macro naturalists.",
+    "heroImage": "https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?auto=format&fit=crop&w=2000&q=85",
+    "accentColor": "#f59e0b",
+    "iconName": "Camera",
+    "storyCount": 44
+  }
+]

@@ -1,0 +1,89 @@
+﻿.section--philosophy {
+  position: relative;
+  padding: var(--space-5xl) 0;
+  overflow: hidden;
+  background: linear-gradient(160deg, #eef6fb 0%, #e8f4f8 50%, #f0f8fc 100%);
+}
+
+.philosophy__bg {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--clr-blue-400) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.philosophy__inner {
+  max-width: 760px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.philosophy__inner--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.philosophy__quote-mark {
+  font-family: var(--font-heading);
+  font-size: 6rem;
+  color: var(--clr-blue-200, #bfdbfe);
+  line-height: 0.5;
+  margin-bottom: var(--space-lg);
+  display: block;
+}
+
+.philosophy__statement {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 600;
+  font-style: italic;
+  color: var(--clr-blue-900);
+  line-height: 1.5;
+  margin-bottom: var(--space-xl);
+}
+
+.philosophy__divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--clr-blue-400), var(--clr-teal-500));
+  border-radius: 2px;
+  margin: 0 auto var(--space-xl);
+}
+
+.philosophy__text {
+  font-size: 0.95rem;
+  color: var(--clr-gray-600);
+  line-height: 1.8;
+  margin-bottom: var(--space-lg);
+}
+
+.philosophy__values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  margin: var(--space-xl) 0;
+}
+
+.philosophy__value-tag {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: white;
+  border: 1.5px solid var(--clr-blue-200, #bfdbfe);
+  color: var(--clr-blue-700);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.philosophy__disclaimer {
+  font-size: 0.72rem;
+  color: var(--clr-gray-400);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--clr-gray-300);
+}

@@ -1,0 +1,15 @@
+# Frontend build and dependencies
+frontend/node_modules/
+frontend/dist/
+frontend/.eslintcache
+
+# Backend build and dependencies
+backend/target/
+backend/.mvn/
+backend/*.iml
+backend/.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini

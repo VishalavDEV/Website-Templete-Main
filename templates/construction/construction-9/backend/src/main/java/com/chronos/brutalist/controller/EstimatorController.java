@@ -1,0 +1,24 @@
+package com.chronos.brutalist.controller;
+
+import com.chronos.brutalist.model.EstimatorRequest;
+import com.chronos.brutalist.model.EstimatorResult;
+import com.chronos.brutalist.service.EstimatorService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/estimator")
+public class EstimatorController {
+
+    private final EstimatorService estimatorService;
+
+    public EstimatorController(EstimatorService estimatorService) {
+        this.estimatorService = estimatorService;
+    }
+
+    @PostMapping("/calculate")
+    public ResponseEntity<EstimatorResult> calculate(@RequestBody EstimatorRequest request) {
+        EstimatorResult result = estimatorService.calculate(request);
+        return ResponseEntity.ok(result);
+    }
+}

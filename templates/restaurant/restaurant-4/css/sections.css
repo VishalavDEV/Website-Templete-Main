@@ -1,0 +1,965 @@
+/* ==================================================
+   CONTEMPORARY GARDEN RESTAURANT — SECTION LAYOUTS
+   ================================================== */
+
+/* --------------------------------------------------
+   01. HOMEPAGE HERO (Intro Animation Preserved)
+   -------------------------------------------------- */
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 720px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-cream);
+}
+
+.hero-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.05);
+  transform: scale(1.08);
+  transition: transform 1.8s var(--ease-out-expo), filter 1.8s ease;
+}
+
+/* Organic Curved Cream Panel Over Hero */
+.hero-curved-panel {
+  position: relative;
+  z-index: 2;
+  background: rgba(251, 249, 243, 0.92);
+  backdrop-filter: blur(20px);
+  padding: clamp(3rem, 6vw, 5rem) clamp(2.5rem, 6vw, 6rem);
+  border-radius: 40px;
+  border: 1px solid rgba(38, 53, 43, 0.12);
+  text-align: center;
+  max-width: 900px;
+  width: 90vw;
+  box-shadow: 0 30px 60px rgba(38, 53, 43, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7.5vw, 6.8rem);
+  font-weight: 400;
+  line-height: 0.92;
+  color: var(--color-forest);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-tagline {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.6vw, 1.25rem);
+  font-weight: 400;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+}
+
+.hero-divider {
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-sage);
+  margin-bottom: 2rem;
+}
+
+.hero-meta {
+  display: none; /* Replaced by subtext and buttons */
+}
+
+.hero-actions-group {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.btn-hero-primary {
+  background-color: var(--color-forest);
+  color: var(--bg-cream);
+  border: 1px solid var(--color-forest);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 0.85rem 2.2rem;
+  border-radius: 100px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.btn-hero-primary:hover {
+  background-color: var(--color-sage);
+  border-color: var(--color-sage);
+  transform: translateY(-2px);
+}
+
+.btn-hero-secondary {
+  background: transparent;
+  color: var(--color-forest);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 0.85rem 2.2rem;
+  border-radius: 100px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-hero-secondary:hover {
+  border-color: var(--color-forest);
+  background-color: var(--color-light-sage);
+}
+
+.circular-scroll-badge {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 3rem;
+  z-index: 3;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--color-forest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--color-forest);
+  animation: bounceDown 2s infinite ease-in-out;
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* --------------------------------------------------
+   02. SECTION 01 — THE HOUSE (Asymmetric Editorial)
+   -------------------------------------------------- */
+.house-section {
+  background-color: var(--bg-cream);
+  position: relative;
+}
+
+.house-grid-asymmetric {
+  display: grid;
+  grid-template-columns: 48% 52%;
+  gap: 4rem;
+  align-items: center;
+}
+
+.house-left-images {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.house-img-vertical {
+  width: 82%;
+  height: clamp(450px, 50vw, 620px);
+  object-fit: cover;
+  border-radius: 32px;
+}
+
+.house-img-circle {
+  position: absolute;
+  right: 0;
+  bottom: -2rem;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid var(--bg-cream);
+  box-shadow: 0 15px 35px rgba(38, 53, 43, 0.1);
+}
+
+.house-right-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 1rem;
+}
+
+.house-meta-tag {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--color-sage);
+  text-transform: uppercase;
+}
+
+.house-heading {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  color: var(--color-forest);
+}
+
+.house-paragraph {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  max-width: 520px;
+}
+
+.house-badge-row {
+  display: flex;
+  gap: 2.5rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--color-clay);
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------
+   03. SECTION 02 — INGREDIENTS (Interactive Magazine Sticky)
+   -------------------------------------------------- */
+.ingredients-section {
+  background-color: var(--color-light-sage);
+  position: relative;
+  padding: var(--section-gap) var(--site-padding);
+}
+
+.ingredients-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.ingredients-title-main {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--color-forest);
+}
+
+.ingredients-sticky-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.ingredient-card-node {
+  background-color: var(--bg-cream-surface);
+  border-radius: 24px;
+  padding: 2.5rem 1.75rem;
+  border: 1px solid rgba(38, 53, 43, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  transition: all 0.4s var(--ease-out-expo);
+  cursor: pointer;
+}
+
+.ingredient-card-node:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(38, 53, 43, 0.08);
+  border-color: var(--color-sage);
+}
+
+.ingredient-num {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-clay);
+  letter-spacing: 0.15em;
+}
+
+.ingredient-name {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--color-forest);
+}
+
+.ingredient-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------
+   04. SECTION 03 — EDITORIAL MENU (No Food Cards)
+   -------------------------------------------------- */
+.menu-section-editorial {
+  background-color: var(--bg-cream);
+  position: relative;
+}
+
+.menu-editorial-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.menu-category-sidebar {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.menu-sidebar-title {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--color-sage);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.menu-cat-btn {
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: rgba(38, 53, 43, 0.4);
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-cat-btn.active, .menu-cat-btn:hover {
+  color: var(--color-forest);
+  transform: translateX(8px);
+}
+
+.menu-items-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-editorial-item {
+  padding: 2.2rem 0;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  transition: padding-left 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-editorial-item:hover {
+  padding-left: 1rem;
+}
+
+.menu-item-left {
+  max-width: 75%;
+}
+
+.menu-item-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  color: var(--color-forest);
+  margin-bottom: 0.4rem;
+}
+
+.menu-item-ingredients {
+  font-family: var(--font-accent);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.menu-item-price-tag {
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-clay);
+}
+
+/* Floating Dish Hover Image */
+.menu-hover-photo-container {
+  position: fixed;
+  width: 280px;
+  height: 360px;
+  border-radius: 20px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 85;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.85);
+  transition: opacity 0.35s ease, transform 0.35s var(--ease-out-expo);
+  box-shadow: 0 25px 50px rgba(38, 53, 43, 0.15);
+  border: 4px solid var(--bg-cream-surface);
+}
+
+.menu-hover-photo-container.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.menu-hover-photo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------
+   05. SECTION 04 — SIGNATURE DISH (Huge Circular Rotating Photo)
+   -------------------------------------------------- */
+.signature-section-circular {
+  background-color: var(--bg-cream-surface);
+  position: relative;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.signature-circle-wrapper {
+  position: relative;
+  width: clamp(320px, 45vw, 550px);
+  height: clamp(320px, 45vw, 550px);
+  margin: 3rem auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(38, 53, 43, 0.12);
+  border: 8px solid var(--bg-cream);
+}
+
+.signature-circle-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.1s linear;
+}
+
+.signature-details-wrap {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.signature-title-main {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  color: var(--color-forest);
+  margin-bottom: 1rem;
+}
+
+.signature-ingredients-accent {
+  font-family: var(--font-accent);
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--color-clay);
+  margin-bottom: 1.5rem;
+}
+
+.signature-chef-note {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------
+   06. SECTION 05 — THE GARDEN (Sage-Green Botanical Showcase)
+   -------------------------------------------------- */
+.garden-section-sage {
+  background-color: var(--color-forest);
+  color: var(--bg-cream);
+  position: relative;
+}
+
+.garden-header-text {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.garden-title-sage {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 7.5vw, 7rem);
+  color: var(--bg-cream);
+  line-height: 0.95;
+}
+
+.garden-botanical-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
+.botanical-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.botanical-img-frame {
+  width: 100%;
+  height: clamp(320px, 35vw, 420px);
+  border-radius: 120px 120px 24px 24px;
+  overflow: hidden;
+  border: 1px solid rgba(217, 222, 208, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.botanical-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.botanical-card:hover .botanical-img {
+  transform: scale(1.06);
+}
+
+.botanical-floating-label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--color-light-sage);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.botanical-floating-label::before {
+  content: '';
+  width: 1px;
+  height: 30px;
+  background-color: var(--color-sage);
+}
+
+/* --------------------------------------------------
+   07. SECTION 06 — CHEF (Full-Height Bright Portrait)
+   -------------------------------------------------- */
+.chef-section-bright {
+  background-color: var(--bg-cream);
+  position: relative;
+}
+
+.chef-grid-fullheight {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 5rem;
+  align-items: center;
+}
+
+.chef-portrait-bright-frame {
+  position: relative;
+  height: clamp(520px, 60vw, 750px);
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.chef-portrait-img-bright {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.95) contrast(1.05);
+}
+
+.chef-vertical-name {
+  position: absolute;
+  left: 2rem;
+  bottom: 3rem;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--bg-cream);
+  text-shadow: 0 10px 30px rgba(38, 53, 43, 0.4);
+}
+
+.chef-right-story {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.chef-role-tag {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--color-sage);
+  text-transform: uppercase;
+}
+
+.chef-quote-handwritten {
+  font-family: var(--font-accent);
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-forest);
+}
+
+/* --------------------------------------------------
+   08. SECTION 07 — EXPERIENCE (3 Expanding Vertical Panels)
+   -------------------------------------------------- */
+.experience-section-panels {
+  background-color: var(--color-light-sage);
+  position: relative;
+  padding: var(--section-gap) var(--site-padding);
+}
+
+.exp-panels-container {
+  display: flex;
+  gap: 1.5rem;
+  height: clamp(500px, 55vw, 680px);
+}
+
+.exp-panel-card {
+  flex: 1;
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  transition: flex 0.6s var(--ease-out-expo);
+  cursor: pointer;
+}
+
+.exp-panel-card.active, .exp-panel-card:hover {
+  flex: 2.2;
+}
+
+.exp-panel-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7) contrast(1.1);
+  transition: filter 0.5s ease;
+}
+
+.exp-panel-card:hover .exp-panel-bg-img {
+  filter: brightness(0.85) contrast(1.05);
+}
+
+.exp-panel-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(to top, rgba(32, 37, 34, 0.85), transparent);
+  color: var(--bg-cream);
+}
+
+.exp-panel-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.exp-panel-body {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.exp-panel-card.active .exp-panel-body, .exp-panel-card:hover .exp-panel-body {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------
+   09. SECTION 08 — JOURNAL (Editorial Newspaper Layout)
+   -------------------------------------------------- */
+.journal-section-newspaper {
+  background-color: var(--bg-cream);
+  position: relative;
+  border-top: 1px solid var(--border-color);
+}
+
+.journal-grid-newspaper {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 4rem;
+}
+
+.journal-feature-article {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-right: 1px solid var(--border-color);
+  padding-right: 4rem;
+}
+
+.journal-feature-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.journal-article-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  color: var(--color-forest);
+}
+
+.journal-small-articles-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.journal-small-node {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2rem;
+}
+
+.journal-small-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-forest);
+  margin-bottom: 0.5rem;
+}
+
+/* --------------------------------------------------
+   10. SECTION 09 — TESTIMONIAL (Huge Quote & Animated Quotation)
+   -------------------------------------------------- */
+.testimonial-section-huge {
+  background-color: var(--bg-cream-surface);
+  text-align: center;
+  padding: clamp(6rem, 12vw, 10rem) var(--site-padding);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.testimonial-huge-quote {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.8vw, 5.8rem);
+  line-height: 0.95;
+  color: var(--color-forest);
+  max-width: 1100px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.testimonial-author-name {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--color-clay);
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------
+   11. SECTION 10 — RESERVATION (Giant Cream/Sage Composition)
+   -------------------------------------------------- */
+.reservation-section-editorial {
+  background-color: var(--color-light-sage);
+  position: relative;
+}
+
+.res-editorial-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.res-editorial-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: 0.85;
+  color: var(--color-forest);
+  margin-bottom: 4rem;
+}
+
+.res-editorial-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  gap: 2.5rem;
+  align-items: end;
+}
+
+.res-editorial-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.res-editorial-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--color-forest);
+  text-transform: uppercase;
+}
+
+.res-editorial-input, .res-editorial-select {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-forest);
+  color: var(--color-forest);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  padding: 0.75rem 0;
+  border-radius: 0;
+  outline: none;
+}
+
+.btn-res-find-table {
+  background-color: var(--color-forest);
+  color: var(--bg-cream);
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 1.2rem 2.8rem;
+  border-radius: 100px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-res-find-table:hover {
+  background-color: var(--color-sage);
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------
+   12. SECTION 11 — LOCATION (Split Architectural)
+   -------------------------------------------------- */
+.location-section-split {
+  background-color: var(--bg-cream);
+  position: relative;
+}
+
+.location-split-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 5rem;
+  align-items: center;
+}
+
+.location-exterior-frame {
+  height: clamp(450px, 50vw, 600px);
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.location-exterior-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.location-info-side {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.location-title-huge {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  color: var(--color-forest);
+  line-height: 0.95;
+}
+
+/* --------------------------------------------------
+   13. FOOTER (Sage-Green Background)
+   -------------------------------------------------- */
+.footer-section-sage {
+  background-color: var(--color-forest);
+  color: var(--bg-cream);
+  padding: clamp(5rem, 8vw, 8rem) var(--site-padding) 3rem var(--site-padding);
+}
+
+.footer-curved-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 14vw, 13rem);
+  line-height: 0.82;
+  color: var(--bg-cream);
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.footer-bottom-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(217, 222, 208, 0.2);
+  padding-top: 2.5rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--color-light-sage);
+  text-transform: uppercase;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.footer-social-links a:hover {
+  color: var(--color-clay);
+}
+
+/* --------------------------------------------------
+   RESPONSIVE DESIGN BREAKPOINTS
+   -------------------------------------------------- */
+@media (max-width: 1024px) {
+  .house-grid-asymmetric, .ingredients-sticky-container, .menu-editorial-grid,
+  .chef-grid-fullheight, .journal-grid-newspaper, .location-split-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .garden-botanical-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .exp-panels-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .exp-panel-card {
+    height: 260px;
+  }
+
+  .res-editorial-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-actions-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .footer-bottom-flex {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper-light: #FAF8F5;
+  --color-paper-surface: #FFFFFF;
+  --color-paper-muted: #F1ECE4;
+  --color-paper-dark: #0F1713;
+  
+  --color-forest-900: #143323;
+  --color-forest-950: #0B1710;
+  
+  --color-agri-green: #246B41;
+  --color-agri-light: #E5F4EC;
+  --color-tech-blue: #0284C7;
+  --color-ai-violet: #7C3AED;
+}
+
+@layer base {
+  :root {
+    /* Backgrounds */
+    --bg-primary: #FAF8F5;
+    --bg-surface: #FFFFFF;
+    --bg-muted: #F1ECE4;
+    --bg-dark-section: #0B1710;
+
+    /* Text Colors */
+    --text-primary: #0F1713;
+    --text-secondary: #334155;
+    --text-muted: #64748B;
+    --text-inverse: #FFFFFF;
+
+    /* Accent & Brand Colors */
+    --color-forest: #143323;
+    --color-agri: #246B41;
+    --color-agri-light: #E5F4EC;
+    --color-tech-blue: #0284C7;
+    --color-ai-violet: #7C3AED;
+    --color-gold-accent: #D97706;
+    --border-color: rgba(15, 23, 19, 0.12);
+  }
+
+  .dark {
+    /* Backgrounds */
+    --bg-primary: #080D0A;
+    --bg-surface: #111814;
+    --bg-muted: #17221C;
+    --bg-dark-section: #060B08;
+
+    /* Text Colors */
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+    --text-inverse: #0F1713;
+
+    /* Accent & Brand Colors */
+    --color-forest: #246B41;
+    --color-agri: #4ADE80;
+    --color-agri-light: #162C20;
+    --color-tech-blue: #38BDF8;
+    --color-ai-violet: #C084FC;
+    --color-gold-accent: #FBBF24;
+    --border-color: rgba(255, 255, 255, 0.12);
+  }
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-serif-editorial {
+  font-family: 'Newsreader', serif;
+}
+
+.font-display-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Theme Centralized Utility Classes */
+.text-theme-primary {
+  color: var(--text-primary) !important;
+}
+
+.text-theme-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.text-theme-muted {
+  color: var(--text-muted) !important;
+}
+
+.bg-theme-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-theme-surface {
+  background-color: var(--bg-surface);
+}
+
+.bg-theme-muted {
+  background-color: var(--bg-muted);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(36, 107, 65, 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(36, 107, 65, 0.8);
+}
+
+/* Editorial Typography Rules */
+.drop-cap::first-letter {
+  font-family: 'Cinzel', serif;
+  float: left;
+  font-size: 4.5rem;
+  line-height: 0.8;
+  padding-top: 4px;
+  padding-right: 14px;
+  padding-bottom: 4px;
+  color: var(--color-agri);
+  font-weight: 800;
+}
+
+/* Glassmorphism Effect */
+.glass-editorial {
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.dark .glass-editorial {
+  background: rgba(17, 24, 20, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* 3D Perspective Card utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Pulse animation for map hotspots */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.85;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.5s infinite ease-in-out;
+}

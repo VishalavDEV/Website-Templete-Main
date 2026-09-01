@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOTANICAL STUDIES | The Heritage Folio - Coming Soon</title>
+    <meta name="description" content="An exquisite collector's edition of Botanical Studies. Featuring vintage 19th-century copperplate botanical engravings, hand-bound Moroccan leather, and rare herbal lore. Coming soon to premier bookstores.">
+    <meta name="keywords" content="Botanical Studies, Vintage Book, Collector's Edition, Rare Books, Botanical Art, Herbal Medicine, Coming Soon, Book Launch, Leatherbound Books">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        botanical: {
+                            darkest: '#141d17',
+                            dark: '#243329',
+                            card: '#ffffff',
+                            emerald: '#059669',
+                            deepEmerald: '#064e3b',
+                            gold: '#b88822',
+                            goldLight: '#946c15',
+                            parchment: '#fcfbf7',
+                            parchmentMuted: '#526359',
+                            leather: '#5c361e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        heading: ['"Playfair Display"', 'Georgia', 'serif'],
+                        cinzel: ['"Cinzel"', 'serif'],
+                        mono: ['"Space Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#fcfbf7] text-[#1c2720] overflow-x-hidden font-sans selection:bg-[#f3dfa2] selection:text-[#1a241e]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

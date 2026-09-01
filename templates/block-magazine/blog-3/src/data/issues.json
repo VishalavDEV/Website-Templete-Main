@@ -1,0 +1,127 @@
+[
+  {
+    "id": "issue-012",
+    "number": "Issue #12",
+    "title": "The Embodiment Era",
+    "date": "October 2024",
+    "cover": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop",
+    "editorNote": "As intelligence moves from servers into physical space, the challenges shift from cognitive reasoning to spatial dynamics and mechanical compliance.",
+    "pageCount": "84 pages",
+    "isLatest": true,
+    "articles": [
+      {
+        "id": "iss12-1",
+        "title": "The Embodiment Threshold: When Models Walk",
+        "author": "Dr. Sarah Chen",
+        "readTime": "10 min",
+        "preview": "Inside the engineering pipelines blending vision-language-action (VLA) foundation models with high-frequency torque motors."
+      },
+      {
+        "id": "iss12-2",
+        "title": "Tactile Sensors and Zero-Shot Grasping",
+        "author": "Elena Rostova",
+        "readTime": "7 min",
+        "preview": "How synthetic skin with piezoelectric micro-arrays gives robotic effectors human-level touch sensitivity."
+      },
+      {
+        "id": "iss12-3",
+        "title": "The Economics of Physical Labor Automation",
+        "author": "James Maxwell",
+        "readTime": "12 min",
+        "preview": "A financial model comparing robotic amortized lease rates against warehouse human shift compensations."
+      },
+      {
+        "id": "iss12-4",
+        "title": "Safety Protocols for Co-Working Humanoids",
+        "author": "Dr. Alan Turing",
+        "readTime": "8 min",
+        "preview": "Establishing ISO standard certifiable electronic skin cut-offs and kinetic velocity envelopes."
+      }
+    ]
+  },
+  {
+    "id": "issue-011",
+    "number": "Issue #11",
+    "title": "Synthetic Media & Physics Engines",
+    "date": "September 2024",
+    "cover": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
+    "editorNote": "The blurring line between captured reality and generated simulation, and how neural radiance fields meet diffusion models.",
+    "pageCount": "76 pages",
+    "isLatest": false,
+    "articles": [
+      {
+        "id": "iss11-1",
+        "title": "The World Model Hypothesis",
+        "author": "Marcus Wei",
+        "readTime": "9 min",
+        "preview": "Can a next-token video prediction model learn Newtonian mechanics, or is it merely memorizing surface pixel correlations?"
+      },
+      {
+        "id": "iss11-2",
+        "title": "Hollywood in Silicon: The Virtual Studio",
+        "author": "Elena Rostova",
+        "readTime": "8 min",
+        "preview": "How independent cinema directors are utilizing multimodal generative pipelines to produce blockbuster visual effects."
+      },
+      {
+        "id": "iss11-3",
+        "title": "C2PA Provenance and Authenticity Cryptography",
+        "author": "Dr. Sarah Chen",
+        "readTime": "11 min",
+        "preview": "Hardware-enclave signing of sensor RAW files as the last defense against non-consensual synthetic clones."
+      }
+    ]
+  },
+  {
+    "id": "issue-010",
+    "number": "Issue #10",
+    "title": "Beyond the Transformer",
+    "date": "July 2024",
+    "cover": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=800&auto=format&fit=crop",
+    "editorNote": "State Space Models, Mamba, and Linear Attention: Exploring non-quadratic compute scaling for million-token sequences.",
+    "pageCount": "92 pages",
+    "isLatest": false,
+    "articles": [
+      {
+        "id": "iss10-1",
+        "title": "Linear Time Horizons: Why O(N²) Must Die",
+        "author": "James Maxwell",
+        "readTime": "14 min",
+        "preview": "The mathematical foundation behind state space duality and selective scan mechanisms."
+      },
+      {
+        "id": "iss10-2",
+        "title": "Hybrid Architectures: SSMs with Soft Attention",
+        "author": "Marcus Wei",
+        "readTime": "10 min",
+        "preview": "Combining the associative recall of transformers with the constant memory consumption of recurrent SSMs."
+      }
+    ]
+  },
+  {
+    "id": "issue-009",
+    "number": "Issue #09",
+    "title": "The Silicon Geopolitics",
+    "date": "May 2024",
+    "cover": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop",
+    "editorNote": "Lithography, High-NA EUV scanners, energy grids, and the sovereign race for 100-gigawatt datacenters.",
+    "pageCount": "88 pages",
+    "isLatest": false,
+    "articles": [
+      {
+        "id": "iss9-1",
+        "title": "The Gigawatt Wall: AI's Nuclear Power Pivot",
+        "author": "Dr. Sarah Chen",
+        "readTime": "13 min",
+        "preview": "Why tech giants are signing 20-year power purchase agreements with small modular nuclear reactor operators."
+      },
+      {
+        "id": "iss9-2",
+        "title": "High-NA EUV: Inside ASML's $380M Machine",
+        "author": "James Maxwell",
+        "readTime": "11 min",
+        "preview": "How precision optics moving 0.55 numerical aperture light etch sub-2nm transistor gates."
+      }
+    ]
+  }
+]

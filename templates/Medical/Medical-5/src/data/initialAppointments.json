@@ -1,0 +1,42 @@
+[
+  {
+    "id": "APT-89241",
+    "doctorId": "doc-1",
+    "doctorName": "Dr. Maya Raman",
+    "doctorSpecialty": "Cardiology",
+    "doctorImage": "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=600&q=80",
+    "doctorLocation": "Aura Medical Pavilion, West Wing",
+    "specialtyId": "cardiology",
+    "consultationType": "in-person",
+    "date": "2026-08-28",
+    "time": "10:30 AM",
+    "patientName": "Alexander Claire",
+    "patientEmail": "alexander.claire@example.com",
+    "patientPhone": "+1 (555) 234-8901",
+    "reason": "Cardiovascular prevention follow-up and VO2 max review",
+    "notes": "Please bring latest smartwatch telemetry readings.",
+    "status": "confirmed",
+    "createdAt": "2026-08-22T14:30:00Z",
+    "clinicRoom": "Suite 304, West Wing"
+  },
+  {
+    "id": "APT-73190",
+    "doctorId": "doc-6",
+    "doctorName": "Dr. Tariq Al-Mansoor",
+    "doctorSpecialty": "Mental Wellness & Psychiatry",
+    "doctorImage": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80",
+    "doctorLocation": "Virtual Care Suite",
+    "specialtyId": "mental-wellness",
+    "consultationType": "video",
+    "date": "2026-09-04",
+    "time": "02:30 PM",
+    "patientName": "Alexander Claire",
+    "patientEmail": "alexander.claire@example.com",
+    "patientPhone": "+1 (555) 234-8901",
+    "reason": "Quarterly executive stress & sleep architecture check-in",
+    "notes": "Encrypted video room link is ready in portal.",
+    "status": "confirmed",
+    "createdAt": "2026-08-20T09:15:00Z",
+    "meetingLink": "https://telehealth.auramedical.internal/room/apt-73190"
+  }
+]

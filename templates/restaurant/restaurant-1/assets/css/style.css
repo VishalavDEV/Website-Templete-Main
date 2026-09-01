@@ -1,0 +1,1164 @@
+/* ==========================================================================
+   EMBER HOUSE — RADICAL EDITORIAL DIGITAL PUBLICATION STYLESHEET
+   Brand: EMBER HOUSE ("Food Worth Gathering For")
+   Visual Direction: Luxury Editorial Magazine / Architectural Hospitality
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. COLOR PALETTE & GLOBAL VARIABLES
+   -------------------------------------------------------------------------- */
+:root {
+  /* New Editorial Tokens */
+  --ivory: #F3EEE5;
+  --paper: #FAF8F3;
+  --ink: #171513;
+  --burgundy: #641F25;
+  --clay: #A75E4D;
+  --gold: #B29467;
+  --soft: #D9CEC0;
+  --border: rgba(23, 21, 19, 0.12);
+
+  /* Typography System */
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Editorial Scale */
+  --font-giant: clamp(4.5rem, 11vw, 12rem);
+  --font-hero: clamp(3.5rem, 7vw, 7rem);
+  --font-section-title: clamp(2.8rem, 5.5vw, 5.5rem);
+  --font-h2: clamp(2.2rem, 4vw, 3.6rem);
+  --font-h3: clamp(1.5rem, 2.5vw, 2.2rem);
+  --font-body-size: 16px;
+  --font-label: clamp(11px, 1.1vw, 13px);
+
+  /* Rhythm */
+  --section-py: clamp(6rem, 10vw, 11rem);
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-normal: 0.5s var(--ease-editorial);
+  --transition-slow: 0.8s var(--ease-editorial);
+}
+
+/* --------------------------------------------------------------------------
+   2. BASE RESETS & CUSTOM CURSOR
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-body-size);
+  line-height: 1.75;
+  color: var(--ink);
+  background-color: var(--ivory);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-heading {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: rgba(23, 21, 19, 0.75);
+}
+
+a {
+  color: var(--burgundy);
+  text-decoration: none;
+  transition: color 0.3s var(--ease-editorial);
+}
+
+a:hover {
+  color: var(--clay);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Desktop Custom Cursor */
+@media (min-width: 992px) {
+  body.has-custom-cursor { cursor: none; }
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor input,
+  body.has-custom-cursor select,
+  body.has-custom-cursor textarea,
+  body.has-custom-cursor .hover-cursor { cursor: none !important; }
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: var(--burgundy);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-editorial), height 0.3s var(--ease-editorial), background-color 0.3s var(--ease-editorial);
+}
+
+.custom-cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--burgundy);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease-out, width 0.3s var(--ease-editorial), height 0.3s var(--ease-editorial), background-color 0.3s var(--ease-editorial);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--paper);
+}
+
+.custom-cursor-follower.active {
+  width: 75px;
+  height: 75px;
+  background-color: var(--burgundy);
+  border-color: var(--burgundy);
+}
+
+/* Side Chapter Counter (100% Always Visible) */
+.chapter-counter-fixed {
+  position: fixed;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1040;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--gold) !important;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+  writing-mode: vertical-rl;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Editorial Label */
+.eyebrow-chapter {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Section Background Colors */
+.bg-ivory { background-color: var(--ivory); }
+.bg-paper { background-color: var(--paper); }
+.bg-ink { background-color: var(--ink); color: var(--paper); }
+.bg-burgundy { background-color: var(--burgundy); color: var(--paper); }
+
+/* --------------------------------------------------------------------------
+   3. FLOATING NAVIGATION & FULLSCREEN OVERLAY (MAXIMUM INITIAL CONTRAST)
+   -------------------------------------------------------------------------- */
+.floating-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.5rem 3rem;
+  z-index: 1060;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;
+  transition: background-color 0.4s var(--ease-editorial), padding 0.4s var(--ease-editorial), box-shadow 0.4s var(--ease-editorial);
+}
+
+.floating-header * { pointer-events: auto; }
+
+.floating-header.scrolled {
+  padding: 1.25rem 3rem;
+  background-color: rgba(243, 238, 229, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(23, 21, 19, 0.05);
+}
+
+.brand-minimal {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand-minimal-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--paper) !important;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  transition: color 0.3s var(--ease-editorial);
+}
+
+.brand-minimal-sub {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold) !important;
+  margin-top: 4px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  transition: color 0.3s var(--ease-editorial);
+}
+
+.btn-menu-trigger {
+  background-color: rgba(23, 21, 19, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--paper) !important;
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background-color 0.3s var(--ease-editorial), border-color 0.3s var(--ease-editorial), color 0.3s var(--ease-editorial);
+}
+
+.btn-menu-trigger:hover {
+  background-color: var(--burgundy);
+  border-color: var(--burgundy);
+  color: var(--paper) !important;
+}
+
+/* Scrolled Header Contrast Colors */
+.floating-header.scrolled .brand-minimal-title {
+  color: var(--ink) !important;
+  text-shadow: none;
+}
+
+.floating-header.scrolled .brand-minimal-sub {
+  color: var(--muted) !important;
+  text-shadow: none;
+}
+
+.floating-header.scrolled .btn-menu-trigger {
+  background-color: var(--burgundy);
+  color: var(--paper) !important;
+  border-color: var(--burgundy);
+  box-shadow: 0 4px 15px rgba(100, 31, 37, 0.2);
+}
+
+/* ==========================================================================
+   HIGH-END EDITORIAL NAVIGATION OVERLAY (42% / 58% SPLIT)
+   ========================================================================== */
+.fullscreen-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1070;
+  display: flex;
+  transform: translateY(-100%);
+  transition: transform 0.6s var(--ease-editorial), opacity 0.5s var(--ease-editorial);
+  opacity: 0;
+  overflow: hidden;
+}
+
+.fullscreen-nav.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* LEFT PANEL 42%: Darkened Restaurant Atmosphere & Minimal Branding */
+.fullscreen-nav-left {
+  width: 42%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3.5rem 3rem;
+  background-color: #0E0C0B;
+}
+
+.nav-left-bg-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.38) contrast(1.15) saturate(0.85);
+  transform: scale(1.05);
+  transition: transform 1.2s var(--ease-editorial);
+}
+
+.fullscreen-nav.active .nav-left-bg-photo {
+  transform: scale(1);
+}
+
+.nav-left-dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(14, 12, 11, 0.6) 0%, rgba(14, 12, 11, 0.88) 100%);
+  pointer-events: none;
+}
+
+.nav-left-brand {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-left-brand .brand-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: var(--paper);
+  text-transform: uppercase;
+}
+
+.nav-left-brand .brand-sub {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.nav-left-vertical-label {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: rgba(250, 248, 243, 0.45);
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  margin-left: 0.25rem;
+}
+
+/* RIGHT PANEL 58%: Deep Maroon Navigation & Preview Container */
+.fullscreen-nav-right {
+  width: 58%;
+  height: 100%;
+  background-color: var(--burgundy);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 4rem;
+  overflow-y: auto;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Top Bar: INDEX label + CLOSE button */
+.nav-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 2rem;
+}
+
+.nav-index-label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.btn-nav-close {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.3s var(--ease-editorial);
+}
+
+.btn-nav-close:hover {
+  background: var(--paper);
+  color: var(--burgundy);
+  border-color: var(--paper);
+  transform: translateY(-1px);
+}
+
+.btn-nav-close .close-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Main Body Container (Menu Grid & Aligned Food Preview) */
+.nav-body-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex-grow: 1;
+}
+
+/* Vertical Navigation Menu */
+.nav-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.nav-link-giant {
+  position: relative;
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.2vw, 2.1rem);
+  line-height: 1.25;
+  color: rgba(250, 248, 243, 0.85);
+  display: flex;
+  align-items: center;
+  padding: 0.35rem 0;
+  transition: all 0.35s var(--ease-editorial);
+  text-decoration: none;
+}
+
+.nav-link-giant .num {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--gold);
+  min-width: 2.5rem;
+  opacity: 0.7;
+  transition: opacity 0.3s var(--ease-editorial), color 0.3s var(--ease-editorial);
+}
+
+.nav-link-giant .link-text {
+  transition: transform 0.35s var(--ease-editorial), color 0.35s var(--ease-editorial);
+}
+
+.nav-link-giant .hover-accent-line {
+  position: absolute;
+  bottom: 0;
+  left: 2.5rem;
+  width: 0;
+  height: 1px;
+  background-color: var(--gold);
+  transition: width 0.4s var(--ease-editorial);
+}
+
+.nav-link-giant:hover,
+.nav-link-giant.active-hover {
+  color: var(--paper);
+}
+
+.nav-link-giant:hover .num,
+.nav-link-giant.active-hover .num {
+  opacity: 1;
+  color: #E5C38F;
+}
+
+.nav-link-giant:hover .link-text,
+.nav-link-giant.active-hover .link-text {
+  transform: translateX(10px);
+  color: #FFFFFF;
+}
+
+.nav-link-giant:hover .hover-accent-line,
+.nav-link-giant.active-hover .hover-accent-line {
+  width: 40px;
+}
+
+/* Food Preview Area (Aligned Right) */
+.nav-preview-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-preview-card {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+.nav-preview-img-wrap {
+  width: 100%;
+  height: 230px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  background-color: #0E0C0B;
+}
+
+.nav-hover-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.4s var(--ease-editorial), transform 0.5s var(--ease-editorial);
+}
+
+.nav-hover-bg.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nav-preview-caption {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.caption-title {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.caption-sub {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: rgba(250, 248, 243, 0.85);
+  line-height: 1.3;
+}
+
+/* Nav Footer Metadata */
+.nav-bottom-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: rgba(250, 248, 243, 0.5);
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. HERO — FULLSCREEN CINEMATIC OPENING (HIGH CONTRAST & VISIBILITY)
+   -------------------------------------------------------------------------- */
+.hero-fullscreen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bg-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.12);
+  transition: transform 1.8s var(--ease-editorial);
+}
+
+.hero-fullscreen.loaded .hero-bg-photo {
+  transform: scale(1);
+}
+
+.hero-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(23, 21, 19, 0.45) 0%, rgba(23, 21, 19, 0.72) 100%);
+}
+
+.hero-center-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--paper);
+}
+
+.hero-title-giant {
+  font-family: var(--font-heading);
+  font-size: var(--font-hero);
+  font-weight: 400;
+  line-height: 0.95;
+  color: var(--paper);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero-tagline-sub {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  font-style: italic;
+  color: var(--gold);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.hero-vertical-label {
+  position: absolute;
+  left: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--paper) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  z-index: 2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-footer-left {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 3rem;
+  z-index: 2;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--paper) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-footer-right {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 3rem;
+  z-index: 2;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+.btn-ember-gold {
+  background-color: var(--gold) !important;
+  color: #FFFFFF !important;
+  border: 1px solid var(--gold) !important;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex !important;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: background-color 0.4s var(--ease-editorial), transform 0.4s var(--ease-editorial), box-shadow 0.4s var(--ease-editorial);
+}
+
+.btn-ember-gold:hover {
+  background-color: #9E7B49 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+}
+
+/* --------------------------------------------------------------------------
+   5. INTRODUCTION (WHITESPACE EDITORIAL)
+   -------------------------------------------------------------------------- */
+.intro-section {
+  padding: 10rem 2rem;
+  text-align: center;
+  background-color: var(--ivory);
+}
+
+.intro-statement {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6.5vw, 6rem);
+  line-height: 1.05;
+  color: var(--ink);
+  max-width: 1100px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.intro-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   6. THE HOUSE (MAGAZINE COLLAGE)
+   -------------------------------------------------------------------------- */
+.the-house-section {
+  padding: var(--section-py) 0;
+  background-color: var(--paper);
+}
+
+.magazine-collage {
+  position: relative;
+  min-height: 600px;
+}
+
+.magazine-img-main {
+  width: 70%;
+  height: 550px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.magazine-img-sub {
+  position: absolute;
+  bottom: -40px;
+  right: 5%;
+  width: 48%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 10px solid var(--paper);
+  box-shadow: 0 20px 50px rgba(23, 21, 19, 0.12);
+}
+
+.magazine-annotation {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--gold);
+  margin-top: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. DISHES (HORIZONTAL SCROLL EXPERIENCE)
+   -------------------------------------------------------------------------- */
+.dishes-section {
+  padding: var(--section-py) 0;
+  background-color: var(--ivory);
+  overflow: hidden;
+}
+
+.dishes-flex-container {
+  display: flex;
+  gap: 3rem;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dish-editorial-card {
+  flex: 0 0 420px;
+  scroll-snap-align: start;
+  background-color: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.75rem;
+  transition: transform 0.4s var(--ease-editorial);
+}
+
+.dish-editorial-card:hover {
+  transform: translateY(-8px);
+}
+
+.dish-card-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.5rem;
+}
+
+.dish-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.dish-card-price {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--burgundy);
+}
+
+/* --------------------------------------------------------------------------
+   8. FIRE & KITCHEN (FULL-WIDTH DARK CINEMATIC)
+   -------------------------------------------------------------------------- */
+.fire-kitchen-section {
+  position: relative;
+  min-height: 80vh;
+  background-color: var(--ink);
+  color: var(--paper);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.fire-bg-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+}
+
+.fire-statement-giant {
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 8vw, 8.5rem);
+  line-height: 0.95;
+  color: var(--paper);
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   9. PEOPLE / CHEF (OVERSIZED PORTRAIT)
+   -------------------------------------------------------------------------- */
+.people-section {
+  padding: var(--section-py) 0;
+  background-color: var(--paper);
+}
+
+.chef-portrait-editorial {
+  width: 100%;
+  height: 65vh;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.chef-quote-editorial {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-style: italic;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 2rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   10. EXPERIENCES (IMAGE-DRIVEN STICKY SCROLL)
+   -------------------------------------------------------------------------- */
+.experiences-sticky-wrap {
+  position: relative;
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+.exp-sticky-bg {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.4;
+  transition: opacity 0.8s var(--ease-editorial);
+}
+
+.exp-content-block {
+  position: relative;
+  z-index: 2;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.exp-title-giant {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  color: var(--paper);
+}
+
+/* --------------------------------------------------------------------------
+   11. VISUAL JOURNAL (HORIZONTAL STRIP)
+   -------------------------------------------------------------------------- */
+.journal-strip-section {
+  padding: var(--section-py) 0;
+  background-color: var(--ivory);
+  overflow: hidden;
+}
+
+.journal-strip-flex {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+}
+
+.journal-strip-item {
+  flex: 0 0 360px;
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.journal-strip-item img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease-editorial);
+}
+
+.journal-strip-item:hover img {
+  transform: scale(1.05);
+}
+
+/* --------------------------------------------------------------------------
+   12. RESERVATION (INLINE EDITORIAL FORM)
+   -------------------------------------------------------------------------- */
+.reservation-editorial-section {
+  padding: 8rem 0;
+  background-color: var(--paper);
+  text-align: center;
+}
+
+.reservation-inline-picker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  color: var(--ink);
+  margin: 3rem 0;
+}
+
+.inline-select-editorial {
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--burgundy);
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  color: var(--burgundy);
+  outline: none;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   13. FIND US (SPLIT SCREEN)
+   -------------------------------------------------------------------------- */
+.find-us-section {
+  background-color: var(--ivory);
+}
+
+.find-us-left-img {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   14. FOOTER (GIANT TYPOGRAPHIC EMBLEM)
+   -------------------------------------------------------------------------- */
+.editorial-footer {
+  background-color: var(--ink);
+  color: var(--paper);
+  padding: 8rem 0 3rem 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer-title-giant {
+  font-family: var(--font-heading);
+  font-size: var(--font-giant);
+  line-height: 0.85;
+  color: var(--paper);
+  letter-spacing: -0.03em;
+  opacity: 0.9;
+  margin-bottom: 4rem;
+}
+
+/* --------------------------------------------------------------------------
+   15. RESPONSIVE MOBILE & BREAKPOINT OVERRIDES (HIGH VISIBILITY ASSURED)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .floating-header {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .chapter-counter-fixed {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    right: 1rem;
+    top: auto;
+    bottom: 1.25rem;
+    transform: none;
+    writing-mode: horizontal-tb;
+    font-size: 0.85rem;
+    background: rgba(23, 21, 19, 0.75);
+    color: var(--gold) !important;
+    padding: 5px 12px;
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1050;
+  }
+
+  .hero-vertical-label {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    left: 1.25rem;
+    top: auto;
+    bottom: 4.5rem;
+    transform: none;
+    writing-mode: horizontal-tb;
+    font-size: 0.7rem;
+    background: rgba(23, 21, 19, 0.65);
+    color: #FFFFFF !important;
+    padding: 4px 10px;
+    border-radius: 4px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .hero-footer-left {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    left: 1.25rem;
+    bottom: 1.5rem;
+    font-size: 0.7rem;
+  }
+
+  .hero-footer-right {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    right: 1.25rem;
+    bottom: 1.5rem;
+  }
+}
+
+/* Responsive Overrides for Editorial Navigation Overlay */
+@media (max-width: 1199.98px) {
+  .fullscreen-nav-left { width: 35%; padding: 2.5rem 2rem; }
+  .fullscreen-nav-right { width: 65%; padding: 2.5rem 3rem; }
+  .nav-body-container { gap: 2rem; }
+  .nav-preview-img-wrap { height: 190px; }
+}
+
+@media (max-width: 991.98px) {
+  .fullscreen-nav {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .fullscreen-nav-left {
+    display: none;
+  }
+  .fullscreen-nav-right {
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem 1.75rem;
+    border-left: none;
+  }
+  .nav-body-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .nav-preview-col {
+    display: block;
+  }
+  .nav-preview-img-wrap {
+    height: 160px;
+  }
+  .nav-bottom-meta {
+    margin-top: 1rem;
+  }
+  .hero-fullscreen { text-align: center; }
+  .dishes-flex-container, .journal-strip-flex { gap: 1.25rem; }
+  .dish-editorial-card { flex: 0 0 300px; }
+  .journal-strip-item { flex: 0 0 280px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

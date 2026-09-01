@@ -1,0 +1,38 @@
+[
+  {
+    "id": "faq-1",
+    "category": "Process",
+    "question": "How does your collaboration and creative process work?",
+    "answer": "We work in focused, sprint-based cycles. Every project begins with a deep Immersion & Strategy phase, followed by interactive Design & Prototyping, and concluding with Production & Engineering. We work in tight collaboration with your leadership team through weekly live demos rather than siloed presentations."
+  },
+  {
+    "id": "faq-2",
+    "category": "Budgets",
+    "question": "What project budgets do you typically work with?",
+    "answer": "Our full-scope strategic brand identity and digital experience engagements typically range between $25,000 and $100,000+. For early-stage venture startups or focused strategy sprints, we offer modular packages starting around $15,000."
+  },
+  {
+    "id": "faq-3",
+    "category": "Timeline",
+    "question": "How long does a typical project take from kickoff to launch?",
+    "answer": "A focused identity or web design engagement runs between 6 and 10 weeks. Comprehensive end-to-end brand transformations, multi-platform applications, and custom 3D web systems generally span 12 to 16 weeks."
+  },
+  {
+    "id": "faq-4",
+    "category": "Global Reach",
+    "question": "Do you work with international clients across different time zones?",
+    "answer": "Yes. Over 70% of our clients are based in North America, Europe, the Middle East, and Asia-Pacific. We operate with an asynchronous-first communication cadence and schedule overlapping sprint reviews."
+  },
+  {
+    "id": "faq-5",
+    "category": "Collaboration",
+    "question": "Do you collaborate with internal design and engineering teams?",
+    "answer": "Constantly. We frequently embed alongside in-house creative directors, product managers, and lead engineers, delivering pristine Figma component libraries, tokens, and production code repositories for seamless continuity."
+  },
+  {
+    "id": "faq-6",
+    "category": "Support",
+    "question": "Do you offer ongoing retainer support after launch?",
+    "answer": "Yes. Following launch, we offer dedicated quarterly design & engineering retainer partnerships for continuous evolution, feature expansion, campaign assets, and performance optimization."
+  }
+]

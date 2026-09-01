@@ -1,0 +1,104 @@
+[
+  {
+    "id": "srv-diagnostics",
+    "category": "Diagnostics",
+    "title": "Advanced 3T MRI & Molecular Diagnostics",
+    "description": "Silent, wide-bore high resolution imaging delivering 4K anatomical detail with minimal wait times and calming ambient lighting.",
+    "fullDetails": "Our diagnostic imaging pavilion utilizes state-of-the-art 3T magnetic resonance technology alongside ultra-low-dose computed tomography. Designed specifically for patient comfort with acoustic dampening, ambient ceiling scenes, and rapid automated sequencing.",
+    "features": [
+      "Sub-millimeter multi-planar resolution",
+      "Acoustic noise reduction technology",
+      "Board-certified subspecialist radiologist review within 2 hours",
+      "Immediate digital report sync to your patient portal"
+    ],
+    "suitableFor": "Neurovascular checkups, spine and joint assessment, cardiac structure mapping, and soft tissue evaluation.",
+    "turnaroundTime": "2-4 hours",
+    "image": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80",
+    "priceEstimate": "From $320 (Covered by most PPO plans)"
+  },
+  {
+    "id": "srv-consultations",
+    "category": "Consultations",
+    "title": "Unrushed Specialist Consultations",
+    "description": "45-minute comprehensive initial appointments with leading specialists in peaceful, private consultation suites.",
+    "fullDetails": "We reject 10-minute rushed doctor visits. Every specialist consultation at Aura gives you dedicated unhurried time with your physician to review medical history, lifestyle factors, and collaborative recovery plans.",
+    "features": [
+      "45 to 60-minute in-depth consultation blocks",
+      "In-person and encrypted HD telemedicine options",
+      "Dedicated clinical nurse follow-up coordinator",
+      "Direct secure messaging post-consultation"
+    ],
+    "suitableFor": "Chronic symptom investigation, second opinions, complex diagnostic workups, and health roadmap planning.",
+    "turnaroundTime": "Immediate visit summary",
+    "image": "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=800&q=80",
+    "priceEstimate": "$160 - $220"
+  },
+  {
+    "id": "srv-preventive",
+    "category": "Preventive Care",
+    "title": "Executive Longevity & Biomarker Profiling",
+    "description": "Deep metabolic, cardiovascular, genetic, and hormonal testing to detect preclinical risks years before symptoms arise.",
+    "fullDetails": "Our preventive health assessment tests over 85 distinct biological markers including ApoB, hs-CRP, fasting insulin, full thyroid cascade, and cellular micronutrient status, culminating in an actionable 12-month vitality plan.",
+    "features": [
+      "85+ comprehensive biomarker blood panel",
+      "Cardiopulmonary fitness & VO2 baseline",
+      "Body composition DEXA scan",
+      "Personalized physician review & nutrition blueprint"
+    ],
+    "suitableFor": "Individuals seeking longevity optimization, proactive cardiovascular defense, and peak metabolic performance.",
+    "turnaroundTime": "24 hours for full panel",
+    "image": "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=800&q=80",
+    "priceEstimate": "From $450"
+  },
+  {
+    "id": "srv-telemedicine",
+    "category": "Telemedicine",
+    "title": "Calm Digital Care & Virtual Clinics",
+    "description": "End-to-end encrypted high definition video consultations with your chosen specialist from the comfort of home.",
+    "fullDetails": "Experience seamless digital healthcare with crystal-clear audio and video, real-time vital telemetry review, digital prescription delivery directly to your pharmacy, and instant consultation notes uploaded to your portal.",
+    "features": [
+      "Zero app installation required — web-native HD video",
+      "Instant e-prescriptions sent to 10,000+ pharmacies",
+      "Real-time screen review of lab results and imaging",
+      "Follow-up chat access for 7 days"
+    ],
+    "suitableFor": "Follow-ups, lab review discussions, dermatological assessments, mental wellness therapy, and medication management.",
+    "turnaroundTime": "Same-day appointments available",
+    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+    "priceEstimate": "$120 - $180"
+  },
+  {
+    "id": "srv-screening",
+    "category": "Health Screening",
+    "title": "Rapid Precision Laboratory Assays",
+    "description": "Gentle, painless blood draws and rapid molecular testing with same-day automated portal integration.",
+    "fullDetails": "Our onsite clinical laboratory provides quick, anxiety-free blood sampling guided by vein illumination optics, yielding fast and precise diagnostic results validated by senior clinical biochemists.",
+    "features": [
+      "Painless micro-needle and infrared vein illumination",
+      "Rapid hormone, allergy, and metabolic panels",
+      "Clear patient-friendly visual interpretation guides",
+      "Automated alerts when results are ready"
+    ],
+    "suitableFor": "Routine checkups, pre-operative labs, thyroid checks, allergy panels, and vitamin deficiency assays.",
+    "turnaroundTime": "Same-day (under 4 hours)",
+    "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
+    "priceEstimate": "$45 - $190"
+  },
+  {
+    "id": "srv-emergency-support",
+    "category": "Emergency Support",
+    "title": "24/7 Urgent Care Triage & Rapid Transfer",
+    "description": "Dedicated clinical triage team for acute non-life-threatening ailments, wound care, and immediate emergency coordination.",
+    "fullDetails": "Our rapid triage pavilion operates around the clock to provide calm, immediate stabilization for acute injuries, sudden fevers, minor fractures, and seamless hospital bed transfer if high-level critical care is required.",
+    "features": [
+      "24/7 on-call emergency physicians and trauma nurses",
+      "Dedicated rapid-access imaging and point-of-care ultrasound",
+      "Direct hotline for pre-arrival triage guidance",
+      "Comfort-first private recovery pods"
+    ],
+    "suitableFor": "Sudden severe pain, acute lacerations, sudden high fever, asthma exacerbation, and urgent stabilization.",
+    "turnaroundTime": "Under 10-minute door-to-doctor time",
+    "image": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80",
+    "priceEstimate": "Tiered emergency rates"
+  }
+]

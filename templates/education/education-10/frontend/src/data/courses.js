@@ -1,0 +1,242 @@
+export const courses = [
+  {
+    id: 1,
+    title: "Complete Web Development Bootcamp",
+    category: "Web Development",
+    description: "Master HTML, CSS, JavaScript, React, Node.js and build real-world full-stack applications from scratch.",
+    instructor: "Dr. Sarah Mitchell",
+    duration: "48 hours",
+    difficulty: "Beginner",
+    lessons: 120,
+    rating: 4.9,
+    students: 8420,
+    image: "web-dev",
+    color: "#6366f1",
+    outcomes: [
+      "Build responsive websites with HTML & CSS",
+      "Master modern JavaScript (ES6+)",
+      "Create dynamic UIs with React",
+      "Build RESTful APIs with Node.js",
+      "Deploy applications to the cloud",
+      "Work with databases and authentication"
+    ],
+    curriculum: [
+      { module: 1, title: "Introduction to Web Development", lessons: 12, duration: "4h 30m" },
+      { module: 2, title: "HTML5 & CSS3 Fundamentals", lessons: 20, duration: "8h 15m" },
+      { module: 3, title: "JavaScript Core Concepts", lessons: 25, duration: "10h 00m" },
+      { module: 4, title: "React.js & Component Architecture", lessons: 30, duration: "12h 30m" },
+      { module: 5, title: "Node.js & Express Backend", lessons: 20, duration: "8h 00m" },
+      { module: 6, title: "Final Projects & Deployment", lessons: 13, duration: "5h 45m" }
+    ]
+  },
+  {
+    id: 2,
+    title: "Data Analytics with Python",
+    category: "Data Analytics",
+    description: "Learn to analyze, visualize and interpret data using Python, Pandas, NumPy, and powerful visualization libraries.",
+    instructor: "Prof. James Reeves",
+    duration: "36 hours",
+    difficulty: "Intermediate",
+    lessons: 95,
+    rating: 4.8,
+    students: 6210,
+    image: "data-analytics",
+    color: "#8b5cf6",
+    outcomes: [
+      "Manipulate data with Pandas & NumPy",
+      "Create compelling visualizations with Matplotlib & Seaborn",
+      "Perform statistical analysis",
+      "Build data pipelines",
+      "Work with real-world datasets",
+      "Present insights effectively"
+    ],
+    curriculum: [
+      { module: 1, title: "Python for Data Science", lessons: 15, duration: "5h 00m" },
+      { module: 2, title: "Data Manipulation with Pandas", lessons: 20, duration: "7h 30m" },
+      { module: 3, title: "Statistical Analysis & NumPy", lessons: 18, duration: "6h 00m" },
+      { module: 4, title: "Data Visualization Techniques", lessons: 22, duration: "8h 00m" },
+      { module: 5, title: "Real-World Analytics Projects", lessons: 12, duration: "6h 00m" },
+      { module: 6, title: "Presenting Data Insights", lessons: 8, duration: "3h 30m" }
+    ]
+  },
+  {
+    id: 3,
+    title: "Python Programming Masterclass",
+    category: "Python Programming",
+    description: "Go from absolute beginner to confident Python developer. Cover OOP, file handling, APIs, and automation.",
+    instructor: "Emily Chen",
+    duration: "30 hours",
+    difficulty: "Beginner",
+    lessons: 85,
+    rating: 4.7,
+    students: 9840,
+    image: "python",
+    color: "#06b6d4",
+    outcomes: [
+      "Understand Python syntax and data types",
+      "Write object-oriented programs",
+      "Automate repetitive tasks",
+      "Work with files and APIs",
+      "Build command-line tools",
+      "Apply Python to real projects"
+    ],
+    curriculum: [
+      { module: 1, title: "Python Fundamentals", lessons: 18, duration: "5h 00m" },
+      { module: 2, title: "Data Structures & Algorithms", lessons: 15, duration: "5h 30m" },
+      { module: 3, title: "Object-Oriented Programming", lessons: 18, duration: "6h 00m" },
+      { module: 4, title: "File Handling & APIs", lessons: 14, duration: "5h 00m" },
+      { module: 5, title: "Automation & Scripting", lessons: 12, duration: "4h 30m" },
+      { module: 6, title: "Projects & Best Practices", lessons: 8, duration: "4h 00m" }
+    ]
+  },
+  {
+    id: 4,
+    title: "Digital Marketing Strategy",
+    category: "Digital Marketing",
+    description: "Master SEO, social media marketing, content strategy, PPC advertising, and analytics to grow any business online.",
+    instructor: "Michael Torres",
+    duration: "24 hours",
+    difficulty: "Beginner",
+    lessons: 70,
+    rating: 4.6,
+    students: 5470,
+    image: "digital-marketing",
+    color: "#f59e0b",
+    outcomes: [
+      "Create effective SEO strategies",
+      "Run profitable social media campaigns",
+      "Build a content marketing funnel",
+      "Set up and optimize Google Ads",
+      "Analyze campaign performance with GA4",
+      "Grow organic traffic and leads"
+    ],
+    curriculum: [
+      { module: 1, title: "Digital Marketing Foundations", lessons: 10, duration: "3h 00m" },
+      { module: 2, title: "Search Engine Optimization (SEO)", lessons: 15, duration: "5h 00m" },
+      { module: 3, title: "Social Media Marketing", lessons: 15, duration: "4h 30m" },
+      { module: 4, title: "Content Marketing Strategy", lessons: 12, duration: "4h 00m" },
+      { module: 5, title: "Paid Advertising (PPC)", lessons: 10, duration: "3h 30m" },
+      { module: 6, title: "Analytics & Optimization", lessons: 8, duration: "4h 00m" }
+    ]
+  },
+  {
+    id: 5,
+    title: "UI/UX Design Professional",
+    category: "UI/UX Design",
+    description: "Design stunning user interfaces and seamless user experiences using Figma, design systems, and UX research methods.",
+    instructor: "Priya Sharma",
+    duration: "40 hours",
+    difficulty: "Intermediate",
+    lessons: 100,
+    rating: 4.9,
+    students: 4320,
+    image: "uiux",
+    color: "#ec4899",
+    outcomes: [
+      "Master Figma for UI design",
+      "Conduct UX research and user interviews",
+      "Create wireframes and prototypes",
+      "Build scalable design systems",
+      "Apply design principles and typography",
+      "Present and iterate on designs"
+    ],
+    curriculum: [
+      { module: 1, title: "Design Thinking & UX Research", lessons: 15, duration: "6h 00m" },
+      { module: 2, title: "Wireframing & Information Architecture", lessons: 18, duration: "7h 00m" },
+      { module: 3, title: "Visual Design Principles", lessons: 20, duration: "8h 00m" },
+      { module: 4, title: "Figma Mastery", lessons: 22, duration: "9h 00m" },
+      { module: 5, title: "Design Systems & Components", lessons: 15, duration: "6h 00m" },
+      { module: 6, title: "Portfolio Projects & Case Studies", lessons: 10, duration: "4h 00m" }
+    ]
+  },
+  {
+    id: 6,
+    title: "Artificial Intelligence Fundamentals",
+    category: "Artificial Intelligence",
+    description: "Explore the foundations of AI, machine learning, neural networks, and real-world AI applications.",
+    instructor: "Dr. Alex Kumar",
+    duration: "44 hours",
+    difficulty: "Advanced",
+    lessons: 110,
+    rating: 4.8,
+    students: 3890,
+    image: "ai",
+    color: "#10b981",
+    outcomes: [
+      "Understand core ML algorithms",
+      "Build and train neural networks",
+      "Apply NLP techniques",
+      "Work with computer vision",
+      "Evaluate and improve AI models",
+      "Deploy AI applications"
+    ],
+    curriculum: [
+      { module: 1, title: "Introduction to AI & Machine Learning", lessons: 18, duration: "7h 00m" },
+      { module: 2, title: "Supervised & Unsupervised Learning", lessons: 20, duration: "8h 00m" },
+      { module: 3, title: "Neural Networks & Deep Learning", lessons: 22, duration: "9h 00m" },
+      { module: 4, title: "Natural Language Processing", lessons: 18, duration: "7h 00m" },
+      { module: 5, title: "Computer Vision", lessons: 16, duration: "7h 00m" },
+      { module: 6, title: "AI Projects & Deployment", lessons: 16, duration: "6h 00m" }
+    ]
+  },
+  {
+    id: 7,
+    title: "Business Analytics & Insights",
+    category: "Business Analytics",
+    description: "Transform raw business data into strategic insights using Excel, Power BI, SQL, and analytical frameworks.",
+    instructor: "Rachel Adams",
+    duration: "28 hours",
+    difficulty: "Intermediate",
+    lessons: 75,
+    rating: 4.7,
+    students: 4100,
+    image: "business",
+    color: "#f97316",
+    outcomes: [
+      "Analyze business data with Excel & SQL",
+      "Build dashboards with Power BI",
+      "Apply business intelligence techniques",
+      "Develop KPI frameworks",
+      "Present data-driven recommendations",
+      "Solve business problems analytically"
+    ],
+    curriculum: [
+      { module: 1, title: "Business Analytics Fundamentals", lessons: 10, duration: "3h 30m" },
+      { module: 2, title: "Excel for Business Analysis", lessons: 15, duration: "5h 00m" },
+      { module: 3, title: "SQL & Database Querying", lessons: 15, duration: "5h 30m" },
+      { module: 4, title: "Power BI Dashboards", lessons: 18, duration: "6h 30m" },
+      { module: 5, title: "Business Intelligence Strategy", lessons: 10, duration: "4h 00m" },
+      { module: 6, title: "Capstone Business Projects", lessons: 7, duration: "3h 30m" }
+    ]
+  },
+  {
+    id: 8,
+    title: "Professional Communication Skills",
+    category: "Communication Skills",
+    description: "Build powerful verbal, written, and presentation skills to communicate confidently in professional environments.",
+    instructor: "Laura Bennett",
+    duration: "20 hours",
+    difficulty: "Beginner",
+    lessons: 60,
+    rating: 4.6,
+    students: 7200,
+    image: "communication",
+    color: "#a855f7",
+    outcomes: [
+      "Communicate clearly and confidently",
+      "Write professional emails and reports",
+      "Deliver compelling presentations",
+      "Handle workplace conversations effectively",
+      "Develop active listening skills",
+      "Manage difficult conversations"
+    ],
+    curriculum: [
+      { module: 1, title: "Foundations of Communication", lessons: 10, duration: "3h 00m" },
+      { module: 2, title: "Written Communication Excellence", lessons: 12, duration: "3h 30m" },
+      { module: 3, title: "Verbal Communication & Public Speaking", lessons: 14, duration: "4h 00m" },
+      { module: 4, title: "Presentation & Storytelling", lessons: 12, duration: "4h 00m" },
+      { module: 5, title: "Interpersonal & Team Communication", lessons: 8, duration: "3h 00m" },
+      { module: 6, title: "Professional Scenarios & Practice", lessons: 4, duration: "2h 30m" }
+    ]
+  }
+];

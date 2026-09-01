@@ -1,0 +1,118 @@
+@use '../abstracts/variables' as *;
+
+/* Editorial Card & Surface Styles */
+.editorial-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  background: $bg-surface;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px -8px rgba(20, 20, 19, 0.08), 0 2px 6px rgba(20, 20, 19, 0.03);
+    border-color: #141413 !important;
+
+    .card-img-zoom {
+      transform: scale(1.05);
+    }
+    .card-title-hover {
+      color: $accent-crimson;
+    }
+    .arrow-hover {
+      transform: translate(2px, -2px);
+      color: $accent-crimson;
+    }
+  }
+
+  .card-img-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card-img-zoom {
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+/* Numbered Rank Counter */
+.numbered-rank {
+  font-family: $font-serif-headline;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #D6D1C7;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: -0.04em;
+}
+
+.group:hover .numbered-rank {
+  color: $accent-crimson;
+  transform: scale(1.05);
+}
+
+/* Editorial Seal Stamp */
+.editorial-stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px dashed #141413;
+  font-family: $font-mono;
+  font-size: 0.5625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  text-align: center;
+  color: #141413;
+  transform: rotate(-8deg);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: rotate(0deg) scale(1.06);
+  }
+}
+
+/* 3D Magazine Realistic Shadow & Spine */
+.magazine-3d-wrap {
+  perspective: 1200px;
+
+  .magazine-3d-book {
+    transform: rotateY(-8deg) rotateX(4deg);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+    box-shadow: -15px 20px 40px -10px rgba(20, 20, 19, 0.25), -2px 0 6px rgba(20, 20, 19, 0.15);
+
+    &:hover {
+      transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+      box-shadow: 0 25px 50px -12px rgba(20, 20, 19, 0.2);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 14px;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.25) 0%, rgba(255, 255, 255, 0.15) 35%, rgba(0, 0, 0, 0.1) 100%);
+      z-index: 10;
+      pointer-events: none;
+    }
+  }
+}
+
+/* Shimmer Light Accent */
+@keyframes shimmer-sweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(212, 56, 37, 0.08) 50%, rgba(255, 255, 255, 0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer-sweep 4s infinite linear;
+}

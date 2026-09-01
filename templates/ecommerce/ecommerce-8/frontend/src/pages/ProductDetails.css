@@ -1,0 +1,295 @@
+.product-details-page {
+  padding: 0 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto 4rem auto;
+}
+
+.back-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.back-nav-btn:hover {
+  color: var(--accent);
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.toy-showcase-arena {
+  position: relative;
+  height: 480px;
+  background: radial-gradient(circle at 50% 50%, #2e1065 0%, #030712 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.stunt-track-pedestal {
+  position: absolute;
+  bottom: 80px;
+  width: 280px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pedestal-surface {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse, rgba(0, 242, 254, 0.4) 0%, rgba(139, 92, 246, 0.1) 80%);
+  border-radius: 50%;
+  border: 1.5px solid rgba(0, 242, 254, 0.3);
+  box-shadow: var(--neon-glow-accent);
+}
+
+.pedestal-hologram-glow {
+  position: absolute;
+  bottom: 15px;
+  width: 220px;
+  height: 100px;
+  background: linear-gradient(180deg, rgba(0, 242, 254, 0.15) 0%, rgba(0, 242, 254, 0) 100%);
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  opacity: 0.5;
+  animation: holoPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes holoPulse {
+  from { opacity: 0.3; transform: scaleY(0.9); }
+  to { opacity: 0.6; transform: scaleY(1.1); }
+}
+
+.showcase-toy-wrapper {
+  width: 250px;
+  height: 250px;
+  z-index: 3;
+  margin-bottom: 2rem;
+}
+
+.pedestal-toy-img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+  animation: floatBounce 4s ease-in-out infinite;
+}
+
+@keyframes floatBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.play-stunt-btn {
+  position: absolute;
+  bottom: 25px;
+  z-index: 10;
+}
+
+.toy-specs-panel {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.specs-brand {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.specs-title {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  color: white;
+}
+
+.specs-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.specs-pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.specs-price-final {
+  font-size: 2.2rem;
+  font-family: var(--font-heading);
+  color: white;
+}
+
+.specs-price-original {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.specs-desc {
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.specs-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.specs-options h4, .specs-qty-row h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+}
+
+.variant-badges {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.variant-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  color: white;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.variant-badge:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.variant-badge.active {
+  background: rgba(0, 242, 254, 0.15);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: var(--neon-glow-accent);
+}
+
+.specs-qty-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.quantity-selectors {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px;
+  padding: 2px;
+}
+
+.quantity-selectors button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.quantity-selectors button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.quantity-selectors span {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  padding: 0 1rem;
+}
+
+.specs-ctas {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cart-cta {
+  flex-grow: 2;
+  justify-content: center;
+}
+
+.buy-cta {
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.fav-cta {
+  padding: 0 1.25rem !important;
+}
+
+.fav-cta.active {
+  color: var(--secondary);
+  border-color: var(--secondary);
+  background: rgba(255, 77, 109, 0.1);
+}
+
+.detail-loading-page, .detail-error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .toy-showcase-arena {
+    height: 380px;
+  }
+}
+
+@media (max-width: 500px) {
+  .specs-ctas {
+    flex-direction: column;
+  }
+  .fav-cta {
+    align-self: center;
+    width: fit-content;
+    height: 45px;
+  }
+}

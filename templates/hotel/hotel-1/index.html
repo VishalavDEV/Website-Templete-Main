@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Haven Resorts — A Sanctuary of Refined Elegance</title>
+  <meta name="description" content="Aura Haven Resorts in Big Sur, California is an architectural sanctuary celebrating coastal tranquility, therapeutic wellness, and luxury private villas.">
+  <meta name="keywords" content="hotel, luxury resort, Big Sur, private villas, spa, fine dining, reservation">
+
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="Aura Haven Resorts — A Sanctuary of Refined Elegance">
+  <meta property="og:description" content="Experience ultimate coastal tranquility where nature meets modern luxury in Big Sur, California.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/images/hotel_hero.jpg">
+
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ─── 1. TOP UTILITY BAR & STICKY HEADER ─── -->
+  <header class="ah-header" id="ahHeader">
+    <!-- Top Utility Bar -->
+    <div class="ah-utility-bar">
+      <div class="ah-utility-container">
+        <div class="ah-utility-socials">
+          <a href="#instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+        </div>
+        <div class="ah-utility-info">
+          <span><i class="bi bi-geo-alt"></i> 100 Coastal Hwy, Big Sur, CA</span>
+          <span class="ah-utility-divider">|</span>
+          <span><i class="bi bi-telephone"></i> +1 (800) 555-0199</span>
+        </div>
+        <div class="ah-utility-auth">
+          <a href="#signin" class="ah-utility-link">
+            <i class="bi bi-person"></i> Member Sign In
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <div class="ah-main-nav">
+      <div class="ah-nav-container">
+        <!-- Logo -->
+        <a href="#" class="ah-logo" id="logoLink">
+          <span class="ah-logo-gold">AURA</span>
+          <span class="ah-logo-white">HAVEN</span>
+          <span class="ah-logo-sub">RESORTS</span>
+        </a>
+
+        <!-- Nav Links -->
+        <nav class="ah-nav-links" id="navLinks">
+          <a href="#home" class="ah-nav-item" data-target="hero-slider">Home</a>
+          <a href="#suites" class="ah-nav-item" data-target="featured-suites">Suites</a>
+          <a href="#experiences" class="ah-nav-item" data-target="experiences-grid">Experiences</a>
+          <a href="#dining" class="ah-nav-item" data-target="experiences-grid" data-filter="Fine Dining">Dining</a>
+          <a href="#gallery" class="ah-nav-item" data-target="gallery-preview">Gallery</a>
+          <a href="#contact" class="ah-nav-item" data-target="contact-footer">Contact</a>
+        </nav>
+
+        <!-- CTA & Mobile Toggle -->
+        <div class="ah-nav-cta">
+          <button class="ah-btn-gold d-none d-md-inline-block" id="reserveBtnTop">Reserve Now</button>
+          <button class="ah-mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+            <i class="bi bi-list fs-3"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── 2. HERO SLIDER & BOOKING BAR ─── -->
+  <section id="hero-slider" class="ah-hero-section">
+    <div class="ah-slider-wrapper" id="sliderWrapper">
+      <!-- Slide 1 -->
+      <div class="ah-slide active" style="background-image: linear-gradient(rgba(18, 22, 26, 0.4), rgba(18, 22, 26, 0.75)), url('./assets/images/hotel_hero.jpg');">
+        <div class="ah-slide-content">
+          <span class="ah-slide-tagline">✦ REDEFINING LUXURY ESCAPES ✦</span>
+          <h1 class="ah-slide-title">A Sanctuary of Refined Elegance</h1>
+          <p class="ah-slide-subtitle">Experience ultimate coastal tranquility where nature meets modern luxury.</p>
+          <div class="ah-slide-actions">
+            <button class="ah-btn-gold btn-scroll" data-target="featured-suites">Explore Suites</button>
+            <button class="ah-btn-outline btn-scroll" data-target="experiences-grid">Our Experiences</button>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="ah-slide" style="background-image: linear-gradient(rgba(18, 22, 26, 0.4), rgba(18, 22, 26, 0.75)), url('./assets/images/hotel_pool.jpg');">
+        <div class="ah-slide-content">
+          <span class="ah-slide-tagline">✦ REDEFINING LUXURY ESCAPES ✦</span>
+          <h1 class="ah-slide-title">Indulge in Infinite Vistas</h1>
+          <p class="ah-slide-subtitle">Unwind at our signature cliffside pools blending seamlessly with the Pacific.</p>
+          <div class="ah-slide-actions">
+            <button class="ah-btn-gold btn-scroll" data-target="featured-suites">Explore Suites</button>
+            <button class="ah-btn-outline btn-scroll" data-target="experiences-grid">Our Experiences</button>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="ah-slide" style="background-image: linear-gradient(rgba(18, 22, 26, 0.4), rgba(18, 22, 26, 0.75)), url('./assets/images/hotel_suite.jpg');">
+        <div class="ah-slide-content">
+          <span class="ah-slide-tagline">✦ REDEFINING LUXURY ESCAPES ✦</span>
+          <h1 class="ah-slide-title">Bespoke Curated Sanctuaries</h1>
+          <p class="ah-slide-subtitle">Every corner designed to capture the essence of aura, space, and absolute peace.</p>
+          <div class="ah-slide-actions">
+            <button class="ah-btn-gold btn-scroll" data-target="featured-suites">Explore Suites</button>
+            <button class="ah-btn-outline btn-scroll" data-target="experiences-grid">Our Experiences</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider Indicator Dots -->
+    <div class="ah-slider-dots" id="sliderDots">
+      <button class="ah-slider-dot active" aria-label="Go to slide 1"></button>
+      <button class="ah-slider-dot" aria-label="Go to slide 2"></button>
+      <button class="ah-slider-dot" aria-label="Go to slide 3"></button>
+    </div>
+
+    <!-- Overlay Floating Booking Bar -->
+    <div class="ah-booking-bar-wrapper">
+      <div class="ah-booking-bar card-elevation">
+        <form class="ah-booking-form" id="bookingForm">
+          <!-- Check-In -->
+          <div class="ah-booking-group">
+            <label class="ah-booking-label"><i class="bi bi-calendar-check mr-2"></i> Check-In</label>
+            <input type="date" class="ah-booking-input" id="checkIn" required>
+          </div>
+
+          <!-- Check-Out -->
+          <div class="ah-booking-group">
+            <label class="ah-booking-label"><i class="bi bi-calendar-x mr-2"></i> Check-Out</label>
+            <input type="date" class="ah-booking-input" id="checkOut" required>
+          </div>
+
+          <!-- Room Type -->
+          <div class="ah-booking-group">
+            <label class="ah-booking-label"><i class="bi bi-house mr-2"></i> Room Type</label>
+            <select class="ah-booking-input" id="roomType">
+              <option value="Deluxe Sanctuary Suite">Deluxe Sanctuary Suite</option>
+              <option value="Crest View Ocean Villa">Crest View Ocean Villa</option>
+              <option value="Aura Presidential Suite">Aura Presidential Suite</option>
+            </select>
+          </div>
+
+          <!-- Guests -->
+          <div class="ah-booking-group" style="position: relative;">
+            <label class="ah-booking-label" style="cursor: pointer;" id="guestTriggerLabel"><i class="bi bi-people mr-2"></i> Guests</label>
+            <div class="ah-booking-input ah-guest-trigger" id="guestTrigger">2 Guests</div>
+
+            <div class="ah-guest-dropdown card-elevation" id="guestDropdown" style="display: none;">
+              <div class="ah-guest-counter-row">
+                <span>Adults</span>
+                <div class="ah-counter-controls">
+                  <button type="button" id="guestMinus">-</button>
+                  <span id="guestCount">2</span>
+                  <button type="button" id="guestPlus">+</button>
+                </div>
+              </div>
+              <div class="ah-guest-note">Maximum 8 guests per sanctuary. For larger groups, please contact us.</div>
+            </div>
+          </div>
+
+          <!-- Submit CTA -->
+          <div class="ah-booking-action">
+            <button type="submit" class="ah-btn-gold ah-btn-pulse w-100">Check Availability</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. FEATURED SUITES SECTION ─── -->
+  <section id="featured-suites" class="ah-suites-section">
+    <div class="ah-section-header">
+      <span class="ah-section-subtitle">✦ PRESTIGIOUS SANCTUARIES ✦</span>
+      <h2 class="ah-section-title">The Featured Suites</h2>
+      <div class="ah-ornamental-divider">
+        <span class="ah-divider-line"></span>
+        <span class="ah-divider-diamond"></span>
+        <span class="ah-divider-line"></span>
+      </div>
+      <p class="ah-section-desc">
+        Immerse yourself in our meticulously engineered living spaces, combining organic architectural styling with state-of-the-art technological convenience.
+      </p>
+    </div>
+
+    <!-- 3-Column Responsive Grid -->
+    <div class="ah-suites-grid">
+      <!-- Suite 1 -->
+      <div class="ah-suite-card card-elevation">
+        <div class="ah-suite-img-wrapper">
+          <img src="./assets/images/hotel_suite.jpg" alt="Deluxe Sanctuary Suite" class="ah-suite-img">
+          <div class="ah-suite-price">From $450 <small>/ Night</small></div>
+        </div>
+        <div class="ah-suite-info">
+          <div class="ah-suite-stars">
+            <i class="bi bi-star-fill text-gold"></i>
+            <i class="bi bi-star-fill text-gold"></i>
+            <i class="bi bi-star-fill text-gold"></i>
+            <i class="bi bi-star-fill text-gold"></i>
+            <i class="bi bi-star-fill text-gold"></i>
+          </div>
+          <h3 class="ah-suite-title">Deluxe Sanctuary Suite</h3>
+          <p class="ah-suite-text">
+            Featuring floor-to-ceiling glass panel walls, a custom basalt heated bath, and breathtaking redwood forest views.
+          </p>
+          <div class="ah-suite-amenities">
+            <span>✦ Forest Vista</span>
+            <span>✦ King Bed</span>
+            <span>✦ Volcano Slate Spa</span>
+          </div>
+          <button class="ah-suite-btn-link btn-book-suite" data-suite="Deluxe Sanctuary Suite">
+            Reserve Suite <i class="bi bi-arrow-right ml-2"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Suite 2 -->
+      <div class="ah-suite-card card-elevation">
+        <div class="ah-suite-img-wrapper">
+          <img src="./assets/images/hotel_pool.jpg" alt="Crest View Ocean Villa" class="ah-suite-img">
+          <div class="ah-suite-price">From $750 <small>/ Night</small></div>
+        </div>
+        <div class="ah-suite-info">
+          <div class="ah-suite-stars">
+            <i class="bi bi-star-fill text-gold"></i>
+            <i class="bi bi-star-fill text-gold"></i>
+            <i class="bi bi-star-fill text-gold"></i>
+            <i class="bi bi-star-fill text-gold"></i>
+            <i class="bi bi-star-fill text-gold"></i>
+          </div>
+          <h3 class="ah-suite-title">Crest View Ocean Villa</h3>
+          <p class="ah-suite-text">
+            Positioned on the edge of ocean cliffs, featuring a floating outdoor lounge deck, fire pit, and infinite ocean horizons.
+          </p>
+          <div class="ah-suite-amenities">
+            <span>✦ Cliffside Ocean</span>
+            <span>✦ Fire Hearth</span>
+            <span>✦ Infinity Pool</span>
+          </div>
+          <button class="ah-suite-btn-link btn-book-suite" data-suite="Crest View Ocean Villa">
+            Reserve Suite <i class="bi bi-arrow-right ml-2"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Suite 3 -->
+      <div class="ah-suite-card card-elevation">
+        <div class="ah-suite-img-wrapper">
+          <img src="./assets/images/hotel_suite.jpg" alt="Aura Presidential Suite" class="ah-suite-img">
+          <div class="ah-suite-price">From $1200 <small>/ Night</small></div>
+        </div>
+        <div class="ah-suite-info">
+          <div class="ah-suite-stars">
+            <i class="bi bi-star-fill text-gold"></i>
+            <i class="bi bi-star-fill text-gold"></i>
+            <i class="bi bi-star-fill text-gold"></i>
+            <i class="bi bi-star-fill text-gold"></i>
+            <i class="bi bi-star-fill text-gold"></i>
+          </div>
+          <h3 class="ah-suite-title">Aura Presidential Suite</h3>
+          <p class="ah-suite-text">
+            Our signature dark-concept sanctuary with double-height ceilings, wood-burning hearth, and a botanical glass courtyard.
+          </p>
+          <div class="ah-suite-amenities">
+            <span>✦ Private Butler</span>
+            <span>✦ Whiskey Cellar</span>
+            <span>✦ Indoor Plunge</span>
+          </div>
+          <button class="ah-suite-btn-link btn-book-suite" data-suite="Aura Presidential Suite">
+            Reserve Suite <i class="bi bi-arrow-right ml-2"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 4. EXPERIENCE GRID (DARK CONTRAST) ─── -->
+  <section id="experiences-grid" class="ah-experiences-section">
+    <div class="ah-experiences-container">
+      <div class="ah-section-header ah-header-inverted">
+        <span class="ah-section-subtitle">✦ IMMERSIVE RECREATION ✦</span>
+        <h2 class="ah-section-title">Why Choose Aura Haven</h2>
+        <div class="ah-ornamental-divider">
+          <span class="ah-divider-line line-white"></span>
+          <span class="ah-divider-diamond diamond-gold"></span>
+          <span class="ah-divider-line line-white"></span>
+        </div>
+        <p class="ah-section-desc desc-white">
+          Every detail curated to elevate your consciousness. Step into a world of tailored hospitality, therapeutic wellness, and unparalleled natural integration.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="ah-filter-tabs" id="filterTabs">
+        <button class="ah-filter-tab-btn active" data-filter="All">All</button>
+        <button class="ah-filter-tab-btn" data-filter="Fine Dining">Fine Dining</button>
+        <button class="ah-filter-tab-btn" data-filter="Wellness">Wellness</button>
+        <button class="ah-filter-tab-btn" data-filter="Private Villas">Private Villas</button>
+      </div>
+
+      <!-- 6-Item Masonry Grid -->
+      <div class="ah-masonry-grid" id="masonryGrid">
+        <!-- Item 1 -->
+        <div class="ah-masonry-item ah-masonry-large" data-category="Fine Dining">
+          <div class="ah-masonry-img-box">
+            <img src="./assets/images/hotel_dining.jpg" alt="Epicurean Ocean Hearth" class="ah-masonry-img">
+            <div class="ah-masonry-overlay">
+              <span class="ah-masonry-tag">Fine Dining</span>
+              <h3 class="ah-masonry-title">Epicurean Ocean Hearth</h3>
+              <p class="ah-masonry-text">Michelin-starred open flame cooking featuring fresh hand-harvested ingredients.</p>
+              <a href="#discover" class="ah-masonry-link btn-book">Discover Ritual <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="ah-masonry-item ah-masonry-small" data-category="Wellness">
+          <div class="ah-masonry-img-box">
+            <img src="./assets/images/hotel_spa.jpg" alt="Thermal Basalt Rituals" class="ah-masonry-img">
+            <div class="ah-masonry-overlay">
+              <span class="ah-masonry-tag">Wellness</span>
+              <h3 class="ah-masonry-title">Thermal Basalt Rituals</h3>
+              <p class="ah-masonry-text">Ancient stone treatments and thermal water pools for physical equilibrium.</p>
+              <a href="#discover" class="ah-masonry-link btn-book">Discover Ritual <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="ah-masonry-item ah-masonry-small" data-category="Private Villas">
+          <div class="ah-masonry-img-box">
+            <img src="./assets/images/hotel_hero.jpg" alt="Amber Canopy Sanctuary" class="ah-masonry-img">
+            <div class="ah-masonry-overlay">
+              <span class="ah-masonry-tag">Private Villas</span>
+              <h3 class="ah-masonry-title">Amber Canopy Sanctuary</h3>
+              <p class="ah-masonry-text">Suspended glass architecture nestled deep within the coastal redwood forest.</p>
+              <a href="#discover" class="ah-masonry-link btn-book">Discover Ritual <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="ah-masonry-item ah-masonry-large" data-category="Private Villas">
+          <div class="ah-masonry-img-box">
+            <img src="./assets/images/hotel_suite.jpg" alt="Obsidian Beach Manor" class="ah-masonry-img">
+            <div class="ah-masonry-overlay">
+              <span class="ah-masonry-tag">Private Villas</span>
+              <h3 class="ah-masonry-title">Obsidian Beach Manor</h3>
+              <p class="ah-masonry-text">Exclusive beachfront sanctuary with direct sea tunnels and private heli-deck.</p>
+              <a href="#discover" class="ah-masonry-link btn-book">Discover Ritual <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="ah-masonry-item ah-masonry-small" data-category="Wellness">
+          <div class="ah-masonry-img-box">
+            <img src="./assets/images/hotel_suite.jpg" alt="Ocean Whispers Pavillion" class="ah-masonry-img">
+            <div class="ah-masonry-overlay">
+              <span class="ah-masonry-tag">Wellness</span>
+              <h3 class="ah-masonry-title">Ocean Whispers Pavillion</h3>
+              <p class="ah-masonry-text">Suspended deck massage therapy accompanied by the acoustic rhythm of the tide.</p>
+              <a href="#discover" class="ah-masonry-link btn-book">Discover Ritual <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="ah-masonry-item ah-masonry-small" data-category="Fine Dining">
+          <div class="ah-masonry-img-box">
+            <img src="./assets/images/hotel_dining.jpg" alt="The Crimson Cellar" class="ah-masonry-img">
+            <div class="ah-masonry-overlay">
+              <span class="ah-masonry-tag">Fine Dining</span>
+              <h3 class="ah-masonry-title">The Crimson Cellar</h3>
+              <p class="ah-masonry-text">Private collection wine vault hosting candlelit vintage tastings and pairings.</p>
+              <a href="#discover" class="ah-masonry-link btn-book">Discover Ritual <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 5. EVENTS & HAPPENINGS CAROUSEL/GRID ─── -->
+  <section id="events-grid" class="ah-events-section">
+    <div class="ah-section-header">
+      <span class="ah-section-subtitle">✦ CURATED MOMENTS ✦</span>
+      <h2 class="ah-section-title">Events & Happenings</h2>
+      <div class="ah-ornamental-divider">
+        <span class="ah-divider-line"></span>
+        <span class="ah-divider-diamond"></span>
+        <span class="ah-divider-line"></span>
+      </div>
+      <p class="ah-section-desc">
+        Stay aligned with our exclusive resort activities, from intimate acoustic music showcases to sunset gastronomic masterclasses.
+      </p>
+    </div>
+
+    <!-- 3-Column Event Card Grid -->
+    <div class="ah-events-grid">
+      <!-- Event 1 -->
+      <div class="ah-event-card card-elevation">
+        <div class="ah-event-img-wrapper">
+          <img src="./assets/images/hotel_hero.jpg" alt="Acoustic Cliffside Sunset" class="ah-event-img">
+          <div class="ah-event-date-badge">
+            <span class="ah-date-day">15</span>
+            <span class="ah-date-month">SEP</span>
+          </div>
+        </div>
+        <div class="ah-event-body">
+          <span class="ah-event-subtitle">MUSIC & SOIREES</span>
+          <h3 class="ah-event-title">Acoustic Cliffside Sunset</h3>
+          <p class="ah-event-desc">
+            An intimate open-air acoustic violin and harp showcase on the precipice of Big Sur cliffs, accompanied by selected local champagnes.
+          </p>
+          <a href="#readmore" class="ah-event-link" onclick="event.preventDefault();">
+            Read Details <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Event 2 -->
+      <div class="ah-event-card card-elevation">
+        <div class="ah-event-img-wrapper">
+          <img src="./assets/images/hotel_dining.jpg" alt="Gastronomy & Fire Pairing" class="ah-event-img">
+          <div class="ah-event-date-badge">
+            <span class="ah-date-day">28</span>
+            <span class="ah-date-month">OCT</span>
+          </div>
+        </div>
+        <div class="ah-event-body">
+          <span class="ah-event-subtitle">CULINARY ARTS</span>
+          <h3 class="ah-event-title">Gastronomy & Fire Pairing</h3>
+          <p class="ah-event-desc">
+            Learn artisan open-flame roasting techniques and smoke pairing rules from our executive chefs inside the Crimson Cellar vault.
+          </p>
+          <a href="#readmore" class="ah-event-link" onclick="event.preventDefault();">
+            Read Details <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Event 3 -->
+      <div class="ah-event-card card-elevation">
+        <div class="ah-event-img-wrapper">
+          <img src="./assets/images/hotel_spa.jpg" alt="Equilibrium Autumn Solstice" class="ah-event-img">
+          <div class="ah-event-date-badge">
+            <span class="ah-date-day">12</span>
+            <span class="ah-date-month">NOV</span>
+          </div>
+        </div>
+        <div class="ah-event-body">
+          <span class="ah-event-subtitle">WELLNESS RETREAT</span>
+          <h3 class="ah-event-title">Equilibrium Solstice Retreat</h3>
+          <p class="ah-event-desc">
+            A 3-day deep mindfulness, sound healing, and cold-plunge hydrotherapy alignment retreat tailored by European experts.
+          </p>
+          <a href="#readmore" class="ah-event-link" onclick="event.preventDefault();">
+            Read Details <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GALLERY PREVIEW SECTION ─── -->
+  <section id="gallery-preview" class="ah-gallery-preview-section">
+    <div class="ah-section-header">
+      <span class="ah-section-subtitle">✦ VISUAL ESSENCE ✦</span>
+      <h2 class="ah-section-title">The Gallery Portrait</h2>
+      <div class="ah-ornamental-divider">
+        <span class="ah-divider-line"></span>
+        <span class="ah-divider-diamond"></span>
+        <span class="ah-divider-line"></span>
+      </div>
+    </div>
+
+    <div class="ah-gallery-row">
+      <div class="ah-gallery-photo">
+        <img src="./assets/images/hotel_hero.jpg" alt="Resort Vista">
+      </div>
+      <div class="ah-gallery-photo">
+        <img src="./assets/images/hotel_pool.jpg" alt="Infinity Pool">
+      </div>
+      <div class="ah-gallery-photo">
+        <img src="./assets/images/hotel_suite.jpg" alt="Sanctuary Suite">
+      </div>
+      <div class="ah-gallery-photo">
+        <img src="./assets/images/hotel_dining.jpg" alt="Artisan Dining">
+      </div>
+      <div class="ah-gallery-photo text-overlay-slide">
+        <div class="ah-gallery-slide-overlay">
+          <span class="ah-overlay-logo">AH</span>
+          <span class="ah-overlay-text">Moments of Pure Stillness</span>
+          <a href="#gallery" class="ah-overlay-btn" onclick="event.preventDefault();">View Full Gallery</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 6. MULTI-COLUMN FOOTER ─── -->
+  <footer id="contact-footer" class="ah-footer">
+    <div class="ah-footer-container">
+      <!-- Col 1 -->
+      <div class="ah-footer-col">
+        <div class="ah-footer-brand">
+          <span class="ah-logo-gold">AURA</span>
+          <span class="ah-logo-white">HAVEN</span>
+          <div class="ah-footer-logo-sub">RESORTS</div>
+        </div>
+        <p class="ah-footer-brand-text font-weight-light">
+          An architectural exploration of space, element, and tranquility in Big Sur, California.
+        </p>
+        <div class="ah-footer-contacts">
+          <div class="ah-contact-item">
+            <i class="bi bi-geo-alt ah-contact-icon"></i>
+            <span>100 Coastal Hwy, Big Sur, CA 93920</span>
+          </div>
+          <div class="ah-contact-item">
+            <i class="bi bi-telephone ah-contact-icon"></i>
+            <span>+1 (800) 555-0199</span>
+          </div>
+          <div class="ah-contact-item">
+            <i class="bi bi-envelope ah-contact-icon"></i>
+            <span>concierge@aurahavenresorts.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 2 -->
+      <div class="ah-footer-col">
+        <h4 class="ah-footer-title">Quick Navigation</h4>
+        <ul class="ah-footer-links">
+          <li><a href="#home" class="btn-scroll" data-target="hero-slider">Home Base</a></li>
+          <li><a href="#suites" class="btn-scroll" data-target="featured-suites">Resort Suites</a></li>
+          <li><a href="#experiences" class="btn-scroll" data-target="experiences-grid">Experiences</a></li>
+          <li><a href="#dining" class="btn-scroll" data-target="experiences-grid" data-filter="Fine Dining">Signature Dining</a></li>
+          <li><a href="#gallery" class="btn-scroll" data-target="gallery-preview">Visual Gallery</a></li>
+          <li><a href="#contact" class="btn-scroll" data-target="contact-footer">Contact Desk</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3 -->
+      <div class="ah-footer-col">
+        <h4 class="ah-footer-title">Guest Services</h4>
+        <ul class="ah-footer-links">
+          <li><a href="#services">Airport Heli-Transfer</a></li>
+          <li><a href="#services">Private Beach Access</a></li>
+          <li><a href="#services">Bespoke Concierge Booking</a></li>
+          <li><a href="#services">Basalt Spa Hydrothermal</a></li>
+          <li><a href="#services">Valet Yacht Parking</a></li>
+          <li><a href="#services">Corporate Retreat Planning</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4 -->
+      <div class="ah-footer-col">
+        <h4 class="ah-footer-title">Aura Chronicle</h4>
+        <p class="ah-footer-newsletter-text">
+          Subscribe to receive exclusive access to early reservations, wellness retreats, and culinary schedules.
+        </p>
+        <form class="ah-newsletter-form" id="newsletterForm">
+          <div class="ah-newsletter-input-wrapper">
+            <input type="email" placeholder="Your Email Address" class="ah-newsletter-input" id="newsletterEmail" required>
+            <button type="submit" class="ah-newsletter-btn">
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </form>
+        <div class="ah-newsletter-success" id="newsletterSuccess" style="display: none;">
+          <i class="bi bi-check-circle"></i> Welcome to the Chronicle.
+        </div>
+        <div class="ah-footer-socials-bottom">
+          <a href="#instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Credits -->
+    <div class="ah-footer-bottom">
+      <div class="ah-footer-bottom-container">
+        <span>&copy; <span id="currentYear">2026</span> Aura Haven Resorts. Crafted with architectural discipline.</span>
+        <span>All rights reserved. Designed for elite hospitality.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── RESERVATION MODAL ─── -->
+  <div class="ah-modal-overlay" id="bookingModal" style="display: none;">
+    <div class="ah-modal-card card-elevation">
+      <button class="ah-modal-close" id="modalClose" aria-label="Close booking modal">
+        <i class="bi bi-x fs-4"></i>
+      </button>
+
+      <!-- Step 1: Form -->
+      <div class="ah-modal-content" id="modalFormScreen">
+        <h3 class="ah-modal-title">Secure Your Sanctuary</h3>
+        <p class="ah-modal-subtitle">Complete your details to initiate reservation arrangements at Aura Haven.</p>
+
+        <!-- Booking Summary -->
+        <div class="ah-booking-summary">
+          <div class="ah-summary-item">
+            <span class="ah-summary-label">Sanctuary:</span>
+            <span class="ah-summary-value" id="summaryRoom">Deluxe Sanctuary Suite</span>
+          </div>
+          <div class="ah-summary-item">
+            <span class="ah-summary-label">Dates:</span>
+            <span class="ah-summary-value" id="summaryDates">2026-08-20 &rarr; 2026-08-21</span>
+          </div>
+          <div class="ah-summary-item">
+            <span class="ah-summary-label">Guests:</span>
+            <span class="ah-summary-value" id="summaryGuests">2 Adults</span>
+          </div>
+        </div>
+
+        <form class="ah-modal-form" id="confirmForm">
+          <div class="ah-form-group">
+            <label class="ah-form-label">Full Name</label>
+            <input type="text" class="ah-form-input" placeholder="e.g. Elizabeth Sterling" id="guestName" required>
+          </div>
+          <div class="ah-form-group">
+            <label class="ah-form-label">Email Address</label>
+            <input type="email" class="ah-form-input" placeholder="e.g. elizabeth@example.com" id="guestEmail" required>
+          </div>
+          <div class="ah-form-group">
+            <label class="ah-form-label">Contact Number</label>
+            <input type="tel" class="ah-form-input" placeholder="e.g. +1 (555) 012-3456" id="guestPhone" required>
+          </div>
+          <div class="ah-modal-guarantee">
+            <i class="bi bi-shield-check text-gold mr-2"></i>
+            <span>Cancellation is free up to 7 days prior to check-in.</span>
+          </div>
+          <button type="submit" class="ah-btn-gold w-100">Confirm Reservation Request</button>
+        </form>
+      </div>
+
+      <!-- Step 2: Success Screen -->
+      <div class="ah-modal-success-screen" id="modalSuccessScreen" style="display: none;">
+        <div class="ah-success-icon-ring">
+          <i class="bi bi-check2 fs-2 text-gold"></i>
+        </div>
+        <h3 class="ah-success-title">Arrangements Initiated</h3>
+        <p class="ah-success-text">
+          Thank you, <strong id="successGuestName">Elizabeth</strong>. A dedicated guest experience manager has been assigned to your reservation request. We will contact you at <strong id="successGuestEmail">elizabeth@example.com</strong> within 4 hours to finalize details.
+        </p>
+        <div class="ah-success-details">
+          <div><strong>Reference ID:</strong> <span id="successRefId">AH-547289</span></div>
+          <div><strong>Sanctuary:</strong> <span id="successRoom">Deluxe Sanctuary Suite</span></div>
+        </div>
+        <button class="ah-btn-gold" id="successReturnBtn">Return to Aura Haven</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Javascript -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+

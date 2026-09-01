@@ -1,0 +1,6 @@
+{
+  "name": "StudyPress - Education & Courses Template",
+  "description": "Eikra Education & Courses Template featuring the signature top bar, hero with connected feature blocks, Welcome to Campus 2-column showcase, course catalog, teachers, events, news, and modal interactions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

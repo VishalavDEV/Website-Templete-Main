@@ -1,0 +1,6 @@
+{
+  "name": "Straventa",
+  "description": "Enterprise Corporate Website for Straventa showcasing AI, Cloud, Software, Data engineering solutions, case studies, leadership, and careers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Blush Lens — Fine Art Wedding Photography",
+  "description": "Blush Lens is a premium React wedding photography template featuring romantic blush and warm ivory tones, editorial serif typography, interactive booking forms, and dynamic parallax portfolio galleries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

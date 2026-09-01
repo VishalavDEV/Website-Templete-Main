@@ -1,0 +1,11 @@
+{
+  "name": "Bespoke Lakefront Villas — Swiss Design Studio",
+  "slug": "swiss-lakefront-villas",
+  "category": "construction",
+  "description": "A luxury lakefront residential and bespoke architectural configurator landing page. Features interactive 3D style customizer, geo-coordinates villa catalog, and RESTful configurator server.",
+  "techStack": {
+    "frontend": "React + Vite + Tailwind CSS / Liquid Water Refl",
+    "backend": "Java 21 + Spring Boot 3"
+  },
+  "demoUrl": "/templates/construction/construction-5/index.html"
+}

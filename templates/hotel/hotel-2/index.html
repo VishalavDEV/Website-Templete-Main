@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aethelred Resort</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- TechnoSprint Wrapper Script -->
+  <script>
+    (function() {
+      const isPlatform = window.location.host === 'localhost:5173' || window.location.host === '127.0.0.1:5173';
+      const isTop = window.self === window.top;
+      const urlParams = new URLSearchParams(window.location.search);
+      const isIframe = urlParams.get('iframe') === 'true';
+      
+      if (isPlatform && isTop && !isIframe) {
+        document.documentElement.style.visibility = 'hidden';
+        
+        window.addEventListener('DOMContentLoaded', () => {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.searchParams.set('iframe', 'true');
+          
+          const body = document.body;
+          body.innerHTML = '';
+          body.style.margin = '0';
+          body.style.padding = '0';
+          body.style.height = '100vh';
+          body.style.width = '100vw';
+          body.style.display = 'flex';
+          body.style.flexDirection = 'column';
+          body.style.overflow = 'hidden';
+          body.style.backgroundColor = '#f1f5f9';
+          
+          const topBar = document.createElement('div');
+          topBar.id = 'technosprint-preview-header';
+          topBar.style.height = '64px';
+          topBar.style.background = '#ffffff';
+          topBar.style.borderBottom = '1px solid #e2e8f0';
+          topBar.style.display = 'flex';
+          topBar.style.alignItems = 'center';
+          topBar.style.justifyContent = 'space-between';
+          topBar.style.padding = '0 24px';
+          topBar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+          topBar.style.fontFamily = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+          topBar.style.zIndex = '99999';
+          topBar.style.position = 'relative';
+          topBar.style.boxSizing = 'border-box';
+          
+          const logoDiv = document.createElement('div');
+          logoDiv.innerHTML = `
+            <a href="/templates" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="./assets/images/logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" />
+            </a>
+          `;
+          topBar.appendChild(logoDiv);
+          
+          const centerDiv = document.createElement('div');
+          centerDiv.style.display = 'flex';
+          centerDiv.style.alignItems = 'center';
+          centerDiv.style.gap = '8px';
+          centerDiv.innerHTML = `
+            <button id="view-desktop" style="
+              background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              Desktop
+            </button>
+            <button id="view-tablet" style="
+              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Tablet
+            </button>
+            <button id="view-mobile" style="
+              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Mobile
+            </button>
+          `;
+          topBar.appendChild(centerDiv);
+          
+          const rightDiv = document.createElement('div');
+          const pathParts = window.location.pathname.split('/');
+          const templateSlug = pathParts[pathParts.length - 2] || 'hotel-template';
+          
+          rightDiv.innerHTML = `
+            <a id="download-btn-header" href="/templates/\${templateSlug}?action=download" style="
+              background: #0066ff;
+              color: #ffffff;
+              text-decoration: none;
+              font-size: 0.85rem;
+              font-weight: 600;
+              padding: 10px 20px;
+              border-radius: 99px;
+              box-shadow: 0 4px 12px rgba(0, 102, 255, 0.15);
+              transition: all 0.2s ease-in-out;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              letter-spacing: 0.5px;
+              box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download Template
+            </a>
+          `;
+          topBar.appendChild(rightDiv);
+          body.appendChild(topBar);
+          
+          const iframeContainer = document.createElement('div');
+          iframeContainer.style.flex = '1';
+          iframeContainer.style.display = 'flex';
+          iframeContainer.style.alignItems = 'center';
+          iframeContainer.style.justifyContent = 'center';
+          iframeContainer.style.background = '#f1f5f9';
+          iframeContainer.style.padding = '20px';
+          iframeContainer.style.boxSizing = 'border-box';
+          iframeContainer.style.overflow = 'hidden';
+          
+          const iframe = document.createElement('iframe');
+          iframe.id = 'preview-iframe';
+          iframe.src = currentUrl.toString();
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.border = 'none';
+          iframe.style.borderRadius = '12px';
+          iframe.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+          iframe.style.background = '#ffffff';
+          iframe.style.transition = 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+          
+          iframeContainer.appendChild(iframe);
+          body.appendChild(iframeContainer);
+          
+          const btnDesktop = body.querySelector('#view-desktop');
+          const btnTablet = body.querySelector('#view-tablet');
+          const btnMobile = body.querySelector('#view-mobile');
+          const downloadBtn = body.querySelector('#download-btn-header');
+          
+          let activeMode = 'desktop';
+          
+          function setView(mode) {
+            activeMode = mode;
+            [btnDesktop, btnTablet, btnMobile].forEach(btn => {
+              btn.style.background = '#ffffff';
+              btn.style.color = '#475569';
+              btn.style.borderColor = '#e2e8f0';
+              btn.style.fontWeight = '500';
+            });
+            
+            if (mode === 'desktop') {
+              btnDesktop.style.background = '#eff6ff';
+              btnDesktop.style.color = '#1e40af';
+              btnDesktop.style.borderColor = '#bfdbfe';
+              btnDesktop.style.fontWeight = '600';
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+            } else if (mode === 'tablet') {
+              btnTablet.style.background = '#eff6ff';
+              btnTablet.style.color = '#1e40af';
+              btnTablet.style.borderColor = '#bfdbfe';
+              btnTablet.style.fontWeight = '600';
+              iframe.style.width = '768px';
+              iframe.style.height = '1024px';
+              iframe.style.maxHeight = '100%';
+            } else if (mode === 'mobile') {
+              btnMobile.style.background = '#eff6ff';
+              btnMobile.style.color = '#1e40af';
+              btnMobile.style.borderColor = '#bfdbfe';
+              btnMobile.style.fontWeight = '600';
+              iframe.style.width = '375px';
+              iframe.style.height = '667px';
+              iframe.style.maxHeight = '100%';
+            }
+          }
+          
+          btnDesktop.addEventListener('click', () => setView('desktop'));
+          btnTablet.addEventListener('click', () => setView('tablet'));
+          btnMobile.addEventListener('click', () => setView('mobile'));
+          
+          const btns = [
+            { btn: btnDesktop, mode: 'desktop' },
+            { btn: btnTablet, mode: 'tablet' },
+            { btn: btnMobile, mode: 'mobile' }
+          ];
+          
+          btns.forEach(item => {
+            item.btn.addEventListener('mouseenter', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#f8fafc';
+                item.btn.style.borderColor = '#cbd5e1';
+              }
+            });
+            item.btn.addEventListener('mouseleave', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#ffffff';
+                item.btn.style.borderColor = '#e2e8f0';
+              }
+            });
+          });
+          
+          downloadBtn.addEventListener('mouseenter', () => {
+            downloadBtn.style.background = '#0256d6';
+            downloadBtn.style.boxShadow = '0 6px 16px rgba(0, 102, 255, 0.3)';
+          });
+          downloadBtn.addEventListener('mouseleave', () => {
+            downloadBtn.style.background = '#0066ff';
+            downloadBtn.style.boxShadow = '0 4px 12px rgba(0, 102, 255, 0.15)';
+          });
+          
+          document.documentElement.style.visibility = 'visible';
+        });
+      }
+    })();
+  </script>
+
+  <div class="ht-root">
+    
+    <nav class="ht-navbar">
+      <div class="ht-nav-logo">
+        <div class="ht-nav-logo-icon">A</div>
+        <span class="ht-nav-logo-text">Aethelred Resort</span>
+      </div>
+
+      <ul class="ht-nav-links">
+        <li><span id="ht-nav-home" class="ht-nav-link active">Home</span></li>
+        <li><span id="ht-nav-rooms" class="ht-nav-link">Rooms</span></li>
+        <li><span id="ht-nav-amenities" class="ht-nav-link">Amenities</span></li>
+        <li><span id="ht-nav-dining" class="ht-nav-link">Dining</span></li>
+        <li><span id="ht-nav-offers" class="ht-nav-link">Offers</span></li>
+        <li><span id="ht-nav-contact" class="ht-nav-link">Contact</span></li>
+      </ul>
+
+      <div class="ht-nav-actions">
+        <button id="ht-theme-toggle" class="ht-theme-toggle" title="Switch to Light Mode">
+          <i data-lucide="moon" style="width: 15px; height: 15px;"></i>
+        </button>
+        <button id="ht-nav-book-btn" class="ht-btn ht-btn-gold">Book Now</button>
+        <button id="ht-hamburger-btn" class="ht-hamburger" aria-label="Open navigation menu">
+          <i data-lucide="menu" style="width: 22px; height: 22px; color: var(--ht-text-primary);"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div class="ht-mobile-drawer" aria-modal="true" role="dialog">
+      <div class="ht-drawer-overlay"></div>
+      <div class="ht-drawer-panel">
+        <button id="ht-drawer-close" class="ht-drawer-close">
+          <i data-lucide="x" style="width: 16px; height: 16px;"></i>
+        </button>
+        <div class="ht-nav-logo" style="margin-bottom: 28px;">
+          <div class="ht-nav-logo-icon">A</div>
+          <span class="ht-nav-logo-text">Aethelred Resort</span>
+        </div>
+        <div class="ht-drawer-link">Home</div>
+        <div class="ht-drawer-link">Rooms</div>
+        <div class="ht-drawer-link">Amenities</div>
+        <div class="ht-drawer-link">Dining</div>
+        <div class="ht-drawer-link">Offers</div>
+        <div class="ht-drawer-link">Contact</div>
+        <div style="margin-top: 28px; display: flex; flex-direction: column; gap: 10px;">
+          <button class="ht-btn ht-btn-gold" style="width: 100%;">Book Now <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <section id="ht-home" class="ht-hero">
+      <div class="ht-hero-bg loaded" style="transform: scale(1.08) translateY(0px);"></div>
+      <div class="ht-hero-overlay"></div>
+      <div class="ht-container" style="position: relative; z-index: 2;">
+        <div class="ht-hero-content">
+          <p class="ht-hero-eyebrow">Phuket, Thailand · Est. 2008</p>
+          <h1 class="ht-hero-title">Luxury<br /><em>Redefined</em></h1>
+          <p class="ht-hero-desc">Where the Andaman Sea meets barefoot elegance. A sanctuary crafted for those who seek the extraordinary in every waking moment.</p>
+          <div class="ht-hero-actions">
+            <button id="ht-hero-book-btn" class="ht-btn ht-btn-gold">Reserve Your Suite <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></button>
+            <button id="ht-hero-explore-btn" class="ht-btn ht-btn-ghost">Explore Rooms</button>
+          </div>
+        </div>
+      </div>
+      <div class="ht-hero-badge">
+        <i data-lucide="star" style="width: 14px; height: 14px; fill: currentColor; color: var(--ht-accent);"></i>
+        <div>
+          <div style="font-size: 0.72rem; font-weight: 700; color: var(--ht-text-primary);">World's Best</div>
+          <div style="font-size: 0.65rem; color: var(--ht-text-secondary);">Luxury Resort 2026</div>
+        </div>
+      </div>
+      <div class="ht-hero-scroll">
+        <div class="ht-hero-scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- Booking Bar -->
+    <section id="ht-booking" class="ht-booking-bar">
+      <div class="ht-booking-card">
+        <div class="ht-booking-field">
+          <div class="ht-booking-field-label">
+            <i data-lucide="calendar" style="width: 10px; height: 10px; display: inline; margin-right: 4px;"></i> Check-In
+          </div>
+          <input id="ht-checkin-input" type="date" class="ht-booking-field-input" />
+        </div>
+        <div class="ht-booking-field">
+          <div class="ht-booking-field-label">
+            <i data-lucide="calendar" style="width: 10px; height: 10px; display: inline; margin-right: 4px;"></i> Check-Out
+          </div>
+          <input id="ht-checkout-input" type="date" class="ht-booking-field-input" />
+        </div>
+        <div class="ht-booking-field">
+          <div class="ht-booking-field-label">
+            <i data-lucide="users" style="width: 10px; height: 10px; display: inline; margin-right: 4px;"></i> Guests & Rooms
+          </div>
+          <div class="ht-booking-guests">
+            <div style="flex: 1;">
+              <div style="font-size: 0.64rem; color: var(--ht-text-muted); margin-bottom: 5px;">Guests</div>
+              <div class="ht-guests-control">
+                <button id="ht-guests-minus" class="ht-guest-btn">−</button>
+                <span class="ht-booking-field-value">2</span>
+                <button id="ht-guests-plus" class="ht-guest-btn">+</button>
+              </div>
+            </div>
+            <div style="width: 1px; background: var(--ht-border); margin: 0 10px;"></div>
+            <div style="flex: 1;">
+              <div style="font-size: 0.64rem; color: var(--ht-text-muted); margin-bottom: 5px;">Rooms</div>
+              <div class="ht-guests-control">
+                <button id="ht-rooms-minus" class="ht-guest-btn">−</button>
+                <span class="ht-booking-field-value">1</span>
+                <button id="ht-rooms-plus" class="ht-guest-btn">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="ht-check-availability-btn" class="ht-booking-submit">
+          Check Availability <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- Rooms -->
+    <section id="ht-rooms" class="ht-section">
+      <div class="ht-container">
+        <div style="display: grid; grid-template-columns: 1fr auto; align-items: flex-end; gap: 20px; margin-bottom: 0;">
+          <div>
+            <div class="ht-label">Rooms & Suites</div>
+            <h2 class="ht-heading">Your Private <em>Haven</em></h2>
+            <p class="ht-subheading">From intimate garden rooms to grand ocean villas — each sanctuary is a masterpiece of space, light, and curated elegance.</p>
+          </div>
+          <button id="ht-view-all-rooms" class="ht-btn ht-btn-outline-gold" style="font-size: 0.8rem; align-self: flex-end; white-space: nowrap;">
+            All Rooms <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+          </button>
+        </div>
+        <div class="ht-rooms-grid">
+          
+          <div class="ht-room-card ht-reveal" id="ht-room-1" style="transition-delay: 0ms;">
+            <div class="ht-room-image-wrap">
+              <img src="./assets/images/hotel_suite.jpg" alt="Ocean Panorama Suite" loading="lazy" />
+              <div class="ht-room-badges">
+                <span class="ht-badge ht-badge-gold">Sea View</span><span class="ht-badge ht-badge-gold">King Bed</span>
+              </div>
+              <div class="ht-room-overlay"></div>
+              <button class="ht-btn ht-btn-gold ht-room-quick-book" style="font-size: 0.78rem; padding: 10px 22px;">Quick Book</button>
+            </div>
+            <div class="ht-room-body">
+              <div class="ht-room-category">Signature Suite</div>
+              <h3 class="ht-room-name">Ocean Panorama Suite</h3>
+              <div class="ht-room-amenities">
+                <div class="ht-room-amenity"><i data-lucide="wifi" style="width: 12px; height: 12px; color: var(--ht-accent);"></i>Wi-Fi</div>
+                <div class="ht-room-amenity"><i data-lucide="wind" style="width: 12px; height: 12px; color: var(--ht-accent);"></i>A/C</div>
+                <div class="ht-room-amenity"><i data-lucide="bath" style="width: 12px; height: 12px; color: var(--ht-accent);"></i>Spa Bath</div>
+                <div class="ht-room-amenity"><i data-lucide="tv" style="width: 12px; height: 12px; color: var(--ht-accent);"></i>Smart TV</div>
+              </div>
+              <div style="display: flex; gap: 16px; font-size: 0.76rem; color: var(--ht-text-muted); margin-bottom: 4px;">
+                <span>⬛ 78 m²</span><span>👤 Up to 2 guests</span>
+              </div>
+              <div class="ht-room-footer">
+                <div class="ht-room-price">
+                  <span class="ht-price-from">From</span><span class="ht-price-amount">$620</span><span class="ht-price-night">/ night</span>
+                </div>
+                <div class="ht-room-actions">
+                  <button id="ht-room-details-1" class="ht-btn ht-btn-ghost" style="font-size: 0.77rem; padding: 10px 16px;">Details</button>
+                  <button id="ht-room-book-1" class="ht-btn ht-btn-gold" style="font-size: 0.77rem; padding: 10px 16px;">Book</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="ht-room-card ht-reveal" id="ht-room-2" style="transition-delay: 120ms;">
+            <div class="ht-room-image-wrap">
+              <img src="./assets/images/hotel_pool.jpg" alt="Private Infinity Villa" loading="lazy" />
+              <div class="ht-room-badges">
+                <span class="ht-badge ht-badge-gold">Private Pool</span><span class="ht-badge ht-badge-gold">Garden View</span>
+              </div>
+              <div class="ht-room-overlay"></div>
+              <button class="ht-btn ht-btn-gold ht-room-quick-book" style="font-size: 0.78rem; padding: 10px 22px;">Quick Book</button>
+            </div>
+            <div class="ht-room-body">
+              <div class="ht-room-category">Pool Villa</div>
+              <h3 class="ht-room-name">Private Infinity Villa</h3>
+              <div class="ht-room-amenities">
+                <div class="ht-room-amenity"><i data-lucide="waves" style="width: 12px; height: 12px; color: var(--ht-accent);"></i>Private Pool</div>
+                <div class="ht-room-amenity"><i data-lucide="wifi" style="width: 12px; height: 12px; color: var(--ht-accent);"></i>Wi-Fi</div>
+                <div class="ht-room-amenity"><i data-lucide="coffee" style="width: 12px; height: 12px; color: var(--ht-accent);"></i>Bar</div>
+                <div class="ht-room-amenity"><i data-lucide="wind" style="width: 12px; height: 12px; color: var(--ht-accent);"></i>A/C</div>
+              </div>
+              <div style="display: flex; gap: 16px; font-size: 0.76rem; color: var(--ht-text-muted); margin-bottom: 4px;">
+                <span>⬛ 180 m²</span><span>👤 Up to 4 guests</span>
+              </div>
+              <div class="ht-room-footer">
+                <div class="ht-room-price">
+                  <span class="ht-price-from">From</span><span class="ht-price-amount">$1,200</span><span class="ht-price-night">/ night</span>
+                </div>
+                <div class="ht-room-actions">
+                  <button id="ht-room-details-2" class="ht-btn ht-btn-ghost" style="font-size: 0.77rem; padding: 10px 16px;">Details</button>
+                  <button id="ht-room-book-2" class="ht-btn ht-btn-gold" style="font-size: 0.77rem; padding: 10px 16px;">Book</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ht-room-card ht-reveal" id="ht-room-3" style="transition-delay: 240ms;">
+            <div class="ht-room-image-wrap">
+              <img src="./assets/images/hotel_hero.jpg" alt="Tropical Garden Room" loading="lazy" />
+              <div class="ht-room-badges">
+                <span class="ht-badge ht-badge-gold">Garden View</span><span class="ht-badge ht-badge-gold">Twin Beds</span>
+              </div>
+              <div class="ht-room-overlay"></div>
+              <button class="ht-btn ht-btn-gold ht-room-quick-book" style="font-size: 0.78rem; padding: 10px 22px;">Quick Book</button>
+            </div>
+            <div class="ht-room-body">
+              <div class="ht-room-category">Deluxe Room</div>
+              <h3 class="ht-room-name">Tropical Garden Room</h3>
+              <div class="ht-room-amenities">
+                <div class="ht-room-amenity"><i data-lucide="wifi" style="width: 12px; height: 12px; color: var(--ht-accent);"></i>Wi-Fi</div>
+                <div class="ht-room-amenity"><i data-lucide="wind" style="width: 12px; height: 12px; color: var(--ht-accent);"></i>A/C</div>
+                <div class="ht-room-amenity"><i data-lucide="coffee" style="width: 12px; height: 12px; color: var(--ht-accent);"></i>Minibar</div>
+                <div class="ht-room-amenity"><i data-lucide="tv" style="width: 12px; height: 12px; color: var(--ht-accent);"></i>TV</div>
+              </div>
+              <div style="display: flex; gap: 16px; font-size: 0.76rem; color: var(--ht-text-muted); margin-bottom: 4px;">
+                <span>⬛ 42 m²</span><span>👤 Up to 2 guests</span>
+              </div>
+              <div class="ht-room-footer">
+                <div class="ht-room-price">
+                  <span class="ht-price-from">From</span><span class="ht-price-amount">$340</span><span class="ht-price-night">/ night</span>
+                </div>
+                <div class="ht-room-actions">
+                  <button id="ht-room-details-3" class="ht-btn ht-btn-ghost" style="font-size: 0.77rem; padding: 10px 16px;">Details</button>
+                  <button id="ht-room-book-3" class="ht-btn ht-btn-gold" style="font-size: 0.77rem; padding: 10px 16px;">Book</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="ht-stats-bar">
+      <div class="ht-container">
+        <div class="ht-stats-inner ht-reveal">
+          <div class="ht-stat-item" id="ht-stat-0"><div class="ht-stat-number">16+</div><div class="ht-stat-label">Years of Excellence</div></div>
+          <div class="ht-stat-item" id="ht-stat-1"><div class="ht-stat-number">4,800+</div><div class="ht-stat-label">Five-Star Reviews</div></div>
+          <div class="ht-stat-item" id="ht-stat-2"><div class="ht-stat-number">42</div><div class="ht-stat-label">Luxury Suites & Villas</div></div>
+          <div class="ht-stat-item" id="ht-stat-3"><div class="ht-stat-number">12</div><div class="ht-stat-label">Dining Experiences</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Amenities -->
+    <section id="ht-amenities" class="ht-section" style="background: var(--ht-bg-2);">
+      <div class="ht-container">
+        <div class="ht-label">Facilities & Services</div>
+        <h2 class="ht-heading">Crafted for the <em>Exceptional</em></h2>
+        <p class="ht-subheading">Every facility at Aethelred is an invitation to indulge — from our clifftop infinity pool to our world-renowned spa retreats.</p>
+        <div class="ht-amenities-grid">
+          <div class="ht-amenity-card ht-reveal" id="ht-amenity-infinity-pool" style="transition-delay: 0ms;">
+            <div class="ht-amenity-icon"><i data-lucide="waves" style="width: 22px; height: 22px;"></i></div>
+            <div>
+              <div class="ht-amenity-name">Infinity Pool</div>
+              <div class="ht-amenity-desc" style="margin-top: 8px;">An 80m infinity pool overlooking the Andaman Sea, open sunrise to midnight with poolside butler service.</div>
+            </div>
+          </div>
+          <div class="ht-amenity-card ht-reveal" id="ht-amenity-spa" style="transition-delay: 80ms;">
+            <div class="ht-amenity-icon"><i data-lucide="sparkles" style="width: 22px; height: 22px;"></i></div>
+            <div>
+              <div class="ht-amenity-name">Aethelred Spa & Wellness</div>
+              <div class="ht-amenity-desc" style="margin-top: 8px;">Award-winning spa with 12 treatment rooms, steam caves, and signature botanical rituals curated by master therapists.</div>
+            </div>
+          </div>
+          <div class="ht-amenity-card ht-reveal" id="ht-amenity-dining" style="transition-delay: 160ms;">
+            <div class="ht-amenity-icon"><i data-lucide="utensils-crossed" style="width: 22px; height: 22px;"></i></div>
+            <div>
+              <div class="ht-amenity-name">Fine Dining</div>
+              <div class="ht-amenity-desc" style="margin-top: 8px;">Three world-class restaurants helmed by Michelin-starred chefs — each a unique culinary journey.</div>
+            </div>
+          </div>
+          <div class="ht-amenity-card ht-reveal" id="ht-amenity-concierge" style="transition-delay: 240ms;">
+            <div class="ht-amenity-icon"><i data-lucide="clock" style="width: 22px; height: 22px;"></i></div>
+            <div>
+              <div class="ht-amenity-name">24/7 Concierge</div>
+              <div class="ht-amenity-desc" style="margin-top: 8px;">Our dedicated team is available around the clock to anticipate and fulfil every detail of your stay.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dining -->
+    <section id="ht-dining" class="ht-section">
+      <div class="ht-container">
+        <div class="ht-dining-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+          <div style="border-radius: 16px; overflow: hidden; position: relative;">
+            <img src="./assets/images/hotel_dining.jpg" alt="Fine Dining at Aethelred" style="width: 100%; height: 520px; object-fit: cover; display: block; border-radius: 16px;" />
+            <div style="position: absolute; bottom: 28px; left: 28px; background: var(--ht-card); border: 1px solid var(--ht-border); border-radius: 8px; padding: 16px 20px; backdrop-filter: blur(10px);">
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                <i data-lucide="star" style="width: 11px; height: 11px; fill: var(--ht-accent); color: var(--ht-accent);"></i>
+                <i data-lucide="star" style="width: 11px; height: 11px; fill: var(--ht-accent); color: var(--ht-accent);"></i>
+                <i data-lucide="star" style="width: 11px; height: 11px; fill: var(--ht-accent); color: var(--ht-accent);"></i>
+                <span style="font-size: 0.68rem; color: var(--ht-accent); letter-spacing: 0.06em;">Michelin Starred</span>
+              </div>
+              <div style="font-family: var(--ht-font-serif); font-size: 1.05rem; color: var(--ht-text-primary);">Azure Fine Dining</div>
+              <div style="font-size: 0.73rem; color: var(--ht-text-secondary); margin-top: 2px;">Open daily · 6pm – 11pm</div>
+            </div>
+          </div>
+          <div>
+            <div class="ht-label">Fine Dining</div>
+            <h2 class="ht-heading">A Symphony of <em>Flavours</em></h2>
+            <div class="ht-divider-line"></div>
+            <p style="font-size: 0.95rem; color: var(--ht-text-secondary); line-height: 1.8; margin-bottom: 28px;">Our three signature restaurants represent a culinary journey — from fresh Thai seafood and charcoal-grilled delicacies to refined European cuisine with panoramic ocean views.</p>
+            <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 36px;">
+              <div style="display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--ht-border);">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--ht-accent); margin-top: 10px; flex-shrink: 0;"></div>
+                <div>
+                  <div style="font-family: var(--ht-font-serif); font-size: 1.1rem; color: var(--ht-text-primary); margin-bottom: 3px;">Azure</div>
+                  <div style="font-size: 0.8rem; color: var(--ht-text-secondary);">European fine dining · Michelin starred · Ocean views</div>
+                </div>
+              </div>
+              <div style="display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--ht-border);">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--ht-accent); margin-top: 10px; flex-shrink: 0;"></div>
+                <div>
+                  <div style="font-family: var(--ht-font-serif); font-size: 1.1rem; color: var(--ht-text-primary); margin-bottom: 3px;">Talad</div>
+                  <div style="font-size: 0.8rem; color: var(--ht-text-secondary);">Authentic Thai cuisine · Open kitchen · Beachside terrace</div>
+                </div>
+              </div>
+            </div>
+            <button id="ht-dining-reserve-btn" class="ht-btn ht-btn-gold">Reserve a Table <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spa -->
+    <section id="ht-spa" class="ht-section" style="background: var(--ht-bg-2);">
+      <div class="ht-container">
+        <div class="ht-dining-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+          <div class="ht-reveal">
+            <div class="ht-label">Spa & Wellness</div>
+            <h2 class="ht-heading">Surrender to <em>Serenity</em></h2>
+            <div class="ht-divider-line"></div>
+            <p style="font-size: 0.95rem; color: var(--ht-text-secondary); line-height: 1.8; margin-bottom: 28px;">The Aethelred Spa is a world unto itself — 3,200 sq ft of pure tranquillity. Twelve private treatment rooms, a crystal steam cave, and a signature collection of botanical rituals inspired by ancient Thai healing traditions.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 36px;">
+              <div style="display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--ht-text-secondary);"><i data-lucide="check" style="width: 13px; height: 13px; color: var(--ht-accent);"></i> Signature Botanical Ritual</div>
+              <div style="display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--ht-text-secondary);"><i data-lucide="check" style="width: 13px; height: 13px; color: var(--ht-accent);"></i> Hot Stone & Bamboo Massage</div>
+            </div>
+            <button id="ht-spa-book-btn" class="ht-btn ht-btn-gold">Book a Treatment <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></button>
+          </div>
+          <div class="ht-reveal" style="position: relative;">
+            <img src="./assets/images/hotel_spa.jpg" alt="Aethelred Spa & Wellness" style="width: 100%; height: 520px; object-fit: cover; border-radius: 16px; display: block;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offers -->
+    <section id="ht-offers" class="ht-section">
+      <div class="ht-container">
+        <div class="ht-label">Special Offers</div>
+        <div style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+          <h2 class="ht-heading">Curated <em>Packages</em></h2>
+          <button id="ht-all-offers-btn" class="ht-btn ht-btn-outline-gold" style="font-size: 0.8rem;">All Offers <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></button>
+        </div>
+        <div class="ht-offers-grid">
+          <div class="ht-offer-card" id="ht-offer-1">
+            <div class="ht-offer-image" style="background-image: url('/hotel_pool.jpg');"></div>
+            <div class="ht-offer-gradient"></div>
+            <div class="ht-offer-body">
+              <div class="ht-offer-discount">35% OFF</div>
+              <div class="ht-countdown">
+                <div class="ht-countdown-unit"><span class="ht-countdown-num">00</span><span class="ht-countdown-label">days</span></div><span class="ht-countdown-sep">:</span>
+                <div class="ht-countdown-unit"><span class="ht-countdown-num">00</span><span class="ht-countdown-label">hours</span></div><span class="ht-countdown-sep">:</span>
+                <div class="ht-countdown-unit"><span class="ht-countdown-num">00</span><span class="ht-countdown-label">mins</span></div><span class="ht-countdown-sep">:</span>
+                <div class="ht-countdown-unit"><span class="ht-countdown-num">00</span><span class="ht-countdown-label">secs</span></div>
+              </div>
+              <h3 class="ht-offer-title">Tropical Honeymoon Escape</h3>
+              <p class="ht-offer-desc">Sunset dinner for two, couples spa ritual & complimentary villa upgrade.</p>
+              <div class="ht-offer-meta">
+                <span class="ht-offer-validity">Valid until Oct 31, 2026</span>
+                <button id="ht-offer-claim-1" class="ht-btn ht-btn-outline-gold" style="font-size: 0.76rem; padding: 9px 16px;">Claim <i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="ht-offer-card" id="ht-offer-2">
+            <div class="ht-offer-image" style="background-image: url('/hotel_dining.jpg');"></div>
+            <div class="ht-offer-gradient"></div>
+            <div class="ht-offer-body">
+              <div class="ht-offer-discount">20% OFF</div>
+              <h3 class="ht-offer-title">Culinary Weekend Package</h3>
+              <p class="ht-offer-desc">Michelin tasting menu, cooking masterclass & wine pairing included.</p>
+              <div class="ht-offer-meta">
+                <span class="ht-offer-validity">Valid until Sep 30, 2026</span>
+                <button id="ht-offer-claim-2" class="ht-btn ht-btn-outline-gold" style="font-size: 0.76rem; padding: 9px 16px;">Claim <i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="ht-offer-card" id="ht-offer-3">
+            <div class="ht-offer-image" style="background-image: url('/hotel_spa.jpg');"></div>
+            <div class="ht-offer-gradient"></div>
+            <div class="ht-offer-body">
+              <div class="ht-offer-discount">Complimentary</div>
+              <h3 class="ht-offer-title">Wellness Retreat Offer</h3>
+              <p class="ht-offer-desc">Free spa credit up to $300 with a minimum 3-night stay.</p>
+              <div class="ht-offer-meta">
+                <span class="ht-offer-validity">Year-round offer</span>
+                <button id="ht-offer-claim-3" class="ht-btn ht-btn-outline-gold" style="font-size: 0.76rem; padding: 9px 16px;">Claim <i data-lucide="chevron-right" style="width: 12px; height: 12px;"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="ht-gallery" class="ht-section" style="background: var(--ht-bg-2);">
+      <div class="ht-container">
+        <div class="ht-reveal" style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+          <div>
+            <div class="ht-label">Our Story in Images</div>
+            <h2 class="ht-heading">A Visual <em>Journey</em></h2>
+          </div>
+          <button id="ht-gallery-view-all" class="ht-btn ht-btn-outline-gold" style="font-size: 0.78rem; padding: 10px 20px;">View All <i data-lucide="arrow-right" style="width: 13px; height: 13px;"></i></button>
+        </div>
+        <div class="ht-gallery-filters">
+          <button class="ht-gallery-filter-btn active">All</button>
+          <button class="ht-gallery-filter-btn">Rooms</button>
+          <button class="ht-gallery-filter-btn">Pool</button>
+          <button class="ht-gallery-filter-btn">Dining</button>
+          <button class="ht-gallery-filter-btn">Spa</button>
+          <button class="ht-gallery-filter-btn">Resort</button>
+        </div>
+        <div class="ht-gallery-grid">
+          <div class="ht-gallery-item ht-g1" data-category="Resort"><img src="./assets/images/hotel_hero.jpg" alt="Resort Overview" loading="lazy" /><div class="ht-gallery-item-overlay"><div class="ht-gallery-item-info"><i data-lucide="zoom-in" style="width: 24px; height: 24px; color: white;"></i><span>Resort Overview</span></div></div></div>
+          <div class="ht-gallery-item ht-g2" data-category="Rooms"><img src="./assets/images/hotel_suite.jpg" alt="Ocean Suite" loading="lazy" /><div class="ht-gallery-item-overlay"><div class="ht-gallery-item-info"><i data-lucide="zoom-in" style="width: 24px; height: 24px; color: white;"></i><span>Ocean Suite</span></div></div></div>
+          <div class="ht-gallery-item ht-g3" data-category="Pool"><img src="./assets/images/hotel_pool.jpg" alt="Pool Villa" loading="lazy" /><div class="ht-gallery-item-overlay"><div class="ht-gallery-item-info"><i data-lucide="zoom-in" style="width: 24px; height: 24px; color: white;"></i><span>Pool Villa</span></div></div></div>
+          <div class="ht-gallery-item ht-g4" data-category="Spa"><img src="./assets/images/hotel_spa.jpg" alt="Spa Treatment" loading="lazy" /><div class="ht-gallery-item-overlay"><div class="ht-gallery-item-info"><i data-lucide="zoom-in" style="width: 24px; height: 24px; color: white;"></i><span>Spa Treatment</span></div></div></div>
+          <div class="ht-gallery-item ht-g5" data-category="Dining"><img src="./assets/images/hotel_dining.jpg" alt="Fine Dining" loading="lazy" /><div class="ht-gallery-item-overlay"><div class="ht-gallery-item-info"><i data-lucide="zoom-in" style="width: 24px; height: 24px; color: white;"></i><span>Fine Dining</span></div></div></div>
+          <div class="ht-gallery-item ht-g6" data-category="Rooms"><img src="./assets/images/hotel_suite.jpg" alt="Suite Interior" loading="lazy" /><div class="ht-gallery-item-overlay"><div class="ht-gallery-item-info"><i data-lucide="zoom-in" style="width: 24px; height: 24px; color: white;"></i><span>Suite Interior</span></div></div></div>
+        </div>
+      </div>
+      
+      <div class="ht-lightbox" id="ht-lightbox-overlay" style="display: none;">
+        <div class="ht-lightbox-inner">
+          <button id="ht-lightbox-close" class="ht-lightbox-close"><i data-lucide="x" style="width: 20px; height: 20px;"></i></button>
+          <button id="ht-lightbox-prev" class="ht-lightbox-arrow ht-lightbox-prev"><i data-lucide="arrow-left" style="width: 22px; height: 22px;"></i></button>
+          <img src="" alt="" class="ht-lightbox-img" />
+          <button id="ht-lightbox-next" class="ht-lightbox-arrow ht-lightbox-next"><i data-lucide="arrow-right" style="width: 22px; height: 22px;"></i></button>
+          <div class="ht-lightbox-caption"><span></span><span class="ht-lightbox-counter"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="ht-reviews" class="ht-section">
+      <div class="ht-container">
+        <div class="ht-reveal" style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+          <div>
+            <div class="ht-label">Guest Stories</div>
+            <h2 class="ht-heading">Cherished <em>Memories</em></h2>
+            <p class="ht-subheading">Over 4,800 five-star reviews from guests who've experienced the Aethelred way of living.</p>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <button id="ht-reviews-prev" class="ht-reviews-arrow"><i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i></button>
+            <button id="ht-reviews-next" class="ht-reviews-arrow"><i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i></button>
+          </div>
+        </div>
+        <div class="ht-reviews-slider">
+          <div class="ht-review-card ht-review-card-animate" id="ht-review-1" style="animation-delay: 0ms;">
+            <div class="ht-review-quote">"</div>
+            <div class="ht-stars">
+              <i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i><i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i><i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i><i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i><i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i>
+            </div>
+            <p class="ht-review-text">"Absolutely transformative. The staff anticipated every desire before we voiced it. The Ocean Suite exceeded every expectation — waking up to that view changed how I think about luxury."</p>
+            <div class="ht-review-author">
+              <div class="ht-review-avatar">CR</div>
+              <div>
+                <div class="ht-review-name">Charlotte R.</div>
+                <div class="ht-review-location">London, United Kingdom</div>
+                <div style="font-size: 0.68rem; color: var(--ht-accent); margin-top: 3px; font-style: italic;">Ocean Panorama Suite · June 2026</div>
+              </div>
+            </div>
+          </div>
+          <div class="ht-review-card ht-review-card-animate" id="ht-review-2" style="animation-delay: 80ms;">
+            <div class="ht-review-quote">"</div>
+            <div class="ht-stars">
+              <i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i><i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i><i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i><i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i><i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i>
+            </div>
+            <p class="ht-review-text">"We stayed for our 10th anniversary. The Honeymoon Package was curated to perfection — private beach dinner under stars, floating breakfast, and an unforgettable spa ritual. Nothing short of magic."</p>
+            <div class="ht-review-author">
+              <div class="ht-review-avatar">MT</div>
+              <div>
+                <div class="ht-review-name">Marco & Sofia T.</div>
+                <div class="ht-review-location">Milan, Italy</div>
+                <div style="font-size: 0.68rem; color: var(--ht-accent); margin-top: 3px; font-style: italic;">Private Infinity Villa · May 2026</div>
+              </div>
+            </div>
+          </div>
+          <div class="ht-review-card ht-review-card-animate" id="ht-review-3" style="animation-delay: 160ms;">
+            <div class="ht-review-quote">"</div>
+            <div class="ht-stars">
+              <i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i><i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i><i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i><i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i><i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i>
+            </div>
+            <p class="ht-review-text">"The Private Villa is worth every penny. Having your own infinity pool with that ocean backdrop is indescribable. The concierge arranged everything flawlessly. We'll return every year."</p>
+            <div class="ht-review-author">
+              <div class="ht-review-avatar">JW</div>
+              <div>
+                <div class="ht-review-name">James W.</div>
+                <div class="ht-review-location">New York, USA</div>
+                <div style="font-size: 0.68rem; color: var(--ht-accent); margin-top: 3px; font-style: italic;">Private Infinity Villa · April 2026</div>
+              </div>
+            </div>
+          </div>
+          <div class="ht-review-card ht-review-card-animate" id="ht-review-4" style="animation-delay: 240ms;">
+            <div class="ht-review-quote">"</div>
+            <div class="ht-stars">
+              <i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i><i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i><i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i><i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i><i data-lucide="star" style="width: 13px; height: 13px; fill: currentColor;"></i>
+            </div>
+            <p class="ht-review-text">"From the complimentary welcome champagne to the private speedboat tour, every detail was immaculate. The spa's botanical ritual left me renewed. Truly five stars in every sense."</p>
+            <div class="ht-review-author">
+              <div class="ht-review-avatar">PS</div>
+              <div>
+                <div class="ht-review-name">Priya S.</div>
+                <div class="ht-review-location">Mumbai, India</div>
+                <div style="font-size: 0.68rem; color: var(--ht-accent); margin-top: 3px; font-style: italic;">Ocean Panorama Suite · March 2026</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ht-reviews-nav">
+          <div class="ht-reviews-dot active" id="ht-reviews-dot-0"></div>
+          <div class="ht-reviews-dot" id="ht-reviews-dot-1"></div>
+          <div class="ht-reviews-dot" id="ht-reviews-dot-2"></div>
+          <div class="ht-reviews-dot" id="ht-reviews-dot-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="ht-cta-section">
+      <div class="ht-cta-bg"></div>
+      <div class="ht-cta-overlay"></div>
+      <div class="ht-container" style="position: relative; z-index: 2; text-align: center;">
+        <div class="ht-label" style="justify-content: center;">Begin Your Journey</div>
+        <h2 class="ht-heading" style="text-align: center; max-width: 600px; margin: 0 auto 20px; color: #fff;">Your Dream Stay <em>Awaits</em></h2>
+        <p style="color: rgba(255,255,255,0.7); margin-bottom: 40px; font-size: 1rem; line-height: 1.7;">Reserve your sanctuary today and let our team craft<br />a stay that surpasses every imagination.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <button id="ht-final-book-btn" class="ht-btn ht-btn-gold" style="padding: 16px 44px; font-size: 0.95rem;">Book Your Escape <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></button>
+          <button id="ht-final-contact-btn" class="ht-btn" style="padding: 16px 44px; font-size: 0.95rem; background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(8px);"><i data-lucide="phone" style="width: 16px; height: 16px;"></i> Speak with Concierge</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="ht-contact" class="ht-footer">
+      <div class="ht-container">
+        <div class="ht-footer-grid ht-reveal">
+          <div class="ht-footer-brand">
+            <div class="ht-footer-logo">
+              <div class="ht-nav-logo-icon">A</div>
+              <span class="ht-nav-logo-text">Aethelred Resort</span>
+            </div>
+            <p class="ht-footer-desc">A sanctuary of refined luxury on the shores of the Andaman Sea. Where every moment is crafted with intention, warmth, and artistry.</p>
+            <div class="ht-contact-item"><i data-lucide="map-pin" style="width: 13px; height: 13px;"></i><span>118 Surin Beach Road, Phuket, 83110, Thailand</span></div>
+            <div class="ht-contact-item"><i data-lucide="phone" style="width: 13px; height: 13px;"></i><span>+66 76 123 456</span></div>
+            <div class="ht-contact-item"><i data-lucide="mail" style="width: 13px; height: 13px;"></i><span>reservations@aethelredresort.com</span></div>
+            <div class="ht-footer-social">
+              <button class="ht-social-btn" id="ht-social-0"><i data-lucide="globe" style="width: 14px; height: 14px;"></i></button>
+              <button class="ht-social-btn" id="ht-social-1"><i data-lucide="share-2" style="width: 14px; height: 14px;"></i></button>
+              <button class="ht-social-btn" id="ht-social-2"><i data-lucide="send" style="width: 14px; height: 14px;"></i></button>
+              <button class="ht-social-btn" id="ht-social-3"><i data-lucide="link-2" style="width: 14px; height: 14px;"></i></button>
+            </div>
+          </div>
+          <div>
+            <div class="ht-footer-col-title">Explore</div>
+            <ul class="ht-footer-links">
+              <li><a href="#">Rooms & Suites</a></li>
+              <li><a href="#">Dining</a></li>
+              <li><a href="#">Spa & Wellness</a></li>
+              <li><a href="#">Pool & Beach</a></li>
+              <li><a href="#">Events & Weddings</a></li>
+              <li><a href="#">Photo Gallery</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="ht-footer-col-title">Guest Services</div>
+            <ul class="ht-footer-links">
+              <li><a href="#">Check Availability</a></li>
+              <li><a href="#">Cancellation Policy</a></li>
+              <li><a href="#">Transfer Booking</a></li>
+              <li><a href="#">Special Requests</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Contact Concierge</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="ht-footer-col-title">Stay in the Know</div>
+            <p style="font-size: 0.83rem; color: var(--ht-text-secondary); margin-bottom: 18px; line-height: 1.65;">Subscribe for exclusive offers, curated packages, and luxury travel inspiration.</p>
+            <form class="ht-newsletter-form">
+              <input id="ht-newsletter-email" type="email" class="ht-newsletter-input" placeholder="Your email address" required />
+              <button id="ht-newsletter-submit" type="submit" class="ht-btn ht-btn-gold" style="width: 100%;">Subscribe <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="ht-footer-bottom">
+          <span>© 2026 Aethelred Resort & Spa. All rights reserved.</span>
+          <div style="display: flex; gap: 24px;">
+            <a href="#" style="color: var(--ht-text-muted); font-size: 0.78rem;">Privacy Policy</a>
+            <a href="#" style="color: var(--ht-text-muted); font-size: 0.78rem;">Terms of Service</a>
+            <a href="#" style="color: var(--ht-text-muted); font-size: 0.78rem;">Cookie Preferences</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
+
+

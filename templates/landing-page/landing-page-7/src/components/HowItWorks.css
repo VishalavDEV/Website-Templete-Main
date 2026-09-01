@@ -1,0 +1,79 @@
+.how-section {
+  position: relative;
+  background-color: var(--bg-secondary);
+  overflow: hidden;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.how-glow {
+  top: 50%;
+  left: 10%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+  width: 400px;
+  height: 400px;
+}
+
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .how-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+.how-step-card {
+  position: relative;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  height: 100%;
+}
+
+/* Numeric indicator */
+.how-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.how-step-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.how-step-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Connector lines between steps (desktop only) */
+.how-connector {
+  position: absolute;
+  top: 50px;
+  right: -16px;
+  width: 32px;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  opacity: 0.3;
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .how-connector {
+    display: none;
+  }
+}

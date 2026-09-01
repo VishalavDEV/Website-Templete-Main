@@ -1,0 +1,391 @@
+/* ==================================================
+   CONTEMPORARY GARDEN — FLOATING PILL NAV & COMPONENTS
+   ================================================== */
+
+/* --------------------------------------------------
+   01. FLOATING PILL NAVIGATION (TOP BAR)
+   -------------------------------------------------- */
+.pill-nav-wrapper {
+  position: fixed;
+  top: 1.5rem;
+  left: 0;
+  right: 0;
+  z-index: 95;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  padding: 0 1.5rem;
+}
+
+.pill-nav-container {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(251, 249, 243, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(38, 53, 43, 0.12);
+  padding: 0.6rem 1.2rem;
+  border-radius: 100px;
+  box-shadow: 0 10px 30px rgba(38, 53, 43, 0.06);
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.pill-logo-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--color-forest);
+  color: var(--bg-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  transition: transform 0.3s ease;
+}
+
+.pill-logo-mark:hover {
+  transform: rotate(45deg);
+}
+
+.pill-center-location {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--color-forest);
+  text-transform: uppercase;
+}
+
+.btn-pill-menu {
+  background: var(--color-forest);
+  color: var(--bg-cream);
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 0.55rem 1.4rem;
+  border-radius: 100px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-pill-menu:hover {
+  background-color: var(--color-sage);
+  color: var(--color-white);
+}
+
+/* Legacy .fixed-frame mapping for intro.js compatibility */
+.fixed-frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.frame-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.brand-logo {
+  display: none; /* Replaced by pill nav */
+}
+
+.nav-controls {
+  pointer-events: auto;
+}
+
+.frame-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  pointer-events: auto;
+}
+
+.hours-tag {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.hours-tag span {
+  color: var(--color-forest);
+  font-weight: 700;
+}
+
+.scroll-counter-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.scroll-indicator {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.section-live-counter {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--color-clay);
+}
+
+/* --------------------------------------------------
+   02. ORGANIC FULLSCREEN MENU OVERLAY
+   -------------------------------------------------- */
+.fullscreen-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-cream-surface);
+  z-index: 100;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s var(--ease-out-expo), visibility 0.5s var(--ease-out-expo);
+  overflow: hidden;
+}
+
+.fullscreen-nav.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+  padding: clamp(2rem, 5vw, 4rem);
+}
+
+.nav-header {
+  position: absolute;
+  top: clamp(1.25rem, 3vw, 2.5rem);
+  left: clamp(1.25rem, 3vw, 2.5rem);
+  right: clamp(1.25rem, 3vw, 2.5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.btn-close-nav {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--color-forest);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 0.6rem 1.6rem;
+  border-radius: 100px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-close-nav:hover {
+  background: var(--color-forest);
+  color: var(--bg-cream);
+}
+
+.nav-links-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.nav-item {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s var(--ease-out-expo);
+  cursor: pointer;
+}
+
+.nav-item-num {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-clay);
+  letter-spacing: 0.1em;
+}
+
+.nav-item:hover, .nav-item:focus {
+  color: var(--color-forest);
+  transform: translateX(15px);
+}
+
+.nav-preview-panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.nav-preview-img {
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  object-fit: cover;
+  border-radius: 24px;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.4s ease, transform 0.4s var(--ease-out-expo);
+  border: 1px solid var(--border-color);
+}
+
+.nav-preview-img.active {
+  opacity: 0.9;
+  transform: scale(1);
+}
+
+.nav-footer-info {
+  position: absolute;
+  bottom: clamp(1.25rem, 3vw, 2.5rem);
+  left: clamp(1.25rem, 3vw, 2.5rem);
+  display: flex;
+  gap: 3rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.nav-footer-info span {
+  color: var(--color-forest);
+  font-weight: 700;
+}
+
+/* --------------------------------------------------
+   03. INTRO CURTAIN LOADER (Preserved for intro.js)
+   -------------------------------------------------- */
+#intro-curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-forest);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.curtain-logo {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  color: var(--bg-cream);
+  text-transform: uppercase;
+}
+
+.curtain-sub {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: var(--color-sage);
+  margin-top: 0.75rem;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------
+   04. CUSTOM SPRING CURSOR
+   -------------------------------------------------- */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-forest);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-out-expo), height 0.3s var(--ease-out-expo), background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-cursor-text {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--bg-cream);
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.custom-cursor.active {
+  width: 64px;
+  height: 64px;
+  background-color: var(--color-forest);
+}
+
+.custom-cursor.active .custom-cursor-text {
+  opacity: 1;
+}
+
+.custom-cursor.blue, .custom-cursor.sage {
+  background-color: var(--color-sage);
+}
+
+.custom-cursor.blue .custom-cursor-text, .custom-cursor.sage .custom-cursor-text {
+  color: var(--color-white);
+}
+
+.gallery-progress-badge {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--color-forest);
+}

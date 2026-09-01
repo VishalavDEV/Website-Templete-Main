@@ -1,0 +1,117 @@
+/* Schedule Section Styles */
+
+.schedule-tabs-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.schedule-day-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.9rem 2.25rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  transition: var(--transition-normal);
+  cursor: pointer;
+  min-width: 170px;
+}
+
+.schedule-day-tab:hover,
+.schedule-day-tab.active {
+  background: var(--bg-surface-hover);
+  border-color: var(--primary);
+  color: var(--text-main);
+  box-shadow: var(--shadow-sm);
+}
+
+.schedule-day-tab.active {
+  border-width: 2px;
+  border-color: var(--primary);
+}
+
+.day-tab-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.day-tab-date {
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.schedule-item {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 2rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.75rem;
+  transition: var(--transition-normal);
+}
+
+.schedule-item:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.schedule-time-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.session-time {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.session-room {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.session-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0.35rem 0;
+}
+
+.my-schedule-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: rgba(0, 184, 148, 0.15);
+  color: var(--secondary);
+}

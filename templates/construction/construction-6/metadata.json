@@ -1,0 +1,11 @@
+{
+  "name": "Arcstone Architects — Luxury Residential Design",
+  "slug": "arcstone-architects",
+  "category": "construction",
+  "description": "A luxury residential and commercial architecture studio landing page. Features scroll-bound video transformations, custom lightboxes, bento portfolios, and RESTful project server.",
+  "techStack": {
+    "frontend": "React + Vite + Vanilla CSS / Scroll Video Trans",
+    "backend": "Java 21 + Spring Boot 3"
+  },
+  "demoUrl": "/templates/construction/construction-6/index.html"
+}

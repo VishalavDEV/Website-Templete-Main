@@ -1,0 +1,6 @@
+{
+  "name": "AI // HUMAN // MACHINE - 3D Interactive AI/ML Portfolio",
+  "description": "An immersive 3D interactive portfolio and digital laboratory for an AI/ML Computer Science Engineer and Developer, featuring real-time WebGL experiences, neural networks, and interactive experiments.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

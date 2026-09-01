@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AURELIUS — High-End Historical Renovation & Heritage Atelier</title>
+  <meta name="description" content="Aurelius Heritage Restoration Atelier — Specialized in 18th & 19th Century Classical European landmark restoration, Haussmannian facade desalination, structural timber retrofits, and 24k gold leaf guild preservation." />
+
+  <!-- Google Fonts: Cinzel, Playfair Display, Plus Jakarta Sans, Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/templates/construction/construction-7/style.css" />
+</head>
+<body>
+  <div class="wrapper lightMode" id="appWrapper">
+    
+    <!-- Top Header Navigation -->
+    <header class="topBar">
+      <a href="#home" class="brandLogo">
+        <span class="brandTitle">AURELIUS</span>
+        <span class="brandSub">HERITAGE RESTORATION</span>
+      </a>
+
+      <button class="mobileMenuBtn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navLinks" id="navLinks">
+        <li><a href="#legacy" class="navLink">OUR LEGACY</a></li>
+        <li><a href="#services" class="navLink">SERVICES</a></li>
+        <li><a href="#portfolio" class="navLink">PORTFOLIO</a></li>
+        <li><a href="#about" class="navLink">ABOUT</a></li>
+      </ul>
+
+      <div class="topActions">
+        <button id="themeToggleBtn" class="themeToggleBtn" title="Toggle Light / Dark Mode">
+          <span id="themeIcon">🌙</span> <span id="themeText">DARK</span>
+        </button>
+
+        <button id="openConsultBtn" class="consultationBtn">
+          REQUEST A CONSULTATION
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="heroSection"
+      id="home"
+      style="background-image: url('assets/images/aurelius-hero.jpg');"
+    >
+      <div class="heroOverlay"></div>
+
+      <div class="heroGrid">
+        <!-- Left Column: Title, Subtitle, Facade Thumbnail, Burgundy Card -->
+        <div class="heroLeft">
+          <h1 class="heroTitle">
+            HIGH-END HISTORICAL<br />RENOVATION
+          </h1>
+
+          <div class="heroSubtitle">
+            BUILDING DISTINCTION FOR OVER DECADES
+          </div>
+
+          <div class="heroCardRow">
+            <!-- Haussmannian Palace Facade Visual Thumbnail -->
+            <div class="heroFacadeImgWrap">
+              <img
+                src="assets/images/aurelius-hero.jpg"
+                alt="Historical French Palace Facade"
+                class="heroFacadeImg"
+              />
+            </div>
+
+            <!-- Burgundy Renovation Details Card -->
+            <div class="renovationBurgundyCard">
+              <div class="renovationCardTitle">RENOVATION</div>
+
+              <div class="renovationList">
+                <div class="renovationItem">✦ HERITAGE RESTORATION</div>
+                <div class="renovationItem">✦ RETROFITTING & UPGRADES</div>
+                <div class="renovationItem">✦ SUSTAINABLE PRESERVATION</div>
+                <div class="renovationItem">✦ COMPLEX STRUCTURAL ENGINEERING</div>
+              </div>
+
+              <div class="estBadge">EST. 1985</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Top Distinguished Architecture & Bottom Service Specialties -->
+        <div class="heroRight">
+          <!-- Top Box: Distinguished Heritage Architecture -->
+          <div class="whiteLeadersBox">
+            <div class="whiteBoxTitle">DISTINGUISHED HERITAGE ARCHITECTURE</div>
+
+            <div class="craftsGrid">
+              <div class="craftCard">
+                <div class="craftIcon">🏛️</div>
+                <div>
+                  <div class="craftName">HAUSSMANN FACADE RESTORATION</div>
+                  <div class="craftSub">Lutetian Limestone Desalination</div>
+                </div>
+              </div>
+
+              <div class="craftCard">
+                <div class="craftIcon">👑</div>
+                <div>
+                  <div class="craftName">GILDED BOISERIE & ORNAMENT</div>
+                  <div class="craftSub">24k Gold Leaf Atelier Carving</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Box: Service Specialties -->
+          <div class="specialtiesBox" id="services">
+            <div class="whiteBoxTitle">SERVICE SPECIALTIES</div>
+
+            <div class="specialtiesGrid">
+              <div class="specialtyCardGold" id="cardMasonry">
+                <div class="specialtyTitleTop">MASONRY &</div>
+                <div class="specialtyTitleBottom">STRUCTURAL ENG.</div>
+              </div>
+
+              <div class="specialtyCardBurgundy" id="cardTimber">
+                <div class="specialtyTitleTop">STRUCTURAL</div>
+                <div class="specialtyTitleBottom">STEEL & TIMBER</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEFORE & AFTER RESTORATION INTERACTIVE SLIDER -->
+    <section class="sectionWrapper" id="legacy">
+      <div class="sectionHeadingBox">
+        <div class="sectionTag">HISTORICAL MASTERY</div>
+        <h2 class="sectionTitle">Interactive Restoration Comparison</h2>
+        <p class="sectionDesc">
+          Drag the slider to reveal the micro-abrasive restoration and stone rejuvenation achieved by our European master artisans.
+        </p>
+      </div>
+
+      <div class="beforeAfterContainer" id="beforeAfterSlider">
+        <!-- Before Image (Unrestored / Aged Sepia) -->
+        <img
+          src="assets/images/aurelius-hero.jpg"
+          alt="Before Restoration"
+          class="beforeImg"
+        />
+
+        <!-- After Image (Restored Gilded Luminescence) -->
+        <div class="afterImgWrap" id="afterImgWrap" style="width: 50%;">
+          <img
+            src="assets/images/aurelius-hero.jpg"
+            alt="After Restoration"
+            class="afterImg"
+          />
+        </div>
+
+        <!-- Slider Handle Bar -->
+        <div class="sliderHandleBar" id="sliderHandleBar" style="left: 50%;">
+          <div class="sliderHandleKnob">⬄</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO OF RESTORED ESTATES -->
+    <section class="sectionWrapper" id="portfolio">
+      <div class="sectionHeadingBox">
+        <div class="sectionTag">CURATED PORTFOLIO</div>
+        <h2 class="sectionTitle">Featured Classical Landmarks</h2>
+      </div>
+
+      <div class="portfolioGrid">
+        <div class="portfolioCard">
+          <div class="portfolioImgWrap">
+            <img src="assets/images/aurelius-salon.jpg" alt="Hôtel de la Marine Grand Salon" class="portfolioImg" />
+          </div>
+          <div class="portfolioBody">
+            <div>
+              <h3 class="portfolioTitle">Hôtel de la Marine Grand Salon</h3>
+              <p class="portfolioDesc">Complete structural timber retrofit and micro-abrasive restoration of 24-carat gold leaf wood carvings and crystal chandeliers.</p>
+            </div>
+            <div class="portfolioMeta">
+              <span>📍 Place de la Concorde, Paris</span>
+              <span class="metaSpecs">1,200 m² • 18th Century Gilded Boiserie</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolioCard">
+          <div class="portfolioImgWrap">
+            <img src="assets/images/aurelius-hero.jpg" alt="Palais Haussmann Historical Facade" class="portfolioImg" />
+          </div>
+          <div class="portfolioBody">
+            <div>
+              <h3 class="portfolioTitle">Palais Haussmann Historical Facade</h3>
+              <p class="portfolioDesc">Precision laser stone desalination, hand-carved stone acroteria replication, and restored wrought-iron balcony railings.</p>
+            </div>
+            <div class="portfolioMeta">
+              <span>📍 Boulevard Saint-Germain, Paris</span>
+              <span class="metaSpecs">4,800 m² • Carved Lutetian Limestone</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consultation Modal -->
+    <div class="modalOverlay" id="consultModal" style="display: none;">
+      <div class="modalContent">
+        <div class="modalHeader">
+          <h3 class="modalTitle">Request Heritage Consultation</h3>
+          <button id="closeModalBtn" class="closeBtn">&times;</button>
+        </div>
+
+        <form id="consultForm">
+          <div class="formGroup">
+            <label class="formLabel">YOUR NAME / ESTATE REPRESENTATIVE</label>
+            <input type="text" class="formInput" required placeholder="Lord/Lady, Baron or Architect" />
+          </div>
+
+          <div class="formGroup">
+            <label class="formLabel">PRIVATE EMAIL</label>
+            <input type="email" class="formInput" required placeholder="contact@estate.com" />
+          </div>
+
+          <div class="formGroup">
+            <label class="formLabel">ESTATE LOCATION & ERA</label>
+            <input type="text" class="formInput" placeholder="e.g. 19th Century Haussmannian Manor, Paris" />
+          </div>
+
+          <button type="submit" class="modalSubmitBtn">
+            SUBMIT CONSULTATION DOSSIER →
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="about">
+      <div class="footerTitle">
+        AURELIUS // HERITAGE RESTORATION ATELIER
+      </div>
+      <p class="footerContact">
+        Paris: Place Vendôme 12 • London: Mayfair Square 4 • Florence: Via Tornabuoni 18<br />
+        atelier@aurelius-heritage.com • High-End Historical Architecture
+      </p>
+      <div class="footerBottom">
+        © 2026 Aurelius Heritage. Fixed Light Theme Default • Classical European Architecture.
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="/templates/construction/construction-7/script.js"></script>
+</body>
+</html>

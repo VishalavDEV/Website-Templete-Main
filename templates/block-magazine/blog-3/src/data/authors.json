@@ -1,0 +1,42 @@
+[
+  {
+    "id": "auth-001",
+    "name": "Dr. Sarah Chen",
+    "role": "Chief Editor & AI Research Fellow",
+    "bio": "Former research scientist at DeepMind. PhD in Computer Science from Stanford University specializing in multi-agent reinforcement learning and autonomous workflow safety.",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop",
+    "articleCount": 14,
+    "twitter": "@drsarahchen_ai",
+    "location": "San Francisco, CA"
+  },
+  {
+    "id": "auth-002",
+    "name": "James Maxwell",
+    "role": "Senior Editor, Quantum & Infrastructure",
+    "bio": "Theoretical physicist turned investigative technical journalist. Covers cryogenic computing, silicon lithography, and quantum error correction frameworks.",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop",
+    "articleCount": 19,
+    "twitter": "@jmaxwell_tech",
+    "location": "Boston, MA"
+  },
+  {
+    "id": "auth-003",
+    "name": "Elena Rostova",
+    "role": "Principal Correspondent, Robotics & BCI",
+    "bio": "Roboticist and neuro-engineering analyst. Former hardware engineer at Boston Dynamics tracking the physical deployment of bipedal humanoids.",
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop",
+    "articleCount": 11,
+    "twitter": "@elena_rostova",
+    "location": "Zurich, Switzerland"
+  },
+  {
+    "id": "auth-004",
+    "name": "Marcus Wei",
+    "role": "Staff Writer, Generative Models & UI",
+    "bio": "Machine learning engineer and designer. Researches latent diffusion representations, world models, and human-computer collaborative interfaces.",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
+    "articleCount": 16,
+    "twitter": "@marcuswei_ml",
+    "location": "New York, NY"
+  }
+]

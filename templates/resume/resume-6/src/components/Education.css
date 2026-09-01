@@ -1,0 +1,109 @@
+/* ================================================================
+   Education.css — scoped under .em-portfolio
+   ================================================================ */
+
+.em-portfolio .em-education {
+  background: var(--em-white);
+  border-top: 1px solid var(--em-gray-border-light);
+}
+
+.em-portfolio .em-education__header {
+  margin-bottom: clamp(2rem, 5vh, 4rem);
+}
+
+.em-portfolio .em-education__split {
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.em-portfolio .em-education__left {
+  position: sticky;
+  top: 100px;
+}
+
+.em-portfolio .em-education__title {
+  font-family: var(--em-font-serif);
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-weight: 600;
+  color: var(--em-charcoal);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.em-portfolio .em-education__title em {
+  font-style: italic;
+  color: var(--em-burgundy);
+}
+
+.em-portfolio .em-education__intro {
+  color: var(--em-gray-mid);
+  line-height: 1.75;
+}
+
+.em-portfolio .em-education__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.em-portfolio .em-edu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2.5rem 0;
+}
+
+.em-portfolio .em-edu-item__period {
+  color: var(--em-gray-mid);
+  font-size: 0.65rem;
+}
+
+.em-portfolio .em-edu-item__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.em-portfolio .em-edu-item__degree {
+  font-family: var(--em-font-serif);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 600;
+  color: var(--em-charcoal);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.em-portfolio .em-edu-item__institution {
+  font-family: var(--em-font-sans);
+  font-size: 0.875rem;
+  color: var(--em-burgundy);
+  font-weight: 400;
+  margin-top: 0.25rem;
+}
+
+.em-portfolio .em-edu-item__areas {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.em-portfolio .em-edu-item__area {
+  font-family: var(--em-font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--em-gray-mid);
+  border: 1px solid var(--em-gray-border);
+  padding: 0.25rem 0.625rem;
+}
+
+@media (max-width: 900px) {
+  .em-portfolio .em-education__split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .em-portfolio .em-education__left { position: static; }
+}

@@ -1,0 +1,1397 @@
+[
+  {
+    "id": "art-1",
+    "slug": "the-accident-that-changed-the-cold",
+    "title": "The Accident That Changed the Cold",
+    "dek": "A shattered glass condenser in a Scottish dye laboratory unexpectedly created the foundation of artificial refrigeration—and ignited a transatlantic patent war.",
+    "category": "Discoveries & Inventions",
+    "categorySlug": "discoveries-inventions",
+    "topics": ["Thermodynamics", "Chemical Engineering", "Accidents", "Patents"],
+    "authorId": "author-1",
+    "date": "October 18, 2026",
+    "readingTime": "9 min read",
+    "featured": true,
+    "lead": true,
+    "heroImage": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Vintage chemical glassware and amber solution under warm directional laboratory lighting",
+    "heroCaption": "Replica of the low-pressure volatile ether distillation flask used in the Glasgow trials of 1856.",
+    "excerpt": "In the damp winter of 1856, chemist Alistair MacIntyre was not trying to freeze anything. He was trying to produce a cheaper purple dye for Paisley shawl weavers. When his volatile ether flask cracked, he reached out his bare hand and discovered what happens when physics refuses to obey human intentions.",
+    "sections": [
+      {
+        "heading": "The Shattered Condenser",
+        "body": "The smell of methylated ether was already thick in the stone cellar beneath Buchanan Street when the copper valve seized. It was December 3, 1856. Outside, the Glasgow fog hung cold and sulfurous; inside, thirty-two-year-old Alistair MacIntyre was sweating over an iron coal brazier. He was attempting to synthesize an artificial mauve dye from coal tar derivatives, hoping to capture the booming textile market of the Scottish lowlands.\n\nHe had pressurized a double-walled copper jacket containing three pints of liquefied ethyl ether. When the soldered joint along the neck failed with a sharp report, the pressurized fluid did not catch fire. Instead, it expanded instantaneously into the atmospheric chill. As the vapor engulfed the stone bench, MacIntyre reached out instinctively to shut the petcock. When his bare fingers touched the brass fitting, skin tore away like wet paper: the metal was coated in a dense, shimmering crust of sub-zero rime.",
+        "quote": "Nature does not keep her secrets behind locked vaults; she leaves them lying in the debris of our clumsy failures.",
+        "quoteAuthor": "Alistair MacIntyre, Private Journal (1858)"
+      },
+      {
+        "heading": "Measuring the Invisible Void",
+        "body": "For forty-eight hours, MacIntyre abandoned the dye synthesis entirely. He rebuilt the apparatus with a calibrated mercury thermometer salvaged from the university observatory. What he observed went directly against the prevailing caloric dogma of the Scottish academy, which taught that heat was an indestructible substance that flowed like water through porous matter.\n\nBy pumping the ether vapor through a closed loop of lead coils and allowing it to re-expand in an insulated brine bath, MacIntyre could repeatedly drop water temperatures from 60°F to solid ice in under eight minutes. He had accidentally engineered a closed-cycle vapor-compression loop without knowing Sadi Carnot's mathematical theorems on heat engines.",
+        "image": "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "Engraving of the closed vapor-compression cycle apparatus exhibited at the 1862 London International Exhibition."
+      },
+      {
+        "heading": "The Patent War and the Meat Ships",
+        "body": "The discovery did not remain peaceful. Within six months, industrial syndicates in Liverpool and New York caught wind of the 'ice machine.' Australian cattle barons realized that if meat could be kept frozen during the three-month voyage across the equator, the global food trade would be permanently rewritten.\n\nA bitter legal struggle ensued between MacIntyre and American inventor Jacob Perkins's estate. In London courts, barristers argued over the precise curvature of the compression piston and whether an accident could be claimed as intellectual property. MacIntyre died in modest circumstances in 1889, but the ships crossing the Atlantic with frozen beef from Buenos Aires were running on the mechanical ghost of his shattered condenser.",
+        "quote": "The entire architecture of modern cities—from perishable food logistics to air conditioning—rests on our ability to move heat where it does not wish to go."
+      }
+    ],
+    "timeline": [
+      { "year": "1856", "event": "MacIntyre's condenser fractures in Glasgow cellar" },
+      { "year": "1859", "event": "First prototype brine-chilling coil demonstrated" },
+      { "year": "1868", "event": "SS Strathleven completes first refrigerated beef voyage" },
+      { "year": "1884", "event": "Ammonia replaces volatile ether as industrial standard refrigerant" }
+    ],
+    "sourceNote": "Drawn from the MacIntyre Family Papers, Mitchell Library Archive, and transcripts of the Court of Chancery (1861).",
+    "relatedStoryIds": ["art-2", "art-7", "art-9", "art-10"]
+  },
+  {
+    "id": "art-2",
+    "slug": "the-woman-who-mapped-the-ocean-rift",
+    "title": "The Woman Who Mapped the Ocean Rift",
+    "dek": "When Marie Tharp plotted soundings across the Atlantic and found a continental rift valley, her colleagues dismissed it as 'girl talk'—until earthquake data proved the planet was tearing itself apart.",
+    "category": "Scientists & Lives",
+    "categorySlug": "scientists-lives",
+    "topics": ["Geophysics", "Plate Tectonics", "Oceanography", "Women in Science"],
+    "authorId": "author-7",
+    "date": "October 14, 2026",
+    "readingTime": "11 min read",
+    "featured": true,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Dramatic bathymetric contour map with dark ocean blues and warm parchment borders",
+    "heroCaption": "Hand-inked physiographic profile of the North Atlantic sea floor drafted at Columbia University, 1957.",
+    "excerpt": "Because women were barred from sailing aboard research vessels in the 1950s, Marie Tharp was confined to an unventilated basement office at Lamont Geological Observatory. From millions of sonar pings written on rolling scrolls of paper, she drew the face of a world no human eye had ever seen.",
+    "sections": [
+      {
+        "heading": "A Basement Filled with Paper Waves",
+        "body": "In 1952, ocean floor geology was dominated by the dogma of permanence. The continents were thought to be ancient granite blocks rooted immovably since Earth's creation. Marie Tharp was handed thousands of fathometer rolls recorded by her research partner Bruce Heezen aboard the research ship Vema. She sat with ruler, India ink, and drafting pens, interpolating depths along latitude profiles.",
+        "quote": "I had a blank canvas to fill with extraordinary possibilities. It was a once-in-a-lifetime-in-the-history-of-the-world opportunity for anyone, but especially for a woman in the 1950s.",
+        "quoteAuthor": "Marie Tharp"
+      },
+      {
+        "heading": "The Rift That Could Not Be Mentioned",
+        "body": "As the profiles aligned across thousands of nautical miles, a startling pattern emerged: at the exact crest of the Mid-Atlantic Ridge ran a continuous, deep V-shaped notch. Tharp recognized what it meant: a central rift valley where molten mantle was welling up, forcing the seafloor apart. When she presented the drafting to Heezen, he snapped: 'It cannot be. It looks too much like continental drift. It's just girl talk.'\n\nHe forced her to erase the work and recalculate the lines. She complied, but preserved the original drafting in her locked desk drawer.",
+        "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "The legendary 1977 World Ocean Floor Panorama painted with Heinrich Berann."
+      },
+      {
+        "heading": "When Earthquakes Overwrote the Dogma",
+        "body": "The breakthrough came from an unrelated dataset. Another Lamont researcher was plotting epicenters of shallow underwater earthquakes. When Tharp overlaid the translucent earthquake map onto her bathymetric rift profiles, the earthquake pins fell directly into her V-shaped canyon with mathematical perfection.\n\nEven Heezen was converted. The existence of the global mid-ocean ridge system—spanning over 40,000 miles beneath the oceans—transformed plate tectonics from an eccentric fringe hypothesis into the organizing principle of modern earth science."
+      }
+    ],
+    "timeline": [
+      { "year": "1948", "event": "Marie Tharp joins Lamont Geological Observatory" },
+      { "year": "1952", "event": "First identification of the Mid-Atlantic Rift Valley" },
+      { "year": "1956", "event": "Presentation of the continuous worldwide ridge hypothesis" },
+      { "year": "1977", "event": "Publication of the iconic World Ocean Floor Panorama" }
+    ],
+    "sourceNote": "Based on oral histories preserved in the Library of Congress Geography and Map Division.",
+    "relatedStoryIds": ["art-5", "art-8", "art-13", "art-18"]
+  },
+  {
+    "id": "art-3",
+    "slug": "the-mystery-inside-the-glass-tube",
+    "title": "The Mystery Inside the Glass Tube",
+    "dek": "How an obscure German glassblower and a curious Bavarian physicist uncovered the invisible rays that pierced human flesh and launched modern medical diagnosis.",
+    "category": "Forgotten Science",
+    "categorySlug": "forgotten-science",
+    "topics": ["Physics", "X-Rays", "Optics", "Radiology"],
+    "authorId": "author-8",
+    "date": "October 11, 2026",
+    "readingTime": "8 min read",
+    "featured": true,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1517976487502-4630a91176b6?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Vintage glass vacuum tube glowing with soft green luminescence in dark laboratory",
+    "heroCaption": "High-vacuum Crookes-Hittorf tube from 1895 with platinum cathode target.",
+    "excerpt": "On Friday night, November 8, 1895, Wilhelm Röntgen was working alone in his dark laboratory in Würzburg. His vacuum tube was wrapped in thick black cardboard. Yet across the room, a small paper screen coated with barium platinocyanide was glowing like an ethereal firefly.",
+    "sections": [
+      {
+        "heading": "The Glow That Shouldn't Exist",
+        "body": "Wilhelm Röntgen was a man of compulsive precision. He did not employ assistants; he trusted only instruments he had personally calibrated. On that November evening, he was investigating cathode rays—streams of electrons whose nature was still fiercely contested.\n\nTo ensure no stray ultraviolet light leaked from the evacuated glass bulb, he had encased the entire tube in opaque black cardboard. He darkened the room until not a chink of streetlight penetrated. When he energized the induction coil, he glanced toward a distant wooden table and stopped breathing: a sheet of paper treated with phosphor was emitting a pale, shimmering greenish light.",
+        "quote": "I did not think; I investigated.",
+        "quoteAuthor": "Wilhelm Röntgen, when asked what he thought upon seeing the glow"
+      },
+      {
+        "heading": "Living in the Laboratory",
+        "body": "For seven consecutive weeks, Röntgen refused to leave his institute. He had his meals brought to the laboratory door and slept on a horsehair sofa beside the batteries. He placed playing cards, thick books, wooden blocks, and sheets of vulcanized rubber between the tube and the screen: the invisible rays pierced them all.\n\nWhen he held a lead disc in front of the ray, he saw the dark silhouette of the lead—and inside the shadow of his own hand, the unmistakable darker outline of his own living bones.",
+        "image": "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "Historical radiograph of Bertha Röntgen's hand showing her gold wedding ring, taken December 22, 1895."
+      },
+      {
+        "heading": "The Gift Without a Patent",
+        "body": "On December 28, Röntgen submitted his manuscript 'On a New Kind of Rays' to the Physical-Medical Society of Würzburg. Within months, doctors across Europe and America were using X-rays to locate bullets in wounded soldiers and set complex bone fractures.\n\nCorporate syndicates offered Röntgen fortunes for exclusive patent rights. He refused every offer, insisting that his discovery belonged to humanity. He died in poverty during the hyperinflation of 1923, having donated his Nobel Prize money to the University of Würzburg."
+      }
+    ],
+    "timeline": [
+      { "year": "1895", "event": "Röntgen observes fluorescence through black cardboard" },
+      { "year": "1896", "event": "First clinical X-ray diagnostic performed in Vienna" },
+      { "year": "1901", "event": "Röntgen awarded the inaugural Nobel Prize in Physics" }
+    ],
+    "sourceNote": "Sourced from the Würzburg Physical Institute Archives and the Nobel Foundation historical registry.",
+    "relatedStoryIds": ["art-1", "art-4", "art-11", "art-21"]
+  },
+  {
+    "id": "art-4",
+    "slug": "the-mold-that-conquered-the-battlefield",
+    "title": "The Mold That Conquered the Battlefield",
+    "dek": "Before Oxford scientists figured out how to grow penicillin in bedpans and milk churns, the miracle drug was so precious they had to recycle it from patients' urine.",
+    "category": "Health & Medicine",
+    "categorySlug": "health-medicine",
+    "topics": ["Microbiology", "Antibiotics", "Wartime Science", "Pharmacology"],
+    "authorId": "author-3",
+    "date": "October 07, 2026",
+    "readingTime": "10 min read",
+    "featured": true,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Vintage glass petri dishes with bacterial cultures and clear halo inhibition zones",
+    "heroCaption": "Penicillium notatum culture demonstrating clear zone of staphylococcal lysis.",
+    "excerpt": "Alexander Fleming discovered penicillin in 1928, but he could never purify enough of it to save a mouse, let alone a human being. It took a clandestine team of eccentric Oxford chemists, operating under the threat of Luftwaffe bombing raids, to turn mold juice into modern medicine.",
+    "sections": [
+      {
+        "heading": "The Spore on the Windowsill",
+        "body": "The legend is familiar: a messy desk, an open window, an untidy petri dish. But the real story began a decade later at the Sir William Dunn School of Pathology in Oxford. Howard Florey and Ernst Chain were desperately hunting for natural antibacterial compounds as Europe slid into war.",
+        "quote": "Fleming had discovered a wonder; Florey and Chain had to invent the industrial technology to conjure it from thin air.",
+        "quoteAuthor": "Dr. Norman Heatley"
+      },
+      {
+        "heading": "The Kitchenware Laboratory",
+        "body": "Penicillium mold was finicky. It needed vast surface areas of shallow broth to produce minute micrograms of active antibiotic. Glass vessels were rationed; the Oxford team bought hundreds of ceramic hospital bedpans, biscuit tins, and galvanized dairy churns to brew the mold.\n\nBiochemist Norman Heatley rigged up an extraction system using lengths of rubber siphon tubing, milk bottles, and baker's yeast vessels. When their first human patient, police constable Albert Alexander, showed miraculous recovery from fatal septicemia, they ran out of drug after five days. In desperate attempts to keep him alive, they collected his urine each morning, re-extracted the excreted penicillin, and reinjected it into his veins.",
+        "image": "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "The improvised fermentation vessels constructed from hospital bedpans at Oxford in 1940."
+      },
+      {
+        "heading": "The Cantaloupe of Peoria",
+        "body": "To achieve industrial scale, Florey and Heatley flew to the United States with spores rubbed into the fabric of their wool tweed jackets to prevent Nazi seizure. At the USDA laboratory in Peoria, Illinois, lab worker Mary Hunt brought in a moldy cantaloupe from a local fruit market. Its mutant strain—Penicillium chrysogenum—yielded 200 times more penicillin than Fleming's original London mold, enabling the mass-produced vials that saved hundreds of thousands of Allied soldiers on D-Day."
+      }
+    ],
+    "timeline": [
+      { "year": "1928", "event": "Fleming observes bacterial clearance on contaminated plate" },
+      { "year": "1939", "event": "Florey and Chain resurrect penicillin research at Oxford" },
+      { "year": "1941", "event": "First human clinical trial on Constable Albert Alexander" },
+      { "year": "1944", "event": "Mass production reaches 2.3 million doses for Normandy landings" }
+    ],
+    "sourceNote": "Drawn from Norman Heatley's Laboratory Diaries (Oxford Bodleian Library).",
+    "relatedStoryIds": ["art-3", "art-15", "art-20", "art-25"]
+  },
+  {
+    "id": "art-5",
+    "slug": "the-botanist-who-rewrote-the-rainforest",
+    "title": "The Botanist Who Rewrote the Rainforest",
+    "dek": "Richard Spruce spent fifteen years in the Amazon carrying three tons of pressed ferns and dried bark—surviving malaria, river pirates, and civil rebellion to preserve the seeds of quinine.",
+    "category": "Environment & Nature",
+    "categorySlug": "environment-nature",
+    "topics": ["Botany", "Amazon Expedition", "Quinine", "Field Science"],
+    "authorId": "author-5",
+    "date": "September 29, 2026",
+    "readingTime": "12 min read",
+    "featured": true,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Vintage botanical illustration of Amazonian Cinchona tree branch with red vein leaves",
+    "heroCaption": "Herbarium specimen sheet of Cinchona succirubra collected in the Ecuadorian Andes, 1860.",
+    "excerpt": "In 1849, a sickly Yorkshire schoolmaster with a passion for mosses stepped off a schooner at the mouth of the Amazon River. He possessed twelve pounds sterling, a brass microscope, and a wooden press. He would not see England again for fifteen years.",
+    "sections": [
+      {
+        "heading": "Upriver into the Green Wilderness",
+        "body": "Richard Spruce was not an adventurer in the swashbuckling mold. He suffered from chronic pulmonary ailments, spoke softly, and possessed a fanatical eye for the cellular taxonomy of liverworts and mosses. While famous contemporaries sought celebrity and high-society lectures, Spruce paddled cedar dugouts thousands of miles up the Rio Negro and Orinoco.",
+        "quote": "If I can bring home the true seeds of the red bark tree, I shall have paid my debt to mankind, even if my body remains buried under the river silt.",
+        "quoteAuthor": "Richard Spruce, Letter to Sir William Hooker (1860)"
+      },
+      {
+        "heading": "The Smuggling of Quinine",
+        "body": "By 1859, the British Empire faced a devastating crisis in India: malaria was decimating colonial populations and native troops alike. The only known cure was quinine, extracted from the bark of the wild Cinchona tree, which grew only in remote cloud forests of the Andes. The Andean republics guarded their monopoly with armed rangers and death penalties for unauthorized exportation.\n\nCommissioned by Kew Gardens, Spruce endured freezing Andean rains, dysentery, and civil war in Ecuador to harvest 100,000 viable Cinchona seeds and 637 living cuttings. He floated them down torrential mountain rivers on balsa rafts wrapped in damp moss to the Pacific coast.",
+        "image": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "The high cloud forests of Chimborazo where Spruce harvested Cinchona succirubra."
+      },
+      {
+        "heading": "The Quiet Return",
+        "body": "The seeds Spruce gathered established the massive quinine plantations of Ceylon and the Nilgiri Hills, lowering the cost of antimalarial treatment worldwide. Spruce returned to England permanently crippled, living out his remaining days in a modest cottage in North Yorkshire, classifying 7,000 new plant species with his brass lens."
+      }
+    ],
+    "timeline": [
+      { "year": "1849", "event": "Spruce arrives in Pará, Brazil" },
+      { "year": "1855", "event": "Reaches the headwaters of the Rio Negro" },
+      { "year": "1860", "event": "Collects 100,000 Cinchona seeds in Ecuadorian Andes" },
+      { "year": "1885", "event": "Publishes masterwork on South American Hepaticae" }
+    ],
+    "sourceNote": "Drawn from Richard Spruce's journals edited by Alfred Russel Wallace (1908).",
+    "relatedStoryIds": ["art-2", "art-6", "art-16", "art-22"]
+  },
+  {
+    "id": "art-6",
+    "slug": "the-secret-furnace-of-queen-elizabeths-alchemist",
+    "title": "The Secret Furnace of Queen Elizabeth's Alchemist",
+    "dek": "John Dee and Edward Kelley claimed to converse with angels through obsidian scrying mirrors—while quietly establishing England's earliest naval navigation geometry.",
+    "category": "Early Science & Alchemy",
+    "categorySlug": "early-science",
+    "topics": ["Alchemy", "Renaissance Science", "Occult Philosophy", "Navigation"],
+    "authorId": "author-4",
+    "date": "September 21, 2026",
+    "readingTime": "11 min read",
+    "featured": true,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Illuminated Renaissance alchemical manuscript folio with furnace diagrams and celestial spheres",
+    "heroCaption": "Folio from John Dee's 'Monas Hieroglyphica' annotated in iron gall ink, 1564.",
+    "excerpt": "At his manor house in Mortlake on the banks of the Thames, Dr. John Dee possessed the largest private library in all of Tudor England. To royal courtiers, he was the Queen's astrologer; to sailors and navigators, he was the mathematical architect of the British Empire.",
+    "sections": [
+      {
+        "heading": "The Library at Mortlake",
+        "body": "In 1580, the library at Mortlake housed over 4,000 printed books and 700 handwritten manuscripts—more than Oxford and Cambridge universities combined. Queen Elizabeth I herself rode her white horse to Dee's riverside house to inspect his crystal mirrors and astronomical astrolabes.",
+        "quote": "Mathematics is the secret language through which God framed the celestial orbs and commanded the tides.",
+        "quoteAuthor": "Dr. John Dee"
+      },
+      {
+        "heading": "The Scrying Glass and the Furnace",
+        "body": "Dee's obsession was total unification: he saw no divide between geometry, metallurgy, angelic revelation, and naval conquest. In the secret back rooms of Mortlake, assisted by the volatile crystal-gazer Edward Kelley, Dee peered into Aztec obsidian mirrors brought back from Spanish conquests, recording transcripts in the ciphered 'Enochian' tongue.\n\nSimultaneously, Dee trained Martin Frobisher, Humphrey Gilbert, and Francis Drake in Mercator projection cartography, astronomical compass variation, and great-circle navigation.",
+        "image": "https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "The Aztec polished obsidian scrying mirror acquired by John Dee (now British Museum)."
+      },
+      {
+        "heading": "The Mob and the Ashes",
+        "body": "While Dee was traveling through Poland and Bohemia attempting transmutations for King Stephen Báthory, an anti-witchcraft mob ransacked his Mortlake home in 1583, smashing his laboratory furnaces and burning hundreds of unique Greek and Arabic mathematical codices. Dee spent his final years in impoverished obscurity, yet his students sailed the globe using the charts he drafted by candlelight."
+      }
+    ],
+    "timeline": [
+      { "year": "1564", "event": "Dee writes Monas Hieroglyphica in Antwerp" },
+      { "year": "1577", "event": "Coinage of the phrase 'British Empire' in Dee's navigational treatise" },
+      { "year": "1583", "event": "Mortlake library sacked by suspicious locals" },
+      { "year": "1608", "event": "Dee dies in Mortlake at age 81" }
+    ],
+    "sourceNote": "Preserved in the Cottonian Library and Sloane Manuscripts, British Library.",
+    "relatedStoryIds": ["art-7", "art-12", "art-17", "art-23"]
+  },
+  {
+    "id": "art-7",
+    "slug": "before-the-periodic-table-had-a-shape",
+    "title": "Before the Periodic Table Had a Shape",
+    "dek": "How a Russian eccentric who cut his own hair once a year turned a deck of homemade playing cards into the grammar of all physical matter.",
+    "category": "Discoveries & Inventions",
+    "categorySlug": "discoveries-inventions",
+    "topics": ["Chemistry", "Periodic Law", "Atomic Theory", "History of Ideas"],
+    "authorId": "author-1",
+    "date": "September 15, 2026",
+    "readingTime": "9 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Vintage handwritten chemical cards with elemental symbols and atomic weights",
+    "heroCaption": "Dmitri Mendeleev's preliminary draft of the Periodic System, dated February 17, 1869.",
+    "excerpt": "In February 1869, Dmitri Mendeleev was under contract to finish the second volume of his textbook 'Principles of Chemistry'. He had eighty pages left and no organizing framework for the sixty-three known elements. He dealt them out like solitaire on his oak writing desk.",
+    "sections": [
+      {
+        "heading": "The Siberian Outcast",
+        "body": "Dmitri Ivanovich Mendeleev was the youngest of seventeen children from Tobolsk in Western Siberia. After his father went blind and their family glass factory burned to the ground, his mother rode horseback over 1,500 miles across the Ural Mountains to enroll her brilliant boy in St. Petersburg's pedagogical institute.",
+        "quote": "I saw in a dream a table where all the elements fell into place as required. Awakening, I immediately wrote it down on a piece of paper.",
+        "quoteAuthor": "Dmitri Mendeleev"
+      },
+      {
+        "heading": "The Solitaire of Matter",
+        "body": "Mendeleev cut blank cardboard cards, writing on each the name of an element, its atomic weight, and its chemical properties: fluorine, chlorine, bromine, iodine. He spent three sleepless days arranging and rearranging the cards on his desk.\n\nHis true genius was not just seeing the pattern of repeating chemical valences—it was his audacious confidence to leave blank spaces where no known element fit, boldly predicting the exact atomic weights, densities, and melting points of undiscovered elements like 'eka-aluminum' (gallium) and 'eka-silicon' (germanium).",
+        "image": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "The first printed edition of Mendeleev's Periodic System in the Journal of the Russian Chemical Society."
+      },
+      {
+        "heading": "Vindication in the Mines of France",
+        "body": "Six years later, French chemist Paul-Émile Lecoq de Boisbaudran discovered a new metal in zinc blende ore. When Boisbaudran published its density as 4.7, Mendeleev wrote a scathing public letter from St. Petersburg insisting the Frenchman had miscalculated—the true density was 5.9. Boisbaudran purified his sample again and discovered Mendeleev was correct down to the first decimal place without ever having seen the metal."
+      }
+    ],
+    "timeline": [
+      { "year": "1869", "event": "Mendeleev formulates the Periodic Law" },
+      { "year": "1875", "event": "Discovery of Gallium fulfills prediction of 'eka-aluminum'" },
+      { "year": "1879", "event": "Discovery of Scandium fulfills prediction of 'eka-boron'" },
+      { "year": "1886", "event": "Discovery of Germanium confirms predicted atomic weight of 72" }
+    ],
+    "sourceNote": "St. Petersburg State University Mendeleev Museum-Archive.",
+    "relatedStoryIds": ["art-1", "art-3", "art-9", "art-14"]
+  },
+  {
+    "id": "art-8",
+    "slug": "when-astronomers-hired-human-computers",
+    "title": "When Astronomers Hired Human Computers",
+    "dek": "Under the dome of Harvard Observatory, a team of underpaid women analyzed hundreds of thousands of glass photographic plates, inventing the spectral taxonomy of the universe.",
+    "category": "Scientists & Lives",
+    "categorySlug": "scientists-lives",
+    "topics": ["Astronomy", "Spectroscopy", "Women in Science", "Harvard Computers"],
+    "authorId": "author-7",
+    "date": "September 10, 2026",
+    "readingTime": "10 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Historical glass plate astronomical negatives illuminated on wooden light table",
+    "heroCaption": "Harvard glass plate negative showing stellar spectral prisms, circa 1904.",
+    "excerpt": "In 1881, Harvard College Observatory director Edward Charles Pickering grew so frustrated with his male assistants' sluggish calculations that he declared his Scottish maid could do a better job. He hired her. Her name was Williamina Fleming, and she proved him right beyond all expectation.",
+    "sections": [
+      {
+        "heading": "The Light-Tables of Cambridge",
+        "body": "By the late 19th century, photography had replaced human eye-to-eyepiece observation. Harvard's telescopes took thousands of 8x10 glass plates through glass prisms, capturing the blurred spectral fingerprints of millions of distant suns. To classify these spectra, Pickering assembled a workforce of women—derisively called 'Pickering's Harem'—paying them twenty-five cents an hour for seven-day workweeks.",
+        "quote": "I am looking for a law in the stars that no telescope can reveal on its own.",
+        "quoteAuthor": "Annie Jump Cannon"
+      },
+      {
+        "heading": "The Architecture of the Stars",
+        "body": "Williamina Fleming classified over 10,000 stars and discovered the iconic Horsehead Nebula. Antonia Maury developed sophisticated classifications of spectral line sharpness. Annie Jump Cannon simplified the classification into the legendary O, B, A, F, G, K, M temperature sequence, manually categorizing over 350,000 stars by holding a magnifying lens in one hand and an inked stylus in the other.\n\nThen came Henrietta Swan Leavitt. Analyzing pulsating Cepheid variable stars in the Magellanic Clouds, Leavitt discovered that a star's intrinsic brightness was directly linked to the period of its pulse. For the first time in human history, astronomers had a cosmic yardstick to calculate true distances across the universe.",
+        "image": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "Annie Jump Cannon examining photographic glass plates at Harvard Observatory, 1912."
+      },
+      {
+        "heading": "The Scale of the Infinite",
+        "body": "It was Leavitt's period-luminosity relation that allowed Edwin Hubble in 1924 to calculate the distance to the Andromeda Nebula, proving that our Milky Way was merely one island galaxy among billions in an expanding cosmos."
+      }
+    ],
+    "timeline": [
+      { "year": "1881", "event": "Williamina Fleming begins work at Harvard Observatory" },
+      { "year": "1901", "event": "Annie Jump Cannon publishes first Harvard Spectral Classification" },
+      { "year": "1912", "event": "Henrietta Swan Leavitt publishes the Period-Luminosity Law" },
+      { "year": "1924", "event": "Hubble uses Leavitt's law to prove the universe contains other galaxies" }
+    ],
+    "sourceNote": "Harvard College Observatory Historical Collection and Smithsonian Astrophysical Observatory Archives.",
+    "relatedStoryIds": ["art-2", "art-5", "art-18", "art-24"]
+  },
+  {
+    "id": "art-9",
+    "slug": "the-clash-over-invisible-airs",
+    "title": "The Clash Over Invisible Airs",
+    "dek": "Joseph Priestley discovered oxygen with a burning lens in England; Antoine Lavoisier weighed it in Paris. Their argument ended only when the guillotine severed the argument.",
+    "category": "Science & Politics",
+    "categorySlug": "science-politics",
+    "topics": ["Pneumatic Chemistry", "French Revolution", "Phlogiston", "Lavoisier"],
+    "authorId": "author-2",
+    "date": "September 02, 2026",
+    "readingTime": "12 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Eighteenth-century brass balance scales and pneumatic glass bell jars",
+    "heroCaption": "Pneumatic trough and gasometer from Lavoisier's Arsenal Laboratory in Paris.",
+    "excerpt": "In August 1774, Joseph Priestley focused the sun's rays through a twelve-inch burning glass onto red calx of mercury. The gas that bubbled up caused candles to burn with an alarming, blinding brilliance. He called it 'dephlogisticated air.' Across the English Channel, an ambitious tax collector named Antoine Lavoisier had other plans.",
+    "sections": [
+      {
+        "heading": "The Burning Lens at Bowood",
+        "body": "Joseph Priestley was a nonconformist minister, political radical, and self-taught natural philosopher. Working at Lord Shelburne's estate in Wiltshire, he collected gases over liquid mercury. When he inhaled the newly released gas from mercuric oxide, he recorded that his lungs felt 'wonderfully light and easy for some time afterwards.'",
+        "quote": "The republic has no need of savants; justice must take its course.",
+        "quoteAuthor": "Attributed to the Revolutionary Tribunal presiding over Lavoisier's trial (1794)"
+      },
+      {
+        "heading": "The Precision of the Balance Sheet",
+        "body": "In October 1774, Priestley visited Paris and dined with Lavoisier, casually describing his experiment. Lavoisier, working in his grand laboratory at the Royal Arsenal with his brilliant wife and collaborator Marie-Anne Paulze, brought something new to chemistry: relentless quantitative measurement.\n\nLavoisier weighed reactants and products down to fractions of a grain. He showed that metals did not lose 'phlogiston' when burned—they absorbed a component of atmospheric air, gaining weight. He named this gas 'oxygène' (acid-former) and published the first modern textbook of chemical elements.",
+        "image": "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "Madame Lavoisier's hand-engraved plates for the 'Traité Élémentaire de Chimie'."
+      },
+      {
+        "heading": "Fire in Birmingham, Blood in Paris",
+        "body": "Science could not shield either man from the fury of political revolution. In 1791, a pro-monarchy mob in Birmingham burned Priestley's church, home, and laboratory to the ground, forcing him into American exile. Three years later in Paris, Lavoisier's position as a tax farmer for the Ancien Régime caught up with him: he was arrested by the Jacobins and guillotined at the Place de la Révolution on May 8, 1794."
+      }
+    ],
+    "timeline": [
+      { "year": "1774", "event": "Priestley isolates oxygen gas at Bowood House" },
+      { "year": "1777", "event": "Lavoisier names oxygen and overthrows phlogiston theory" },
+      { "year": "1789", "event": "Publication of Traité Élémentaire de Chimie" },
+      { "year": "1794", "event": "Lavoisier executed during the Reign of Terror" }
+    ],
+    "sourceNote": "French Academy of Sciences Archives and Priestley Society Correspondence.",
+    "relatedStoryIds": ["art-1", "art-6", "art-7", "art-17"]
+  },
+  {
+    "id": "art-10",
+    "slug": "the-voltaic-pile-and-the-twitching-frogs",
+    "title": "The Voltaic Pile and the Twitching Frogs",
+    "dek": "A quarrel between two Italian professors over why severed frog legs kicked on a balcony gave the world its first continuous electric battery.",
+    "category": "Experiments & Mistakes",
+    "categorySlug": "experiments-mistakes",
+    "topics": ["Electricity", "Bioelectromagnetism", "Volta", "Galvani"],
+    "authorId": "author-8",
+    "date": "August 26, 2026",
+    "readingTime": "8 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Vintage copper and zinc discs stacked in columnar pile on wooden plinth",
+    "heroCaption": "Alessandro Volta's original battery stack design presented to the Royal Society of London, 1800.",
+    "excerpt": "In 1780, Luigi Galvani hung skinned frog legs from the iron railing of his Bologna balcony using brass hooks. When the wind blew the brass against the iron, the legs violently convulsed. Galvani believed he had discovered the spark of life: 'animal electricity.' Alessandro Volta disagreed.",
+    "sections": [
+      {
+        "heading": "The Muscle as Detector",
+        "body": "Luigi Galvani was a devout anatomist. To him, the twitching frog muscle was a biological Leyden jar releasing inherent vital force. When he published his findings in 1791, Europe went into an uproar of medical and philosophical speculation.",
+        "quote": "The animal itself is not a generator; it is merely a moist, sensitive electroscope responding to the contact between dissimilar metals.",
+        "quoteAuthor": "Alessandro Volta, Letter to the Royal Society (1793)"
+      },
+      {
+        "heading": "The Column of Metal and Brine",
+        "body": "Alessandro Volta, professor of physics in Pavia, repeated the experiments and noticed something Galvani had dismissed: the convulsions occurred only when two *different* metals touched the moist tissue. Volta dispensed with the frog entirely. He stacked alternating discs of zinc and silver, separated by discs of cardboard soaked in saltwater.\n\nWhen he touched both ends of the towering column with his moist hands, he felt a continuous, throbbing electrical shock. For thousands of years, humans had known electricity only as momentary lightning bolts or static friction. Volta had tamed it into a steady, flowing river.",
+        "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "Diagram of Volta's crown of cups and columnar piles from Philosophical Transactions."
+      },
+      {
+        "heading": "The Dawn of Electrochemistry",
+        "body": "Within weeks of Volta's letter reaching London in 1800, chemists William Nicholson and Anthony Carlisle placed battery leads into a cup of water and watched bubbles of hydrogen and oxygen bubble up at the terminals. Water had been cleaved by electricity. The modern electrochemical age had begun."
+      }
+    ],
+    "timeline": [
+      { "year": "1780", "event": "Galvani observes muscular twitches on iron railing" },
+      { "year": "1791", "event": "Galvani publishes De Viribus Electricitatis" },
+      { "year": "1800", "event": "Volta announces the voltaic pile battery" },
+      { "year": "1807", "event": "Davy uses battery to isolate potassium, sodium, and calcium" }
+    ],
+    "sourceNote": "Transactions of the Royal Society of London (Vol. 90, 1800).",
+    "relatedStoryIds": ["art-1", "art-7", "art-11", "art-23"]
+  },
+  {
+    "id": "art-11",
+    "slug": "the-shed-where-radium-was-born",
+    "title": "The Shed Where Radium Was Born",
+    "dek": "Inside an abandoned dissection room with a leaky glass roof, Marie and Pierre Curie stirred cauldrons of pitchblende residue until their fingers cracked and glowed in the dark.",
+    "category": "Culture & Knowledge",
+    "categorySlug": "culture-knowledge",
+    "topics": ["Radioactivity", "Marie Curie", "Nuclear Physics", "Historical Laboratories"],
+    "authorId": "author-1",
+    "date": "August 18, 2026",
+    "readingTime": "11 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Archival glass ampoule containing radioactive mineral glowing faintly in dark wooden box",
+    "heroCaption": "The wooden hangar at 42 Rue Lhomond, Paris, where polonium and radium were isolated.",
+    "excerpt": "When Marie Skłodowska Curie sought a laboratory at the School of Physics in Paris in 1898, the university gave her an unheated wooden shed formerly used by the medical faculty for dissecting cadavers. It had no floorboards, an asphalt ground, and a stove that gave off toxic fumes. There, she discovered the atomic future.",
+    "sections": [
+      {
+        "heading": "Tons of Bohemian Slag",
+        "body": "Henri Becquerel had discovered that uranium salts emitted mysterious rays without exposure to sunlight. Marie Curie asked a bolder question: were there other elements emitting this strange energy? Testing uranium pitchblende ore from the St. Joachimsthal silver mines in Bohemia, she found it was four times more active than pure uranium.\n\nShe concluded there must be an unknown element present in microscopic traces. The Austrian government agreed to send her several tons of worthless mine waste slag, provided she paid the freight charges.",
+        "quote": "One of our pleasures was to enter our workshop at night; all around us the faintly glowing silhouettes of the bottles containing our products could be seen.",
+        "quoteAuthor": "Marie Curie"
+      },
+      {
+        "heading": "The Heavy Work of Chemistry",
+        "body": "For four years between 1898 and 1902, Marie Curie performed the grueling physical labor of fractional crystallization. In winter the temperature inside the shed dropped below freezing; in summer it was an oven. She boiled twenty kilograms of pitchblende at a time in iron kettles, stirring the smoking sludge with an iron rod as tall as herself.\n\nFrom eight tons of uranium pitchblende residue, they extracted one tenth of a single gram of radium chloride.",
+        "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "Pierre and Marie Curie in their Rue Lhomond laboratory, Paris, 1900."
+      },
+      {
+        "heading": "The Luminous Legacy",
+        "body": "Radium astonished the world. It produced heat continuously without burning fuel, overturning the fundamental law of conservation of energy. In 1903, Marie Curie became the first woman to win a Nobel Prize; in 1911, she won a second in chemistry. Her laboratory notebooks from 1898 remain so radioactive today that they are stored in lead boxes at the Bibliothèque Nationale in Paris and can be consulted only in protective suits."
+      }
+    ],
+    "timeline": [
+      { "year": "1898", "event": "Discovery of Polonium and Radium announced" },
+      { "year": "1902", "event": "Isolation of 0.1g pure Radium Chloride completed" },
+      { "year": "1903", "event": "Curie wins first Nobel Prize in Physics" },
+      { "year": "1911", "event": "Curie wins second Nobel Prize in Chemistry" }
+    ],
+    "sourceNote": "Curie Family Archives, Curie Museum, Institut Curie, Paris.",
+    "relatedStoryIds": ["art-3", "art-7", "art-10", "art-19"]
+  },
+  {
+    "id": "art-12",
+    "slug": "the-magdeburg-horses-and-the-empty-space",
+    "title": "The Magdeburg Horses and the Empty Space",
+    "dek": "How a Prussian mayor with two copper bowls, an iron piston, and thirty horses destroyed two thousand years of Aristotle's claim that 'nature abhors a vacuum.'",
+    "category": "Early Science & Alchemy",
+    "categorySlug": "early-science",
+    "topics": ["Physics", "Vacuum", "Barometric Pressure", "Otto von Guericke"],
+    "authorId": "author-4",
+    "date": "August 12, 2026",
+    "readingTime": "8 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Historical engraving of the Magdeburg Hemispheres demonstration with two teams of straining draft horses",
+    "heroCaption": "Otto von Guericke's dramatic demonstration before the Imperial Diet at Regensburg, 1654.",
+    "excerpt": "For millennia, Western philosophy rested on Aristotle's dictum: 'Horror vacui'—nature abhors a void. To prove that air had tangible, crushing physical weight, the mayor of Magdeburg staged the greatest theatrical science demonstration of the seventeenth century.",
+    "sections": [
+      {
+        "heading": "The War-Torn Inventor",
+        "body": "Otto von Guericke had seen Magdeburg burned to the ground during the Thirty Years' War. As mayor, he rebuilt the city's fortifications while spending his nights constructing the world's first mechanical vacuum air pump using leather valves and water seals.",
+        "quote": "If we extract the air from a vessel, the weight of the immense ocean of atmosphere pressing upon its exterior becomes instantly manifest.",
+        "quoteAuthor": "Otto von Guericke, Experimenta Nova (1672)"
+      },
+      {
+        "heading": "The Imperial Spectacle",
+        "body": "In 1654, Guericke traveled to the Imperial Diet at Regensburg before Emperor Ferdinand III. He brought two hollow copper hemispheres, twenty inches in diameter, machined with flat flanges and greased with tallow leather. They were held together by nothing except atmospheric air pressure.\n\nHe evacuated the interior using his pump. He then hitched eight draft horses to each hemisphere. As the whip cracked and the sixteen horses strained in opposite directions, the copper spheres remained fused together as if forged in solid bronze. When Guericke opened the small air valve, air rushed in with a hiss, and the spheres fell apart under their own weight.",
+        "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "The copper hemispheres preserved in the Deutsches Museum, Munich."
+      },
+      {
+        "heading": "Living at the Bottom of an Air Ocean",
+        "body": "The demonstration proved that humans live at the bottom of a heavy ocean of atmospheric gas pressing with fifteen pounds on every square inch. It inspired Robert Boyle in England to formulate his gas laws and laid the foundational physics that made Thomas Newcomen's atmospheric steam engines possible fifty years later."
+      }
+    ],
+    "timeline": [
+      { "year": "1650", "event": "Guericke constructs first piston vacuum pump" },
+      { "year": "1654", "event": "Magdeburg hemispheres demonstrated to Emperor Ferdinand III" },
+      { "year": "1660", "event": "Robert Boyle publishes experiments on the Spring of the Air" }
+    ],
+    "sourceNote": "Otto von Guericke, Experimenta Nova (ut vocantur) Magdeburgica de Vacuo Spatio (1672).",
+    "relatedStoryIds": ["art-1", "art-6", "art-10", "art-17"]
+  },
+  {
+    "id": "art-13",
+    "slug": "when-cyanide-saved-and-haunted-the-goldfields",
+    "title": "When Cyanide Saved and Haunted the Goldfields",
+    "dek": "In 1887, three Glaswegian chemists poured deadly potassium cyanide over discarded tailings and pulled out gleaming gold—saving the global monetary system while poisoning river basins.",
+    "category": "Science & Society",
+    "categorySlug": "science-society",
+    "topics": ["Gold Extraction", "Metallurgy", "Industrial Pollution", "Economic History"],
+    "authorId": "author-1",
+    "date": "August 05, 2026",
+    "readingTime": "10 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Industrial chemical leaching tanks with dark residue and brass piping",
+    "heroCaption": "The MacArthur-Forrest cyanide extraction vats installed on the Witwatersrand, 1891.",
+    "excerpt": "By 1887, the gold boom in South Africa was on the brink of collapse. The deep pyritic ore on the Rand could not be refined with mercury amalgamation; eighty percent of the gold was washing into sludge heaps. A laboratory in Glasgow had the lethal answer.",
+    "sections": [
+      {
+        "heading": "The Chemistry of Greed",
+        "body": "John Stewart MacArthur, working with brothers Robert and William Forrest in an improvised lab over a furniture warehouse in Glasgow, discovered that a dilute solution of potassium cyanide selectively dissolved fine gold particles without reacting with surrounding iron sulphides.",
+        "quote": "A single pint of this liquor can dissolve an ounce of pure gold; a single drop can stop the heart of a full-grown ox.",
+        "quoteAuthor": "John Stewart MacArthur (1890)"
+      },
+      {
+        "heading": "The Boom on the Rand",
+        "body": "The MacArthur-Forrest cyanidation process was shipped to Johannesburg in 1890. Tailings dumps that had been discarded as worthless were reprocessed, extracting 95% of residual gold. Gold production soared from £80,000 in 1887 to £8 million by 1895, cementing the gold standard across global finance and funding the British colonial expansion in Southern Africa.",
+        "image": "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "Cyanide leaching vats at the Robinson Mine, Johannesburg, circa 1895."
+      },
+      {
+        "heading": "The Toxic Shadow",
+        "body": "While financiers celebrated, billions of gallons of cyanide-laced runoff drained into the Vaal and Orange River systems. The process created the immense white mine dumps that still ring Johannesburg today, leaching acid mine drainage and toxic heavy metals into groundwater for over a century."
+      }
+    ],
+    "timeline": [
+      { "year": "1887", "event": "MacArthur-Forrest patent granted in Great Britain" },
+      { "year": "1890", "event": "First commercial cyanide plant erected on the Witwatersrand" },
+      { "year": "1896", "event": "South African Supreme Court strikes down patent monopoly" }
+    ],
+    "sourceNote": "Transactions of the Institution of Mining and Metallurgy, Vol. IV (1895).",
+    "relatedStoryIds": ["art-1", "art-5", "art-9", "art-16"]
+  },
+  {
+    "id": "art-14",
+    "slug": "the-surgeon-who-operated-without-screams",
+    "title": "The Surgeon Who Operated Without Screams",
+    "dek": "In October 1846, inside the surgical amphitheater of Massachusetts General Hospital, a Boston dentist placed an ether sponge over a patient's mouth and conquered surgical agony.",
+    "category": "Health & Medicine",
+    "categorySlug": "health-medicine",
+    "topics": ["Anesthesia", "Surgery", "Ether Dome", "Medical Revolution"],
+    "authorId": "author-3",
+    "date": "July 28, 2026",
+    "readingTime": "9 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "The historic Ether Dome surgical theater with steep tiered wooden benches",
+    "heroCaption": "The surgical amphitheater at Massachusetts General Hospital, Boston, site of the first public demonstration of surgical anesthesia on October 16, 1846.",
+    "excerpt": "Before October 16, 1846, surgery was an exercise in butcher-like speed and human endurance. The best surgeons were those who could amputate a leg at the hip in under ninety seconds while five muscular orderlies held down the screaming patient. That morning, everything changed.",
+    "sections": [
+      {
+        "heading": "The Theater of Agony",
+        "body": "In early Victorian hospitals, operating theaters were deliberately situated under the roof skylights—not just for natural daylight, but to keep the agonizing shrieks of patients as far away as possible from convalescent wards below. Patients frequently committed suicide rather than face the surgeon's knife.",
+        "quote": "Gentlemen, this is no humbug.",
+        "quoteAuthor": "Dr. John Collins Warren, Chief of Surgery, Mass General (1846)"
+      },
+      {
+        "heading": "The Glass Inhaler",
+        "body": "William T.G. Morton, an ambitious 27-year-old Boston dentist, walked into the amphitheater carrying a glass globe fitted with sponges soaked in rectified sulfuric ether. The patient, twenty-year-old printer Gilbert Abbott, had a vascular tumor on the left side of his neck.\n\nAfter Abbott inhaled the sweet vapor for three minutes, his eyes closed and his limbs went limp. Surgeon John Collins Warren made a five-inch incision and excised the tumor. The patient did not flinch, groan, or fight. When Abbott awoke, he reported feeling only a dull scratch like a pin across his neck.",
+        "image": "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "Engraving depicting Morton administering ether vapor in the Ether Dome."
+      },
+      {
+        "heading": "The Tragic Aftermath",
+        "body": "The discovery was hailed as the greatest gift of science to suffering humanity. Yet the men who brought it forward were consumed by bitter feuds over priority. Horace Wells, who had tried nitrous oxide, committed suicide in a New York jail cell; Charles Jackson, the chemist who suggested ether, died in an insane asylum; and Morton died bankrupt from endless patent lawsuits."
+      }
+    ],
+    "timeline": [
+      { "year": "1844", "event": "Horace Wells demonstrates nitrous oxide in Hartford" },
+      { "year": "1846", "event": "Morton conducts public ether demonstration at Mass General" },
+      { "year": "1847", "event": "James Young Simpson introduces chloroform in Edinburgh" }
+    ],
+    "sourceNote": "Records of the Massachusetts General Hospital and Boston Medical and Surgical Journal (1846).",
+    "relatedStoryIds": ["art-4", "art-15", "art-20", "art-28"]
+  },
+  {
+    "id": "art-15",
+    "slug": "the-tragic-rebellion-of-ignaz-semmelweis",
+    "title": "The Tragic Rebellion of Ignaz Semmelweis",
+    "dek": "He discovered that doctors were killing postpartum mothers with invisible 'cadaverous particles' on unwashed hands. The medical elite called him mad and locked him in an asylum.",
+    "category": "Health & Medicine",
+    "categorySlug": "health-medicine",
+    "topics": ["Antisepsis", "Maternal Health", "Medical History", "Semmelweis"],
+    "authorId": "author-3",
+    "date": "July 20, 2026",
+    "readingTime": "11 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Vintage brass washbasin and carbolic soap bottles in historical hospital clinic",
+    "heroCaption": "The First Obstetrical Clinic at the Vienna General Hospital, where Semmelweis conducted his statistical study in 1847.",
+    "excerpt": "In the grand maternity clinic of Vienna in 1846, pregnant women begged on their knees not to be admitted to Clinic 1, run by medical doctors and students. They begged to go to Clinic 2, run by midwives. In Clinic 1, one out of every six mothers died of childbed fever. In Clinic 2, nearly all survived.",
+    "sections": [
+      {
+        "heading": "The Clue from the Autopsy Room",
+        "body": "Hungarian physician Ignaz Semmelweis spent sleepless nights analyzing statistics. The two clinics had identical air, food, and bedding. The only difference: medical students conducted autopsies on cadavers in the morning and walked directly into the delivery rooms to examine laboring women without washing their hands.",
+        "quote": "Puerperal fever is not a misfortune; it is a crime. The carrier of the poison is the examining physician himself.",
+        "quoteAuthor": "Ignaz Semmelweis, Open Letter to All Professors of Obstetrics (1861)"
+      },
+      {
+        "heading": "The Chlorine Basin",
+        "body": "In May 1847, Semmelweis instituted a strict rule: every doctor and student must scrub their hands in chlorinated lime solution until the smell of the morgue was gone before touching a patient. Maternal mortality plummeted from 18% to under 1.2% in six months.",
+        "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "Chart illustrating the dramatic drop in puerperal fever mortality at Vienna General Hospital after May 1847."
+      },
+      {
+        "heading": "The Price of Telling the Truth",
+        "body": "Rather than embracing his discovery, senior professors felt insulted by the implication that gentlemen's hands could be unclean. Semmelweis was fired from Vienna, harassed in Budapest, and suffered a mental breakdown. In 1865, colleagues lured him into an asylum, where he was beaten by guards and died of a gangrenous wound—the very sepsis he had spent his life fighting."
+      }
+    ],
+    "timeline": [
+      { "year": "1847", "event": "Semmelweis introduces chlorinated lime handwashing" },
+      { "year": "1849", "event": "Dismissed from Vienna General Hospital" },
+      { "year": "1861", "event": "Publishes Etiology, Concept, and Prophylaxis of Childbed Fever" },
+      { "year": "1865", "event": "Dies in Döbling Asylum at age 47" }
+    ],
+    "sourceNote": "Semmelweis Archives, Semmelweis Medical Museum, Budapest.",
+    "relatedStoryIds": ["art-4", "art-14", "art-25", "art-30"]
+  },
+  {
+    "id": "art-16",
+    "slug": "the-telegraph-cable-that-snapped-in-the-abyss",
+    "title": "The Telegraph Cable That Snapped in the Abyss",
+    "dek": "How an obsession with connecting London and New York by copper wire beneath three miles of uncharted Atlantic ocean floor ruined fortunes and created deep-sea oceanography.",
+    "category": "Inventions & Discoveries",
+    "categorySlug": "discoveries-inventions",
+    "topics": ["Telegraphy", "Ocean Engineering", "Great Eastern", "Lord Kelvin"],
+    "authorId": "author-2",
+    "date": "July 12, 2026",
+    "readingTime": "10 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Cross section of armoured gutta-percha submarine telegraph cable",
+    "heroCaption": "Cross section of the 1866 Transatlantic Telegraph Cable showing seven stranded copper wires encased in gutta-percha and galvanized iron armor.",
+    "excerpt": "In 1857, Cyrus Field had never heard of deep-sea trenches, abyssal pressures, or the electromagnetic signal dispersion of submerged cables. He raised millions of dollars, coiled 2,500 miles of wire insulated with Malaysian tree sap onto two steam frigates, and headed out into the Atlantic.",
+    "sections": [
+      {
+        "heading": "The Sap of the Gutta-Percha",
+        "body": "Without gutta-percha—the coagulated latex of trees native to the Malay Archipelago—transoceanic communication would have been impossible. Unlike rubber, gutta-percha hardened in cold saltwater and resisted the crushing hydrostatic pressure of deep ocean trenches.",
+        "quote": "We have coiled two thousand leagues of lightning in the iron belly of our ship.",
+        "quoteAuthor": "William Howard Russell, The Atlantic Telegraph (1865)"
+      },
+      {
+        "heading": "The Broken Wire and the Silent Queen",
+        "body": "The first cable was successfully laid in August 1858. Queen Victoria sent a ninety-eight-word congratulatory message to President James Buchanan. It took sixteen hours to transmit. Three weeks later, an over-zealous electrician cranked the voltage to 2,000 volts to speed up transmission, puncturing the insulation and plunging the Atlantic back into silence.",
+        "image": "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "Brunel's SS Great Eastern carrying the cable coiled in three immense circular iron tanks."
+      },
+      {
+        "heading": "The Triumph of the Leviathan",
+        "body": "In 1865, the colossal SS Great Eastern—the largest ship in the world—steamed out with a heavier, armored cable engineered by physicist William Thomson (Lord Kelvin). When the cable snapped in mid-ocean, they dragged grappling hooks along the abyss for two miles, hooked the severed cable from the mud, spliced it, and completed the permanent connection to Newfoundland in 1866."
+      }
+    ],
+    "timeline": [
+      { "year": "1858", "event": "First Atlantic cable laid; fails after 3 weeks" },
+      { "year": "1865", "event": "Great Eastern loses cable in 2,000 fathoms of water" },
+      { "year": "1866", "event": "Permanent transatlantic telegraph service established" }
+    ],
+    "sourceNote": "National Maritime Museum Greenwich and Atlantic Telegraph Company Papers.",
+    "relatedStoryIds": ["art-1", "art-2", "art-10", "art-22"]
+  },
+  {
+    "id": "art-17",
+    "slug": "the-fossil-feud-that-dynamited-the-west",
+    "title": "The Fossil Feud That Dynamited the West",
+    "dek": "Edward Drinker Cope and Othniel Charles Marsh hired armed mercenaries, intercepted mail, and dynamited dinosaur quarries to destroy each other's reputations.",
+    "category": "Experiments & Mistakes",
+    "categorySlug": "experiments-mistakes",
+    "topics": ["Paleontology", "Bone Wars", "Dinosaurs", "Scientific Rivalry"],
+    "authorId": "author-10",
+    "date": "July 04, 2026",
+    "readingTime": "11 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Dramatic excavation pit in sandstone ridge with exposed fossilized sauropod vertebrae",
+    "heroCaption": "Fossil hunters at Como Bluff, Wyoming, during the height of the Bone Wars, 1879.",
+    "excerpt": "Between 1877 and 1892, two wealthy American paleontologists engaged in a war of hatred that consumed their personal fortunes, ruined their scientific standing, and accidentally discovered 142 new species of dinosaurs including Triceratops, Stegosaurus, and Allosaurus.",
+    "sections": [
+      {
+        "heading": "The Head on the Wrong End",
+        "body": "The grudge began in 1868 when Edward Drinker Cope rushed to reconstruct the marine reptile Elasmosaurus. Othniel Charles Marsh publicly pointed out that Cope had placed the skull on the tip of the tail instead of the neck. Cope tried to buy up every copy of the journal to hide his shame; Marsh never let him forget it.",
+        "quote": "I shall pursue him until he has no reputation left in the scientific world.",
+        "quoteAuthor": "Othniel Charles Marsh (1885)"
+      },
+      {
+        "heading": "Dynamite at Como Bluff",
+        "body": "When immense dinosaur graveyards were found at Como Bluff, Wyoming, the rivalry descended into open warfare. Teams of diggers carried Winchester rifles. Diggers for Marsh spied on Cope's quarries, intercepted crates of bones on the Union Pacific Railroad, and when abandoning a quarry, blew it up with black powder so the other could not find scraps.",
+        "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "Marsh's field notebook with sketches of Stegosaurus armor plates, 1886."
+      },
+      {
+        "heading": "The Financial Ruin",
+        "body": "Both men died impoverished and isolated. Cope lost his fortune in silver mining speculations and spent his last days sleeping on a cot surrounded by thirty tons of unstudied bones. Marsh spent his entire inheritance from his uncle George Peabody. Yet their toxic hatred filled the Smithsonian and Yale Peabody museums with the icons of the Jurassic world."
+      }
+    ],
+    "timeline": [
+      { "year": "1868", "event": "Marsh exposes Cope's Elasmosaurus tail-head error" },
+      { "year": "1877", "event": "Como Bluff bone beds discovered in Wyoming" },
+      { "year": "1890", "event": "New York Herald publishes front-page expose of the feud" }
+    ],
+    "sourceNote": "Yale Peabody Museum Historical Archives and American Philosophical Society Manuscripts.",
+    "relatedStoryIds": ["art-2", "art-5", "art-8", "art-26"]
+  },
+  {
+    "id": "art-18",
+    "slug": "the-secret-botany-of-island-ciphers",
+    "title": "The Secret Botany of Island Ciphers",
+    "dek": "When 18th-century French botanists stole spice seedlings from Dutch colonial fortresses, they disguised them in hollowed-out prayer books and mathematical treatises.",
+    "category": "Science & Politics",
+    "categorySlug": "science-politics",
+    "topics": ["Botanical Espionage", "Spices", "Colonial Monopoly", "Pierre Poivre"],
+    "authorId": "author-9",
+    "date": "June 25, 2026",
+    "readingTime": "9 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Pressed nutmeg and clove specimens on aged linen manuscript with wax seal",
+    "heroCaption": "Herbarium sheet of Myristica fragrans (nutmeg) smuggled from Banda to Isle de France, 1770.",
+    "excerpt": "In the 1700s, nutmeg and cloves were worth more than their weight in silver. The Dutch East India Company maintained a death-grip monopoly over the Moluccas, burning every spice tree on unapproved islands and executing anyone caught with a single viable seedling. Then came a one-armed French horticulturalist named Pierre Poivre.",
+    "sections": [
+      {
+        "heading": "The Monopolists of Banda",
+        "body": "To prevent other European nations from cultivating nutmeg, the Dutch bathed every harvested nut in caustic lime before export, killing the embryo. Smugglers faced disembowelment. French botanist Pierre Poivre, who had lost his right arm to a British cannonball, made it his life mission to liberate the plants.",
+        "quote": "Plants belong to all humanity, not to the ledger books of merchant kings.",
+        "quoteAuthor": "Pierre Poivre (1768)"
+      },
+      {
+        "heading": "The Midnight Raid",
+        "body": "In 1770, Poivre financed two armed corvettes and sailed into the uncharted waters of the Spice Islands under the cover of night. Bribery of local chiefs and daring clandestine landings yielded hundreds of living nutmeg and clove seedlings wrapped in damp coconut coir.",
+        "image": "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "The Pamplemousses Botanical Garden in Mauritius, founded by Poivre to acclimatize smuggled spices."
+      },
+      {
+        "heading": "The Garden of Pamplemousses",
+        "body": "Poivre planted his contraband at the Pamplemousses Garden on Mauritius. Within two decades, clove and nutmeg trees were thriving across Réunion, Zanzibar, and the West Indies, forever smashing the Dutch spice monopoly and lowering the price of food preservation for the common people of Europe."
+      }
+    ],
+    "timeline": [
+      { "year": "1749", "event": "Poivre begins clandestine surveys of spice trade" },
+      { "year": "1770", "event": "Clandestine expedition secures living nutmeg and clove plants" },
+      { "year": "1776", "event": "First domestic clove harvest on Isle de France (Mauritius)" }
+    ],
+    "sourceNote": "Archives Nationales d'Outre-Mer, Aix-en-Provence, France.",
+    "relatedStoryIds": ["art-5", "art-9", "art-13", "art-22"]
+  },
+  {
+    "id": "art-19",
+    "slug": "when-physics-shattered-the-solid-world",
+    "title": "When Physics Shattered the Solid World",
+    "dek": "Inside a rainy university lab in Manchester, Ernest Rutherford fired alpha bullets at gold foil and found that solid matter is almost entirely empty space.",
+    "category": "Discoveries & Inventions",
+    "categorySlug": "discoveries-inventions",
+    "topics": ["Atomic Physics", "Rutherford", "Gold Foil Experiment", "Nucleus"],
+    "authorId": "author-6",
+    "date": "June 18, 2026",
+    "readingTime": "8 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Zinc sulfide scintillation screen under microscope in darkened room",
+    "heroCaption": "The Geiger-Marsden alpha particle scattering apparatus constructed at the University of Manchester, 1909.",
+    "excerpt": "In 1909, physicists believed the atom was a soft 'plum pudding' of positive charge sprinkled with electrons like raisins. Ernest Rutherford asked his student Ernest Marsden to look for alpha particles bouncing backwards off thin gold foil. He expected to find nothing.",
+    "sections": [
+      {
+        "heading": "The Counting of Fleeting Sparks",
+        "body": "The experiment required Hans Geiger and twenty-year-old Marsden to sit in absolute darkness for thirty minutes until their pupils dilated. They then stared through a microscope at a tiny zinc sulfide screen, manually clicking mechanical counters every time an alpha particle struck the screen with a microscopic green spark.",
+        "quote": "It was quite the most incredible event that has ever happened to me in my life. It was almost as incredible as if you fired a 15-inch shell at a piece of tissue paper and it came back and hit you.",
+        "quoteAuthor": "Ernest Rutherford"
+      },
+      {
+        "heading": "The Core of the World",
+        "body": "Most particles passed straight through the beaten gold foil, which was only 400 atoms thick. But one in every 8,000 bounced backward at an angle greater than 90 degrees. Rutherford spent two years calculating the mathematical physics before publishing his nuclear model in 1911.\n\nAll the mass of an atom was concentrated into an unimaginably tiny, dense nucleus at its center. If an atom were the size of a cathedral, the nucleus would be a fly in the center—and the rest was utterly empty void.",
+        "image": "https://images.unsplash.com/photo-1517976487502-4630a91176b6?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "Rutherford's original hand-drawn trajectories of scattered alpha particles."
+      },
+      {
+        "heading": "The Ghostly Universe",
+        "body": "Rutherford's discovery dissolved the reassuring solidity of the material world. Every table, stone mountain, and human body was 99.999999999% empty space, held together only by invisible electromagnetic fields."
+      }
+    ],
+    "timeline": [
+      { "year": "1909", "event": "Geiger and Marsden observe backward alpha scattering" },
+      { "year": "1911", "event": "Rutherford announces the nuclear atom model" },
+      { "year": "1919", "event": "Rutherford splits the nitrogen nucleus, achieving first artificial transmutation" }
+    ],
+    "sourceNote": "Philosophical Magazine, Series 6, Vol. 21 (1911).",
+    "relatedStoryIds": ["art-3", "art-7", "art-11", "art-27"]
+  },
+  {
+    "id": "art-20",
+    "slug": "the-woman-who-saw-dna-first",
+    "title": "The Woman Who Saw DNA First",
+    "dek": "Photograph 51 took one hundred hours of X-ray exposure inside a hydrogen-filled camera. Rosalind Franklin took the picture; two men down the hall took the Nobel Prize.",
+    "category": "Scientists & Lives",
+    "categorySlug": "scientists-lives",
+    "topics": ["Genetics", "Rosalind Franklin", "Photograph 51", "Crystallography"],
+    "authorId": "author-7",
+    "date": "June 10, 2026",
+    "readingTime": "10 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Historical high-contrast X-ray diffraction pattern showing iconic X-shape of B-form DNA",
+    "heroCaption": "Photograph 51, taken by Rosalind Franklin and Raymond Gosling at King's College London in May 1952.",
+    "excerpt": "In May 1952, Rosalind Franklin spent four days in the basement of King's College London adjusting a micro-camera through a single crystal fiber of DNA. The fiber was suspended inside a chamber where the relative humidity had to be maintained at precisely 75 percent using salt solutions.",
+    "sections": [
+      {
+        "heading": "The Precision of the Lens",
+        "body": "Franklin was a world-class physical chemist who had mastered the delicate art of X-ray diffraction on carbon coals in Paris. While James Watson and Francis Crick at Cambridge tried to build cardboard models from theoretical intuition, Franklin insisted on mathematical rigor. She refused to guess until the diffraction data was indisputable.",
+        "quote": "Science and everyday life cannot and should not be separated.",
+        "quoteAuthor": "Rosalind Franklin"
+      },
+      {
+        "heading": "The Stolen Glimpse",
+        "body": "In January 1953, Maurice Wilkins showed Franklin's Photograph 51 to James Watson without her knowledge or permission. The clear 'X' pattern of the dark diffraction spots on the photographic plate instantly told Watson that DNA was a double helix with phosphate backbones on the outside.\n\nUsing Franklin's unpublished mathematical data from a Medical Research Council report, Watson and Crick completed their famous model in a matter of weeks.",
+        "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "Franklin's research notebook entry calculating the helical pitch and diameter of the B-DNA strand."
+      },
+      {
+        "heading": "The Silent Legacy",
+        "body": "Franklin died of ovarian cancer in 1958 at the age of thirty-seven, likely exacerbated by her extensive work with unshielded X-ray equipment. When Watson, Crick, and Wilkins received the Nobel Prize in 1962, Franklin's name was barely mentioned."
+      }
+    ],
+    "timeline": [
+      { "year": "1951", "event": "Franklin joins King's College London" },
+      { "year": "1952", "event": "Photograph 51 exposed in May" },
+      { "year": "1953", "event": "Nature publishes Watson-Crick model alongside Franklin's data" },
+      { "year": "1958", "event": "Franklin passes away in London" }
+    ],
+    "sourceNote": "Rosalind Franklin Papers, Churchill Archives Centre, Cambridge.",
+    "relatedStoryIds": ["art-2", "art-4", "art-8", "art-29"]
+  },
+  {
+    "id": "art-21",
+    "slug": "the-accidental-discovery-of-cosmic-hiss",
+    "title": "The Accidental Discovery of Cosmic Hiss",
+    "dek": "Two Bell Labs engineers scrubbed pigeon droppings from a six-meter horn antenna in New Jersey before realizing they were hearing the thermal echo of the Big Bang.",
+    "category": "Discoveries & Inventions",
+    "categorySlug": "discoveries-inventions",
+    "topics": ["Cosmology", "Big Bang", "Radio Astronomy", "CMB"],
+    "authorId": "author-2",
+    "date": "June 02, 2026",
+    "readingTime": "9 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "The massive aluminum Holmdel Horn Antenna against open New Jersey sky",
+    "heroCaption": "The 20-foot horn reflector antenna at Bell Telephone Laboratories, Holmdel, New Jersey, 1964.",
+    "excerpt": "In 1964, Arno Penzias and Robert Wilson wanted to measure radio signals bounced off Echo balloon satellites. Instead, their sensitive microwave antenna picked up a persistent, annoying static that came equally from every direction in the sky, day and night, in every season.",
+    "sections": [
+      {
+        "heading": "The Mystery of the Pigeon Roost",
+        "body": "The noise was equivalent to a thermal temperature of about 3.5 Kelvin. Penzias and Wilson checked their circuits, wrapped joints in aluminum tape, and even evicted two pigeons that had nested in the throat of the antenna, scrubbing what Penzias delicately termed 'white dielectric material' from the metal. The static did not decrease by a fraction of a decibel.",
+        "quote": "We have either discovered pigeon droppings of astonishing electrical properties, or something grander than we can imagine.",
+        "quoteAuthor": "Arno Penzias (1965)"
+      },
+      {
+        "heading": "The Princeton Connection",
+        "body": "Thirty miles away at Princeton University, theoretical astrophysicist Robert Dicke was designing an experiment to search for relic radiation left over from the fiery origin of the universe. When Penzias called him to describe the unexplained 3 Kelvin noise, Dicke hung up the phone, turned to his colleagues, and said simply: 'Well boys, we've been scooped.'",
+        "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "Pen-recorder chart showing the unvarying microwave background signal at 4.08 GHz."
+      },
+      {
+        "heading": "The Sound of Creation",
+        "body": "The static was the Cosmic Microwave Background—light emitted 380,000 years after the Big Bang, stretched by the expansion of space over 13.8 billion years into faint microwave whispers. Every time an old television set was tuned between channels, one percent of the black-and-white static on the screen was the sound of the universe's birth."
+      }
+    ],
+    "timeline": [
+      { "year": "1964", "event": "Penzias and Wilson detect unvarying microwave background noise" },
+      { "year": "1965", "event": "Joint publication in Astrophysical Journal confirms Big Bang prediction" },
+      { "year": "1978", "event": "Nobel Prize in Physics awarded for CMB discovery" }
+    ],
+    "sourceNote": "Bell Laboratories Technical Reports and Oral History Interviews, American Institute of Physics.",
+    "relatedStoryIds": ["art-8", "art-19", "art-24", "art-27"]
+  },
+  {
+    "id": "art-22",
+    "slug": "the-secret-maps-of-the-lichen-hunters",
+    "title": "The Secret Maps of the Lichen Hunters",
+    "dek": "In Victorian Scotland, women scraped rare mountain lichens to brew the secret purple dyes of royal tartan—while pioneering the science of symbiotic biology.",
+    "category": "Environment & Nature",
+    "categorySlug": "environment-nature",
+    "topics": ["Lichens", "Symbiosis", "Dyes", "Scottish Highlands"],
+    "authorId": "author-5",
+    "date": "May 25, 2026",
+    "readingTime": "9 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Crustose orange and grey lichens growing on weathered granite boulder",
+    "heroCaption": "Ochrolechia tartarea (cudbear lichen) collected in the Cairngorm Mountains, 1842.",
+    "excerpt": "Long before Swiss botanist Simon Schwendener horrified the academic establishment in 1869 by proving that lichens were not single plants but a dual organism of fungi and algae, Highland women were harvesting them from mist-shrouded crags to create the iconic crimson and violet woolens of Scotland.",
+    "sections": [
+      {
+        "heading": "The Cudbear Vats",
+        "body": "In the 18th century, chemist George Cuthbert patented 'cudbear'—a magnificent crimson dye made by fermenting crustose rock lichens in stale urine. Highland families spent summers scaling sheer granite precipices with iron scrapers, gathering bags of the slow-growing organisms.",
+        "quote": "A lichen is not an individual; it is a miniature ecosystem, a marriage of two kingdoms living in mutual survival.",
+        "quoteAuthor": "Simon Schwendener (1869)"
+      },
+      {
+        "heading": "The Rebellion of the Dual Organism",
+        "body": "When Schwendener announced his 'dual hypothesis'—that lichens were fungi enslaving algal cells—the leading lichenologists of Europe mocked him. They could not accept that two distinct kingdoms of life could merge into a single enduring organism capable of surviving on bare rock in Antarctic blizzards.",
+        "image": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "Microscopic drawing of fungal hyphae enveloping green algal cells in Xanthoria parietina."
+      },
+      {
+        "heading": "The Sentinels of Clean Air",
+        "body": "Today, lichens are recognized as the world's most sensitive bio-indicators of atmospheric sulfur dioxide and heavy metal pollution. The maps drawn by 19th-century lichen collectors now serve as baselines for measuring the recovery of European forests from industrial acid rain."
+      }
+    ],
+    "timeline": [
+      { "year": "1758", "event": "George Cuthbert patents cudbear lichen dye process" },
+      { "year": "1869", "event": "Schwendener proposes the dual symbiotic theory of lichens" },
+      { "year": "1970", "event": "Lichens adopted worldwide as bio-monitors for air quality" }
+    ],
+    "sourceNote": "Transactions of the Botanical Society of Edinburgh and Royal Botanic Garden Edinburgh Archives.",
+    "relatedStoryIds": ["art-5", "art-1", "art-18", "art-26"]
+  },
+  {
+    "id": "art-23",
+    "slug": "the-forgotten-clockmaker-who-solved-longitude",
+    "title": "The Forgotten Clockmaker Who Solved Longitude",
+    "dek": "A self-taught Yorkshire carpenter built four brass timepieces with wooden gear teeth that outlasted royal astronomers and conquered the open seas.",
+    "category": "Forgotten Science",
+    "categorySlug": "forgotten-science",
+    "topics": ["Horology", "Navigation", "John Harrison", "Board of Longitude"],
+    "authorId": "author-8",
+    "date": "May 18, 2026",
+    "readingTime": "11 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Intricate brass marine chronometer movement with bimetallic balance wheel",
+    "heroCaption": "John Harrison's H4 marine timekeeper, completed in 1759, which won the Longitude Prize.",
+    "excerpt": "In 1707, four British warships struck the rocks of the Scilly Isles because their navigators could not calculate their east-west position; nearly two thousand sailors drowned. Parliament offered £20,000—a king's ransom—to anyone who could solve longitude. Astronomers said the answer was in the stars. A carpenter said it was in a clock.",
+    "sections": [
+      {
+        "heading": "The Problem of the Swelling Seas",
+        "body": "Calculating latitude had been simple for centuries: measure the angle of the North Star above the horizon. But calculating longitude required knowing the exact time at the home port while at sea. Every pendulum clock of the era stopped or lost minutes on a rolling ship as temperatures fluctuated and salt spray rusted the iron.",
+        "quote": "I can boldly say that I have made a Clock which will not err three seconds in a whole year.",
+        "quoteAuthor": "John Harrison (1730)"
+      },
+      {
+        "heading": "The Wooden Masterpieces",
+        "body": "John Harrison used lignum vitae—a dense tropical hardwood that excreted its own natural oils—to make gear teeth that never needed grease. He invented the bimetallic strip to compensate for temperature expansion and the grasshopper escapement to eliminate friction.\n\nHis H1 was a 75-pound brass beast. But thirty years later, he condensed the entire mechanism into the H4: a silver pocket watch five inches across with diamond pallets that lost only five seconds on an eighty-one-day voyage to Jamaica.",
+        "image": "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "The four Harrison timekeepers (H1 through H4) preserved at the Royal Observatory, Greenwich."
+      },
+      {
+        "heading": "The Astronomer's Veto",
+        "body": "The Board of Longitude, dominated by Astronomer Royal Nevil Maskelyne, refused to award Harrison his full prize, claiming his watch was a fluke and demanding further tests. Only when eighty-year-old Harrison appealed directly to King George III did the King test the watch himself and demand Parliament pay the old artisan his rightful reward."
+      }
+    ],
+    "timeline": [
+      { "year": "1714", "event": "British Parliament passes the Longitude Act offering £20,000 prize" },
+      { "year": "1735", "event": "Harrison presents marine clock H1 in London" },
+      { "year": "1761", "event": "H4 successfully tested on transatlantic voyage to Jamaica" },
+      { "year": "1773", "event": "King George III intervenes to grant Harrison his remaining prize" }
+    ],
+    "sourceNote": "Royal Greenwich Observatory Archives, Cambridge University Library.",
+    "relatedStoryIds": ["art-2", "art-8", "art-12", "art-16"]
+  },
+  {
+    "id": "art-24",
+    "slug": "the-radio-astronomer-who-heard-little-green-men",
+    "title": "The Radio Astronomer Who Heard 'Little Green Men'",
+    "dek": "Graduate student Jocelyn Bell noticed a tiny quarter-inch squiggle on four hundred feet of paper charts—and discovered the cosmic lighthouse of the first pulsar.",
+    "category": "Scientists & Lives",
+    "categorySlug": "scientists-lives",
+    "topics": ["Pulsars", "Radio Astronomy", "Jocelyn Bell Burnell", "Neutron Stars"],
+    "authorId": "author-7",
+    "date": "May 10, 2026",
+    "readingTime": "9 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Miles of wooden posts and copper wires forming the Cambridge Interplanetary Scintillation Array",
+    "heroCaption": "The four-acre dipole antenna array at Lord's Bridge, Cambridge, built by Bell and team in 1967.",
+    "excerpt": "In 1967, Jocelyn Bell spent two years hammering thousands of wooden posts into muddy Cambridge fields and stringing 120 miles of copper wire to build a radio telescope. Every night, the telescope printed ninety-six feet of chart paper. Bell analyzed all five miles of charts by hand.",
+    "sections": [
+      {
+        "heading": "The Quarter-Inch of Scruff",
+        "body": "In August 1967, Bell noticed an unusual patch of 'scruff' occupying less than a quarter of an inch on the chart recorder. It did not look like scintillation from solar wind, nor did it look like terrestrial car ignition noise. When she hooked up a high-speed recorder, she saw a train of pulses beating with eerie perfection every 1.337 seconds.",
+        "quote": "We did not really believe that we had picked up signals from another civilization, but obviously the idea had crossed our minds and we had no proof it was an entirely natural radio emission.",
+        "quoteAuthor": "Dame Jocelyn Bell Burnell"
+      },
+      {
+        "heading": "LGM-1: Little Green Men",
+        "body": "Her supervisor Antony Hewish initially thought the signal was radar reflection or French television. They jokingly labeled the source 'LGM-1' (Little Green Men). But when Bell found a second pulsing source in a completely different sector of the sky pulsing at 1.2 seconds, they knew they had uncovered an unknown astronomical phenomenon.",
+        "image": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "The original chart recording of the first pulsar PSR B1919+21, showing regular 1.33-second spikes."
+      },
+      {
+        "heading": "The Collapse of Giant Stars",
+        "body": "The signals were pulsars—rapidly spinning neutron stars, the collapsed remnants of supernova explosions packing the mass of our Sun into a sphere no larger than a city. In 1974, the Nobel Prize in Physics for the discovery was awarded to Antony Hewish and Martin Ryle; Bell Burnell was excluded, a decision that generated international scientific protest."
+      }
+    ],
+    "timeline": [
+      { "year": "1967", "event": "Bell detects first pulsar signal at Mullard Radio Astronomy Observatory" },
+      { "year": "1968", "event": "Discovery published in Nature" },
+      { "year": "1974", "event": "Nobel Prize in Physics awarded to Hewish and Ryle" },
+      { "year": "2018", "event": "Bell Burnell awarded $3M Breakthrough Prize; donates it to fund women in physics" }
+    ],
+    "sourceNote": "Cavendish Laboratory Archives, Cambridge University.",
+    "relatedStoryIds": ["art-8", "art-21", "art-27", "art-2"]
+  },
+  {
+    "id": "art-25",
+    "slug": "the-microscope-that-revealed-the-plague-city",
+    "title": "The Microscope That Revealed the Plague City",
+    "dek": "When cholera struck London's Golden Square in 1854, Dr. John Snow removed the handle of the Broad Street water pump and invented spatial epidemiology.",
+    "category": "Health & Medicine",
+    "categorySlug": "health-medicine",
+    "topics": ["Epidemiology", "Cholera", "John Snow", "Public Health"],
+    "authorId": "author-3",
+    "date": "May 02, 2026",
+    "readingTime": "10 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Historical spot map of Soho London with black bars indicating cholera death clusters",
+    "heroCaption": "Dr. John Snow's famous 1854 map of the Broad Street cholera outbreak.",
+    "excerpt": "In August 1854, cholera erupted in Soho with apocalyptic speed: 616 people died within a few blocks in under ten days. The medical orthodoxy insisted the disease was spread by 'miasma'—foul air rising from rotting refuse. An anesthesiologist with a street map had another theory.",
+    "sections": [
+      {
+        "heading": "The Ghost Neighborhood",
+        "body": "Streets emptied in terror. Carts piled with corpses rumbled through Broad Street. Dr. John Snow, who had previously studied the physiology of respiration, did not believe in miasma. He began knocking on doors, recording the precise address of every victim.",
+        "quote": "The most terrible outbreak of cholera which ever occurred in this kingdom was probably that which took place in Broad Street, Golden Square, within a few yards of the pump.",
+        "quoteAuthor": "Dr. John Snow (1855)"
+      },
+      {
+        "heading": "The Geometry of the Outbreak",
+        "body": "Snow drew a map of Soho, marking each cholera death as a black bar stacked at the house location. The bars rose like miniature skyscrapers around a single point: the public Broad Street well pump.\n\nCrucially, he investigated anomalies: a nearby workhouse with 535 inmates had almost no cholera because it had its own private well; a brewery on Broad Street with seventy workers had zero deaths because the men drank only malt liquor.\n\nOn September 7, Snow convinced the local parish guardians to remove the iron handle from the Broad Street pump. The epidemic immediately subsided.",
+        "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "The replica John Snow memorial pump standing on Broadwick Street, Soho, today."
+      },
+      {
+        "heading": "The Leaking Cesspool",
+        "body": "Excavation later revealed that an old brick cesspool from house No. 40 was leaking through cracked soil into the well's water table just three feet away. Snow's spot map became the foundation of modern disease surveillance and urban water sanitation."
+      }
+    ],
+    "timeline": [
+      { "year": "1849", "event": "Snow publishes On the Mode of Communication of Cholera" },
+      { "year": "1854", "event": "Broad Street pump handle removed on September 8" },
+      { "year": "1883", "event": "Robert Koch isolates Vibrio cholerae bacterium under microscope" }
+    ],
+    "sourceNote": "Wellcome Collection Historical Medical Archives, London.",
+    "relatedStoryIds": ["art-4", "art-14", "art-15", "art-30"]
+  },
+  {
+    "id": "art-26",
+    "slug": "the-ice-cores-that-trapped-ancient-air",
+    "title": "The Ice Cores That Trapped Ancient Air",
+    "dek": "Drilling two miles through the Antarctic ice cap, glaciologists extracted bubbles of air trapped when woolly mammoths walked the Earth, uncovering the rhythm of global climate.",
+    "category": "Environment & Nature",
+    "categorySlug": "environment-nature",
+    "topics": ["Glaciology", "Climate Science", "Ice Cores", "Antarctica"],
+    "authorId": "author-5",
+    "date": "April 24, 2026",
+    "readingTime": "10 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1517976487502-4630a91176b6?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Translucent cylinder of Antarctic ice core held against warm backlighting showing air bubble inclusions",
+    "heroCaption": "Ice core section from the EPICA Dome C drilling project in Antarctica, spanning 800,000 years.",
+    "excerpt": "At Vostok Station in East Antarctica, winter temperatures drop to minus 128 degrees Fahrenheit. In the 1980s, Russian and French glaciologists operated a mechanical drill inside a wooden hut, bringing up three-meter cylinders of crystal-clear ice compressed under the weight of three thousand winters.",
+    "sections": [
+      {
+        "heading": "The Frozen Archive",
+        "body": "When snow falls on the Antarctic plateau, it does not melt; it accumulates in annual layers. As fresh snow presses down from above, the airy powder transforms into firn, and finally into solid glacial ice. In the process, tiny pockets of ancient atmospheric air are permanently sealed in microscopic glass-like bubbles.",
+        "quote": "An ice core is a time machine. When you crush it under vacuum in the laboratory, you smell the atmosphere of 400,000 years ago.",
+        "quoteAuthor": "Claude Lorius (1987)"
+      },
+      {
+        "heading": "The Sawtooth of Carbon",
+        "body": "By analyzing the ratio of oxygen isotopes (O-18 to O-16) in the ice crystals, researchers reconstructed past surface temperatures. By crushing the ice under high vacuum and analyzing the liberated gases with gas chromatographs, they measured historical concentrations of carbon dioxide and methane.\n\nThe resulting curves produced a stunning, synchronized sawtooth pattern across four full glacial-interglacial cycles: whenever carbon dioxide rose, global temperatures rose in lockstep.",
+        "image": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "The 800,000-year co-variation curve of atmospheric CO2 and Antarctic temperature from Dome C."
+      },
+      {
+        "heading": "The Modern Spike",
+        "body": "For 800,000 years, atmospheric CO2 had never exceeded 300 parts per million. The ice core record demonstrated that the post-industrial rise past 420 ppm was completely unprecedented in the entire span of human evolutionary history."
+      }
+    ],
+    "timeline": [
+      { "year": "1958", "event": "Charles David Keeling begins continuous CO2 measurements at Mauna Loa" },
+      { "year": "1987", "event": "Vostok ice core publication reveals 160,000-year climate-CO2 lockstep" },
+      { "year": "2004", "event": "EPICA Dome C extends climate record back 800,000 years" }
+    ],
+    "sourceNote": "CNRS Glaciology Laboratory, Grenoble, and British Antarctic Survey Archives.",
+    "relatedStoryIds": ["art-2", "art-5", "art-22", "art-31"]
+  },
+  {
+    "id": "art-27",
+    "slug": "the-secret-calculators-of-bletchley-park",
+    "title": "The Secret Calculators of Bletchley Park",
+    "dek": "How Alan Turing's electromechanical Bombe and Tommy Flowers's thermionic Colossus turned vacuum tubes into the birth of digital computing.",
+    "category": "Science & Politics",
+    "categorySlug": "science-politics",
+    "topics": ["Cryptanalysis", "Bletchley Park", "Turing", "Computer History"],
+    "authorId": "author-6",
+    "date": "April 16, 2026",
+    "readingTime": "11 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Reconstructed Colossus computer with glowing rows of thermionic vacuum tubes and paper tape pulleys",
+    "heroCaption": "The rebuilt Colossus Mark II computer at The National Museum of Computing, Bletchley Park.",
+    "excerpt": "In 1943, British intelligence was drowning in encrypted teletype messages between Adolf Hitler and his field marshals. The ciphers, generated by the twelve-rotor Lorenz SZ40 machine, were far too complex for manual pencil-and-paper cryptanalysis. An unassuming Post Office telephone engineer had a radical idea.",
+    "sections": [
+      {
+        "heading": "The Post Office Engineer",
+        "body": "Thomas Flowers was not an Oxford mathematician; he was an engineer at the Dollis Hill Post Office Research Station who believed electronic vacuum valves could switch thousands of times faster than mechanical telephone relays. Senior academics told him thermionic valves were too unreliable.",
+        "quote": "We did not build Colossus to make computing history; we built it to save thousands of Allied lives before the invasion of Europe.",
+        "quoteAuthor": "Thomas Flowers"
+      },
+      {
+        "heading": "The Monster with 2,400 Tubes",
+        "body": "Flowers funded much of the construction with his own personal savings. Colossus Mark I used 1,500 glowing vacuum valves, reading encrypted punched paper tape at thirty miles per hour (5,000 characters per second) using optical photocells.\n\nIt was the world's first programmable, electronic digital computer. Working in Hut F at Bletchley, Colossus cracked the Lorenz settings within hours, revealing that Hitler believed the D-Day landings would take place at Pas-de-Calais rather than Normandy.",
+        "image": "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "Wrens operating the Colossus Mark II inside Block H at Bletchley Park, 1944."
+      },
+      {
+        "heading": "The Order to Sledgehammer",
+        "body": "At the war's end, Winston Churchill ordered all ten Colossus machines smashed into pieces no larger than a man's fist to protect the cryptographic secret from the Soviet Union. Flowers was ordered to burn his schematics in the Dollis Hill furnace. The existence of the world's first electronic computer remained a classified state secret for over thirty years."
+      }
+    ],
+    "timeline": [
+      { "year": "1940", "event": "Alan Turing's electromechanical Bombe cracks Enigma at Bletchley" },
+      { "year": "1943", "event": "Tommy Flowers completes Colossus Mark I at Dollis Hill" },
+      { "year": "1944", "event": "Colossus Mark II processes D-Day military communications" },
+      { "year": "1975", "event": "Declassification of Bletchley Park computing operations begins" }
+    ],
+    "sourceNote": "The National Archives, Kew (HW Series) and Bletchley Park Trust.",
+    "relatedStoryIds": ["art-6", "art-9", "art-19", "art-21"]
+  },
+  {
+    "id": "art-28",
+    "slug": "the-accidental-birth-of-the-plastic-age",
+    "title": "The Accidental Birth of the Plastic Age",
+    "dek": "Leo Baekeland was trying to invent a substitute for Asian beetle shellac when an autoclave reaction boiled over into an unbreakable, amber synthetic resin.",
+    "category": "Culture & Knowledge",
+    "categorySlug": "culture-knowledge",
+    "topics": ["Materials Science", "Bakelite", "Polymers", "Industrial Design"],
+    "authorId": "author-10",
+    "date": "April 08, 2026",
+    "readingTime": "9 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Vintage Bakelite telephone receiver and radio casing with warm caramel swirl luster",
+    "heroCaption": "1930s streamlined Bakelite radio receiver, manufactured from synthetic phenol-formaldehyde resin.",
+    "excerpt": "In 1907, the global electrical grid faced a bizarre bottleneck: electrical insulators were made from shellac, a natural resin secreted by the female lac bug in the forests of India and Thailand. It took 15,000 beetles six months to produce a pound of shellac. Belgian-American chemist Leo Baekeland went hunting for an artificial replacement.",
+    "sections": [
+      {
+        "heading": "The Stench of Phenol and Formaldehyde",
+        "body": "In his home laboratory in Yonkers, New York, Baekeland experimented with reacting smelly coal-tar carbolic acid (phenol) with pungent formaldehyde. Previous chemists had tried and given up in disgust because the mixture always solidified into an intractable, insoluble gunk that ruined their glassware.",
+        "quote": "I was trying to make something hard, but I ended up making something indestructible: the material of a thousand uses.",
+        "quoteAuthor": "Leo Hendrik Baekeland (1909)"
+      },
+      {
+        "heading": "The Bakelizer",
+        "body": "Baekeland built a heavy cast-iron pressure vessel he nicknamed 'the Bakelizer.' By applying heat and high pressure simultaneously, he controlled the exothermic cross-linking of the polymer chains.\n\nThe result was Bakelite: the world's first fully synthetic thermosetting plastic. It did not melt when heated; it did not conduct electricity; it did not dissolve in acids or alcohol; and it could be molded into any shape imaginable.",
+        "image": "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "The original Bakelizer autoclave apparatus preserved at the Smithsonian National Museum of American History."
+      },
+      {
+        "heading": "The Synthetic Century",
+        "body": "Bakelite transformed modern consumer culture: from rotary telephones and art deco radio cabinets to billiard balls, distributor caps, and machine-gun handles. It proved that humanity was no longer limited to reshaping natural materials like wood, bone, and stone—we could invent entirely new states of matter."
+      }
+    ],
+    "timeline": [
+      { "year": "1907", "event": "Baekeland files master patent for phenol-formaldehyde resin" },
+      { "year": "1910", "event": "General Bakelite Company founded in New Jersey" },
+      { "year": "1924", "event": "Time Magazine features Baekeland on cover with the tagline 'It will not melt'" }
+    ],
+    "sourceNote": "Smithsonian Institution National Museum of American History, Baekeland Papers.",
+    "relatedStoryIds": ["art-1", "art-7", "art-13", "art-32"]
+  },
+  {
+    "id": "art-29",
+    "slug": "the-jumping-genes-of-barbara-mcclintock",
+    "title": "The Jumping Genes of Barbara McClintock",
+    "dek": "For thirty years, geneticists believed chromosomes were fixed strings of pearls. Barbara McClintock stared through a monocular microscope at corn kernels and proved genes could leap.",
+    "category": "Scientists & Lives",
+    "categorySlug": "scientists-lives",
+    "topics": ["Transposons", "Genetics", "Barbara McClintock", "Corn Cytology"],
+    "authorId": "author-7",
+    "date": "March 30, 2026",
+    "readingTime": "10 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Historical multi-colored Indian corn ear with mosaic speckled kernels on wooden table",
+    "heroCaption": "Mosaic coloration patterns on Zea mays kernels demonstrating chromosomal transposition.",
+    "excerpt": "At Cold Spring Harbor Laboratory on Long Island, Barbara McClintock spent her summers in khaki pants pollinating ears of Indian maize and her winters cutting paper-thin microscopic sections of corn cells. She did not use electronic sequencers or computers. She had only a monocular microscope and immense patience.",
+    "sections": [
+      {
+        "heading": "The Patterns on the Ear",
+        "body": "In 1944, McClintock noticed strange variegated spotting on individual kernels of corn. Conventional genetics taught that genes occupied fixed, unalterable addresses along chromosomes like beads on a necklace. McClintock discovered that the spots were caused by mobile genetic elements—transposons—that could physically unhook themselves, move across the genome, and insert themselves into other genes.",
+        "quote": "If you know you are on the right track, if you have this inner knowledge, then nobody can turn you off... no matter what they say.",
+        "quoteAuthor": "Barbara McClintock"
+      },
+      {
+        "heading": "The Thirty Years of Silence",
+        "body": "When McClintock presented her discovery of 'transposable elements' at the 1951 Cold Spring Harbor Symposium, she was met with stony, embarrassed silence. Prominent geneticists dismissed her work as either incomprehensible or an anomaly unique to maize. Deeply hurt, she stopped publishing her genetic findings in formal journals.",
+        "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "McClintock's hand-drawn cytogenetic maps of chromosome 9 breakage points in Zea mays."
+      },
+      {
+        "heading": "The Genome in Motion",
+        "body": "In the late 1970s, molecular biologists working with bacteria and fruit flies rediscovered mobile DNA elements using modern gene cloning. They realized McClintock had described the fundamental mechanism of genetic mutation, antibody diversity, and evolutionary adaptability three decades before anyone else. In 1983, at the age of eighty-one, she was awarded the unshared Nobel Prize in Physiology or Medicine."
+      }
+    ],
+    "timeline": [
+      { "year": "1944", "event": "McClintock discovers the Ac/Ds transposable controlling elements" },
+      { "year": "1951", "event": "Cold Spring Harbor Symposium presentation met with silence" },
+      { "year": "1983", "event": "Awarded Nobel Prize in Physiology or Medicine" }
+    ],
+    "sourceNote": "Barbara McClintock Papers, American Philosophical Society Library, Philadelphia.",
+    "relatedStoryIds": ["art-2", "art-8", "art-20", "art-31"]
+  },
+  {
+    "id": "art-30",
+    "slug": "the-curious-remedy-of-the-willow-bark",
+    "title": "The Curious Remedy of the Willow Bark",
+    "dek": "How an Oxfordshire clergyman with a fever tasted bitter weeping willow leaves by a riverbank in 1758 and launched the world's most enduring medicine.",
+    "category": "Health & Medicine",
+    "categorySlug": "health-medicine",
+    "topics": ["Aspirin", "Pharmacology", "Edward Stone", "Bayer"],
+    "authorId": "author-3",
+    "date": "March 22, 2026",
+    "readingTime": "9 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Vintage glass apothecary jar labeled Salix alba with dried willow bark chips",
+    "heroCaption": "Dried white willow bark (Salix alba) and historical Bayer Aspirin tin, circa 1900.",
+    "excerpt": "In the summer of 1758, the Reverend Edward Stone of Chipping Norton was suffering from the 'ague'—an intermittent malarial fever that plagued the damp wetlands of the English countryside. Walking beside a brook, he broke off a piece of white willow bark and chewed it. It was intensely bitter. That bitterness was salicin.",
+    "sections": [
+      {
+        "heading": "The Doctrine of Signatures",
+        "body": "Stone adhered to the old theological idea that nature placed natural remedies in the exact geographical locations where specific diseases flourished. Since weeping willows grew with their roots submerged in damp marshes where ague thrived, Stone reasoned the tree must contain the cure.",
+        "quote": "As this tree delights in a moist and wet soil, where agues chiefly abound, the general maxim that many natural maladies carry their cures along with them led me to make trial of it.",
+        "quoteAuthor": "Reverend Edward Stone, Letter to Lord Macclesfield, Royal Society (1763)"
+      },
+      {
+        "heading": "The Trials on the Parish Poor",
+        "body": "Stone gathered a pound of willow bark, dried it over a baker's oven for three months, and ground it into a fine powder with a mortar and pestle. Administering twenty grains in tea to fifty feverish parishioners, he noted that the fever and pain subsided in every case.",
+        "image": "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "The original letter from Reverend Stone published in the Philosophical Transactions of the Royal Society."
+      },
+      {
+        "heading": "From Salicin to Aspirin",
+        "body": "A century later in 1897, chemist Felix Hoffmann at the Bayer pharmaceutical laboratory in Elberfeld, Germany, sought a way to reduce the stomach-burning acidity of salicylic acid for his arthritic father. By acetylating the compound with acetic anhydride, he created acetylsalicylic acid—Aspirin—the first mass-marketed synthetic pharmaceutical drug in human history."
+      }
+    ],
+    "timeline": [
+      { "year": "1763", "event": "Edward Stone presents willow bark trials to Royal Society of London" },
+      { "year": "1828", "event": "Johann Buchner isolates pure yellow salicin crystals" },
+      { "year": "1897", "event": "Felix Hoffmann synthesizes stable acetylsalicylic acid (Aspirin)" },
+      { "year": "1971", "event": "John Vane discovers how aspirin inhibits prostaglandins, winning Nobel Prize" }
+    ],
+    "sourceNote": "Philosophical Transactions of the Royal Society, Vol. 53 (1763) and Bayer Corporate Historical Archives.",
+    "relatedStoryIds": ["art-4", "art-5", "art-15", "art-28"]
+  },
+  {
+    "id": "art-31",
+    "slug": "the-island-where-evolution-kept-time",
+    "title": "The Island Where Evolution Kept Time",
+    "dek": "On a volcanic speck in the Galápagos, Peter and Rosemary Grant spent forty consecutive summers measuring the beaks of identical finches to watch natural selection happen in real time.",
+    "category": "Environment & Nature",
+    "categorySlug": "environment-nature",
+    "topics": ["Evolution", "Galápagos", "Finches", "Peter and Rosemary Grant"],
+    "authorId": "author-5",
+    "date": "March 15, 2026",
+    "readingTime": "10 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Dramatic volcanic cliffs of Daphne Major rising from turquoise Pacific surf",
+    "heroCaption": "The volcanic crater islet of Daphne Major in the Galápagos archipelago.",
+    "excerpt": "Charles Darwin believed that natural selection was far too slow to ever be witnessed during a human lifetime; he thought it required hundreds of thousands of years. On Daphne Major—a desolate volcanic cinder cone forty miles off Ecuador with no fresh water and no trees—two Princeton biologists proved Darwin was wrong.",
+    "sections": [
+      {
+        "heading": "The Forty Summers on the Rock",
+        "body": "Beginning in 1973, Peter and Rosemary Grant camped on Daphne Major for six months every year. They caught, banded, measured, and weighed every single medium ground finch (Geospiza fortis) on the entire island, knowing every bird's pedigree, parentage, and precise beak depth down to the tenth of a millimeter.",
+        "quote": "Evolution is not something that happened only in the distant geological past; it is happening all around us, every generation, with every drought and flood.",
+        "quoteAuthor": "Rosemary Grant"
+      },
+      {
+        "heading": "The Great Drought of 1977",
+        "body": "In 1977, the rains failed completely. Daphne Major received only 24 millimeters of precipitation instead of the normal 130. Small soft seeds were quickly consumed, leaving only the hard, woody fruits of the puncture vine (Tribulus cistoides).\n\nEighty-five percent of the finches starved to death. But birds with beaks just half a millimeter deeper than average were able to crack the armor-plated Tribulus seeds. When the surviving finches bred the following year, their offspring had beaks that were measurably, significantly larger. Natural selection had reshaped the morphology of an entire population in eighteen months.",
+        "image": "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "The precise dial calipers used by the Grants to measure finch bill depth."
+      },
+      {
+        "heading": "The Fluidity of Species",
+        "body": "Six years later in 1983, an unprecedented El Niño brought fifty times more rain than normal, blanketing the island in vines and tiny soft seeds. Over the next decade, the Grants watched the evolutionary pendulum swing back: birds with smaller, nimble beaks out-survived the large-beaked birds. Species were not static museum specimens; they were dynamic, oscillating processes."
+      }
+    ],
+    "timeline": [
+      { "year": "1973", "event": "Peter and Rosemary Grant begin long-term study on Daphne Major" },
+      { "year": "1977", "event": "Major drought drives rapid evolutionary shift in beak morphology" },
+      { "year": "1983", "event": "El Niño deluge reverses selective pressures" },
+      { "year": "2014", "event": "Publication of 40 Years of Evolution: Darwin's Finches on Daphne Major" }
+    ],
+    "sourceNote": "Princeton University Press Monographs in Population Biology and Galápagos National Park Service Records.",
+    "relatedStoryIds": ["art-2", "art-5", "art-22", "art-29"]
+  },
+  {
+    "id": "art-32",
+    "slug": "the-secret-life-of-scientific-fraud",
+    "title": "The Secret Life of Scientific Fraud",
+    "dek": "From stained Piltdown jawbones to fabricated microchips, why brilliant minds risk everything to paint the data when nature refuses to cooperate.",
+    "category": "Culture & Knowledge",
+    "categorySlug": "culture-knowledge",
+    "topics": ["Scientific Misconduct", "Piltdown Man", "Epistemology", "Ethics of Science"],
+    "authorId": "author-10",
+    "date": "March 08, 2026",
+    "readingTime": "11 min read",
+    "featured": false,
+    "lead": false,
+    "heroImage": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&w=1400&q=85",
+    "heroAlt": "Historical skull cast stained with potassium bichromate in velvet archival drawer",
+    "heroCaption": "The stained cranium and orangutan jaw fragments of the Piltdown Man forgery, exposed in 1953.",
+    "excerpt": "Science prides itself on being the only human endeavor with built-in self-correction. But what happens when ambition, national pride, and the desperate desire to confirm a beloved hypothesis overwhelm the stubborn honesty of the laboratory notebook?",
+    "sections": [
+      {
+        "heading": "The Missing Link in the Gravel Pit",
+        "body": "In 1912, amateur archaeologist Charles Dawson produced skull fragments from a gravel pit in Sussex, England. British anatomical authorities hailed 'Piltdown Man' as the missing evolutionary link between ape and human—complete with a modern human braincase and a primitive ape-like jaw.\n\nFor forty years, British museums displayed the fossil with nationalistic pride. In 1953, chemical fluorine dating and microscopic analysis revealed the truth: Dawson had filed down the molars of a 500-year-old female orangutan jaw, stained it with potassium bichromate to look ancient, and planted it alongside a medieval human skull.",
+        "quote": "We are easily deceived by that which flatters our preexisting desires.",
+        "quoteAuthor": "Sir Arthur Keith (1953, upon learning of the Piltdown deception)"
+      },
+      {
+        "heading": "The Painter of the Guinea Pig",
+        "body": "In 1974 at the Memorial Sloan-Kettering Cancer Center in New York, immunologist William Summerlin claimed he had successfully transplanted skin patches between unrelated white and black mice without immune rejection. When his skeptical lab technician washed the mice, the black skin patches ran down the drain: Summerlin had drawn them on with a black felt-tip marker.\n\nIn 2001, physicist Jan Hendrik Schön at Bell Labs published dozens of papers in *Science* and *Nature* claiming breakthroughs in organic molecular semiconductors—until a reader noticed that the noise graphs in two completely different experiments were pixel-for-pixel identical.",
+        "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=80",
+        "imageCaption": "The identical noise waveforms in Schön's retracted Bell Labs superconductivity papers."
+      },
+      {
+        "heading": "The Fragile Republic of Trust",
+        "body": "Scientific fraud is rarely born of simple greed; it is born of hubris—the fatal conviction that one already knows the truth and that the messy, uncooperative physical world just needs a small nudge to conform to the theory. Science survives not because scientists are saints, but because reality eventually refuses to remain forged."
+      }
+    ],
+    "timeline": [
+      { "year": "1912", "event": "Piltdown Man presented to the Geological Society of London" },
+      { "year": "1953", "event": "British Museum scientists expose Piltdown forgery" },
+      { "year": "1974", "event": "Summerlin mouse skin-patch fabrication exposed at Sloan-Kettering" },
+      { "year": "2002", "event": "Bell Labs inquiry panel retracts 17 papers by Jan Hendrik Schön" }
+    ],
+    "sourceNote": "Natural History Museum London Historical Archives and Bell Labs Investigation Committee Report (2002).",
+    "relatedStoryIds": ["art-2", "art-17", "art-28", "art-1"]
+  }
+]

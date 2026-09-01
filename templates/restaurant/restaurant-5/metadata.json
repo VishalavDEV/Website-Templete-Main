@@ -1,0 +1,6 @@
+{
+  "name": "Velora - Premium Restaurant Website Template",
+  "description": "An original, editorial-style premium restaurant, bistro, and café website template with reservation management, interactive menu filtering, culinary showcase, and customizer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

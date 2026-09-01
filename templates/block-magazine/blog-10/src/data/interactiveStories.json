@@ -1,0 +1,198 @@
+[
+  {
+    "id": "is-001",
+    "slug": "the-life-of-a-star",
+    "title": "The Life of a Star",
+    "subtitle": "From molecular cloud collapse to supernova and cosmic seed dispersal.",
+    "category": "space",
+    "heroImage": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1800&q=85",
+    "summary": "Track ten billion years of thermonuclear evolution through six critical epochs.",
+    "totalStages": 6,
+    "stages": [
+      {
+        "step": 1,
+        "title": "Molecular Cloud & Nebula",
+        "subtitle": "The Cold Nursery",
+        "metricLabel": "Temperature",
+        "metricValue": "10 - 20 Kelvin (-253°C)",
+        "description": "Vast clouds of interstellar hydrogen gas and microscopic silicate dust gently condense over millions of years under subtle gravitational perturbations.",
+        "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=85",
+        "scientificInsight": "Jeans instability triggers pockets of gas to collapse when self-gravity overcomes thermal gas pressure."
+      },
+      {
+        "step": 2,
+        "title": "Protostar Formation",
+        "subtitle": "Gravitational Infall & Heating",
+        "metricLabel": "Core Density",
+        "metricValue": "10¹⁸ particles/cm³",
+        "description": "As the core densifies, gravitational potential energy transforms into infrared heat. Bipolar magnetic jets shoot matter millions of kilometers into space.",
+        "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=85",
+        "scientificInsight": "Accretion disks around the protostar gather matter that will later condense into planets and asteroids."
+      },
+      {
+        "step": 3,
+        "title": "Main Sequence Ignition",
+        "subtitle": "Thermonuclear Equilibrium",
+        "metricLabel": "Core Temperature",
+        "metricValue": "15,000,000 Kelvin",
+        "description": "Core temperatures breach 15 million degrees, initiating the proton-proton chain: fusing 600 million tons of hydrogen into helium every second.",
+        "image": "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?auto=format&fit=crop&w=1200&q=85",
+        "scientificInsight": "Hydrostatic equilibrium maintains a perfect balance between outward photon radiation pressure and inward gravity."
+      },
+      {
+        "step": 4,
+        "title": "Red Giant Expansion",
+        "subtitle": "Helium Flash & Outer Swell",
+        "metricLabel": "Stellar Radius",
+        "metricValue": "100x to 250x Solar Radius",
+        "description": "Hydrogen depletes in the core. The inert helium core contracts while the hydrogen shell ignites, swelling the outer atmosphere into a luminous giant.",
+        "image": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1200&q=85",
+        "scientificInsight": "Triple-alpha processes begin fusing helium nuclei into carbon and oxygen in a sudden explosive flash."
+      },
+      {
+        "step": 5,
+        "title": "Supernova Cataclysm",
+        "subtitle": "Core Collapse & Heavy Element Nucleosynthesis",
+        "metricLabel": "Peak Luminosity",
+        "metricValue": "10 Billion Suns",
+        "description": "Iron cannot yield net fusion energy. Within milliseconds, electron degeneracy fails, collapsing the core at 23% light speed before a violent shockwave rips through space.",
+        "image": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=1200&q=85",
+        "scientificInsight": "Rapid neutron capture (r-process) synthesizes all heavy elements in the universe including gold, platinum, and uranium."
+      },
+      {
+        "step": 6,
+        "title": "Neutron Star / Black Hole",
+        "subtitle": "The Infinite Remnant",
+        "metricLabel": "Gravitational Surface Strength",
+        "metricValue": "10¹¹ x Earth Gravity",
+        "description": "The collapsed core remains as an ultra-dense city-sized sphere of pure neutrons spinning hundreds of times per second, or collapses beyond the event horizon into a gravitational singularity.",
+        "image": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&q=85",
+        "scientificInsight": "The expelled outer shells form planetary nebulae enriched with elements that will seed future solar systems and living organisms."
+      }
+    ]
+  },
+  {
+    "id": "is-002",
+    "slug": "into-the-deep",
+    "title": "Into the Deep: Journey to the Hadal Abyss",
+    "subtitle": "Descend 11,000 meters through the oceanic water column into eternal darkness.",
+    "category": "planet",
+    "heroImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1800&q=85",
+    "summary": "From the sunlit epipelagic surface down to the crushing pressures of the Challenger Deep.",
+    "totalStages": 5,
+    "stages": [
+      {
+        "step": 1,
+        "title": "Epipelagic (Sunlit Zone)",
+        "subtitle": "0 to 200 Meters",
+        "metricLabel": "Solar Penetration",
+        "metricValue": "100% to 1%",
+        "description": "Where photosynthesis fuels 90% of all marine life. Schools of tuna, pelagic sharks, and phytoplankton blooms flourish in sun-warmed currents.",
+        "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85",
+        "scientificInsight": "Phytoplankton in this surface band produce more than 50% of the oxygen in Earth's atmosphere."
+      },
+      {
+        "step": 2,
+        "title": "Mesopelagic (Twilight Zone)",
+        "subtitle": "200 to 1,000 Meters",
+        "metricLabel": "Hydrostatic Pressure",
+        "metricValue": "20 to 100 Atmospheres",
+        "description": "Sunlight fades to a ghostly indigo. Bioluminescence becomes the primary language of survival: siphonophores, lanternfish, and giant squid navigate the dim water.",
+        "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "scientificInsight": "Every night, the largest animal migration on Earth occurs as billions of mesopelagic animals swim upward to feed under the cover of darkness."
+      },
+      {
+        "step": 3,
+        "title": "Bathypelagic (Midnight Zone)",
+        "subtitle": "1,000 to 4,000 Meters",
+        "metricLabel": "Ambient Light",
+        "metricValue": "0 Photons (Complete Black)",
+        "description": "Total blackness where water temperature hovers at 4°C. Organisms like the anglerfish and vampire squid utilize luciferin-luciferase enzymes to cast bioluminescent lures.",
+        "image": "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=1200&q=85",
+        "scientificInsight": "Deep-sea snow—falling organic matter and dead plankton—provides the sole food energy source."
+      },
+      {
+        "step": 4,
+        "title": "Abyssopelagic (The Abyss)",
+        "subtitle": "4,000 to 6,000 Meters",
+        "metricLabel": "Hydrostatic Pressure",
+        "metricValue": "400 to 600 Atmospheres",
+        "description": "Immense sediment plains covering over 60% of Earth's surface. Echinoderms, glass sponges, and tripod fish rest on silicate muds undisturbed for centuries.",
+        "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85",
+        "scientificInsight": "Polymetallic nodules resting on abyssal clay take roughly three million years to grow just one centimeter in diameter."
+      },
+      {
+        "step": 5,
+        "title": "Hadal Zone & Hydrothermal Vents",
+        "subtitle": "6,000 to 11,034 Meters",
+        "metricLabel": "Pressure at Trench Bottom",
+        "metricValue": "1,086 Bar (8 Tons/in²)",
+        "description": "V-shaped subduction trenches. Black smoker chimneys vent 400°C mineral fluids supporting chemosynthetic bacteria, tubeworms, and snailfish whose cells rely on trimethylamine oxide stabilizers.",
+        "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=85",
+        "scientificInsight": "Life at hadal depths proves biology can thrive completely independent of solar radiation, informing the search for life on Europa and Enceladus."
+      }
+    ]
+  },
+  {
+    "id": "is-003",
+    "slug": "the-rise-of-a-civilization",
+    "title": "The Rise of a Civilization",
+    "subtitle": "How human settlements transformed stone, water, and knowledge into enduring empires.",
+    "category": "history",
+    "heroImage": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1800&q=85",
+    "summary": "From river valley agrarian beginnings to monument architecture, golden ages, and atmospheric rediscovery.",
+    "totalStages": 5,
+    "stages": [
+      {
+        "step": 1,
+        "title": "Agrarian Settlement & Irrigation",
+        "subtitle": "The First Surpluses",
+        "metricLabel": "Chronology",
+        "metricValue": "~10,000 BCE",
+        "description": "Transitioning from migratory foraging to riverbank cultivation along fertile alluvial floodplains like the Tigris, Euphrates, Nile, and Indus.",
+        "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=85",
+        "scientificInsight": "Grain surpluses enabled specialized labor: toolmakers, astronomers, priests, and architects."
+      },
+      {
+        "step": 2,
+        "title": "The Emergence of the City-State",
+        "subtitle": "Cuneiform, Code, and Walls",
+        "metricLabel": "Urban Density",
+        "metricValue": "50,000+ Citizens",
+        "description": "Uruk, Mohenjo-Daro, and Memphis emerge. Writing systems develop to track grain storage and legal contracts, creating the first recorded human thoughts.",
+        "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=85",
+        "scientificInsight": "Standardized weights, measures, and calendrical systems allowed cross-regional trade networks to flourish."
+      },
+      {
+        "step": 3,
+        "title": "Imperial Monumentality & Golden Age",
+        "subtitle": "Engineering the Sacred",
+        "metricLabel": "Territorial Reach",
+        "metricValue": "Thousands of Miles",
+        "description": "Vast aqueducts, stone monoliths, astronomical observatories, and libraries store centuries of mathematical and botanical wisdom.",
+        "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=85",
+        "scientificInsight": "Structural vaulting and hydraulic engineering allowed cities to expand beyond natural river boundaries."
+      },
+      {
+        "step": 4,
+        "title": "Crisis, Drought & Fragmentation",
+        "subtitle": "The Shifting Climate",
+        "metricLabel": "Climatic Shift",
+        "metricValue": "Multi-decadal megadroughts",
+        "description": "Shifting monsoon patterns, soil salinization, trade disruptions, and internal pressures lead to political decentralization and city abandonment.",
+        "image": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=85",
+        "scientificInsight": "Pollen cores and cave speleothems correlate civilization collapses with abrupt global climate fluctuations."
+      },
+      {
+        "step": 5,
+        "title": "Subterranean Reclaim & Rediscovery",
+        "subtitle": "LiDAR and Deep Archaeology",
+        "metricLabel": "Modern Sensing",
+        "metricValue": "Laser Pulses / cm²",
+        "description": "Centuries later, forests reclaim the plazas until airborne LiDAR laser pulses strip away vegetation to reveal forgotten megacities beneath jungle canopies.",
+        "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85",
+        "scientificInsight": "Remote sensing has revealed that pre-Columbian Amazonian cities supported millions of people with sustainable terra preta soils."
+      }
+    ]
+  }
+]

@@ -1,0 +1,164 @@
+[
+  {
+    "id": "photo-001",
+    "slug": "the-last-light-of-the-desert",
+    "title": "The Last Light of the Desert",
+    "subtitle": "A chronicle of wind-carved geometry across the ancient sand sea of Sossusvlei.",
+    "photographer": "Chloé Dubois",
+    "photographerId": "chloe-dubois",
+    "location": "Namib-Naukluft, Namibia",
+    "date": "September 2026",
+    "heroImage": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80",
+    "description": "At the edge of daylight, the red dunes of Namibia transform into abstract fields of intense amber and velvet shadow.",
+    "shots": [
+      {
+        "url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1800&q=85",
+        "caption": "Dune 45 casting its razor-sharp ridge shadow across the alluvial salt pan.",
+        "focalLength": "85mm",
+        "shutter": "1/250s",
+        "aperture": "f/8",
+        "iso": "100"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1800&q=85",
+        "caption": "Dead Vlei: 500-year-old camel thorn trees scorched black by the hyper-arid sun.",
+        "focalLength": "35mm",
+        "shutter": "1/500s",
+        "aperture": "f/11",
+        "iso": "200"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1800&q=85",
+        "caption": "Mineral ripple crests created by perpetual southerly Atlantic sea breezes.",
+        "focalLength": "120mm",
+        "shutter": "1/320s",
+        "aperture": "f/5.6",
+        "iso": "100"
+      }
+    ]
+  },
+  {
+    "id": "photo-002",
+    "slug": "beneath-the-arctic-sky",
+    "title": "Beneath the Arctic Sky",
+    "subtitle": "Solar maximum magnetospheric storms over Swedish Lapland.",
+    "photographer": "Marcus Thorne",
+    "photographerId": "marcus-thorne",
+    "location": "Abisko National Park, Sweden",
+    "date": "August 2026",
+    "heroImage": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=800&q=80",
+    "description": "Coronal mass ejections produce breathtaking kinetic auroral curtains that illuminate the snowbound birch forests.",
+    "shots": [
+      {
+        "url": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1800&q=85",
+        "caption": "A coronal auroral burst directly overhead at the Abisko Sky Station.",
+        "focalLength": "14mm",
+        "shutter": "4.0s",
+        "aperture": "f/1.8",
+        "iso": "1600"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=1800&q=85",
+        "caption": "Reflections of green atmospheric oxygen emissions across an ice lead on Lake Torneträsk.",
+        "focalLength": "24mm",
+        "shutter": "2.5s",
+        "aperture": "f/2.8",
+        "iso": "2000"
+      }
+    ]
+  },
+  {
+    "id": "photo-003",
+    "slug": "life-at-the-edge-of-the-ocean",
+    "title": "Life at the Edge of the Ocean",
+    "subtitle": "Tidal surges and pelagic predators along the wild Pacific Northwest shelf.",
+    "photographer": "Maya Sørensen",
+    "photographerId": "maya-sorensen",
+    "location": "Haida Gwaii, British Columbia",
+    "date": "July 2026",
+    "heroImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+    "description": "Bull kelp forests support an intricate food web battered by immense North Pacific storm swells.",
+    "shots": [
+      {
+        "url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1800&q=85",
+        "caption": "Sunlight filtering through giant Macrocystis kelp fronds twenty meters deep.",
+        "focalLength": "16mm",
+        "shutter": "1/160s",
+        "aperture": "f/4",
+        "iso": "400"
+      }
+    ]
+  },
+  {
+    "id": "photo-004",
+    "slug": "cities-after-dark",
+    "title": "Cities After Dark",
+    "subtitle": "Human nocturnal geometry and synthetic illumination from above.",
+    "photographer": "Sarah Lin",
+    "photographerId": "sarah-lin",
+    "location": "Tokyo & Hong Kong",
+    "date": "June 2026",
+    "heroImage": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=80",
+    "description": "Long exposures capturing the arterial pulses of transit, neon canyons, and vertical density.",
+    "shots": [
+      {
+        "url": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1800&q=85",
+        "caption": "Shinjuku intersection seen during an autumn midnight downpour.",
+        "focalLength": "50mm",
+        "shutter": "1/60s",
+        "aperture": "f/2.0",
+        "iso": "800"
+      }
+    ]
+  },
+  {
+    "id": "photo-005",
+    "slug": "in-the-footsteps-of-ancient-civilizations",
+    "title": "In the Footsteps of Ancient Civilizations",
+    "subtitle": "The silent masonry of Petra and the Levant under celestial tracks.",
+    "photographer": "Tariq Al-Mansoor",
+    "photographerId": "tariq-al-mansoor",
+    "location": "Wadi Musa, Jordan",
+    "date": "May 2026",
+    "heroImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+    "description": "Centuries of sandstone weathering frame Nabataean cliff façades carved directly into rose-red geological stratum.",
+    "shots": [
+      {
+        "url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1800&q=85",
+        "caption": "The Siq canyon entrance opening to reveal the Treasury façade.",
+        "focalLength": "28mm",
+        "shutter": "1/200s",
+        "aperture": "f/6.3",
+        "iso": "100"
+      }
+    ]
+  },
+  {
+    "id": "photo-006",
+    "slug": "the-high-altiplano",
+    "title": "The High Altiplano",
+    "subtitle": "Flamingos, geothermal geysers, and mineral lakes at 4,500 meters.",
+    "photographer": "Mateo Silva",
+    "photographerId": "mateo-silva",
+    "location": "Eduardo Avaroa Reserve, Bolivia",
+    "date": "April 2026",
+    "heroImage": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
+    "description": "Hypersaline red and emerald lagoons hosting Andean flamingos amid sulfurous fumaroles.",
+    "shots": [
+      {
+        "url": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1800&q=85",
+        "caption": "Laguna Colorada stained blood-red by microscopic halobacteria and algae.",
+        "focalLength": "70mm",
+        "shutter": "1/400s",
+        "aperture": "f/8",
+        "iso": "100"
+      }
+    ]
+  }
+]

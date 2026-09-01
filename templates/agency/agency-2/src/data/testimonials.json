@@ -1,0 +1,52 @@
+[
+  {
+    "id": "testimonial-01",
+    "number": "01",
+    "quote": "Valence took twenty years of architectural heritage and distilled it into an identity that feels simultaneously timeless and fifty years ahead of its time.",
+    "client": "Elena Rostova",
+    "role": "Founding Principal",
+    "company": "Monument Architecture (Zurich / Tokyo)",
+    "project": "MONUMENT Brand Identity",
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "testimonial-02",
+    "number": "02",
+    "quote": "The telematics interface Valence engineered reduced driver cognitive fatigue by nearly 60%. It has fundamentally redefined the standard for autonomous freight navigation.",
+    "client": "Lars Lindqvist",
+    "role": "VP of Autonomous Product",
+    "company": "North Mobility (Stockholm)",
+    "project": "NORTH Digital Experience",
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "testimonial-03",
+    "number": "03",
+    "quote": "In a sea of generic tech marketing, Valence created a visual world for Arc that commands respect from Grammy-winning engineers and casual listeners alike.",
+    "client": "Marcus Thorne",
+    "role": "Chief Executive Officer",
+    "company": "Arc Acoustic Labs (London)",
+    "project": "ARC Spatial Sound System",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "testimonial-04",
+    "number": "04",
+    "quote": "The 3D interactive journey helped us close our $120M climate fund round within three weeks. Investors immediately grasped the planetary impact of our technology.",
+    "client": "Dr. Sarah Al-Mansoor",
+    "role": "Co-Founder & Managing Partner",
+    "company": "Atlas Renewable Ventures (Dubai)",
+    "project": "ATLAS Web Experience",
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "testimonial-05",
+    "number": "05",
+    "quote": "They are rare partners who combine philosophical brand depth with surgical engineering execution. Working with Valence was effortlessly inspiring.",
+    "client": "Kenji Takahashi",
+    "role": "Master Ceramicist & Director",
+    "company": "Form Studio (Kyoto)",
+    "project": "FORM Digital Experience",
+    "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80"
+  }
+]

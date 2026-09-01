@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Contemporary Garden Color System */
+  --bg-cream: #F4F1E8;
+  --bg-cream-surface: #FBF9F3;
+  --color-forest: #26352B;
+  --color-sage: #87947A;
+  --color-light-sage: #D9DED0;
+  --color-clay: #B86F55;
+  --color-charcoal: #202522;
+  --color-accent-gold: #C5A76A;
+  --color-white: #FFFFFF;
+  --border-color: rgba(38, 53, 43, 0.15);
+  --border-color-light: rgba(217, 222, 208, 0.6);
+
+  /* Legacy compatibility maps */
+  --bg-primary: var(--bg-cream);
+  --bg-secondary: var(--color-light-sage);
+  --bg-surface: var(--bg-cream-surface);
+  --text-main: var(--color-forest);
+  --text-muted: #5C685F;
+  --accent-blue: var(--color-forest);
+  --accent-light: var(--color-sage);
+
+  /* Typography System */
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-accent: 'Cormorant Garamond', Georgia, serif;
+
+  /* Layout Spacing */
+  --header-height: 80px;
+  --site-padding: clamp(1.5rem, 5vw, 5rem);
+  --section-gap: clamp(5rem, 10vw, 9rem);
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Reset & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: 16px;
+  background-color: var(--bg-cream);
+  color: var(--color-forest);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--bg-cream);
+  color: var(--color-forest);
+  position: relative;
+}
+
+::selection {
+  background-color: var(--color-sage);
+  color: var(--color-white);
+}
+
+/* Custom Light Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-sage);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-forest);
+}
+
+/* Typography Classes */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--color-forest);
+}
+
+p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Curved Image Utility */
+.curved-img {
+  border-radius: 24px;
+}
+
+.curved-img-large {
+  border-radius: 40px;
+}
+
+/* Container Structure */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Focus States */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--color-forest);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

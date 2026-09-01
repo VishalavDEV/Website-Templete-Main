@@ -1,0 +1,12 @@
+/* EVENTORA CSS Architecture Entry */
+@import './styles/variables.css';
+@import './styles/global.css';
+@import './styles/navbar.css';
+@import './styles/hero.css';
+@import './styles/events.css';
+@import './styles/speakers.css';
+@import './styles/schedule.css';
+@import './styles/venue.css';
+@import './styles/modal.css';
+@import './styles/background.css';
+

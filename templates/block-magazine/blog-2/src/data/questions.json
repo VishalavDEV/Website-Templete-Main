@@ -1,0 +1,56 @@
+[
+  {
+    "id": "q-1",
+    "question": "Why did scientists once believe heat was an invisible fluid?",
+    "tag": "Discarded Hypotheses",
+    "category": "Forgotten Science",
+    "summary": "For decades, the 'caloric theory' explained friction, combustion, and steam engines with stunning mathematical precision. It took a cannon-boring workshop in Bavaria to prove heat was motion.",
+    "relatedStoryId": "art-1",
+    "era": "1780 — 1845"
+  },
+  {
+    "id": "q-2",
+    "question": "Who really got credit for discovering the Atlantic ocean floor rift?",
+    "tag": "Overshadowed Pioneers",
+    "category": "Scientists & Lives",
+    "summary": "When Marie Tharp mapped the Mid-Atlantic Ridge rift valley in 1952, her supervisor dismissed her findings as 'girl talk.' It took seismic soundings from undersea earthquakes to force the world to listen.",
+    "relatedStoryId": "art-2",
+    "era": "1952 — 1968"
+  },
+  {
+    "id": "q-3",
+    "question": "What happened to the failed experiment that saved millions of lives?",
+    "tag": "Accidental Marvels",
+    "category": "Experiments & Mistakes",
+    "summary": "A mold spore drifting through a half-open window in London settled onto a staphylococcus plate while Alexander Fleming was away on vacation. The rest was biological history.",
+    "relatedStoryId": "art-4",
+    "era": "1928 — 1941"
+  },
+  {
+    "id": "q-4",
+    "question": "When did doctors decide that washing hands was an insult?",
+    "tag": "Medical Dogma",
+    "category": "Health & Medicine",
+    "summary": "Ignaz Semmelweis halved maternal mortality in Vienna by demanding chlorine handwashes. Instead of accolades, the medical establishment drove him out of the clinic.",
+    "relatedStoryId": "art-15",
+    "era": "1847 — 1865"
+  },
+  {
+    "id": "q-5",
+    "question": "Was the first version of the Periodic Table organized by musical octaves?",
+    "tag": "Early Classification",
+    "category": "Discoveries & Inventions",
+    "summary": "Before Mendeleev had his dream on a train, English chemist John Newlands proposed the 'Law of Octaves' comparing elements to piano scales. His peers mockingly asked if he had tried arranging them alphabetically.",
+    "relatedStoryId": "art-7",
+    "era": "1864 — 1869"
+  },
+  {
+    "id": "q-6",
+    "question": "How did a Victorian party gas become the foundation of modern surgery?",
+    "tag": "Sensory Revolutions",
+    "category": "Culture & Knowledge",
+    "summary": "Nitrous oxide and ether were novelty entertainment for university students and traveling showmen for thirty years before anyone considered operating on an insensate patient.",
+    "relatedStoryId": "art-14",
+    "era": "1799 — 1846"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "rx-01",
+    "medicationName": "Vitamin D3 + K2 (Cholecalciferol)",
+    "dosage": "2,000 IU / 100 mcg",
+    "frequency": "Once daily with morning meal",
+    "duration": "90 Days",
+    "prescribedBy": "Dr. Sophia Chen-Vance",
+    "doctorId": "doc-5",
+    "prescribedDate": "August 14, 2026",
+    "status": "Active",
+    "refillsRemaining": 2,
+    "instructions": "Take with water during breakfast containing healthy fats for optimal absorption.",
+    "pharmacyNote": "Aura Central Pharmacy — Prescription Dispensed #RX-88419"
+  },
+  {
+    "id": "rx-02",
+    "medicationName": "Magnesium Glycinate Chelated",
+    "dosage": "300 mg",
+    "frequency": "Once daily, 45 minutes before sleep",
+    "duration": "60 Days",
+    "prescribedBy": "Dr. Julian Sterling",
+    "doctorId": "doc-2",
+    "prescribedDate": "July 28, 2026",
+    "status": "Active",
+    "refillsRemaining": 3,
+    "instructions": "Supports neuromuscular relaxation and deep sleep architecture.",
+    "pharmacyNote": "Refill available online via Patient Portal"
+  },
+  {
+    "id": "rx-03",
+    "medicationName": "Omega-3 Pure Ethyl Esters (EPA/DHA)",
+    "dosage": "1,000 mg",
+    "frequency": "Twice daily with lunch & dinner",
+    "duration": "90 Days",
+    "prescribedBy": "Dr. Maya Raman",
+    "doctorId": "doc-1",
+    "prescribedDate": "June 19, 2026",
+    "status": "Completed",
+    "refillsRemaining": 0,
+    "instructions": "Vascular wall support and lipid modulation.",
+    "pharmacyNote": "Completed initial 90-day protocol"
+  }
+]

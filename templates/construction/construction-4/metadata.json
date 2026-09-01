@@ -1,0 +1,11 @@
+{
+  "name": "Knack Design Build — Bespoke Architecture",
+  "slug": "knack-design-build",
+  "category": "construction",
+  "description": "A luxury architecture and bespoke general contracting landing page. Features dynamic villa portfolios, 3D BIM integration methodology showcases, on-time milestone stats, and custom consultation request flow.",
+  "techStack": {
+    "frontend": "React + Vite + Tailwind CSS / Vanilla CSS",
+    "backend": "Java 21 + Spring Boot 3"
+  },
+  "demoUrl": "/templates/construction/construction-4/index.html"
+}

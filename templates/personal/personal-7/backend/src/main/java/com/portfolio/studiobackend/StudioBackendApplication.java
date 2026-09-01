@@ -1,0 +1,13 @@
+package com.portfolio.studiobackend;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class StudioBackendApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(StudioBackendApplication.class, args);
+	}
+
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Fonix 3D Landing Page & PRD Studio",
+  "description": "Comprehensive Product Requirements Document (PRD) and live interactive 3D WebGL showcase for the Fonix one-page brand experience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

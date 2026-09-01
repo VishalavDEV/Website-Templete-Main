@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA X1 | The Future Has Arrived | NOVA MOTORS</title>
+    <meta name="description" content="A new era of driving. Experience the future with NOVA X1, the next generation of electric performance. Volumetric WebGL visualizer, dual motor AWD, and 800V fast-charging architecture.">
+    <meta name="keywords" content="NOVA MOTORS, NOVA X1, Electric SUV, EV Performance, 3D Showroom, WebGL Car, Coming Soon, Automotive Launch">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#040405',
+                            charcoal: '#0d0d0f',
+                            graphite: '#17171a',
+                            electric: '#00d2ff',
+                            blueGlow: '#0055ff',
+                            accent: '#00a3ff',
+                            neonRed: '#ff2d55',
+                            neonGreen: '#00ff66',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['Orbitron', 'monospace'],
+                    },
+                    boxShadow: {
+                        'neon-cyan': '0 0 15px rgba(0, 210, 255, 0.4)',
+                        'neon-blue': '0 0 15px rgba(0, 85, 255, 0.4)',
+                        'neon-red': '0 0 15px rgba(255, 45, 85, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- GSAP & ScrollTrigger CDNs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Smooth Scroll CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/dist/lenis.min.js"></script>
+</head>
+<body class="bg-brand-black text-white selection:bg-brand-electric selection:text-black overflow-x-hidden font-sans">
+
+  <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+  <script>
+    (function() {
+      const isPlatform = window.location.host === 'localhost:5173' || window.location.host === '127.0.0.1:5173';
+      const isTop = window.self === window.top;
+      const urlParams = new URLSearchParams(window.location.search);
+      const isIframe = urlParams.get('iframe') === 'true';
+      
+      if (isPlatform && isTop && !isIframe) {
+        document.documentElement.style.visibility = 'hidden';
+        
+        window.addEventListener('DOMContentLoaded', () => {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.searchParams.set('iframe', 'true');
+          
+          const body = document.body;
+          body.innerHTML = '';
+          body.style.margin = '0';
+          body.style.padding = '0';
+          body.style.height = '100vh';
+          body.style.width = '100vw';
+          body.style.display = 'flex';
+          body.style.flexDirection = 'column';
+          body.style.overflow = 'hidden';
+          body.style.backgroundColor = '#0f172a';
+          
+          // Build Top Bar
+          const topBar = document.createElement('div');
+          topBar.id = 'technosprint-preview-header';
+          topBar.style.height = '64px';
+          topBar.style.background = '#ffffff';
+          topBar.style.borderBottom = '1px solid #e2e8f0';
+          topBar.style.display = 'flex';
+          topBar.style.alignItems = 'center';
+          topBar.style.justifyContent = 'space-between';
+          topBar.style.padding = '0 24px';
+          topBar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.06)';
+          topBar.style.fontFamily = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+          topBar.style.zIndex = '99999';
+          topBar.style.position = 'relative';
+          topBar.style.boxSizing = 'border-box';
+          
+          // Left side: TechnoSprint Logo + Template Title
+          const leftDiv = document.createElement('div');
+          leftDiv.style.display = 'flex';
+          leftDiv.style.alignItems = 'center';
+          leftDiv.style.gap = '16px';
+          leftDiv.innerHTML = `
+            <a href="/templates" style="display: flex; align-items: center; text-decoration: none; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+              <img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 34px; border-radius: 6px; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05);" />
+            </a>
+            <div style="height: 20px; width: 1px; background: #e2e8f0;"></div>
+            <span style="font-size: 0.88rem; font-weight: 600; color: #1e293b; letter-spacing: -0.01em;">${document.title.split(' | ')[0] || 'NOVA X1 Coming Soon'}</span>
+          `;
+          topBar.appendChild(leftDiv);
+          
+          // Center: Laptop, Tab, Phone Responsive Device View Buttons
+          const centerDiv = document.createElement('div');
+          centerDiv.style.display = 'flex';
+          centerDiv.style.alignItems = 'center';
+          centerDiv.style.gap = '8px';
+          centerDiv.style.background = '#f1f5f9';
+          centerDiv.style.padding = '4px 6px';
+          centerDiv.style.borderRadius = '10px';
+          centerDiv.innerHTML = `
+            <button id="view-desktop" title="Laptop / Desktop View" style="
+              background: #ffffff; color: #0f172a; border: 1px solid transparent;
+              padding: 7px 16px; border-radius: 7px; font-size: 0.85rem; font-weight: 600;
+              cursor: pointer; display: flex; align-items: center; gap: 7px; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+              outline: none; box-shadow: 0 1px 3px rgba(0,0,0,0.08); box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              <span>Laptop</span>
+            </button>
+            <button id="view-tablet" title="Tab / Tablet View" style="
+              background: transparent; color: #64748b; border: 1px solid transparent;
+              padding: 7px 16px; border-radius: 7px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 7px; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              <span>Tab</span>
+            </button>
+            <button id="view-mobile" title="Phone / Mobile View" style="
+              background: transparent; color: #64748b; border: 1px solid transparent;
+              padding: 7px 16px; border-radius: 7px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 7px; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              <span>Phone</span>
+            </button>
+          `;
+          topBar.appendChild(centerDiv);
+          
+          // Right: Website & Download Buttons
+          const rightDiv = document.createElement('div');
+          rightDiv.style.display = 'flex';
+          rightDiv.style.alignItems = 'center';
+          rightDiv.style.gap = '12px';
+          rightDiv.innerHTML = `
+            <a href="/templates" style="
+              color: #475569;
+              background: #f8fafc;
+              border: 1px solid #e2e8f0;
+              text-decoration: none;
+              font-size: 0.84rem;
+              font-weight: 600;
+              padding: 8px 16px;
+              border-radius: 8px;
+              transition: all 0.2s ease;
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+            " onmouseover="this.style.background='#f1f5f9';this.style.color='#0f172a'" onmouseout="this.style.background='#f8fafc';this.style.color='#475569'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span>All Templates</span>
+            </a>
+            <a href="/templates?category=comming-soon" style="
+              background: linear-gradient(135deg, #2563eb, #1d4ed8);
+              color: #ffffff;
+              text-decoration: none;
+              font-size: 0.84rem;
+              font-weight: 600;
+              padding: 8px 18px;
+              border-radius: 8px;
+              box-shadow: 0 3px 10px rgba(37, 99, 235, 0.25);
+              transition: all 0.2s ease-in-out;
+              display: inline-flex;
+              align-items: center;
+              gap: 7px;
+            " onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 5px 14px rgba(37, 99, 235, 0.35)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 3px 10px rgba(37, 99, 235, 0.25)'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Download</span>
+            </a>
+          `;
+          topBar.appendChild(rightDiv);
+          body.appendChild(topBar);
+          
+          // Create Iframe Container
+          const iframeContainer = document.createElement('div');
+          iframeContainer.style.flex = '1';
+          iframeContainer.style.display = 'flex';
+          iframeContainer.style.alignItems = 'center';
+          iframeContainer.style.justifyContent = 'center';
+          iframeContainer.style.background = '#0b0f19';
+          iframeContainer.style.padding = '20px';
+          iframeContainer.style.boxSizing = 'border-box';
+          iframeContainer.style.overflow = 'hidden';
+          iframeContainer.style.transition = 'all 0.3s ease';
+          
+          const iframe = document.createElement('iframe');
+          iframe.id = 'preview-iframe';
+          iframe.src = currentUrl.toString();
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.border = 'none';
+          iframe.style.borderRadius = '8px';
+          iframe.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.5)';
+          iframe.style.background = '#ffffff';
+          iframe.style.transition = 'width 0.35s cubic-bezier(0.4, 0, 0.2, 1), height 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.35s ease, border 0.35s ease';
+          
+          iframeContainer.appendChild(iframe);
+          body.appendChild(iframeContainer);
+          
+          // Interactivity for Laptop, Tab, Phone buttons
+          const btnDesktop = body.querySelector('#view-desktop');
+          const btnTablet = body.querySelector('#view-tablet');
+          const btnMobile = body.querySelector('#view-mobile');
+          
+          let activeMode = 'desktop';
+          
+          function setView(mode) {
+            activeMode = mode;
+            [btnDesktop, btnTablet, btnMobile].forEach(btn => {
+              btn.style.background = 'transparent';
+              btn.style.color = '#64748b';
+              btn.style.boxShadow = 'none';
+              btn.style.fontWeight = '500';
+            });
+            
+            if (mode === 'desktop') {
+              btnDesktop.style.background = '#ffffff';
+              btnDesktop.style.color = '#0f172a';
+              btnDesktop.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
+              btnDesktop.style.fontWeight = '600';
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+              iframe.style.borderRadius = '8px';
+              iframe.style.border = 'none';
+            } else if (mode === 'tablet') {
+              btnTablet.style.background = '#ffffff';
+              btnTablet.style.color = '#0f172a';
+              btnTablet.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
+              btnTablet.style.fontWeight = '600';
+              iframe.style.width = '768px';
+              iframe.style.height = '1024px';
+              iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '24px';
+              iframe.style.border = '10px solid #1e293b';
+            } else if (mode === 'mobile') {
+              btnMobile.style.background = '#ffffff';
+              btnMobile.style.color = '#0f172a';
+              btnMobile.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
+              btnMobile.style.fontWeight = '600';
+              iframe.style.width = '390px';
+              iframe.style.height = '844px';
+              iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '32px';
+              iframe.style.border = '12px solid #1e293b';
+            }
+          }
+          
+          btnDesktop.addEventListener('click', () => setView('desktop'));
+          btnTablet.addEventListener('click', () => setView('tablet'));
+          btnMobile.addEventListener('click', () => setView('mobile'));
+          
+          const btns = [
+            { btn: btnDesktop, mode: 'desktop' },
+            { btn: btnTablet, mode: 'tablet' },
+            { btn: btnMobile, mode: 'mobile' }
+          ];
+          
+          btns.forEach(item => {
+            item.btn.addEventListener('mouseenter', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.color = '#1e293b';
+                item.btn.style.background = 'rgba(255, 255, 255, 0.5)';
+              }
+            });
+            item.btn.addEventListener('mouseleave', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.color = '#64748b';
+                item.btn.style.background = 'transparent';
+              }
+            });
+          });
+          
+          document.documentElement.style.visibility = 'visible';
+        });
+      }
+    })();
+  </script>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="fixed inset-0 bg-brand-black z-[1000] flex flex-col justify-center items-center font-display">
+        <div class="relative text-center max-w-md w-full px-8">
+            <div class="text-sm font-semibold tracking-[0.3em] text-zinc-500 mb-2 uppercase">NOVA MOTORS</div>
+            <h2 class="text-4xl font-bold tracking-[0.1em] text-white mb-6 uppercase">X1 INITIALIZING</h2>
+            
+            <div class="relative w-full h-[2px] bg-zinc-800 overflow-hidden mb-4">
+                <div id="loader-bar" class="absolute top-0 left-0 h-full bg-brand-electric transition-all duration-100 shadow-neon-cyan" style="width: 0%"></div>
+            </div>
+
+            <div class="flex justify-between items-center text-xs tracking-widest text-zinc-400 font-mono">
+                <span>PRELOADING SHOWROOM</span>
+                <span id="loader-percent">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cinematic Background Slow Motion Car GIF -->
+    <img id="bg-gif" src="bg-car.gif" class="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none transition-opacity duration-1000 opacity-0">
+
+    <!-- Background Slow Motion Car Canvas (for 360 drag inspection) -->
+    <canvas id="frame-canvas" class="fixed inset-0 w-full h-full object-cover z-10 pointer-events-none transition-opacity duration-1000 opacity-0"></canvas>
+    <div class="film-grain"></div>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor" class="custom-cursor hidden md:block">
+        <span id="cursor-text" class="cursor-text"></span>
+    </div>
+
+    <!-- TOP FLOATING NAV BAR -->
+    <header class="fixed top-0 left-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-gradient-to-b from-brand-black/95 to-transparent backdrop-blur-sm border-b border-white/5">
+        <div class="flex items-center gap-12">
+            <span class="text-lg font-bold tracking-[0.2em] font-mono text-white">NOVA MOTORS</span>
+            <nav class="hidden lg:flex items-center gap-8 text-xs font-semibold tracking-widest text-zinc-400 uppercase">
+                <a href="#hero" class="hover:text-brand-electric transition-colors">Home</a>
+                <a href="#design" class="hover:text-brand-electric transition-colors">Design</a>
+                <a href="#performance" class="hover:text-brand-electric transition-colors">Performance</a>
+                <a href="#technology" class="hover:text-brand-electric transition-colors">Technology</a>
+                <a href="#customizer" class="hover:text-brand-electric transition-colors">Customize</a>
+            </nav>
+        </div>
+        
+        <div class="flex items-center gap-6">
+            <button id="audio-toggle" class="text-xs flex items-center gap-2 border px-4 py-2 rounded-full border-white/10 glass-panel uppercase tracking-widest font-mono text-zinc-500">
+                SOUND OFF
+            </button>
+            <a href="#notify" class="bg-brand-electric text-black font-semibold text-xs tracking-widest uppercase px-6 py-2.5 rounded shadow-neon-cyan hover:bg-white transition-all glowing-border">
+                PRE-BOOK
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative w-full h-screen flex flex-col justify-end lg:justify-center items-start px-8 lg:px-20 pb-20 lg:pb-0 z-10 pointer-events-none">
+        <div class="max-w-2xl text-left pointer-events-auto">
+            <span class="text-xs font-semibold tracking-[0.45em] text-brand-electric uppercase mb-3 block">NOVA MOTORS PRESENTS</span>
+            <h1 class="text-6xl lg:text-8xl font-bold tracking-wider font-display uppercase mb-4 text-white">NOVA X1</h1>
+            <p class="text-lg lg:text-xl text-zinc-300 font-light tracking-wide mb-8">
+                The future has arrived. Meet the next generation of electric performance.
+            </p>
+
+            <!-- Countdown clock -->
+            <div class="glass-panel border-l-4 border-l-brand-electric px-6 py-4 mb-8 flex items-center gap-6 max-w-sm">
+                <div id="countdown-display" class="text-2xl font-mono tracking-widest text-white">118 : 07 : 42 : 19</div>
+                <div class="text-[9px] tracking-widest text-zinc-500 uppercase flex flex-col">
+                    <span>DAYS</span>
+                    <span>HOURS</span>
+                    <span>MINUTES</span>
+                    <span>SECONDS</span>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <a href="#design" class="bg-zinc-900 border border-white/10 hover:border-brand-electric text-white text-xs tracking-widest uppercase px-8 py-3 rounded glass-panel hover:text-brand-electric transition-all" data-cursor="EXPLORE">
+                    Explore X1
+                </a>
+                <a href="#notify" class="bg-brand-electric text-black text-xs tracking-widest uppercase font-semibold px-8 py-3 rounded hover:bg-white transition-all shadow-neon-cyan">
+                    GET LAUNCH UPDATES
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCROLL STORYTELLING SYSTEM -->
+    <div class="scroll-narrative-container relative w-full z-10 pointer-events-none">
+        <section id="design" class="w-full h-screen flex justify-start items-center px-8 lg:px-24">
+            <div class="glass-panel max-w-md p-8 rounded-lg pointer-events-auto border-l-2 border-brand-electric shadow-neon-cyan">
+                <span class="text-[10px] tracking-[0.3em] text-brand-electric font-semibold uppercase mb-2 block">SCENE 01 / EXTERIOR</span>
+                <h2 class="text-3xl font-bold tracking-wide uppercase mb-3 text-white">Pixel LED Headlights</h2>
+                <p class="text-sm text-zinc-400 leading-relaxed">
+                    Adaptive laser headlights engineered for futuristic high-speed mobility. Programmed dynamic matrix grids adjust visibility matching corner angles.
+                </p>
+            </div>
+        </section>
+
+        <section class="w-full h-screen flex justify-end items-center px-8 lg:px-24">
+            <div class="glass-panel max-w-md p-8 rounded-lg pointer-events-auto border-l-2 border-brand-electric">
+                <span class="text-[10px] tracking-[0.3em] text-brand-electric font-semibold uppercase mb-2 block">SCENE 02 / AERODYNAMICS</span>
+                <h2 class="text-3xl font-bold tracking-wide uppercase mb-3 text-white">Aerodynamic Silhouette</h2>
+                <p class="text-sm text-zinc-400 leading-relaxed">
+                    Designed by airflow, sculpted for high-speed performance. Flush door handle triggers and a continuous glass hood trim minimize drag coefficient to 0.19.
+                </p>
+            </div>
+        </section>
+
+        <section class="w-full h-screen flex justify-start items-center px-8 lg:px-24">
+            <div class="glass-panel max-w-md p-8 rounded-lg pointer-events-auto border-l-2 border-brand-electric">
+                <span class="text-[10px] tracking-[0.3em] text-brand-electric font-semibold uppercase mb-2 block">SCENE 03 / ALLOY WHEELS</span>
+                <h2 class="text-3xl font-bold tracking-wide uppercase mb-3 text-white">21" Performance Alloys</h2>
+                <p class="text-sm text-zinc-400 leading-relaxed">
+                    Custom multi-spoke high-tensile graphite alloys. Inner active cooling vanes direct airflow to neon calipers, reducing brake temperatures by 15%.
+                </p>
+            </div>
+        </section>
+
+        <section class="w-full h-screen flex justify-end items-center px-8 lg:px-24">
+            <div class="glass-panel max-w-md p-8 rounded-lg pointer-events-auto border-l-2 border-brand-electric">
+                <span class="text-[10px] tracking-[0.3em] text-brand-electric font-semibold uppercase mb-2 block">SCENE 04 / OLED TAILLIGHT</span>
+                <h2 class="text-3xl font-bold tracking-wide uppercase mb-3 text-white">Full-Width OLED Taillight</h2>
+                <p class="text-sm text-zinc-400 leading-relaxed">
+                    Seamless full-width rear light bar utilizing flexible organo-LED elements, responding dynamically to acceleration, drag modes, and vehicle hazards.
+                </p>
+            </div>
+        </section>
+
+        <section class="w-full h-screen flex justify-start items-center px-8 lg:px-24">
+            <div class="glass-panel max-w-md p-8 rounded-lg pointer-events-auto border-l-2 border-brand-electric">
+                <span class="text-[10px] tracking-[0.3em] text-brand-electric font-semibold uppercase mb-2 block">SCENE 05 / COCKPIT</span>
+                <h2 class="text-3xl font-bold tracking-wide uppercase mb-3 text-white">Cockpit. Reimagine.</h2>
+                <p class="text-sm text-zinc-400 leading-relaxed">
+                    Inside the digital cockpit. A panoramic curved OLED console surrounds the driver, backed by spatial acoustic audio arrays and ambient lights.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- PERFORMANCE SECTION -->
+    <section id="performance" class="relative w-full h-[150vh] bg-transparent z-10 flex flex-col justify-center items-center text-center px-8">
+        <div class="sticky top-0 h-screen w-full flex flex-col justify-center items-center pointer-events-none">
+            <div class="pointer-events-auto">
+                <span class="text-xs font-semibold tracking-[0.45em] text-brand-electric uppercase mb-2">POWER WITHOUT COMPROMISE</span>
+                <h2 class="text-5xl lg:text-7xl font-bold tracking-wider font-display uppercase mb-12">PERFORMANCE METRICS</h2>
+                
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl w-full">
+                    <div class="glass-panel p-6 rounded-lg border-b border-brand-electric/20 hover:border-brand-electric/50">
+                        <div class="text-4xl lg:text-5xl font-bold tracking-widest text-brand-electric font-mono mb-2">3.2 S</div>
+                        <div class="text-[10px] tracking-widest text-zinc-500 uppercase">0–100 KM/H SPEED</div>
+                    </div>
+                    <div class="glass-panel p-6 rounded-lg border-b border-brand-electric/20 hover:border-brand-electric/50">
+                        <div class="text-4xl lg:text-5xl font-bold tracking-widest text-white font-mono mb-2">650 KM</div>
+                        <div class="text-[10px] tracking-widest text-zinc-500 uppercase">WLTP DRIVE RANGE</div>
+                    </div>
+                    <div class="glass-panel p-6 rounded-lg border-b border-brand-electric/20 hover:border-brand-electric/50">
+                        <div class="text-4xl lg:text-5xl font-bold tracking-widest text-white font-mono mb-2">480 HP</div>
+                        <div class="text-[10px] tracking-widest text-zinc-500 uppercase">TOTAL DRIVE POWER</div>
+                    </div>
+                    <div class="glass-panel p-6 rounded-lg border-b border-brand-electric/20 hover:border-brand-electric/50">
+                        <div class="text-4xl lg:text-5xl font-bold tracking-widest text-white font-mono mb-2">720 NM</div>
+                        <div class="text-[10px] tracking-widest text-zinc-500 uppercase">INSTANT TORQUE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL ARCHITECTURE -->
+    <section id="technology" class="relative w-full h-[150vh] bg-transparent z-10 flex flex-col justify-center items-start px-8 lg:px-24">
+        <div class="sticky top-0 h-screen max-w-md flex flex-col justify-center items-start pointer-events-none">
+            <div class="pointer-events-auto">
+                <span class="text-xs font-semibold tracking-[0.45em] text-brand-electric uppercase mb-2">ENGINEERING AESTHETICS</span>
+                <h2 class="text-5xl font-bold tracking-wide uppercase mb-6">800V ARCHITECTURE</h2>
+                <p class="text-zinc-400 leading-relaxed mb-8">
+                    The core chassis houses high-density battery arrays coupled to dual front/rear motors. Ultrafast 800V support feeds up to 80% charge in less than 15 minutes.
+                </p>
+
+                <div class="flex flex-col gap-4 w-full">
+                    <div class="flex items-center gap-4 text-xs font-semibold tracking-widest uppercase">
+                        <span class="w-2 h-2 rounded-full bg-brand-neonGreen shadow-neon-cyan"></span>
+                        <span>Active Heat Management</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-xs font-semibold tracking-widest uppercase">
+                        <span class="w-2 h-2 rounded-full bg-brand-neonGreen shadow-neon-cyan"></span>
+                        <span>Carbon Fiber Frame</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-xs font-semibold tracking-widest uppercase">
+                        <span class="w-2 h-2 rounded-full bg-brand-neonGreen shadow-neon-cyan"></span>
+                        <span>Dual Motor AWD Vectoring</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLOR CUSTOMIZER -->
+    <section id="customizer" class="relative w-full h-screen bg-transparent z-10 flex flex-col justify-between items-center py-20 px-8">
+        <div class="text-center">
+            <span class="text-xs font-semibold tracking-[0.45em] text-brand-electric uppercase mb-2 block">DYNAMICS</span>
+            <h2 class="text-4xl lg:text-5xl font-bold tracking-wider font-display uppercase text-white">CHOOSE YOUR X1</h2>
+        </div>
+
+        <div id="paint-info-card" class="glass-panel border-t-2 border-brand-electric/30 p-6 rounded-lg max-w-sm w-full text-center transition-all shadow-neon-blue">
+            <h3 id="paint-name" class="text-lg font-bold tracking-widest uppercase mb-1 text-white">Electric Blue Paint</h3>
+            <p class="text-xs text-zinc-400 mb-4">
+                Premium metallic clearcoat formulation showing intense light dispersion curves.
+            </p>
+            <div class="text-xs font-mono font-bold tracking-widest text-brand-electric text-glow-cyan">
+                ACCENT GLOW ACTIVE
+            </div>
+        </div>
+
+        <div class="flex gap-6 pointer-events-auto">
+            <button class="color-swatch w-10 h-10 rounded-full border-2 border-brand-electric scale-125 transition-transform" data-color="blue" style="background-color: #0055ff;" title="Electric Blue"></button>
+            <button class="color-swatch w-10 h-10 rounded-full border-2 border-transparent transition-transform" data-color="black" style="background-color: #0f0f10;" title="Midnight Black"></button>
+            <button class="color-swatch w-10 h-10 rounded-full border-2 border-transparent transition-transform" data-color="silver" style="background-color: #8e96a5;" title="Arctic Silver"></button>
+            <button class="color-swatch w-10 h-10 rounded-full border-2 border-transparent transition-transform" data-color="white" style="background-color: #f0f0f5;" title="Pearl White"></button>
+            <button class="color-swatch w-10 h-10 rounded-full border-2 border-transparent transition-transform" data-color="red" style="background-color: #cc1133;" title="Crimson Red"></button>
+        </div>
+    </section>
+
+    <!-- 360 INTERACTIVE VIEW -->
+    <section class="relative w-full h-screen bg-transparent z-10 flex flex-col justify-between items-center py-20 px-8">
+        <div class="text-center">
+            <span class="text-xs font-semibold tracking-[0.45em] text-brand-electric uppercase mb-2 block">INTERACTION MODEL</span>
+            <h2 class="text-4xl lg:text-5xl font-bold tracking-wider font-display uppercase text-white">SEE EVERY ANGLE</h2>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4 pointer-events-auto z-20">
+            <button class="hotspot-btn glass-panel text-xs tracking-widest uppercase font-mono px-4 py-2 border border-white/10 hover:border-brand-electric text-zinc-400 hover:text-white" data-part="headlight">Headlights</button>
+            <button class="hotspot-btn glass-panel text-xs tracking-widest uppercase font-mono px-4 py-2 border border-white/10 hover:border-brand-electric text-zinc-400 hover:text-white" data-part="aerodynamics">Aerodynamics</button>
+            <button class="hotspot-btn glass-panel text-xs tracking-widest uppercase font-mono px-4 py-2 border border-white/10 hover:border-brand-electric text-zinc-400 hover:text-white" data-part="wheels">Performance Wheel</button>
+            <button class="hotspot-btn glass-panel text-xs tracking-widest uppercase font-mono px-4 py-2 border border-white/10 hover:border-brand-electric text-zinc-400 hover:text-white" data-part="rear">Taillight</button>
+        </div>
+
+        <div class="text-center z-20">
+            <button id="toggle-360" class="font-semibold text-xs tracking-widest uppercase px-8 py-3.5 rounded transition-all border border-white/10 text-white hover:border-brand-electric pointer-events-auto">
+                ENABLE 360° DRAG ORBIT
+            </button>
+            <p id="toggle-360-hint" class="text-[10px] text-zinc-500 tracking-widest mt-2 uppercase">
+                Unlock frame swipe interface
+            </p>
+        </div>
+    </section>
+
+    <!-- EMAIL NOTIFICATION & EVENT PREBOOK -->
+    <section id="notify" class="relative w-full h-screen bg-transparent z-10 flex flex-col justify-center items-center text-center px-8 border-t border-white/5">
+        <div class="max-w-xl w-full">
+            <span class="text-xs font-semibold tracking-[0.45em] text-brand-electric uppercase mb-3 block">BE FIRST TO KNOW</span>
+            <h2 class="text-5xl lg:text-7xl font-bold tracking-wider font-display uppercase mb-4 text-white">THE REVEAL</h2>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-xs font-mono tracking-widest uppercase text-zinc-400 mb-8">
+                <span>15 DECEMBER 2026</span>
+                <span class="hidden md:inline">•</span>
+                <span>7:00 PM IST</span>
+                <span className="hidden md:inline">•</span>
+                <span>GLOBAL DIGITAL PREMIERE</span>
+            </div>
+
+            <div id="email-form-container" class="w-full">
+                <form id="email-signup-form" class="glass-panel p-2 rounded flex flex-col sm:flex-row gap-2 border border-white/10 w-full mb-6 pointer-events-auto">
+                    <input 
+                        required
+                        type="email" 
+                        id="email-input"
+                        placeholder="ENTER YOUR EMAIL FOR REVEAL ACCESS"
+                        class="bg-transparent border-0 outline-none flex-grow text-xs tracking-widest font-mono text-white p-3 uppercase placeholder:text-zinc-600 focus:placeholder:text-zinc-400"
+                    />
+                    <button 
+                        type="submit"
+                        class="bg-brand-electric text-black font-bold text-xs tracking-widest uppercase px-8 py-3 rounded hover:bg-white transition-all shadow-neon-cyan"
+                    >
+                        NOTIFY ME
+                    </button>
+                </form>
+            </div>
+            <div id="email-success-message" class="hidden glass-panel p-6 rounded border border-brand-neonGreen/30 shadow-neon-cyan mb-8 text-brand-neonGreen text-xs tracking-[0.2em] font-semibold uppercase">
+                🎉 YOU'RE ON THE LIST. PRE-BOOK CONFIRMED.
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4 pointer-events-auto">
+                <button id="calendar-btn" class="bg-zinc-900 border border-white/10 hover:border-brand-electric text-white text-xs tracking-widest uppercase px-6 py-3 rounded glass-panel hover:text-brand-electric transition-all">
+                    <i class="fa-regular fa-calendar-plus mr-2"></i> ADD TO CALENDAR
+                </button>
+                <a href="#hero" id="return-btn" class="bg-zinc-900 border border-white/10 hover:border-brand-electric text-white text-xs tracking-widest uppercase px-6 py-3 rounded glass-panel hover:text-brand-electric transition-all">
+                    RETURN TO OVERVIEW
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Script -->
+    <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+/* ================================================================
+   ELENA MARLOWE — EDITORIAL CSS DESIGN SYSTEM
+   Template 2: Creative Director & Brand Strategist
+   Version: 1.0.0
+   Scope: All styles are namespaced under .em-portfolio
+          to prevent conflicts in multi-template platforms.
+   ================================================================ */
+
+/* ── Minimal cross-browser resets (non-conflicting) ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Scoped Design Tokens (under .em-portfolio, not :root) ── */
+/* This prevents CSS variable collisions when multiple templates
+   share a document or are loaded in the same browsing context. */
+.em-portfolio {
+  /* Color Palette */
+  --em-ivory: #FAF8F4;
+  --em-ivory-warm: #F5F1EA;
+  --em-ivory-deep: #EDE8DE;
+  --em-white: #FFFFFF;
+  --em-charcoal: #1C1C1C;
+  --em-charcoal-light: #2E2E2E;
+  --em-charcoal-muted: #4A4A4A;
+  --em-gray-mid: #7A7A7A;
+  --em-gray-light: #AEAEAE;
+  --em-gray-border: #E0DBD3;
+  --em-gray-border-light: #EEEAE4;
+  --em-burgundy: #7B2D3E;
+  --em-burgundy-light: #9A3D52;
+  --em-burgundy-pale: #F5ECEE;
+  --em-gold: #B8924A;
+  --em-gold-light: #D4AA6A;
+  --em-gold-pale: #F7F2E8;
+
+  /* Typography */
+  --em-font-serif: 'Playfair Display', Georgia, serif;
+  --em-font-display: 'Cormorant Garamond', Georgia, serif;
+  --em-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Spacing */
+  --em-space-xs: 0.5rem;
+  --em-space-sm: 1rem;
+  --em-space-md: 2rem;
+  --em-space-lg: 4rem;
+  --em-space-xl: 6rem;
+  --em-space-2xl: 10rem;
+
+  /* Layout */
+  --em-max-width: 1400px;
+  --em-container-padding: clamp(1.5rem, 5vw, 6rem);
+
+  /* Transitions */
+  --em-transition-fast: 0.2s ease;
+  --em-transition-mid: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --em-transition-slow: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ── Root Scope: Base styles isolated to this template ── */
+.em-portfolio {
+  font-family: var(--em-font-sans);
+  background-color: var(--em-ivory);
+  color: var(--em-charcoal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* Ensure template scroll is self-contained */
+  position: relative;
+}
+
+.em-portfolio main {
+  flex: 1;
+}
+
+/* Smooth scroll only within this template */
+.em-portfolio {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar scoped to template */
+.em-portfolio ::-webkit-scrollbar {
+  width: 4px;
+}
+.em-portfolio ::-webkit-scrollbar-track {
+  background: var(--em-ivory);
+}
+.em-portfolio ::-webkit-scrollbar-thumb {
+  background: var(--em-gray-light);
+  border-radius: 2px;
+}
+
+/* Selection color scoped */
+.em-portfolio ::selection {
+  background: var(--em-burgundy);
+  color: var(--em-white);
+}
+
+/* ── Typography Scale ── */
+.em-portfolio .em-display-xl {
+  font-family: var(--em-font-serif);
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.em-portfolio .em-display-lg {
+  font-family: var(--em-font-serif);
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.em-portfolio .em-display-md {
+  font-family: var(--em-font-serif);
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.em-portfolio .em-display-sm {
+  font-family: var(--em-font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  font-style: italic;
+}
+
+.em-portfolio .section-label {
+  font-family: var(--em-font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--em-gray-mid);
+}
+
+.em-portfolio .body-lg {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.75;
+  color: var(--em-charcoal-muted);
+}
+
+.em-portfolio .body-md {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--em-charcoal-muted);
+}
+
+.em-portfolio .body-sm {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--em-gray-mid);
+}
+
+/* ── Layout Helpers ── */
+.em-portfolio .container {
+  max-width: var(--em-max-width);
+  margin: 0 auto;
+  padding: 0 var(--em-container-padding);
+}
+
+.em-portfolio .section-padding {
+  padding: var(--em-space-xl) 0;
+}
+
+/* ── Scroll Animations ── */
+.em-portfolio .fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.em-portfolio .fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.em-portfolio .fade-in {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.em-portfolio .fade-in.visible {
+  opacity: 1;
+}
+
+.em-portfolio .delay-100 { transition-delay: 0.1s; }
+.em-portfolio .delay-200 { transition-delay: 0.2s; }
+.em-portfolio .delay-300 { transition-delay: 0.3s; }
+.em-portfolio .delay-400 { transition-delay: 0.4s; }
+.em-portfolio .delay-500 { transition-delay: 0.5s; }
+.em-portfolio .delay-600 { transition-delay: 0.6s; }
+
+/* ── Dividers ── */
+.em-portfolio .divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--em-gray-border);
+}
+
+/* ── Buttons ── */
+.em-portfolio .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: var(--em-charcoal);
+  color: var(--em-ivory);
+  font-family: var(--em-font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--em-charcoal);
+  cursor: pointer;
+  transition: background var(--em-transition-mid), color var(--em-transition-mid), border-color var(--em-transition-mid);
+}
+
+.em-portfolio .btn-primary:hover {
+  background: var(--em-burgundy);
+  border-color: var(--em-burgundy);
+  color: var(--em-white);
+}
+
+.em-portfolio .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.75rem;
+  background: transparent;
+  color: var(--em-charcoal);
+  font-family: var(--em-font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--em-charcoal);
+  cursor: pointer;
+  transition: background var(--em-transition-mid), color var(--em-transition-mid);
+}
+
+.em-portfolio .btn-outline:hover {
+  background: var(--em-charcoal);
+  color: var(--em-ivory);
+}
+
+.em-portfolio .btn-nav-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  background: transparent;
+  color: var(--em-charcoal);
+  font-family: var(--em-font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--em-charcoal);
+  cursor: pointer;
+  transition: background var(--em-transition-fast), color var(--em-transition-fast);
+}
+
+.em-portfolio .btn-nav-outline:hover {
+  background: var(--em-charcoal);
+  color: var(--em-ivory);
+}
+
+/* ── Underline Link Effect ── */
+.em-portfolio .link-underline {
+  position: relative;
+  text-decoration: none;
+  color: var(--em-charcoal);
+}
+
+.em-portfolio .link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--em-charcoal);
+  transition: width var(--em-transition-mid);
+}
+
+.em-portfolio .link-underline:hover::after {
+  width: 100%;
+}
+
+/* ── Image Hover ── */
+.em-portfolio .img-hover-scale {
+  overflow: hidden;
+}
+
+.em-portfolio .img-hover-scale img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.em-portfolio .img-hover-scale:hover img {
+  transform: scale(1.05);
+}
+
+/* ── Utility ── */
+.em-portfolio .italic { font-style: italic; }
+.em-portfolio .text-burgundy { color: var(--em-burgundy); }
+.em-portfolio .text-gold { color: var(--em-gold); }
+.em-portfolio .text-muted { color: var(--em-gray-mid); }
+.em-portfolio .text-charcoal { color: var(--em-charcoal); }

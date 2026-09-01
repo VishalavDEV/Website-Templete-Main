@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suara Ulu | Ultra-Luxury Wellness & Spa Resort — Uluwatu, Bali</title>
+  <meta name="description" content="Perched 100 meters above the Indian Ocean on the sacred cliffs of Uluwatu. Suara Ulu is a world-class sanctuary of organic architecture, Ayurvedic healing, and Two Michelin Key gastronomy.">
+
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans / Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@200;300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom Luxury Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       1. STICKY LUXURY NAVIGATION
+       ========================================== -->
+  <header class="su-header" id="suHeader">
+    <div class="luxury-container su-nav-wrapper">
+      
+      <!-- Brand & Monogram -->
+      <a href="#home" class="su-brand">
+        <div class="su-monogram pulsing-halo">
+          <span>SU</span>
+        </div>
+        <div class="su-brand-text">
+          <span class="brand-name">SUARA ULU</span>
+          <span class="brand-sub">Sanctuary & Spa • Uluwatu, Bali</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links with Dropdowns -->
+      <nav class="su-nav-links">
+        <a href="#home" class="su-nav-link">Resort</a>
+
+        <div class="su-nav-item">
+          <button class="su-nav-link" onclick="location.href='#accommodations'">
+            Stay ▾
+          </button>
+          <div class="su-dropdown glass-panel">
+            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-gold); font-weight: 600;">
+              Featured Clifftop Villas
+            </div>
+            <a href="#accommodations" class="su-dropdown-card">
+              <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=150&q=80" alt="Royal Cliffside">
+              <div>
+                <div style="font-weight: 600; font-size: 0.88rem;">The Royal Cliffside Residence</div>
+                <div style="font-size: 0.74rem; color: var(--text-muted);">380 m² • 22m Infinity Pool • Ocean Horizon</div>
+              </div>
+            </a>
+            <a href="#accommodations" class="su-dropdown-card">
+              <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=150&q=80" alt="Oceanfront Sunset">
+              <div>
+                <div style="font-weight: 600; font-size: 0.88rem;">Ocean Sunset Sanctuary Villa</div>
+                <div style="font-size: 0.74rem; color: var(--text-muted);">260 m² • Sunset Vantage • Saltwater Pool</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="su-nav-item">
+          <button class="su-nav-link" onclick="location.href='#dining'">
+            Dining ▾
+          </button>
+          <div class="su-dropdown glass-panel">
+            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-gold); font-weight: 600;">
+              Haute Gastronomy
+            </div>
+            <a href="#dining" class="su-dropdown-card">
+              <div style="font-size: 1.2rem; color: var(--accent-gold);">✦</div>
+              <div>
+                <div style="font-weight: 600; font-size: 0.88rem;">Amarta Cliff Lounge & Degustation</div>
+                <div style="font-size: 0.74rem; color: var(--text-muted);">Two Michelin Key • Modern Coastal Indonesian</div>
+              </div>
+            </a>
+            <a href="#dining" class="su-dropdown-card">
+              <div style="font-size: 1.2rem; color: var(--accent-gold);">✦</div>
+              <div>
+                <div style="font-weight: 600; font-size: 0.88rem;">The Subterranean Wine Cave</div>
+                <div style="font-size: 0.74rem; color: var(--text-muted);">2,400 Grand Crus • Sommelier Degustation</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a href="#wellness" class="su-nav-link">Sanctuary Spa</a>
+        <a href="#gallery" class="su-nav-link">Gallery</a>
+        <a href="#acclaim" class="su-nav-link">Acclaim</a>
+      </nav>
+
+      <!-- Right Controls: Currency, Theme & Book CTA -->
+      <div class="su-controls">
+        <select id="currencySelect" class="su-select">
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="IDR">IDR (Rp)</option>
+        </select>
+
+        <button id="themeToggleBtn" class="su-theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
+          🌙
+        </button>
+
+        <button onclick="openBookingModal()" class="btn-gold" style="padding: 0.65rem 1.4rem; font-size: 0.76rem;">
+          Book Your Stay
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================
+       2. CINEMATIC HERO SECTION
+       ========================================== -->
+  <section class="su-hero" id="home">
+    <div class="su-hero-bg"></div>
+    <div class="su-hero-overlay"></div>
+
+    <div class="luxury-container su-hero-content">
+      <div class="section-tag" style="background: rgba(13,12,10,0.65); backdrop-filter: blur(12px); border-color: rgba(216,183,141,0.4); color: var(--accent-gold-light);">
+        <span>✦ Uluwatu Sacred Cliffs • Bali, Indonesia</span>
+      </div>
+
+      <h1 class="su-hero-title">
+        Experience in the <span class="italic-serif" style="color: var(--accent-gold); font-weight: 400;">Heart of Paradise</span>
+      </h1>
+
+      <p style="font-size: clamp(1rem, 1.3vw, 1.25rem); color: rgba(255,255,255,0.88); max-width: 720px; line-height: 1.7; font-weight: 300; margin: 0 auto 2.5rem auto; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+        An ultra-luxury clifftop sanctuary blending Vedic Ayurvedic rejuvenation, 
+        Michelin-starred coastal gastronomy, and raw organic architecture suspended over the Indian Ocean.
+      </p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+        <span style="font-size: 0.78rem; color: var(--accent-gold-light); background: rgba(0,0,0,0.5); padding: 0.4rem 1rem; border-radius: 9999px; border: 1px solid rgba(216,183,141,0.25);">✦ Condé Nast Gold List 2025</span>
+        <span style="font-size: 0.78rem; color: var(--accent-gold-light); background: rgba(0,0,0,0.5); padding: 0.4rem 1rem; border-radius: 9999px; border: 1px solid rgba(216,183,141,0.25);">✦ Three Michelin Keys</span>
+        <span style="font-size: 0.78rem; color: var(--accent-gold-light); background: rgba(0,0,0,0.5); padding: 0.4rem 1rem; border-radius: 9999px; border: 1px solid rgba(216,183,141,0.25);">✦ Private Helipad & Butler Desk</span>
+      </div>
+    </div>
+
+    <!-- Floating Booking Engine Bar -->
+    <div class="luxury-container" style="position: relative; z-index: 20; max-width: 1160px; margin-top: auto;">
+      <div class="su-booking-bar glass-panel">
+        
+        <div class="booking-field">
+          <label>📅 Check-In</label>
+          <input type="date" id="heroCheckIn" value="2026-09-15">
+        </div>
+
+        <div class="booking-field">
+          <label>📅 Check-Out</label>
+          <input type="date" id="heroCheckOut" value="2026-09-19">
+        </div>
+
+        <div class="booking-field">
+          <label>🧭 Sanctuary Category</label>
+          <select id="heroCategory">
+            <option value="all">All Villas & Suites</option>
+            <option value="Signature Villa">Signature Cliffside Villas</option>
+            <option value="Sanctuary Suite">Ayurvedic Sanctuary Suites</option>
+            <option value="Waterfront Villa">Azure Waterfront Villas</option>
+          </select>
+        </div>
+
+        <div class="booking-field">
+          <label>👥 Guests & Suites</label>
+          <select id="heroGuests">
+            <option value="2">2 Adults, 1 Suite</option>
+            <option value="3">3 Adults, 1 Suite</option>
+            <option value="4">4 Adults, 2 Suites</option>
+            <option value="6">6+ Guests, Presidential</option>
+          </select>
+        </div>
+
+        <div style="display: flex; align-items: flex-end;">
+          <button onclick="openBookingModal()" class="btn-gold" style="width: 100%; height: 42px; border-radius: 10px; padding: 0 1.5rem;">
+            Check Availability
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       3. PHILOSOPHY & MONOGRAM SECTION
+       ========================================== -->
+  <section style="padding: 7rem 0 5rem 0; background: var(--bg-secondary); border-top: 1px solid var(--border-luxury); border-bottom: 1px solid var(--border-luxury); text-align: center;">
+    <div class="luxury-container" style="max-width: 1020px;">
+      
+      <div class="su-monogram pulsing-halo" style="width: 88px; height: 88px; margin: 0 auto 2rem auto; border-width: 2px;">
+        <span style="font-size: 2.2rem;">SU</span>
+      </div>
+
+      <div class="section-tag">
+        <span>✦ Sanctuary Philosophy</span>
+      </div>
+
+      <h2 style="font-size: clamp(1.8rem, 3.5vw, 3rem); line-height: 1.35; font-weight: 300; color: var(--text-primary); margin: 1.2rem auto 2rem auto; max-width: 860px;">
+        “Staying at the <span class="italic-serif" style="color: var(--accent-gold);">Suara Ulu Wellness & Spa Hotel</span> means savoring every moment. Unwind, seek inspiration, and be captivated.”
+      </h2>
+
+      <!-- Three Luxury Pillars -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3.5rem; text-align: left;">
+        
+        <div class="glass-panel card-elevation-3d" style="padding: 2.2rem 1.8rem; border-radius: 20px; background: var(--bg-card);">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: var(--badge-bg); display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 1.2rem;">
+            ⛰️
+          </div>
+          <h3 style="font-size: 1.45rem; margin-bottom: 0.6rem; color: var(--text-primary);">Sacred Ocean Cliffs</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); lineHeight: 1.7;">
+            Elevated 100 meters above Uluwatu’s thunderous surf on ancient limestone cliffs, commanding unbroken 270-degree Indian Ocean panoramas and private beach trails.
+          </p>
+        </div>
+
+        <div class="glass-panel card-elevation-3d" style="padding: 2.2rem 1.8rem; border-radius: 20px; background: var(--bg-card);">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: var(--badge-bg); display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 1.2rem;">
+            🌊
+          </div>
+          <h3 style="font-size: 1.45rem; margin-bottom: 0.6rem; color: var(--text-primary);">Ayurveda & Sound Floatation</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); lineHeight: 1.7;">
+            Rooted in Vedic healing traditions. Warm mineral saltwater acoustic floatation chambers, third-eye Shirodhara oil flows, and custom dosha rebalancing elixirs.
+          </p>
+        </div>
+
+        <div class="glass-panel card-elevation-3d" style="padding: 2.2rem 1.8rem; border-radius: 20px; background: var(--bg-card);">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: var(--badge-bg); display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 1.2rem;">
+            🌿
+          </div>
+          <h3 style="font-size: 1.45rem; margin-bottom: 0.6rem; color: var(--text-primary);">Organic Architecture</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); lineHeight: 1.7;">
+            Sculpted in harmony with Bali’s sacred geology. Hand-chiseled paras kelating stone, curved ironwood timbers, and sweeping bamboo arches that welcome natural breezes.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       4. ACCOMMODATIONS SHOWCASE
+       ========================================== -->
+  <section style="padding: 7rem 0; background: var(--bg-primary);" id="accommodations">
+    <div class="luxury-container">
+      
+      <div style="text-align: center; max-width: 780px; margin: 0 auto 3rem auto;">
+        <div class="section-tag">
+          <span>✦ Curated Living Sanctuaries</span>
+        </div>
+
+        <h2 style="font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.2; font-weight: 300; color: var(--text-primary); margin: 0.6rem 0 1rem 0;">
+          Staying at <span class="italic-serif" style="color: var(--accent-gold);">Suara Ulu</span>
+        </h2>
+
+        <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.7;">
+          Every villa and suite is custom-engineered with organic local limestone, private infinity pools, and expansive ocean balconies overlooking Bali's most revered cliffscapes.
+        </p>
+
+        <!-- Filter Tabs -->
+        <div style="display: inline-flex; flex-wrap: wrap; gap: 0.5rem; background: var(--bg-secondary); padding: 0.4rem; border-radius: 9999px; border: 1px solid var(--border-luxury); margin-top: 2rem;">
+          <button class="filter-tab-btn" onclick="setCategoryFilter('all', this)" style="background: var(--accent-gold); color: #0D0C0A; border: none; border-radius: 9999px; padding: 0.6rem 1.4rem; font-size: 0.82rem; font-weight: 600; cursor: pointer;">
+            All Sanctuaries
+          </button>
+          <button class="filter-tab-btn" onclick="setCategoryFilter('Signature Villa', this)" style="background: transparent; color: var(--text-primary); border: none; border-radius: 9999px; padding: 0.6rem 1.4rem; font-size: 0.82rem; font-weight: 500; cursor: pointer;">
+            Signature Villas
+          </button>
+          <button class="filter-tab-btn" onclick="setCategoryFilter('Sanctuary Suite', this)" style="background: transparent; color: var(--text-primary); border: none; border-radius: 9999px; padding: 0.6rem 1.4rem; font-size: 0.82rem; font-weight: 500; cursor: pointer;">
+            Sanctuary Suites
+          </button>
+          <button class="filter-tab-btn" onclick="setCategoryFilter('Waterfront Villa', this)" style="background: transparent; color: var(--text-primary); border: none; border-radius: 9999px; padding: 0.6rem 1.4rem; font-size: 0.82rem; font-weight: 500; cursor: pointer;">
+            Waterfront Villas
+          </button>
+        </div>
+      </div>
+
+      <!-- Suites Grid -->
+      <div id="suitesGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 2.5rem;">
+        <!-- Populated via script.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       5. HAUTE GASTRONOMY
+       ========================================== -->
+  <section style="padding: 7rem 0; background: var(--bg-secondary); border-top: 1px solid var(--border-luxury); border-bottom: 1px solid var(--border-luxury);" id="dining">
+    <div class="luxury-container">
+      
+      <div style="text-align: center; max-width: 820px; margin: 0 auto 3.5rem auto;">
+        <div class="section-tag">
+          <span>✦ Haute Gastronomy</span>
+        </div>
+
+        <h2 style="font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.2; font-weight: 300; color: var(--text-primary); margin: 0.6rem 0 1rem 0;">
+          World Class <span class="italic-serif" style="color: var(--accent-gold);">Dining & Degustation</span>
+        </h2>
+
+        <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.7;">
+          Awarded Two Michelin Keys, celebrating the coastal terroir of the Indonesian archipelago through woodfire alchemy, wild foraging, and world-class sommelier wine vaults.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 2.5rem;">
+        
+        <!-- Dining 1 -->
+        <div class="glass-panel card-elevation-3d sheen-container" style="border-radius: 28px; background: var(--bg-card); overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--border-luxury);">
+          <div style="position: relative; height: 270px; margin: 0.85rem 0.85rem 0 0.85rem; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=85" alt="Amarta Cliff Lounge" class="arch-top" style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(13,12,10,0.8); backdrop-filter: blur(10px); color: var(--accent-gold); padding: 0.35rem 0.9rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 600;">Two Michelin Keys</div>
+            <div style="position: absolute; bottom: 1rem; right: 1rem; background: rgba(13,12,10,0.8); color: #FFF; padding: 0.3rem 0.8rem; border-radius: 9999px; font-size: 0.76rem;">$$$$</div>
+          </div>
+          <div style="padding: 1.6rem; display: flex; flex-direction: column; flex-grow: 1;">
+            <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text-primary); font-family: var(--font-serif);">Amarta Cliff Lounge & Degustation</h3>
+            <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.2rem;">
+              Cantilevered 90 meters above crashing surf. Showcases modern Indonesian haute gastronomy with wild-foraged coastal aromatics and bespoke wine pairings.
+            </p>
+            <div style="padding: 0.9rem 1rem; background: var(--bg-secondary); border-radius: 14px; margin-bottom: 1.2rem; font-size: 0.78rem; color: var(--text-primary);">
+              <div>🕒 <strong>Hours:</strong> Dinner: 18:00 - 23:00</div>
+              <div>👔 <strong>Dress Code:</strong> Smart Elegant / Resort Chic</div>
+            </div>
+            <button onclick="openDiningModal('Amarta Cliff Lounge & Degustation')" class="btn-gold" style="width: 100%; padding: 0.75rem;">
+              Reserve a Table
+            </button>
+          </div>
+        </div>
+
+        <!-- Dining 2 -->
+        <div class="glass-panel card-elevation-3d sheen-container" style="border-radius: 28px; background: var(--bg-card); overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--border-luxury);">
+          <div style="position: relative; height: 270px; margin: 0.85rem 0.85rem 0 0.85rem; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85" alt="Tide & Ember" class="arch-top" style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(13,12,10,0.8); backdrop-filter: blur(10px); color: var(--accent-gold); padding: 0.35rem 0.9rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 600;">Oceanfront Woodfired</div>
+            <div style="position: absolute; bottom: 1rem; right: 1rem; background: rgba(13,12,10,0.8); color: #FFF; padding: 0.3rem 0.8rem; border-radius: 9999px; font-size: 0.76rem;">$$$</div>
+          </div>
+          <div style="padding: 1.6rem; display: flex; flex-direction: column; flex-grow: 1;">
+            <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text-primary); font-family: var(--font-serif);">Tide & Ember Open-Fire Grill</h3>
+            <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.2rem;">
+              Open wood-fired hearths burning dried rambutan wood beside the saltwater pool. Featuring fresh coral trout, Spanish octopus, and dry-aged cuts.
+            </p>
+            <div style="padding: 0.9rem 1rem; background: var(--bg-secondary); border-radius: 14px; margin-bottom: 1.2rem; font-size: 0.78rem; color: var(--text-primary);">
+              <div>🕒 <strong>Hours:</strong> Sunset Grill: 17:30 - 22:30</div>
+              <div>👔 <strong>Dress Code:</strong> Resort Casual</div>
+            </div>
+            <button onclick="openDiningModal('Tide & Ember Open-Fire Grill')" class="btn-gold" style="width: 100%; padding: 0.75rem;">
+              Reserve a Table
+            </button>
+          </div>
+        </div>
+
+        <!-- Dining 3 -->
+        <div class="glass-panel card-elevation-3d sheen-container" style="border-radius: 28px; background: var(--bg-card); overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--border-luxury);">
+          <div style="position: relative; height: 270px; margin: 0.85rem 0.85rem 0 0.85rem; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=85" alt="Wine Cave" class="arch-top" style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(13,12,10,0.8); backdrop-filter: blur(10px); color: var(--accent-gold); padding: 0.35rem 0.9rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 600;">Subterranean Vault</div>
+            <div style="position: absolute; bottom: 1rem; right: 1rem; background: rgba(13,12,10,0.8); color: #FFF; padding: 0.3rem 0.8rem; border-radius: 9999px; font-size: 0.76rem;">$$$$$</div>
+          </div>
+          <div style="padding: 1.6rem; display: flex; flex-direction: column; flex-grow: 1;">
+            <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text-primary); font-family: var(--font-serif);">The Subterranean Cliff Wine Cave</h3>
+            <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.2rem;">
+              Carved directly into natural limestone bedrock. Housing 2,400 rare vintage bottles with an exclusive 12-guest degustation hosted by our Master Sommelier.
+            </p>
+            <div style="padding: 0.9rem 1rem; background: var(--bg-secondary); border-radius: 14px; margin-bottom: 1.2rem; font-size: 0.78rem; color: var(--text-primary);">
+              <div>🕒 <strong>Hours:</strong> Private Bookings Only (19:00 Sitting)</div>
+              <div>👔 <strong>Dress Code:</strong> Formal Luxury</div>
+            </div>
+            <button onclick="openDiningModal('The Subterranean Cliff Wine Cave')" class="btn-gold" style="width: 100%; padding: 0.75rem;">
+              Reserve a Table
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       6. HOLISTIC SANCTUARY & SPA
+       ========================================== -->
+  <section style="padding: 7rem 0; background: var(--bg-primary);" id="wellness">
+    <div class="luxury-container">
+      
+      <div style="text-align: center; max-width: 820px; margin: 0 auto 3.5rem auto;">
+        <div class="section-tag">
+          <span>✦ Holistic Sanctuary</span>
+        </div>
+
+        <h2 style="font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.2; font-weight: 300; color: var(--text-primary); margin: 0.6rem 0 1rem 0;">
+          Vedic Ayurveda & <span class="italic-serif" style="color: var(--accent-gold);">Sound Immersion</span>
+        </h2>
+
+        <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.7;">
+          Restorative journeys guided by resident Ayurvedic Vaidyas and sound alchemists utilizing harmonic crystal frequencies and organic botanical elixirs.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 2.5rem;">
+        
+        <!-- Spa 1 -->
+        <div class="glass-panel card-elevation-3d sheen-container" style="border-radius: 28px; background: var(--bg-card); overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--border-luxury);">
+          <div style="position: relative; height: 260px; margin: 0.85rem 0.85rem 0 0.85rem; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85" alt="Ayurvedic Shirodhara" class="arch-top" style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(13,12,10,0.8); color: var(--accent-gold); padding: 0.35rem 0.9rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 600;">Ayurvedic</div>
+            <div style="position: absolute; bottom: 1rem; right: 1rem; background: rgba(13,12,10,0.8); color: #FFF; padding: 0.3rem 0.8rem; border-radius: 9999px; font-size: 0.74rem;">⏱️ 90 Minutes</div>
+          </div>
+          <div style="padding: 1.6rem; display: flex; flex-direction: column; flex-grow: 1;">
+            <h3 style="font-size: 1.45rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text-primary); font-family: var(--font-serif);">Sacred Shirodhara & Chakra Realignment</h3>
+            <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.2rem;">
+              A rhythmic stream of warm medicated oil poured gently over the third-eye chakra, accompanied by full-body Marmapoint massage to awaken profound inner peace.
+            </p>
+            <button onclick="openSpaModal('Sacred Shirodhara & Chakra Realignment')" class="btn-gold" style="width: 100%; padding: 0.75rem;">
+              Reserve Ritual
+            </button>
+          </div>
+        </div>
+
+        <!-- Spa 2 -->
+        <div class="glass-panel card-elevation-3d sheen-container" style="border-radius: 28px; background: var(--bg-card); overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--border-luxury);">
+          <div style="position: relative; height: 260px; margin: 0.85rem 0.85rem 0 0.85rem; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=85" alt="Sound Floatation" class="arch-top" style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(13,12,10,0.8); color: var(--accent-gold); padding: 0.35rem 0.9rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 600;">Sound Healing</div>
+            <div style="position: absolute; bottom: 1rem; right: 1rem; background: rgba(13,12,10,0.8); color: #FFF; padding: 0.3rem 0.8rem; border-radius: 9999px; font-size: 0.74rem;">⏱️ 75 Minutes</div>
+          </div>
+          <div style="padding: 1.6rem; display: flex; flex-direction: column; flex-grow: 1;">
+            <h3 style="font-size: 1.45rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text-primary); font-family: var(--font-serif);">Himalayan Sound Bath & Salt Floatation</h3>
+            <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.2rem;">
+              Sensory suspension in warm mineral saltwater while handcrafted Tibetan singing bowls and gong harmonics resonate through the water and air around you.
+            </p>
+            <button onclick="openSpaModal('Himalayan Sound Bath & Salt Floatation')" class="btn-gold" style="width: 100%; padding: 0.75rem;">
+              Reserve Ritual
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       7. CURATED RESORT GALLERY
+       ========================================== -->
+  <section style="padding: 7rem 0; background: var(--bg-secondary); border-top: 1px solid var(--border-luxury); border-bottom: 1px solid var(--border-luxury);" id="gallery">
+    <div class="luxury-container">
+      
+      <div style="text-align: center; max-width: 780px; margin: 0 auto 3rem auto;">
+        <div class="section-tag">
+          <span>✦ Visual Sanctuary</span>
+        </div>
+
+        <h2 style="font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.2; font-weight: 300; color: var(--text-primary); margin: 0.6rem 0 1rem 0;">
+          Curated <span class="italic-serif" style="color: var(--accent-gold);">Resort Gallery</span>
+        </h2>
+
+        <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.7;">
+          A glimpse into the architectural drama, culinary artistry, and ethereal clifftop serenity of Suara Ulu.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
+        
+        <div class="sheen-container card-elevation-3d" onclick="openLightbox(0)" style="height: 320px; border-radius: 20px; overflow: hidden; position: relative; cursor: pointer; border: 1px solid var(--border-luxury);">
+          <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85" alt="Cantilevered Pool" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(13,12,10,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 1.4rem; color: #FFF;">
+            <div style="font-size: 0.72rem; color: var(--accent-gold); font-weight: 600;">SANCTUARY</div>
+            <div style="font-size: 1.05rem; font-family: var(--font-serif); font-weight: 600;">Cantilevered Infinity Pool</div>
+          </div>
+        </div>
+
+        <div class="sheen-container card-elevation-3d" onclick="openLightbox(1)" style="height: 320px; border-radius: 20px; overflow: hidden; position: relative; cursor: pointer; border: 1px solid var(--border-luxury);">
+          <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=85" alt="Royal Cliffside" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(13,12,10,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 1.4rem; color: #FFF;">
+            <div style="font-size: 0.72rem; color: var(--accent-gold); font-weight: 600;">VILLAS</div>
+            <div style="font-size: 1.05rem; font-family: var(--font-serif); font-weight: 600;">Royal Cliffside Suite</div>
+          </div>
+        </div>
+
+        <div class="sheen-container card-elevation-3d" onclick="openLightbox(2)" style="height: 320px; border-radius: 20px; overflow: hidden; position: relative; cursor: pointer; border: 1px solid var(--border-luxury);">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=85" alt="Amarta Degustation" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(13,12,10,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 1.4rem; color: #FFF;">
+            <div style="font-size: 0.72rem; color: var(--accent-gold); font-weight: 600;">DINING</div>
+            <div style="font-size: 1.05rem; font-family: var(--font-serif); font-weight: 600;">Amarta Cliff Degustation</div>
+          </div>
+        </div>
+
+        <div class="sheen-container card-elevation-3d" onclick="openLightbox(3)" style="height: 320px; border-radius: 20px; overflow: hidden; position: relative; cursor: pointer; border: 1px solid var(--border-luxury);">
+          <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=85" alt="Tibetan Sound" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(13,12,10,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 1.4rem; color: #FFF;">
+            <div style="font-size: 0.72rem; color: var(--accent-gold); font-weight: 600;">WELLNESS</div>
+            <div style="font-size: 1.05rem; font-family: var(--font-serif); font-weight: 600;">Tibetan Sound Floatation</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       8. GUEST ACCLAIM & TESTIMONIALS
+       ========================================== -->
+  <section style="padding: 7rem 0; background: var(--bg-primary); text-align: center;" id="acclaim">
+    <div class="luxury-container" style="max-width: 980px;">
+      
+      <div class="section-tag">
+        <span>✦ Global Critical Acclaim</span>
+      </div>
+
+      <h2 style="font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.2; font-weight: 300; color: var(--text-primary); margin: 0.6rem 0 3rem 0;">
+        Words of <span class="italic-serif" style="color: var(--accent-gold);">Acclaim & Distinction</span>
+      </h2>
+
+      <div class="glass-panel aura-glow" style="border-radius: 32px; background: var(--bg-card); padding: 3.5rem 3rem; border: 1px solid var(--border-luxury);">
+        <div style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem;">“</div>
+        <p style="font-family: var(--font-serif); font-size: clamp(1.25rem, 2.2vw, 1.8rem); line-height: 1.5; color: var(--text-primary); font-style: italic; margin-bottom: 2rem;">
+          “Suara Ulu transcends mere hospitality. The sensation of floating in your cantilevered pool 100 meters above the Indian Ocean, followed by a personalized Ayurvedic Shirodhara ritual, is quite simply unmatched in luxury travel.”
+        </p>
+
+        <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Lord Sebastian" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-gold);">
+          <div style="text-align: left;">
+            <div style="font-weight: 600; font-size: 1.05rem; color: var(--text-primary);">Lord Sebastian Montgomery</div>
+            <div style="font-size: 0.82rem; color: var(--accent-gold); font-weight: 500;">Global Travel Editor • <strong>Condé Nast Traveler</strong></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       9. FOOTER
+       ========================================== -->
+  <footer style="background: var(--bg-secondary); border-top: 1px solid var(--border-luxury); padding: 5rem 0 3rem 0;">
+    <div class="luxury-container">
+      
+      <!-- Newsletter Banner -->
+      <div class="glass-panel" style="border-radius: 28px; background: var(--bg-card); padding: 3rem 2.5rem; margin-bottom: 4.5rem; border: 1px solid var(--border-luxury); display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; align-items: center;">
+        <div>
+          <div class="section-tag" style="margin-bottom: 0.6rem;">✦ The Sanctuary Journal</div>
+          <h3 style="font-size: 1.9rem; font-family: var(--font-serif); color: var(--text-primary); margin-bottom: 0.4rem;">
+            Private Member Invitations & Seasonal Solstice Journeys
+          </h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+            Receive exclusive invitations to visiting Ayurvedic masters, culinary guest chef tables, and priority suite releases.
+          </p>
+        </div>
+
+        <form onsubmit="handleNewsletterSubmit(event)" style="display: flex; gap: 0.6rem;">
+          <input type="email" id="newsletterEmail" required placeholder="Enter your private email address" style="flex-grow: 1; padding: 0.85rem 1.2rem; background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-luxury); border-radius: 9999px; font-size: 0.88rem; outline: none;">
+          <button type="submit" class="btn-gold" style="padding: 0.85rem 1.6rem;">Join</button>
+        </form>
+      </div>
+
+      <!-- Links Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
+        <div>
+          <div style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">SUARA ULU</div>
+          <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.7;">
+            An ultra-luxury clifftop sanctuary suspended 100 meters above the Indian Ocean on the sacred cliffs of Uluwatu, Bali.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 1.05rem; font-family: var(--font-serif); color: var(--text-primary); margin-bottom: 1rem;">The Sanctuary</h4>
+          <div style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.85rem;">
+            <a href="#accommodations" style="color: var(--text-secondary); text-decoration: none;">Villas & Suites</a>
+            <a href="#dining" style="color: var(--text-secondary); text-decoration: none;">Amarta Cliff Lounge</a>
+            <a href="#wellness" style="color: var(--text-secondary); text-decoration: none;">Ayurvedic Rejuvenation</a>
+            <a href="#gallery" style="color: var(--text-secondary); text-decoration: none;">Resort Gallery</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size: 1.05rem; font-family: var(--font-serif); color: var(--text-primary); margin-bottom: 1rem;">Concierge Desk</h4>
+          <div style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.7;">
+            <div>📍 Jl. Labuan Sait No. 88, Uluwatu, Bali</div>
+            <div>📞 +62 361 849 8888 (24/7 Butler Desk)</div>
+            <div>✉️ concierge@suaraulu.luxury</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding-top: 2rem; border-top: 1px solid var(--border-subtle); text-align: center; font-size: 0.78rem; color: var(--text-muted);">
+        © 2026 Suara Ulu Wellness & Spa Resort. All Rights Reserved. Crafted with Italian luxury editorial aesthetics and Vedic serenity.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       INTERACTIVE MODALS
+       ========================================== -->
+
+  <!-- 1. SUITE RESERVATION MODAL -->
+  <div id="bookingModal" class="su-modal-backdrop">
+    <div class="su-modal-box">
+      <div class="su-modal-header">
+        <div>
+          <h3 style="font-size: 1.25rem; font-family: var(--font-serif); color: var(--text-primary); margin: 0;">Suara Ulu Suite & Villa Reservation</h3>
+          <div style="font-size: 0.72rem; color: var(--accent-gold); text-transform: uppercase;">Best Rate Guarantee • 24/7 Butler Transfer</div>
+        </div>
+        <button onclick="closeBookingModal()" style="background: none; border: none; font-size: 1.4rem; color: var(--text-secondary); cursor: pointer;">✕</button>
+      </div>
+
+      <div class="su-modal-body">
+        
+        <!-- Booking Form View -->
+        <div id="bookingFormView">
+          <form onsubmit="handleBookingSubmit(event)" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem;" class="modal-grid-two">
+            
+            <div style="display: flex; flex-direction: column; gap: 1.1rem;">
+              <div>
+                <label style="font-size: 0.74rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 600; display: block; margin-bottom: 0.35rem;">Select Sanctuary</label>
+                <select id="modalRoomSelect" style="width: 100%; padding: 0.7rem; background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-luxury); border-radius: 10px; font-size: 0.88rem; outline: none;"></select>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+                <div>
+                  <label style="font-size: 0.74rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 600; display: block; margin-bottom: 0.35rem;">Check-In</label>
+                  <input type="date" id="modalCheckIn" value="2026-09-15" style="width: 100%; padding: 0.65rem; background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-luxury); border-radius: 10px; font-size: 0.85rem; outline: none;">
+                </div>
+                <div>
+                  <label style="font-size: 0.74rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 600; display: block; margin-bottom: 0.35rem;">Check-Out</label>
+                  <input type="date" id="modalCheckOut" value="2026-09-19" style="width: 100%; padding: 0.65rem; background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-luxury); border-radius: 10px; font-size: 0.85rem; outline: none;">
+                </div>
+              </div>
+
+              <div>
+                <label style="font-size: 0.74rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 600; display: block; margin-bottom: 0.35rem;">Primary Guest Full Name *</label>
+                <input type="text" id="guestName" required placeholder="e.g. Lady Genevieve Sinclair" style="width: 100%; padding: 0.65rem 0.85rem; background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-luxury); border-radius: 10px; font-size: 0.85rem; outline: none;">
+              </div>
+
+              <div>
+                <label style="font-size: 0.74rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 600; display: block; margin-bottom: 0.35rem;">Email Address *</label>
+                <input type="email" id="guestEmail" required placeholder="genevieve@sinclair.luxury" style="width: 100%; padding: 0.65rem 0.85rem; background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-luxury); border-radius: 10px; font-size: 0.85rem; outline: none;">
+              </div>
+
+              <!-- Add-ons -->
+              <div>
+                <label style="font-size: 0.74rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 600; display: block; margin-bottom: 0.5rem;">Curated VIP Add-ons</label>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.82rem;">
+                  <label style="display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem; background: var(--bg-secondary); border-radius: 8px; cursor: pointer;">
+                    <input type="checkbox" id="addonMercedes" checked> VIP Mercedes-Maybach Airport Chauffeur (+$220)
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem; background: var(--bg-secondary); border-radius: 8px; cursor: pointer;">
+                    <input type="checkbox" id="addonDom"> Dom Pérignon Vintage & Caviar Arrival (+$480)
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem; background: var(--bg-secondary); border-radius: 8px; cursor: pointer;">
+                    <input type="checkbox" id="addonSpa"> Daily 90-Min Ayurvedic Spa for Two (+$350/night)
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right: Bill Itemization -->
+            <div style="background: var(--bg-secondary); border-radius: 20px; padding: 1.5rem; border: 1px solid var(--border-luxury); display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="font-size: 0.74rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 600; margin-bottom: 0.8rem;">Live Bill Itemization</div>
+                
+                <div style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.84rem;">
+                  <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--text-secondary);">Duration:</span>
+                    <span id="billNights" style="font-weight: 600; color: var(--text-primary);">4 Nights</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--text-secondary);">Suite Total:</span>
+                    <span id="billRoomRate" style="font-weight: 600; color: var(--text-primary);">$5,800</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--text-secondary);">VIP Add-ons:</span>
+                    <span id="billAddons" style="font-weight: 600; color: var(--text-primary);">$220</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--text-secondary);">Taxes & Service (15%):</span>
+                    <span id="billTax" style="font-weight: 600; color: var(--text-primary);">$903</span>
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--border-luxury); padding-top: 0.8rem; margin-top: 0.5rem;">
+                    <div>
+                      <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); display: block;">Grand Total</span>
+                      <span id="billGrandTotal" style="font-size: 1.6rem; font-family: var(--font-serif); font-weight: 700; color: var(--accent-gold);">$6,923</span>
+                    </div>
+                    <span style="font-size: 0.72rem; color: var(--text-muted);">All-Inclusive</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="margin-top: 1.5rem;">
+                <button type="submit" class="btn-gold" style="width: 100%; padding: 0.85rem;">
+                  Confirm & Guarantee Stay
+                </button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Booking Success View -->
+        <div id="bookingSuccessView" style="display: none; text-align: center; padding: 1.5rem 0;">
+          <div style="width: 72px; height: 72px; border-radius: 50%; background: var(--badge-bg); border: 2px dashed var(--accent-gold); display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 2rem; margin: 0 auto 1.5rem auto;">✓</div>
+          <h2 id="successGuest" style="font-size: 2rem; font-family: var(--font-serif); color: var(--text-primary); margin-bottom: 0.4rem;">Om Swastyastu</h2>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); max-width: 480px; margin: 0 auto 1.5rem auto;">
+            Your sanctuary reservation at Suara Ulu has been guaranteed. Confirmation code:
+          </p>
+          <div style="background: var(--bg-secondary); border: 1px solid var(--border-luxury); border-radius: 14px; padding: 1.2rem; max-width: 320px; margin: 0 auto 2rem auto;">
+            <div id="successCode" style="font-size: 1.6rem; font-weight: 700; font-family: var(--font-serif); color: var(--text-primary); letter-spacing: 2px;">SU-849201</div>
+            <div id="successRoom" style="font-size: 0.76rem; color: var(--accent-gold); margin-top: 4px;">Royal Cliffside Residence</div>
+          </div>
+          <button onclick="closeBookingModal()" class="btn-gold" style="padding: 0.75rem 2rem;">Return to Sanctuary</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. DINING TABLE MODAL -->
+  <div id="diningModal" class="su-modal-backdrop">
+    <div class="su-modal-box" style="max-width: 600px;">
+      <div class="su-modal-header">
+        <div>
+          <h3 id="diningVenueTitle" style="font-size: 1.2rem; font-family: var(--font-serif); color: var(--text-primary); margin: 0;">Haute Gastronomy Table Reservation</h3>
+          <div style="font-size: 0.72rem; color: var(--accent-gold); text-transform: uppercase;">Two Michelin Key Experience</div>
+        </div>
+        <button onclick="closeDiningModal()" style="background: none; border: none; font-size: 1.4rem; color: var(--text-secondary); cursor: pointer;">✕</button>
+      </div>
+      <div class="su-modal-body">
+        <div id="diningFormView">
+          <form onsubmit="handleDiningSubmit(event)" style="display: flex; flex-direction: column; gap: 1.1rem;">
+            <div>
+              <label style="font-size: 0.74rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 600; display: block; margin-bottom: 0.35rem;">Reservation Date & Time</label>
+              <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 0.8rem;">
+                <input type="date" value="2026-09-16" required style="padding: 0.65rem; background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-luxury); border-radius: 10px; font-size: 0.85rem; outline: none;">
+                <select style="padding: 0.65rem; background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-luxury); border-radius: 10px; font-size: 0.85rem; outline: none;">
+                  <option>18:30 (Sunset Sitting)</option>
+                  <option selected>19:30 (Prime Dinner)</option>
+                  <option>20:30 (Night Degustation)</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label style="font-size: 0.74rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 600; display: block; margin-bottom: 0.35rem;">Guest Details</label>
+              <input type="text" required placeholder="Full Name" style="width: 100%; padding: 0.65rem; background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-luxury); border-radius: 10px; font-size: 0.85rem; outline: none; margin-bottom: 0.6rem;">
+              <input type="email" required placeholder="Email Address" style="width: 100%; padding: 0.65rem; background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-luxury); border-radius: 10px; font-size: 0.85rem; outline: none;">
+            </div>
+            <button type="submit" class="btn-gold" style="width: 100%; padding: 0.85rem; margin-top: 0.5rem;">Confirm Table Reservation</button>
+          </form>
+        </div>
+        <div id="diningSuccessView" style="display: none; text-align: center; padding: 1.5rem 0;">
+          <div style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 0.8rem;">🍽️</div>
+          <h2 style="font-size: 1.8rem; font-family: var(--font-serif); color: var(--text-primary);">Table Reserved</h2>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Your dining reservation is confirmed. Code:</p>
+          <div id="diningSuccessCode" style="font-size: 1.6rem; font-weight: 700; font-family: var(--font-serif); color: var(--accent-gold); margin-bottom: 1.5rem;">DINE-48192</div>
+          <button onclick="closeDiningModal()" class="btn-gold" style="padding: 0.75rem 2rem;">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SPA MODAL -->
+  <div id="spaModal" class="su-modal-backdrop">
+    <div class="su-modal-box" style="max-width: 600px;">
+      <div class="su-modal-header">
+        <div>
+          <h3 id="spaRitualTitle" style="font-size: 1.2rem; font-family: var(--font-serif); color: var(--text-primary); margin: 0;">Ayurvedic Spa Ritual</h3>
+          <div style="font-size: 0.72rem; color: var(--accent-gold); text-transform: uppercase;">Sacred Clifftop Rejuvenation</div>
+        </div>
+        <button onclick="closeSpaModal()" style="background: none; border: none; font-size: 1.4rem; color: var(--text-secondary); cursor: pointer;">✕</button>
+      </div>
+      <div class="su-modal-body">
+        <div id="spaFormView">
+          <form onsubmit="handleSpaSubmit(event)" style="display: flex; flex-direction: column; gap: 1.1rem;">
+            <div>
+              <label style="font-size: 0.74rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 600; display: block; margin-bottom: 0.35rem;">Appointment Date & Time</label>
+              <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 0.8rem;">
+                <input type="date" value="2026-09-17" required style="padding: 0.65rem; background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-luxury); border-radius: 10px; font-size: 0.85rem; outline: none;">
+                <select style="padding: 0.65rem; background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-luxury); border-radius: 10px; font-size: 0.85rem; outline: none;">
+                  <option>10:00 (Morning Dosha)</option>
+                  <option selected>14:00 (Afternoon Rejuvenation)</option>
+                  <option>17:00 (Sunset Sound Floatation)</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label style="font-size: 0.74rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 600; display: block; margin-bottom: 0.35rem;">Guest Details</label>
+              <input type="text" required placeholder="Full Name" style="width: 100%; padding: 0.65rem; background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-luxury); border-radius: 10px; font-size: 0.85rem; outline: none; margin-bottom: 0.6rem;">
+              <input type="email" required placeholder="Email Address" style="width: 100%; padding: 0.65rem; background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-luxury); border-radius: 10px; font-size: 0.85rem; outline: none;">
+            </div>
+            <button type="submit" class="btn-gold" style="width: 100%; padding: 0.85rem; margin-top: 0.5rem;">Confirm Spa Appointment</button>
+          </form>
+        </div>
+        <div id="spaSuccessView" style="display: none; text-align: center; padding: 1.5rem 0;">
+          <div style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 0.8rem;">🌸</div>
+          <h2 style="font-size: 1.8rem; font-family: var(--font-serif); color: var(--text-primary);">Ritual Confirmed</h2>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Your wellness journey is confirmed. Voucher code:</p>
+          <div id="spaSuccessCode" style="font-size: 1.6rem; font-weight: 700; font-family: var(--font-serif); color: var(--accent-gold); margin-bottom: 1.5rem;">SPA-89210</div>
+          <button onclick="closeSpaModal()" class="btn-gold" style="padding: 0.75rem 2rem;">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. FULLSCREEN GALLERY LIGHTBOX -->
+  <div id="galleryLightbox" style="position: fixed; inset: 0; z-index: 999999; background: rgba(0,0,0,0.92); backdrop-filter: blur(20px); display: none; align-items: center; justify-content: center; padding: 2rem;" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" style="position: absolute; top: 2rem; right: 2rem; background: rgba(255,255,255,0.1); border: none; border-radius: 50%; width: 48px; height: 48px; color: #FFF; font-size: 1.4rem; cursor: pointer;">✕</button>
+    <button onclick="prevLightbox(event)" style="position: absolute; left: 2rem; background: rgba(255,255,255,0.1); border: none; border-radius: 50%; width: 52px; height: 52px; color: #FFF; font-size: 1.6rem; cursor: pointer;">‹</button>
+    
+    <div style="max-width: 900px; width: 100%; border-radius: 24px; overflow: hidden; background: var(--bg-card); border: 1px solid var(--border-luxury);" onclick="event.stopPropagation()">
+      <img id="lightboxImg" src="" alt="" style="width: 100%; max-height: 65vh; object-fit: cover;">
+      <div style="padding: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <div id="lightboxCat" style="font-size: 0.72rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 600;"></div>
+          <h3 id="lightboxTitle" style="font-size: 1.4rem; font-family: var(--font-serif); color: var(--text-primary); margin: 0.2rem 0 0 0;"></h3>
+        </div>
+      </div>
+    </div>
+
+    <button onclick="nextLightbox(event)" style="position: absolute; right: 2rem; background: rgba(255,255,255,0.1); border: none; border-radius: 50%; width: 52px; height: 52px; color: #FFF; font-size: 1.6rem; cursor: pointer;">›</button>
+  </div>
+
+  <!-- 5. FLOATING TOAST -->
+  <div id="suToast" class="su-toast">
+    <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--badge-bg); display: flex; align-items: center; justify-content: center; color: var(--accent-gold); flex-shrink: 0;">✦</div>
+    <p id="toastMessage" style="margin: 0; font-size: 0.9rem; font-weight: 500;"></p>
+  </div>
+
+  <!-- JavaScript Engine -->
+  <script src="script.js"></script>
+</body>
+</html>

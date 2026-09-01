@@ -1,0 +1,20 @@
+{
+  "name": "Future Intelligence",
+  "tagline": "Understand the technology shaping tomorrow.",
+  "hero": {
+    "frameCount": 300,
+    "framePath": "./frames/ezgif-frame-",
+    "frameExtension": "jpg",
+    "zeroPadding": 3
+  },
+  "nav": [
+    { "label": "Latest", "path": "/latest" },
+    { "label": "AI", "path": "/category/ai" },
+    { "label": "Future Tech", "path": "/category/future-tech" },
+    { "label": "Tools", "path": "/tools" },
+    { "label": "Models", "path": "/models" },
+    { "label": "Companies", "path": "/companies" },
+    { "label": "Rankings", "path": "/rankings" },
+    { "label": "Magazine", "path": "/magazine" }
+  ]
+}

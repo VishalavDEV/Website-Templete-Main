@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VillaBliss — Luxury Mediterranean Villa & Exclusive Resort</title>
+  <meta name="description" content="Welcome to a villa where every detail inspires relaxation. Spacious and cozy suites, panoramic evening pool views, and curated luxury experiences.">
+
+  <!-- Google Fonts: Playfair Display, Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Luxury Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ─── 1. LUXURY STICKY NAVIGATION ─── -->
+  <header class="vb-header" id="vbHeader">
+    <div class="vb-nav-container">
+      <nav class="vb-nav-links left-links">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#story" class="nav-link">About</a>
+        <a href="#gallery" class="nav-link">Suites</a>
+      </nav>
+
+      <!-- Center Logo -->
+      <a href="#home" class="vb-logo">
+        <div class="vb-logo-icon">🏛️</div>
+        <span class="vb-logo-title">VillaBliss</span>
+        <span class="vb-logo-sub">SANCTUARY & RESORT</span>
+      </a>
+
+      <!-- Right Nav & CTA -->
+      <div class="vb-nav-links right-links">
+        <a href="#testimonials" class="nav-link">Stories</a>
+        <a href="#experiences" class="nav-link">Experiences</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button class="vb-btn-reserve" onclick="openBookingModal()">
+          <i class="bi bi-calendar-check"></i>
+          <span>Reserve Stay</span>
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button class="vb-mobile-toggle" id="vbMobileToggle" aria-label="Toggle Menu">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="vb-mobile-drawer" id="vbMobileDrawer">
+      <a href="#home" class="mobile-nav-link">Home</a>
+      <a href="#story" class="mobile-nav-link">About Sanctuary</a>
+      <a href="#gallery" class="mobile-nav-link">Spacious & Cozy Suites</a>
+      <a href="#testimonials" class="mobile-nav-link">Guest Praises</a>
+      <a href="#experiences" class="mobile-nav-link">Curated Experiences</a>
+      <a href="#contact" class="mobile-nav-link">Concierge Contact</a>
+      <button class="vb-btn-reserve w-full" onclick="openBookingModal()">Reserve Stay</button>
+    </div>
+  </header>
+
+  <!-- ─── 2. GRAND HERO SECTION ("VillaBliss") ─── -->
+  <section class="vb-hero" id="home">
+    <div class="vb-hero-bg">
+      <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=2000&q=85" alt="VillaBliss Arched Architecture" class="hero-img">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="vb-hero-content">
+      <div class="vb-badge">
+        <i class="bi bi-stars"></i> Exclusive Mediterranean Sanctuary
+      </div>
+      <h1 class="vb-hero-title">VillaBliss</h1>
+      <p class="vb-hero-subtitle">Where timeless coastal architecture embraces serene modern indulgence.</p>
+    </div>
+
+    <!-- Availability Search Bar -->
+    <div class="vb-search-bar-wrapper">
+      <form class="vb-search-form" id="heroSearchForm" onsubmit="handleHeroSearch(event)">
+        <div class="search-col">
+          <label>Check In</label>
+          <div class="input-with-icon">
+            <i class="bi bi-calendar3"></i>
+            <input type="date" id="searchCheckIn">
+          </div>
+        </div>
+
+        <div class="search-col">
+          <label>Check Out</label>
+          <div class="input-with-icon">
+            <i class="bi bi-calendar3"></i>
+            <input type="date" id="searchCheckOut">
+          </div>
+        </div>
+
+        <div class="search-col">
+          <label>Guests</label>
+          <div class="input-with-icon">
+            <i class="bi bi-people"></i>
+            <select id="searchGuests">
+              <option value="2 Guests">2 Guests</option>
+              <option value="4 Guests">4 Guests</option>
+              <option value="6+ Guests">6+ Guests (Full Villa)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="search-col">
+          <label>Space Category</label>
+          <div class="input-with-icon">
+            <i class="bi bi-house-door"></i>
+            <select id="searchCategory">
+              <option value="All">All Suites</option>
+              <option value="Living area">Living Area</option>
+              <option value="Bedroom">Canopy Master Suite</option>
+              <option value="Work space">Executive Studio</option>
+              <option value="Dining room">Dining Pavilion</option>
+              <option value="Private Pool">Pool Villa</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="search-btn-col">
+          <button type="submit" class="vb-search-btn">
+            <i class="bi bi-search"></i>
+            <span>Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ─── 3. STORY SECTION ─── -->
+  <section class="vb-story" id="story">
+    <div class="vb-container">
+      
+      <div class="story-header">
+        <span class="section-tag">The Villa Sanctuary</span>
+        <h2 class="section-title">Welcome to a villa where every detail inspires relaxation</h2>
+      </div>
+
+      <div class="story-grid">
+        <!-- Left: Vaulted Canopy Master Bedroom -->
+        <div class="story-col-left">
+          <div class="story-main-img-card">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85" alt="Canopy Master Suite with Vaulted Wooden Ceilings">
+            <div class="img-badge-overlay">
+              <div>
+                <p class="badge-tag">Master Sanctuary</p>
+                <h4 class="badge-title">Vaulted Ceilings & Italian Linens</h4>
+              </div>
+              <span class="rating-pill">5-Star</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Sunken Lounge + Editorial Story -->
+        <div class="story-col-right">
+          <div class="story-sub-img-card">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85" alt="Sunken Courtyard Lounge">
+            <span class="sub-img-tag">Sunken Sunset Lounge</span>
+          </div>
+
+          <div class="story-copy">
+            <p class="story-text">
+              Nestled in the heart of Mediterranean tranquility, our villa offers a perfect escape from everyday life. Enjoy peaceful mornings with scenic views, unwind in spacious interiors, and create unforgettable memories with your loved ones.
+            </p>
+
+            <div class="story-features-grid">
+              <div class="feature-item"><i class="bi bi-check-circle-fill"></i> Heated Infinity Pool</div>
+              <div class="feature-item"><i class="bi bi-check-circle-fill"></i> Dedicated Butler</div>
+              <div class="feature-item"><i class="bi bi-check-circle-fill"></i> Gourmet Chef Kitchen</div>
+              <div class="feature-item"><i class="bi bi-check-circle-fill"></i> Private Sea Charters</div>
+            </div>
+
+            <div class="story-cta-row">
+              <button class="vb-btn-outline" onclick="scrollToSection('gallery')">
+                <span>Our Expedition</span>
+                <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── 4. "SPACIOUS AND COZY" GALLERY SECTION ─── -->
+  <section class="vb-gallery" id="gallery">
+    <div class="vb-container">
+      
+      <div class="section-center-head">
+        <span class="section-tag">Curated Living Spaces</span>
+        <h2 class="section-title">Spacious and cozy</h2>
+        <p class="section-sub">Thoughtfully crafted interiors that blend minimalist coastal architecture with indulgent warmth.</p>
+        
+        <!-- Category Filters -->
+        <div class="category-tabs" id="categoryTabs">
+          <button class="tab-btn active" data-category="All">All</button>
+          <button class="tab-btn" data-category="Living area">Living area</button>
+          <button class="tab-btn" data-category="Work space">Work space</button>
+          <button class="tab-btn" data-category="Bedroom">Bedroom</button>
+          <button class="tab-btn" data-category="Dining room">Dining room</button>
+          <button class="tab-btn" data-category="Private Pool">Private Pool</button>
+        </div>
+      </div>
+
+      <!-- Room Cards Grid -->
+      <div class="room-grid" id="roomGrid">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── 5. TESTIMONIALS PANORAMIC BANNER ─── -->
+  <section class="vb-testimonials" id="testimonials">
+    <div class="testimonials-bg">
+      <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2000&q=85" alt="Villa Sunset Pool Estate">
+      <div class="testimonials-overlay"></div>
+    </div>
+
+    <div class="vb-container relative-z">
+      <div class="section-center-head light">
+        <span class="section-tag gold">Guest Memories & Praises</span>
+        <h2 class="section-title text-white">Loved by Travelers Worldwide</h2>
+      </div>
+
+      <div class="testimonials-grid" id="testimonialsGrid">
+        <!-- Card 1 -->
+        <div class="testi-card">
+          <div>
+            <div class="testi-top">
+              <div class="stars">★★★★★</div>
+              <span class="testi-badge">Romantic Escape</span>
+            </div>
+            <p class="testi-quote">"A perfect stay! The villa exceeded all our expectations with breathtaking architecture, tranquil mornings, and attentive concierge service. We felt completely recharged."</p>
+          </div>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Sarah & Julian Mitchell">
+            <div>
+              <h5>Sarah & Julian Mitchell</h5>
+              <p>London, UK • Verified Stay</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="testi-card">
+          <div>
+            <div class="testi-top">
+              <div class="stars">★★★★★</div>
+              <span class="testi-badge">Architectural Tour</span>
+            </div>
+            <p class="testi-quote">"Unmatched comfort and style. Every detail from the ambient lighting to the natural stone finishes has been meticulously crafted for pure relaxation. Truly world-class."</p>
+          </div>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="David & Elena Vance">
+            <div>
+              <h5>David & Elena Vance</h5>
+              <p>Zurich, Switzerland • Verified Stay</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="testi-card">
+          <div>
+            <div class="testi-top">
+              <div class="stars">★★★★★</div>
+              <span class="testi-badge">Family Vacation</span>
+            </div>
+            <p class="testi-quote">"Heaven on earth! The private pool, spacious dining pavilion, and curated diving adventures made this our all-time favorite family holiday."</p>
+          </div>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="The Harrington Family">
+            <div>
+              <h5>The Harrington Family</h5>
+              <p>New York, USA • Verified Stay</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Metrics -->
+      <div class="metrics-row">
+        <div class="metric-item">
+          <div class="metric-num">4.98 / 5.0</div>
+          <div class="metric-lbl">Average Guest Score</div>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <div class="metric-num">100%</div>
+          <div class="metric-lbl">Private Exclusivity</div>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <div class="metric-num">24 / 7</div>
+          <div class="metric-lbl">Dedicated Concierge</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── 6. CURATED EXPERIENCES SECTION ─── -->
+  <section class="vb-experiences" id="experiences">
+    <div class="vb-container">
+      
+      <div class="section-center-head">
+        <span class="section-tag">Exclusive Escapes & Activities</span>
+        <h2 class="section-title">Curated luxury services and local spots</h2>
+        <p class="section-sub">Indulge in private excursions, tailored wellness therapies, and Michelin-inspired culinary adventures.</p>
+      </div>
+
+      <!-- Category Navigation matching exact template bottom icons -->
+      <div class="experience-nav-pills">
+        <span class="exp-nav-pill"><i class="bi bi-water"></i> Snorkeling & Diving</span>
+        <span class="exp-nav-pill"><i class="bi bi-compass"></i> Outdoor adventures</span>
+        <span class="exp-nav-pill"><i class="bi bi-flower1"></i> Wellness & Spa</span>
+        <span class="exp-nav-pill"><i class="bi bi-cup-hot"></i> Shopping & Dining</span>
+        <span class="exp-nav-pill"><i class="bi bi-bank"></i> Cultural landmarks</span>
+      </div>
+
+      <!-- Experiences Grid -->
+      <div class="experiences-grid" id="experiencesGrid">
+        <!-- Rendered via JS -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── 7. FOOTER ─── -->
+  <footer class="vb-footer" id="contact">
+    <div class="vb-container">
+      
+      <!-- Newsletter Box -->
+      <div class="footer-prive-box">
+        <div>
+          <span class="prive-tag">Privé Newsletter</span>
+          <h3 class="prive-title">Exclusive Seasonal Privileges</h3>
+          <p class="prive-desc">Receive secret villa availability, private sommelier releases, and priority reservations.</p>
+        </div>
+        <form class="prive-form" onsubmit="handleNewsletter(event)">
+          <input type="email" placeholder="Enter your private email..." required id="priveEmail">
+          <button type="submit" class="vb-btn-gold">Join</button>
+        </form>
+      </div>
+
+      <!-- Main Footer Columns -->
+      <div class="footer-cols-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <span class="logo-icon">🏛️</span>
+            <span class="logo-text">VillaBliss</span>
+          </div>
+          <p class="footer-about">An architectural Mediterranean villa sanctuary curated for restorative luxury, tranquility, and memorable experiences.</p>
+          <div class="footer-socials">
+            <a href="#"><i class="bi bi-globe"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore Sanctuary</h4>
+          <ul>
+            <li><a href="#home">Grand Villa Overview</a></li>
+            <li><a href="#story">Architectural Story</a></li>
+            <li><a href="#gallery">Spacious & Cozy Suites</a></li>
+            <li><a href="#experiences">Curated Experiences</a></li>
+            <li><a href="#testimonials">Guest Praises</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Curated Services</h4>
+          <ul>
+            <li>🤿 Snorkeling & Coral Diving</li>
+            <li>🚵 Coastal Mountain Biking</li>
+            <li>🧖 Botanical Spa Rituals</li>
+            <li>🍷 Private Sommelier Tastings</li>
+            <li>🏛️ Heritage Architecture Tours</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Private Concierge</h4>
+          <p><i class="bi bi-geo-alt"></i> Coastal Haven Estate, Via Della Costa 108</p>
+          <p><i class="bi bi-telephone"></i> +1 (800) 845-5225</p>
+          <p><i class="bi bi-envelope"></i> concierge@villabliss.com</p>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>© 2026 VillaBliss Luxury Resort. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Hospitality</a>
+          <a href="#">Cookie Preferences</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ─── 8. BOOKING MODAL ─── -->
+  <div class="vb-modal-overlay" id="bookingModal">
+    <div class="vb-modal-box">
+      <div class="modal-header">
+        <div>
+          <span class="modal-tag">VillaBliss Reservation</span>
+          <h3 class="modal-title" id="modalTitle">Book Your Sanctuary</h3>
+        </div>
+        <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+      </div>
+
+      <div id="bookingContent">
+        <form class="modal-form" onsubmit="submitBooking(event)">
+          <div class="form-group">
+            <label>Select Suite / Space</label>
+            <select id="modalRoomSelect" required>
+              <option value="1">Grand Mediterranean Living Suite ($650/night)</option>
+              <option value="2">Executive Cedar Studio ($480/night)</option>
+              <option value="3">Canopy Royal Master Suite ($780/night)</option>
+              <option value="4">Artisan Al Fresco Dining Pavilion ($590/night)</option>
+              <option value="5">Infinity Azure Pool Villa ($950/night)</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Check-In Date</label>
+              <input type="date" id="modalCheckIn" required>
+            </div>
+            <div class="form-group">
+              <label>Check-Out Date</label>
+              <input type="date" id="modalCheckOut" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Adults</label>
+              <select id="modalAdults">
+                <option value="1">1 Adult</option>
+                <option value="2" selected>2 Adults</option>
+                <option value="4">4 Adults</option>
+                <option value="6">6 Adults</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Children</label>
+              <select id="modalChildren">
+                <option value="0" selected>0 Children</option>
+                <option value="1">1 Child</option>
+                <option value="2">2 Children</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Guest Full Name</label>
+              <input type="text" id="modalGuestName" placeholder="e.g. Eleanor Rigby" required>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" id="modalGuestEmail" placeholder="name@luxury.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Special Requests</label>
+            <textarea id="modalRequests" rows="2" placeholder="Dietary preferences, champagne arrival, airport limousine..."></textarea>
+          </div>
+
+          <button type="submit" class="vb-btn-submit">
+            <i class="bi bi-credit-card"></i> Complete Reservation
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── 9. ROOM DETAILS MODAL ─── -->
+  <div class="vb-modal-overlay" id="roomModal">
+    <div class="vb-modal-box large">
+      <button class="modal-close floating" onclick="closeRoomModal()">&times;</button>
+      <div id="roomDetailContent"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

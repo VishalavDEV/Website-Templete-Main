@@ -1,0 +1,8 @@
+{
+  "name": "Remix Vertexa - Technology \u0026 Systems",
+  "description": "Vertexa designs and engineers intelligent digital infrastructure, AI systems, cloud architecture, and mission-critical enterprise software for organizations operating at scale.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

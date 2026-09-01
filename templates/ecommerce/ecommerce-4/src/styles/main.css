@@ -1,0 +1,401 @@
+/* ==========================================================================
+   ORVANA DESIGN SYSTEM & BRAND STYLES
+   Visual Identity: Warm soft linen background (#F6F5F1), deep charcoal typography (#161616),
+   electric blue accent (#3857FF), warm golden amber highlights (#D99A55), fine 1px borders (#E2E0D8).
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  /* ORVANA Color Palette */
+  --bg-primary: #F6F5F1;
+  --bg-secondary: #ECEAE4;
+  --bg-card: #FFFFFF;
+  --bg-overlay: rgba(22, 22, 22, 0.65);
+
+  --text-primary: #161616;
+  --text-secondary: #707070;
+  --text-muted: #9E9E9E;
+  --text-inverse: #FFFFFF;
+
+  --accent-blue: #3857FF;
+  --accent-blue-hover: #2643E0;
+  --accent-blue-light: #EEF2FF;
+
+  --accent-amber: #D99A55;
+  --accent-amber-light: #FFF8EF;
+
+  --border-light: #E2E0D8;
+  --border-dark: #2A2A2A;
+
+  /* Badges */
+  --badge-new: #3857FF;
+  --badge-bestseller: #15803D;
+  --badge-sale: #D99A55;
+  --badge-shelf: #161616;
+
+  /* Fonts */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08);
+  --shadow-float: 0 20px 45px rgba(0, 0, 0, 0.12);
+
+  /* Transitions */
+  --transition-fast: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Z-Index System */
+  --z-base: 0;
+  --z-content: 1;
+  --z-sticky-header: 100;
+  --z-dropdown: 200;
+  --z-mega-menu: 300;
+  --z-drawer: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+  --z-mobile-nav: 700;
+}
+
+/* Reset & Baseline */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+.heading-xl {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.heading-lg {
+  font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+}
+
+.heading-md {
+  font-size: clamp(1.2rem, 2vw, 1.75rem);
+  font-weight: 600;
+}
+
+.heading-sm {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.body-lead {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.body-main {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.caption {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Layout Containers */
+.container {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container-narrow {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Utility Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-normal);
+  letter-spacing: 0.02em;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn svg {
+  transition: transform var(--transition-normal);
+}
+
+.btn:hover svg {
+  transform: translateX(4px);
+}
+
+.btn-primary {
+  background-color: var(--text-primary);
+  color: var(--text-inverse);
+}
+
+.btn-primary:hover {
+  background-color: #2D3748;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-accent {
+  background-color: var(--accent-blue);
+  color: var(--text-inverse);
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(56, 87, 255, 0.25);
+}
+
+.btn-outline {
+  border: 1.5px solid var(--border-light);
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.btn-outline:hover {
+  border-color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.btn-icon {
+  padding: 0.55rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-icon:hover {
+  background-color: var(--bg-secondary);
+  transform: scale(1.05);
+}
+
+/* Nav Links Hover Underline System */
+.nav-link {
+  position: relative;
+  padding: 0.4rem 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background-color: var(--accent-blue);
+  transition: width var(--transition-normal), left var(--transition-normal);
+}
+
+.nav-link:hover {
+  color: var(--accent-blue);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  left: 0%;
+}
+
+.nav-link.active {
+  color: var(--accent-blue);
+}
+
+.nav-link.active::after {
+  width: 100%;
+  left: 0%;
+}
+
+/* Sticky Header Scroll State */
+.navbar-sticky {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky-header);
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-light);
+  transition: all var(--transition-normal);
+}
+
+.navbar-sticky.scrolled {
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-sticky.scrolled .header-inner {
+  height: 62px !important;
+}
+
+.navbar-sticky.scrolled .logo-text {
+  font-size: 1.5rem !important;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-sm);
+}
+
+.badge-new {
+  background-color: var(--accent-blue-light);
+  color: var(--accent-blue);
+}
+
+.badge-bestseller {
+  background-color: #DCFCE7;
+  color: #15803D;
+}
+
+.badge-sale {
+  background-color: var(--accent-amber-light);
+  color: var(--accent-amber);
+}
+
+.badge-shelf {
+  background-color: #161616;
+  color: #FFFFFF;
+}
+
+/* Card Styling */
+.card-premium {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  overflow: hidden;
+  position: relative;
+}
+
+.card-premium:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(56, 87, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+/* Image Container Constraint Rule */
+.img-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card-premium:hover .img-container img {
+  transform: scale(1.04);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: #C4C2B9;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9E9C93;
+}
+
+/* Responsive Navigation Rules */
+@media (max-width: 1024px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .desktop-search-label, .desktop-compare-count {
+    display: none !important;
+  }
+}

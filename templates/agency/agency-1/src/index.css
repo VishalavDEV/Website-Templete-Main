@@ -1,0 +1,262 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   FOLDLINE design tokens
+   Palette is locked by brief. Radius rule: pill buttons, 18px media frames,
+   everything else square. One accent (coral) used for UI + large display only.
+--------------------------------------------------------------------------- */
+@theme {
+  --color-cream: #f7f4ee;
+  --color-paper: #fffdf9;
+  --color-ink: #181818;
+  --color-ink2: #68635c;
+  --color-coral: #e86f51;
+  --color-lavender: #c8b6ff;
+  --color-peach: #f1d8cf;
+  --color-lavsoft: #e8e1f4;
+  --color-line: #e5dfd4;
+
+  --font-display: "Bricolage Grotesque Variable", "Segoe UI", ui-sans-serif,
+    system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "Cascadia Mono",
+    monospace;
+
+  --radius-media: 18px;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee 34s linear infinite;
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* ----------------------------- custom utilities -------------------------- */
+/* These become recognized Tailwind utilities usable in className. */
+
+@utility display-xl {
+  font-size: clamp(2.9rem, 8.4vw, 7rem);
+  line-height: 0.97;
+  letter-spacing: -0.035em;
+  font-weight: 640;
+}
+
+@utility display-lg {
+  font-size: clamp(2.3rem, 5.8vw, 4.75rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+@utility display-md {
+  font-size: clamp(1.65rem, 3.6vw, 2.9rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  font-weight: 590;
+}
+
+@utility body-lede {
+  color: var(--color-ink2);
+  font-size: clamp(1.06rem, 1.35vw, 1.3rem);
+  line-height: 1.55;
+  max-width: 58ch;
+}
+
+@utility meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink2);
+}
+
+@utility container-x {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1400px;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 640px) {
+  .container-x {
+    padding-inline: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .container-x {
+    padding-inline: 3rem;
+  }
+}
+
+/* ------------------------------------------------------------------------- */
+/* Base styles                                                              */
+/* ------------------------------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-cream text-ink font-display antialiased;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-cream);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-coral);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  img {
+    @apply max-w-full;
+  }
+
+  /* Lenis smooth-scroll contract */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  /* Native cursor hides only while the custom cursor is active (fine pointers).
+     Editable fields keep their native carets. */
+  html.has-custom-cursor,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button,
+  html.has-custom-cursor [role="button"] {
+    cursor: none;
+  }
+  html.has-custom-cursor input,
+  html.has-custom-cursor textarea,
+  html.has-custom-cursor select {
+    cursor: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* --------------------------- editorial article prose ---------------------- */
+@layer components {
+  .prose-foldline {
+    max-width: 66ch;
+    color: var(--color-ink);
+  }
+  .prose-foldline > * + * {
+    margin-top: 1.4em;
+  }
+  .prose-foldline h2 {
+    @apply display-md;
+    margin-top: 2em;
+  }
+  .prose-foldline p {
+    font-size: 1.08rem;
+    line-height: 1.72;
+    color: var(--color-ink);
+  }
+  .prose-foldline p.lede {
+    @apply body-lede;
+  }
+  .prose-foldline blockquote {
+    border-left: 2px solid var(--color-coral);
+    padding-left: 1.4em;
+    font-size: 1.3rem;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    font-weight: 550;
+  }
+  .prose-foldline ul {
+    list-style: none;
+  }
+  .prose-foldline li {
+    position: relative;
+    padding-left: 1.5em;
+    line-height: 1.7;
+  }
+  .prose-foldline li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.72em;
+    width: 0.55em;
+    height: 0.55em;
+    border-radius: 999px;
+    background: var(--color-coral);
+  }
+  .prose-foldline a {
+    text-decoration: underline;
+    text-decoration-color: var(--color-coral);
+    text-underline-offset: 3px;
+  }
+}
+
+/* ------------------------------- helpers --------------------------------- */
+@layer utilities {
+  /* Film grain — fixed, non-scrolling, pointer-transparent */
+  .grain::after {
+    content: "";
+    position: fixed;
+    inset: -50%;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 90;
+  }
+  .skip-link:focus-visible {
+    left: 1rem;
+    top: 1rem;
+    background: var(--color-ink);
+    color: var(--color-cream);
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1.5px;
+    background-repeat: no-repeat;
+    background-position: left calc(100% - 0.05em);
+    transition: background-size 0.42s var(--ease-out-expo);
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain::after {
+    display: none;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Aurelia Velvet Obsidian Resort - Ultra-Luxury Sanctuary",
+  "description": "A private cliffside refuge offering luxury architectural pods crafted from volcanic stone, glass canopies, and polished teakwood.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

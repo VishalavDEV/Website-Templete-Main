@@ -1,0 +1,16 @@
+/* Page Spacing to compensate for fixed Navbar height */
+.home-page,
+.about-page,
+.services-page,
+.service-details-page,
+.solutions-page,
+.projects-page,
+.project-details-page,
+.team-page,
+.pricing-page,
+.testimonials-page,
+.blog-page,
+.contact-page {
+  padding-top: var(--nav-height);
+  min-height: 85vh;
+}

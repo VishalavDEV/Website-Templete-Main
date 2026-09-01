@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SnapFolio — Dark Minimalist Photography Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6366f1',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#121212] text-zinc-100 selection:bg-indigo-500/30 selection:text-indigo-200">
+
+  <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+  <script>
+    (function() {
+      const isPlatform = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const isTop = window.self === window.top;
+      const urlParams = new URLSearchParams(window.location.search);
+      const isIframe = urlParams.get('iframe') === 'true';
+      
+      if (isPlatform && isTop && !isIframe) {
+        document.documentElement.style.visibility = 'hidden';
+        
+        window.addEventListener('DOMContentLoaded', () => {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.searchParams.set('iframe', 'true');
+          
+          const body = document.body;
+          body.innerHTML = '';
+          body.style.margin = '0';
+          body.style.padding = '0';
+          body.style.height = '100vh';
+          body.style.width = '100vw';
+          body.style.display = 'flex';
+          body.style.flexDirection = 'column';
+          body.style.overflow = 'hidden';
+          body.style.backgroundColor = '#f1f5f9';
+          
+          // Build Top Bar
+          const topBar = document.createElement('div');
+          topBar.id = 'technosprint-preview-header';
+          topBar.style.height = '64px';
+          topBar.style.background = '#ffffff';
+          topBar.style.borderBottom = '1px solid #e2e8f0';
+          topBar.style.display = 'flex';
+          topBar.style.alignItems = 'center';
+          topBar.style.justifyContent = 'space-between';
+          topBar.style.padding = '0 24px';
+          topBar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+          topBar.style.fontFamily = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+          topBar.style.zIndex = '99999';
+          topBar.style.position = 'relative';
+          topBar.style.boxSizing = 'border-box';
+          
+          // Left side logo
+          const logoDiv = document.createElement('div');
+          logoDiv.innerHTML = `
+            <a href="/templates" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" />
+            </a>
+          `;
+          topBar.appendChild(logoDiv);
+          
+          // Center Template Name
+          const titleDiv = document.createElement('div');
+          titleDiv.style.fontWeight = '600';
+          titleDiv.style.fontSize = '0.9rem';
+          titleDiv.style.color = '#334155';
+          titleDiv.innerText = `< ${document.title || 'Template Preview'} >`;
+          topBar.appendChild(titleDiv);
+          
+          // Right view switcher buttons
+          const rightDiv = document.createElement('div');
+          rightDiv.style.display = 'flex';
+          rightDiv.style.alignItems = 'center';
+          rightDiv.style.gap = '8px';
+          rightDiv.innerHTML = `
+            <button id="view-desktop" style="
+              background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              Desktop
+            </button>
+            <button id="view-tablet" style="
+              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Tablet
+            </button>
+            <button id="view-mobile" style="
+              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Mobile
+            </button>
+          `;
+          topBar.appendChild(rightDiv);
+          body.appendChild(topBar);
+          
+          // Create Iframe Container
+          const iframeContainer = document.createElement('div');
+          iframeContainer.style.flex = '1';
+          iframeContainer.style.display = 'flex';
+          iframeContainer.style.alignItems = 'center';
+          iframeContainer.style.justifyContent = 'center';
+          iframeContainer.style.background = '#f1f5f9';
+          iframeContainer.style.padding = '20px';
+          iframeContainer.style.boxSizing = 'border-box';
+          iframeContainer.style.overflow = 'hidden';
+          
+          const iframe = document.createElement('iframe');
+          iframe.id = 'preview-iframe';
+          iframe.src = currentUrl.toString();
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.border = 'none';
+          iframe.style.borderRadius = '12px';
+          iframe.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+          iframe.style.background = '#ffffff';
+          iframe.style.transition = 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+          
+          iframeContainer.appendChild(iframe);
+          body.appendChild(iframeContainer);
+          
+          // Interactivity
+          const btnDesktop = body.querySelector('#view-desktop');
+          const btnTablet = body.querySelector('#view-tablet');
+          const btnMobile = body.querySelector('#view-mobile');
+          
+          let activeMode = 'desktop';
+          
+          function setView(mode) {
+            activeMode = mode;
+            [btnDesktop, btnTablet, btnMobile].forEach(btn => {
+              btn.style.background = '#ffffff';
+              btn.style.color = '#475569';
+              btn.style.borderColor = '#e2e8f0';
+              btn.style.fontWeight = '500';
+            });
+            
+            if (mode === 'desktop') {
+              btnDesktop.style.background = '#eff6ff';
+              btnDesktop.style.color = '#1e40af';
+              btnDesktop.style.borderColor = '#bfdbfe';
+              btnDesktop.style.fontWeight = '600';
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+              iframe.style.borderRadius = '12px';
+              iframe.style.border = 'none';
+            } else if (mode === 'tablet') {
+              btnTablet.style.background = '#eff6ff';
+              btnTablet.style.color = '#1e40af';
+              btnTablet.style.borderColor = '#bfdbfe';
+              btnTablet.style.fontWeight = '600';
+              iframe.style.width = '768px';
+              iframe.style.height = '1024px';
+              iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '24px';
+              iframe.style.border = '12px solid #0f172a';
+            } else if (mode === 'mobile') {
+              btnMobile.style.background = '#eff6ff';
+              btnMobile.style.color = '#1e40af';
+              btnMobile.style.borderColor = '#bfdbfe';
+              btnMobile.style.fontWeight = '600';
+              iframe.style.width = '375px';
+              iframe.style.height = '667px';
+              iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '32px';
+              iframe.style.border = '14px solid #0f172a';
+            }
+          }
+          
+          btnDesktop.addEventListener('click', () => setView('desktop'));
+          btnTablet.addEventListener('click', () => setView('tablet'));
+          btnMobile.addEventListener('click', () => setView('mobile'));
+          
+          const btns = [
+            { btn: btnDesktop, mode: 'desktop' },
+            { btn: btnTablet, mode: 'tablet' },
+            { btn: btnMobile, mode: 'mobile' }
+          ];
+          
+          btns.forEach(item => {
+            item.btn.addEventListener('mouseenter', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#f8fafc';
+                item.btn.style.borderColor = '#cbd5e1';
+              }
+            });
+            item.btn.addEventListener('mouseleave', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#ffffff';
+                item.btn.style.borderColor = '#e2e8f0';
+              }
+            });
+          });
+          
+          document.documentElement.style.visibility = 'visible';
+        });
+      }
+    })();
+  </script>
+
+  <!-- 1. Floating Sidebar Navigation -->
+  <!-- Desktop Fixed Sidebar -->
+  <aside class="hidden lg:flex flex-col justify-between fixed left-6 top-6 bottom-6 w-72 rounded-3xl glass-nav p-8 z-40">
+    <div class="space-y-12">
+      <!-- Logo/Branding -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-black text-xl tracking-wider">SF</div>
+        <div>
+          <h2 class="font-extrabold text-lg tracking-tight text-white">SnapFolio</h2>
+          <p class="text-xs text-indigo-400 font-medium">Creative Photography</p>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="flex flex-col gap-2">
+        <a href="#home" class="nav-link flex items-center gap-4 px-4 py-3 rounded-xl border border-transparent text-zinc-400 hover:text-white transition-all font-medium active">
+          <i class="fa-solid fa-house text-lg"></i> Home
+        </a>
+        <a href="#about" class="nav-link flex items-center gap-4 px-4 py-3 rounded-xl border border-transparent text-zinc-400 hover:text-white transition-all font-medium">
+          <i class="fa-solid fa-user text-lg"></i> About Me
+        </a>
+        <a href="#gallery" class="nav-link flex items-center gap-4 px-4 py-3 rounded-xl border border-transparent text-zinc-400 hover:text-white transition-all font-medium">
+          <i class="fa-solid fa-images text-lg"></i> Gallery
+        </a>
+        <a href="#services" class="nav-link flex items-center gap-4 px-4 py-3 rounded-xl border border-transparent text-zinc-400 hover:text-white transition-all font-medium">
+          <i class="fa-solid fa-briefcase text-lg"></i> Services
+        </a>
+        <a href="#contact" class="nav-link flex items-center gap-4 px-4 py-3 rounded-xl border border-transparent text-zinc-400 hover:text-white transition-all font-medium">
+          <i class="fa-solid fa-paper-plane text-lg"></i> Contact
+        </a>
+      </nav>
+    </div>
+
+    <!-- Socials & Footer -->
+    <div class="space-y-6">
+      <div class="flex items-center gap-3 justify-center">
+        <a href="#" class="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors">
+          <i class="fa-brands fa-instagram text-lg"></i>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors">
+          <i class="fa-brands fa-behance text-lg"></i>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors">
+          <i class="fa-brands fa-unsplash text-lg"></i>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors">
+          <i class="fa-brands fa-linkedin-in text-lg"></i>
+        </a>
+      </div>
+      <p class="text-center text-xs text-zinc-600 font-medium">&copy; 2026 SnapFolio. All rights reserved.</p>
+    </div>
+  </aside>
+
+  <!-- Mobile Bottom Navigation -->
+  <nav class="lg:hidden fixed bottom-4 left-4 right-4 h-16 rounded-2xl glass-nav flex items-center justify-around px-4 z-40 shadow-2xl">
+    <a href="#home" class="nav-link p-3 rounded-xl text-zinc-400 hover:text-white transition-all active">
+      <i class="fa-solid fa-house text-xl"></i>
+    </a>
+    <a href="#about" class="nav-link p-3 rounded-xl text-zinc-400 hover:text-white transition-all">
+      <i class="fa-solid fa-user text-xl"></i>
+    </a>
+    <a href="#gallery" class="nav-link p-3 rounded-xl text-zinc-400 hover:text-white transition-all">
+      <i class="fa-solid fa-images text-xl"></i>
+    </a>
+    <a href="#services" class="nav-link p-3 rounded-xl text-zinc-400 hover:text-white transition-all">
+      <i class="fa-solid fa-briefcase text-xl"></i>
+    </a>
+    <a href="#contact" class="nav-link p-3 rounded-xl text-zinc-400 hover:text-white transition-all">
+      <i class="fa-solid fa-paper-plane text-xl"></i>
+    </a>
+  </nav>
+
+  <!-- Main Content Wrap -->
+  <main class="lg:pl-[340px] px-6 md:px-12 py-10 max-w-7xl mx-auto space-y-32">
+
+    <!-- 2. Hero Section -->
+    <section id="home" class="min-h-[80vh] flex flex-col lg:flex-row items-center justify-between gap-12 pt-10">
+      <!-- Left Info -->
+      <div class="flex-1 space-y-8 text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm font-semibold">
+          <span class="w-2 h-2 rounded-full bg-indigo-400 animate-ping"></span> Available for Bookings
+        </div>
+        <div class="space-y-4">
+          <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white">
+            Hello, I'm <span class="text-indigo-500">Alex Rivers</span>
+          </h1>
+          <h3 class="text-2xl md:text-3xl font-semibold text-zinc-400 min-h-[40px]">
+            A <span id="typewriter-text" class="text-indigo-400"></span><span class="typewriter-cursor">|</span>
+          </h3>
+        </div>
+        <p class="text-zinc-400 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+          Capturing stories from around the globe through natural light, clean framing, and a minimalist editorial aesthetic. Dedicated to finding extraordinary moments in daily scenes.
+        </p>
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+          <a href="#gallery" class="px-8 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition-all shadow-lg shadow-indigo-600/20 hover:shadow-indigo-600/35 hover:-translate-y-0.5">
+            View Gallery
+          </a>
+          <a href="#contact" class="px-8 py-4 rounded-2xl border border-zinc-800 hover:border-zinc-700 bg-zinc-900/50 hover:bg-zinc-900 text-zinc-300 font-semibold transition-all hover:-translate-y-0.5">
+            Book a Session
+          </a>
+        </div>
+      </div>
+      <!-- Right Image frame with custom glow -->
+      <div class="flex-1 max-w-md w-full">
+        <div class="hero-glow rounded-3xl overflow-hidden shadow-2xl border border-zinc-800 aspect-[4/5]">
+          <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=800&q=80" alt="Alex Rivers Portrait" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. About Section -->
+    <section id="about" class="scroll-mt-24 space-y-12">
+      <div class="border-l-4 border-indigo-600 pl-4">
+        <h2 class="text-4xl font-extrabold text-white">About My Craft</h2>
+        <p class="text-zinc-500 text-sm mt-1 uppercase tracking-wider font-semibold">Behind the lens and vision</p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-12">
+        <!-- Biography & Details -->
+        <div class="lg:col-span-7 space-y-6">
+          <p class="text-zinc-300 text-lg leading-relaxed">
+            I’m Alex, an independent photographer focusing on portraiture, editorial landscapes, and street photography. Over the past 5 years, I've worked with global travel agencies, fashion brands, and local creative collectives to build distinct visual stories.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            My philosophy centers on simplicity. I strive to eliminate visual clutter, letting the core subject, emotional depth, and raw texture of the environment build the frame. I prefer ambient lighting and subtle adjustments that keep snapshots organic.
+          </p>
+
+          <!-- Gear Pills -->
+          <div class="space-y-4 pt-4">
+            <h4 class="text-sm font-semibold text-zinc-400 uppercase tracking-widest">My Gear Bag</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-4 py-2 rounded-full bg-zinc-800/80 text-zinc-300 text-xs font-semibold border border-zinc-700/50">Sony A7R V</span>
+              <span class="px-4 py-2 rounded-full bg-zinc-800/80 text-zinc-300 text-xs font-semibold border border-zinc-700/50">24-70mm f/2.8 GM II</span>
+              <span class="px-4 py-2 rounded-full bg-zinc-800/80 text-zinc-300 text-xs font-semibold border border-zinc-700/50">85mm f/1.4 GM</span>
+              <span class="px-4 py-2 rounded-full bg-zinc-800/80 text-zinc-300 text-xs font-semibold border border-zinc-700/50">DJI Mavic 3 Pro</span>
+              <span class="px-4 py-2 rounded-full bg-zinc-800/80 text-zinc-300 text-xs font-semibold border border-zinc-700/50">Profoto B10X HDR</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stat Counter Grid -->
+        <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+          <div class="glass-card rounded-2xl p-6 text-center flex flex-col justify-center">
+            <span class="text-4xl md:text-5xl font-black text-indigo-500 mb-2">5+</span>
+            <span class="text-zinc-400 font-medium text-sm">Years Experience</span>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center flex flex-col justify-center">
+            <span class="text-4xl md:text-5xl font-black text-indigo-500 mb-2">120+</span>
+            <span class="text-zinc-400 font-medium text-sm">Shoots Completed</span>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center flex flex-col justify-center">
+            <span class="text-4xl md:text-5xl font-black text-indigo-500 mb-2">15+</span>
+            <span class="text-zinc-400 font-medium text-sm">Global Awards</span>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center flex flex-col justify-center">
+            <span class="text-4xl md:text-5xl font-black text-indigo-500 mb-2">40+</span>
+            <span class="text-zinc-400 font-medium text-sm">Happy Clients</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Gallery Section -->
+    <section id="gallery" class="scroll-mt-24 space-y-10">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-l-4 border-indigo-600 pl-4">
+        <div>
+          <h2 class="text-4xl font-extrabold text-white">Visual Archives</h2>
+          <p class="text-zinc-500 text-sm mt-1 uppercase tracking-wider font-semibold">Curated Photographic Prints</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2">
+          <button data-filter="all" class="filter-btn px-5 py-2 rounded-xl bg-indigo-600 text-white text-sm font-semibold transition-all">All Work</button>
+          <button data-filter="portrait" class="filter-btn px-5 py-2 rounded-xl bg-zinc-800 text-zinc-400 hover:text-white text-sm font-semibold transition-all">Portrait</button>
+          <button data-filter="landscape" class="filter-btn px-5 py-2 rounded-xl bg-zinc-800 text-zinc-400 hover:text-white text-sm font-semibold transition-all">Landscape</button>
+          <button data-filter="street" class="filter-btn px-5 py-2 rounded-xl bg-zinc-800 text-zinc-400 hover:text-white text-sm font-semibold transition-all">Street</button>
+          <button data-filter="editorial" class="filter-btn px-5 py-2 rounded-xl bg-zinc-800 text-zinc-400 hover:text-white text-sm font-semibold transition-all">Editorial</button>
+        </div>
+      </div>
+
+      <!-- Masonry Gallery Grid -->
+      <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+        <!-- Gallery Item 1 -->
+        <div class="gallery-item show-item" data-category="portrait">
+          <div class="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900 cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Ethereal Portraiture" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <span class="text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-1">Portrait</span>
+              <h4 class="text-white font-bold text-lg">Ethereal Studio Capture</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 2 -->
+        <div class="gallery-item show-item" data-category="landscape">
+          <div class="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900 cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Misty Mountains" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <span class="text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-1">Landscape</span>
+              <h4 class="text-white font-bold text-lg">Mist on Alpine Waters</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 3 -->
+        <div class="gallery-item show-item" data-category="street">
+          <div class="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900 cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?auto=format&fit=crop&w=800&q=80" alt="Neon Alleyways" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <span class="text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-1">Street</span>
+              <h4 class="text-white font-bold text-lg">Tokyo Night Shallows</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 4 -->
+        <div class="gallery-item show-item" data-category="editorial">
+          <div class="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900 cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="Chic Geometry" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <span class="text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-1">Editorial</span>
+              <h4 class="text-white font-bold text-lg">Chic Monocromatic Focus</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 5 -->
+        <div class="gallery-item show-item" data-category="portrait">
+          <div class="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900 cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80" alt="Natural Tone Portrait" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <span class="text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-1">Portrait</span>
+              <h4 class="text-white font-bold text-lg">Warm Light Silhouette</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 6 -->
+        <div class="gallery-item show-item" data-category="landscape">
+          <div class="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900 cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80" alt="Valley Glow" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <span class="text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-1">Landscape</span>
+              <h4 class="text-white font-bold text-lg">Golden Hour Foothills</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 7 -->
+        <div class="gallery-item show-item" data-category="street">
+          <div class="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900 cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=800&q=80" alt="Rainy Crossroad" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <span class="text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-1">Street</span>
+              <h4 class="text-white font-bold text-lg">Urban Monolith Reflect</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 8 -->
+        <div class="gallery-item show-item" data-category="editorial">
+          <div class="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900 cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" alt="Minimalist Fashion" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <span class="text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-1">Editorial</span>
+              <h4 class="text-white font-bold text-lg">Clean Studio Minimalist</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Services & Pricing Section -->
+    <section id="services" class="scroll-mt-24 space-y-12">
+      <div class="border-l-4 border-indigo-600 pl-4">
+        <h2 class="text-4xl font-extrabold text-white">Creative Services</h2>
+        <p class="text-zinc-500 text-sm mt-1 uppercase tracking-wider font-semibold">Pricing Tiers & Commissions</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Service Card 1 -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between">
+          <div class="space-y-6">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-bold text-white">Portrait Session</h3>
+                <p class="text-zinc-500 text-sm mt-1">Individual / Corporate</p>
+              </div>
+              <span class="p-3 rounded-2xl bg-indigo-500/10 text-indigo-400"><i class="fa-solid fa-camera-retro text-xl"></i></span>
+            </div>
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold text-white">$250</span>
+              <span class="text-zinc-500 text-sm">/ session</span>
+            </div>
+            <ul class="space-y-3 pt-4 border-t border-zinc-800 text-sm text-zinc-300">
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400"></i> 2 Hours Studio/Location shoot</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400"></i> 2 Outfit changes</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400"></i> 15 High-res edited shots</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400"></i> Private review folder link</li>
+            </ul>
+          </div>
+          <a href="#contact" class="mt-8 w-full py-4 text-center rounded-xl bg-zinc-800 text-zinc-300 font-semibold hover:bg-zinc-700 hover:text-white transition-all inline-block">Book Package</a>
+        </div>
+
+        <!-- Service Card 2 (Featured) -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-indigo-500/40 shadow-xl shadow-indigo-600/5 relative">
+          <span class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 px-4 py-1 rounded-full bg-indigo-600 text-white text-xs font-bold tracking-widest uppercase">Popular Option</span>
+          <div class="space-y-6">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-bold text-white">Event Coverage</h3>
+                <p class="text-zinc-500 text-sm mt-1">Launch / Intimate Parties</p>
+              </div>
+              <span class="p-3 rounded-2xl bg-indigo-600 text-white"><i class="fa-solid fa-wand-magic-sparkles text-xl"></i></span>
+            </div>
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold text-white">$650</span>
+              <span class="text-zinc-500 text-sm">/ event</span>
+            </div>
+            <ul class="space-y-3 pt-4 border-t border-zinc-800 text-sm text-zinc-300">
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400"></i> Up to 5 Hours continuous</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400"></i> Multiple camera setup</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400"></i> 60+ High-res digital captures</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400"></i> Next-day social highlights delivery</li>
+            </ul>
+          </div>
+          <a href="#contact" class="mt-8 w-full py-4 text-center rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-500 transition-all inline-block">Book Package</a>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between">
+          <div class="space-y-6">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-bold text-white">Commercial</h3>
+                <p class="text-zinc-500 text-sm mt-1">Lookbooks / Brand Campaigns</p>
+              </div>
+              <span class="p-3 rounded-2xl bg-indigo-500/10 text-indigo-400"><i class="fa-solid fa-gem text-xl"></i></span>
+            </div>
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold text-white">$1,200</span>
+              <span class="text-zinc-500 text-sm">/ project</span>
+            </div>
+            <ul class="space-y-3 pt-4 border-t border-zinc-800 text-sm text-zinc-300">
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400"></i> Full-day shoot (8 Hours)</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400"></i> Studio & Location dynamic mapping</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400"></i> All RAW negatives + 30 master edits</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400"></i> Full commercial license usage rights</li>
+            </ul>
+          </div>
+          <a href="#contact" class="mt-8 w-full py-4 text-center rounded-xl bg-zinc-800 text-zinc-300 font-semibold hover:bg-zinc-700 hover:text-white transition-all inline-block">Book Package</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Contact Section -->
+    <section id="contact" class="scroll-mt-24 space-y-12 pb-16">
+      <div class="border-l-4 border-indigo-600 pl-4">
+        <h2 class="text-4xl font-extrabold text-white">Contact & Bookings</h2>
+        <p class="text-zinc-500 text-sm mt-1 uppercase tracking-wider font-semibold">Start your custom visual story</p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-12">
+        <!-- Quick Details -->
+        <div class="lg:col-span-5 space-y-8">
+          <p class="text-zinc-400 leading-relaxed text-lg">
+            Have an upcoming campaign or want to arrange a personal portrait session? Drop a query with your preferred service timeline.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <span class="w-12 h-12 rounded-xl bg-zinc-800/80 flex items-center justify-center text-indigo-400 border border-zinc-700/50"><i class="fa-solid fa-envelope text-lg"></i></span>
+              <div>
+                <h4 class="text-xs font-semibold text-zinc-500 uppercase tracking-widest">Email Direct</h4>
+                <p class="text-zinc-200 font-semibold">hello@alexrivers.com</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="w-12 h-12 rounded-xl bg-zinc-800/80 flex items-center justify-center text-indigo-400 border border-zinc-700/50"><i class="fa-solid fa-phone text-lg"></i></span>
+              <div>
+                <h4 class="text-xs font-semibold text-zinc-500 uppercase tracking-widest">Phone Direct</h4>
+                <p class="text-zinc-200 font-semibold">+1 (555) 902-1845</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="w-12 h-12 rounded-xl bg-zinc-800/80 flex items-center justify-center text-indigo-400 border border-zinc-700/50"><i class="fa-solid fa-location-dot text-lg"></i></span>
+              <div>
+                <h4 class="text-xs font-semibold text-zinc-500 uppercase tracking-widest">Studio Headquarters</h4>
+                <p class="text-zinc-200 font-semibold">SoHo, Manhattan, NY</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Panel -->
+        <form id="contact-form" class="lg:col-span-7 bg-[#1e1e1e] border border-zinc-800 p-8 rounded-3xl space-y-6" novalidate>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label for="form-name" class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Your Name <span class="text-red-500">*</span></label>
+              <input type="text" id="form-name" placeholder="John Doe" class="w-full bg-[#121212] border border-zinc-800 focus:border-indigo-500/60 rounded-xl px-4 py-3 text-sm text-zinc-200 outline-none transition-colors" required>
+            </div>
+            <div class="space-y-2">
+              <label for="form-email" class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Email Address <span class="text-red-500">*</span></label>
+              <input type="email" id="form-email" placeholder="john@example.com" class="w-full bg-[#121212] border border-zinc-800 focus:border-indigo-500/60 rounded-xl px-4 py-3 text-sm text-zinc-200 outline-none transition-colors" required>
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label for="form-service" class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Select Package</label>
+            <select id="form-service" class="w-full bg-[#121212] border border-zinc-800 focus:border-indigo-500/60 rounded-xl px-4 py-3 text-sm text-zinc-400 outline-none transition-colors">
+              <option value="general">General Collaboration / Print Inquiry</option>
+              <option value="portrait">Portrait Shoot Session ($250)</option>
+              <option value="event">Event Coverage Bundle ($650)</option>
+              <option value="commercial">Commercial Project ($1,200)</option>
+            </select>
+          </div>
+
+          <div class="space-y-2">
+            <label for="form-message" class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Project Scope / Details <span class="text-red-500">*</span></label>
+            <textarea id="form-message" rows="5" placeholder="Share your visual theme, timing, details..." class="w-full bg-[#121212] border border-zinc-800 focus:border-indigo-500/60 rounded-xl px-4 py-3 text-sm text-zinc-200 outline-none transition-colors resize-none" required></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-indigo-600/10 hover:shadow-indigo-600/25">
+            Submit Booking Request
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7. Lightbox Fullscreen Modal -->
+  <div id="lightbox" class="fixed inset-0 bg-black/95 flex flex-col justify-between items-center py-6 px-4 z-50">
+    <!-- Top Bar -->
+    <div class="w-full max-w-6xl flex justify-between items-center">
+      <div id="lightbox-caption" class="text-sm font-medium"></div>
+      <button id="lightbox-close" class="text-zinc-400 hover:text-white p-2 text-2xl transition-colors"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- Image Display Container -->
+    <div class="relative w-full max-w-4xl flex items-center justify-between flex-1 py-4">
+      <!-- Left Prev Button -->
+      <button id="lightbox-prev" class="absolute left-0 bg-zinc-900/40 hover:bg-zinc-800 text-white w-12 h-12 rounded-full border border-zinc-850/50 flex items-center justify-center transition-colors z-10"><i class="fa-solid fa-chevron-left"></i></button>
+      
+      <!-- Target Image -->
+      <div class="w-full h-full flex items-center justify-center">
+        <img id="lightbox-img" src="" alt="Lightbox View" class="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl border border-zinc-900">
+      </div>
+
+      <!-- Right Next Button -->
+      <button id="lightbox-next" class="absolute right-0 bg-zinc-900/40 hover:bg-zinc-800 text-white w-12 h-12 rounded-full border border-zinc-850/50 flex items-center justify-center transition-colors z-10"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Bottom Metadata Info -->
+    <div class="text-xs text-zinc-500 select-none">
+      Use Left & Right Arrows on keyboard to browse pictures. Click Esc to close.
+    </div>
+  </div>
+
+  <!-- 8. Interactive Toast Alert Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 max-w-sm w-full bg-zinc-900 border border-zinc-800 p-4 rounded-2xl shadow-2xl flex items-center z-50">
+    <svg class="w-5 h-5 text-green-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+    </svg>
+    <div class="text-sm font-semibold text-zinc-100 flex-1 pr-2" id="toast-message">Message sent successfully!</div>
+  </div>
+
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

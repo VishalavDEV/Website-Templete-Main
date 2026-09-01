@@ -1,0 +1,129 @@
+/* AVELUNE VOWS - RESPONSIVE STYLES */
+
+/* TABLET BREAKPOINT (max-width: 992px) */
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .hero-collage-container {
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 1rem;
+  }
+
+  .collage-left, .collage-right {
+    height: 300px;
+  }
+
+  .collage-center {
+    height: 380px;
+  }
+
+  .split-story-grid, .venue-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .story-image-wrap img {
+    height: 400px;
+  }
+
+  .welcome-details-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .menu-items-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MOBILE BREAKPOINT (max-width: 768px) */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 3.5rem 0;
+  }
+
+  .hero-section {
+    padding: 6.5rem 1rem 3rem;
+  }
+
+  .hero-word {
+    font-size: 2.5rem;
+    letter-spacing: 0.18em;
+  }
+
+  /* STACK COLLAGE IMAGES ELEGANTLY ON MOBILE */
+  .hero-collage-container {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+  }
+
+  .collage-left, .collage-center, .collage-right {
+    height: 320px;
+    transform: none !important;
+  }
+
+  .countdown-grid {
+    gap: 0.8rem;
+  }
+
+  .countdown-box {
+    min-width: 65px;
+  }
+
+  .countdown-number {
+    font-size: 2.4rem;
+  }
+
+  .schedule-row {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    padding: 1.2rem;
+  }
+
+  .form-container {
+    padding: 2rem 1.2rem;
+  }
+
+  .invitation-card {
+    padding: 2rem 1.2rem;
+  }
+
+  .invitation-border-frame {
+    padding: 1.8rem 1rem;
+  }
+
+  .music-toggle-btn {
+    bottom: 1.2rem;
+    left: 1.2rem;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.65rem;
+  }
+
+  .back-to-top-btn {
+    bottom: 1.2rem;
+    right: 1.2rem;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ACCESSIBILITY: REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .petals-container {
+    display: none;
+  }
+}

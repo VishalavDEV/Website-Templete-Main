@@ -1,0 +1,20 @@
+# Frontend exclusions
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.rolldown/
+frontend/.vite/
+
+# Backend exclusions
+backend/target/
+backend/.mvn/
+backend/mvnw
+backend/mvnw.cmd
+
+# OS & IDE exclusions
+.idea/
+.vscode/
+*.log
+*.lock
+Thumbs.db
+.DS_Store

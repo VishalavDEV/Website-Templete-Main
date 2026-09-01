@@ -1,0 +1,56 @@
+[
+  {
+    "id": "author-elena-vance",
+    "name": "Dr. Elena Vance",
+    "role": "Chief Science Editor & Marine Biogeochemist",
+    "bio": "Dr. Vance has led eleven deep-sea submersible expeditions into the Mariana and Kermadec Trenches, researching abyssal extremophiles and sub-ice ocean chemistry.",
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+    "articlesCount": 18,
+    "location": "Woods Hole Oceanographic Institution"
+  },
+  {
+    "id": "author-marcus-thorne",
+    "name": "Marcus Thorne",
+    "role": "Expedition Photojournalist",
+    "bio": "For over two decades, Thorne has documented isolated biomes, uncontacted desert migrations, and the world's most remote high-altitude sanctuaries.",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    "articlesCount": 24,
+    "location": "Geneva / Field Bureau"
+  },
+  {
+    "id": "author-sarah-al-mansoor",
+    "name": "Dr. Sarah Al-Mansoor",
+    "role": "Astrophysicist & Planetary Geologist",
+    "bio": "Specializing in cryovolcanism and atmospheric spectroscopy of Jovian moons, Dr. Al-Mansoor advises international robotic exploration missions.",
+    "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+    "articlesCount": 14,
+    "location": "Atacama Large Millimeter Array, Chile"
+  },
+  {
+    "id": "author-kai-nordstrom",
+    "name": "Kai Nordström",
+    "role": "Arctic Glaciologist & Climate Cartographer",
+    "bio": "Nordström spends six months each year traversing Greenland ice sheets and Svalbard tidewater glaciers deploying seismic ice monitors.",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+    "articlesCount": 16,
+    "location": "Tromsø, Norway"
+  },
+  {
+    "id": "author-amara-okafor",
+    "name": "Amara Okafor",
+    "role": "Anthropological Archaeologist",
+    "bio": "Pioneering non-invasive LiDAR remote sensing to reconstruct trans-Saharan trade cities and prehistoric agrarian megaliths.",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+    "articlesCount": 12,
+    "location": "Lagos & Oxford"
+  },
+  {
+    "id": "author-julian-reyes",
+    "name": "Julian Reyes",
+    "role": "Wildlife Ethologist & Wilderness Filmmaker",
+    "bio": "Investigating high-canopy predator acoustics and cetacean dialect networks across the South Pacific and Amazon basin.",
+    "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+    "articlesCount": 21,
+    "location": "Manaus, Brazil"
+  }
+]

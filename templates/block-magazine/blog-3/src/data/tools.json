@@ -1,0 +1,178 @@
+[
+  {
+    "id": "tool-001",
+    "name": "Cursor",
+    "tagline": "The AI-First Code Editor",
+    "description": "Fork of VS Code engineered from the ground up for collaborative human-AI coding with multi-file contextual understanding, predictive edits, and terminal command intelligence.",
+    "longDescription": "Cursor has redefined software engineering velocity. Built with custom frontier model fine-tunes and proprietary codebase indexing (shadow workspace indexing), Cursor understands your entire repository's dependency graph. Features include Copilot++ speculative multi-line edits, full codebase chat, terminal error auto-resolution, and instant diff rollbacks.",
+    "category": "Development",
+    "status": "Trending",
+    "score": 98,
+    "pricing": "Freemium ($20/mo Pro)",
+    "developer": "Anysphere",
+    "launched": "2023",
+    "website": "https://cursor.com",
+    "keyFeatures": [
+      "Full codebase semantic indexing & search",
+      "Copilot++ predictive multi-line tab completions",
+      "Terminal auto-debug and automated fix generation",
+      "Custom system prompt rules & .cursorrules support"
+    ],
+    "pros": ["Unmatched multi-file awareness", "Direct VS Code extension compatibility", "Instant diff preview"],
+    "cons": ["Heavy RAM usage on massive monorepos", "Requires active internet connection for index syncing"]
+  },
+  {
+    "id": "tool-002",
+    "name": "Midjourney v6.1",
+    "tagline": "Photorealistic & Cinematic Image Synthesis",
+    "description": "Industry benchmark generative imaging platform featuring state-of-the-art text coherence, micro-texture rendering, lighting precision, and cinematic composition controls.",
+    "longDescription": "Midjourney v6.1 represents the pinnacle of visual generative models. It excels at intricate text rendering inside generated scenes, accurate body kinematics, realistic skin micro-textures, and granular camera parameters (aspect ratio, stylize parameters, weirdness factors, pan/zoom out).",
+    "category": "Creative",
+    "status": "Established",
+    "score": 96,
+    "pricing": "$10 to $60/mo",
+    "developer": "Midjourney Research",
+    "launched": "2022",
+    "website": "https://midjourney.com",
+    "keyFeatures": [
+      "In-image typography and sign rendering",
+      "Vary Region (Inpainting) and Pan/Zoom Out",
+      "Style reference (--sref) & Character consistency (--cref)",
+      "Web interface generation suite with batch upscaling"
+    ],
+    "pros": ["Incredible aesthetic intuition without long prompts", "Unmatched lighting and texture depth"],
+    "cons": ["No public API", "Subscription required for all usage"]
+  },
+  {
+    "id": "tool-003",
+    "name": "Perplexity AI",
+    "tagline": "Conversational Answer Engine with Live Citations",
+    "description": "Real-time AI search engine combining web indexing, multi-source citation verification, mathematical reasoning, and deep research synthesis.",
+    "longDescription": "Perplexity replaces traditional search links with structured, synthesized answers backed by verified inline citations. Its 'Pro Search' performs multi-step reasoning, autonomously generating follow-up queries, scraping secondary sources, executing Python code for math and charts, and delivering comprehensive research dossiers.",
+    "category": "Research",
+    "status": "Trending",
+    "score": 95,
+    "pricing": "Freemium ($20/mo Pro)",
+    "developer": "Perplexity AI",
+    "launched": "2022",
+    "website": "https://perplexity.ai",
+    "keyFeatures": [
+      "Live web citations with source snippet previews",
+      "Pro Search with multi-step query decomposition",
+      "Collections / Spaces for shared team research",
+      "Model switching (Claude 3.5 Sonnet, GPT-4o, Sonar)"
+    ],
+    "pros": ["Halts hallucinations with direct source citations", "Clean distraction-free interface"],
+    "cons": ["Occasional paywall clipping", "Pro query rate limits on base tier"]
+  },
+  {
+    "id": "tool-004",
+    "name": "Suno v3.5",
+    "tagline": "Studio-Quality Generative Audio & Music",
+    "description": "Full-song audio synthesis creating complete multi-instrumental tracks with verse-chorus arrangements, studio vocal mixing, and genre cross-pollination.",
+    "longDescription": "Suno can generate complete 2-to-4-minute songs across any musical genre from a simple text prompt. It models complex song structures (intros, verses, pre-choruses, hooks, guitar solos, and outros), delivering radio-ready vocal performances, harmonies, and realistic instrumentation.",
+    "category": "Creative",
+    "status": "Rising",
+    "score": 93,
+    "pricing": "Freemium ($10/mo Pro)",
+    "developer": "Suno Inc.",
+    "launched": "2023",
+    "website": "https://suno.com",
+    "keyFeatures": [
+      "Custom lyrics & structural tag support [Verse], [Chorus]",
+      "Audio input continuation & cover generation",
+      "Multi-genre synthesis (Cyberpunk Synthwave, Jazz, Metal)",
+      "High-bitrate stem and master audio downloads"
+    ],
+    "pros": ["Astonishing vocal emotion and genre fidelity", "Instant 2-track ideation"],
+    "cons": ["Occasional compression artifacts in high frequencies", "Complex time signature challenges"]
+  },
+  {
+    "id": "tool-005",
+    "name": "ElevenLabs",
+    "tagline": "Hyper-Realistic Voice AI & Audio Cloning",
+    "description": "State-of-the-art voice generation platform with zero-shot voice cloning, emotional inflection controls, multilingual dubbing, and low-latency conversational APIs.",
+    "longDescription": "ElevenLabs utilizes proprietary deep generative audio models that capture subtle vocal inflections, breathing nuances, pacing, and emotional weight. It is widely used in audiobooks, video localization, game development, and real-time voice agents.",
+    "category": "Audio",
+    "status": "Established",
+    "score": 94,
+    "pricing": "Freemium ($5 to $330/mo)",
+    "developer": "ElevenLabs",
+    "launched": "2023",
+    "website": "https://elevenlabs.io",
+    "keyFeatures": [
+      "Instant zero-shot voice cloning from 1-minute audio",
+      "Automatic video translation & dubbing with lip-sync",
+      "Real-time Conversational Voice Agent WebSocket API",
+      "Custom sound effects (SFX) generation"
+    ],
+    "pros": ["Indistinguishable from human voice actors", "Support for 32+ languages with native accents"],
+    "cons": ["Character credit limits deplete quickly on long files", "Rigorous voice verification needed for security"]
+  },
+  {
+    "id": "tool-006",
+    "name": "v0 by Vercel",
+    "tagline": "Generative UI System for Modern Web Applications",
+    "description": "Natural language to production-grade React, Tailwind CSS, and Lucide Icon components with immediate interactive sandbox preview and direct CLI deployment.",
+    "longDescription": "v0 enables designers and engineers to prompt complex frontend interfaces and receive clean, modular React component code formatted according to modern accessibility standards and design systems.",
+    "category": "Development",
+    "status": "Trending",
+    "score": 92,
+    "pricing": "Freemium ($20/mo Premium)",
+    "developer": "Vercel",
+    "launched": "2023",
+    "website": "https://v0.dev",
+    "keyFeatures": [
+      "Instant interactive iframe sandbox preview",
+      "Direct copy-to-clipboard or npx CLI installation",
+      "Figma design screenshot to code conversion",
+      "Support for Radix UI, Tailwind CSS, and shadcn/ui"
+    ],
+    "pros": ["Exceptionally clean component architecture", "Accelerates rapid prototyping 10x"],
+    "cons": ["Focuses primarily on React/Tailwind ecosystem", "Complex custom state logic still requires manual refinement"]
+  },
+  {
+    "id": "tool-007",
+    "name": "Devin AI",
+    "tagline": "Autonomous Software Engineer Agent",
+    "description": "Autonomous AI software engineering agent capable of managing entire development lifecycles: reading documentation, debugging builds, running test suites, and submitting GitHub PRs.",
+    "longDescription": "Devin operates inside an isolated sandbox equipped with a terminal, browser, and code editor. Given a GitHub issue or feature request, Devin reasons through multiple steps, analyzes repository files, plans architecture changes, compiles code, tests unit suites, and resolves compiler errors.",
+    "category": "Autonomous Systems",
+    "status": "Rising",
+    "score": 91,
+    "pricing": "Enterprise / Waitlist",
+    "developer": "Cognition Labs",
+    "launched": "2024",
+    "website": "https://cognition.ai",
+    "keyFeatures": [
+      "Autonomous sandbox with terminal, browser, and IDE",
+      "Self-directed API documentation reading & testing",
+      "Automatic unit testing and regression resolution",
+      "End-to-end pull request generation on GitHub"
+    ],
+    "pros": ["Handles tedious package migrations and bug triage", "Full step-by-step transparency log"],
+    "cons": ["Requires rigorous PR review", "High compute cost per autonomous task"]
+  },
+  {
+    "id": "tool-008",
+    "name": "Runway Gen-3 Alpha",
+    "tagline": "High-Fidelity Video Synthesis & World Simulation",
+    "description": "Frontier video generation model offering cinematic temporal consistency, dynamic camera motion paths, and realistic physical lighting simulations.",
+    "longDescription": "Runway Gen-3 Alpha generates hyper-realistic video clips with expressive character motion, complex camera trajectories (pan, tilt, zoom, orbit), and detailed environmental physics.",
+    "category": "Creative",
+    "status": "Trending",
+    "score": 94,
+    "pricing": "$12 to $76/mo",
+    "developer": "Runway",
+    "launched": "2024",
+    "website": "https://runwayml.com",
+    "keyFeatures": [
+      "Text-to-Video & Image-to-Video generation",
+      "Motion Brush for localized area motion control",
+      "Advanced Director Mode for 3D camera paths",
+      "Lip sync and background soundtrack generation"
+    ],
+    "pros": ["Cinematic fidelity with realistic motion blur", "Flexible camera choreography"],
+    "cons": ["Generation times can take 1-2 minutes", "Occasional morphological drift in complex limbs"]
+  }
+]

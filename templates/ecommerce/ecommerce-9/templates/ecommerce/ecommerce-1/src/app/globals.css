@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Soft Glow Theme Colors */
+    --color-blush: #F7DDE2;
+    --color-cream: #FFF9F5;
+    --color-rose: #B76E79;
+    --color-rose-dark: #9E5661;
+    --color-rose-light: #FDF4F6;
+
+    --color-primary: #B76E79;
+    --color-primary-dark: #9E5661;
+    --color-primary-light: #F7DDE2;
+    --color-bg-tint: #FFF9F5;
+    --color-surface: #FFFFFF;
+    --color-card-subtle: #FDF4F6;
+    --color-text-main: #2D2224;
+    --color-text-muted: #7E6B6E;
+    --color-border: #F3D0D7;
+    --color-gold-accent: #D4AF37;
+
+    /* Custom Fonts */
+    --font-heading: var(--font-playfair), 'Playfair Display', serif;
+    --font-body: var(--font-dm-sans), 'DM Sans', sans-serif;
+    --font-accent: var(--font-playfair), 'Playfair Display', serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-bg-tint);
+    color: var(--color-text-main);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-blush);
+    color: var(--color-rose-dark);
+  }
+}
+
+/* Custom Typography Helper Classes */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+}
+
+/* Glassmorphism Styles */
+.glass-nav {
+  background: rgba(250, 248, 245, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(231, 224, 216, 0.9);
+  box-shadow: 0 4px 20px -4px rgba(28, 25, 23, 0.04);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(231, 224, 216, 0.8);
+}
+
+/* Infinite Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Subtle Floating 3D Keyframe */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
+/* Glowing Hotspot Tooltip Pulse */
+@keyframes dotPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(217, 138, 127, 0.7);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 12px rgba(217, 138, 127, 0);
+  }
+}
+
+.animate-hotspot {
+  animation: dotPulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Hide Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide Next.js Dev Indicator N Badge */
+nextjs-portal,
+[data-nextjs-toast],
+[data-next-badge],
+div[class*="nextjs-toast"] {
+  display: none !important;
+}
+

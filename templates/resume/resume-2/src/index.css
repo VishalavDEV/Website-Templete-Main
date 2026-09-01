@@ -1,0 +1,310 @@
+﻿/* ========================================
+   GLOBAL DESIGN SYSTEM — Dr. Maya Ellison
+   Template 3: Medical Professional CV
+   ======================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Core Palette */
+  --clr-white: #ffffff;
+  --clr-bg-primary: #f8fafc;
+  --clr-bg-secondary: #f0f5fb;
+  --clr-bg-soft: #eef4f9;
+
+  /* Medical Blues */
+  --clr-blue-900: #0d2d52;
+  --clr-blue-800: #1a4270;
+  --clr-blue-700: #1e5799;
+  --clr-blue-600: #2563ab;
+  --clr-blue-500: #3b82c4;
+  --clr-blue-400: #60a5d8;
+  --clr-blue-100: #dbeafe;
+  --clr-blue-50: #eff6ff;
+
+  /* Teal accents */
+  --clr-teal-600: #0d7490;
+  --clr-teal-500: #0ea5b8;
+  --clr-teal-100: #ccf2f4;
+  --clr-teal-50: #f0fafb;
+
+  /* Muted greens */
+  --clr-green-600: #15803d;
+  --clr-green-100: #dcfce7;
+
+  /* Neutrals */
+  --clr-gray-900: #0f172a;
+  --clr-gray-800: #1e293b;
+  --clr-gray-700: #334155;
+  --clr-gray-600: #475569;
+  --clr-gray-500: #64748b;
+  --clr-gray-400: #94a3b8;
+  --clr-gray-300: #cbd5e1;
+  --clr-gray-200: #e2e8f0;
+  --clr-gray-100: #f1f5f9;
+  --clr-gray-50: #f8fafc;
+
+  /* Typography */
+  --font-heading: 'Lora', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.10);
+  --shadow-xl: 0 16px 48px rgba(0,0,0,0.12);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Nav */
+  --nav-height: 72px;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--clr-gray-800);
+  background-color: var(--clr-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Utilities ── */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+.section {
+  padding: var(--space-5xl) 0;
+}
+
+.section--gray {
+  background-color: var(--clr-bg-primary);
+}
+
+.section--soft-blue {
+  background-color: var(--clr-bg-soft);
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-blue-600);
+  margin-bottom: var(--space-md);
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--clr-blue-500);
+  border-radius: 2px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 600;
+  color: var(--clr-gray-900);
+  line-height: 1.25;
+  margin-bottom: var(--space-md);
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--clr-gray-500);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.section-header {
+  margin-bottom: var(--space-3xl);
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  border: none;
+  outline: none;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--clr-blue-700);
+  color: var(--clr-white);
+  box-shadow: 0 2px 12px rgba(30, 87, 153, 0.25);
+}
+
+.btn--primary:hover {
+  background: var(--clr-blue-800);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(30, 87, 153, 0.35);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--clr-blue-700);
+  border: 1.5px solid var(--clr-blue-300, #93c5fd);
+}
+
+.btn--outline:hover {
+  background: var(--clr-blue-50);
+  border-color: var(--clr-blue-500);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--clr-gray-600);
+  padding: 0.6rem 1rem;
+}
+
+.btn--ghost:hover {
+  color: var(--clr-blue-700);
+  background: var(--clr-blue-50);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--clr-white);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--clr-gray-200);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Fade-up animation ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.fade-up.visible {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ── Staggered delays ── */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* ── Divider ── */
+.divider {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clr-blue-500), var(--clr-teal-500));
+  border-radius: var(--radius-full);
+  margin: var(--space-lg) 0;
+}
+
+/* ── Tag / Badge ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  background: var(--clr-blue-50);
+  color: var(--clr-blue-700);
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--clr-blue-100);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--clr-gray-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--clr-blue-300, #93c5fd);
+  border-radius: var(--radius-full);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-3xl) 0;
+  }
+  .container {
+    padding: 0 var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+}

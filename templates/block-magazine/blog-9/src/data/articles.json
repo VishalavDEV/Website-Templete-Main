@@ -1,0 +1,558 @@
+[
+  {
+    "id": "story-001",
+    "slug": "beneath-a-world-of-ice",
+    "title": "Beneath a World of Ice",
+    "subtitle": "Drilling three kilometers through the Antarctic ice sheet reveals a subterranean ocean teeming with unsuspected organisms.",
+    "category": "science",
+    "categoryLabel": "Science",
+    "authorId": "dr-elena-vance",
+    "author": "Dr. Elena Vance",
+    "date": "September 2026",
+    "publishedDate": "2026-09-14",
+    "readTime": "12 min read",
+    "featured": true,
+    "leadStory": true,
+    "heroImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "Under three kilometers of ancient glacial pressure, Lake Mercer exists in total darkness. When our hot-water drill finally pierced through, the optical probe illuminated something astonishing: life, abundant and indifferent to the sun.",
+    "location": "Whillans Ice Stream, West Antarctica",
+    "sections": [
+      {
+        "heading": "The Descent Through Deep Time",
+        "paragraphs": [
+          "For seventy-two continuous hours, the rhythmic churn of the pressurized hot-water drill vibrated through the floorboards of our mobile field lab. Outside, winds howled across the Ross Ice Shelf at fifty knots, driving the ambient temperature down to forty-eight below zero. Inside, twelve researchers gathered around an array of high-resolution monitors displaying the telemetry of probe descent.",
+          "To drill through three kilometers of Antarctic ice is not merely an engineering feat; it is a voyage backward through climatic chronology. Every meter of core represents centuries of atmospheric history—dust from prehistoric volcanic eruptions, ancient atmospheric gasses trapped in pressurized micro-bubbles, and the pristine crystalline architecture of water that fell as snow before anatomically modern humans walked out of Africa."
+        ]
+      },
+      {
+        "heading": "Piercing the Subglacial Ceiling",
+        "paragraphs": [
+          "At precisely 03:42 UTC on the fourth morning of drilling, the pressure sensor spiked. The drill head had broken into the subglacial cavity of Lake Mercer—a vast freshwater reservoir sealed beneath the continent for at least 150,000 years.",
+          "We immediately initiated the sterilized sampling protocol. A robotic tethered crawler, outfitted with ultra-clean titanium water canisters and high-lumen optical cameras, was lowered into the borehole. The water in the lake is perpetually cold—minus zero point five degrees Celsius, kept liquid solely by geothermal heat flux from the seabed and the crushing weight of the ice ceiling."
+        ],
+        "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1600&q=85",
+        "caption": "The exploration pod descending through the 30-centimeter borehole toward the subglacial cavity.",
+        "pullQuote": "We expected a sterile, desolate brine. Instead, the camera revealed crystalline filaments and metabolic activity thriving in absolute isolation."
+      },
+      {
+        "heading": "Chemosynthetic Ecosystems in the Dark",
+        "paragraphs": [
+          "The first video feed returned from the lake floor was breathtaking. Thick microbial mats carpeted the fine-grained silts, glowing with faint autofluorescence under our ultraviolet sensors. Genomic sequencing performed in the field tent revealed unexpected diversity: thousands of distinct bacterial and archaeal lineages utilizing iron and sulfur oxidation to synthesize organic carbon.",
+          "Even more remarkably, micro-crustaceans and diatom skeletons—transported perhaps millions of years ago during a marine transgression—formed the structural foundation of a food web that has functioned uninterrupted in absolute darkness. What we are witnessing here is a living analogue for what may exist beneath the icy shells of Jupiter's moon Europa and Saturn's Enceladus."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-002",
+    "slug": "the-breathing-forests",
+    "title": "The Breathing Forests",
+    "subtitle": "High-altitude flux towers reveal that the Siberian Taiga exhales planetary moisture systems that reach across oceans.",
+    "category": "planet",
+    "categoryLabel": "Planet",
+    "authorId": "sarah-lin",
+    "author": "Sarah Lin",
+    "date": "September 2026",
+    "publishedDate": "2026-09-08",
+    "readTime": "10 min read",
+    "featured": true,
+    "heroImage": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "Boreal forests are not passive carbon sinks; they are planetary circulatory engines. New atmospheric telemetry reveals how millions of square kilometers of larch and pine generate continent-spanning airborne rivers.",
+    "location": "Central Siberian Plateau, Russia",
+    "sections": [
+      {
+        "heading": "The Forest as an Atmospheric Engine",
+        "paragraphs": [
+          "Standing atop the 300-meter ZOTTO eddy covariance tower in the heart of Siberia, one looks out over an uninterrupted expanse of emerald green extending past every horizon. Here, the air is clean enough to register as a baseline for the Northern Hemisphere.",
+          "Every summer morning, as solar radiation strikes the coniferous canopy, billions of trees begin an synchronized biophysical pump. They transpire trillions of liters of water vapor while simultaneously releasing terpene and isoprene aerosols that act as cloud condensation nuclei."
+        ],
+        "image": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1600&q=85",
+        "caption": "Canopy mist rises at dawn over the Central Siberian Larch biome.",
+        "pullQuote": "The trees are actively manufacturing the very rainclouds that ensure their own survival thousands of kilometers inland."
+      },
+      {
+        "heading": "Flying Rivers Across Hemispheric Belts",
+        "paragraphs": [
+          "By coupling isotopic water tracers with satellite spectroscopy, meteorologists can now track moisture evaporated from Siberian needles as it travels along jet streams, ultimately descending as precipitation on the grain belts of Central Asia and North America.",
+          "Understanding the boreal biome as an integrated planetary pump fundamentally transforms international conservation strategy. Protecting these forests is not simply about sequestering carbon—it is about stabilizing global rainfall dynamics."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-003",
+    "slug": "the-last-dark-skies",
+    "title": "The Last Dark Skies",
+    "subtitle": "Astronomers journey to the high Atacama to preserve the vanishing sanctuary of zero-light pollution.",
+    "category": "space",
+    "categoryLabel": "Space",
+    "authorId": "dr-arjun-patel",
+    "author": "Dr. Arjun Patel",
+    "date": "August 2026",
+    "publishedDate": "2026-08-28",
+    "readTime": "14 min read",
+    "featured": true,
+    "heroImage": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "At 5,000 meters above sea level on the Chajnantor Plateau, the Milky Way casts a crisp shadow on the desert earth. As orbital satellite constellations proliferate, this natural night sky is becoming Earth's rarest resource.",
+    "location": "Chajnantor Plateau, Atacama Desert, Chile",
+    "sections": [
+      {
+        "heading": "Silence on the Roof of the World",
+        "paragraphs": [
+          "The air at 5,000 meters contains less than half the oxygen of sea level. Every breath is deliberate; each step over the rust-red gravel requires conscious effort. But look upward on a moonless night, and vertigo takes over. The galactic core of the Milky Way is not a hazy smudge—it is a three-dimensional blaze of dust lanes, nebular tendrils, and millions of incandescent suns.",
+          "Here sits the ALMA observatory—sixty-six precision antennas working as a single radio telescope spanning sixteen kilometers of desert. In this hyper-arid environment, virtually free of atmospheric water vapor, the universe reveals its earliest epochs."
+        ],
+        "pullQuote": "To stand under a truly dark sky is to realize that the universe is not something we look at from outside; we are suspended directly within its interior."
+      }
+    ]
+  },
+  {
+    "id": "story-004",
+    "slug": "beneath-the-ice-giants",
+    "title": "Beneath the Ice Giants",
+    "subtitle": "Tracking polar bear family lineages across the shrinking floes of the Svalbard archipelago.",
+    "category": "wildlife",
+    "categoryLabel": "Wildlife",
+    "authorId": "marcus-thorne",
+    "author": "Marcus Thorne",
+    "date": "August 2026",
+    "publishedDate": "2026-08-19",
+    "readTime": "11 min read",
+    "featured": true,
+    "heroImage": "https://images.unsplash.com/photo-1589656966895-2f33e7653819?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1589656966895-2f33e7653819?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "For two seasons aboard an ice-strengthened sailboat, photographer Marcus Thorne followed matriarchal polar bear lineages adapting to unprecedented summer open-water crossings.",
+    "location": "Hinlopen Strait, Svalbard",
+    "sections": [
+      {
+        "heading": "Living on the Edge of Solitude",
+        "paragraphs": [
+          "The pack ice groans as the sea swell pushes beneath it. Through the telephoto lens, the mother bear appeared as a cream-colored dot navigating a maze of pressure ridges with two young cubs in tow. Her paws, wide as dinner plates and lined with papillae for traction, tested each sheet of slush before committing weight.",
+          "In modern Svalbard, the sea ice retreats faster and further north each summer. The bears are forced to make grueling fifty-kilometer open-water crossings or adapt to foraging on steep coastal bird cliffs—a testament to evolutionary plasticity in the face of rapid upheaval."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-005",
+    "slug": "secrets-of-the-sand-sea",
+    "title": "Secrets of the Sand Sea",
+    "subtitle": "Satellite radar penetrates the Rub' al Khali to map a buried prehistoric river network and Neolithic settlements.",
+    "category": "history",
+    "categoryLabel": "History",
+    "authorId": "tariq-al-mansoor",
+    "author": "Tariq Al-Mansoor",
+    "date": "July 2026",
+    "publishedDate": "2026-07-22",
+    "readTime": "13 min read",
+    "featured": true,
+    "heroImage": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "Beneath 250 meters of shifting red dunes lies an ancient Green Arabia. Synthetic aperture radar has revealed dried river valleys where hippos and savannah hunters once flourished.",
+    "location": "Empty Quarter (Rub' al Khali), Arabian Peninsula",
+    "sections": [
+      {
+        "heading": "The Green Sahara and Arabian Riverbeds",
+        "paragraphs": [
+          "Eight thousand years ago, during the Holocene Humid Period, the monsoon belt shifted north. The desert we see today was an interwoven labyrinth of freshwater lakes, lush riparian corridors, and grasslands populated by herds of gazelle, wild cattle, and prehistoric hunters who left polished stone tools along now-vanished shorelines.",
+          "Using spaceborne L-band radar sensors that penetrate dry quartz sand down to three meters, our archaeological expedition charted over four hundred kilometers of ancient river meanders, pinpointing prehistoric hearths and gathering sites buried under immense barchan dunes."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-006",
+    "slug": "guardians-of-the-cloud-forest",
+    "title": "Guardians of the Cloud Forest",
+    "subtitle": "How the Waorani community created the world's most sophisticated bio-acoustic defense system.",
+    "category": "culture",
+    "categoryLabel": "Culture",
+    "authorId": "mateo-silva",
+    "author": "Mateo Silva",
+    "date": "July 2026",
+    "publishedDate": "2026-07-10",
+    "readTime": "9 min read",
+    "featured": false,
+    "heroImage": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "Deep in the Yasuní Biosphere Reserve, solar-powered acoustic nodes high in the kapok canopy detect illegal chainsaw vibrations in real time, alerting indigenous rangers via satellite mesh radio.",
+    "location": "Yasuní National Park, Ecuador",
+    "sections": [
+      {
+        "heading": "Ancestral Knowledge Meets Edge AI",
+        "paragraphs": [
+          "Nemonte Nenquimo climbs the buttress roots of a towering ceiba tree with effortless familiarity. Fastened fifty meters above the forest floor is a recycled smartphone encased in waterproof resin, listening to the rainforest's continuous symphony.",
+          "Machine learning algorithms trained on thousands of hours of ambient forest audio can instantly differentiate between the call of a harpy eagle, the crack of falling deadwood, and the distant rumble of a two-stroke logging saw, transmitting instant GPS coordinates to mobile patrol teams."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-007",
+    "slug": "into-the-abyssal-canyon",
+    "title": "Into the Abyssal Canyon",
+    "subtitle": "Manned submersible expedition maps the 8,000-meter depths of the Puerto Rico Trench.",
+    "category": "exploration",
+    "categoryLabel": "Exploration",
+    "authorId": "maya-sorensen",
+    "author": "Maya Sørensen",
+    "date": "June 2026",
+    "publishedDate": "2026-06-30",
+    "readTime": "15 min read",
+    "featured": false,
+    "heroImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "Descending past the twilight and midnight zones into the hadal realm, where water pressure exceeds eight hundred atmospheres and organisms construct shells without calcium.",
+    "location": "Puerto Rico Trench, Western Atlantic",
+    "sections": [
+      {
+        "heading": "The Long Fall into Blue-Black",
+        "paragraphs": [
+          "At four hundred meters, sunlight fails completely. The titanium sphere of the submersible creaks softly as pressure mounts by one atmosphere every ten meters. Outside the quartz viewport, bioluminescent siphonophores and comb jellies spark like miniature celestial fireworks."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-008",
+    "slug": "the-last-light-of-the-desert",
+    "title": "The Last Light of the Desert",
+    "subtitle": "A visual symphony of wind, shadow and mineral strata across the Namib sand sea.",
+    "category": "photography",
+    "categoryLabel": "Photography",
+    "authorId": "chloe-dubois",
+    "author": "Chloé Dubois",
+    "date": "June 2026",
+    "publishedDate": "2026-06-15",
+    "readTime": "8 min read",
+    "featured": true,
+    "heroImage": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "At Sossusvlei, five-hundred-year-old dead camel thorn trees stand like blackened iron sculptures against three-hundred-meter terracotta dunes under the golden hour of the southern winter.",
+    "location": "Namib-Naukluft National Park, Namibia",
+    "sections": [
+      {
+        "heading": "Geometry of Sand and Sun",
+        "paragraphs": [
+          "The Namib is the oldest desert on Earth, having experienced arid or semi-arid conditions for at least fifty-five million years. The red color of the dunes is iron oxide coating individual quartz grains—the deeper the red, the older the dune.",
+          "When the low-angled late afternoon sun hits the knife-edge crest of Dune 45, half the landscape is bathed in burning ochre while the opposite face drops into deep velvet indigo."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-009",
+    "slug": "whispers-of-the-ocean-deep",
+    "title": "The Acoustic Secret of Sperm Whales",
+    "subtitle": "Marine biologists decipher the phonetic alphabet within sperm whale clicking codas.",
+    "category": "wildlife",
+    "categoryLabel": "Wildlife",
+    "authorId": "maya-sorensen",
+    "author": "Maya Sørensen",
+    "date": "May 2026",
+    "publishedDate": "2026-05-28",
+    "readTime": "11 min read",
+    "featured": false,
+    "heroImage": "https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "Using underwater hydrophone arrays deployed across the Caribbean basin, researchers have identified combinatorial syntax in whale communication codas, mirroring human phonetic vowels.",
+    "location": "Dominica Oceanic Trench",
+    "sections": [
+      {
+        "heading": "The World's Most Powerful Biological Sonar",
+        "paragraphs": [
+          "A sperm whale's spermaceti organ can produce clicks exceeding two hundred and thirty decibels—sound waves powerful enough to be detected thousands of kilometers away. But beyond echolocation, these clicks serve as cultural dialect identifiers passed down across generations."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-010",
+    "slug": "quantum-horizons-in-biology",
+    "title": "Quantum Coherence in Avian Migration",
+    "subtitle": "Cryptochrome proteins in the eyes of migratory songbirds exploit quantum entanglement to read Earth's magnetic field lines.",
+    "category": "science",
+    "categoryLabel": "Science",
+    "authorId": "dr-arjun-patel",
+    "author": "Dr. Arjun Patel",
+    "date": "May 2026",
+    "publishedDate": "2026-05-12",
+    "readTime": "10 min read",
+    "featured": false,
+    "heroImage": "https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "European robins navigate across thousands of miles of open ocean using quantum spin states inside specialized retinal proteins that remain coherent despite biological warmth and wetness.",
+    "location": "Heligoland Bird Observatory, Germany",
+    "sections": [
+      {
+        "heading": "A Quantum Compass in the Retina",
+        "paragraphs": [
+          "For decades, physicists believed quantum entanglement could only survive in ultra-cold, perfectly isolated laboratory vacuums. Nature, however, engineered a room-temperature quantum sensor millions of years ago in the eye of a migratory songbird."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-011",
+    "slug": "cities-after-dark",
+    "title": "Metropolis Under the Moon",
+    "subtitle": "How artificial light is reshaping urban ecology and human circadian architecture.",
+    "category": "culture",
+    "categoryLabel": "Culture",
+    "authorId": "sarah-lin",
+    "author": "Sarah Lin",
+    "date": "April 2026",
+    "publishedDate": "2026-04-20",
+    "readTime": "8 min read",
+    "featured": false,
+    "heroImage": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "From Tokyo's neon canyons to Reykjavik's low-pressure sodium glow, urban lighting reveals how humans attempt to conquer the darkness while wildlife quietly adapts around our feet.",
+    "location": "Tokyo & Singapore",
+    "sections": [
+      {
+        "heading": "The Nocturnal City",
+        "paragraphs": [
+          "When night falls over a modern metropolis, a parallel society awakens. Peregrine falcons hunt pigeons under high-intensity stadium lights; urban foxes patrol subway corridors; and millions of humans navigate artificially extended daytime rhythms."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-012",
+    "slug": "in-the-footsteps-of-ancient-kings",
+    "title": "The Forgotten Monoliths of Lalibela",
+    "subtitle": "Laser scanning uncovers subterranean drainage and sacred stone architecture carved directly out of Ethiopian basalt.",
+    "category": "history",
+    "categoryLabel": "History",
+    "authorId": "tariq-al-mansoor",
+    "author": "Tariq Al-Mansoor",
+    "date": "April 2026",
+    "publishedDate": "2026-04-05",
+    "readTime": "12 min read",
+    "featured": false,
+    "heroImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "Eleven medieval monolithic rock-hewn churches in northern Ethiopia stand not by stacking stones, but by carving downwards into solid volcanic rock with masterclass geometric precision.",
+    "location": "Lalibela, Amhara Region, Ethiopia",
+    "sections": [
+      {
+        "heading": "Carved from Living Bedrock",
+        "paragraphs": [
+          "In the 12th century, King Gebre Mesqel Lalibela set out to construct a 'New Jerusalem' in the Ethiopian highlands. Rather than quarrying stones, artisans excavated vast perimeter trenches into pink volcanic tuff, carving intricate windows, columns, and cathedrals from the top down."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-013",
+    "slug": "the-volcano-chaser",
+    "title": "Inside the Gates of Fagradalsfjall",
+    "subtitle": "Sampling pristine mantle basalt as magma erupts from a freshly opened volcanic fissure in Iceland.",
+    "category": "planet",
+    "categoryLabel": "Planet",
+    "authorId": "dr-elena-vance",
+    "author": "Dr. Elena Vance",
+    "date": "March 2026",
+    "publishedDate": "2026-03-24",
+    "readTime": "11 min read",
+    "featured": false,
+    "heroImage": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "Wearing heat-reflective aluminized suits, volcanologists approach the rim of a spatter cone to catch fresh molten lava samples directly from the Earth's upper mantle.",
+    "location": "Reykjanes Peninsula, Iceland",
+    "sections": [
+      {
+        "heading": "The Pulse of the Earth",
+        "paragraphs": [
+          "The radiant heat hits you at fifty meters away. Glowing orange basalt at twelve hundred degrees Celsius roars like a jet engine as tectonic tension along the Mid-Atlantic Ridge rips open the crust before your eyes."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-014",
+    "slug": "the-search-for-ocean-worlds",
+    "title": "The Search for Ocean Worlds",
+    "subtitle": "Next-generation interplanetary probes prepare to fly through the water vapor plumes of Europa and Enceladus.",
+    "category": "space",
+    "categoryLabel": "Space",
+    "authorId": "dr-arjun-patel",
+    "author": "Dr. Arjun Patel",
+    "date": "March 2026",
+    "publishedDate": "2026-03-10",
+    "readTime": "13 min read",
+    "featured": false,
+    "heroImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "We used to think Earth was unique in holding liquid water. We now know that icy moons throughout the outer solar system harbor global oceans with twice the volume of all Earth's seas combined.",
+    "location": "Outer Solar System Frontiers",
+    "sections": [
+      {
+        "heading": "Water Beyond Earth",
+        "paragraphs": [
+          "Beneath twenty kilometers of brittle ice on Jupiter's moon Europa lies a saline ocean heated by tidal flexing. Hydrothermal vents on its ocean floor could provide the chemical gradients required for life to originate independently."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-015",
+    "slug": "snow-leopards-of-the-himalayas",
+    "title": "Ghosts of the High Altitudes",
+    "subtitle": "Deploying non-invasive camera traps across the Karakoram Range to census the elusive snow leopard.",
+    "category": "wildlife",
+    "categoryLabel": "Wildlife",
+    "authorId": "marcus-thorne",
+    "author": "Marcus Thorne",
+    "date": "February 2026",
+    "publishedDate": "2026-02-18",
+    "readTime": "10 min read",
+    "featured": false,
+    "heroImage": "https://images.unsplash.com/photo-1564349683136-77e08dba1ef6?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1564349683136-77e08dba1ef6?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "At four thousand meters on jagged scree slopes where temperatures plunge into negative thirties, the snow leopard moves without a sound—perfectly camouflaged against weathered schist.",
+    "location": "Karakoram National Park, Pakistan",
+    "sections": [
+      {
+        "heading": "The Master of Camouflage",
+        "paragraphs": [
+          "Locals call it the mountain ghost. Its thick tail acts as a balance beam when leaping down vertical cliffs and as a warm blanket wrapped over its nose while sleeping on frozen ridges."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-016",
+    "slug": "beneath-the-arctic-sky",
+    "title": "Beneath the Arctic Sky",
+    "subtitle": "Capturing the solar cycle peak through hyper-vibrant aurora borealis across northern Fennoscandia.",
+    "category": "photography",
+    "categoryLabel": "Photography",
+    "authorId": "chloe-dubois",
+    "author": "Chloé Dubois",
+    "date": "February 2026",
+    "publishedDate": "2026-02-04",
+    "readTime": "7 min read",
+    "featured": false,
+    "heroImage": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "When coronal mass ejections strike the magnetosphere, ribbons of emerald and violet light ripple across the polar sky at sixty kilometers per second.",
+    "location": "Abisko, Sweden",
+    "sections": [
+      {
+        "heading": "Charged Particles in the Upper Atmosphere",
+        "paragraphs": [
+          "Oxygen atoms glowing green at one hundred kilometers altitude and nitrogen molecules glowing deep purple higher up create an ever-shifting cosmic canvas reflected across frozen fjords."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-017",
+    "slug": "the-deep-karst-explorers",
+    "title": "Descent into the World's Deepest Caves",
+    "subtitle": "A three-week subterranean expedition inside the Veryovkina Cave system in Abkhazia.",
+    "category": "exploration",
+    "categoryLabel": "Exploration",
+    "authorId": "maya-sorensen",
+    "author": "Maya Sørensen",
+    "date": "January 2026",
+    "publishedDate": "2026-01-20",
+    "readTime": "14 min read",
+    "featured": false,
+    "heroImage": "https://images.unsplash.com/photo-1527489377706-5bf97e608852?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1527489377706-5bf97e608852?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "More than two thousand two hundred meters beneath the mountain surface, explorers set up underground camps in chambers where no sunlight has penetrated for ten million years.",
+    "location": "Gagra Range, Western Caucasus",
+    "sections": [
+      {
+        "heading": "Life in the Inverted Mountain",
+        "paragraphs": [
+          "Descending ropes through roaring subterranean waterfalls, speleologists discover completely blind amphipods and ancient calcite crystal formations preserved in perpetual ninety-eight percent humidity."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-018",
+    "slug": "the-salt-flats-of-uyuni",
+    "title": "The World's Great Mirror",
+    "subtitle": "Geology, lithium deposits, and celestial reflections on the Salar de Uyuni.",
+    "category": "planet",
+    "categoryLabel": "Planet",
+    "authorId": "mateo-silva",
+    "author": "Mateo Silva",
+    "date": "January 2026",
+    "publishedDate": "2026-01-08",
+    "readTime": "9 min read",
+    "featured": false,
+    "heroImage": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "Ten thousand square kilometers of pure white salt in southwest Bolivia become an infinite optical mirror during the brief rainy season, erasing the horizon line between earth and sky.",
+    "location": "Daniel Campos Province, Bolivia",
+    "sections": [
+      {
+        "heading": "The Evaporated Lake",
+        "paragraphs": [
+          "Remnant of several prehistoric lakes that evaporated tens of thousands of years ago, the salt crust is so flat that NASA uses it to calibrate the altimeters of earth-observation satellites."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-019",
+    "slug": "the-origami-of-dna",
+    "title": "Nanoscale Architecture: DNA Origami",
+    "subtitle": "Synthetic biologists fold nucleic acid strands into molecular machines capable of targeted cellular cargo delivery.",
+    "category": "science",
+    "categoryLabel": "Science",
+    "authorId": "sarah-lin",
+    "author": "Sarah Lin",
+    "date": "December 2025",
+    "publishedDate": "2025-12-18",
+    "readTime": "11 min read",
+    "featured": false,
+    "heroImage": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "By programming the base-pair sequence of synthetic DNA, scientists can force long strands to self-assemble into microscopic boxes, gears, and drug-dispensing nanorobots.",
+    "location": "Bio-Nanotechnology Labs, Oxford",
+    "sections": [
+      {
+        "heading": "Building at the Nanoscale",
+        "paragraphs": [
+          "At the scale of nanometers, water feels as thick as molasses, and thermal vibrations are constant. DNA origami turns the code of genetics into a structural manufacturing material."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story-020",
+    "slug": "the-nomads-of-the-altay",
+    "title": "The Golden Eagle Masters of Mongolia",
+    "subtitle": "Preserving four millennia of equestrian falconry in the high mountains of Bayan-Ölgii.",
+    "category": "culture",
+    "categoryLabel": "Culture",
+    "authorId": "mateo-silva",
+    "author": "Mateo Silva",
+    "date": "December 2025",
+    "publishedDate": "2025-12-02",
+    "readTime": "12 min read",
+    "featured": false,
+    "heroImage": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=2200&q=90",
+    "thumbnail": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=1000&q=80",
+    "excerpt": "Kazakh eagle hunters partner with female golden eagles to hunt on horseback through minus-forty-degree blizzards, maintaining an unbroken symbiotic relationship rooted in ancient nomadic steppe heritage.",
+    "location": "Altay Mountains, Western Mongolia",
+    "sections": [
+      {
+        "heading": "A Partnership of Wings and Wind",
+        "paragraphs": [
+          "The eagle sits upon a heavy leather gauntlet, its seven-foot wingspan furled against the icy mountain gusts. Hunter and raptor communicate through low guttural calls learned over years of mutual trust."
+        ]
+      }
+    ]
+  }
+]

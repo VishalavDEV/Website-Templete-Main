@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased bg-white text-slate-800 font-sans;
+  }
+
+  /* Hide default cursor on desktop to show custom interactive cursor */
+  @media (min-width: 768px) {
+    body, a, button, input, textarea, select, [role="button"], .cursor-pointer {
+      cursor: none !important;
+    }
+  }
+}
+
+/* Custom background mesh */
+.bg-grid-mesh {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+}

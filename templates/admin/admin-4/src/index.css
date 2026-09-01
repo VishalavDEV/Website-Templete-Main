@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #f7f7f7;
+    --bg-surface: #ffffff;
+    --bg-secondary: #f0f0f0;
+    --bg-hover: #e8e8e8;
+    --border-color: #e5e5e5;
+    --border-subtle: #f0f0f0;
+    --text-primary: #171717;
+    --text-secondary: #6b6b6b;
+    --text-muted: #9ba3af;
+    --sidebar-bg: #ffffff;
+    --sidebar-border: #e5e5e5;
+    --sidebar-item-hover: #f3f4f6;
+    --sidebar-item-active: #e5e7eb;
+    --accent-blue: #2563eb;
+    --accent-green: #10b981;
+    --accent-amber: #f59e0b;
+    --accent-red: #ef4444;
+    --accent-purple: #8b5cf6;
+  }
+
+  .dark {
+    --bg-main: #181818;
+    --bg-surface: #252525;
+    --bg-secondary: #2b2b2b;
+    --bg-hover: #333333;
+    --border-color: #3a3a3a;
+    --border-subtle: #2f2f2f;
+    --text-primary: #f5f5f5;
+    --text-secondary: #a3a3a3;
+    --text-muted: #737373;
+    --sidebar-bg: #202020;
+    --sidebar-border: #3a3a3a;
+    --sidebar-item-hover: #2a2a2a;
+    --sidebar-item-active: #333333;
+    --accent-blue: #3b82f6;
+    --accent-green: #10b981;
+    --accent-amber: #f59e0b;
+    --accent-red: #ef4444;
+    --accent-purple: #a855f7;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.5);
+}
+
+/* Custom Utilities for exact grey/charcoal theme */
+.bg-app-main { background-color: var(--bg-main); }
+.bg-app-surface { background-color: var(--bg-surface); }
+.bg-app-secondary { background-color: var(--bg-secondary); }
+.bg-app-hover { background-color: var(--bg-hover); }
+.border-app { border-color: var(--border-color); }
+.border-app-subtle { border-color: var(--border-subtle); }
+.text-app-primary { color: var(--text-primary); }
+.text-app-secondary { color: var(--text-secondary); }
+.text-app-muted { color: var(--text-muted); }
+.bg-sidebar { background-color: var(--sidebar-bg); }
+.border-sidebar { border-color: var(--sidebar-border); }
+
+/* Glass backdrop simulation */
+.backdrop-blur-custom {
+  backdrop-filter: blur(8px);
+}
+
+/* Responsive Scrollbar & Layout Helpers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Fluid Responsive Table Container */
+.responsive-table-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 640px) {
+  .touch-target {
+    min-height: 40px;
+  }
+}
+

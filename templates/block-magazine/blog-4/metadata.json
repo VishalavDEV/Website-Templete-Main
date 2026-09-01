@@ -1,0 +1,6 @@
+{
+  "name": "NEXORA - Modern Editorial & Digital Publication",
+  "description": "A premium, high-impact editorial and digital publication template covering technology, AI, business, innovation, and design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

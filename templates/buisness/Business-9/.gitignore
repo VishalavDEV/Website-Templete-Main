@@ -1,0 +1,16 @@
+# Node.js build and dependency files
+frontend/node_modules/
+frontend/dist/
+frontend/.oxlintrc.json
+
+# Java compiler artifacts and system files
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+
+# IDE and OS cache files
+.idea/
+.vscode/
+*.log
+Thumbs.db
+.DS_Store
+.gemini/

@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #F8FAFC;
+    background-image: 
+      radial-gradient(at 8% 8%, rgba(0, 150, 255, 0.09) 0px, transparent 40%),
+      radial-gradient(at 92% 14%, rgba(255, 94, 58, 0.08) 0px, transparent 45%),
+      radial-gradient(at 12% 52%, rgba(16, 185, 129, 0.07) 0px, transparent 42%),
+      radial-gradient(at 88% 68%, rgba(138, 43, 226, 0.08) 0px, transparent 45%),
+      radial-gradient(at 50% 92%, rgba(0, 210, 255, 0.07) 0px, transparent 40%);
+    background-attachment: fixed;
+    color: #0F172A;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', 'Outfit', sans-serif;
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Luminous Glassmorphism & Light Theme Spatial Tokens */
+.glass-header {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px -5px rgba(0, 85, 255, 0.06), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 16px 40px -10px rgba(0, 85, 255, 0.05),
+    0 2px 8px -2px rgba(15, 23, 42, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 50px -12px rgba(0, 85, 255, 0.12), 0 6px 16px -2px rgba(15, 23, 42, 0.04);
+    border-color: rgba(0, 85, 255, 0.35);
+  }
+}
+
+.glass-card-vibrant {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.82) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 20px 48px -12px rgba(0, 85, 255, 0.08), 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 85, 255, 0.06);
+}
+
+/* 3D Perspective Canvas Container */
+.perspective-container {
+  perspective: 1200px;
+}
+
+/* Iridescent Text & Accent Gradients */
+.text-gradient-electric {
+  background: linear-gradient(135deg, #0055FF 0%, #7000FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-peach {
+  background: linear-gradient(135deg, #FF5E3A 0%, #FFAA00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-aurora {
+  background: linear-gradient(135deg, #0055FF 0%, #00D2FF 40%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyber {
+  background: linear-gradient(135deg, #FF007A 0%, #FF5E3A 50%, #FFAA00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-violet {
+  background: linear-gradient(135deg, #7000FF 0%, #0055FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Vibrant Glow Utility Shadows */
+.glow-accent-blue {
+  box-shadow: 0 10px 30px -5px rgba(0, 85, 255, 0.3);
+}
+
+.glow-accent-peach {
+  box-shadow: 0 10px 30px -5px rgba(255, 94, 58, 0.3);
+}
+
+.glow-accent-lime {
+  box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.3);
+}
+
+.glow-accent-violet {
+  box-shadow: 0 10px 30px -5px rgba(112, 0, 255, 0.3);
+}

@@ -1,0 +1,347 @@
+/* Coastal Indian & Seafood - Samudra Spices */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap');
+
+.cafe-container {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #faf7f2; /* Sand / Beige */
+  color: #2c3a30; /* Forest Green Charcoal */
+}
+
+.cafe-font-fancy {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+/* Base Theme Colors: Deep Green (#115e59), Warm Sand (#f5ebe0), Coconut Brown (#3f2c1d), Sea Foam (#99f6e4) */
+
+/* Hero */
+.cafe-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 85px 20px;
+}
+
+@media (max-width: 768px) {
+  .cafe-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 50px 20px;
+  }
+}
+
+.cafe-hero-tagline {
+  background-color: rgba(17, 94, 89, 0.1);
+  color: #115e59;
+  padding: 6px 18px;
+  border-radius: 99px;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cafe-hero-title {
+  font-size: 3.6rem;
+  color: #115e59;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.cafe-hero-image-container {
+  position: relative;
+}
+
+.cafe-hero-img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(17, 94, 89, 0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.cafe-btn-teal {
+  background-color: #115e59;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.cafe-btn-teal:hover {
+  background-color: #0f4d4a;
+  transform: translateY(-2px);
+}
+
+.cafe-btn-orange {
+  background-color: transparent;
+  color: #115e59;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 700;
+  border: 1.5px solid #115e59;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.cafe-btn-orange:hover {
+  background-color: #115e59;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Sections */
+.cafe-section-padding {
+  padding: 90px 20px;
+}
+
+.cafe-section-title {
+  font-size: 2.8rem;
+  color: #115e59;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.cafe-section-subtitle {
+  color: #64748b;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+  font-size: 0.95rem;
+}
+
+/* Chalkboard style card grid for Menu */
+.cafe-board-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cafe-board-card {
+  background: white;
+  border: 1px solid rgba(17, 94, 89, 0.15);
+  padding: 24px;
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.cafe-board-card:hover {
+  border-color: #115e59;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(17,94,89,0.05);
+}
+
+.cafe-board-img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .cafe-board-card {
+    flex-direction: column !important;
+  }
+  .cafe-board-img {
+    width: 100% !important;
+    height: 160px !important;
+  }
+}
+
+.cafe-board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+  border-bottom: 1px dashed rgba(17, 94, 89, 0.2);
+  padding-bottom: 8px;
+}
+
+.cafe-board-name {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #115e59;
+}
+
+.cafe-board-price {
+  font-weight: 800;
+  color: #115e59;
+  font-size: 1.15rem;
+}
+
+.cafe-board-desc {
+  font-size: 0.88rem;
+  color: #5c6c60;
+  line-height: 1.6;
+  margin: 0 0 15px 0;
+}
+
+.cafe-menu-category-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 45px;
+}
+
+.cafe-menu-category-btn {
+  background: white;
+  border: 1px solid rgba(17,94,89,0.2);
+  color: #115e59;
+  padding: 8px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  transition: all 0.3s ease;
+}
+
+.cafe-menu-category-btn.active, .cafe-menu-category-btn:hover {
+  background: #115e59;
+  color: white;
+}
+
+.cafe-nav-link {
+  color: #f8fafc !important; /* Soft White */
+  text-decoration: none;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.cafe-nav-link:hover {
+  color: #99f6e4 !important; /* Soft Teal hover */
+}
+
+/* Cart side panel */
+.cafe-cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 420px;
+  height: 100%;
+  background: white;
+  box-shadow: -5px 0 35px rgba(0,0,0,0.1);
+  transition: right 0.3s ease;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+}
+
+.cafe-cart-drawer.open {
+  right: 0;
+}
+
+.cafe-cart-header {
+  padding: 24px;
+  background: #115e59;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #0f4d4a;
+}
+
+.cafe-cart-body {
+  padding: 24px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.cafe-cart-footer {
+  padding: 24px;
+  background: #fdfbf7;
+  border-top: 1px solid rgba(17, 94, 89, 0.15);
+}
+
+.cafe-cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(17,94,89,0.1);
+}
+
+/* Modals */
+.cafe-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1300;
+}
+
+.cafe-modal-content {
+  background: white;
+  padding: 35px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  border: 1px solid rgba(17,94,89,0.25);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.cafe-whatsapp-btn {
+  background-color: #115e59;
+  color: white;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-weight: 700;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+/* Navbar Alignment Styles */
+.casual-navbar {
+  backdrop-filter: blur(8px);
+  padding: 16px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.casual-nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cafe-nav-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
+  color: #e2fbf5;
+}
+.cafe-nav-link:hover {
+  color: #99f6e4;
+}

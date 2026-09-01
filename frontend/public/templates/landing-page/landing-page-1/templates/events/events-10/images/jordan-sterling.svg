@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 650" width="500" height="650">
+  <defs>
+    <linearGradient id="bgJ" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#001a33"/>
+      <stop offset="50%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+
+    <!-- Photorealistic Skin Gradients -->
+    <radialGradient id="skinBaseJ" cx="45%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#966348"/>
+      <stop offset="60%" stop-color="#734730"/>
+      <stop offset="100%" stop-color="#4d2c1b"/>
+    </radialGradient>
+    <linearGradient id="skinHighlightJ" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b0785b"/>
+      <stop offset="100%" stop-color="#734730"/>
+    </linearGradient>
+
+    <linearGradient id="jerseyJ" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0088ff"/>
+      <stop offset="100%" stop-color="#0044bb"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="500" height="650" fill="url(#bgJ)"/>
+  <circle cx="250" cy="200" r="240" fill="#0088ff" opacity="0.15"/>
+
+  <!-- Shoulders & Jersey -->
+  <path d="M 85 375 L 190 295 L 310 295 L 415 375 L 375 650 L 125 650 Z" fill="url(#jerseyJ)"/>
+  <path d="M 190 295 Q 250 330 310 295" fill="none" stroke="#ffffff" stroke-width="8"/>
+  <text x="250" y="445" font-family="'Bebas Neue', sans-serif" font-size="100" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="4">11</text>
+  <text x="250" y="345" font-family="'Barlow Condensed', sans-serif" font-size="24" font-weight="800" fill="#ff7518" text-anchor="middle" letter-spacing="3">TITANS</text>
+
+  <!-- Neck -->
+  <path d="M 215 250 L 215 310 Q 250 325 285 310 L 285 250 Z" fill="url(#skinHighlightJ)"/>
+  <path d="M 215 250 Q 250 280 285 250 L 285 275 Q 250 295 215 275 Z" fill="#4d2c1b" opacity="0.4"/>
+
+  <!-- Human Head Base Oval -->
+  <path d="M 168 185 C 168 100, 332 100, 332 185 C 332 260, 292 280, 250 280 C 208 280, 168 260, 168 185 Z" fill="url(#skinBaseJ)"/>
+
+  <!-- Facial Cheekbone Highlights -->
+  <path d="M 178 180 C 188 140, 228 140, 250 145 C 272 140, 312 140, 322 180 C 312 220, 282 250, 250 255 C 218 250, 188 220, 178 180 Z" fill="url(#skinHighlightJ)" opacity="0.6"/>
+
+  <!-- Short Fade Hair Cut & Pro Headband -->
+  <path d="M 163 175 C 163 95, 337 95, 337 175 C 322 110, 178 110, 163 175 Z" fill="#120c09"/>
+  <!-- Orange Pro Headband -->
+  <rect x="165" y="145" width="170" height="26" rx="6" fill="#ff4d00"/>
+  <circle cx="250" cy="158" r="6" fill="#ffffff"/>
+
+  <!-- Human Ears -->
+  <path d="M 160 175 C 150 185, 153 215, 170 215 Z" fill="url(#skinBaseJ)"/>
+  <path d="M 340 175 C 350 185, 347 215, 330 215 Z" fill="url(#skinBaseJ)"/>
+
+  <!-- Human Eyebrows -->
+  <path d="M 192 178 Q 217 168 235 176" stroke="#120c09" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M 265 176 Q 283 168 308 178" stroke="#120c09" stroke-width="6" stroke-linecap="round" fill="none"/>
+
+  <!-- Realistic Human Eyes -->
+  <ellipse cx="216" cy="186" rx="14" ry="8" fill="#ffffff"/>
+  <circle cx="216" cy="186" r="7" fill="#301d14"/>
+  <circle cx="216" cy="186" r="3" fill="#000000"/>
+  <circle cx="218" cy="184" r="1.5" fill="#ffffff"/>
+
+  <ellipse cx="284" cy="186" rx="14" ry="8" fill="#ffffff"/>
+  <circle cx="284" cy="186" r="7" fill="#301d14"/>
+  <circle cx="284" cy="186" r="3" fill="#000000"/>
+  <circle cx="286" cy="184" r="1.5" fill="#ffffff"/>
+
+  <!-- Human Nose -->
+  <path d="M 242 216 C 235 218, 235 226, 245 226 C 255 226, 265 218, 258 216 Q 250 228 242 216 Z" fill="#4d2c1b"/>
+
+  <!-- Human Lips -->
+  <path d="M 225 240 Q 250 234 275 240 Q 250 246 225 240 Z" fill="#693d28"/>
+  <path d="M 228 240 Q 250 250 272 240 Q 250 254 228 240 Z" fill="#381e13"/>
+
+  <!-- Nameplate -->
+  <rect x="0" y="570" width="500" height="80" fill="#050505" opacity="0.95"/>
+  <text x="250" y="612" font-family="'Bebas Neue', sans-serif" font-size="36" font-weight="900" fill="#0088ff" text-anchor="middle" letter-spacing="3">JORDAN STERLING #11</text>
+  <text x="250" y="638" font-family="'Barlow Condensed', sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="2">SHOOTING GUARD — CITY TITANS</text>
+</svg>

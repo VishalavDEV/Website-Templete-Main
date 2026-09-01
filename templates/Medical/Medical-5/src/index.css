@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  --color-bg-primary: #F9F7FB;
+  --color-lilac-primary: #8B6FAE;
+  --color-lilac-deep: #665080;
+  --color-lilac-soft: #B9A1D0;
+  --color-lilac-pale: #E8DDF2;
+  --color-rose-accent: #D98B9C;
+  --color-rose-soft: #F2D9DF;
+  --color-warm-white: #FFFDFC;
+  --color-text-primary: #3E3445;
+  --color-text-secondary: #756B7C;
+  --color-border-subtle: rgba(62, 52, 69, 0.10);
+  --color-success: #739B82;
+  --color-warning: #C99A62;
+  --color-error: #C77C83;
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #F9F7FB;
+    color: #3E3445;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+.serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Luxury & Prestige Atmospheric Elements */
+.atmosphere-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  -webkit-filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Lilac Frost Card Styles */
+.lilac-frost-card,
+.lilac-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(62, 52, 69, 0.09);
+  box-shadow: 0 10px 35px rgba(90, 70, 110, 0.07);
+  border-radius: 24px;
+}
+
+.lilac-card-hover,
+.lilac-frost-card-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lilac-card-hover:hover,
+.lilac-frost-card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 45px rgba(139, 111, 174, 0.13);
+  border-color: rgba(139, 111, 174, 0.28);
+}
+
+.btn-lilac {
+  background-color: #8B6FAE;
+  color: #FFFDFC;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px rgba(139, 111, 174, 0.28);
+}
+
+.btn-lilac:hover {
+  background-color: #665080;
+  box-shadow: 0 12px 32px rgba(102, 80, 128, 0.38);
+  transform: translateY(-1px);
+}
+
+.stat-pill {
+  background: #E8DDF2;
+  color: #8B6FAE;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 99px;
+}
+
+/* Atmospheric frosted backgrounds */
+.frost-gradient {
+  background: radial-gradient(circle at 12% 18%, rgba(232, 221, 242, 0.6) 0%, transparent 45%),
+              radial-gradient(circle at 88% 82%, rgba(242, 217, 223, 0.5) 0%, transparent 45%),
+              radial-gradient(circle at 50% 50%, rgba(255, 253, 252, 0.75) 0%, transparent 65%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F9F7FB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8CCE6;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B9A1D0;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatSlow 7s ease-in-out 2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

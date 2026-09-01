@@ -1,0 +1,102 @@
+[
+  {
+    "id": "art-heart-health",
+    "title": "Understanding Your Heart Health: Beyond the Standard Cholesterol Test",
+    "subtitle": "Why modern cardiovascular risk assessment looks closer at ApoB, particle counts, and endothelial inflammation.",
+    "category": "Heart Health",
+    "readingTime": "5 min read",
+    "author": {
+      "name": "Dr. Maya Raman",
+      "role": "Consultant Cardiologist",
+      "avatar": "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=120&q=80"
+    },
+    "date": "August 18, 2026",
+    "image": "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80",
+    "content": [
+      "For decades, the standard lipid panel focused primarily on LDL-C and Total Cholesterol. While these metrics provided an initial baseline, modern cardiovascular medicine has advanced significantly into precision biomarker telemetry.",
+      "Apolipoprotein B (ApoB) measures the exact number of atherogenic particles in circulation. Rather than simply measuring the cholesterol mass contained within particles, ApoB reveals the true traffic density traversing your vascular walls.",
+      "Coupled with high-sensitivity C-reactive protein (hs-CRP) and coronary calcium scoring, physicians can now detect subclinical arterial inflammation years before any physical symptoms manifest, allowing for gentle, preventive lifestyle adjustments."
+    ],
+    "keyTakeaways": [
+      "ApoB offers a more precise measurement of atherogenic risk than standard LDL cholesterol alone.",
+      "Vascular inflammation (measured via hs-CRP) is a critical multiplier in heart disease prevention.",
+      "Annual preventative screenings allow for early dietary and lifestyle recalibration."
+    ],
+    "relatedArticleIds": ["art-blood-test", "art-body-rest"]
+  },
+  {
+    "id": "art-body-rest",
+    "title": "5 Signs Your Body Needs More Rest (And How Cellular Recovery Works)",
+    "subtitle": "Recognizing the subtle physiological flags of autonomic nervous system overload and deep sleep deficits.",
+    "category": "Mental Wellness",
+    "readingTime": "4 min read",
+    "author": {
+      "name": "Dr. Tariq Al-Mansoor",
+      "role": "Consultant Psychiatrist",
+      "avatar": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=120&q=80"
+    },
+    "date": "August 12, 2026",
+    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
+    "content": [
+      "Our modern schedules often encourage pushing through fatigue with stimulants. However, chronic elevated cortisol and low heart rate variability (HRV) indicate that the parasympathetic nervous system is struggling to recharge.",
+      "During deep Stage 3 and Stage 4 non-REM sleep, the brain's glymphatic system clears metabolic byproducts accumulated during waking hours. Missing this restorative window leads to cognitive fog, impaired glucose metabolism, and subtle immune suppression.",
+      "Implementing structured sleep hygiene—dimming blue light 2 hours before bed, maintaining a cool 19°C room temperature, and consistent waking hours—restores natural circadian rhythmicity."
+    ],
+    "keyTakeaways": [
+      "Low morning heart rate variability (HRV) is a reliable indicator of systemic exhaustion.",
+      "The glymphatic system requires continuous deep non-REM sleep cycles to clear neural debris.",
+      "Non-sleep deep rest (NSDR) and breathing protocols can quickly downregulate acute sympathetic tone."
+    ],
+    "relatedArticleIds": ["art-heart-health", "art-preventive-guide"]
+  },
+  {
+    "id": "art-blood-test",
+    "title": "What Your Blood Test Actually Tells You: A Patient-Friendly Guide",
+    "subtitle": "Demystifying standard and advanced laboratory ranges, from liver enzymes to ferritin and metabolic markers.",
+    "category": "Preventive Care",
+    "readingTime": "6 min read",
+    "author": {
+      "name": "Dr. Sophia Chen-Vance",
+      "role": "Lead Preventive Physician",
+      "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=120&q=80"
+    },
+    "date": "July 29, 2026",
+    "image": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80",
+    "content": [
+      "When you receive your laboratory report in your patient portal, seeing numbers highlighted with 'Normal Reference Ranges' can sometimes be perplexing. Reference ranges are calculated from standard population averages, but 'normal' does not always equate to 'optimal health'.",
+      "For example, fasting insulin and HbA1c give early indications of insulin sensitivity long before fasting blood glucose shifts out of range. Similarly, ferritin levels reflect cellular iron stores rather than just circulating hemoglobin.",
+      "Understanding these subtle indicators enables proactive discussions with your doctor rather than reactive interventions down the road."
+    ],
+    "keyTakeaways": [
+      "Statistical normal ranges represent population averages; optimal functional ranges are often narrower.",
+      "Fasting insulin provides a much earlier window into metabolic vitality than glucose alone.",
+      "Always interpret biomarker results in partnership with your clinical care team."
+    ],
+    "relatedArticleIds": ["art-heart-health", "art-preventive-guide"]
+  },
+  {
+    "id": "art-preventive-guide",
+    "title": "A Practical Guide to Preventive Health Across Every Decade",
+    "subtitle": "Essential screenings, lifestyle benchmarks, and preventative milestones from your 20s through your 70s.",
+    "category": "Nutrition & Longevity",
+    "readingTime": "7 min read",
+    "author": {
+      "name": "Dr. Julian Sterling",
+      "role": "Senior Neurologist",
+      "avatar": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=120&q=80"
+    },
+    "date": "July 15, 2026",
+    "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80",
+    "content": [
+      "Preventive medicine is the art of preventing disease before it takes root. In your 20s and 30s, establishing strong cardiovascular endurance, bone density, and circadian habits lays the biological foundation for later decades.",
+      "In your 40s and 50s, regular colon cancer screenings, coronary calcium scoring, mammograms or prostate assessments, and hormonal baseline evaluations become vital milestones.",
+      "Approaching preventative care as an empowering lifelong journey rather than a stressful medical chore ensures vitality, cognitive clarity, and physical resilience well into later years."
+    ],
+    "keyTakeaways": [
+      "Peak bone density and aerobic capacity built in early adulthood protect against future frailty.",
+      "Midlife screening checkpoints catch preclinical cardiovascular and oncological risks early.",
+      "Consistency in physical movement, sleep, and nutrient-dense whole foods remains the gold standard."
+    ],
+    "relatedArticleIds": ["art-body-rest", "art-blood-test"]
+  }
+]

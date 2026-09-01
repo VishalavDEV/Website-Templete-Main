@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ember & Olive — Seasonal Food. Shared Moments.</title>
+  <meta name="description" content="Ember & Olive is an artisan seasonal restaurant celebrating open-flame cooking, coastal ingredients, and warm hospitality. Reserve your table today.">
+  <meta name="keywords" content="restaurant, artisan cuisine, wood-fired, seasonal dining, wine cellar, private dining, reservations">
+
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="Ember & Olive — Seasonal Food. Shared Moments.">
+  <meta property="og:description" content="Artisan wood-fired dining, farm-to-table seasonal menus, and intimate private events.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Google Fonts: Playfair Display & DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Template Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+  <script>
+    (function() {
+      const isPlatform = window.location.host === 'localhost:5173' || window.location.host === '127.0.0.1:5173';
+      const isTop = window.self === window.top;
+      const urlParams = new URLSearchParams(window.location.search);
+      const isIframe = urlParams.get('iframe') === 'true';
+      
+      if (isPlatform && isTop && !isIframe) {
+        document.documentElement.style.visibility = 'hidden';
+        
+        window.addEventListener('DOMContentLoaded', () => {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.searchParams.set('iframe', 'true');
+          
+          const body = document.body;
+          body.innerHTML = '';
+          body.style.margin = '0';
+          body.style.padding = '0';
+          body.style.height = '100vh';
+          body.style.width = '100vw';
+          body.style.display = 'flex';
+          body.style.flexDirection = 'column';
+          body.style.overflow = 'hidden';
+          body.style.backgroundColor = '#f1f5f9';
+          
+          // Build Top Bar
+          const topBar = document.createElement('div');
+          topBar.id = 'technosprint-preview-header';
+          topBar.style.height = '64px';
+          topBar.style.background = '#ffffff';
+          topBar.style.borderBottom = '1px solid #e2e8f0';
+          topBar.style.display = 'flex';
+          topBar.style.alignItems = 'center';
+          topBar.style.justifyContent = 'space-between';
+          topBar.style.padding = '0 24px';
+          topBar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+          topBar.style.fontFamily = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+          topBar.style.zIndex = '99999';
+          topBar.style.position = 'relative';
+          topBar.style.boxSizing = 'border-box';
+          
+          // Left side logo
+          const logoDiv = document.createElement('div');
+          logoDiv.innerHTML = `
+            <a href="/templates" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" />
+            </a>
+          `;
+          topBar.appendChild(logoDiv);
+          
+          // Center Template Name
+          const titleDiv = document.createElement('div');
+          titleDiv.style.fontWeight = '600';
+          titleDiv.style.fontSize = '0.9rem';
+          titleDiv.style.color = '#334155';
+          titleDiv.innerText = `< ${document.title || 'Template Preview'} >`;
+          topBar.appendChild(titleDiv);
+          
+          // Right view switcher buttons
+          const rightDiv = document.createElement('div');
+          rightDiv.style.display = 'flex';
+          rightDiv.style.alignItems = 'center';
+          rightDiv.style.gap = '8px';
+          rightDiv.innerHTML = `
+            <button id="view-desktop" style="
+              background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              Desktop
+            </button>
+            <button id="view-tablet" style="
+              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Tablet
+            </button>
+            <button id="view-mobile" style="
+              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Mobile
+            </button>
+          `;
+          topBar.appendChild(rightDiv);
+          body.appendChild(topBar);
+          
+          // Create Iframe Container
+          const iframeContainer = document.createElement('div');
+          iframeContainer.style.flex = '1';
+          iframeContainer.style.display = 'flex';
+          iframeContainer.style.alignItems = 'center';
+          iframeContainer.style.justifyContent = 'center';
+          iframeContainer.style.background = '#f1f5f9';
+          iframeContainer.style.padding = '20px';
+          iframeContainer.style.boxSizing = 'border-box';
+          iframeContainer.style.overflow = 'hidden';
+          
+          const iframe = document.createElement('iframe');
+          iframe.id = 'preview-iframe';
+          iframe.src = currentUrl.toString();
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.border = 'none';
+          iframe.style.borderRadius = '12px';
+          iframe.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+          iframe.style.background = '#ffffff';
+          iframe.style.transition = 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+          
+          iframeContainer.appendChild(iframe);
+          body.appendChild(iframeContainer);
+          
+          // Interactivity
+          const btnDesktop = body.querySelector('#view-desktop');
+          const btnTablet = body.querySelector('#view-tablet');
+          const btnMobile = body.querySelector('#view-mobile');
+          
+          let activeMode = 'desktop';
+          
+          function setView(mode) {
+            activeMode = mode;
+            [btnDesktop, btnTablet, btnMobile].forEach(btn => {
+              btn.style.background = '#ffffff';
+              btn.style.color = '#475569';
+              btn.style.borderColor = '#e2e8f0';
+              btn.style.fontWeight = '500';
+            });
+            
+            if (mode === 'desktop') {
+              btnDesktop.style.background = '#eff6ff';
+              btnDesktop.style.color = '#1e40af';
+              btnDesktop.style.borderColor = '#bfdbfe';
+              btnDesktop.style.fontWeight = '600';
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+              iframe.style.borderRadius = '12px';
+              iframe.style.border = 'none';
+            } else if (mode === 'tablet') {
+              btnTablet.style.background = '#eff6ff';
+              btnTablet.style.color = '#1e40af';
+              btnTablet.style.borderColor = '#bfdbfe';
+              btnTablet.style.fontWeight = '600';
+              iframe.style.width = '768px';
+              iframe.style.height = '1024px';
+              iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '24px';
+              iframe.style.border = '12px solid #0f172a';
+            } else if (mode === 'mobile') {
+              btnMobile.style.background = '#eff6ff';
+              btnMobile.style.color = '#1e40af';
+              btnMobile.style.borderColor = '#bfdbfe';
+              btnMobile.style.fontWeight = '600';
+              iframe.style.width = '375px';
+              iframe.style.height = '667px';
+              iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '32px';
+              iframe.style.border = '14px solid #0f172a';
+            }
+          }
+          
+          btnDesktop.addEventListener('click', () => setView('desktop'));
+          btnTablet.addEventListener('click', () => setView('tablet'));
+          btnMobile.addEventListener('click', () => setView('mobile'));
+          
+          const btns = [
+            { btn: btnDesktop, mode: 'desktop' },
+            { btn: btnTablet, mode: 'tablet' },
+            { btn: btnMobile, mode: 'mobile' }
+          ];
+          
+          btns.forEach(item => {
+            item.btn.addEventListener('mouseenter', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#f8fafc';
+                item.btn.style.borderColor = '#cbd5e1';
+              }
+            });
+            item.btn.addEventListener('mouseleave', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#ffffff';
+                item.btn.style.borderColor = '#e2e8f0';
+              }
+            });
+          });
+          
+          document.documentElement.style.visibility = 'visible';
+        });
+      }
+    })();
+  </script>
+
+  <!-- Top Scroll Progress Indicator -->
+  <div class="scroll-progress-bar"></div>
+
+  <!-- Desktop Custom Follower Cursor -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+
+  <!-- =========================================================================
+       1. HEADER & STICKY NAVIGATION
+       ========================================================================= -->
+  <header id="mainHeader" class="site-header">
+    <div class="container-xl d-flex align-items-center justify-content-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" id="brandLogo">
+        <span class="brand-logo-text">EMBER <span>&</span> OLIVE</span>
+        <span class="brand-subtext">Est. 2012 · Artisan Cuisine</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="d-none d-lg-flex align-items-center gap-1" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link-custom active">Home</a>
+        <a href="about.html" class="nav-link-custom">About</a>
+        <a href="menu.html" class="nav-link-custom">Menu</a>
+        <a href="#signature" class="nav-link-custom">Experience</a>
+        <a href="events.html" class="nav-link-custom">Events</a>
+        <a href="gallery.html" class="nav-link-custom">Gallery</a>
+        <a href="contact.html" class="nav-link-custom">Contact</a>
+      </nav>
+
+      <!-- Desktop CTA & Mobile Toggle -->
+      <div class="d-flex align-items-center gap-3">
+        <a href="#reservation" class="btn-custom btn-primary-accent d-none d-sm-inline-flex" id="navReserveBtn">
+          <i class="bi bi-calendar-check"></i>
+          <span>Reserve a Table</span>
+        </a>
+
+        <!-- Mobile Offcanvas Trigger -->
+        <button class="mobile-nav-toggle d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-controls="mobileNavOffcanvas" aria-label="Toggle navigation menu">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="mobileNavOffcanvas" aria-labelledby="mobileNavOffcanvasLabel">
+    <div class="offcanvas-header border-bottom border-dark-subtle p-4">
+      <div class="brand-logo">
+        <span class="brand-logo-text fs-4 text-white">EMBER <span>&</span> OLIVE</span>
+        <span class="brand-subtext text-bone">Seasonal Dining</span>
+      </div>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-4 d-flex flex-direction-column justify-content-between">
+      <nav class="offcanvas-nav d-flex flex-column gap-2" aria-label="Mobile Navigation">
+        <a href="index.html" class="nav-link-mobile active">Home</a>
+        <a href="about.html" class="nav-link-mobile">About Our Story</a>
+        <a href="menu.html" class="nav-link-mobile">Seasonal Menu</a>
+        <a href="#signature" class="nav-link-mobile" data-bs-dismiss="offcanvas">Signature Dishes</a>
+        <a href="events.html" class="nav-link-mobile">Private Dining & Events</a>
+        <a href="gallery.html" class="nav-link-mobile">Visual Gallery</a>
+        <a href="contact.html" class="nav-link-mobile">Contact & Location</a>
+      </nav>
+
+      <div class="mt-4 pt-4 border-top border-dark-subtle">
+        <a href="#reservation" class="btn-custom btn-primary-accent w-100 mb-3" data-bs-dismiss="offcanvas">
+          <i class="bi bi-calendar-check"></i>
+          <span>Reserve a Table</span>
+        </a>
+        <div class="text-bone opacity-75 small">
+          <p class="mb-1"><i class="bi bi-geo-alt me-2 text-accent"></i> 28 Garden Avenue, Chennai</p>
+          <p class="mb-0"><i class="bi bi-telephone me-2 text-accent"></i> +91 98765 43210</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       2. HERO SECTION (REDESIGNED 2-PART COMPOSITION)
+       ========================================================================= -->
+  <section id="hero" class="hero-section">
+    <div class="container-xl hero-container">
+      <div class="row align-items-center g-4 g-lg-5">
+        
+        <!-- Left Column: Text & CTAs & Compact Reservation (45% desktop) -->
+        <div class="col-lg-5 col-xl-5">
+          <div class="hero-text-content">
+            
+            <div class="hero-eyebrow reveal-up">
+              <span class="hero-eyebrow-pill"><i class="bi bi-fire text-accent"></i> FROM FIRE TO TABLE</span>
+            </div>
+
+            <h1 class="hero-heading text-reveal">
+              <span class="text-reveal-mask">
+                <span class="text-reveal-inner">Gather Around</span>
+              </span>
+              <span class="text-reveal-mask">
+                <span class="text-reveal-inner"><em>Something Extraordinary</em></span>
+              </span>
+            </h1>
+
+            <p class="hero-description reveal-up">
+              Seasonal ingredients, thoughtful cooking and warm hospitality come together around every table.
+            </p>
+
+            <!-- Buttons -->
+            <div class="hero-cta-group reveal-up">
+              <a href="menu.html" class="btn-custom btn-hero-primary" id="heroMenuBtn">
+                <span>Explore Menu</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <a href="#reservation" class="btn-custom btn-hero-secondary" id="heroReserveBtn">
+                <span>Reserve a Table</span>
+              </a>
+            </div>
+
+            <!-- Compact Glassmorphism Reservation Micro UI -->
+            <div class="hero-reservation-bar reveal-up">
+              <form class="hero-res-form reservation-form-interactive" action="#">
+                <div class="hero-res-field">
+                  <label for="heroResDate"><i class="bi bi-calendar3"></i> Date</label>
+                  <input type="date" id="heroResDate" name="reservation_date" class="hero-res-input" required>
+                </div>
+                <div class="hero-res-divider"></div>
+                <div class="hero-res-field">
+                  <label for="heroResTime"><i class="bi bi-clock"></i> Time</label>
+                  <select id="heroResTime" name="reservation_time" class="hero-res-select">
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="1:30 PM">1:30 PM</option>
+                    <option value="6:00 PM">6:00 PM</option>
+                    <option value="7:30 PM" selected>7:30 PM</option>
+                    <option value="9:00 PM">9:00 PM</option>
+                  </select>
+                </div>
+                <div class="hero-res-divider"></div>
+                <div class="hero-res-field">
+                  <label for="heroResGuests"><i class="bi bi-people"></i> Guests</label>
+                  <select id="heroResGuests" name="guests_count" class="hero-res-select">
+                    <option value="1">1 Person</option>
+                    <option value="2" selected>2 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="6">6 Guests</option>
+                    <option value="8+">8+ Guests</option>
+                  </select>
+                </div>
+                <button type="submit" class="hero-res-submit-btn" aria-label="Check Availability">
+                  <span>Check Availability</span>
+                  <i class="bi bi-arrow-right-short fs-4"></i>
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Large Food Image Showcase (55% desktop) -->
+        <div class="col-lg-7 col-xl-7">
+          <div class="hero-media-wrapper image-reveal">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=90" alt="Wood-Fired Hearth Cooking & Fresh Ingredients" class="hero-media-img" loading="eager" fetchpriority="high">
+            <div class="hero-media-overlay"></div>
+            
+            <!-- Floating Artisan Badge Overlay -->
+            <div class="hero-image-badge">
+              <div class="badge-icon"><i class="bi bi-fire"></i></div>
+              <div>
+                <div class="badge-title">Wood-Fired Hearth</div>
+                <div class="badge-sub">Daily Local Farm Sourced</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <a href="#about" class="hero-scroll-indicator" aria-label="Scroll down to explore">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </a>
+  </section>
+
+  <!-- =========================================================================
+       3. ABOUT / EDITORIAL STORY SECTION
+       ========================================================================= -->
+  <section id="about" class="section-spacing bg-surface">
+    <div class="container-xl">
+      <div class="row align-items-center g-4 g-lg-5">
+        
+        <!-- Left Side: Editorial Image Composition (Primary + Secondary + Badge) -->
+        <div class="col-lg-6">
+          <div class="about-editorial-wrap reveal-right">
+            
+            <!-- Primary Main Image Container -->
+            <div class="about-main-img-box image-reveal">
+              <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=85" alt="Ember and Olive Artisan Kitchen" class="about-img-primary" loading="eager" fetchpriority="high">
+            </div>
+            
+            <!-- Secondary Overlapping Image -->
+            <div class="about-secondary-img-box image-reveal image-reveal-left">
+              <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=650&q=85" alt="Wood-fired Charred Heirloom Dish" class="about-img-secondary" loading="eager">
+            </div>
+            
+            <!-- Integrated 2012 Crafted Heritage Badge -->
+            <div class="about-heritage-card scale-reveal">
+              <div class="heritage-year">2012</div>
+              <div class="heritage-divider"></div>
+              <div class="heritage-text">CRAFTED<br>HERITAGE</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Side: Story Content & Typography -->
+        <div class="col-lg-6">
+          <div class="about-story-content ps-lg-3 reveal-left">
+            
+            <div class="eyebrow">OUR CULINARY ETHOS</div>
+            <h2 class="section-title text-reveal">
+              <span class="text-reveal-mask">
+                <span class="text-reveal-inner">Rooted in Seasonality,</span>
+              </span>
+              <span class="text-reveal-mask">
+                <span class="text-reveal-inner">Fired by Passion</span>
+              </span>
+            </h2>
+            
+            <p class="about-lead-paragraph">
+              At Ember & Olive, we believe that extraordinary food begins with an uncompromising reverence for the harvest and the transformative alchemy of fire.
+            </p>
+            
+            <p class="about-secondary-paragraph">
+              Founded in 2012, our dining room was built on a simple philosophy: honor local organic farmers, butcher whole animals with craft, and let ancestral wood-fired techniques draw out the profound, natural flavors of each seasonal ingredient.
+            </p>
+
+            <!-- Integrated Equal-Width Statistics Row -->
+            <div class="about-stats-row stats-container-trigger stagger-container">
+              <div class="stat-item stagger-item">
+                <div class="stat-number" data-target="14" data-suffix="+">14+</div>
+                <div class="stat-label">Years of Craft</div>
+              </div>
+              <div class="stat-item stagger-item">
+                <div class="stat-number" data-target="32" data-suffix="">32</div>
+                <div class="stat-label">Signature Dishes</div>
+              </div>
+              <div class="stat-item stagger-item">
+                <div class="stat-number" data-target="20" data-suffix="+">20+</div>
+                <div class="stat-label">Local Growers</div>
+              </div>
+            </div>
+
+            <!-- Chef Snippet -->
+            <div class="d-flex flex-wrap align-items-center gap-4 pt-1">
+              <a href="about.html" class="btn-custom btn-dark-solid" id="aboutDiscoverStoryBtn">
+                <span>Discover Our Story</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <div class="d-flex align-items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=120&q=80" alt="Chef Arjun Mehta Portrait" class="rounded-circle" style="width: 48px; height: 48px; object-fit: cover; border: 2px solid var(--color-accent);">
+                <div>
+                  <h6 class="mb-0 font-heading text-primary-dark">Arjun Mehta</h6>
+                  <small class="text-muted-custom">Executive Chef & Founder</small>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. FEATURED SIGNATURE DISHES (ASYMMETRIC COMPOSITION)
+       ========================================================================= -->
+  <section id="signature" class="section-spacing bg-surface-subtle border-top border-bottom border-bone">
+    <div class="container-xl">
+      
+      <div class="text-center max-w-700 mx-auto mb-5 reveal-up">
+        <div class="eyebrow center-eyebrow">CHEF'S SPOTLIGHT</div>
+        <h2 class="section-title text-reveal">
+          <span class="text-reveal-mask">
+            <span class="text-reveal-inner">Signature Creations from the Hearth</span>
+          </span>
+        </h2>
+        <p class="section-desc text-muted-custom">
+          Iconic dishes shaped by open flame, coastal harvests, and time-honored slow reduction methods.
+        </p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        
+        <!-- Large Primary Feature Dish -->
+        <div class="col-lg-6">
+          <div class="signature-hero-card reveal-fade-right">
+            <div class="signature-hero-media">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=80" alt="Wood-Fired Prawns with Charred Lemon" class="signature-hero-img">
+              <span class="menu-item-badge badge-signature">Chef's Masterpiece</span>
+            </div>
+            <div class="signature-hero-body">
+              <div class="d-flex justify-content-between align-items-baseline mb-2">
+                <h3 class="signature-hero-title mb-0">Wood-Fired Wild Prawns</h3>
+                <span class="signature-hero-price">₹620</span>
+              </div>
+              <p class="text-bone opacity-85 mb-3">
+                Jumbo ocean prawns seared over olive wood embers, basted in roasted garlic emulsion, cold-pressed olive oil, charred Meyer lemon, and fresh oregano blossoms.
+              </p>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top border-dark-subtle">
+                <span class="small text-accent"><i class="bi bi-droplet me-1"></i> Smoked Butter & Charred Herb Jus</span>
+                <button type="button" class="btn-text-link btn-discover-dish text-bone" data-dish-title="Wood-Fired Wild Prawns" data-dish-price="₹620" data-dish-desc="Jumbo ocean prawns seared over olive wood embers, basted in roasted garlic emulsion, cold-pressed olive oil, charred Meyer lemon, and fresh oregano blossoms." data-dish-ingredients="Wild ocean prawns, Meyer lemon, garlic butter, fresh oregano, sea salt crystals, cold-pressed olive oil." data-dish-pairing="Vermentino di Sardegna or Crisp Sauvignon Blanc" data-dish-img="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=80">
+                  <span>Discover Dish</span>
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Secondary Signature Dishes -->
+        <div class="col-lg-6 d-flex flex-column gap-3">
+          
+          <!-- Mini Card 1 -->
+          <div class="signature-mini-card reveal-fade-left">
+            <div class="signature-mini-img-wrap">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Slow-Smoked Duck Breast" class="signature-mini-img">
+            </div>
+            <div class="flex-grow-1">
+              <div class="d-flex justify-content-between align-items-baseline">
+                <h4 class="signature-mini-title text-primary-dark">Oak-Smoked Duck Breast</h4>
+                <span class="signature-mini-price">₹790</span>
+              </div>
+              <p class="small text-muted-custom mb-2">Parsnip silk puree, spiced sour cherry reduction, roasted shallots, crispy thyme.</p>
+              <button type="button" class="btn-text-link p-0 border-0 bg-transparent btn-discover-dish" data-dish-title="Oak-Smoked Duck Breast" data-dish-price="₹790" data-dish-desc="Aged duck breast smoked over French oak, paired with velvety parsnip puree and sweet-tart sour cherry glaze." data-dish-ingredients="Aged organic duck, sweet parsnips, tart Morello cherries, port wine, shallots, garden thyme." data-dish-pairing="Pinot Noir Burgundy or Reserve Syrah" data-dish-img="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80">
+                <span>Discover Dish <i class="bi bi-chevron-right small"></i></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mini Card 2 -->
+          <div class="signature-mini-card reveal-fade-left" style="animation-delay: 0.1s;">
+            <div class="signature-mini-img-wrap">
+              <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80" alt="Charred Burrata with Heirloom Tomatoes" class="signature-mini-img">
+            </div>
+            <div class="flex-grow-1">
+              <div class="d-flex justify-content-between align-items-baseline">
+                <h4 class="signature-mini-title text-primary-dark">Charred Artisan Burrata</h4>
+                <span class="signature-mini-price">₹480</span>
+              </div>
+              <p class="small text-muted-custom mb-2">Heritage heirloom tomatoes, balsamic pearls, cold-pressed olive drizzle, sourdough crisp.</p>
+              <button type="button" class="btn-text-link p-0 border-0 bg-transparent btn-discover-dish" data-dish-title="Charred Artisan Burrata" data-dish-price="₹480" data-dish-desc="Fresh creamy burrata lightly torched, served over multicolor heritage tomatoes with aged Modena balsamic vinegar." data-dish-ingredients="Artisan artisanal burrata, heirloom tomatoes, aged balsamic 12-yr, fresh basil, sourdough wafers." data-dish-pairing="Prosecco Superiore or Dry Rosé" data-dish-img="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80">
+                <span>Discover Dish <i class="bi bi-chevron-right small"></i></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mini Card 3 -->
+          <div class="signature-mini-card reveal-fade-left" style="animation-delay: 0.2s;">
+            <div class="signature-mini-img-wrap">
+              <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=400&q=80" alt="Roasted Wild Sea Bass" class="signature-mini-img">
+            </div>
+            <div class="flex-grow-1">
+              <div class="d-flex justify-content-between align-items-baseline">
+                <h4 class="signature-mini-title text-primary-dark">Wood-Roasted Sea Bass</h4>
+                <span class="signature-mini-price">₹850</span>
+              </div>
+              <p class="small text-muted-custom mb-2">Crushed fingerling potatoes, saffron velouté, charred baby fennel, herb oil.</p>
+              <button type="button" class="btn-text-link p-0 border-0 bg-transparent btn-discover-dish" data-dish-title="Wood-Roasted Sea Bass" data-dish-price="₹850" data-dish-desc="Line-caught sea bass roasted on cedar planks over glowing coals, finished with saffron cream and fennel." data-dish-ingredients="Fresh line-caught sea bass, saffron threads, baby fennel bulb, fingerling potatoes, chive oil." data-dish-pairing="Oaked Chardonnay or Chablis" data-dish-img="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80">
+                <span>Discover Dish <i class="bi bi-chevron-right small"></i></span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. FULL CATEGORIZED SEASONAL MENU (WITH JAVASCRIPT FILTERING)
+       ========================================================================= -->
+  <section id="menu" class="section-spacing bg-surface">
+    <div class="container-xl">
+      
+      <div class="text-center max-w-700 mx-auto mb-4 reveal-fade-up">
+        <div class="eyebrow center-eyebrow">OUR CULINARY REPERTOIRE</div>
+        <h2 class="section-title">Seasonal Autumn / Winter Menu</h2>
+        <p class="section-desc text-muted-custom">
+          Carefully composed dishes combining ancient wood-fire traditions with contemporary coastal gastronomy.
+        </p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="menu-filter-nav reveal-fade-up">
+        <button type="button" class="menu-filter-btn active" data-filter="all">All Dishes</button>
+        <button type="button" class="menu-filter-btn" data-filter="starters">Starters</button>
+        <button type="button" class="menu-filter-btn" data-filter="mains">Mains</button>
+        <button type="button" class="menu-filter-btn" data-filter="seafood">Seafood</button>
+        <button type="button" class="menu-filter-btn" data-filter="vegetarian">Vegetarian</button>
+        <button type="button" class="menu-filter-btn" data-filter="desserts">Desserts</button>
+        <button type="button" class="menu-filter-btn" data-filter="drinks">Drinks & Wine</button>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="row g-4" id="menuItemsContainer">
+
+        <!-- Item 1: Starter -->
+        <div class="col-md-6 col-lg-4 menu-item-wrapper" data-category="starters" data-dietary="vegetarian gluten-free">
+          <div class="menu-item-card">
+            <div class="menu-item-image-wrap">
+              <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" alt="Ember Smoked Beet Carpaccio" class="menu-item-img">
+              <span class="menu-item-badge">Starter</span>
+            </div>
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Ember Smoked Beets</h3>
+              <span class="menu-item-price">₹420</span>
+            </div>
+            <p class="menu-item-desc">Salt-baked golden and red beets, whipped goat curd, candied walnuts, aged sherry vinaigrette.</p>
+            <div class="dietary-tags">
+              <span class="diet-tag"><i class="bi bi-flower1"></i> Vegetarian</span>
+              <span class="diet-tag">Gluten-Free</span>
+            </div>
+            <p class="menu-item-ingredients">Organic heirloom beets, Chevre goat cheese, California walnuts, wild microgreens.</p>
+          </div>
+        </div>
+
+        <!-- Item 2: Seafood -->
+        <div class="col-md-6 col-lg-4 menu-item-wrapper" data-category="seafood" data-dietary="signature gluten-free">
+          <div class="menu-item-card">
+            <div class="menu-item-image-wrap">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Wood-Fired Wild Prawns" class="menu-item-img">
+              <span class="menu-item-badge badge-signature">Chef Signature</span>
+            </div>
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Wood-Fired Prawns</h3>
+              <span class="menu-item-price">₹620</span>
+            </div>
+            <p class="menu-item-desc">Charred over glowing olive embers, garlic butter emulsion, burnt lemon, fresh garden herbs.</p>
+            <div class="dietary-tags">
+              <span class="diet-tag"><i class="bi bi-award"></i> Signature</span>
+              <span class="diet-tag">Gluten-Free</span>
+            </div>
+            <p class="menu-item-ingredients">Wild ocean tiger prawns, roasted garlic butter, oregano blossoms, cold-pressed olive oil.</p>
+          </div>
+        </div>
+
+        <!-- Item 3: Main -->
+        <div class="col-md-6 col-lg-4 menu-item-wrapper" data-category="mains" data-dietary="signature">
+          <div class="menu-item-card">
+            <div class="menu-item-image-wrap">
+              <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80" alt="Braised Lamb Shank in Clay Pot" class="menu-item-img">
+              <span class="menu-item-badge">Main</span>
+            </div>
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Slow-Braised Lamb Shank</h3>
+              <span class="menu-item-price">₹890</span>
+            </div>
+            <p class="menu-item-desc">12-hour simmered in red wine bone reduction, creamy polenta, gremolata, glazed baby carrots.</p>
+            <div class="dietary-tags">
+              <span class="diet-tag">Slow Cooked</span>
+              <span class="diet-tag">Farm Sourced</span>
+            </div>
+            <p class="menu-item-ingredients">Free-range pasture lamb, Chianti wine reduction, stoneground yellow polenta, lemon zest.</p>
+          </div>
+        </div>
+
+        <!-- Item 4: Vegetarian -->
+        <div class="col-md-6 col-lg-4 menu-item-wrapper" data-category="vegetarian" data-dietary="vegetarian">
+          <div class="menu-item-card">
+            <div class="menu-item-image-wrap">
+              <img src="https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?auto=format&fit=crop&w=600&q=80" alt="Handmade Ricotta Agnolotti" class="menu-item-img">
+              <span class="menu-item-badge">Handmade</span>
+            </div>
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Truffled Ricotta Agnolotti</h3>
+              <span class="menu-item-price">₹580</span>
+            </div>
+            <p class="menu-item-desc">Hand-folded pasta filled with house buffalo ricotta, black winter truffle butter, toasted hazelnuts.</p>
+            <div class="dietary-tags">
+              <span class="diet-tag"><i class="bi bi-flower1"></i> Vegetarian</span>
+              <span class="diet-tag">Artisan Pasta</span>
+            </div>
+            <p class="menu-item-ingredients">Organic semolina pasta, buffalo ricotta, black truffle paste, sage brown butter, Parmigiano.</p>
+          </div>
+        </div>
+
+        <!-- Item 5: Seafood -->
+        <div class="col-md-6 col-lg-4 menu-item-wrapper" data-category="seafood" data-dietary="gluten-free">
+          <div class="menu-item-card">
+            <div class="menu-item-image-wrap">
+              <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80" alt="Pan-Seared Atlantic Salmon" class="menu-item-img">
+              <span class="menu-item-badge">Seafood</span>
+            </div>
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Pan-Seared Salmon</h3>
+              <span class="menu-item-price">₹760</span>
+            </div>
+            <p class="menu-item-desc">Crispy skin salmon filet, charred broccolini, dill hollandaise, caper berry confit.</p>
+            <div class="dietary-tags">
+              <span class="diet-tag">Wild Harvest</span>
+              <span class="diet-tag">Gluten-Free</span>
+            </div>
+            <p class="menu-item-ingredients">Sustainable Atlantic salmon, organic broccolini, fresh dill, brown butter hollandaise.</p>
+          </div>
+        </div>
+
+        <!-- Item 6: Dessert -->
+        <div class="col-md-6 col-lg-4 menu-item-wrapper" data-category="desserts" data-dietary="vegetarian">
+          <div class="menu-item-card">
+            <div class="menu-item-image-wrap">
+              <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=80" alt="Smoked Olive Oil Chocolate Torte" class="menu-item-img">
+              <span class="menu-item-badge badge-signature">Signature Sweet</span>
+            </div>
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Smoked Olive Oil Torte</h3>
+              <span class="menu-item-price">₹390</span>
+            </div>
+            <p class="menu-item-desc">70% Valrhona dark chocolate cake, single-estate olive oil ganache, sea salt flakes, espresso gelato.</p>
+            <div class="dietary-tags">
+              <span class="diet-tag"><i class="bi bi-flower1"></i> Vegetarian</span>
+              <span class="diet-tag">House Favorite</span>
+            </div>
+            <p class="menu-item-ingredients">Valrhona dark chocolate, cold-pressed Tuscan olive oil, Maldon sea salt, Madagascar vanilla gelato.</p>
+          </div>
+        </div>
+
+        <!-- Item 7: Drink -->
+        <div class="col-md-6 col-lg-4 menu-item-wrapper" data-category="drinks" data-dietary="beverage">
+          <div class="menu-item-card">
+            <div class="menu-item-image-wrap">
+              <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80" alt="Smoked Rosemary Old Fashioned" class="menu-item-img">
+              <span class="menu-item-badge">Cocktail</span>
+            </div>
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Ember Old Fashioned</h3>
+              <span class="menu-item-price">₹450</span>
+            </div>
+            <p class="menu-item-desc">Small-batch bourbon, flamed rosemary sprig, spiced orange bitters, charred cherry syrup.</p>
+            <div class="dietary-tags">
+              <span class="diet-tag"><i class="bi bi-cup-straw"></i> Handcrafted</span>
+              <span class="diet-tag">Signature Bar</span>
+            </div>
+            <p class="menu-item-ingredients">Bourbon whiskey, Angostura bitters, flamed rosemary, brandied cherry, clear block ice.</p>
+          </div>
+        </div>
+
+        <!-- Item 8: Starter -->
+        <div class="col-md-6 col-lg-4 menu-item-wrapper" data-category="starters" data-dietary="vegetarian">
+          <div class="menu-item-card">
+            <div class="menu-item-image-wrap">
+              <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80" alt="Heirloom Tomato Tartine" class="menu-item-img">
+              <span class="menu-item-badge">Starter</span>
+            </div>
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Wood-Fired Tartine</h3>
+              <span class="menu-item-price">₹360</span>
+            </div>
+            <p class="menu-item-desc">House sourdough bread charred on grill, whipped feta, confit baby tomatoes, pickled shallots.</p>
+            <div class="dietary-tags">
+              <span class="diet-tag"><i class="bi bi-flower1"></i> Vegetarian</span>
+            </div>
+            <p class="menu-item-ingredients">Wild yeast sourdough, organic sheep feta, confit cherry tomatoes, fresh oregano blossoms.</p>
+          </div>
+        </div>
+
+        <!-- Item 9: Drink -->
+        <div class="col-md-6 col-lg-4 menu-item-wrapper" data-category="drinks" data-dietary="beverage">
+          <div class="menu-item-card">
+            <div class="menu-item-image-wrap">
+              <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80" alt="Reserve Red Wine Glass" class="menu-item-img">
+              <span class="menu-item-badge">Sommelier Pick</span>
+            </div>
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Tuscan Reserve Sangiovese</h3>
+              <span class="menu-item-price">₹650</span>
+            </div>
+            <p class="menu-item-desc">Notes of black cherry, leather, and dried violets with subtle oak spice and velvety tannins.</p>
+            <div class="dietary-tags">
+              <span class="diet-tag">Organic Vineyard</span>
+              <span class="diet-tag">2018 Vintage</span>
+            </div>
+            <p class="menu-item-ingredients">Estate-grown Sangiovese grapes, aged 24 months in French oak barrels.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Explore Full Menu Link -->
+      <div class="text-center mt-5">
+        <a href="menu.html" class="btn-custom btn-primary-accent px-5 py-3">
+          <span>View Complete Dining & Wine Menu</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. EXECUTIVE CHEF & CULINARY MASTERS
+       ========================================================================= -->
+  <section id="chef" class="section-spacing bg-surface-subtle border-top border-bone">
+    <div class="container-xl">
+      
+      <!-- Split Chef Profile -->
+      <div class="row align-items-center g-5 mb-5 pb-4">
+        
+        <div class="col-lg-5">
+          <div class="chef-portrait-wrap reveal-fade-right">
+            <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=900&q=85" alt="Executive Chef Arjun Mehta" class="chef-portrait-img">
+            <div class="chef-badge-quote">
+              <p>"Fire is not merely heat; it is an ingredient. It brings humility, honesty, and depth to everything we prepare."</p>
+              <small class="text-accent">— Chef Arjun Mehta</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="ps-lg-4 reveal-fade-left">
+            <div class="eyebrow">THE CULINARY VISION</div>
+            <h2 class="section-title">Meet Executive Chef Arjun Mehta</h2>
+            
+            <p class="lead mb-3">
+              With over eighteen years of culinary exploration across coastal India, the Mediterranean, and wood-fired kitchens in Northern Europe, Chef Arjun brings a deeply evocative culinary voice to Ember & Olive.
+            </p>
+
+            <p class="mb-4">
+              Trained under Michelin-starred masters in San Sebastián and Lyon, he returned to establish Ember & Olive with a clear vision: eliminating culinary artifice to showcase pristine seasonal produce through primitive firecraft and modern restraint.
+            </p>
+
+            <div class="p-3 bg-surface-subtle rounded border border-dark-subtle mb-4">
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-award-fill text-accent fs-3"></i>
+                <div>
+                  <h6 class="mb-0 font-heading text-primary">Culinary Accolades & Philosophy</h6>
+                  <p class="small text-muted-custom mb-0">Awarded Best Regional Tasting Menu 2024 · Advocate of Zero-Waste Kitchens</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-4">
+              <a href="about.html" class="btn-custom btn-dark-solid">
+                <span>Explore Culinary Story</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <div class="d-flex gap-2">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="team-social-btn" aria-label="Chef Arjun Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="team-social-btn" aria-label="Chef Arjun LinkedIn"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Culinary Team Grid -->
+      <div class="row g-4 pt-4 border-top border-bone">
+        
+        <div class="col-12 text-center mb-2">
+          <h3 class="font-heading fs-2">The Artisan Team</h3>
+          <p class="text-muted-custom">The skilled professionals orchestrating every detail of your dining experience.</p>
+        </div>
+
+        <!-- Team 1 -->
+        <div class="col-md-4">
+          <div class="team-member-card reveal-fade-up">
+            <div class="team-member-img-wrap">
+              <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=600&q=80" alt="Head Pastry Chef Maya Sen" class="team-member-img">
+            </div>
+            <div class="team-member-body">
+              <h4 class="team-member-name text-primary-dark">Maya Sen</h4>
+              <div class="team-member-role">Head Pastry Chef</div>
+              <p class="small text-muted-custom">Specializing in botanical infusions, smoked honey caramels, and sourdough-based desserts.</p>
+              <div class="team-social-links">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="team-social-btn" aria-label="Maya Sen Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="team-social-btn" aria-label="Maya Sen LinkedIn"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team 2 -->
+        <div class="col-md-4">
+          <div class="team-member-card reveal-fade-up" style="animation-delay: 0.1s;">
+            <div class="team-member-img-wrap">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Head Sommelier David Vance" class="team-member-img">
+            </div>
+            <div class="team-member-body">
+              <h4 class="team-member-name text-primary-dark">David Vance</h4>
+              <div class="team-member-role">Head Sommelier & Cellar Master</div>
+              <p class="small text-muted-custom">Curating our 400-bottle cellar with a focus on low-intervention, biodynamic Mediterranean vineyards.</p>
+              <div class="team-social-links">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="team-social-btn" aria-label="David Vance Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="team-social-btn" aria-label="David Vance LinkedIn"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team 3 -->
+        <div class="col-md-4">
+          <div class="team-member-card reveal-fade-up" style="animation-delay: 0.2s;">
+            <div class="team-member-img-wrap">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="General Manager Priya Raman" class="team-member-img">
+            </div>
+            <div class="team-member-body">
+              <h4 class="team-member-name text-primary-dark">Priya Raman</h4>
+              <div class="team-member-role">General Manager & Guest Concierge</div>
+              <p class="small text-muted-custom">Ensuring seamless warmth, intuitive service, and bespoke dining coordination for all guests.</p>
+              <div class="team-social-links">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="team-social-btn" aria-label="Priya Raman Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="team-social-btn" aria-label="Priya Raman LinkedIn"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. EVENTS & CELEBRATION PACKAGES
+       ========================================================================= -->
+  <section id="events" class="section-spacing bg-surface">
+    <div class="container-xl">
+      
+      <div class="text-center max-w-700 mx-auto mb-5 reveal-fade-up">
+        <div class="eyebrow center-eyebrow">EXCLUSIVE EXPERIENCES</div>
+        <h2 class="section-title">Private Dining & Seasonal Gatherings</h2>
+        <p class="section-desc text-muted-custom">
+          From intimate celebratory dinners in our subterranean wine vault to multi-course Chef's table tastings.
+        </p>
+      </div>
+
+      <!-- Events Highlights -->
+      <div class="row g-4 mb-5">
+        
+        <!-- Event 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="event-card reveal-fade-up">
+            <div class="event-card-media">
+              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=80" alt="The Olive Vault Private Dining Room" class="event-card-img">
+              <span class="event-tag">Up to 24 Guests</span>
+            </div>
+            <div class="event-card-body">
+              <h3 class="event-card-title text-primary-dark">The Olive Cellar Suite</h3>
+              <div class="event-meta">
+                <span><i class="bi bi-door-open"></i> Private Dining Room</span>
+              </div>
+              <p class="text-muted-custom mb-4 flex-grow-1">
+                A secluded acoustic sanctuary wrapped in exposed reclaimed brick and reserve wine racks. Dedicated sommelier and custom 5-course menu.
+              </p>
+              <a href="events.html" class="btn-custom btn-outline-dark-custom w-100">
+                <span>Explore Room & Inquire</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="event-card reveal-fade-up" style="animation-delay: 0.1s;">
+            <div class="event-card-media">
+              <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=700&q=80" alt="Chef Arjun Interactive Hearth Experience" class="event-card-img">
+              <span class="event-tag">Only 8 Seats / Night</span>
+            </div>
+            <div class="event-card-body">
+              <h3 class="event-card-title text-primary-dark">The Hearth Chef's Table</h3>
+              <div class="event-meta">
+                <span><i class="bi bi-fire"></i> Live Fire Counter</span>
+              </div>
+              <p class="text-muted-custom mb-4 flex-grow-1">
+                An immersive 9-course journey seated directly at the hearth counter. Watch Chef Arjun curate each dish with paired estate vintage wines.
+              </p>
+              <a href="events.html" class="btn-custom btn-primary-accent w-100">
+                <span>Reserve Chef's Table</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="event-card reveal-fade-up" style="animation-delay: 0.2s;">
+            <div class="event-card-media">
+              <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=80" alt="Terrace Garden Celebrations" class="event-card-img">
+              <span class="event-tag">Up to 60 Guests</span>
+            </div>
+            <div class="event-card-body">
+              <h3 class="event-card-title text-primary-dark">Terrace Garden Receptions</h3>
+              <div class="event-meta">
+                <span><i class="bi bi-brightness-high"></i> Open-Air Pergola</span>
+              </div>
+              <p class="text-muted-custom mb-4 flex-grow-1">
+                Surrounded by fragrant herb beds, olive trees, and string lights. Ideal for milestone birthdays, corporate dinners, and intimate weddings.
+              </p>
+              <a href="events.html" class="btn-custom btn-outline-dark-custom w-100">
+                <span>View Event Packages</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Packages Section -->
+      <div class="pt-5 border-top border-bone">
+        <div class="text-center max-w-700 mx-auto mb-5">
+          <div class="eyebrow center-eyebrow">CURATED PACKAGES</div>
+          <h3 class="section-title">Celebrate With Us</h3>
+          <p class="text-muted-custom">Bespoke hospitality packages crafted for effortless, unforgettable dining occasions.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          
+          <!-- Package 1 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="package-card reveal-fade-up">
+              <h4 class="package-title text-primary-dark">Birthday Reverie</h4>
+              <p class="text-center small text-muted-custom mb-0">Intimate celebrations with friends & family</p>
+              
+              <div class="package-price-wrap">
+                <div class="package-price">₹2,800</div>
+                <div class="package-price-period">Per Guest · 4 Courses</div>
+              </div>
+
+              <ul class="package-features-list">
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Welcome Prosecco toast</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> 4-course bespoke menu</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Custom celebration cake</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Printed keepsake menus</li>
+              </ul>
+
+              <a href="#reservation" class="btn-custom btn-outline-dark-custom w-100 mt-auto">Choose Package</a>
+            </div>
+          </div>
+
+          <!-- Package 2: Featured -->
+          <div class="col-lg-3 col-md-6">
+            <div class="package-card featured-package reveal-fade-up" style="animation-delay: 0.1s;">
+              <span class="package-badge">Most Popular</span>
+              <h4 class="package-title">Anniversary Romance</h4>
+              <p class="text-center small opacity-75 mb-0">Unforgettable candlelit evening for two</p>
+              
+              <div class="package-price-wrap">
+                <div class="package-price">₹6,500</div>
+                <div class="package-price-period">Per Couple · 6 Courses</div>
+              </div>
+
+              <ul class="package-features-list">
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Premium corner table</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Vintage Champagne pairing</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> 6-course Chef tasting</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Handcrafted artisan chocolates</li>
+              </ul>
+
+              <a href="#reservation" class="btn-custom btn-primary-accent w-100 mt-auto">Book Experience</a>
+            </div>
+          </div>
+
+          <!-- Package 3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="package-card reveal-fade-up" style="animation-delay: 0.2s;">
+              <h4 class="package-title text-primary-dark">Corporate Executive</h4>
+              <p class="text-center small text-muted-custom mb-0">High-level business dinners & clients</p>
+              
+              <div class="package-price-wrap">
+                <div class="package-price">₹3,400</div>
+                <div class="package-price-period">Per Guest · 5 Courses</div>
+              </div>
+
+              <ul class="package-features-list">
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Private room reservation</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> AV presentation support</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> 5-course wood-fired dinner</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Premium cocktail service</li>
+              </ul>
+
+              <a href="events.html" class="btn-custom btn-outline-dark-custom w-100 mt-auto">Inquire Corporate</a>
+            </div>
+          </div>
+
+          <!-- Package 4 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="package-card reveal-fade-up" style="animation-delay: 0.3s;">
+              <h4 class="package-title text-primary-dark">Grand Celebration</h4>
+              <p class="text-center small text-muted-custom mb-0">Full restaurant or terrace buyout</p>
+              
+              <div class="package-price-wrap">
+                <div class="package-price">Custom</div>
+                <div class="package-price-period">Bespoke Quote · Buyouts</div>
+              </div>
+
+              <ul class="package-features-list">
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Full venue exclusivity</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Custom live fire stations</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Dedicated head sommelier</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Live acoustic music setup</li>
+              </ul>
+
+              <a href="contact.html" class="btn-custom btn-outline-dark-custom w-100 mt-auto">Contact Concierge</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. EDITORIAL TESTIMONIALS CAROUSEL
+       ========================================================================= -->
+  <section id="testimonials" class="testimonial-section-wrap section-spacing">
+    <div class="container-xl position-relative" style="z-index: 2;">
+      
+      <div class="text-center max-w-700 mx-auto mb-5 reveal-fade-up">
+        <div class="eyebrow center-eyebrow text-accent">WORDS FROM OUR GUESTS</div>
+        <h2 class="section-title text-white">An Unforgettable Culinary Journey</h2>
+      </div>
+
+      <div class="testimonial-carousel-container">
+        
+        <!-- Slide 1 -->
+        <div class="testimonial-slide active">
+          <div class="testimonial-card-editorial">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote-text">
+              "Ember & Olive represents the finest expression of wood-fired gastronomy in the country. The wild prawns and duck breast were sublime, accompanied by intuitive, heartfelt service."
+            </p>
+            <div class="testimonial-author-name">Kavita Swaminathan</div>
+            <div class="testimonial-author-meta">Food Critic & Columnist · Chennai</div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="testimonial-slide" style="display: none;">
+          <div class="testimonial-card-editorial">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote-text">
+              "We hosted our 10th wedding anniversary in the Olive Cellar. From Chef Arjun's wine pairings to the candlelit ambiance, every moment was pure magic. Our guests are still raving."
+            </p>
+            <div class="testimonial-author-name">Rohan & Ananya Roy</div>
+            <div class="testimonial-author-meta">Private Dining Guests · Bengaluru</div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="testimonial-slide" style="display: none;">
+          <div class="testimonial-card-editorial">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote-text">
+              "The depth of flavor they achieve through heritage olive wood coals is astonishing. You can taste the authenticity of the local farmers and the care in every single plate."
+            </p>
+            <div class="testimonial-author-name">Marcus Sterling</div>
+            <div class="testimonial-author-meta">Gastronomy Enthusiast · London</div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="testimonial-slide" style="display: none;">
+          <div class="testimonial-card-editorial">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote-text">
+              "The Truffled Agnolotti and the Smoked Olive Oil Torte are culinary perfection. Ember & Olive has set an entirely new benchmark for artisan hospitality."
+            </p>
+            <div class="testimonial-author-name">Deepika Pillai</div>
+            <div class="testimonial-author-meta">Culinary Explorer · Mumbai</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls & Dots -->
+      <div class="testimonial-nav-btns">
+        <button type="button" class="testimonial-ctrl-btn testimonial-prev" aria-label="Previous testimonial">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <div class="testimonial-dots"></div>
+        <button type="button" class="testimonial-ctrl-btn testimonial-next" aria-label="Next testimonial">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. ASYMMETRIC MASONRY GALLERY & LIGHTBOX
+       ========================================================================= -->
+  <section id="gallery" class="section-spacing bg-surface">
+    <div class="container-xl">
+      
+      <div class="text-center max-w-700 mx-auto mb-5 reveal-fade-up">
+        <div class="eyebrow center-eyebrow">ATMOSPHERE & CRAFT</div>
+        <h2 class="section-title">Visual Glimpses of Ember & Olive</h2>
+        <p class="section-desc text-muted-custom">
+          Step inside our dining room, witness our open-hearth kitchen, and explore our cellar treasures.
+        </p>
+      </div>
+
+      <!-- Asymmetric Grid -->
+      <div class="gallery-grid">
+        
+        <!-- Gallery 1: Large Span 8 -->
+        <div class="gallery-item gallery-item-span-8 reveal-fade-up" data-full-img="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=85">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80" alt="Main Dining Room Ambiance" class="gallery-img">
+          <div class="gallery-overlay">
+            <h4 class="gallery-item-title">The Main Hearth Dining Room</h4>
+            <span class="gallery-item-category">Atmosphere & Interior</span>
+          </div>
+        </div>
+
+        <!-- Gallery 2: Span 4 -->
+        <div class="gallery-item gallery-item-span-4 reveal-fade-up" style="animation-delay: 0.1s;" data-full-img="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=85">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Wood-Fired Wild Prawns Plating" class="gallery-img">
+          <div class="gallery-overlay">
+            <h4 class="gallery-item-title">Wood-Fired Prawns</h4>
+            <span class="gallery-item-category">Culinary Masterpiece</span>
+          </div>
+        </div>
+
+        <!-- Gallery 3: Span 4 -->
+        <div class="gallery-item gallery-item-span-4 reveal-fade-up" data-full-img="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1200&q=85">
+          <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=600&q=80" alt="Chef Preparing Hearth Dishes" class="gallery-img">
+          <div class="gallery-overlay">
+            <h4 class="gallery-item-title">Firecraft in Motion</h4>
+            <span class="gallery-item-category">Behind The Pass</span>
+          </div>
+        </div>
+
+        <!-- Gallery 4: Span 4 -->
+        <div class="gallery-item gallery-item-span-4 reveal-fade-up" style="animation-delay: 0.1s;" data-full-img="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=85">
+          <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80" alt="Wine Cellar Tasting Selection" class="gallery-img">
+          <div class="gallery-overlay">
+            <h4 class="gallery-item-title">The Curated Cellar</h4>
+            <span class="gallery-item-category">Sommelier Selection</span>
+          </div>
+        </div>
+
+        <!-- Gallery 5: Span 4 -->
+        <div class="gallery-item gallery-item-span-4 reveal-fade-up" style="animation-delay: 0.2s;" data-full-img="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1200&q=85">
+          <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=80" alt="Artisan Pastry and Sweets" class="gallery-img">
+          <div class="gallery-overlay">
+            <h4 class="gallery-item-title">Smoked Olive Oil Torte</h4>
+            <span class="gallery-item-category">Artisan Pastry</span>
+          </div>
+        </div>
+
+        <!-- Gallery 6: Span 6 -->
+        <div class="gallery-item gallery-item-span-6 reveal-fade-up" data-full-img="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=85">
+          <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80" alt="Botanical Cocktail Creation" class="gallery-img">
+          <div class="gallery-overlay">
+            <h4 class="gallery-item-title">Botanical Mixology</h4>
+            <span class="gallery-item-category">Apothecary & Bar</span>
+          </div>
+        </div>
+
+        <!-- Gallery 7: Span 6 -->
+        <div class="gallery-item gallery-item-span-6 reveal-fade-up" style="animation-delay: 0.1s;" data-full-img="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=85">
+          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80" alt="Pergola Garden Evening Dining" class="gallery-img">
+          <div class="gallery-overlay">
+            <h4 class="gallery-item-title">Terrace Garden Under Stars</h4>
+            <span class="gallery-item-category">Outdoor Dining</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- View Complete Gallery Page -->
+      <div class="text-center mt-5">
+        <a href="gallery.html" class="btn-custom btn-dark-solid">
+          <i class="bi bi-grid-3x3-gap me-1"></i>
+          <span>View High-Resolution Gallery</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. RESERVATION SECTION (FRONTEND VALIDATION)
+       ========================================================================= -->
+  <section id="reservation" class="reservation-section section-spacing">
+    <div class="reservation-bg-art"></div>
+    <div class="container-xl position-relative" style="z-index: 2;">
+      
+      <div class="row align-items-center g-5">
+        
+        <!-- Left Explanatory Column -->
+        <div class="col-lg-5">
+          <div class="reveal-fade-right">
+            <div class="eyebrow text-accent">TABLE BOOKINGS</div>
+            <h2 class="section-title text-white">Your Table Is Waiting</h2>
+            <p class="lead text-bone opacity-85 mb-4">
+              We look forward to hosting you for an evening of shared plates, artisanal hearth cooking, and world-class hospitality.
+            </p>
+
+            <div class="p-4 bg-dark-surface rounded border border-dark-subtle mb-4">
+              <h5 class="text-white font-heading mb-2"><i class="bi bi-info-circle text-accent me-2"></i> Reservation Notes</h5>
+              <p class="small text-bone opacity-75 mb-2">• Tables are held for 15 minutes past scheduled booking time.</p>
+              <p class="small text-bone opacity-75 mb-2">• For parties of 7 or more, please explore our Private Dining packages.</p>
+              <p class="small text-bone opacity-75 mb-0">• Corkage fee: ₹1,500 per 750ml bottle.</p>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 text-bone opacity-80">
+              <div class="contact-info-icon"><i class="bi bi-telephone"></i></div>
+              <div>
+                <span class="small text-accent text-uppercase letter-spacing-1 d-block">Direct Concierge</span>
+                <strong>+91 98765 43210</strong>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Reservation Form -->
+        <div class="col-lg-7">
+          <div class="reservation-card-wrap reveal-fade-left">
+            
+            <div class="form-feedback-alert" id="reservationToastAlert"></div>
+
+            <form class="reservation-form-interactive" id="homeReservationForm" novalidate>
+              
+              <div class="row g-3">
+                
+                <!-- Guest Name -->
+                <div class="col-md-6">
+                  <label for="resName" class="form-label-custom">Full Name *</label>
+                  <input type="text" class="form-control form-control-custom" id="resName" name="guest_name" placeholder="Arjun Sharma" required>
+                </div>
+
+                <!-- Email Address -->
+                <div class="col-md-6">
+                  <label for="resEmail" class="form-label-custom">Email Address *</label>
+                  <input type="email" class="form-control form-control-custom" id="resEmail" name="guest_email" placeholder="arjun@example.com" required>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="col-md-6">
+                  <label for="resPhone" class="form-label-custom">Phone Number *</label>
+                  <input type="tel" class="form-control form-control-custom" id="resPhone" name="guest_phone" placeholder="+91 98765 43210" required>
+                </div>
+
+                <!-- Number of Guests -->
+                <div class="col-md-6">
+                  <label for="resGuests" class="form-label-custom">Number of Guests *</label>
+                  <select class="form-select form-select-custom" id="resGuests" name="guests_count" required>
+                    <option value="1 Guest">1 Guest (Solo Dining)</option>
+                    <option value="2 Guests" selected>2 Guests (Couples Table)</option>
+                    <option value="3 Guests">3 Guests</option>
+                    <option value="4 Guests">4 Guests (Standard Table)</option>
+                    <option value="5 Guests">5 Guests</option>
+                    <option value="6 Guests">6 Guests (Large Table)</option>
+                    <option value="7+ Guests (Private Dining)">7+ Guests (Private Suite)</option>
+                  </select>
+                </div>
+
+                <!-- Reservation Date -->
+                <div class="col-md-6">
+                  <label for="resDate" class="form-label-custom">Date *</label>
+                  <input type="date" class="form-control form-control-custom" id="resDate" name="reservation_date" required>
+                </div>
+
+                <!-- Reservation Time Slot -->
+                <div class="col-md-6">
+                  <label for="resTime" class="form-label-custom">Preferred Time *</label>
+                  <select class="form-select form-select-custom" id="resTime" name="reservation_time" required>
+                    <optgroup label="Lunch">
+                      <option value="12:00 PM">12:00 PM</option>
+                      <option value="12:30 PM">12:30 PM</option>
+                      <option value="01:00 PM">01:00 PM</option>
+                      <option value="01:30 PM">01:30 PM</option>
+                      <option value="02:00 PM">02:00 PM</option>
+                    </optgroup>
+                    <optgroup label="Dinner">
+                      <option value="06:30 PM">06:30 PM (Early Dinner)</option>
+                      <option value="07:00 PM">07:00 PM</option>
+                      <option value="07:30 PM" selected>07:30 PM (Prime Dinner)</option>
+                      <option value="08:00 PM">08:00 PM</option>
+                      <option value="08:30 PM">08:30 PM</option>
+                      <option value="09:00 PM">09:00 PM</option>
+                      <option value="09:30 PM">09:30 PM (Late Seating)</option>
+                    </optgroup>
+                  </select>
+                </div>
+
+                <!-- Seating Area Preference -->
+                <div class="col-12">
+                  <label for="resSeating" class="form-label-custom">Seating Area Preference</label>
+                  <select class="form-select form-select-custom" id="resSeating" name="seating_area">
+                    <option value="Main Dining Room (Open Hearth)">Main Dining Room (Open Hearth View)</option>
+                    <option value="Terrace Garden Pergola">Terrace Garden Pergola (Alfresco)</option>
+                    <option value="Wine Cellar Vault">Wine Cellar Vault (Intimate & Quiet)</option>
+                    <option value="Chef Hearth Counter">Chef Hearth Counter (Interactive)</option>
+                  </select>
+                </div>
+
+                <!-- Special Requests -->
+                <div class="col-12">
+                  <label for="resRequests" class="form-label-custom">Special Requests / Dietary Restrictions</label>
+                  <textarea class="form-control form-control-custom" id="resRequests" name="special_requests" rows="3" placeholder="Dietary restrictions (e.g. gluten allergy, vegan), birthday anniversary notes, or accessibility needs..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn-custom btn-primary-accent w-100 py-3 fs-6" id="submitReservationBtn">
+                    <i class="bi bi-calendar2-check-fill"></i>
+                    <span>Request Reservation</span>
+                  </button>
+                  <p class="small text-center text-bone opacity-60 mt-3 mb-0">
+                    <i class="bi bi-shield-check me-1"></i> Instant email confirmation sent immediately upon booking.
+                  </p>
+                </div>
+
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       11. CONTACT, LOCATION & HOURS
+       ========================================================================= -->
+  <section id="contact" class="section-spacing bg-surface">
+    <div class="container-xl">
+      
+      <div class="text-center max-w-700 mx-auto mb-5 reveal-fade-up">
+        <div class="eyebrow center-eyebrow">VISIT EMBER & OLIVE</div>
+        <h2 class="section-title">Location & Opening Hours</h2>
+        <p class="section-desc text-muted-custom">
+          Centrally situated in the quiet green enclave of Garden Avenue with complimentary valet parking.
+        </p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        
+        <!-- Info Cards -->
+        <div class="col-lg-5">
+          <div class="contact-info-card reveal-fade-right">
+            
+            <!-- Address -->
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div>
+                <h4 class="contact-info-title">Our Address</h4>
+                <p class="contact-info-desc">28 Garden Avenue, Alwarpet<br>Chennai, Tamil Nadu, 600018</p>
+                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn-text-link small mt-1">Get Directions on Maps</a>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div>
+                <h4 class="contact-info-title">Phone & Concierge</h4>
+                <p class="contact-info-desc">+91 98765 43210<br>+91 98765 43211 (Events & Private Dining)</p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div>
+              <div>
+                <h4 class="contact-info-title">Email Inquiries</h4>
+                <p class="contact-info-desc">hello@emberandolive.example<br>events@emberandolive.example</p>
+              </div>
+            </div>
+
+            <!-- Hours -->
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="bi bi-clock-fill"></i></div>
+              <div>
+                <h4 class="contact-info-title">Service Hours</h4>
+                <p class="contact-info-desc mb-1"><strong>Monday – Thursday:</strong> 11:00 AM – 10:00 PM</p>
+                <p class="contact-info-desc mb-1"><strong>Friday – Sunday:</strong> 11:00 AM – 11:30 PM</p>
+                <small class="text-accent">Lunch Seating: 12:00 PM – 3:00 PM · Dinner Seating: 6:30 PM – 11:00 PM</small>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Interactive Map Frame -->
+        <div class="col-lg-7">
+          <div class="map-placeholder-box reveal-fade-left">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.9943360447385!2d80.2520!3d13.0368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAyJzEyLjUiTiA4MMKwMTUnMDcuMiJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+              title="Ember and Olive Restaurant Location Map"
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       12. FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container-xl">
+      <div class="row g-5">
+        
+        <!-- Brand & Bio -->
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="brand-logo">
+            <span class="brand-logo-text">EMBER <span>&</span> OLIVE</span>
+            <span class="brand-subtext text-bone">Artisan Hearth & Wine Cellar</span>
+          </a>
+          <p class="footer-brand-desc">
+            Thoughtful seasonal cooking, local organic ingredients, and warm hospitality come together around every table. Savor every shared moment.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://tripadvisor.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Tripadvisor"><i class="bi bi-trophy"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="index.html" class="footer-link">Home</a></li>
+            <li class="footer-link-item"><a href="about.html" class="footer-link">Our Story</a></li>
+            <li class="footer-link-item"><a href="menu.html" class="footer-link">Seasonal Menu</a></li>
+            <li class="footer-link-item"><a href="events.html" class="footer-link">Private Events</a></li>
+            <li class="footer-link-item"><a href="gallery.html" class="footer-link">Photo Gallery</a></li>
+            <li class="footer-link-item"><a href="contact.html" class="footer-link">Contact & Hours</a></li>
+          </ul>
+        </div>
+
+        <!-- Operating Hours -->
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">Opening Hours</h4>
+          <div class="footer-hours-row">
+            <span class="footer-hours-day">Monday – Thursday</span>
+            <span class="footer-hours-time">11:00 AM – 10:00 PM</span>
+          </div>
+          <div class="footer-hours-row">
+            <span class="footer-hours-day">Friday – Saturday</span>
+            <span class="footer-hours-time">11:00 AM – 11:30 PM</span>
+          </div>
+          <div class="footer-hours-row">
+            <span class="footer-hours-day">Sunday Brunch</span>
+            <span class="footer-hours-time">11:00 AM – 10:30 PM</span>
+          </div>
+          <p class="small text-bone opacity-60 mt-3 mb-0">
+            Valet parking available at the main entrance.
+          </p>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">Join The Hearth Club</h4>
+          <p class="small text-bone opacity-75 mb-3">
+            Get seasonal tasting menus, wine release invitations, and private event announcements directly to your inbox.
+          </p>
+          <form class="newsletter-form" id="footerNewsletterForm">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Email Address for newsletter">
+            <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter"><i class="bi bi-arrow-right"></i></button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 Ember & Olive. All Rights Reserved. Commercial Restaurant Website Template.
+        </div>
+        <div class="d-flex gap-3">
+          <a href="about.html" class="text-bone opacity-60 hover-accent">Privacy Policy</a>
+          <span>·</span>
+          <a href="about.html" class="text-bone opacity-60 hover-accent">Terms of Hospitality</a>
+          <span>·</span>
+          <a href="contact.html" class="text-bone opacity-60 hover-accent">Directions</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       13. MODALS & LIGHTBOX (GALLERY & SIGNATURE DISH SPOTLIGHT)
+       ========================================================================= -->
+
+  <!-- Gallery Lightbox Modal -->
+  <div class="lightbox-modal" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Gallery Image Lightbox">
+    <button class="lightbox-btn lightbox-btn-close" aria-label="Close Lightbox"><i class="bi bi-x-lg"></i></button>
+    <button class="lightbox-btn lightbox-btn-prev" aria-label="Previous Image"><i class="bi bi-chevron-left"></i></button>
+    <button class="lightbox-btn lightbox-btn-next" aria-label="Next Image"><i class="bi bi-chevron-right"></i></button>
+    
+    <div class="lightbox-content-wrap">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Ember and Olive Lightbox Preview" class="lightbox-image">
+      <div class="lightbox-caption-bar">
+        <h5 class="lightbox-caption-title mb-0">Ember & Olive</h5>
+        <div class="lightbox-counter">1 / 7</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signature Dish Detail Modal -->
+  <div class="modal fade" id="signatureDishModal" tabindex="-1" aria-labelledby="signatureDishModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-content-custom">
+        <div class="modal-header border-bottom border-dark-subtle p-4">
+          <h5 class="modal-title font-heading text-white modal-dish-title" id="signatureDishModalLabel">Signature Dish</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-6">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Dish Detail" class="img-fluid rounded modal-dish-img" style="aspect-ratio: 4/3; object-fit: cover; width: 100%;">
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex justify-content-between align-items-baseline mb-2">
+                <span class="badge bg-accent text-white px-2 py-1 small">Chef's Creation</span>
+                <span class="modal-dish-price fs-4 font-heading text-accent fw-bold">₹0</span>
+              </div>
+              <p class="modal-dish-desc text-bone opacity-85 mb-3"></p>
+              <div class="p-3 bg-dark-surface rounded border border-dark-subtle mb-3">
+                <small class="text-accent text-uppercase letter-spacing-1 d-block mb-1">Key Ingredients:</small>
+                <p class="modal-dish-ingredients small text-bone opacity-75 mb-0"></p>
+              </div>
+              <div>
+                <small class="text-accent text-uppercase letter-spacing-1 d-block mb-1"><i class="bi bi-cup me-1"></i> Sommelier Wine Pairing:</small>
+                <p class="modal-dish-pairing small text-bone opacity-90 mb-0 font-italic"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-top border-dark-subtle p-3">
+          <a href="#reservation" class="btn-custom btn-primary-accent" data-bs-dismiss="modal">Reserve Table for this Dish</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="back-to-top" aria-label="Back to Top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap 5.3.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Template Application Engine JS -->
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

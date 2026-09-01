@@ -1,0 +1,6 @@
+{
+  "name": "STRATA Agency — Spatial Design Studio",
+  "description": "An experimental, high-end 3D spatial design agency website featuring UI/UX case studies, interactive design wall, 3D entrance experience, and editorial design showcases.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

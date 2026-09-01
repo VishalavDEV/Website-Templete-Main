@@ -1,0 +1,9 @@
+import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
+
+// https://vite.dev/config/
+export default defineConfig({
+  base: "/templates/transportation/transportation-6/",
+  plugins: [react(), tailwindcss()],
+})
