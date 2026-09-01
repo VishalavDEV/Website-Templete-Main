@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/shared/ScrollToTop";
 import Selector from "./components/Selector";
 import EstatePrime from "./pages/EstatePrime/EstatePrime";
@@ -14,10 +14,10 @@ import MonumentEstates from "./pages/MonumentEstates/MonumentEstates";
 
 export default function App() {
   return (
-    <Router basename="/templates/real-estate/real-estate-8">
+    <Router>
       <ScrollToTop />
       <Routes>
-        {/* Main Selector Page */}
+        {/* Main Selector / Default Page */}
         <Route path="/" element={<VertexProperties />} />
         <Route path="/real-estate" element={<VertexProperties />} />
 
@@ -32,6 +32,9 @@ export default function App() {
         <Route path="/vertex-properties" element={<VertexProperties />} />
         <Route path="/haven-realty" element={<HavenRealty />} />
         <Route path="/monument-estates" element={<MonumentEstates />} />
+
+        {/* Catch-all fallback */}
+        <Route path="*" element={<VertexProperties />} />
       </Routes>
     </Router>
   );

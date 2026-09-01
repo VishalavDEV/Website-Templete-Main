@@ -398,12 +398,12 @@ function RedirectToStaticTemplate() {
 
 function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLogin, handleLogout }) {
   const location = useLocation();
-  const pathSegments = location.pathname.split('/').filter(Boolean);
   const isTemplateRoute = 
     location.pathname === '/hotel-template' ||
     (location.pathname.startsWith('/templates/') && 
      pathSegments.length >= 3 && 
-     location.pathname !== '/templates/photography');
+     location.pathname !== '/templates/photography' &&
+     location.pathname !== '/templates/portfolio');
 
   // Full-screen template routes
   if (isTemplateRoute) {
@@ -411,22 +411,44 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
       <Routes>
         <Route path="/hotel-template" element={<DevicePreviewWrapper><HotelTemplate /></DevicePreviewWrapper>} />
 
-        {/* Photography templates */}
+        {/* Photography templates (Both numbered and named routes) */}
         <Route path="/templates/photography/photography-1" element={<DevicePreviewWrapper><SnapfolioTemplate /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/photography-1/index.html" element={<DevicePreviewWrapper><SnapfolioTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/snapfolio-template" element={<DevicePreviewWrapper><SnapfolioTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/snapfolio-template/index.html" element={<DevicePreviewWrapper><SnapfolioTemplate /></DevicePreviewWrapper>} />
+
         <Route path="/templates/photography/photography-2" element={<DevicePreviewWrapper><PhotoTemplate /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/photography-2/index.html" element={<DevicePreviewWrapper><PhotoTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/photo-template" element={<DevicePreviewWrapper><PhotoTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/photo-template/index.html" element={<DevicePreviewWrapper><PhotoTemplate /></DevicePreviewWrapper>} />
+
         <Route path="/templates/photography/photography-3" element={<DevicePreviewWrapper><WeddingTemplate /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/photography-3/index.html" element={<DevicePreviewWrapper><WeddingTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/wedding-template" element={<DevicePreviewWrapper><WeddingTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/wedding-template/index.html" element={<DevicePreviewWrapper><WeddingTemplate /></DevicePreviewWrapper>} />
+
         <Route path="/templates/photography/photography-4" element={<DevicePreviewWrapper><CinematicWedding /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/photography-4/index.html" element={<DevicePreviewWrapper><CinematicWedding /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/photography-4/:subpage" element={<DevicePreviewWrapper><CinematicWedding /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/cinematic-wedding" element={<DevicePreviewWrapper><CinematicWedding /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/cinematic-wedding/index.html" element={<DevicePreviewWrapper><CinematicWedding /></DevicePreviewWrapper>} />
+
         <Route path="/templates/photography/photography-5" element={<DevicePreviewWrapper><FineArtTemplate /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/photography-5/index.html" element={<DevicePreviewWrapper><FineArtTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/fineart-template" element={<DevicePreviewWrapper><FineArtTemplate /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/fineart-template/index.html" element={<DevicePreviewWrapper><FineArtTemplate /></DevicePreviewWrapper>} />
+
         <Route path="/templates/photography/photography-6" element={<DevicePreviewWrapper><KairoPhotography /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/photography-6/index.html" element={<DevicePreviewWrapper><KairoPhotography /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/kairo-template" element={<DevicePreviewWrapper><KairoPhotography /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/kairo-template/index.html" element={<DevicePreviewWrapper><KairoPhotography /></DevicePreviewWrapper>} />
+
         <Route path="/templates/photography/photography-7" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
         <Route path="/templates/photography/photography-7/index.html" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/isteady-template" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/isteady-template/index.html" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/lume-template" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
+        <Route path="/templates/photography/lume-template/index.html" element={<DevicePreviewWrapper><ISteadyGimbal /></DevicePreviewWrapper>} />
 
         {/* Portfolio templates */}
         <Route path="/templates/portfolio/portfolio-1" element={<DevicePreviewWrapper><ArchitecturePortfolio /></DevicePreviewWrapper>} />
