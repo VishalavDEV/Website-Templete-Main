@@ -89,8 +89,8 @@ public class DatabaseSeederController {
         String[][] categoryData = {
                 {"Admin", "admin", "Admin dashboards and control panels."},
                 {"Medical", "medical", "Websites for clinics, doctors, and hospitals."},
-                {"Block magazine", "block-magazine", "Blog layouts, news portals, and magazine grids."},
-                {"Comming soon", "comming-soon", "Under construction pages and pre-launch countdown overlays."},
+                {"Blog Magazine", "blog-magazine", "Blog layouts, news portals, and magazine grids."},
+                {"Coming Soon", "coming-soon", "Under construction pages and pre-launch countdown overlays."},
                 {"Travels", "travels", "Tour agencies, booking services, and travel logs."},
                 {"Hotel", "hotel", "Resorts, motels, and luxury hotel reservation templates."},
                 {"Events", "events", "Conferences, meetups, exhibitions, and ticket bookings."},
@@ -99,10 +99,10 @@ public class DatabaseSeederController {
                 {"Education", "education", "Universities, e-learning dashboards, and primary schools."},
                 {"Restaurant", "restaurant", "Food bistros, cafes, bakeries, and dining menu showcases."},
                 {"Ecommerce", "ecommerce", "Online storefronts, checkout flows, and product catalogs."},
-                {"Buisness", "buisness", "Sleek corporate sites, startup landing pages, and agencies."},
+                {"Business", "business", "Sleek corporate sites, startup landing pages, and agencies."},
                 {"onepage", "onepage", "Single page scroll themes and minimal sales funnels."},
                 {"landing page", "landing-page", "High-conversion lead forms and app promotion layouts."},
-                {"cooperate", "cooperate", "Enterprise consulting, corporate services, and financial groups."},
+                {"corporate", "corporate", "Enterprise consulting, corporate services, and financial groups."},
                 {"agency", "agency", "Design studios, marketing firms, and creative agencies."},
                 {"portfolio", "portfolio", "Personal resumes, developer bios, and work showcases."},
                 {"Real Estate", "real-estate", "Premium villa listings, property agents, and real estate developer templates."},
@@ -671,7 +671,7 @@ public class DatabaseSeederController {
         }
 
         // Seed Block Magazine templates
-        Category blockMagazineCategory = catMap.get("block-magazine");
+        Category blockMagazineCategory = catMap.get("blog-magazine");
         if (blockMagazineCategory != null) {
             // blog-1
             Template blog1 = new Template();
@@ -682,7 +682,7 @@ public class DatabaseSeederController {
             blog1.setPrice(0.0);
             blog1.setTemplateType("FREE");
             blog1.setBootstrapVersion("React 19 / TypeScript / Tailwind CSS");
-            blog1.setDemoUrl("/templates/block-magazine/blog-1/index.html");
+            blog1.setDemoUrl("/templates/blog-magazine/blog-1/index.html");
             blog1.setDownloadFile("chronicle-magazine.zip");
             blog1.setPreviewImage("https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80");
             blog1.setVersion("1.0.0");
@@ -702,7 +702,7 @@ public class DatabaseSeederController {
             blog2.setPrice(0.0);
             blog2.setTemplateType("FREE");
             blog2.setBootstrapVersion("React 19 / Vite / Tailwind CSS");
-            blog2.setDemoUrl("/templates/block-magazine/blog-2/index.html");
+            blog2.setDemoUrl("/templates/blog-magazine/blog-2/index.html");
             blog2.setDownloadFile("elemental-science.zip");
             blog2.setPreviewImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80");
             blog2.setVersion("1.0.0");
@@ -722,7 +722,7 @@ public class DatabaseSeederController {
             blog3.setPrice(0.0);
             blog3.setTemplateType("FREE");
             blog3.setBootstrapVersion("React 19 / Vite / Vanilla CSS");
-            blog3.setDemoUrl("/templates/block-magazine/blog-3/index.html");
+            blog3.setDemoUrl("/templates/blog-magazine/blog-3/index.html");
             blog3.setDownloadFile("future-intelligence.zip");
             blog3.setPreviewImage("https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80");
             blog3.setVersion("1.0.0");
@@ -742,7 +742,7 @@ public class DatabaseSeederController {
             blog4.setPrice(0.0);
             blog4.setTemplateType("FREE");
             blog4.setBootstrapVersion("React / Tailwind CSS / Motion");
-            blog4.setDemoUrl("/templates/block-magazine/blog-4/index.html");
+            blog4.setDemoUrl("/templates/blog-magazine/blog-4/index.html");
             blog4.setDownloadFile("");
             blog4.setPreviewImage("https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80");
             blog4.setVersion("1.0.0");
@@ -762,7 +762,7 @@ public class DatabaseSeederController {
             blog5.setPrice(0.0);
             blog5.setTemplateType("FREE");
             blog5.setBootstrapVersion("React / Three.js / Tailwind CSS / Vite");
-            blog5.setDemoUrl("/templates/block-magazine/blog-5/index.html");
+            blog5.setDemoUrl("/templates/blog-magazine/blog-5/index.html");
             blog5.setDownloadFile("");
             blog5.setPreviewImage("https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80");
             blog5.setVersion("1.0.0");
@@ -782,7 +782,7 @@ public class DatabaseSeederController {
             blog6.setPrice(0.0);
             blog6.setTemplateType("FREE");
             blog6.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
-            blog6.setDemoUrl("/templates/block-magazine/blog-6/index.html");
+            blog6.setDemoUrl("/templates/blog-magazine/blog-6/index.html");
             blog6.setDownloadFile("");
             blog6.setPreviewImage("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80");
             blog6.setVersion("1.0.0");
@@ -802,7 +802,7 @@ public class DatabaseSeederController {
             blog7.setPrice(0.0);
             blog7.setTemplateType("FREE");
             blog7.setBootstrapVersion("React / SCSS / Tailwind CSS / Vite");
-            blog7.setDemoUrl("/templates/block-magazine/blog-7/index.html");
+            blog7.setDemoUrl("/templates/blog-magazine/blog-7/index.html");
             blog7.setDownloadFile("");
             blog7.setPreviewImage("https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80");
             blog7.setVersion("1.0.0");
@@ -822,7 +822,7 @@ public class DatabaseSeederController {
             blog8.setPrice(0.0);
             blog8.setTemplateType("FREE");
             blog8.setBootstrapVersion("React / Framer Motion / Tailwind / Vite");
-            blog8.setDemoUrl("/templates/block-magazine/blog-8/index.html");
+            blog8.setDemoUrl("/templates/blog-magazine/blog-8/index.html");
             blog8.setDownloadFile("");
             blog8.setPreviewImage("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80");
             blog8.setVersion("1.0.0");
@@ -842,7 +842,7 @@ public class DatabaseSeederController {
             blog9.setPrice(0.0);
             blog9.setTemplateType("FREE");
             blog9.setBootstrapVersion("React / Vite / CSS");
-            blog9.setDemoUrl("/templates/block-magazine/blog-9/index.html");
+            blog9.setDemoUrl("/templates/blog-magazine/blog-9/index.html");
             blog9.setDownloadFile("");
             blog9.setPreviewImage("https://images.unsplash.com/photo-1507633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80");
             blog9.setVersion("1.0.0");
@@ -862,7 +862,7 @@ public class DatabaseSeederController {
             blog10.setPrice(0.0);
             blog10.setTemplateType("FREE");
             blog10.setBootstrapVersion("React / Tailwind / Vite / TS");
-            blog10.setDemoUrl("/templates/block-magazine/blog-10/index.html");
+            blog10.setDemoUrl("/templates/blog-magazine/blog-10/index.html");
             blog10.setDownloadFile("");
             blog10.setPreviewImage("https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80");
             blog10.setVersion("1.0.0");
@@ -882,7 +882,7 @@ public class DatabaseSeederController {
             blog11.setPrice(0.0);
             blog11.setTemplateType("FREE");
             blog11.setBootstrapVersion("React / Tailwind / Vite / TS");
-            blog11.setDemoUrl("/templates/block-magazine/blog-11/index.html");
+            blog11.setDemoUrl("/templates/blog-magazine/blog-11/index.html");
             blog11.setDownloadFile("");
             blog11.setPreviewImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80");
             blog11.setVersion("1.0.0");
@@ -1509,7 +1509,7 @@ public class DatabaseSeederController {
         }
 
         // 8. Seed Coming Soon templates
-        Category commingSoonCategory = catMap.get("comming-soon");
+        Category commingSoonCategory = catMap.get("coming-soon");
         if (commingSoonCategory != null) {
             Template comingSoon = new Template();
             comingSoon.setName("Orange 16  -  Coming Soon Template");
@@ -1519,8 +1519,8 @@ public class DatabaseSeederController {
             comingSoon.setPrice(0.0);
             comingSoon.setTemplateType("FREE");
             comingSoon.setBootstrapVersion("HTML5 / Vanilla CSS");
-            comingSoon.setDemoUrl("/templates/comming-soon/coming-soon-template/index.html");
-            comingSoon.setPreviewImage("/templates/comming-soon/coming-soon-template/orange-cover.jpg");
+            comingSoon.setDemoUrl("/templates/coming-soon/coming-soon-template/index.html");
+            comingSoon.setPreviewImage("/templates/coming-soon/coming-soon-template/orange-cover.jpg");
             comingSoon.setVersion("1.0");
             comingSoon.setStatus("PUBLISHED");
             comingSoon.setPagesCount(1);
@@ -1536,8 +1536,8 @@ public class DatabaseSeederController {
             novaSoon.setPrice(0.0);
             novaSoon.setTemplateType("FREE");
             novaSoon.setBootstrapVersion("React / Three.js / GSAP");
-            novaSoon.setDemoUrl("/templates/comming-soon/cm-2/index.html");
-            novaSoon.setPreviewImage("/templates/comming-soon/cm-2/car-cover.jpg");
+            novaSoon.setDemoUrl("/templates/coming-soon/cm-2/index.html");
+            novaSoon.setPreviewImage("/templates/coming-soon/cm-2/car-cover.jpg");
             novaSoon.setVersion("1.0");
             novaSoon.setStatus("PUBLISHED");
             novaSoon.setPagesCount(1);
@@ -1553,8 +1553,8 @@ public class DatabaseSeederController {
             auraSoon.setPrice(0.0);
             auraSoon.setTemplateType("FREE");
             auraSoon.setBootstrapVersion("HTML5 / Tailwind CSS");
-            auraSoon.setDemoUrl("/templates/comming-soon/cm-3/index.html");
-            auraSoon.setPreviewImage("/templates/comming-soon/cm-3/buliding-jpg/ezgif-frame-001.jpg");
+            auraSoon.setDemoUrl("/templates/coming-soon/cm-3/index.html");
+            auraSoon.setPreviewImage("/templates/coming-soon/cm-3/buliding-jpg/ezgif-frame-001.jpg");
             auraSoon.setVersion("1.0");
             auraSoon.setStatus("PUBLISHED");
             auraSoon.setPagesCount(1);
@@ -1570,8 +1570,8 @@ public class DatabaseSeederController {
             botanicalSoon.setPrice(0.0);
             botanicalSoon.setTemplateType("FREE");
             botanicalSoon.setBootstrapVersion("HTML5 / Tailwind / Vanilla JS");
-            botanicalSoon.setDemoUrl("/templates/comming-soon/cm-4/index.html");
-            botanicalSoon.setPreviewImage("/templates/comming-soon/cm-4/botanical-cover.jpg");
+            botanicalSoon.setDemoUrl("/templates/coming-soon/cm-4/index.html");
+            botanicalSoon.setPreviewImage("/templates/coming-soon/cm-4/botanical-cover.jpg");
             botanicalSoon.setVersion("1.0");
             botanicalSoon.setStatus("PUBLISHED");
             botanicalSoon.setPagesCount(1);
@@ -1587,8 +1587,8 @@ public class DatabaseSeederController {
             watchSoon.setPrice(0.0);
             watchSoon.setTemplateType("FREE");
             watchSoon.setBootstrapVersion("HTML5 / Tailwind CSS / Vanilla JS");
-            watchSoon.setDemoUrl("/templates/comming-soon/cm-5/index.html");
-            watchSoon.setPreviewImage("/templates/comming-soon/cm-5/watch-hero.jpg");
+            watchSoon.setDemoUrl("/templates/coming-soon/cm-5/index.html");
+            watchSoon.setPreviewImage("/templates/coming-soon/cm-5/watch-hero.jpg");
             watchSoon.setVersion("1.0");
             watchSoon.setStatus("PUBLISHED");
             watchSoon.setPagesCount(1);
@@ -2397,7 +2397,7 @@ public class DatabaseSeederController {
         }
 
         // Seed Coming Soon templates (comming-soon)
-        Category commingSoonCategoryNew = catMap.get("comming-soon");
+        Category commingSoonCategoryNew = catMap.get("coming-soon");
         if (commingSoonCategoryNew != null) {
             // comingsoon-6
             Template soon6 = new Template();
@@ -2408,7 +2408,7 @@ public class DatabaseSeederController {
             soon6.setPrice(0.0);
             soon6.setTemplateType("FREE");
             soon6.setBootstrapVersion("React / Three.js / Tailwind CSS / Vite");
-            soon6.setDemoUrl("/templates/comming-soon/comingsoon-6/index.html");
+            soon6.setDemoUrl("/templates/coming-soon/comingsoon-6/index.html");
             soon6.setDownloadFile("");
             soon6.setPreviewImage("https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=800&q=80");
             soon6.setVersion("1.0.0");
@@ -2428,7 +2428,7 @@ public class DatabaseSeederController {
             soon7.setPrice(0.0);
             soon7.setTemplateType("FREE");
             soon7.setBootstrapVersion("React / Tailwind CSS / Vite");
-            soon7.setDemoUrl("/templates/comming-soon/comingsoon-7/index.html");
+            soon7.setDemoUrl("/templates/coming-soon/comingsoon-7/index.html");
             soon7.setDownloadFile("");
             soon7.setPreviewImage("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80");
             soon7.setVersion("1.0.0");
@@ -2448,7 +2448,7 @@ public class DatabaseSeederController {
             soon8.setPrice(0.0);
             soon8.setTemplateType("FREE");
             soon8.setBootstrapVersion("React / Three.js / Tailwind CSS / Vite");
-            soon8.setDemoUrl("/templates/comming-soon/comingsoon-8/index.html");
+            soon8.setDemoUrl("/templates/coming-soon/comingsoon-8/index.html");
             soon8.setDownloadFile("");
             soon8.setPreviewImage("https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80");
             soon8.setVersion("1.0.0");
@@ -2468,7 +2468,7 @@ public class DatabaseSeederController {
             soon9.setPrice(0.0);
             soon9.setTemplateType("FREE");
             soon9.setBootstrapVersion("React / Tailwind CSS / Vite");
-            soon9.setDemoUrl("/templates/comming-soon/comingsoon-9/index.html");
+            soon9.setDemoUrl("/templates/coming-soon/comingsoon-9/index.html");
             soon9.setDownloadFile("");
             soon9.setPreviewImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80");
             soon9.setVersion("1.0.0");
@@ -2488,7 +2488,7 @@ public class DatabaseSeederController {
             soon10.setPrice(0.0);
             soon10.setTemplateType("FREE");
             soon10.setBootstrapVersion("React / Tailwind CSS / Vite");
-            soon10.setDemoUrl("/templates/comming-soon/comingsoon-10/index.html");
+            soon10.setDemoUrl("/templates/coming-soon/comingsoon-10/index.html");
             soon10.setDownloadFile("");
             soon10.setPreviewImage("https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80");
             soon10.setVersion("1.0.0");
@@ -2500,7 +2500,7 @@ public class DatabaseSeederController {
             logs.put("template_comingsoon_10", "Created");
         }
 
-        Category cooperateCategory = catMap.get("cooperate");
+        Category cooperateCategory = catMap.get("corporate");
         if (cooperateCategory != null) {
             // cooperate-1 (Nexora)
             Template coop1 = new Template();
@@ -2511,7 +2511,7 @@ public class DatabaseSeederController {
             coop1.setPrice(0.0);
             coop1.setTemplateType("FREE");
             coop1.setBootstrapVersion("React / Tailwind CSS / Vite / React Router");
-            coop1.setDemoUrl("/templates/cooperate/cooperate-1/index.html");
+            coop1.setDemoUrl("/templates/corporate/cooperate-1/index.html");
             coop1.setDownloadFile("");
             coop1.setPreviewImage("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80");
             coop1.setVersion("1.0.0");
@@ -2531,7 +2531,7 @@ public class DatabaseSeederController {
             coop2.setPrice(0.0);
             coop2.setTemplateType("FREE");
             coop2.setBootstrapVersion("React / Tailwind CSS / Vite / React Router");
-            coop2.setDemoUrl("/templates/cooperate/cooperate-2/index.html");
+            coop2.setDemoUrl("/templates/corporate/cooperate-2/index.html");
             coop2.setDownloadFile("");
             coop2.setPreviewImage("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80");
             coop2.setVersion("1.0.0");
@@ -2551,7 +2551,7 @@ public class DatabaseSeederController {
             coop3.setPrice(0.0);
             coop3.setTemplateType("FREE");
             coop3.setBootstrapVersion("React / Tailwind CSS / Vite / React Router");
-            coop3.setDemoUrl("/templates/cooperate/cooperate-3/index.html");
+            coop3.setDemoUrl("/templates/corporate/cooperate-3/index.html");
             coop3.setDownloadFile("");
             coop3.setPreviewImage("https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80");
             coop3.setVersion("1.0.0");
@@ -2571,7 +2571,7 @@ public class DatabaseSeederController {
             coop4.setPrice(0.0);
             coop4.setTemplateType("FREE");
             coop4.setBootstrapVersion("React / Tailwind CSS / Vite / React Router");
-            coop4.setDemoUrl("/templates/cooperate/cooperate-4/index.html");
+            coop4.setDemoUrl("/templates/corporate/cooperate-4/index.html");
             coop4.setDownloadFile("");
             coop4.setPreviewImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80");
             coop4.setVersion("1.0.0");
@@ -2591,7 +2591,7 @@ public class DatabaseSeederController {
             coop5.setPrice(0.0);
             coop5.setTemplateType("FREE");
             coop5.setBootstrapVersion("React / Tailwind CSS / Vite / React Router");
-            coop5.setDemoUrl("/templates/cooperate/cooperate-5/index.html");
+            coop5.setDemoUrl("/templates/corporate/cooperate-5/index.html");
             coop5.setDownloadFile("");
             coop5.setPreviewImage("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80");
             coop5.setVersion("1.0.0");
@@ -2611,7 +2611,7 @@ public class DatabaseSeederController {
             coop6.setPrice(0.0);
             coop6.setTemplateType("FREE");
             coop6.setBootstrapVersion("React / Tailwind / Vite / TS");
-            coop6.setDemoUrl("/templates/cooperate/cooperate-6/index.html");
+            coop6.setDemoUrl("/templates/corporate/cooperate-6/index.html");
             coop6.setDownloadFile("");
             coop6.setPreviewImage("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80");
             coop6.setVersion("1.0.0");
@@ -2631,7 +2631,7 @@ public class DatabaseSeederController {
             coop7.setPrice(0.0);
             coop7.setTemplateType("FREE");
             coop7.setBootstrapVersion("React / Tailwind / Vite / TS");
-            coop7.setDemoUrl("/templates/cooperate/cooperate-7/index.html");
+            coop7.setDemoUrl("/templates/corporate/cooperate-7/index.html");
             coop7.setDownloadFile("");
             coop7.setPreviewImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80");
             coop7.setVersion("1.0.0");
@@ -2651,7 +2651,7 @@ public class DatabaseSeederController {
             coop8.setPrice(0.0);
             coop8.setTemplateType("FREE");
             coop8.setBootstrapVersion("React / Tailwind / Vite / TS");
-            coop8.setDemoUrl("/templates/cooperate/cooperate-8/index.html");
+            coop8.setDemoUrl("/templates/corporate/cooperate-8/index.html");
             coop8.setDownloadFile("");
             coop8.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
             coop8.setVersion("1.0.0");
@@ -2671,7 +2671,7 @@ public class DatabaseSeederController {
             coop9.setPrice(0.0);
             coop9.setTemplateType("FREE");
             coop9.setBootstrapVersion("React / Tailwind / Vite / TS");
-            coop9.setDemoUrl("/templates/cooperate/cooperate-9/index.html");
+            coop9.setDemoUrl("/templates/corporate/cooperate-9/index.html");
             coop9.setDownloadFile("");
             coop9.setPreviewImage("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80");
             coop9.setVersion("1.0.0");
@@ -2691,7 +2691,7 @@ public class DatabaseSeederController {
             coop10.setPrice(0.0);
             coop10.setTemplateType("FREE");
             coop10.setBootstrapVersion("React / Tailwind / Vite / TS");
-            coop10.setDemoUrl("/templates/cooperate/cooperate-10/index.html");
+            coop10.setDemoUrl("/templates/corporate/cooperate-10/index.html");
             coop10.setDownloadFile("");
             coop10.setPreviewImage("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80");
             coop10.setVersion("1.0.0");
@@ -2703,7 +2703,7 @@ public class DatabaseSeederController {
             logs.put("template_cooperate_10", "Created");
         }
 
-        Category businessCategory = catMap.get("buisness");
+        Category businessCategory = catMap.get("business");
         if (businessCategory != null) {
             // Business-1 (ABC Business)
             Template biz1 = new Template();
@@ -2714,7 +2714,7 @@ public class DatabaseSeederController {
             biz1.setPrice(0.0);
             biz1.setTemplateType("FREE");
             biz1.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
-            biz1.setDemoUrl("/templates/buisness/Business-1/index.html");
+            biz1.setDemoUrl("/templates/business/Business-1/index.html");
             biz1.setDownloadFile("");
             biz1.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
             biz1.setVersion("1.0.0");
@@ -2734,7 +2734,7 @@ public class DatabaseSeederController {
             biz2.setPrice(0.0);
             biz2.setTemplateType("FREE");
             biz2.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
-            biz2.setDemoUrl("/templates/buisness/Business-2/index.html");
+            biz2.setDemoUrl("/templates/business/Business-2/index.html");
             biz2.setDownloadFile("");
             biz2.setPreviewImage("https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80");
             biz2.setVersion("1.0.0");
@@ -2754,7 +2754,7 @@ public class DatabaseSeederController {
             biz3.setPrice(0.0);
             biz3.setTemplateType("FREE");
             biz3.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
-            biz3.setDemoUrl("/templates/buisness/Business-3/index.html");
+            biz3.setDemoUrl("/templates/business/Business-3/index.html");
             biz3.setDownloadFile("");
             biz3.setPreviewImage("https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80");
             biz3.setVersion("1.0.0");
@@ -2774,7 +2774,7 @@ public class DatabaseSeederController {
             biz4.setPrice(0.0);
             biz4.setTemplateType("FREE");
             biz4.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
-            biz4.setDemoUrl("/templates/buisness/Business-4/index.html");
+            biz4.setDemoUrl("/templates/business/Business-4/index.html");
             biz4.setDownloadFile("");
             biz4.setPreviewImage("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80");
             biz4.setVersion("1.0.0");
@@ -2794,7 +2794,7 @@ public class DatabaseSeederController {
             biz5.setPrice(0.0);
             biz5.setTemplateType("FREE");
             biz5.setBootstrapVersion("React / GSAP / Spring Boot");
-            biz5.setDemoUrl("/templates/buisness/Business-5/index.html");
+            biz5.setDemoUrl("/templates/business/Business-5/index.html");
             biz5.setDownloadFile("");
             biz5.setPreviewImage("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80");
             biz5.setVersion("1.0.0");
@@ -2814,7 +2814,7 @@ public class DatabaseSeederController {
             biz6.setPrice(0.0);
             biz6.setTemplateType("FREE");
             biz6.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
-            biz6.setDemoUrl("/templates/buisness/Business-6/index.html");
+            biz6.setDemoUrl("/templates/business/Business-6/index.html");
             biz6.setDownloadFile("");
             biz6.setPreviewImage("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80");
             biz6.setVersion("1.0.0");
@@ -2834,7 +2834,7 @@ public class DatabaseSeederController {
             biz7.setPrice(0.0);
             biz7.setTemplateType("FREE");
             biz7.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
-            biz7.setDemoUrl("/templates/buisness/Business-7/index.html");
+            biz7.setDemoUrl("/templates/business/Business-7/index.html");
             biz7.setDownloadFile("");
             biz7.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
             biz7.setVersion("1.0.0");
@@ -2854,7 +2854,7 @@ public class DatabaseSeederController {
             biz8.setPrice(0.0);
             biz8.setTemplateType("FREE");
             biz8.setBootstrapVersion("React / Tailwind CSS / Framer Motion / Vite");
-            biz8.setDemoUrl("/templates/buisness/Business-8/index.html");
+            biz8.setDemoUrl("/templates/business/Business-8/index.html");
             biz8.setDownloadFile("");
             biz8.setPreviewImage("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80");
             biz8.setVersion("1.0.0");
@@ -3784,8 +3784,8 @@ public class DatabaseSeederController {
             logs.put("template_education_10", "Created");
         }
 
-        Category bizCat = categoryRepository.findBySlug("buisness").orElse(null);
-        if (bizCat == null) bizCat = catMap.get("buisness");
+        Category bizCat = categoryRepository.findBySlug("business").orElse(null);
+        if (bizCat == null) bizCat = catMap.get("business");
         if (bizCat != null) {
             Template t2 = new Template();
             t2.setName("Ember & Olive — Premium Restaurant Website");
@@ -3795,7 +3795,7 @@ public class DatabaseSeederController {
             t2.setPrice(0.0);
             t2.setTemplateType("FREE");
             t2.setBootstrapVersion("React / Vite / CSS");
-            t2.setDemoUrl("/templates/buisness/Business-9/index.html");
+            t2.setDemoUrl("/templates/business/Business-9/index.html");
             t2.setDownloadFile("");
             t2.setPreviewImage("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80");
             t2.setVersion("1.0.0");
@@ -3814,7 +3814,7 @@ public class DatabaseSeederController {
             t3.setPrice(0.0);
             t3.setTemplateType("FREE");
             t3.setBootstrapVersion("React / Vite / CSS");
-            t3.setDemoUrl("/templates/buisness/Business-10/index.html");
+            t3.setDemoUrl("/templates/business/Business-10/index.html");
             t3.setDownloadFile("");
             t3.setPreviewImage("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
             t3.setVersion("1.0.0");

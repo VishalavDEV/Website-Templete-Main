@@ -12,8 +12,8 @@ const categories = [
   [
     { name: 'Admin', slug: 'admin', icon: LayoutDashboard },
     { name: 'Medical', slug: 'medical', icon: Activity },
-    { name: 'Block Magazine', slug: 'block-magazine', icon: BookOpen },
-    { name: 'Coming Soon', slug: 'comming-soon', icon: Clock },
+    { name: 'Block Magazine', slug: 'blog-magazine', icon: BookOpen },
+    { name: 'Coming Soon', slug: 'coming-soon', icon: Clock },
     { name: 'Travels', slug: 'travels', icon: Plane },
     { name: 'Hotel', slug: 'hotel', icon: Hotel },
     { name: 'Real Estate', slug: 'real-estate', icon: Home },
@@ -31,10 +31,10 @@ const categories = [
   ],
   // Column 3 (7 items)
   [
-    { name: 'Business', slug: 'buisness', icon: Briefcase },
+    { name: 'Business', slug: 'business', icon: Briefcase },
     { name: 'One Page', slug: 'onepage', icon: Layers },
     { name: 'Landing Page', slug: 'landing-page', icon: Sparkles },
-    { name: 'Corporate', slug: 'cooperate', icon: Building2 },
+    { name: 'Corporate', slug: 'corporate', icon: Building2 },
     { name: 'Agency', slug: 'agency', icon: Workflow },
     { name: 'Portfolio', slug: 'portfolio', icon: FolderOpen },
     { name: 'Transportation', slug: 'transportation', icon: Truck },

@@ -75,8 +75,8 @@ public class TemplateController {
         // Apply category filter if provided and not "all"
         if (category != null && !category.trim().isEmpty() && !category.equalsIgnoreCase("all")) {
             String categorySlug = category.trim().toLowerCase();
-            if (categorySlug.equals("coming-soon") || categorySlug.equals("coming_soon") || categorySlug.equals("comming_soon") || categorySlug.equals("comming-soon")) {
-                categorySlug = "comming-soon";
+            if (categorySlug.equals("coming-soon") || categorySlug.equals("coming_soon") || categorySlug.equals("comming_soon") || categorySlug.equals("coming-soon")) {
+                categorySlug = "coming-soon";
             }
             final String finalSlug = categorySlug;
             templates = templates.stream()
@@ -97,8 +97,8 @@ public class TemplateController {
     @GetMapping("/category/{category}")
     public List<Template> getTemplatesByCategory(@PathVariable String category) {
         String categorySlug = category.trim().toLowerCase();
-        if (categorySlug.equals("coming-soon") || categorySlug.equals("coming_soon") || categorySlug.equals("comming_soon") || categorySlug.equals("comming-soon")) {
-            categorySlug = "comming-soon";
+        if (categorySlug.equals("coming-soon") || categorySlug.equals("coming_soon") || categorySlug.equals("comming_soon") || categorySlug.equals("coming-soon")) {
+            categorySlug = "coming-soon";
         }
         final String finalSlug = categorySlug;
         return templateRepository.findByStatus("PUBLISHED").stream()

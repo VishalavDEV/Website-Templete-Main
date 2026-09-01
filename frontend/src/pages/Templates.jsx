@@ -14,12 +14,12 @@ const CATEGORY_META = {
     title: 'Medical & Healthcare Templates',
     subtitle: 'Explore clean, clinical healthcare web templates designed for hospitals, clinics, doctor appointments, and medical practices.'
   },
-  'block-magazine': {
+  'blog-magazine': {
     icon: '📰',
     title: 'Block Magazine Templates',
     subtitle: 'Discover modern editorial magazine, news portal, tech blog, and multi-category publication layouts.'
   },
-  'comming-soon': {
+  'coming-soon': {
     icon: '⏳',
     title: 'Coming Soon Templates',
     subtitle: 'Explore sleek countdown timers, product launch teasers, newsletter capture, and animated coming soon pages.'
@@ -64,7 +64,7 @@ const CATEGORY_META = {
     title: 'Ecommerce & Retail Templates',
     subtitle: 'Explore modern online storefronts, retail catalogs, checkout flows, and product showcase templates.'
   },
-  buisness: {
+  business: {
     icon: '💼',
     title: 'Business & Corporate Templates',
     subtitle: 'Explore corporate enterprise, financial advisory, consulting, and business landing pages.'
@@ -109,7 +109,7 @@ const CATEGORY_META = {
     title: 'Landing Page Templates',
     subtitle: 'Discover high-converting product showcases, app downloads, SaaS marketing, and startup landing pages.'
   },
-  cooperate: {
+  corporate: {
     icon: '🏢',
     title: 'Corporate Templates',
     subtitle: 'Explore enterprise corporate portals, investor relations, consulting firms, and business profiles.'
