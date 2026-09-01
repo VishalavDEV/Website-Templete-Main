@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: "/templates/block-magazine/blog-10/",
+    base: "./",
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

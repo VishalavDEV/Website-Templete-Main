@@ -5,7 +5,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/templates/block-magazine/blog-11/",
+  base: "./",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
