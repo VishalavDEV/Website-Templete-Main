@@ -238,7 +238,7 @@
           titleDiv.style.fontWeight = '600';
           titleDiv.style.fontSize = '0.9rem';
           titleDiv.style.color = '#334155';
-          titleDiv.innerText = '< ' + (document.title || 'Template Preview') + ' >';
+          titleDiv.innerText = (document.title || 'Template Preview').split('|')[0].replace(/[<>]/g, '').trim();
           topBar.appendChild(titleDiv);
           
           // Right view switcher buttons
