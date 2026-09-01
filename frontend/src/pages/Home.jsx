@@ -633,6 +633,7 @@ export default function Home({ addToCart, cart }) {
               const rating = getRating(template.id);
               const isSaved = savedSlugs.has(template.slug);
               const categoryName = template.category?.name || 'Template';
+              const demoUrl = template.demoUrl || `/templates/${(template.category?.slug || 'admin').toLowerCase()}/${template.slug}/index.html`;
 
               return (
                 <div
@@ -659,14 +660,18 @@ export default function Home({ addToCart, cart }) {
                     e.currentTarget.style.borderColor = '#e2e8f0';
                   }}
                 >
-                  {/* Thumbnail Image */}
-                  <div style={{
-                    position: 'relative',
-                    width: '100%',
-                    aspectRatio: '16/10',
-                    background: '#0f172a',
-                    overflow: 'hidden'
-                  }}>
+                  {/* Thumbnail Image Link */}
+                  <a
+                    href={demoUrl}
+                    style={{
+                      position: 'relative',
+                      width: '100%',
+                      aspectRatio: '16/10',
+                      background: '#0f172a',
+                      overflow: 'hidden',
+                      display: 'block'
+                    }}
+                  >
                     <img
                       src={template.previewImage}
                       alt={template.name}
@@ -706,7 +711,7 @@ export default function Home({ addToCart, cart }) {
                     >
                       <Bookmark size={14} fill={isSaved ? 'currentColor' : 'none'} />
                     </button>
-                  </div>
+                  </a>
 
                   {/* Card Details */}
                   <div style={{
@@ -718,20 +723,24 @@ export default function Home({ addToCart, cart }) {
                     gap: 12
                   }}>
                     <div>
-                      {/* Title */}
-                      <div style={{
-                        fontSize: '0.95rem',
-                        fontWeight: 700,
-                        color: '#0f172a',
-                        marginBottom: 4,
-                        whiteSpace: 'nowrap',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis'
-                      }}
-                      title={template.name}
+                      {/* Title Link */}
+                      <a
+                        href={demoUrl}
+                        style={{
+                          fontSize: '0.95rem',
+                          fontWeight: 700,
+                          color: '#0f172a',
+                          marginBottom: 4,
+                          whiteSpace: 'nowrap',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                          display: 'block',
+                          textDecoration: 'none'
+                        }}
+                        title={template.name}
                       >
                         {shortTitle}
-                      </div>
+                      </a>
 
                       {/* Category & Rating */}
                       <div style={{
@@ -756,7 +765,7 @@ export default function Home({ addToCart, cart }) {
                       marginTop: 2
                     }}>
                       <a
-                        href={template.demoUrl || `/templates/${template.slug}`}
+                        href={demoUrl}
                         style={{
                           display: 'flex',
                           alignItems: 'center',
@@ -778,7 +787,7 @@ export default function Home({ addToCart, cart }) {
                       </a>
 
                       <a
-                        href={template.demoUrl || `/templates/${template.slug}`}
+                        href={demoUrl}
                         style={{
                           display: 'flex',
                           alignItems: 'center',
@@ -797,7 +806,7 @@ export default function Home({ addToCart, cart }) {
                         onMouseEnter={(e) => e.currentTarget.style.background = '#0052cc'}
                         onMouseLeave={(e) => e.currentTarget.style.background = '#0066ff'}
                       >
-                        View Details
+                        Live Demo
                       </a>
                     </div>
 

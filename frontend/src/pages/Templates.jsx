@@ -543,6 +543,7 @@ export default function Templates() {
                 'RESPONSIVE LAYOUT',
                 'PRODUCTION READY'
               ];
+              const demoUrl = template.demoUrl || `/templates/${(template.category?.slug || 'admin').toLowerCase()}/${template.slug}/index.html`;
 
               return (
                 <div
@@ -571,20 +572,25 @@ export default function Templates() {
                   }}
                 >
                   {/* Left Column: Responsive Multi-Device CSS Mockup */}
-                  <div style={{
-                    position: 'relative',
-                    width: '100%',
-                    aspectRatio: '16/11',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    background: '#f8fafc',
-                    borderRadius: '16px',
-                    overflow: 'hidden',
-                    border: '1px solid #f1f5f9',
-                    boxSizing: 'border-box',
-                    padding: '24px'
-                  }}>
+                  <a 
+                    href={demoUrl}
+                    style={{
+                      position: 'relative',
+                      width: '100%',
+                      aspectRatio: '16/11',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      background: '#f8fafc',
+                      borderRadius: '16px',
+                      overflow: 'hidden',
+                      border: '1px solid #f1f5f9',
+                      boxSizing: 'border-box',
+                      padding: '24px',
+                      textDecoration: 'none',
+                      cursor: 'pointer'
+                    }}
+                  >
                     {/* 1. Laptop Mockup Frame */}
                     <div style={{
                       position: 'relative',
@@ -715,7 +721,7 @@ export default function Templates() {
                         />
                       </div>
                     </div>
-                  </div>
+                  </a>
 
                   {/* Right Column: Title, Metadata, Description & Pill Buttons */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
@@ -747,7 +753,7 @@ export default function Templates() {
                         lineHeight: '1.25'
                       }}>
                         <a 
-                          href={template.demoUrl || `/templates/${template.slug}`} 
+                          href={demoUrl} 
                           style={{ color: '#0f172a', transition: 'color 0.2s', textDecoration: 'none' }}
                           onMouseEnter={(e) => e.currentTarget.style.color = '#0066ff'}
                           onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
@@ -778,7 +784,7 @@ export default function Templates() {
                     {/* Action Buttons */}
                     <div style={{ marginTop: '10px' }}>
                       <a 
-                        href={template.demoUrl || `/templates/${template.slug}`} 
+                        href={demoUrl} 
                         style={{
                           display: 'inline-flex',
                           alignItems: 'center',
