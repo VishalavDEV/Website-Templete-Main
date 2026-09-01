@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, useSearchParams, Link, useNavigate } from 'react-router-dom';
 import { api } from '../services/api';
-import { Search, SlidersHorizontal } from 'lucide-react';
+import { Search, SlidersHorizontal, X, RotateCcw, ArrowRight } from 'lucide-react';
 
 const CATEGORY_META = {
   admin: {
@@ -18,6 +18,11 @@ const CATEGORY_META = {
     icon: '📰',
     title: 'Block Magazine Templates',
     subtitle: 'Discover modern editorial magazine, news portal, tech blog, and multi-category publication layouts.'
+  },
+  'coming-soon': {
+    icon: '⏳',
+    title: 'Coming Soon Templates',
+    subtitle: 'Explore sleek countdown timers, product launch teasers, newsletter capture, and animated coming soon pages.'
   },
   'coming-soon': {
     icon: '⏳',
@@ -69,6 +74,11 @@ const CATEGORY_META = {
     title: 'Business & Corporate Templates',
     subtitle: 'Explore corporate enterprise, financial advisory, consulting, and business landing pages.'
   },
+  business: {
+    icon: '💼',
+    title: 'Business & Corporate Templates',
+    subtitle: 'Explore corporate enterprise, financial advisory, consulting, and business landing pages.'
+  },
   agency: {
     icon: '🚀',
     title: 'Agency & Studio Templates',
@@ -114,6 +124,11 @@ const CATEGORY_META = {
     title: 'Corporate Templates',
     subtitle: 'Explore enterprise corporate portals, investor relations, consulting firms, and business profiles.'
   },
+  corporate: {
+    icon: '🏢',
+    title: 'Corporate Templates',
+    subtitle: 'Explore enterprise corporate portals, investor relations, consulting firms, and business profiles.'
+  },
   all: {
     icon: '📁',
     title: 'Browse Website Templates',
@@ -125,83 +140,144 @@ export default function Templates() {
   const { categorySlug } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
-  const [templates, setTemplates] = useState([]);
+  
+  const [allTemplates, setAllTemplates] = useState([]);
   const [categories, setCategories] = useState([]);
   const [showFilterPanel, setShowFilterPanel] = useState(false);
+  const [loading, setLoading] = useState(true);
   
-  // States for filters
-  const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '');
-  const [selectedCategory, setSelectedCategory] = useState(categorySlug || searchParams.get('category') || 'all');
-  const [selectedType, setSelectedType] = useState(searchParams.get('type') || 'all');
+  // URL params state
+  const initialSearch = searchParams.get('search') || '';
+  const initialCategory = categorySlug || searchParams.get('category') || 'all';
+
+  const [searchQuery, setSearchQuery] = useState(initialSearch);
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [sortBy, setSortBy] = useState('popular');
 
+  // Load initial templates & categories
   useEffect(() => {
-    setSearchQuery(searchParams.get('search') || '');
-    setSelectedCategory(categorySlug || searchParams.get('category') || 'all');
-    setSelectedType(searchParams.get('type') || 'all');
-  }, [searchParams, categorySlug]);
-
-  useEffect(() => {
-    api.getCategories().then(setCategories).catch(err => console.error(err));
+    Promise.all([
+      api.getCategories().catch(() => []),
+      api.getTemplates().catch(() => [])
+    ]).then(([cats, tpls]) => {
+      setCategories(cats);
+      setAllTemplates(tpls);
+      setLoading(false);
+    });
   }, []);
 
+  // Sync state when URL params change (e.g. from MegaMenu navigation or browser history)
   useEffect(() => {
-    const filterParams = {};
-    if (selectedCategory !== 'all') filterParams.category = selectedCategory;
-    if (selectedType !== 'all') filterParams.type = selectedType;
-    if (searchQuery) filterParams.search = searchQuery;
+    const urlCategory = categorySlug || searchParams.get('category') || 'all';
+    const urlSearch = searchParams.get('search') || '';
+    
+    setSelectedCategory(urlCategory);
+    setSearchQuery(urlSearch);
+  }, [categorySlug, searchParams]);
 
-    api.getTemplates(filterParams)
-      .then(setTemplates)
-      .catch(err => console.error(err));
-  }, [selectedCategory, selectedType, searchQuery]);
-
+  // Handle live search input
   const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
+    const val = e.target.value;
+    setSearchQuery(val);
+    
     const params = new URLSearchParams(searchParams);
-    if (e.target.value) {
-      params.set('search', e.target.value);
+    if (val.trim()) {
+      params.set('search', val);
     } else {
       params.delete('search');
     }
-    setSearchParams(params);
+    setSearchParams(params, { replace: true });
   };
 
+  // Handle clearing search
+  const handleClearSearch = () => {
+    setSearchQuery('');
+    const params = new URLSearchParams(searchParams);
+    params.delete('search');
+    setSearchParams(params, { replace: true });
+  };
+
+  // Handle Category selection
   const handleCategorySelect = (slug) => {
     setSelectedCategory(slug);
+    const searchPart = searchQuery.trim() ? `?search=${encodeURIComponent(searchQuery.trim())}` : '';
     if (slug !== 'all') {
-      navigate(`/templates/${slug}`);
+      navigate(`/templates/${slug}${searchPart}`);
     } else {
-      navigate(`/templates`);
+      navigate(`/templates${searchPart}`);
     }
   };
 
-  const handleTypeSelect = (type) => {
-    setSelectedType(type);
-    const params = new URLSearchParams(searchParams);
-    if (type !== 'all') {
-      params.set('type', type);
-    } else {
-      params.delete('type');
-    }
-    setSearchParams(params);
+  // Reset all filters
+  const handleResetFilters = () => {
+    setSearchQuery('');
+    setSelectedCategory('all');
+    setSortBy('popular');
+    navigate('/templates');
   };
 
-  // Sorting
-  const sortedTemplates = [...templates].sort((a, b) => {
-    if (sortBy === 'popular') {
-      return (b.downloadsCount || 0) - (a.downloadsCount || 0);
-    } else if (sortBy === 'newest') {
-      return new Date(b.createdAt) - new Date(a.createdAt);
-    } else if (sortBy === 'price-low') {
-      return a.price - b.price;
-    } else if (sortBy === 'price-high') {
-      return b.price - a.price;
-    }
-    return 0;
-  });
+  // Category matching helper
+  const matchesCategory = (template, targetCat) => {
+    if (!targetCat || targetCat === 'all') return true;
+    if (!template.category) return false;
+    
+    const tSlug = (template.category.slug || '').toLowerCase().trim();
+    const tName = (template.category.name || '').toLowerCase().trim();
+    const target = targetCat.toLowerCase().trim();
 
-  const matchedCatObj = categories.find(c => c.slug === selectedCategory);
+    return tSlug === target || tName === target ||
+      (target === 'comming-soon' && tSlug === 'coming-soon') ||
+      (target === 'coming-soon' && tSlug === 'comming-soon') ||
+      (target === 'buisness' && tSlug === 'business') ||
+      (target === 'business' && tSlug === 'buisness') ||
+      (target === 'cooperate' && tSlug === 'corporate') ||
+      (target === 'corporate' && tSlug === 'cooperate');
+  };
+
+  // Reactive Instant Filter & Sort Pipeline
+  const filteredAndSortedTemplates = useMemo(() => {
+    let result = [...allTemplates];
+
+    // 1. Category Filter
+    if (selectedCategory && selectedCategory !== 'all') {
+      result = result.filter(t => matchesCategory(t, selectedCategory));
+    }
+
+    // 2. Search Filter (Multi-word, case-insensitive, keyword-rich)
+    if (searchQuery && searchQuery.trim()) {
+      const terms = searchQuery.toLowerCase().trim().split(/\s+/).filter(Boolean);
+      result = result.filter(t => {
+        const searchable = [
+          t.name || '',
+          t.description || '',
+          t.category?.name || '',
+          t.category?.slug || '',
+          t.bootstrapVersion || '',
+          ...(Array.isArray(t.tags) ? t.tags : [])
+        ].join(' ').toLowerCase();
+        
+        return terms.every(term => searchable.includes(term));
+      });
+    }
+
+    // 3. Sorting
+    result.sort((a, b) => {
+      if (sortBy === 'popular') {
+        return (b.downloadsCount || 0) - (a.downloadsCount || 0);
+      } else if (sortBy === 'newest') {
+        return (b.id || 0) - (a.id || 0);
+      } else if (sortBy === 'name-asc') {
+        return (a.name || '').localeCompare(b.name || '');
+      } else if (sortBy === 'name-desc') {
+        return (b.name || '').localeCompare(a.name || '');
+      }
+      return 0;
+    });
+
+    return result;
+  }, [allTemplates, selectedCategory, searchQuery, sortBy]);
+
+  const matchedCatObj = categories.find(c => c.slug === selectedCategory || c.name.toLowerCase() === selectedCategory.toLowerCase());
   const currentCategorySlug = selectedCategory;
   const currentMeta = CATEGORY_META[currentCategorySlug] || {
     icon: '📁',
@@ -257,7 +333,7 @@ export default function Templates() {
           border: '1px solid #e2e8f0',
           boxShadow: '0 2px 8px rgba(0,0,0,0.02)'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 15 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 15, flex: '1 1 320px', maxWidth: '480px' }}>
             {/* Filter Toggle Button */}
             <button 
               onClick={() => setShowFilterPanel(!showFilterPanel)}
@@ -267,45 +343,82 @@ export default function Templates() {
                 justifyContent: 'center',
                 background: showFilterPanel ? 'var(--primary-color)' : 'white',
                 color: showFilterPanel ? 'white' : 'var(--text-main)',
-                border: '1px solid #cbd5e1',
-                borderRadius: '8px',
+                border: showFilterPanel ? '1px solid var(--primary-color)' : '1px solid #cbd5e1',
+                borderRadius: '10px',
                 width: '42px',
                 height: '42px',
+                minWidth: '42px',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
                 boxShadow: '0 2px 4px rgba(0,0,0,0.02)'
               }}
-              title="Toggle Filters Dropdown"
+              title="Toggle Category Filters"
             >
-              <SlidersHorizontal size={20} />
+              <SlidersHorizontal size={19} />
             </button>
 
-            <div style={{ position: 'relative', width: '280px' }}>
-              <Search size={18} color="#94a3b8" style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)' }} />
+            {/* Search Input Bar */}
+            <div style={{ position: 'relative', width: '100%' }}>
+              <Search size={18} color="#94a3b8" style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
               <input
                 type="text"
-                placeholder="Search templates..."
+                placeholder="Search templates by title, category, tags, keywords..."
                 value={searchQuery}
                 onChange={handleSearchChange}
                 style={{
-                  padding: '10px 16px 10px 42px',
+                  padding: '10px 38px 10px 42px',
                   width: '100%',
                   borderRadius: '99px',
                   border: '1px solid #cbd5e1',
                   fontSize: '0.85rem',
                   outline: 'none',
-                  background: '#f8fafc'
+                  background: '#f8fafc',
+                  transition: 'border-color 0.2s, box-shadow 0.2s',
+                  boxSizing: 'border-box'
+                }}
+                onFocus={(e) => {
+                  e.target.style.borderColor = 'var(--primary-color)';
+                  e.target.style.background = '#ffffff';
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = '#cbd5e1';
+                  e.target.style.background = '#f8fafc';
                 }}
               />
+              {searchQuery && (
+                <button
+                  onClick={handleClearSearch}
+                  style={{
+                    position: 'absolute',
+                    right: 12,
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    background: '#e2e8f0',
+                    border: 'none',
+                    borderRadius: '50%',
+                    width: 20,
+                    height: 20,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                    color: '#64748b',
+                    padding: 0
+                  }}
+                  title="Clear search"
+                >
+                  <X size={12} />
+                </button>
+              )}
             </div>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: 15 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 15, flexWrap: 'wrap' }}>
             <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-              Showing <strong>{sortedTemplates.length}</strong> matching templates
+              Showing <strong>{filteredAndSortedTemplates.length}</strong> {filteredAndSortedTemplates.length === 1 ? 'template' : 'matching templates'}
             </span>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Sort by</span>
+              <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 500 }}>Sort by</span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
@@ -316,13 +429,15 @@ export default function Templates() {
                   fontSize: '0.85rem',
                   outline: 'none',
                   background: 'white',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  fontWeight: 600,
+                  color: '#0f172a'
                 }}
               >
                 <option value="popular">Most Popular</option>
                 <option value="newest">Newest Releases</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
+                <option value="name-asc">Name: A to Z</option>
+                <option value="name-desc">Name: Z to A</option>
               </select>
             </div>
           </div>
@@ -339,122 +454,101 @@ export default function Templates() {
             animation: 'fadeIn 0.2s ease-out',
             boxShadow: '0 4px 12px rgba(0,0,0,0.03)'
           }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 15 }}>
+              <h4 style={{ fontSize: '0.95rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>Filter by Category</h4>
+              {selectedCategory !== 'all' && (
+                <button
+                  onClick={() => handleCategorySelect('all')}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 4,
+                    background: 'none',
+                    border: 'none',
+                    color: 'var(--primary-color)',
+                    fontSize: '0.8rem',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    padding: 0
+                  }}
+                >
+                  <RotateCcw size={12} /> Show All Categories
+                </button>
+              )}
+            </div>
+
             <div style={{
               display: 'grid',
-              gridTemplateColumns: '3fr 1fr',
-              gap: 40,
-              flexWrap: 'wrap'
+              gridTemplateColumns: 'repeat(auto-fill, minmax(170px, 1fr))',
+              gap: 10
             }}>
-              {/* Categories Grid */}
-              <div>
-                <h4 style={{ fontSize: '0.95rem', fontWeight: 800, marginBottom: 15, color: '#0f172a' }}>Categories</h4>
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
-                  gap: 10
-                }}>
-                  <button
-                    onClick={() => handleCategorySelect('all')}
-                    style={{
-                      padding: '8px 14px',
-                      borderRadius: '8px',
-                      border: selectedCategory === 'all' ? '1px solid var(--primary-color)' : '1px solid #e2e8f0',
-                      background: selectedCategory === 'all' ? 'var(--primary-color)' : '#f8fafc',
-                      color: selectedCategory === 'all' ? 'white' : 'var(--text-main)',
-                      fontSize: '0.8rem',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      textAlign: 'left',
-                      transition: 'all 0.2s'
-                    }}
-                  >
-                    All Categories
-                  </button>
-                  {categories.map(cat => (
-                    <button
-                      key={cat.id}
-                      onClick={() => handleCategorySelect(cat.slug)}
-                      style={{
-                        padding: '8px 14px',
-                        borderRadius: '8px',
-                        border: selectedCategory === cat.slug ? '1px solid var(--primary-color)' : '1px solid #e2e8f0',
-                        background: selectedCategory === cat.slug ? 'var(--primary-color)' : '#f8fafc',
-                        color: selectedCategory === cat.slug ? 'white' : 'var(--text-main)',
-                        fontSize: '0.8rem',
-                        fontWeight: 600,
-                        cursor: 'pointer',
-                        textAlign: 'left',
-                        transition: 'all 0.2s',
-                        whiteSpace: 'nowrap',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis'
-                      }}
-                      title={cat.name}
-                    >
-                      {cat.name}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* License Settings */}
-              <div style={{ borderLeft: '1px solid #f1f5f9', paddingLeft: 30 }}>
-                <h4 style={{ fontSize: '0.95rem', fontWeight: 800, marginBottom: 15, color: '#0f172a' }}>License Type</h4>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.85rem', cursor: 'pointer', fontWeight: 500 }}>
-                    <input
-                      type="radio"
-                      name="type"
-                      checked={selectedType === 'all'}
-                      onChange={() => handleTypeSelect('all')}
-                      style={{ accentColor: 'var(--primary-color)' }}
-                    />
-                    All Licenses
-                  </label>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.85rem', cursor: 'pointer', fontWeight: 500 }}>
-                    <input
-                      type="radio"
-                      name="type"
-                      checked={selectedType === 'FREE'}
-                      onChange={() => handleTypeSelect('FREE')}
-                      style={{ accentColor: 'var(--primary-color)' }}
-                    />
-                    Free Download
-                  </label>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.85rem', cursor: 'pointer', fontWeight: 500 }}>
-                    <input
-                      type="radio"
-                      name="type"
-                      checked={selectedType === 'PREMIUM'}
-                      onChange={() => handleTypeSelect('PREMIUM')}
-                      style={{ accentColor: 'var(--primary-color)' }}
-                    />
-                    Premium Templates
-                  </label>
-                </div>
-              </div>
+              <button
+                onClick={() => handleCategorySelect('all')}
+                style={{
+                  padding: '9px 14px',
+                  borderRadius: '8px',
+                  border: selectedCategory === 'all' ? '1px solid var(--primary-color)' : '1px solid #e2e8f0',
+                  background: selectedCategory === 'all' ? 'var(--primary-color)' : '#f8fafc',
+                  color: selectedCategory === 'all' ? 'white' : 'var(--text-main)',
+                  fontSize: '0.82rem',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  transition: 'all 0.15s'
+                }}
+              >
+                📁 All Categories
+              </button>
+              {categories.map(cat => (
+                <button
+                  key={cat.id}
+                  onClick={() => handleCategorySelect(cat.slug)}
+                  style={{
+                    padding: '9px 14px',
+                    borderRadius: '8px',
+                    border: selectedCategory === cat.slug ? '1px solid var(--primary-color)' : '1px solid #e2e8f0',
+                    background: selectedCategory === cat.slug ? 'var(--primary-color)' : '#f8fafc',
+                    color: selectedCategory === cat.slug ? 'white' : 'var(--text-main)',
+                    fontSize: '0.82rem',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                    transition: 'all 0.15s',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis'
+                  }}
+                  title={cat.name}
+                >
+                  {cat.name}
+                </button>
+              ))}
             </div>
           </div>
         )}
 
-        {/* Uniform Vertical Stack of Template Cards matching Screenshot */}
-        {sortedTemplates.length > 0 ? (
+        {/* Uniform Vertical Stack of Template Cards */}
+        {loading ? (
+          <div style={{ textAlign: 'center', padding: '60px 20px', color: 'var(--text-muted)' }}>
+            Loading templates...
+          </div>
+        ) : filteredAndSortedTemplates.length > 0 ? (
           <div style={{
             display: 'flex',
             flexDirection: 'column',
             gap: '36px',
             width: '100%'
           }}>
-            {sortedTemplates.map(template => {
+            {filteredAndSortedTemplates.map(template => {
               const tags = template.tags || [
                 template.category?.name || 'FEATURED',
                 'RESPONSIVE LAYOUT',
-                template.templateType === 'FREE' ? 'FREE DOWNLOAD' : 'PREMIUM'
+                'PRODUCTION READY'
               ];
 
               return (
                 <div
-                  key={template.id}
+                  key={`${template.id}-${template.slug}`}
                   style={{
                     backgroundColor: '#ffffff',
                     border: '1px solid #e2e8f0',
@@ -668,6 +762,8 @@ export default function Templates() {
                       <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#64748b' }}>
                         <i className="fa-regular fa-clock" style={{ fontSize: '0.85rem' }}></i>
                         <span>Updated recently</span>
+                        <span style={{ margin: '0 4px' }}>•</span>
+                        <span>{template.downloadsCount ? `${template.downloadsCount.toLocaleString()} downloads` : 'Popular'}</span>
                       </div>
 
                       <p style={{
@@ -682,17 +778,15 @@ export default function Templates() {
                     </div>
 
                     {/* Action Buttons */}
-                    <div style={{
-                      marginTop: '10px'
-                    }}>
+                    <div style={{ marginTop: '10px' }}>
                       <a 
                         href={template.demoUrl || `/templates/${template.slug}`} 
                         style={{
-                          display: 'flex',
+                          display: 'inline-flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          gap: '6px',
-                          padding: '12px 24px',
+                          gap: '8px',
+                          padding: '12px 28px',
                           backgroundColor: '#1e40af',
                           color: 'white',
                           borderRadius: '99px',
@@ -711,7 +805,7 @@ export default function Templates() {
                           e.currentTarget.style.backgroundColor = '#1e40af';
                         }}
                       >
-                        Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
+                        Live Demo <ArrowRight size={14} />
                       </a>
                     </div>
 
@@ -724,13 +818,52 @@ export default function Templates() {
         ) : (
           <div style={{
             textAlign: 'center',
-            padding: '60px 20px',
+            padding: '70px 20px',
             background: 'white',
-            borderRadius: 16,
-            border: '1px dashed #cbd5e1'
+            borderRadius: 20,
+            border: '1px dashed #cbd5e1',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.02)'
           }}>
-            <h3 style={{ marginBottom: 10 }}>No Templates Found</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Try modifying your filter settings or search query keywords.</p>
+            <div style={{
+              width: 56,
+              height: 56,
+              borderRadius: '50%',
+              background: '#f1f5f9',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto 16px auto',
+              color: '#64748b'
+            }}>
+              <Search size={26} />
+            </div>
+            <h3 style={{ fontSize: '1.3rem', fontWeight: 800, marginBottom: 8, color: '#0f172a' }}>No matching templates found</h3>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', maxWidth: 460, margin: '0 auto 24px auto', lineHeight: 1.6 }}>
+              {searchQuery ? (
+                <>No results matched &ldquo;<strong>{searchQuery}</strong>&rdquo;{selectedCategory !== 'all' ? ` in category ${selectedCategory}` : ''}.</>
+              ) : (
+                <>No templates found matching the selected category.</>
+              )}
+            </p>
+            <button
+              onClick={handleResetFilters}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                padding: '10px 22px',
+                borderRadius: '99px',
+                background: 'var(--primary-color)',
+                color: 'white',
+                border: 'none',
+                fontWeight: 600,
+                fontSize: '0.85rem',
+                cursor: 'pointer',
+                boxShadow: '0 2px 8px rgba(37, 99, 235, 0.25)'
+              }}
+            >
+              <RotateCcw size={14} /> Reset Search & Filters
+            </button>
           </div>
         )}
       </div>

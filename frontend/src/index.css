@@ -450,31 +450,44 @@ a {
 /* ─── Premium Mega Menu Styling ─── */
 .nav-item-templates {
   position: relative;
+  display: inline-flex;
+  align-items: center;
 }
 
 .mega-menu-container {
   position: absolute;
-  top: calc(100% + 12px);
-  right: -80px;
-  left: auto;
+  top: 100%;
+  left: -10px;
+  right: auto;
   transform: none;
-  width: 740px;
-  max-width: calc(100vw - 40px);
+  width: 860px;
+  max-width: 95vw;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.02);
-  border-radius: 18px;
-  padding: 20px 24px;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.03);
+  border-radius: 20px;
+  padding: 24px 28px;
   display: none;
-  z-index: 2000;
-  animation: slideDownFade 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2500;
+  animation: slideDownFade 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   box-sizing: border-box;
+}
+
+/* Hover bridge so menu never closes accidentally while moving cursor */
+.mega-menu-container::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background: transparent;
 }
 
 @keyframes slideDownFade {
   from {
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(-6px);
   }
   to {
     opacity: 1;
@@ -482,7 +495,8 @@ a {
   }
 }
 
-.nav-item-templates:hover .mega-menu-container {
+.nav-item-templates:hover .mega-menu-container,
+.mega-menu-container.is-open {
   display: block;
 }
 
@@ -490,13 +504,13 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 20px;
-  row-gap: 4px;
+  row-gap: 6px;
 }
 
 .mega-menu-column {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
 .mega-menu-item {
@@ -504,13 +518,17 @@ a {
   display: flex;
   align-items: center;
   padding: 8px 12px;
-  border-radius: 8px;
-  color: #334155;
+  border-radius: 10px;
+  color: #1e293b;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.88rem;
+  font-weight: 600;
+  font-size: 0.92rem;
   transition: all 0.15s ease;
   background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
   box-sizing: border-box;
 }
 
@@ -521,31 +539,25 @@ a {
   width: 100%;
 }
 
-.menu-icon {
-  color: #64748b;
-  flex-shrink: 0;
-  transition: color 0.15s ease;
-}
-
 .menu-text {
-  color: #334155;
-  font-weight: 500;
+  color: #1e293b;
+  font-weight: 600;
   transition: color 0.15s ease;
   white-space: nowrap;
 }
 
 /* Hover effects */
 .mega-menu-item:hover {
-  background: #f1f5f9;
+  background: #f8fafc;
+  border-color: #e2e8f0;
 }
 
-.mega-menu-item:hover .menu-icon {
-  color: #2563eb;
+.mega-menu-item:hover .menu-icon-box {
+  transform: scale(1.08);
 }
 
 .mega-menu-item:hover .menu-text {
-  color: #2563eb;
-  font-weight: 600;
+  color: #0066ff;
 }
 
 /* Coming soon specific styles */

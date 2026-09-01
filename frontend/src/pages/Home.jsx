@@ -1,763 +1,884 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { api } from '../services/api';
-import { ArrowRight, Star, ArrowUpRight, Flame, Shield, Zap, Sparkles } from 'lucide-react';
-
-const categoryThemes = {
-  travels: {
-    accent: '#0284c7',
-    background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
-    cardBorder: 'rgba(2, 132, 199, 0.18)',
-    cardHoverBorder: 'rgba(2, 132, 199, 0.45)',
-    badgeColor: '#0284c7',
-    badgeBg: '#f0f9ff'
-  },
-  ecommerce: {
-    accent: '#ec4899',
-    background: 'linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%)',
-    cardBorder: 'rgba(236, 72, 153, 0.18)',
-    cardHoverBorder: 'rgba(236, 72, 153, 0.45)',
-    badgeColor: '#ec4899',
-    badgeBg: '#fdf2f8'
-  },
-  medical: {
-    accent: '#0d9488',
-    background: 'linear-gradient(135deg, #f0fdf4 0%, #ccfbf1 100%)',
-    cardBorder: 'rgba(13, 148, 136, 0.18)',
-    cardHoverBorder: 'rgba(13, 148, 136, 0.45)',
-    badgeColor: '#0d9488',
-    badgeBg: '#f0fdf4'
-  },
-  photography: {
-    accent: '#8b5cf6',
-    background: 'linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%)',
-    cardBorder: 'rgba(139, 92, 246, 0.18)',
-    cardHoverBorder: 'rgba(139, 92, 246, 0.45)',
-    badgeColor: '#8b5cf6',
-    badgeBg: '#faf5ff'
-  },
-  hotel: {
-    accent: '#d97706',
-    background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)',
-    cardBorder: 'rgba(217, 119, 6, 0.18)',
-    cardHoverBorder: 'rgba(217, 119, 6, 0.45)',
-    badgeColor: '#d97706',
-    badgeBg: '#fffbeb'
-  },
-  default: {
-    accent: '#0066ff',
-    background: '#f8fafc',
-    cardBorder: '#e2e8f0',
-    cardHoverBorder: 'rgba(0, 102, 255, 0.35)',
-    badgeColor: '#1d4ed8',
-    badgeBg: '#eff6ff'
-  }
-};
-
-const renderCategoryAnimation = (categorySlug) => {
-  if (categorySlug === 'travels') {
-    return (
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        pointerEvents: 'none',
-        zIndex: 10,
-        overflow: 'hidden'
-      }}>
-        {/* Airplane drift */}
-        <div style={{
-          position: 'absolute',
-          top: '20px',
-          left: '-50px',
-          animation: 'planeCruise 8s linear infinite',
-          fontSize: '24px'
-        }}>✈️</div>
-        {/* Cloud drift */}
-        <div style={{
-          position: 'absolute',
-          top: '60px',
-          left: '110%',
-          animation: 'cloudDrift 14s linear infinite',
-          opacity: 0.35,
-          fontSize: '32px'
-        }}>☁️</div>
-        <div style={{
-          position: 'absolute',
-          bottom: '20px',
-          left: '110%',
-          animation: 'cloudDrift 19s linear infinite',
-          animationDelay: '-5s',
-          opacity: 0.25,
-          fontSize: '24px'
-        }}>☁️</div>
-      </div>
-    );
-  }
-  if (categorySlug === 'ecommerce') {
-    return (
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        pointerEvents: 'none',
-        zIndex: 10,
-        overflow: 'hidden'
-      }}>
-        {/* Floating shopping cart */}
-        <div style={{
-          position: 'absolute',
-          bottom: '15px',
-          left: '-40px',
-          animation: 'cartSlide 6s ease-in-out infinite',
-          fontSize: '22px'
-        }}>🛒</div>
-        {/* Sparkly discounts */}
-        <div style={{
-          position: 'absolute',
-          top: '15px',
-          right: '15px',
-          animation: 'sparkleRotate 3s linear infinite',
-          fontSize: '20px'
-        }}>🏷️</div>
-      </div>
-    );
-  }
-  if (categorySlug === 'medical') {
-    return (
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        pointerEvents: 'none',
-        zIndex: 10,
-        overflow: 'hidden'
-      }}>
-        {/* Pulsing heart */}
-        <div style={{
-          position: 'absolute',
-          top: '15px',
-          left: '15px',
-          animation: 'pulseScale 2s ease-in-out infinite',
-          fontSize: '24px'
-        }}>❤️</div>
-        {/* Healthcare cross */}
-        <div style={{
-          position: 'absolute',
-          bottom: '15px',
-          right: '15px',
-          animation: 'pulseScale 2s ease-in-out infinite',
-          animationDelay: '1s',
-          fontSize: '22px'
-        }}>🏥</div>
-      </div>
-    );
-  }
-  if (categorySlug === 'photography') {
-    return (
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        pointerEvents: 'none',
-        zIndex: 10,
-        overflow: 'hidden'
-      }}>
-        {/* Rotating aperture */}
-        <div style={{
-          position: 'absolute',
-          top: '15px',
-          right: '15px',
-          animation: 'rotateAperture 4s linear infinite',
-          fontSize: '22px'
-        }}>📷</div>
-        {/* Flash bulb glow */}
-        <div style={{
-          position: 'absolute',
-          top: '30%',
-          left: '20%',
-          width: '60px',
-          height: '60px',
-          background: 'rgba(139, 92, 246, 0.08)',
-          borderRadius: '50%',
-          filter: 'blur(8px)',
-          animation: 'flashGlow 4s infinite'
-        }} />
-      </div>
-    );
-  }
-  return null;
-};
+import { ArrowRight, Star, Sparkles, Search, Bookmark, X, SlidersHorizontal, ArrowUpRight, Check, Eye } from 'lucide-react';
 
 export default function Home({ addToCart, cart }) {
-  const [templates, setTemplates] = useState([]);
+  const [allTemplates, setAllTemplates] = useState([]);
   const [categories, setCategories] = useState([]);
   const [activeCategory, setActiveCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState('popular');
+  const [savedSlugs, setSavedSlugs] = useState(new Set());
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Load categories
-    api.getCategories().then(setCategories).catch(err => console.error(err));
-    // Load templates
-    api.getTemplates().then(setTemplates).catch(err => console.error(err));
+    Promise.all([
+      api.getCategories().catch(() => []),
+      api.getTemplates().catch(() => [])
+    ]).then(([cats, tpls]) => {
+      setCategories(cats);
+      setAllTemplates(tpls);
+      setLoading(false);
+    });
   }, []);
 
-  const handleCategoryClick = (slug) => {
-    setActiveCategory(slug);
+  const toggleSave = (slug, e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setSavedSlugs(prev => {
+      const next = new Set(prev);
+      if (next.has(slug)) next.delete(slug);
+      else next.add(slug);
+      return next;
+    });
   };
 
-  const filteredTemplates = activeCategory === 'all'
-    ? templates
-    : templates.filter(t => t.category.slug === activeCategory);
+  // Category matching helper
+  const matchesCategory = (template, targetCat) => {
+    if (!targetCat || targetCat === 'all') return true;
+    if (!template.category) return false;
+    const tSlug = (template.category.slug || '').toLowerCase().trim();
+    const tName = (template.category.name || '').toLowerCase().trim();
+    const target = targetCat.toLowerCase().trim();
+
+    return tSlug === target || tName === target ||
+      (target === 'comming-soon' && tSlug === 'coming-soon') ||
+      (target === 'coming-soon' && tSlug === 'comming-soon') ||
+      (target === 'buisness' && tSlug === 'business') ||
+      (target === 'business' && tSlug === 'buisness') ||
+      (target === 'cooperate' && tSlug === 'corporate') ||
+      (target === 'corporate' && tSlug === 'cooperate');
+  };
+
+  // Filter and sort templates for the home page showcase
+  const filteredAndSortedTemplates = useMemo(() => {
+    let result = [...allTemplates];
+
+    // 1. Category filter
+    if (activeCategory && activeCategory !== 'all') {
+      result = result.filter(t => matchesCategory(t, activeCategory));
+    }
+
+    // 2. Search filter (multi-word, partial-word, case-insensitive)
+    if (searchQuery && searchQuery.trim()) {
+      const terms = searchQuery.toLowerCase().trim().split(/\s+/).filter(Boolean);
+      result = result.filter(t => {
+        const searchable = [
+          t.name || '',
+          t.description || '',
+          t.category?.name || '',
+          t.category?.slug || '',
+          t.bootstrapVersion || '',
+          ...(Array.isArray(t.tags) ? t.tags : [])
+        ].join(' ').toLowerCase();
+        return terms.every(term => searchable.includes(term));
+      });
+    }
+
+    // 3. Sort
+    result.sort((a, b) => {
+      if (sortBy === 'popular') {
+        return (b.downloadsCount || 0) - (a.downloadsCount || 0);
+      } else if (sortBy === 'newest') {
+        return (b.id || 0) - (a.id || 0);
+      } else if (sortBy === 'name-asc') {
+        return (a.name || '').localeCompare(b.name || '');
+      } else if (sortBy === 'name-desc') {
+        return (b.name || '').localeCompare(a.name || '');
+      }
+      return 0;
+    });
+
+    return result;
+  }, [allTemplates, activeCategory, searchQuery, sortBy]);
+
+  // Clean title helper (e.g. "BizConsult — Enterprise Advisory" -> "BizConsult")
+  const getShortTitle = (name) => {
+    if (!name) return 'Template';
+    const clean = name.replace(/^[—\s-]+|[—\s-]+$/g, '');
+    const parts = clean.split(/[—|–-]/);
+    if (parts.length > 1 && parts[0].trim().length >= 3) {
+      return parts[0].trim();
+    }
+    return name.length > 22 ? name.substring(0, 22) + '...' : name;
+  };
+
+  // Rating helper for template cards
+  const getRating = (id) => {
+    const num = ((id || 1) % 4) * 0.1;
+    return (4.7 + num).toFixed(1);
+  };
 
   return (
-    <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
-      {/* Hero Section */}
+    <div style={{ animation: 'fadeIn 0.4s ease-out' }}>
+      
+      {/* ────────────────── 1. Hero Section ────────────────── */}
       <section style={{
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
+        gridTemplateColumns: '1.05fr 1fr',
         alignItems: 'center',
-        gap: 50,
-        padding: '60px 0',
+        gap: 40,
+        padding: '50px 0 60px 0',
         minHeight: '520px'
       }}>
+        
+        {/* Left Column: Hero Copy & Actions */}
         <div>
+          {/* Pill Badge */}
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
-            gap: 8,
-            padding: '6px 16px',
+            gap: 6,
+            padding: '5px 14px',
             borderRadius: '99px',
             background: 'rgba(0, 102, 255, 0.08)',
-            color: 'var(--primary-color)',
-            fontSize: '0.8rem',
+            color: '#0066ff',
+            fontSize: '0.78rem',
             fontWeight: 700,
-            marginBottom: 20
+            marginBottom: 20,
+            border: '1px solid rgba(0, 102, 255, 0.15)'
           }}>
-            <Flame size={14} /> 175+ Premium Templates
+            <Sparkles size={13} /> 175+ Curated Templates
           </div>
+
           <h1 style={{
-            fontSize: '3.6rem',
-            lineHeight: '1.15',
+            fontSize: '3.5rem',
+            lineHeight: '1.14',
             fontWeight: 800,
             marginBottom: 20,
-            letterSpacing: '-1.5px'
+            letterSpacing: '-1.5px',
+            color: '#0f172a',
+            fontFamily: 'var(--font-title)'
           }}>
             Find the perfect <br />
             template for your <br />
-            next <span className="gradient-text">big idea</span>
+            next <span className="gradient-text">big idea.</span>
           </h1>
+
           <p style={{
             color: 'var(--text-muted)',
-            fontSize: '1.1rem',
-            lineHeight: '1.6',
-            marginBottom: 35,
-            maxWidth: 480
+            fontSize: '0.96rem',
+            lineHeight: '1.65',
+            marginBottom: 32,
+            maxWidth: 460
           }}>
-            Premium HTML, CSS, React, and Bootstrap templates crafted for modern businesses, developers, and online creators. Fully responsive and ready to launch.
+            Modern HTML, CSS, React, and Bootstrap templates crafted for businesses, developers, and online creators. Fully responsive and ready to launch.
           </p>
-          <div style={{ display: 'flex', gap: 16 }}>
-            <Link to="/templates" className="btn btn-primary">
-              Explore Templates <ArrowRight size={18} />
+
+          <div style={{ display: 'flex', gap: 14, marginBottom: 42, flexWrap: 'wrap' }}>
+            <Link to="/templates" style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 8,
+              padding: '12px 26px',
+              borderRadius: '8px',
+              background: '#0066ff',
+              color: '#ffffff',
+              fontSize: '0.9rem',
+              fontWeight: 600,
+              boxShadow: '0 4px 14px rgba(0, 102, 255, 0.28)',
+              textDecoration: 'none',
+              transition: 'all 0.2s'
+            }}>
+              Explore Templates <ArrowRight size={16} />
             </Link>
-            <Link to="/builder" className="btn btn-secondary">
-              Try Template Builder
-            </Link>
+
+            <button
+              onClick={() => {
+                const el = document.getElementById('featured-templates-section');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                padding: '12px 24px',
+                borderRadius: '8px',
+                background: '#ffffff',
+                color: '#0f172a',
+                border: '1px solid #e2e8f0',
+                fontSize: '0.9rem',
+                fontWeight: 600,
+                cursor: 'pointer',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
+                transition: 'all 0.2s'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.borderColor = '#cbd5e1'}
+              onMouseLeave={(e) => e.currentTarget.style.borderColor = '#e2e8f0'}
+            >
+              Browse Categories
+            </button>
           </div>
 
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 20,
-            marginTop: 45,
-            borderTop: '1px solid #e2e8f0',
-            paddingTop: 30
-          }}>
-            <div>
-              <h3 style={{ fontSize: '1.8rem', fontWeight: 800 }}>125k+</h3>
-              <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600 }}>Active Developers</p>
+          {/* 3 Stat Cards Row */}
+          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+            <div style={{
+              background: '#ffffff',
+              border: '1px solid #e2e8f0',
+              borderRadius: '12px',
+              padding: '10px 16px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
+              boxShadow: '0 1px 4px rgba(0,0,0,0.02)'
+            }}>
+              <div style={{
+                width: 32,
+                height: 32,
+                borderRadius: '8px',
+                background: 'rgba(0, 102, 255, 0.1)',
+                color: '#0066ff',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '0.9rem'
+              }}>
+                ⚡
+              </div>
+              <div>
+                <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>125K+</div>
+                <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 500 }}>Active Developers</div>
+              </div>
             </div>
-            <div style={{ width: 1, height: 30, background: '#e2e8f0' }}></div>
-            <div>
-              <h3 style={{ fontSize: '1.8rem', fontWeight: 800 }}>4.9/5</h3>
-              <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 4 }}>
-                User Rating <Star size={12} fill="#ffcc00" color="#ffcc00" />
-              </p>
+
+            <div style={{
+              background: '#ffffff',
+              border: '1px solid #e2e8f0',
+              borderRadius: '12px',
+              padding: '10px 16px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
+              boxShadow: '0 1px 4px rgba(0,0,0,0.02)'
+            }}>
+              <div style={{
+                width: 32,
+                height: 32,
+                borderRadius: '8px',
+                background: 'rgba(34, 197, 94, 0.1)',
+                color: '#16a34a',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '0.9rem'
+              }}>
+                ★
+              </div>
+              <div>
+                <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a', display: 'flex', alignItems: 'center', gap: 4 }}>
+                  4.9/5 <Star size={12} fill="#ffcc00" color="#ffcc00" />
+                </div>
+                <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 500 }}>User Rating</div>
+              </div>
+            </div>
+
+            <div style={{
+              background: '#ffffff',
+              border: '1px solid #e2e8f0',
+              borderRadius: '12px',
+              padding: '10px 16px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
+              boxShadow: '0 1px 4px rgba(0,0,0,0.02)'
+            }}>
+              <div style={{
+                width: 32,
+                height: 32,
+                borderRadius: '8px',
+                background: 'rgba(139, 92, 246, 0.1)',
+                color: '#8b5cf6',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '0.9rem'
+              }}>
+                ✦
+              </div>
+              <div>
+                <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>Quality Templates</div>
+                <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 500 }}>Curated & Ready</div>
+              </div>
             </div>
           </div>
+
         </div>
 
-        {/* Hero Banner Visual mock */}
-        <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+        {/* Right Column: Layered 3D Browser Showcase */}
+        <div style={{
+          position: 'relative',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '20px 0'
+        }}>
+          {/* Ambient Blue Radial Glow */}
           <div style={{
             position: 'absolute',
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            width: '450px',
-            height: '450px',
-            background: 'radial-gradient(circle, rgba(0, 102, 255, 0.15) 0%, rgba(255,255,255,0) 70%)',
-            zIndex: -1,
-            filter: 'blur(20px)'
-          }}></div>
-          
+            width: '460px',
+            height: '460px',
+            background: 'radial-gradient(circle, rgba(0, 102, 255, 0.14) 0%, rgba(255, 255, 255, 0) 70%)',
+            zIndex: 0,
+            filter: 'blur(30px)',
+            pointerEvents: 'none'
+          }} />
+
+          {/* Layered Showcase Container */}
           <div style={{
+            position: 'relative',
             width: '100%',
-            maxWidth: '460px',
-            background: 'white',
-            borderRadius: '20px',
-            boxShadow: '0 20px 40px rgba(0, 102, 255, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05)',
-            border: '1px solid #f1f5f9',
-            overflow: 'hidden',
-            transition: 'var(--transition)'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'translateY(-6px)';
-            e.currentTarget.style.boxShadow = '0 30px 60px rgba(0, 102, 255, 0.15), 0 4px 10px rgba(0, 0, 0, 0.05)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 102, 255, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05)';
-          }}
-          >
-            <div style={{ background: '#0f172a', padding: '12px 20px', display: 'flex', alignItems: 'center', gap: 6 }}>
-              <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#ef4444' }}></span>
-              <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#eab308' }}></span>
-              <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#22c55e' }}></span>
-              <span style={{ color: '#64748b', fontSize: '0.75rem', marginLeft: 10, fontFamily: 'monospace' }}>preview-saas-dashboard.html</span>
-            </div>
-            <div style={{ padding: 24, background: '#f8fafc' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 20 }}>
-                <div style={{ width: 120, height: 16, background: '#e2e8f0', borderRadius: 4 }}></div>
-                <div style={{ width: 50, height: 16, background: '#0066ff', borderRadius: 4 }}></div>
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 15 }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                  <div style={{ height: 60, background: '#fff', borderRadius: 10, border: '1px solid #e2e8f0', padding: 8 }}>
-                    <div style={{ width: 25, height: 8, background: '#e2e8f0', marginBottom: 6 }}></div>
-                    <div style={{ width: '80%', height: 14, background: '#38bdf8', borderRadius: 2 }}></div>
-                  </div>
-                  <div style={{ height: 90, background: '#fff', borderRadius: 10, border: '1px solid #e2e8f0', padding: 8 }}>
-                    <div style={{ width: 40, height: 8, background: '#e2e8f0', marginBottom: 6 }}></div>
-                    <div style={{ width: '100%', height: 10, background: '#f1f5f9', marginBottom: 4 }}></div>
-                    <div style={{ width: '90%', height: 10, background: '#f1f5f9' }}></div>
-                  </div>
+            maxWidth: '520px',
+            height: '360px',
+            zIndex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            {/* Background Left Card (Dark Agency Layout) */}
+            <div style={{
+              position: 'absolute',
+              left: '0px',
+              top: '25px',
+              width: '260px',
+              height: '300px',
+              background: '#090d16',
+              borderRadius: '16px',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              boxShadow: '0 20px 35px rgba(0,0,0,0.18)',
+              overflow: 'hidden',
+              transform: 'rotate(-5deg) scale(0.92)',
+              opacity: 0.9,
+              zIndex: 1,
+              padding: '16px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
+            }}>
+              <div>
+                <div style={{ display: 'flex', gap: 5, marginBottom: 16 }}>
+                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#ef4444' }} />
+                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#eab308' }} />
+                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#22c55e' }} />
                 </div>
-                <div style={{ background: '#fff', borderRadius: 10, border: '1px solid #e2e8f0', padding: 15, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                  <div>
-                    <div style={{ width: '40%', height: 10, background: '#64748b', marginBottom: 12 }}></div>
-                    <div style={{ width: '90%', height: 24, background: '#0066ff', borderRadius: 4, marginBottom: 10 }}></div>
-                    <div style={{ width: '70%', height: 8, background: '#e2e8f0' }}></div>
-                  </div>
-                  <div style={{ display: 'flex', gap: 10, marginTop: 20 }}>
-                    <div style={{ width: '50%', height: 30, background: '#f1f5f9', borderRadius: 6 }}></div>
-                    <div style={{ width: '50%', height: 30, background: '#0f172a', borderRadius: 6 }}></div>
-                  </div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#ffffff', marginBottom: 6 }}>Build something amazing</div>
+                <p style={{ fontSize: '0.68rem', color: '#94a3b8', lineHeight: 1.4 }}>Next-generation agency & portfolio systems built for maximum speed.</p>
+              </div>
+              <div style={{
+                height: '110px',
+                borderRadius: '10px',
+                background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+                border: '1px solid rgba(255,255,255,0.06)'
+              }} />
+            </div>
+
+            {/* Background Right Card (Light SaaS Layout) */}
+            <div style={{
+              position: 'absolute',
+              right: '0px',
+              top: '30px',
+              width: '260px',
+              height: '290px',
+              background: '#ffffff',
+              borderRadius: '16px',
+              border: '1px solid #e2e8f0',
+              boxShadow: '0 20px 35px rgba(0,0,0,0.08)',
+              overflow: 'hidden',
+              transform: 'rotate(6deg) scale(0.92)',
+              opacity: 0.92,
+              zIndex: 1,
+              padding: '16px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
+            }}>
+              <div>
+                <div style={{ display: 'flex', gap: 5, marginBottom: 16 }}>
+                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#ef4444' }} />
+                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#eab308' }} />
+                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#22c55e' }} />
+                </div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#0f172a', marginBottom: 6 }}>Grow your business with our solutions</div>
+                <p style={{ fontSize: '0.68rem', color: '#64748b', lineHeight: 1.4 }}>Modular SaaS dashboards with analytics and multi-tenant metrics.</p>
+              </div>
+              <div style={{
+                height: '100px',
+                borderRadius: '10px',
+                background: '#f8fafc',
+                border: '1px solid #f1f5f9'
+              }} />
+            </div>
+
+            {/* Center Foreground Card: Photography Studio Showcase */}
+            <div style={{
+              position: 'relative',
+              width: '340px',
+              height: '330px',
+              background: '#ffffff',
+              borderRadius: '16px',
+              border: '1px solid #e2e8f0',
+              boxShadow: '0 25px 50px rgba(0, 102, 255, 0.16), 0 4px 12px rgba(0,0,0,0.04)',
+              overflow: 'hidden',
+              zIndex: 2,
+              display: 'flex',
+              flexDirection: 'column',
+              transition: 'transform 0.3s ease'
+            }}>
+              {/* Browser Window Bar */}
+              <div style={{
+                background: '#f8fafc',
+                borderBottom: '1px solid #e2e8f0',
+                padding: '8px 14px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 6
+              }}>
+                <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#ef4444' }} />
+                <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#eab308' }} />
+                <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#22c55e' }} />
+                <span style={{
+                  marginLeft: 10,
+                  fontSize: '0.7rem',
+                  color: '#64748b',
+                  background: '#ffffff',
+                  padding: '2px 10px',
+                  borderRadius: '4px',
+                  border: '1px solid #e2e8f0',
+                  flex: 1,
+                  textAlign: 'center'
+                }}>
+                  snapfolio-minimal.dev
+                </span>
+              </div>
+
+              {/* Browser Content */}
+              <div style={{ padding: '16px', flex: 1, display: 'flex', flexDirection: 'column', background: '#ffffff' }}>
+                <div style={{ fontSize: '0.65rem', fontWeight: 700, color: '#0066ff', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  Photo Studio
+                </div>
+                <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a', margin: '4px 0 6px 0', lineHeight: 1.25 }}>
+                  Capturing Moments, <br />Creating Stories
+                </div>
+                <p style={{ fontSize: '0.68rem', color: '#64748b', margin: '0 0 12px 0', lineHeight: 1.4 }}>
+                  Award-winning visual studio in New York City.
+                </p>
+
+                {/* Miniature Gallery Grid */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 6, flex: 1 }}>
+                  <img
+                    src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=300&q=80"
+                    alt="Gallery item 1"
+                    style={{ width: '100%', height: '80px', objectFit: 'cover', borderRadius: '6px' }}
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=300&q=80"
+                    alt="Gallery item 2"
+                    style={{ width: '100%', height: '80px', objectFit: 'cover', borderRadius: '6px' }}
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=300&q=80"
+                    alt="Gallery item 3"
+                    style={{ width: '100%', height: '80px', objectFit: 'cover', borderRadius: '6px' }}
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
+
       </section>
 
-      {/* Categories filter bar */}
-      <section style={{ margin: '40px 0' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 25 }}>
+
+      {/* ────────────────── 2. Featured Templates Section ────────────────── */}
+      <section id="featured-templates-section" style={{ margin: '40px 0 80px 0' }}>
+        
+        {/* Section Header & Right-Aligned Control Bar */}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'flex-end',
+          flexWrap: 'wrap',
+          gap: 20,
+          marginBottom: 24,
+          paddingBottom: 16,
+          borderBottom: '1px solid #e2e8f0'
+        }}>
+          {/* Title & Subtitle on Left */}
           <div>
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 800 }}>Featured Templates</h2>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Filter through our hand-crafted web templates catalog</p>
+            <h2 style={{
+              fontSize: '1.9rem',
+              fontWeight: 800,
+              color: '#0f172a',
+              marginBottom: 4,
+              letterSpacing: '-0.5px'
+            }}>
+              Featured Templates
+            </h2>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', margin: 0 }}>
+              Discover hand-picked templates for your next project
+            </p>
           </div>
-          <Link to="/templates" style={{
-            fontSize: '0.9rem',
-            color: 'var(--primary-color)',
-            fontWeight: 600,
-            display: 'flex',
-            alignItems: 'center',
-            gap: 4
+
+          {/* Controls Bar on Right (Search, Category, Sort, and Count) */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 6 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+              
+              {/* Search Box */}
+              <div style={{ position: 'relative', width: '210px' }}>
+                <Search size={15} color="#94a3b8" style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
+                <input
+                  type="text"
+                  placeholder="Search templates..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  style={{
+                    padding: '8px 28px 8px 34px',
+                    width: '100%',
+                    borderRadius: '8px',
+                    border: '1px solid #e2e8f0',
+                    fontSize: '0.82rem',
+                    outline: 'none',
+                    background: '#ffffff',
+                    boxSizing: 'border-box'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = 'var(--primary-color)'}
+                  onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    style={{
+                      position: 'absolute',
+                      right: 8,
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      color: '#94a3b8',
+                      padding: 0
+                    }}
+                  >
+                    <X size={12} />
+                  </button>
+                )}
+              </div>
+
+              {/* Category Dropdown */}
+              <select
+                value={activeCategory}
+                onChange={(e) => setActiveCategory(e.target.value)}
+                style={{
+                  padding: '8px 12px',
+                  borderRadius: '8px',
+                  border: '1px solid #e2e8f0',
+                  fontSize: '0.82rem',
+                  fontWeight: 600,
+                  color: '#0f172a',
+                  background: '#ffffff',
+                  outline: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                <option value="all">≡ All Categories</option>
+                {categories.map(cat => (
+                  <option key={cat.id} value={cat.slug}>{cat.name}</option>
+                ))}
+              </select>
+
+              {/* Sort Dropdown */}
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                style={{
+                  padding: '8px 12px',
+                  borderRadius: '8px',
+                  border: '1px solid #e2e8f0',
+                  fontSize: '0.82rem',
+                  fontWeight: 600,
+                  color: '#0f172a',
+                  background: '#ffffff',
+                  outline: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                <option value="popular">▾ Most Popular</option>
+                <option value="newest">▾ Newest Releases</option>
+                <option value="name-asc">▾ Name: A to Z</option>
+                <option value="name-desc">▾ Name: Z to A</option>
+              </select>
+            </div>
+
+            {/* Dynamic matching templates count */}
+            <span style={{ fontSize: '0.78rem', color: '#64748b' }}>
+              Showing <strong>{filteredAndSortedTemplates.length}</strong> matching templates
+            </span>
+          </div>
+        </div>
+
+        {/* 5-Column Template Cards Grid */}
+        {loading ? (
+          <div style={{ textAlign: 'center', padding: '60px 0', color: '#64748b' }}>Loading templates...</div>
+        ) : filteredAndSortedTemplates.length > 0 ? (
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+            gap: 20,
+            marginBottom: 40
           }}>
-            View All <ArrowUpRight size={16} />
+            {filteredAndSortedTemplates.map(template => {
+              const shortTitle = getShortTitle(template.name);
+              const rating = getRating(template.id);
+              const isSaved = savedSlugs.has(template.slug);
+              const categoryName = template.category?.name || 'Template';
+
+              return (
+                <div
+                  key={`${template.id}-${template.slug}`}
+                  style={{
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #e2e8f0',
+                    borderRadius: '14px',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    boxShadow: '0 2px 8px rgba(15, 23, 42, 0.03)',
+                    transition: 'all 0.25s ease-in-out',
+                    boxSizing: 'border-box'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-4px)';
+                    e.currentTarget.style.boxShadow = '0 12px 24px rgba(15, 23, 42, 0.08)';
+                    e.currentTarget.style.borderColor = '#cbd5e1';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 2px 8px rgba(15, 23, 42, 0.03)';
+                    e.currentTarget.style.borderColor = '#e2e8f0';
+                  }}
+                >
+                  {/* Thumbnail Image */}
+                  <div style={{
+                    position: 'relative',
+                    width: '100%',
+                    aspectRatio: '16/10',
+                    background: '#0f172a',
+                    overflow: 'hidden'
+                  }}>
+                    <img
+                      src={template.previewImage}
+                      alt={template.name}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'top',
+                        transition: 'transform 0.3s ease'
+                      }}
+                      onError={(e) => {
+                        e.target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80';
+                      }}
+                    />
+
+                    {/* Bookmark Button overlay */}
+                    <button
+                      onClick={(e) => toggleSave(template.slug, e)}
+                      style={{
+                        position: 'absolute',
+                        top: 8,
+                        right: 8,
+                        width: 28,
+                        height: 28,
+                        borderRadius: '6px',
+                        background: isSaved ? '#0066ff' : 'rgba(255, 255, 255, 0.9)',
+                        color: isSaved ? '#ffffff' : '#64748b',
+                        border: 'none',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: 'pointer',
+                        boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+                        transition: 'all 0.15s'
+                      }}
+                      title={isSaved ? 'Saved' : 'Save template'}
+                    >
+                      <Bookmark size={14} fill={isSaved ? 'currentColor' : 'none'} />
+                    </button>
+                  </div>
+
+                  {/* Card Details */}
+                  <div style={{
+                    padding: '14px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    flex: 1,
+                    justifyContent: 'space-between',
+                    gap: 12
+                  }}>
+                    <div>
+                      {/* Title */}
+                      <div style={{
+                        fontSize: '0.95rem',
+                        fontWeight: 700,
+                        color: '#0f172a',
+                        marginBottom: 4,
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis'
+                      }}
+                      title={template.name}
+                      >
+                        {shortTitle}
+                      </div>
+
+                      {/* Category & Rating */}
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        fontSize: '0.78rem',
+                        color: '#64748b'
+                      }}>
+                        <span style={{ fontWeight: 500 }}>{categoryName}</span>
+                        <span style={{ display: 'flex', alignItems: 'center', gap: 3, fontWeight: 700, color: '#0f172a' }}>
+                          <Star size={12} fill="#ffcc00" color="#ffcc00" /> {rating}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Action Buttons Row */}
+                    <div style={{
+                      display: 'grid',
+                      gridTemplateColumns: '1fr 1fr',
+                      gap: 8,
+                      marginTop: 2
+                    }}>
+                      <a
+                        href={template.demoUrl || `/templates/${template.slug}`}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          gap: 4,
+                          padding: '7px 10px',
+                          borderRadius: '6px',
+                          background: '#f1f5f9',
+                          color: '#0f172a',
+                          fontSize: '0.78rem',
+                          fontWeight: 600,
+                          textDecoration: 'none',
+                          transition: 'all 0.15s'
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.background = '#e2e8f0'}
+                        onMouseLeave={(e) => e.currentTarget.style.background = '#f1f5f9'}
+                      >
+                        Preview
+                      </a>
+
+                      <a
+                        href={template.demoUrl || `/templates/${template.slug}`}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          gap: 4,
+                          padding: '7px 10px',
+                          borderRadius: '6px',
+                          background: '#0066ff',
+                          color: '#ffffff',
+                          fontSize: '0.78rem',
+                          fontWeight: 600,
+                          textDecoration: 'none',
+                          boxShadow: '0 2px 6px rgba(0, 102, 255, 0.2)',
+                          transition: 'all 0.15s'
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.background = '#0052cc'}
+                        onMouseLeave={(e) => e.currentTarget.style.background = '#0066ff'}
+                      >
+                        View Details
+                      </a>
+                    </div>
+
+                  </div>
+
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div style={{
+            textAlign: 'center',
+            padding: '50px 20px',
+            background: '#ffffff',
+            borderRadius: '16px',
+            border: '1px dashed #cbd5e1',
+            margin: '20px 0 40px 0'
+          }}>
+            <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0f172a', marginBottom: 6 }}>
+              No templates found
+            </div>
+            <p style={{ color: '#64748b', fontSize: '0.85rem', marginBottom: 16 }}>
+              Try adjusting your search keywords or switching category filters.
+            </p>
+            <button
+              onClick={() => {
+                setSearchQuery('');
+                setActiveCategory('all');
+              }}
+              style={{
+                padding: '8px 18px',
+                borderRadius: '8px',
+                background: '#0066ff',
+                color: '#ffffff',
+                border: 'none',
+                fontWeight: 600,
+                fontSize: '0.82rem',
+                cursor: 'pointer'
+              }}
+            >
+              Reset Filters
+            </button>
+          </div>
+        )}
+
+        {/* View All Templates Centered Button */}
+        <div style={{ textAlign: 'center' }}>
+          <Link
+            to="/templates"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 8,
+              padding: '10px 24px',
+              borderRadius: '99px',
+              background: '#ffffff',
+              color: '#0066ff',
+              border: '1px solid #bfdbfe',
+              fontSize: '0.86rem',
+              fontWeight: 600,
+              textDecoration: 'none',
+              boxShadow: '0 2px 6px rgba(0, 102, 255, 0.06)',
+              transition: 'all 0.2s'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#eff6ff';
+              e.currentTarget.style.borderColor = '#93c5fd';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = '#ffffff';
+              e.currentTarget.style.borderColor = '#bfdbfe';
+            }}
+          >
+            View All Templates <ArrowRight size={14} />
           </Link>
         </div>
 
-        <div style={{ display: 'flex', gap: 10, overflowX: 'auto', paddingBottom: 10 }}>
-          <button
-            onClick={() => handleCategoryClick('all')}
-            style={{
-              padding: '8px 18px',
-              borderRadius: '99px',
-              border: activeCategory === 'all' ? '1px solid var(--primary-color)' : '1px solid #e2e8f0',
-              background: activeCategory === 'all' ? 'var(--primary-color)' : 'white',
-              color: activeCategory === 'all' ? 'white' : 'var(--text-main)',
-              fontSize: '0.85rem',
-              fontWeight: 600,
-              cursor: 'pointer',
-              whiteSpace: 'nowrap',
-              transition: 'var(--transition)'
-            }}
-          >
-            All Templates
-          </button>
-          {categories.map(cat => (
-            <button
-              key={cat.id}
-              onClick={() => handleCategoryClick(cat.slug)}
-              style={{
-                padding: '8px 18px',
-                borderRadius: '99px',
-                border: activeCategory === cat.slug ? '1px solid var(--primary-color)' : '1px solid #e2e8f0',
-                background: activeCategory === cat.slug ? 'var(--primary-color)' : 'white',
-                color: activeCategory === cat.slug ? 'white' : 'var(--text-main)',
-                fontSize: '0.85rem',
-                fontWeight: 600,
-                cursor: 'pointer',
-                whiteSpace: 'nowrap',
-                transition: 'var(--transition)'
-              }}
-            >
-              {cat.name}
-            </button>
-          ))}
-        </div>
       </section>
 
-      {/* Vertical Stack of Large Horizontal Cards */}
-      <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 40,
-        maxWidth: '1000px',
-        margin: '30px auto 60px auto'
-      }}>
-        {filteredTemplates.map(template => {
-          const categorySlug = template.category.slug;
-          const theme = categoryThemes[categorySlug] || categoryThemes.default;
-          return (
-            <div
-              key={template.id}
-              style={{
-                backgroundColor: '#ffffff',
-                border: `1px solid ${theme.cardBorder}`,
-                borderRadius: '24px',
-                padding: '32px',
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-                gap: '36px',
-                alignItems: 'center',
-                boxShadow: '0 4px 20px rgba(15, 23, 42, 0.03)',
-                width: '100%',
-                transition: 'all 0.3s ease-in-out',
-                boxSizing: 'border-box'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = theme.cardHoverBorder;
-                e.currentTarget.style.boxShadow = '0 10px 30px rgba(15, 23, 42, 0.06)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = theme.cardBorder;
-                e.currentTarget.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.03)';
-              }}
-            >
-              {/* Left Section: Responsive Multi-Device CSS Mockup */}
-              <div style={{
-                position: 'relative',
-                width: '100%',
-                aspectRatio: '16/11',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                background: theme.background,
-                borderRadius: '16px',
-                overflow: 'hidden',
-                border: '1px solid #f1f5f9',
-                boxSizing: 'border-box',
-                padding: '24px'
-              }}>
-                {/* Category-specific animation overlay */}
-                {renderCategoryAnimation(categorySlug)}
-
-                {/* 1. Laptop Mockup Frame */}
-                <div style={{
-                  position: 'relative',
-                  width: '72%',
-                  aspectRatio: '16/10',
-                  background: '#0f172a',
-                  borderRadius: '8px 8px 0 0',
-                  border: '4px solid #1e293b',
-                  boxShadow: '0 15px 35px rgba(0,0,0,0.12)',
-                  overflow: 'hidden',
-                  zIndex: 1,
-                  transform: 'translateX(-8%)',
-                  boxSizing: 'border-box'
-                }}>
-                  <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative' }}>
-                    <img 
-                      src={template.previewImage} 
-                      alt={`${template.name} Desktop Preview`} 
-                      style={{ 
-                        width: '100%', 
-                        height: '112%', 
-                        objectFit: 'cover', 
-                        objectPosition: 'top',
-                        marginTop: '-12%' 
-                      }} 
-                      onError={(e) => {
-                        e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                      }}
-                    />
-                  </div>
-                  {/* Keyboard Base thin border */}
-                  <div style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    height: '3px',
-                    background: '#64748b'
-                  }} />
-                </div>
-
-                {/* 2. Tablet Mockup Frame (overlaid on the right side) */}
-                <div style={{
-                  position: 'absolute',
-                  right: '18%',
-                  bottom: '18%',
-                  width: '24%',
-                  aspectRatio: '3/4',
-                  background: '#0f172a',
-                  border: '4px solid #0f172a',
-                  borderRadius: '10px',
-                  boxShadow: '0 15px 25px rgba(0,0,0,0.18)',
-                  overflow: 'hidden',
-                  zIndex: 2,
-                  boxSizing: 'border-box'
-                }}>
-                  {/* Camera sensor dot */}
-                  <div style={{
-                    position: 'absolute',
-                    top: '3px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    width: '4px',
-                    height: '4px',
-                    borderRadius: '50%',
-                    background: '#334155',
-                    zIndex: 10
-                  }} />
-                  <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
-                    <img 
-                      src={template.previewImage} 
-                      alt={`${template.name} Tablet Preview`} 
-                      style={{ 
-                        width: '100%', 
-                        height: '112%', 
-                        objectFit: 'cover', 
-                        objectPosition: 'top',
-                        marginTop: '-12%' 
-                      }} 
-                      onError={(e) => {
-                        e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                      }}
-                    />
-                  </div>
-                </div>
-
-                {/* 3. Mobile Mockup Frame (overlaid in front) */}
-                <div style={{
-                  position: 'absolute',
-                  right: '6%',
-                  bottom: '12%',
-                  width: '15%',
-                  aspectRatio: '9/19',
-                  background: '#090d16',
-                  border: '3px solid #090d16',
-                  borderRadius: '12px',
-                  boxShadow: '0 15px 30px rgba(0,0,0,0.22)',
-                  overflow: 'hidden',
-                  zIndex: 3,
-                  boxSizing: 'border-box'
-                }}>
-                  {/* Speaker pill notch */}
-                  <div style={{
-                    position: 'absolute',
-                    top: '2px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    width: '18px',
-                    height: '3px',
-                    borderRadius: '99px',
-                    background: '#1e293b',
-                    zIndex: 10
-                  }} />
-                  <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
-                    <img 
-                      src={template.previewImage} 
-                      alt={`${template.name} Mobile Preview`} 
-                      style={{ 
-                        width: '100%', 
-                        height: '112%', 
-                        objectFit: 'cover', 
-                        objectPosition: 'top',
-                        marginTop: '-12%' 
-                      }} 
-                      onError={(e) => {
-                        e.target.src = 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80';
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column: Title, Metadata, Description & Pill Buttons */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-                
-                {/* Badges / Tags */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                  {(template.tags || [
-                    template.category?.name || 'FEATURED',
-                    'RESPONSIVE LAYOUT',
-                    template.templateType === 'FREE' ? 'FREE DOWNLOAD' : 'PREMIUM'
-                  ]).map((tag, idx) => (
-                    <span key={idx} style={{
-                      padding: '4px 10px',
-                      borderRadius: '99px',
-                      backgroundColor: '#eff6ff',
-                      color: '#1d4ed8',
-                      fontSize: '10px',
-                      fontWeight: '700',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.5px'
-                    }}>{tag}</span>
-                  ))}
-                </div>
-
-                {/* Typography */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <h3 style={{
-                    fontSize: '1.6rem',
-                    fontWeight: '800',
-                    color: '#0f172a',
-                    margin: 0,
-                    fontFamily: 'var(--font-title)',
-                    lineHeight: '1.25'
-                  }}>
-                    <a 
-                      href={template.demoUrl || `/templates/${template.slug}`} 
-                      style={{ color: '#0f172a', transition: 'color 0.2s', textDecoration: 'none' }}
-                      onMouseEnter={(e) => e.currentTarget.style.color = '#0066ff'}
-                      onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
-                    >
-                      {template.name}
-                    </a>
-                  </h3>
-                  
-                  {/* Updated metadata */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#64748b' }}>
-                    <i className="fa-regular fa-clock" style={{ fontSize: '0.85rem' }}></i>
-                    <span>Updated recently</span>
-                  </div>
-
-                  <p style={{
-                    fontSize: '0.88rem',
-                    color: '#64748b',
-                    lineHeight: '1.7',
-                    margin: '6px 0 0 0',
-                    fontWeight: 400
-                  }}>
-                    {template.description}
-                  </p>
-                </div>
-
-                {/* Action Buttons */}
-                <div style={{
-                  marginTop: '10px'
-                }}>
-                  <a 
-                    href={template.demoUrl || `/templates/${template.slug}`} 
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '6px',
-                      padding: '12px 24px',
-                      backgroundColor: '#1e40af',
-                      color: 'white',
-                      borderRadius: '99px',
-                      border: 'none',
-                      fontWeight: '600',
-                      fontSize: '0.85rem',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s',
-                      textDecoration: 'none',
-                      boxShadow: '0 4px 12px rgba(30, 64, 175, 0.25)'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = '#1d4ed8';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = '#1e40af';
-                    }}
-                  >
-                    Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
-                  </a>
-                </div>
-
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Feature list / How it works */}
-      <section className="glass-panel" style={{ padding: 50, borderRadius: '24px', margin: '80px 0 60px 0', background: 'white' }}>
-        <div style={{ textAlign: 'center', marginBottom: 40 }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: 10 }}>The TechnoSprint Advantage</h2>
-          <p style={{ color: 'var(--text-muted)' }}>Professional, modern website templates tailored for production environments.</p>
-        </div>
-        
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 30 }}>
-          <div style={{ textAlign: 'center' }}>
-            <div style={{
-              width: 50, height: 50, borderRadius: '50%', background: 'rgba(0,102,255,0.08)',
-              display: 'flex', alignItems: 'center', justify: 'center', color: 'var(--primary-color)',
-              margin: '0 auto 15px auto', fontSize: '1.5rem', fontWeight: 'bold'
-            }}>
-              <Zap size={22} style={{ margin: 'auto' }} />
-            </div>
-            <h4 style={{ marginBottom: 10 }}>Rapid Launch</h4>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Bootstrap pages and themes completely structured and styled. Import, customize, and deploy.</p>
-          </div>
-          <div style={{ textAlign: 'center' }}>
-            <div style={{
-              width: 50, height: 50, borderRadius: '50%', background: 'rgba(0,102,255,0.08)',
-              display: 'flex', alignItems: 'center', justify: 'center', color: 'var(--primary-color)',
-              margin: '0 auto 15px auto', fontSize: '1.5rem', fontWeight: 'bold'
-            }}>
-              <Sparkles size={22} style={{ margin: 'auto' }} />
-            </div>
-            <h4 style={{ marginBottom: 10 }}>Visual Customizer</h4>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Use our interactive online template builder to customize elements and layouts in real-time.</p>
-          </div>
-          <div style={{ textAlign: 'center' }}>
-            <div style={{
-              width: 50, height: 50, borderRadius: '50%', background: 'rgba(0,102,255,0.08)',
-              display: 'flex', alignItems: 'center', justify: 'center', color: 'var(--primary-color)',
-              margin: '0 auto 15px auto', fontSize: '1.5rem', fontWeight: 'bold'
-            }}>
-              <Shield size={22} style={{ margin: 'auto' }} />
-            </div>
-            <h4 style={{ marginBottom: 10 }}>Instant Live Demos</h4>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Experience templates interactively directly inside your browser. No setups required to preview our designs.</p>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

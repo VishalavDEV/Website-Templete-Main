@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
-import { ShoppingCart, User as UserIcon, LogOut, Layout, Settings, Compass, HelpCircle, Bell, Heart } from 'lucide-react';
+import { ShoppingCart, User as UserIcon, LogOut, Layout, Settings, Compass, HelpCircle, Bell, Heart, Search } from 'lucide-react';
 import { api } from './services/api';
 import Home from './pages/Home';
 import Templates from './pages/Templates';
@@ -36,100 +36,124 @@ import CreativeMultipagePortfolio from './pages/CreativeMultipagePortfolio';
 
 function Header({ cartCount, user, onLogout }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [megaMenuOpen, setMegaMenuOpen] = useState(false);
+  const megaMenuTimeoutRef = useRef(null);
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
 
+  const handleMouseEnter = () => {
+    if (megaMenuTimeoutRef.current) clearTimeout(megaMenuTimeoutRef.current);
+    setMegaMenuOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    megaMenuTimeoutRef.current = setTimeout(() => {
+      setMegaMenuOpen(false);
+    }, 280);
+  };
+
+  const handleCategoriesClick = (e) => {
+    e.preventDefault();
+    setMegaMenuOpen(prev => !prev);
+  };
+
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      navigate(`/templates?search=${encodeURIComponent(searchQuery)}`);
+      navigate(`/templates?search=${encodeURIComponent(searchQuery.trim())}`);
+    } else {
+      navigate('/templates');
     }
   };
 
   return (
-    <header className="glass-panel" style={{
+    <header style={{
       position: 'sticky',
       top: 0,
       zIndex: 1000,
       margin: 0,
-      padding: '16px 40px',
-      borderRadius: 0,
+      padding: '14px 40px',
       borderBottom: '1px solid #e2e8f0',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      background: 'rgba(255, 255, 255, 0.95)',
-      backdropFilter: 'blur(8px)',
+      background: 'rgba(255, 255, 255, 0.96)',
+      backdropFilter: 'blur(10px)',
       boxShadow: '0 2px 10px rgba(0, 0, 0, 0.02)'
     }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 40 }}>
-        <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/logo.png" alt="TechnoSprint Templates Logo" style={{ height: '32px' }} />
+      {/* Left: Logo & Dropdowns */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
+          <img src="/logo.png" alt="technosprint logo" style={{ height: '30px' }} />
         </Link>
 
-        {/* Global Search Bar */}
-        <form onSubmit={handleSearchSubmit} style={{ position: 'relative' }}>
+        <nav style={{ display: 'flex', alignItems: 'center' }}>
+          <div 
+            className="nav-item-templates" 
+            style={{ position: 'relative' }}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <button
+              onClick={handleCategoriesClick}
+              type="button"
+              style={{
+                fontSize: '0.88rem',
+                fontWeight: 600,
+                color: (location.pathname.startsWith('/templates') || megaMenuOpen) ? 'var(--primary-color)' : 'var(--text-main)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 5,
+                padding: '6px 12px',
+                borderRadius: '8px',
+                background: megaMenuOpen ? '#f1f5f9' : 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.15s'
+              }}
+            >
+              Categories <span style={{ fontSize: '0.7rem', opacity: 0.7, transform: megaMenuOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>▾</span>
+            </button>
+            <MegaMenu isOpen={megaMenuOpen} onClose={() => setMegaMenuOpen(false)} />
+          </div>
+        </nav>
+      </div>
+
+      {/* Center: Wide Global Search Bar */}
+      <div style={{ flex: '1 1 auto', maxWidth: '480px', margin: '0 24px' }}>
+        <form onSubmit={handleSearchSubmit} style={{ position: 'relative', width: '100%' }}>
+          <Search size={16} color="#94a3b8" style={{ position: 'absolute', left: 16, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
           <input
             type="text"
-            placeholder="Search templates, e.g. 'SaaS landing page'"
+            placeholder="Search templates e.g. 'SaaS landing page'"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             style={{
-              padding: '10px 18px',
-              width: '320px',
+              padding: '9px 18px 9px 42px',
+              width: '100%',
               borderRadius: '99px',
               border: '1px solid #e2e8f0',
-              fontSize: '0.85rem',
+              fontSize: '0.84rem',
               outline: 'none',
-              background: '#f8fafc'
+              background: '#f8fafc',
+              transition: 'all 0.2s',
+              boxSizing: 'border-box'
+            }}
+            onFocus={(e) => {
+              e.target.style.borderColor = 'var(--primary-color)';
+              e.target.style.background = '#ffffff';
+              e.target.style.boxShadow = '0 0 0 3px rgba(0, 102, 255, 0.08)';
+            }}
+            onBlur={(e) => {
+              e.target.style.borderColor = '#e2e8f0';
+              e.target.style.background = '#f8fafc';
+              e.target.style.boxShadow = 'none';
             }}
           />
           <button type="submit" style={{ display: 'none' }} />
         </form>
       </div>
-
-      <nav style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
-        <div className="nav-item-templates">
-          <Link to="/templates" style={{
-            fontSize: '0.9rem',
-            fontWeight: 600,
-            color: location.pathname === '/templates' ? 'var(--primary-color)' : 'var(--text-muted)',
-            borderBottom: location.pathname === '/templates' ? '2px solid var(--primary-color)' : 'none',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 4,
-            padding: '6px 0'
-          }}>
-            Templates <span style={{ fontSize: '0.75rem' }}>▼</span>
-          </Link>
-          <MegaMenu />
-        </div>
-        <Link to="/templates" style={{
-          fontSize: '0.9rem',
-          fontWeight: 600,
-          color: 'var(--text-muted)',
-          padding: '6px 0'
-        }}>
-          Premium
-        </Link>
-        <Link to="/templates" style={{
-          fontSize: '0.9rem',
-          fontWeight: 600,
-          color: 'var(--text-muted)',
-          padding: '6px 0'
-        }}>
-          Support
-        </Link>
-        <Link to="/templates" style={{
-          fontSize: '0.9rem',
-          fontWeight: 600,
-          color: 'var(--text-muted)',
-          padding: '6px 0'
-        }}>
-          Contact
-        </Link>
-      </nav>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
         {/* Wishlist Heart Icon */}
@@ -483,7 +507,7 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
           <Route path="/" element={<Home addToCart={addToCart} cart={cart} />} />
           <Route path="/templates" element={<Templates />} />
           <Route path="/templates/:categorySlug" element={<Templates />} />
-          <Route path="/templates/photography" element={<PhotographyCatalog />} />
+          <Route path="/photography-catalog" element={<PhotographyCatalog />} />
           <Route path="/templates/:slug" element={<TemplateDetails addToCart={addToCart} cart={cart} />} />
           <Route path="/dashboard" element={<Dashboard user={user} cart={cart} removeFromCart={removeFromCart} clearCart={clearCart} />} />
           <Route path="/builder" element={<Builder user={user} />} />
