@@ -1,0 +1,1507 @@
+[
+  {
+    "category": "Medical",
+    "folder": "Medical-1",
+    "slug": "medical-1",
+    "detected_brand": "MediPulse Healthcare Platform",
+    "registered_name": null
+  },
+  {
+    "category": "Medical",
+    "folder": "Medical-2",
+    "slug": "medical-2",
+    "detected_brand": "Medicio Healthcare",
+    "registered_name": null
+  },
+  {
+    "category": "Medical",
+    "folder": "Medical-3",
+    "slug": "medical-3",
+    "detected_brand": "Aurevia Health",
+    "registered_name": null
+  },
+  {
+    "category": "Medical",
+    "folder": "Medical-4",
+    "slug": "medical-4",
+    "detected_brand": "Veylora Health Multi-Speciality Hospital",
+    "registered_name": null
+  },
+  {
+    "category": "Medical",
+    "folder": "Medical-5",
+    "slug": "medical-5",
+    "detected_brand": "Aura Health - Lilac Frost Medical Platform",
+    "registered_name": null
+  },
+  {
+    "category": "Medical",
+    "folder": "Medical-6",
+    "slug": "medical-6",
+    "detected_brand": "ApexHealth \u2014 Modern Dynamic Medical Platform",
+    "registered_name": null
+  },
+  {
+    "category": "Medical",
+    "folder": "Medical-7",
+    "slug": "medical-7",
+    "detected_brand": "PulseCare \u2014 Modern Dynamic Healthcare Platform",
+    "registered_name": null
+  },
+  {
+    "category": "Medical",
+    "folder": "Medical-8",
+    "slug": "medical-8",
+    "detected_brand": "PulseCare \u2014 Modern Dynamic Healthcare Platform",
+    "registered_name": null
+  },
+  {
+    "category": "admin",
+    "folder": "admin-1",
+    "slug": "admin-1",
+    "detected_brand": "TS ADMIN - Enterprise Command Center",
+    "registered_name": null
+  },
+  {
+    "category": "admin",
+    "folder": "admin-10",
+    "slug": "admin-10",
+    "detected_brand": "frontend",
+    "registered_name": null
+  },
+  {
+    "category": "admin",
+    "folder": "admin-2",
+    "slug": "admin-2",
+    "detected_brand": "Elemental - Editorial Command Center",
+    "registered_name": null
+  },
+  {
+    "category": "admin",
+    "folder": "admin-3",
+    "slug": "admin-3",
+    "detected_brand": "Arctic Frost Editorial Command Center",
+    "registered_name": null
+  },
+  {
+    "category": "admin",
+    "folder": "admin-4",
+    "slug": "admin-4",
+    "detected_brand": "corevista-admin",
+    "registered_name": null
+  },
+  {
+    "category": "admin",
+    "folder": "admin-5",
+    "slug": "admin-5",
+    "detected_brand": "frontend",
+    "registered_name": null
+  },
+  {
+    "category": "admin",
+    "folder": "admin-6",
+    "slug": "admin-6",
+    "detected_brand": "NexusPro Enterprise Admin Dashboard",
+    "registered_name": null
+  },
+  {
+    "category": "admin",
+    "folder": "admin-7",
+    "slug": "admin-7",
+    "detected_brand": "SprintAdmin",
+    "registered_name": null
+  },
+  {
+    "category": "admin",
+    "folder": "admin-8",
+    "slug": "admin-8",
+    "detected_brand": "Ember Glow Dashboard",
+    "registered_name": null
+  },
+  {
+    "category": "admin",
+    "folder": "admin-9",
+    "slug": "admin-9",
+    "detected_brand": "frontend",
+    "registered_name": null
+  },
+  {
+    "category": "agency",
+    "folder": "agency-1",
+    "slug": "agency-1",
+    "detected_brand": "Foldline \u2014 Design & Technology Studio",
+    "registered_name": null
+  },
+  {
+    "category": "agency",
+    "folder": "agency-2",
+    "slug": "agency-2",
+    "detected_brand": "VALENCE \u2014 Independent Creative Studio & Motion Architecture",
+    "registered_name": null
+  },
+  {
+    "category": "agency",
+    "folder": "agency-3",
+    "slug": "agency-3",
+    "detected_brand": null,
+    "registered_name": null
+  },
+  {
+    "category": "agency",
+    "folder": "agency-4",
+    "slug": "agency-4",
+    "detected_brand": "AURELIA \u2014 Independent Creative Studio",
+    "registered_name": null
+  },
+  {
+    "category": "agency",
+    "folder": "agency-5",
+    "slug": "agency-5",
+    "detected_brand": "BYTEORA \u2014 Premium Digital Agency | WE BUILD WHAT'S NEXT",
+    "registered_name": null
+  },
+  {
+    "category": "agency",
+    "folder": "agency-6",
+    "slug": "agency-6",
+    "detected_brand": "VANTA FORM \u2014 Premium Digital Agency",
+    "registered_name": null
+  },
+  {
+    "category": "agency",
+    "folder": "agency-7",
+    "slug": "agency-7",
+    "detected_brand": "STRATA Agency \u2014 Spatial Design Studio",
+    "registered_name": null
+  },
+  {
+    "category": "block-magazine",
+    "folder": "blog-1",
+    "slug": "blog-1",
+    "detected_brand": "Chronicle & Co. Magazine",
+    "registered_name": null
+  },
+  {
+    "category": "block-magazine",
+    "folder": "blog-10",
+    "slug": "blog-10",
+    "detected_brand": "TERRA Magazine",
+    "registered_name": null
+  },
+  {
+    "category": "block-magazine",
+    "folder": "blog-11",
+    "slug": "blog-11",
+    "detected_brand": "Chronicle & Co. Magazine",
+    "registered_name": null
+  },
+  {
+    "category": "block-magazine",
+    "folder": "blog-2",
+    "slug": "blog-2",
+    "detected_brand": "ELEMENTAL \u2014 Stories Behind the Science",
+    "registered_name": null
+  },
+  {
+    "category": "block-magazine",
+    "folder": "blog-3",
+    "slug": "blog-3",
+    "detected_brand": "Future Intelligence \u2014 AI & Future Technology Magazine",
+    "registered_name": null
+  },
+  {
+    "category": "block-magazine",
+    "folder": "blog-4",
+    "slug": "blog-4",
+    "detected_brand": "NEXORA - Modern Editorial & Digital Publication",
+    "registered_name": null
+  },
+  {
+    "category": "block-magazine",
+    "folder": "blog-5",
+    "slug": "blog-5",
+    "detected_brand": "Z MAG \u2014 The Spatial & Hyper-Culture Monograph",
+    "registered_name": null
+  },
+  {
+    "category": "block-magazine",
+    "folder": "blog-6",
+    "slug": "blog-6",
+    "detected_brand": "Design Mag \u2014 Contemporary Architecture & Spatial Design Magazine",
+    "registered_name": null
+  },
+  {
+    "category": "block-magazine",
+    "folder": "blog-7",
+    "slug": "blog-7",
+    "detected_brand": "THE BLOG OBSERVER \u2014 Premier Journal of Culture, Design & Ideas",
+    "registered_name": null
+  },
+  {
+    "category": "block-magazine",
+    "folder": "blog-8",
+    "slug": "blog-8",
+    "detected_brand": "XTRA \u2014 The Gen-Z Fashion Achievements & Dopamine Culture Chronicle",
+    "registered_name": null
+  },
+  {
+    "category": "block-magazine",
+    "folder": "blog-9",
+    "slug": "blog-9",
+    "detected_brand": "ATLAS \u2014 The Magazine of Discovery",
+    "registered_name": null
+  },
+  {
+    "category": "buisness",
+    "folder": "Business-1",
+    "slug": "business-1",
+    "detected_brand": "ABC Business | Premium Business Ecosystem Solutions",
+    "registered_name": null
+  },
+  {
+    "category": "buisness",
+    "folder": "Business-10",
+    "slug": "business-10",
+    "detected_brand": "NeXus Digital \u2014 Enterprise Technology Solutions",
+    "registered_name": null
+  },
+  {
+    "category": "buisness",
+    "folder": "Business-2",
+    "slug": "business-2",
+    "detected_brand": "AuraDigital | Premium Full-Stack Creative Agency & SaaS Studio",
+    "registered_name": null
+  },
+  {
+    "category": "buisness",
+    "folder": "Business-3",
+    "slug": "business-3",
+    "detected_brand": "AuraDigital | Premium Full-Stack Creative Agency & SaaS Studio",
+    "registered_name": null
+  },
+  {
+    "category": "buisness",
+    "folder": "Business-4",
+    "slug": "business-4",
+    "detected_brand": "business",
+    "registered_name": null
+  },
+  {
+    "category": "buisness",
+    "folder": "Business-5",
+    "slug": "business-5",
+    "detected_brand": "Lumora Labs - Premium Venture Studio Template",
+    "registered_name": null
+  },
+  {
+    "category": "buisness",
+    "folder": "Business-6",
+    "slug": "business-6",
+    "detected_brand": "business",
+    "registered_name": null
+  },
+  {
+    "category": "buisness",
+    "folder": "Business-7",
+    "slug": "business-7",
+    "detected_brand": "business",
+    "registered_name": null
+  },
+  {
+    "category": "buisness",
+    "folder": "Business-8",
+    "slug": "business-8",
+    "detected_brand": "VANTA STUDIO \u2014 Premium Creative Brand Showcase",
+    "registered_name": null
+  },
+  {
+    "category": "buisness",
+    "folder": "Business-9",
+    "slug": "business-9",
+    "detected_brand": "frontend",
+    "registered_name": null
+  },
+  {
+    "category": "comming-soon",
+    "folder": "comingsoon-1",
+    "slug": "comingsoon-1",
+    "detected_brand": "Orange 16  -  Something Powerful Is Coming | Orange",
+    "registered_name": null
+  },
+  {
+    "category": "comming-soon",
+    "folder": "comingsoon-10",
+    "slug": "comingsoon-10",
+    "detected_brand": "Coming Soon Event Landing Page Templates | Multi-Design Studio",
+    "registered_name": null
+  },
+  {
+    "category": "comming-soon",
+    "folder": "comingsoon-2",
+    "slug": "comingsoon-2",
+    "detected_brand": "NOVA X1 | The Future Has Arrived | NOVA MOTORS",
+    "registered_name": null
+  },
+  {
+    "category": "comming-soon",
+    "folder": "comingsoon-3",
+    "slug": "comingsoon-3",
+    "detected_brand": "AURA SKY RESIDENCES \u2014 Premium Cinematic Building Launch",
+    "registered_name": null
+  },
+  {
+    "category": "comming-soon",
+    "folder": "comingsoon-4",
+    "slug": "comingsoon-4",
+    "detected_brand": "BOTANICAL STUDIES | The Heritage Folio - Coming Soon",
+    "registered_name": null
+  },
+  {
+    "category": "comming-soon",
+    "folder": "comingsoon-5",
+    "slug": "comingsoon-5",
+    "detected_brand": "AURELIA CHRONOS | 18K Solid Gold Haute Horlogerie - Global Premiere",
+    "registered_name": null
+  },
+  {
+    "category": "comming-soon",
+    "folder": "comingsoon-6",
+    "slug": "comingsoon-6",
+    "detected_brand": "TENFIVE LAPTOP \u2014 180\u00b0 Ultraportable Flagship | Coming Soon",
+    "registered_name": null
+  },
+  {
+    "category": "comming-soon",
+    "folder": "comingsoon-7",
+    "slug": "comingsoon-7",
+    "detected_brand": "AEROSTRIDE X-PRO | Next-Gen Kinetic Carbon Marathon Running Shoe",
+    "registered_name": null
+  },
+  {
+    "category": "comming-soon",
+    "folder": "comingsoon-8",
+    "slug": "comingsoon-8",
+    "detected_brand": "HTM 350 DUDE // The Future of Riding - 360\u00b0 Experience",
+    "registered_name": null
+  },
+  {
+    "category": "comming-soon",
+    "folder": "comingsoon-9",
+    "slug": "comingsoon-9",
+    "detected_brand": "AURA // Next-Gen Multipurpose Launchpad & Coming Soon Experience",
+    "registered_name": null
+  },
+  {
+    "category": "construction",
+    "folder": "construction-1",
+    "slug": "construction-1",
+    "detected_brand": "ADVANCED CONSTRUCTION \u2014 Heavy Civil Engineering & Crane Infrastructure",
+    "registered_name": null
+  },
+  {
+    "category": "construction",
+    "folder": "construction-10",
+    "slug": "construction-10",
+    "detected_brand": "AEROVISION \u2014 Kinetic Skyrise, 3D Flythrough & Aerodynamic Architecture",
+    "registered_name": null
+  },
+  {
+    "category": "construction",
+    "folder": "construction-2",
+    "slug": "construction-2",
+    "detected_brand": "BUILDHUB CONSTRUCTIONS \u2014 Building The Future | Premier Architecture & 3D BIM",
+    "registered_name": null
+  },
+  {
+    "category": "construction",
+    "folder": "construction-3",
+    "slug": "construction-3",
+    "detected_brand": "Futurix Constructions \u2014 3D BIM Technology",
+    "registered_name": null
+  },
+  {
+    "category": "construction",
+    "folder": "construction-4",
+    "slug": "construction-4",
+    "detected_brand": "Knack Design Build \u2014 Bespoke Architecture",
+    "registered_name": null
+  },
+  {
+    "category": "construction",
+    "folder": "construction-5",
+    "slug": "construction-5",
+    "detected_brand": "Bespoke Lakefront Villas \u2014 Swiss Design Studio",
+    "registered_name": null
+  },
+  {
+    "category": "construction",
+    "folder": "construction-6",
+    "slug": "construction-6",
+    "detected_brand": "Arcstone Architects \u2014 Luxury Residential Design",
+    "registered_name": null
+  },
+  {
+    "category": "construction",
+    "folder": "construction-7",
+    "slug": "construction-7",
+    "detected_brand": "AURELIUS \u2014 High-End Historical Renovation & Heritage Atelier",
+    "registered_name": null
+  },
+  {
+    "category": "construction",
+    "folder": "construction-8",
+    "slug": "construction-8",
+    "detected_brand": "BUILDX \u2014 Sustainable Biophilic Architecture & Living Facades",
+    "registered_name": null
+  },
+  {
+    "category": "construction",
+    "folder": "construction-9",
+    "slug": "construction-9",
+    "detected_brand": "CHRONOS \u2014 Monolithic Brutalist Architecture & Concrete Engineering",
+    "registered_name": null
+  },
+  {
+    "category": "cooperate",
+    "folder": "cooperate-1",
+    "slug": "cooperate-1",
+    "detected_brand": "NEXORA \u2014 Technology. Strategy. Impact. | Premium Enterprise Consulting",
+    "registered_name": null
+  },
+  {
+    "category": "cooperate",
+    "folder": "cooperate-10",
+    "slug": "cooperate-10",
+    "detected_brand": "Apex Wealth & Investment Management",
+    "registered_name": null
+  },
+  {
+    "category": "cooperate",
+    "folder": "cooperate-2",
+    "slug": "cooperate-2",
+    "detected_brand": "ORION \u2014 Strategy for what comes next",
+    "registered_name": null
+  },
+  {
+    "category": "cooperate",
+    "folder": "cooperate-3",
+    "slug": "cooperate-3",
+    "detected_brand": "VANTAGE \u2014 Global Business Transformation & Strategy Consulting",
+    "registered_name": null
+  },
+  {
+    "category": "cooperate",
+    "folder": "cooperate-4",
+    "slug": "cooperate-4",
+    "detected_brand": "KINESIS GLOBAL // Enterprise AI & Digital Systems Engineering",
+    "registered_name": null
+  },
+  {
+    "category": "cooperate",
+    "folder": "cooperate-5",
+    "slug": "cooperate-5",
+    "detected_brand": "AXIOM SYSTEMS \u2014 Global Enterprise Technology & Engineering Partner",
+    "registered_name": null
+  },
+  {
+    "category": "cooperate",
+    "folder": "cooperate-6",
+    "slug": "cooperate-6",
+    "detected_brand": "Aurelia Journeys",
+    "registered_name": null
+  },
+  {
+    "category": "cooperate",
+    "folder": "cooperate-7",
+    "slug": "cooperate-7",
+    "detected_brand": "Straventa",
+    "registered_name": null
+  },
+  {
+    "category": "cooperate",
+    "folder": "cooperate-8",
+    "slug": "cooperate-8",
+    "detected_brand": "Remix Vertexa - Technology & Systems",
+    "registered_name": null
+  },
+  {
+    "category": "cooperate",
+    "folder": "cooperate-9",
+    "slug": "cooperate-9",
+    "detected_brand": "Finora",
+    "registered_name": null
+  },
+  {
+    "category": "ecommerce",
+    "folder": "ecommerce-1",
+    "slug": "ecommerce-1",
+    "detected_brand": "Soft Glow \u2014 Clean Beauty & Skin-First Hydration",
+    "registered_name": null
+  },
+  {
+    "category": "ecommerce",
+    "folder": "ecommerce-10",
+    "slug": "ecommerce-10",
+    "detected_brand": "Lavender Fashion Universe | Premium Animated Fashion Marketplace",
+    "registered_name": null
+  },
+  {
+    "category": "ecommerce",
+    "folder": "ecommerce-2",
+    "slug": "ecommerce-2",
+    "detected_brand": "AURELIA | High Jewellery & Fine Crafts",
+    "registered_name": null
+  },
+  {
+    "category": "ecommerce",
+    "folder": "ecommerce-3",
+    "slug": "ecommerce-3",
+    "detected_brand": "NOVA | 2026 Premium Technology & Digital Product Showroom",
+    "registered_name": null
+  },
+  {
+    "category": "ecommerce",
+    "folder": "ecommerce-4",
+    "slug": "ecommerce-4",
+    "detected_brand": "NEXORA \u2014 Everything. Curated For You.",
+    "registered_name": null
+  },
+  {
+    "category": "ecommerce",
+    "folder": "ecommerce-5",
+    "slug": "ecommerce-5",
+    "detected_brand": "AUREL \u2014 Luxury Digital Fashion House",
+    "registered_name": null
+  },
+  {
+    "category": "ecommerce",
+    "folder": "ecommerce-6",
+    "slug": "ecommerce-6",
+    "detected_brand": "frontend",
+    "registered_name": null
+  },
+  {
+    "category": "ecommerce",
+    "folder": "ecommerce-7",
+    "slug": "ecommerce-7",
+    "detected_brand": "Pink Delivery Universe - Delivered With Love",
+    "registered_name": null
+  },
+  {
+    "category": "ecommerce",
+    "folder": "ecommerce-8",
+    "slug": "ecommerce-8",
+    "detected_brand": "frontend",
+    "registered_name": null
+  },
+  {
+    "category": "ecommerce",
+    "folder": "ecommerce-9",
+    "slug": "ecommerce-9",
+    "detected_brand": "Ember & Olive - Restaurant Website Template",
+    "registered_name": null
+  },
+  {
+    "category": "education",
+    "folder": "education-1",
+    "slug": "education-1",
+    "detected_brand": "Skillora - Online Education & Learning Platform",
+    "registered_name": null
+  },
+  {
+    "category": "education",
+    "folder": "education-10",
+    "slug": "education-10",
+    "detected_brand": "EduLearn \u2014 Learn Today. Build Your Future.",
+    "registered_name": null
+  },
+  {
+    "category": "education",
+    "folder": "education-2",
+    "slug": "education-2",
+    "detected_brand": null,
+    "registered_name": null
+  },
+  {
+    "category": "education",
+    "folder": "education-3",
+    "slug": "education-3",
+    "detected_brand": null,
+    "registered_name": null
+  },
+  {
+    "category": "education",
+    "folder": "education-4",
+    "slug": "education-4",
+    "detected_brand": "StudyPress - Education & Courses Template",
+    "registered_name": null
+  },
+  {
+    "category": "education",
+    "folder": "education-5",
+    "slug": "education-5",
+    "detected_brand": "HarmonyFlow \u2014 Premium Music Education Academy & LMS",
+    "registered_name": null
+  },
+  {
+    "category": "education",
+    "folder": "education-6",
+    "slug": "education-6",
+    "detected_brand": "new-folder--2-",
+    "registered_name": null
+  },
+  {
+    "category": "education",
+    "folder": "education-7",
+    "slug": "education-7",
+    "detected_brand": "Westridge University \u2014 Excellence in Education Since 1892",
+    "registered_name": null
+  },
+  {
+    "category": "education",
+    "folder": "education-8",
+    "slug": "education-8",
+    "detected_brand": "AuraLearn \u2014 Premium Next-Gen Interactive EdTech Platform",
+    "registered_name": null
+  },
+  {
+    "category": "education",
+    "folder": "education-9",
+    "slug": "education-9",
+    "detected_brand": "MotionEdu - Premium Animated Education Platform",
+    "registered_name": null
+  },
+  {
+    "category": "events",
+    "folder": "events-1",
+    "slug": "events-1",
+    "detected_brand": "EVENTORA | Connect. Learn. Experience.",
+    "registered_name": null
+  },
+  {
+    "category": "events",
+    "folder": "events-10",
+    "slug": "events-10",
+    "detected_brand": "THUNDERCOURT CLASH 2026 | International Basketball Tournament",
+    "registered_name": null
+  },
+  {
+    "category": "events",
+    "folder": "events-2",
+    "slug": "events-2",
+    "detected_brand": "CYBERNEXUS 2026 \u2014 Global Technology & Intelligence Summit",
+    "registered_name": null
+  },
+  {
+    "category": "events",
+    "folder": "events-3",
+    "slug": "events-3",
+    "detected_brand": "VERTEX \u2014 Robotics & Quantum Tech Summit 2026",
+    "registered_name": null
+  },
+  {
+    "category": "events",
+    "folder": "events-4",
+    "slug": "events-4",
+    "detected_brand": "VORTEX FORGE FITNESS \u2014 IRON ASCENT 2026",
+    "registered_name": null
+  },
+  {
+    "category": "events",
+    "folder": "events-5",
+    "slug": "events-5",
+    "detected_brand": "AQUAVEXA AUTO SPA \u2014 Premium Car Wash, Detailing & Paint Studio",
+    "registered_name": null
+  },
+  {
+    "category": "events",
+    "folder": "events-6",
+    "slug": "events-6",
+    "detected_brand": "VELORA LIVE \u2014 MIDNIGHT ECHO 2026 | Feel The Sound. Own The Night.",
+    "registered_name": null
+  },
+  {
+    "category": "events",
+    "folder": "events-7",
+    "slug": "events-7",
+    "detected_brand": "VAYORA RUNFEST 2026 \u2014 Marathon Event | Chennai",
+    "registered_name": null
+  },
+  {
+    "category": "events",
+    "folder": "events-8",
+    "slug": "events-8",
+    "detected_brand": "NEXORA AFTERDARK 2026 \u2014 24-Hour Overnight Student Hackathon",
+    "registered_name": null
+  },
+  {
+    "category": "events",
+    "folder": "events-9",
+    "slug": "events-9",
+    "detected_brand": "AVELUNE VOWS \u2014 Olivia & Alexander Wedding | 18 December 2026",
+    "registered_name": null
+  },
+  {
+    "category": "hotel",
+    "folder": "hotel-1",
+    "slug": "hotel-1",
+    "detected_brand": "Aura Haven Resorts \u2014 Luxury Sanctuary Resort",
+    "registered_name": null
+  },
+  {
+    "category": "hotel",
+    "folder": "hotel-10",
+    "slug": "hotel-10",
+    "detected_brand": "Aetheria Haven Resorts \u2014 Weightless Luxury, Timeless Solitude",
+    "registered_name": null
+  },
+  {
+    "category": "hotel",
+    "folder": "hotel-2",
+    "slug": "hotel-2",
+    "detected_brand": "Aethelred Resort - Luxury Hotel & Lodging Template",
+    "registered_name": null
+  },
+  {
+    "category": "hotel",
+    "folder": "hotel-3",
+    "slug": "hotel-3",
+    "detected_brand": "Aurelia Velvet Obsidian Resort - Ultra-Luxury Sanctuary",
+    "registered_name": null
+  },
+  {
+    "category": "hotel",
+    "folder": "hotel-4",
+    "slug": "hotel-4",
+    "detected_brand": "Solitude Haven - Luxury Forest Sanctuary",
+    "registered_name": null
+  },
+  {
+    "category": "hotel",
+    "folder": "hotel-5",
+    "slug": "hotel-5",
+    "detected_brand": "Suara Ulu \u2014 Ultra-Luxury Wellness & Spa Resort",
+    "registered_name": null
+  },
+  {
+    "category": "hotel",
+    "folder": "hotel-6",
+    "slug": "hotel-6",
+    "detected_brand": "VillaBliss \u2014 Luxury Mediterranean Villa & Exclusive Resort",
+    "registered_name": null
+  },
+  {
+    "category": "hotel",
+    "folder": "hotel-7",
+    "slug": "hotel-7",
+    "detected_brand": "Aurelia Haven \u2014 Luxury Resort & Sanctuary",
+    "registered_name": null
+  },
+  {
+    "category": "hotel",
+    "folder": "hotel-8",
+    "slug": "hotel-8",
+    "detected_brand": "Ananthara Heritage Hotel | Luxury Mewari Palace Hotel, Udaipur",
+    "registered_name": null
+  },
+  {
+    "category": "hotel",
+    "folder": "hotel-9",
+    "slug": "hotel-9",
+    "detected_brand": "HavenLuxe Retreat & Sanctuary \u2014 Luxury Boutique Resort",
+    "registered_name": null
+  },
+  {
+    "category": "landing-page",
+    "folder": "landing-page-1",
+    "slug": "landing-page-1",
+    "detected_brand": "Ember & Olive - Restaurant Website Template",
+    "registered_name": "landing-page"
+  },
+  {
+    "category": "landing-page",
+    "folder": "landing-page-10",
+    "slug": "landing-page-10",
+    "detected_brand": "AURELIS \u2014 Build a stronger way of living",
+    "registered_name": "landing-page"
+  },
+  {
+    "category": "landing-page",
+    "folder": "landing-page-2",
+    "slug": "landing-page-2",
+    "detected_brand": "Busy Status Bar - Productivity Multi-Tool",
+    "registered_name": "landing-page"
+  },
+  {
+    "category": "landing-page",
+    "folder": "landing-page-3",
+    "slug": "landing-page-3",
+    "detected_brand": "ExquDrive - Luxury Automotive Experience",
+    "registered_name": "landing-page"
+  },
+  {
+    "category": "landing-page",
+    "folder": "landing-page-4",
+    "slug": "landing-page-4",
+    "detected_brand": "Flowzen \u2014 Turn Complex Work Into Simple Momentum",
+    "registered_name": "landing-page"
+  },
+  {
+    "category": "landing-page",
+    "folder": "landing-page-6",
+    "slug": "landing-page-6",
+    "detected_brand": "The Echoes of Tomorrow \u2014 A Novel by Mira Rowan | Lunara Press",
+    "registered_name": "landing-page"
+  },
+  {
+    "category": "landing-page",
+    "folder": "landing-page-7",
+    "slug": "landing-page-7",
+    "detected_brand": "Flowly AI - The Intelligent Workspace for Modern Teams",
+    "registered_name": "landing-page"
+  },
+  {
+    "category": "landing-page",
+    "folder": "landing-page-8",
+    "slug": "landing-page-8",
+    "detected_brand": "Vanta Studio \u2014 Creative Digital Agency",
+    "registered_name": "landing-page"
+  },
+  {
+    "category": "landing-page",
+    "folder": "landing-page-9",
+    "slug": "landing-page-9",
+    "detected_brand": "ExquDrive - Luxury Automotive Experience",
+    "registered_name": "landing-page"
+  },
+  {
+    "category": "onepage",
+    "folder": "onepage-1",
+    "slug": "onepage-1",
+    "detected_brand": "Ember & Olive - Restaurant Website Template",
+    "registered_name": null
+  },
+  {
+    "category": "onepage",
+    "folder": "onepage-10",
+    "slug": "onepage-10",
+    "detected_brand": "AETHERIA \u2014 Next-Gen Digital Product & Brand Agency",
+    "registered_name": null
+  },
+  {
+    "category": "onepage",
+    "folder": "onepage-2",
+    "slug": "onepage-2",
+    "detected_brand": "Asme \u2014 Innovation, Research & Design Studio",
+    "registered_name": null
+  },
+  {
+    "category": "onepage",
+    "folder": "onepage-3",
+    "slug": "onepage-3",
+    "detected_brand": null,
+    "registered_name": null
+  },
+  {
+    "category": "onepage",
+    "folder": "onepage-4",
+    "slug": "onepage-4",
+    "detected_brand": "AETHERIA \u2014 Next-Gen Digital Product & Brand Agency",
+    "registered_name": null
+  },
+  {
+    "category": "onepage",
+    "folder": "onepage-5",
+    "slug": "onepage-5",
+    "detected_brand": "Vertex \u2014 Business Solutions & Digital Transformation",
+    "registered_name": null
+  },
+  {
+    "category": "onepage",
+    "folder": "onepage-6",
+    "slug": "onepage-6",
+    "detected_brand": null,
+    "registered_name": null
+  },
+  {
+    "category": "onepage",
+    "folder": "onepage-7",
+    "slug": "onepage-7",
+    "detected_brand": "Fonix 3D Landing Page & PRD Studio",
+    "registered_name": null
+  },
+  {
+    "category": "onepage",
+    "folder": "onepage-8",
+    "slug": "onepage-8",
+    "detected_brand": "AI // HUMAN // MACHINE - 3D Interactive AI/ML Portfolio",
+    "registered_name": null
+  },
+  {
+    "category": "onepage",
+    "folder": "onepage-9",
+    "slug": "onepage-9",
+    "detected_brand": "Vertex \u2014 Business Solutions & Digital Transformation",
+    "registered_name": null
+  },
+  {
+    "category": "personal",
+    "folder": "personal-1",
+    "slug": "personal-1",
+    "detected_brand": "Julian Riviera Personal",
+    "registered_name": null
+  },
+  {
+    "category": "personal",
+    "folder": "personal-10",
+    "slug": "personal-10",
+    "detected_brand": "Arjun Dev - Full Stack Developer & UI/UX Enthusiast",
+    "registered_name": null
+  },
+  {
+    "category": "personal",
+    "folder": "personal-2",
+    "slug": "personal-2",
+    "detected_brand": "Arjun Mehta \u2014 AI Engineer Portfolio & Command Center",
+    "registered_name": null
+  },
+  {
+    "category": "personal",
+    "folder": "personal-3",
+    "slug": "personal-3",
+    "detected_brand": "THE STORYBOARD \u00b7 Siddharth Mehta \u00b7 Creative Developer Edition",
+    "registered_name": null
+  },
+  {
+    "category": "personal",
+    "folder": "personal-4",
+    "slug": "personal-4",
+    "detected_brand": "Soleil Premium Personal Portfolio",
+    "registered_name": null
+  },
+  {
+    "category": "personal",
+    "folder": "personal-5",
+    "slug": "personal-5",
+    "detected_brand": "Aetherius Experimental Digital Universe",
+    "registered_name": null
+  },
+  {
+    "category": "personal",
+    "folder": "personal-6",
+    "slug": "personal-6",
+    "detected_brand": "Living Digital Canvas \u2014 Animated Portfolio",
+    "registered_name": null
+  },
+  {
+    "category": "personal",
+    "folder": "personal-7",
+    "slug": "personal-7",
+    "detected_brand": "Alex Vance | Interactive 3D Creative Studio Portfolio",
+    "registered_name": null
+  },
+  {
+    "category": "personal",
+    "folder": "personal-8",
+    "slug": "personal-8",
+    "detected_brand": "frontend",
+    "registered_name": null
+  },
+  {
+    "category": "personal",
+    "folder": "personal-9",
+    "slug": "personal-9",
+    "detected_brand": "Arjun Mehta Personal",
+    "registered_name": null
+  },
+  {
+    "category": "photography",
+    "folder": "photography-1",
+    "slug": "photography-1",
+    "detected_brand": "SnapFolio \u2014 Dark Minimalist Portfolio",
+    "registered_name": null
+  },
+  {
+    "category": "photography",
+    "folder": "photography-10",
+    "slug": "photography-10",
+    "detected_brand": "Aether Studio \u2014 Fine Art Editorial Photography",
+    "registered_name": null
+  },
+  {
+    "category": "photography",
+    "folder": "photography-2",
+    "slug": "photography-2",
+    "detected_brand": "Photo \u2014 Editorial Photography Studio",
+    "registered_name": null
+  },
+  {
+    "category": "photography",
+    "folder": "photography-3",
+    "slug": "photography-3",
+    "detected_brand": "Lumi\u00e8re \u2014 High-End Wedding & Event Photography",
+    "registered_name": null
+  },
+  {
+    "category": "photography",
+    "folder": "photography-4",
+    "slug": "photography-4",
+    "detected_brand": "Eden Rose \u2014 Cinematic Luxury Wedding Portfolio",
+    "registered_name": null
+  },
+  {
+    "category": "photography",
+    "folder": "photography-5",
+    "slug": "photography-5",
+    "detected_brand": "Aura \u2014 Premium Fine Art Studio",
+    "registered_name": null
+  },
+  {
+    "category": "photography",
+    "folder": "photography-6",
+    "slug": "photography-6",
+    "detected_brand": "Kairo \u2014 Modern 3D Photography Portfolio",
+    "registered_name": null
+  },
+  {
+    "category": "photography",
+    "folder": "photography-7",
+    "slug": "photography-7",
+    "detected_brand": "Lume Studio \u2014 Fashion & Editorial Portfolio",
+    "registered_name": null
+  },
+  {
+    "category": "photography",
+    "folder": "photography-8",
+    "slug": "photography-8",
+    "detected_brand": "Sage & Shutter - Fine Art & Editorial Wedding Photography",
+    "registered_name": null
+  },
+  {
+    "category": "photography",
+    "folder": "photography-9",
+    "slug": "photography-9",
+    "detected_brand": "Blush Lens \u2014 Fine Art Wedding Photography",
+    "registered_name": null
+  },
+  {
+    "category": "portfolio",
+    "folder": "portfolio-1",
+    "slug": "portfolio-1",
+    "detected_brand": "Aethelgard \u2014 Minimalist Architecture Portfolio",
+    "registered_name": null
+  },
+  {
+    "category": "portfolio",
+    "folder": "portfolio-10",
+    "slug": "portfolio-10",
+    "detected_brand": "Sasha Grey Studio \u2014 Creative Director & Photographer",
+    "registered_name": null
+  },
+  {
+    "category": "portfolio",
+    "folder": "portfolio-2",
+    "slug": "portfolio-2",
+    "detected_brand": "Aiden Drake \u2014 Product Designer & Developer",
+    "registered_name": null
+  },
+  {
+    "category": "portfolio",
+    "folder": "portfolio-3",
+    "slug": "portfolio-3",
+    "detected_brand": "Sasha Grey \u2014 Creative Visual Director",
+    "registered_name": null
+  },
+  {
+    "category": "portfolio",
+    "folder": "portfolio-4",
+    "slug": "portfolio-4",
+    "detected_brand": "Clara Oswald \u2014 Minimalist UI Designer",
+    "registered_name": null
+  },
+  {
+    "category": "portfolio",
+    "folder": "portfolio-5",
+    "slug": "portfolio-5",
+    "detected_brand": "Evelyn Vance \u2014 Full-Stack Visual Architect",
+    "registered_name": null
+  },
+  {
+    "category": "portfolio",
+    "folder": "portfolio-6",
+    "slug": "portfolio-6",
+    "detected_brand": "Synthetix \u2014 Tech-Forward SaaS & Software Agency",
+    "registered_name": null
+  },
+  {
+    "category": "portfolio",
+    "folder": "portfolio-7",
+    "slug": "portfolio-7",
+    "detected_brand": "Jared Vance \u2014 Creative Director & Visual Designer",
+    "registered_name": null
+  },
+  {
+    "category": "portfolio",
+    "folder": "portfolio-8",
+    "slug": "portfolio-8",
+    "detected_brand": "Evelyn Oswald \u2014 Executive Assistant & Operations Director",
+    "registered_name": null
+  },
+  {
+    "category": "portfolio",
+    "folder": "portfolio-9",
+    "slug": "portfolio-9",
+    "detected_brand": "Sasha Grey \u2014 Minimalist Portrait & Commercial Photographer",
+    "registered_name": null
+  },
+  {
+    "category": "real-estate",
+    "folder": "real-estate-1",
+    "slug": "real-estate-1",
+    "detected_brand": "Estate Prime | Premium Real Estate Template",
+    "registered_name": "Real Estate"
+  },
+  {
+    "category": "real-estate",
+    "folder": "real-estate-10",
+    "slug": "real-estate-10",
+    "detected_brand": "Monument Estates | Premium Real Estate Template",
+    "registered_name": "Real Estate"
+  },
+  {
+    "category": "real-estate",
+    "folder": "real-estate-2",
+    "slug": "real-estate-2",
+    "detected_brand": "Urbanova | Premium Real Estate Template",
+    "registered_name": "Real Estate"
+  },
+  {
+    "category": "real-estate",
+    "folder": "real-estate-3",
+    "slug": "real-estate-3",
+    "detected_brand": "Luxora Estates | Premium Real Estate Template",
+    "registered_name": "Real Estate"
+  },
+  {
+    "category": "real-estate",
+    "folder": "real-estate-4",
+    "slug": "real-estate-4",
+    "detected_brand": "Skyline Collective | Premium Real Estate Template",
+    "registered_name": "Real Estate"
+  },
+  {
+    "category": "real-estate",
+    "folder": "real-estate-5",
+    "slug": "real-estate-5",
+    "detected_brand": "Terra Living | Premium Real Estate Template",
+    "registered_name": "Real Estate"
+  },
+  {
+    "category": "real-estate",
+    "folder": "real-estate-6",
+    "slug": "real-estate-6",
+    "detected_brand": "MetroHaus | Premium Real Estate Template",
+    "registered_name": "Real Estate"
+  },
+  {
+    "category": "real-estate",
+    "folder": "real-estate-7",
+    "slug": "real-estate-7",
+    "detected_brand": "Heritage Homes | Premium Real Estate Template",
+    "registered_name": "Real Estate"
+  },
+  {
+    "category": "real-estate",
+    "folder": "real-estate-8",
+    "slug": "real-estate-8",
+    "detected_brand": "Vertex Properties | Premium Real Estate Template",
+    "registered_name": "Real Estate"
+  },
+  {
+    "category": "real-estate",
+    "folder": "real-estate-9",
+    "slug": "real-estate-9",
+    "detected_brand": "Haven Realty | Premium Real Estate Template",
+    "registered_name": "Real Estate"
+  },
+  {
+    "category": "restaurant",
+    "folder": "restaurant-1",
+    "slug": "restaurant-1",
+    "detected_brand": "Ember House - Restaurant Template",
+    "registered_name": null
+  },
+  {
+    "category": "restaurant",
+    "folder": "restaurant-10",
+    "slug": "restaurant-10",
+    "detected_brand": "frontend",
+    "registered_name": null
+  },
+  {
+    "category": "restaurant",
+    "folder": "restaurant-2",
+    "slug": "restaurant-2",
+    "detected_brand": "Ember & Olive \u2014 Seasonal Food. Shared Moments.",
+    "registered_name": null
+  },
+  {
+    "category": "restaurant",
+    "folder": "restaurant-3",
+    "slug": "restaurant-3",
+    "detected_brand": "frontend",
+    "registered_name": null
+  },
+  {
+    "category": "restaurant",
+    "folder": "restaurant-4",
+    "slug": "restaurant-4",
+    "detected_brand": "CHENNAI \u2014 Contemporary Garden Restaurant",
+    "registered_name": null
+  },
+  {
+    "category": "restaurant",
+    "folder": "restaurant-5",
+    "slug": "restaurant-5",
+    "detected_brand": "Velora - Premium Restaurant Website Template",
+    "registered_name": null
+  },
+  {
+    "category": "restaurant",
+    "folder": "restaurant-6",
+    "slug": "restaurant-6",
+    "detected_brand": "frontend",
+    "registered_name": null
+  },
+  {
+    "category": "restaurant",
+    "folder": "restaurant-7",
+    "slug": "restaurant-7",
+    "detected_brand": "Masala Atelier \u2014 Modern Indian Fusion",
+    "registered_name": null
+  },
+  {
+    "category": "restaurant",
+    "folder": "restaurant-8",
+    "slug": "restaurant-8",
+    "detected_brand": "frontend",
+    "registered_name": null
+  },
+  {
+    "category": "restaurant",
+    "folder": "restaurant-9",
+    "slug": "restaurant-9",
+    "detected_brand": "Royal Tandoor - Fine Indian Dining Template",
+    "registered_name": null
+  },
+  {
+    "category": "resume",
+    "folder": "resume-1",
+    "slug": "resume-1",
+    "detected_brand": "Jordan Davis | Software Engineer & Full Stack Developer",
+    "registered_name": null
+  },
+  {
+    "category": "resume",
+    "folder": "resume-10",
+    "slug": "resume-10",
+    "detected_brand": "Elias Rowan \u2014 Film Director & Visual Storyteller",
+    "registered_name": null
+  },
+  {
+    "category": "resume",
+    "folder": "resume-2",
+    "slug": "resume-2",
+    "detected_brand": "Dr. Maya Ellison | Consultant Cardiologist",
+    "registered_name": null
+  },
+  {
+    "category": "resume",
+    "folder": "resume-3",
+    "slug": "resume-3",
+    "detected_brand": "Dr. Arin Solberg \u2014 Aerospace Systems Engineer | Portfolio & Resume",
+    "registered_name": null
+  },
+  {
+    "category": "resume",
+    "folder": "resume-4",
+    "slug": "resume-4",
+    "detected_brand": "Noah Everwood \u2014 Wildlife Photographer & Documentary Storyteller Portfolio",
+    "registered_name": null
+  },
+  {
+    "category": "resume",
+    "folder": "resume-5",
+    "slug": "resume-5",
+    "detected_brand": "Adrian Vale \u2014 Architect & Spatial Designer | Portfolio & CV",
+    "registered_name": null
+  },
+  {
+    "category": "resume",
+    "folder": "resume-6",
+    "slug": "resume-6",
+    "detected_brand": "Elena Marlowe | Creative Director & Brand Strategist",
+    "registered_name": null
+  },
+  {
+    "category": "resume",
+    "folder": "resume-7",
+    "slug": "resume-7",
+    "detected_brand": "Lucien Moreau \u2014 Executive Chef & Culinary Director",
+    "registered_name": null
+  },
+  {
+    "category": "resume",
+    "folder": "resume-8",
+    "slug": "resume-8",
+    "detected_brand": "Elara Voss \u2014 Fashion Designer & Creative Director | Berlin",
+    "registered_name": null
+  },
+  {
+    "category": "resume",
+    "folder": "resume-9",
+    "slug": "resume-9",
+    "detected_brand": "Dr. Mira Ellison \u2014 Behavioral Researcher & Psychology Professional",
+    "registered_name": null
+  },
+  {
+    "category": "transportation",
+    "folder": "transportation-1",
+    "slug": "transportation-1",
+    "detected_brand": "Voltway \u2014 Smart EV Transit & Logistics",
+    "registered_name": null
+  },
+  {
+    "category": "transportation",
+    "folder": "transportation-10",
+    "slug": "transportation-10",
+    "detected_brand": "Oceanlink \u2014 International Maritime Operations",
+    "registered_name": null
+  },
+  {
+    "category": "transportation",
+    "folder": "transportation-2",
+    "slug": "transportation-2",
+    "detected_brand": "Roadline \u2014 Modern Freight Operations",
+    "registered_name": null
+  },
+  {
+    "category": "transportation",
+    "folder": "transportation-3",
+    "slug": "transportation-3",
+    "detected_brand": "Fleetrise \u2014 Smart Fleet Intelligence & Analytics",
+    "registered_name": null
+  },
+  {
+    "category": "transportation",
+    "folder": "transportation-4",
+    "slug": "transportation-4",
+    "detected_brand": "Skyroute \u2014 Global Air Charter Systems",
+    "registered_name": null
+  },
+  {
+    "category": "transportation",
+    "folder": "transportation-5",
+    "slug": "transportation-5",
+    "detected_brand": "Citymove \u2014 Local Courier & Moving Solutions",
+    "registered_name": null
+  },
+  {
+    "category": "transportation",
+    "folder": "transportation-6",
+    "slug": "transportation-6",
+    "detected_brand": "Transitflow \u2014 Regional Supply Chain Management",
+    "registered_name": null
+  },
+  {
+    "category": "transportation",
+    "folder": "transportation-7",
+    "slug": "transportation-7",
+    "detected_brand": "Cargomax \u2014 Heavy Cargo & Shipping Enterprise",
+    "registered_name": null
+  },
+  {
+    "category": "transportation",
+    "folder": "transportation-8",
+    "slug": "transportation-8",
+    "detected_brand": "Rideora \u2014 Smart Urban Ride-Hailing Network",
+    "registered_name": null
+  },
+  {
+    "category": "transportation",
+    "folder": "transportation-9",
+    "slug": "transportation-9",
+    "detected_brand": "Railnova \u2014 Automated Rail Transit & Operations",
+    "registered_name": null
+  },
+  {
+    "category": "travels",
+    "folder": "travel-1",
+    "slug": "travel-1",
+    "detected_brand": "TRAVELVERSE \u2014 Your Journey Begins Here",
+    "registered_name": null
+  },
+  {
+    "category": "travels",
+    "folder": "travel-10",
+    "slug": "travel-10",
+    "detected_brand": "travel4",
+    "registered_name": null
+  },
+  {
+    "category": "travels",
+    "folder": "travel-2",
+    "slug": "travel-2",
+    "detected_brand": "frontend",
+    "registered_name": null
+  },
+  {
+    "category": "travels",
+    "folder": "travel-3",
+    "slug": "travel-3",
+    "detected_brand": "Roamify \u2014 Premium Tours & Travel Agency Website Template",
+    "registered_name": null
+  },
+  {
+    "category": "travels",
+    "folder": "travel-4",
+    "slug": "travel-4",
+    "detected_brand": "Travelverse \u2014 Global Travel & Tours Agency",
+    "registered_name": null
+  },
+  {
+    "category": "travels",
+    "folder": "travel-5",
+    "slug": "travel-5",
+    "detected_brand": "Roam & Wild | Travel & Adventure Tourism",
+    "registered_name": null
+  },
+  {
+    "category": "travels",
+    "folder": "travel-6",
+    "slug": "travel-6",
+    "detected_brand": "travel3",
+    "registered_name": null
+  },
+  {
+    "category": "travels",
+    "folder": "travel-7",
+    "slug": "travel-7",
+    "detected_brand": "Wanderlust Tales \u2014 Premium Travel & Adventure Blog",
+    "registered_name": null
+  },
+  {
+    "category": "travels",
+    "folder": "travel-8",
+    "slug": "travel-8",
+    "detected_brand": "AETHER YACHTS \u2014 Luxury Experience & Charters",
+    "registered_name": null
+  },
+  {
+    "category": "travels",
+    "folder": "travel-9",
+    "slug": "travel-9",
+    "detected_brand": "EXPLORIA \u2014 Premium Travel Company",
+    "registered_name": null
+  }
+]

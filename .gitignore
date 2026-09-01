@@ -1,0 +1,50 @@
+# Node packages and build outputs
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+build/
+dist/
+coverage/
+
+# Databases and large assets
+db-data/
+*.db
+*.log
+*.zip
+*.tar.gz
+
+# Backend Spring Boot compilation outputs and tools
+target/
+backend/target/
+.mvn/
+.maven/
+*.class
+.factorypath
+
+# Environment files
+.env*
+!.env.example
+
+# IDE & OS configurations
+.DS_Store
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.settings/
+.project
+.classpath
+.gemini/
+.agents/
+bin/
+**/out/
+**/dist/
+**/node_modules/
+
+
+# Never commit Restaurant templates
+templates/restaurant-1/
+templates/restaurant/ember-and-olive/
+frontend/public/templates/restaurant/ember-and-olive/
