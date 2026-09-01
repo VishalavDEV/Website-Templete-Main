@@ -422,6 +422,7 @@ function RedirectToStaticTemplate() {
 
 function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLogin, handleLogout }) {
   const location = useLocation();
+  const pathSegments = location.pathname.split('/').filter(Boolean);
   const isTemplateRoute = 
     location.pathname === '/hotel-template' ||
     (location.pathname.startsWith('/templates/') && 
