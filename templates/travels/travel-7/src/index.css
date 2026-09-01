@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', sans-serif;
+  --font-display: 'Montserrat', sans-serif;
+  --color-accent: #FF7F50;
+  --color-accent-hover: #E06F45;
+  --color-charcoal: #1E293B;
+  --color-dusty: #FFB399;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fdfaf7;
+}
+::-webkit-scrollbar-thumb {
+  background: #f1e3db;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF7F50;
+}
+
+html {
+  scroll-behavior: smooth;
+}

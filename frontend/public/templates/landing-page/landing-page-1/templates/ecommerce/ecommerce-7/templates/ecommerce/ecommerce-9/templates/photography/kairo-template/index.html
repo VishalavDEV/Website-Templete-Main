@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kairo — Modern Photography Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    // Self-executing responsive preview switcher logic
+    (function() {
+      const isPlatform = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const isTop = window.self === window.top;
+      const urlParams = new URLSearchParams(window.location.search);
+      const isIframe = urlParams.get('iframe') === 'true';
+      
+      if (isPlatform && isTop && !isIframe) {
+        document.documentElement.style.visibility = 'hidden';
+        
+        window.addEventListener('DOMContentLoaded', () => {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.searchParams.set('iframe', 'true');
+          
+          const body = document.body;
+          body.innerHTML = '';
+          body.style.margin = '0';
+          body.style.padding = '0';
+          body.style.height = '100vh';
+          body.style.width = '100vw';
+          body.style.display = 'flex';
+          body.style.flexDirection = 'column';
+          body.style.overflow = 'hidden';
+          body.style.backgroundColor = '#f1f5f9';
+          
+          const topBar = document.createElement('div');
+          topBar.id = 'technosprint-preview-header';
+          topBar.style.height = '64px';
+          topBar.style.background = '#ffffff';
+          topBar.style.borderBottom = '1px solid #e2e8f0';
+          topBar.style.display = 'flex';
+          topBar.style.alignItems = 'center';
+          topBar.style.justifyContent = 'space-between';
+          topBar.style.padding = '0 24px';
+          topBar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+          topBar.style.fontFamily = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+          topBar.style.zIndex = '99999';
+          topBar.style.position = 'relative';
+          topBar.style.boxSizing = 'border-box';
+          
+          const logoDiv = document.createElement('div');
+          logoDiv.innerHTML = `
+            <a href="/templates" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" />
+            </a>
+          `;
+          topBar.appendChild(logoDiv);
+          
+          const centerDiv = document.createElement('div');
+          centerDiv.style.display = 'flex';
+          centerDiv.style.alignItems = 'center';
+          centerDiv.style.gap = '8px';
+          centerDiv.innerHTML = `
+            <button id="view-desktop" style="
+              background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              Desktop
+            </button>
+            <button id="view-tablet" style="
+              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Tablet
+            </button>
+            <button id="view-mobile" style="
+              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Mobile
+            </button>
+          `;
+          topBar.appendChild(centerDiv);
+          
+          const rightDiv = document.createElement('div');
+          const pathParts = window.location.pathname.split('/');
+          const templateSlug = pathParts[pathParts.length - 2] || 'kairo-template';
+          
+          rightDiv.innerHTML = `
+            <a id="download-btn-header" href="/templates/${templateSlug}?action=download" style="
+              background: #0066ff;
+              color: #ffffff;
+              text-decoration: none;
+              font-size: 0.85rem;
+              font-weight: 600;
+              padding: 10px 20px;
+              border-radius: 99px;
+              box-shadow: 0 4px 12px rgba(0, 102, 255, 0.15);
+              transition: all 0.2s ease-in-out;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              letter-spacing: 0.5px;
+              box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download Template
+            </a>
+          `;
+          topBar.appendChild(rightDiv);
+          topBar.appendChild(rightDiv);
+          body.appendChild(topBar);
+          
+          const iframeContainer = document.createElement('div');
+          iframeContainer.style.flex = '1';
+          iframeContainer.style.display = 'flex';
+          iframeContainer.style.alignItems = 'center';
+          iframeContainer.style.justifyContent = 'center';
+          iframeContainer.style.background = '#f1f5f9';
+          iframeContainer.style.padding = '20px';
+          iframeContainer.style.boxSizing = 'border-box';
+          iframeContainer.style.overflow = 'hidden';
+          
+          const iframe = document.createElement('iframe');
+          iframe.id = 'preview-iframe';
+          iframe.src = currentUrl.toString();
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.border = 'none';
+          iframe.style.borderRadius = '12px';
+          iframe.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+          iframe.style.background = '#ffffff';
+          iframe.style.transition = 'width 0.3s ease, height 0.3s ease';
+          
+          iframeContainer.appendChild(iframe);
+          body.appendChild(iframeContainer);
+          
+          const btnDesktop = centerDiv.querySelector('#view-desktop');
+          const btnTablet = centerDiv.querySelector('#view-tablet');
+          const btnMobile = centerDiv.querySelector('#view-mobile');
+          
+          const setButtonActive = (activeBtn) => {
+            [btnDesktop, btnTablet, btnMobile].forEach(btn => {
+              btn.style.background = '#ffffff';
+              btn.style.color = '#475569';
+              btn.style.borderColor = '#e2e8f0';
+              btn.style.fontWeight = '500';
+            });
+            activeBtn.style.background = '#eff6ff';
+            activeBtn.style.color = '#1e40af';
+            activeBtn.style.borderColor = '#bfdbfe';
+            activeBtn.style.fontWeight = '600';
+          };
+          
+          btnDesktop.addEventListener('click', () => {
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            setButtonActive(btnDesktop);
+          });
+          btnTablet.addEventListener('click', () => {
+            iframe.style.width = '768px';
+            iframe.style.height = '95%';
+            setButtonActive(btnTablet);
+          });
+          btnMobile.addEventListener('click', () => {
+            iframe.style.width = '375px';
+            iframe.style.height = '90%';
+            setButtonActive(btnMobile);
+          });
+          
+          document.documentElement.style.visibility = 'visible';
+        });
+      }
+    })();
+  </script>
+</head>
+<body>
+  <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+  <script>
+    (function() {
+      const isPlatform = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const isTop = window.self === window.top;
+      const urlParams = new URLSearchParams(window.location.search);
+      const isIframe = urlParams.get('iframe') === 'true';
+      
+      if (isPlatform && isTop && !isIframe) {
+        document.documentElement.style.visibility = 'hidden';
+        
+        window.addEventListener('DOMContentLoaded', () => {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.searchParams.set('iframe', 'true');
+          
+          const body = document.body;
+          body.innerHTML = '';
+          body.style.margin = '0';
+          body.style.padding = '0';
+          body.style.height = '100vh';
+          body.style.width = '100vw';
+          body.style.display = 'flex';
+          body.style.flexDirection = 'column';
+          body.style.overflow = 'hidden';
+          body.style.backgroundColor = '#f1f5f9';
+          
+          // Build Top Bar
+          const topBar = document.createElement('div');
+          topBar.id = 'technosprint-preview-header';
+          topBar.style.height = '64px';
+          topBar.style.background = '#ffffff';
+          topBar.style.borderBottom = '1px solid #e2e8f0';
+          topBar.style.display = 'flex';
+          topBar.style.alignItems = 'center';
+          topBar.style.justifyContent = 'space-between';
+          topBar.style.padding = '0 24px';
+          topBar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+          topBar.style.fontFamily = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+          topBar.style.zIndex = '99999';
+          topBar.style.position = 'relative';
+          topBar.style.boxSizing = 'border-box';
+          
+          // Left side logo
+          const logoDiv = document.createElement('div');
+          logoDiv.innerHTML = '<a href="/templates" style="display: flex; align-items: center; text-decoration: none;"><img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" /></a>';
+          topBar.appendChild(logoDiv);
+          
+          // Center Template Name
+          const titleDiv = document.createElement('div');
+          titleDiv.style.fontWeight = '600';
+          titleDiv.style.fontSize = '0.9rem';
+          titleDiv.style.color = '#334155';
+          titleDiv.innerText = '< ' + (document.title || 'Template Preview') + ' >';
+          topBar.appendChild(titleDiv);
+          
+          // Right view switcher buttons
+          const rightDiv = document.createElement('div');
+          rightDiv.style.display = 'flex';
+          rightDiv.style.alignItems = 'center';
+          rightDiv.style.gap = '8px';
+          rightDiv.innerHTML = '' +
+            '<button id="view-desktop" style="' +
+            '  background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;' +
+            '  padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;' +
+            '  cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;' +
+            '  outline: none; box-sizing: border-box;' +
+            '">' +
+            '  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>' +
+            '  Desktop' +
+            '</button>' +
+            '<button id="view-tablet" style="' +
+            '  background: #ffffff; color: #475569; border: 1px solid #e2e8f0;' +
+            '  padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;' +
+            '  cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;' +
+            '  outline: none; box-sizing: border-box;' +
+            '">' +
+            '  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>' +
+            '  Tablet' +
+            '</button>' +
+            '<button id="view-mobile" style="' +
+            '  background: #ffffff; color: #475569; border: 1px solid #e2e8f0;' +
+            '  padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;' +
+            '  cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;' +
+            '  outline: none; box-sizing: border-box;' +
+            '">' +
+            '  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>' +
+            '  Mobile' +
+            '</button>';
+          topBar.appendChild(rightDiv);
+          body.appendChild(topBar);
+          
+          // Create Iframe Container
+          const iframeContainer = document.createElement('div');
+          iframeContainer.style.flex = '1';
+          iframeContainer.style.display = 'flex';
+          iframeContainer.style.alignItems = 'center';
+          iframeContainer.style.justifyContent = 'center';
+          iframeContainer.style.background = '#f1f5f9';
+          iframeContainer.style.padding = '20px';
+          iframeContainer.style.boxSizing = 'border-box';
+          iframeContainer.style.overflow = 'hidden';
+          
+          const iframe = document.createElement('iframe');
+          iframe.id = 'preview-iframe';
+          iframe.src = currentUrl.toString();
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.border = 'none';
+          iframe.style.borderRadius = '12px';
+          iframe.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+          iframe.style.background = '#ffffff';
+          iframe.style.transition = 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+          
+          iframeContainer.appendChild(iframe);
+          body.appendChild(iframeContainer);
+          
+          // Interactivity
+          const btnDesktop = body.querySelector('#view-desktop');
+          const btnTablet = body.querySelector('#view-tablet');
+          const btnMobile = body.querySelector('#view-mobile');
+          
+          let activeMode = 'desktop';
+          
+          function setView(mode) {
+            activeMode = mode;
+            [btnDesktop, btnTablet, btnMobile].forEach(btn => {
+              btn.style.background = '#ffffff';
+              btn.style.color = '#475569';
+              btn.style.borderColor = '#e2e8f0';
+              btn.style.fontWeight = '500';
+            });
+            
+            if (mode === 'desktop') {
+              btnDesktop.style.background = '#eff6ff';
+              btnDesktop.style.color = '#1e40af';
+              btnDesktop.style.borderColor = '#bfdbfe';
+              btnDesktop.style.fontWeight = '600';
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+              iframe.style.borderRadius = '12px';
+              iframe.style.border = 'none';
+            } else if (mode === 'tablet') {
+              btnTablet.style.background = '#eff6ff';
+              btnTablet.style.color = '#1e40af';
+              btnTablet.style.borderColor = '#bfdbfe';
+              btnTablet.style.fontWeight = '600';
+              iframe.style.width = '768px';
+              iframe.style.height = '1024px';
+              iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '24px';
+              iframe.style.border = '12px solid #0f172a';
+            } else if (mode === 'mobile') {
+              btnMobile.style.background = '#eff6ff';
+              btnMobile.style.color = '#1e40af';
+              btnMobile.style.borderColor = '#bfdbfe';
+              btnMobile.style.fontWeight = '600';
+              iframe.style.width = '375px';
+              iframe.style.height = '667px';
+              iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '32px';
+              iframe.style.border = '14px solid #0f172a';
+            }
+          }
+          
+          btnDesktop.addEventListener('click', () => setView('desktop'));
+          btnTablet.addEventListener('click', () => setView('tablet'));
+          btnMobile.addEventListener('click', () => setView('mobile'));
+          
+          const btns = [
+            { btn: btnDesktop, mode: 'desktop' },
+            { btn: btnTablet, mode: 'tablet' },
+            { btn: btnMobile, mode: 'mobile' }
+          ];
+          
+          btns.forEach(item => {
+            item.btn.addEventListener('mouseenter', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#f8fafc';
+                item.btn.style.borderColor = '#cbd5e1';
+              }
+            });
+            item.btn.addEventListener('mouseleave', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#ffffff';
+                item.btn.style.borderColor = '#e2e8f0';
+              }
+            });
+          });
+          
+          document.documentElement.style.visibility = 'visible';
+        });
+      }
+    })();
+  </script>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">Kairo</a>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="social-icons">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero 3D Abstract Canvas Section -->
+  <section id="home" class="hero">
+    <div class="hero-canvas-overlay">
+      <!-- Interactive CSS Aperture Graphics / Standalone fallback particles -->
+      <div class="aperture-sculpture">
+        <div class="outer-ring"></div>
+        <div class="inner-ring"></div>
+        <div class="core-lens"></div>
+      </div>
+    </div>
+    <div class="hero-content">
+      <span class="sub">Fashion & Lifestyle Photography</span>
+      <h1>DOCUMENTING<br>ROMANTIC VISIONS</h1>
+      <p>An editorial narrative of quiet connections, geometric architectures, and boutique, raw portraiture.</p>
+    </div>
+    
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="line"></div>
+    </div>
+  </section>
+
+  <!-- Work / Gallery Grid -->
+  <section id="work" class="gallery">
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Work 1">
+        <div class="item-overlay">
+          <span class="cat">Fashion / Color</span>
+          <h4>VOGUE Editorial — Portrait of Clara</h4>
+        </div>
+      </div>
+      <div class="grid-item">
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80" alt="Work 2">
+        <div class="item-overlay">
+          <span class="cat">Editorial / Monochromatic</span>
+          <h4>Sartorial Elegance — B&W Studio</h4>
+        </div>
+      </div>
+      <div class="grid-item">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Work 3">
+        <div class="item-overlay">
+          <span class="cat">Lifestyle / Color</span>
+          <h4>Summer Horizon — Amalfi Coast</h4>
+        </div>
+      </div>
+      <div class="grid-item">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80" alt="Work 4">
+        <div class="item-overlay">
+          <span class="cat">High Fashion / Color</span>
+          <h4>Neon Reverie — Couture Collection</h4>
+        </div>
+      </div>
+      <div class="grid-item">
+        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80" alt="Work 5">
+        <div class="item-overlay">
+          <span class="cat">Portrait / Monochromatic</span>
+          <h4>Quiet Gazes — Studio Portraiture</h4>
+        </div>
+      </div>
+      <div class="grid-item">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80" alt="Work 6">
+        <div class="item-overlay">
+          <span class="cat">Fine Art / Monochromatic</span>
+          <h4>Drape & Shadows — Fine Art</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Bio -->
+  <section id="about" class="about">
+    <div class="about-container">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=800&q=80" alt="Kairo">
+      </div>
+      <div class="about-info">
+        <span class="label">Available for assignments worldwide</span>
+        <h2>Hello, I am Kairo.<br>A Fashion & Lifestyle Photographer based in London, UK.</h2>
+        <p>My work is defined by a deep appreciation for geometric compositions, high-contrast natural light, and the raw, quiet chemistry between subject and lens. By combining high-fashion editorial aesthetics with contemporary lifestyle storytelling, I aim to create cinematic captures that linger in the mind.</p>
+        <p>Over the past decade, I have collaborated with leading publications and boutique couture labels across Milan, Paris, New York, and Tokyo. When not on assignment, you can find me exploring street geometry or lecturing on visual narratives.</p>
+        <a href="#contact" class="btn">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <div class="services-container">
+      <div class="sec-header">
+        <span class="label">Services</span>
+        <h2>Creative Assignment Domains</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="num">01</span>
+          <h3>Fashion & Editorial</h3>
+          <p>Editorial lookbooks, high-fashion magazine features, and campaign design with a cinematic approach.</p>
+        </div>
+        <div class="service-card">
+          <span class="num">02</span>
+          <h3>Commercial Lifestyle</h3>
+          <p>Brand storytelling, contemporary lifestyle portfolios, and outdoor product placement sessions.</p>
+        </div>
+        <div class="service-card">
+          <span class="num">03</span>
+          <h3>Boutique Portraiture</h3>
+          <p>Fine art studio portraiture, black and white artistic silhouettes, and modeling portfolio sessions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="contact-container">
+      <div class="contact-left">
+        <span class="label">Contact</span>
+        <h2>Initiate a Creative Project</h2>
+        <p>For assignments, representation, image licensing, or general inquiries, please fill out the form or reach out directly via email.</p>
+        <div class="details">
+          <div>
+            <span>Studio Email</span>
+            <p>inquiries@kairo.com</p>
+          </div>
+          <div>
+            <span>Representation</span>
+            <p>represent@keene-agency.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form id="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your inquiry was sent successfully.');">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" required placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" required placeholder="Enter your email address">
+          </div>
+          <div class="form-group">
+            <label>Project Details</label>
+            <textarea required rows="4" placeholder="Describe your project, dates, and concepts..."></textarea>
+          </div>
+          <button type="submit">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <span class="brand">Kairo Photography</span>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <span class="copy">&copy; 2026 Kairo. All rights reserved.</span>
+    </div>
+  </footer>
+</body>
+</html>

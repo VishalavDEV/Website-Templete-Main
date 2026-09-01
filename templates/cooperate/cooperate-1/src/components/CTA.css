@@ -1,0 +1,106 @@
+.luxury-cta-section {
+  position: relative;
+  padding: clamp(7rem, 12vw, 11rem) 0;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-subtle);
+  overflow: hidden;
+  text-align: center;
+}
+
+.cta-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.cta-radial-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(200, 169, 107, 0.22) 0%, rgba(226, 201, 141, 0.04) 55%, transparent 75%);
+  filter: blur(90px);
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+.cta-grid-mesh {
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(244, 240, 232, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(244, 240, 232, 0.03) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at 50% 50%, black 20%, transparent 80%);
+}
+
+.cta-floating-pip {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent);
+}
+
+.pip-1 {
+  top: 30%;
+  left: 15%;
+}
+
+.pip-2 {
+  bottom: 25%;
+  right: 18%;
+  background: var(--color-sage);
+  box-shadow: 0 0 14px var(--color-sage);
+}
+
+.luxury-cta-container {
+  max-width: 880px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.luxury-cta-title {
+  font-size: clamp(2.6rem, 5vw, 4.6rem);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.75rem;
+}
+
+.luxury-cta-description {
+  font-size: clamp(1.1rem, 1.3vw, 1.3rem);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 3.5rem;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.luxury-cta-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-main-btn {
+  padding: 1.15rem 2.75rem;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 640px) {
+  .luxury-cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .luxury-cta-actions .btn {
+    width: 100%;
+  }
+}

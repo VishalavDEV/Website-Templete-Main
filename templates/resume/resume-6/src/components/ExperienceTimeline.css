@@ -1,0 +1,234 @@
+/* ================================================================
+   ExperienceTimeline.css — scoped under .em-portfolio
+   ================================================================ */
+
+.em-portfolio .em-experience {
+  background: var(--em-ivory);
+  border-top: 1px solid var(--em-gray-border-light);
+}
+
+.em-portfolio .em-experience__header {
+  margin-bottom: clamp(3rem, 6vh, 5rem);
+  max-width: 700px;
+}
+
+.em-portfolio .em-experience__title {
+  font-family: var(--em-font-serif);
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--em-charcoal);
+  letter-spacing: -0.02em;
+  margin-top: 1.5rem;
+}
+
+.em-portfolio .em-experience__title em {
+  font-style: italic;
+  color: var(--em-burgundy);
+}
+
+.em-portfolio .em-experience__timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Experience Item ── */
+.em-portfolio .em-exp-item {
+  padding: 3rem 0;
+}
+
+.em-portfolio .em-exp-item + .em-exp-item {
+  border-top: 1px solid var(--em-gray-border-light);
+}
+
+.em-portfolio .em-exp-item:hover {
+  background: var(--em-white);
+  margin: 0 -2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  transition: background 0.3s ease;
+}
+
+.em-portfolio .em-exp-item__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.em-portfolio .em-exp-item__period {
+  font-family: var(--em-font-sans);
+  font-size: 0.75rem;
+  color: var(--em-gray-mid);
+  letter-spacing: 0.05em;
+}
+
+.em-portfolio .em-exp-item__body {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 3rem;
+  margin-top: 1.5rem;
+  align-items: start;
+}
+
+.em-portfolio .em-exp-item__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 0.5rem;
+}
+
+.em-portfolio .em-exp-item__year-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.em-portfolio .em-exp-item__year {
+  font-family: var(--em-font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 700;
+  color: var(--em-charcoal);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.em-portfolio .em-exp-item__year:last-child {
+  color: var(--em-gray-light);
+}
+
+.em-portfolio .em-exp-item__vline {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--em-charcoal), transparent);
+  margin-top: 0.75rem;
+  margin-left: 2px;
+}
+
+.em-portfolio .em-exp-item__right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.em-portfolio .em-exp-item__role-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.em-portfolio .em-exp-item__role {
+  font-family: var(--em-font-serif);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 600;
+  color: var(--em-charcoal);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.em-portfolio .em-exp-item__company-block {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.em-portfolio .em-exp-item__company {
+  font-family: var(--em-font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--em-burgundy);
+  letter-spacing: 0.02em;
+}
+
+.em-portfolio .em-exp-item__desc {
+  line-height: 1.75;
+  max-width: 600px;
+}
+
+.em-portfolio .em-exp-item__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--em-gray-border);
+  padding: 0 0 2px;
+  cursor: pointer;
+  font-family: var(--em-font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--em-charcoal);
+  width: fit-content;
+  transition: color var(--em-transition-fast), border-color var(--em-transition-fast);
+}
+
+.em-portfolio .em-exp-item__toggle:hover {
+  color: var(--em-burgundy);
+  border-color: var(--em-burgundy);
+}
+
+.em-portfolio .em-exp-item__toggle-icon {
+  transition: transform var(--em-transition-mid);
+}
+
+.em-portfolio .em-exp-item__toggle-icon--open {
+  transform: rotate(180deg);
+}
+
+.em-portfolio .em-exp-item__achievements {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.em-portfolio .em-exp-item__achievements--open {
+  max-height: 300px;
+}
+
+.em-portfolio .em-exp-item__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1rem;
+}
+
+.em-portfolio .em-exp-item__list-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.em-portfolio .em-exp-item__bullet {
+  color: var(--em-burgundy);
+  font-weight: 500;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .em-portfolio .em-exp-item__body {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .em-portfolio .em-exp-item__left {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+  .em-portfolio .em-exp-item__year-block {
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+  .em-portfolio .em-exp-item__year { font-size: 1.5rem; }
+  .em-portfolio .em-exp-item__year:last-child::before { content: '— '; }
+  .em-portfolio .em-exp-item__vline { display: none; }
+  .em-portfolio .em-exp-item:hover {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

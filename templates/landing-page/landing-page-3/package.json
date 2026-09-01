@@ -1,0 +1,11 @@
+{
+  "name": "exqudrive-luxury-cars",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "node build.js",
+    "preview": "npm --prefix frontend run preview"
+  }
+}

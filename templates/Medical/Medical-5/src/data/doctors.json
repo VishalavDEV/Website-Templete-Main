@@ -1,0 +1,262 @@
+[
+  {
+    "id": "doc-1",
+    "name": "Dr. Maya Raman",
+    "title": "Consultant Cardiologist & Heart Rhythm Specialist",
+    "specialtyId": "cardiology",
+    "specialtyName": "Cardiology",
+    "experienceYears": 14,
+    "rating": 4.9,
+    "reviewCount": 128,
+    "location": "Aura Medical Pavilion, West Wing",
+    "locationId": "loc-central",
+    "availability": "Available Today",
+    "isAvailableToday": true,
+    "gender": "female",
+    "consultationTypes": ["in-person", "video"],
+    "fee": 180,
+    "image": "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=600&q=80",
+    "bio": "Dr. Maya Raman brings 14 years of clinical excellence in non-invasive cardiology and preventative heart wellness. She focuses on early cardiovascular risk biomarker assessment and tailored lifestyle optimization.",
+    "education": ["MD in Cardiology, Johns Hopkins University", "Fellowship in Cardiac Electrophysiology, Stanford Medicine", "BS in Neuroscience, MIT"],
+    "languages": ["English", "Hindi", "French"],
+    "awards": ["Excellence in Preventative Cardiology 2024", "Clinical Research Fellow Award 2021"],
+    "slots": [
+      {
+        "date": "2026-08-24",
+        "times": ["09:00 AM", "10:30 AM", "01:30 PM", "03:00 PM", "04:30 PM"]
+      },
+      {
+        "date": "2026-08-25",
+        "times": ["09:30 AM", "11:00 AM", "02:00 PM", "03:30 PM"]
+      },
+      {
+        "date": "2026-08-26",
+        "times": ["10:00 AM", "01:00 PM", "04:00 PM"]
+      }
+    ]
+  },
+  {
+    "id": "doc-2",
+    "name": "Dr. Julian Sterling",
+    "title": "Senior Neurologist & Cognitive Health Lead",
+    "specialtyId": "neurology",
+    "specialtyName": "Neurology",
+    "experienceYears": 18,
+    "rating": 4.95,
+    "reviewCount": 164,
+    "location": "Aura Neuro Science Center, Level 4",
+    "locationId": "loc-central",
+    "availability": "Available Today",
+    "isAvailableToday": true,
+    "gender": "male",
+    "consultationTypes": ["in-person", "video"],
+    "fee": 220,
+    "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80",
+    "bio": "Dr. Julian Sterling is a recognized specialist in neurovascular health, migraine pathophysiology, and neuroplasticity. His practice emphasizes empathetic care paired with cutting-edge 3T MRI mapping.",
+    "education": ["MD in Neurology, Harvard Medical School", "Residency in Clinical Neurophysiology, Brigham and Women's", "BSc in Biochemistry, Oxford"],
+    "languages": ["English", "German"],
+    "awards": ["Top Neurologist Recognition 2025", "Neuroscience Innovator Grant 2022"],
+    "slots": [
+      {
+        "date": "2026-08-24",
+        "times": ["10:00 AM", "11:30 AM", "02:30 PM", "04:00 PM"]
+      },
+      {
+        "date": "2026-08-25",
+        "times": ["09:00 AM", "01:30 PM", "03:00 PM"]
+      }
+    ]
+  },
+  {
+    "id": "doc-3",
+    "name": "Dr. Elena Rostova",
+    "title": "Dermatologist & Cellular Skin Health Specialist",
+    "specialtyId": "dermatology",
+    "specialtyName": "Dermatology",
+    "experienceYears": 11,
+    "rating": 4.88,
+    "reviewCount": 95,
+    "location": "Aura Aesthetic & Skin Suite, Floor 2",
+    "locationId": "loc-uptown",
+    "availability": "Available Tomorrow",
+    "isAvailableToday": false,
+    "gender": "female",
+    "consultationTypes": ["in-person", "video"],
+    "fee": 160,
+    "image": "https://images.unsplash.com/photo-1594824813590-78a7c2937748?auto=format&fit=crop&w=600&q=80",
+    "bio": "Dr. Elena Rostova specializes in non-invasive skin barrier restoration, high-resolution digital dermoscopy, and personalized anti-inflammatory dermatological protocols.",
+    "education": ["MD, Yale School of Medicine", "Dermatology Residency, NYU Langone", "Fellowship in Cutaneous Biology, Charité Berlin"],
+    "languages": ["English", "Russian", "Spanish"],
+    "awards": ["Dermatology Excellence Award 2023", "Young Investigator Prize 2020"],
+    "slots": [
+      {
+        "date": "2026-08-25",
+        "times": ["10:00 AM", "11:30 AM", "02:00 PM", "03:30 PM", "05:00 PM"]
+      },
+      {
+        "date": "2026-08-26",
+        "times": ["09:00 AM", "10:30 AM", "01:00 PM"]
+      }
+    ]
+  },
+  {
+    "id": "doc-4",
+    "name": "Dr. Aaron Brooks",
+    "title": "Orthopedic Surgeon & Sports Recovery Director",
+    "specialtyId": "orthopedics",
+    "specialtyName": "Orthopedics & Joint Care",
+    "experienceYears": 16,
+    "rating": 4.92,
+    "reviewCount": 142,
+    "location": "Aura Sports & Spine Clinic, Level 1",
+    "locationId": "loc-uptown",
+    "availability": "Available Today",
+    "isAvailableToday": true,
+    "gender": "male",
+    "consultationTypes": ["in-person"],
+    "fee": 200,
+    "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80",
+    "bio": "Dr. Aaron Brooks treats athletes and active individuals seeking minimally invasive joint restoration, biomechanical alignment, and accelerated regenerative protocols.",
+    "education": ["MD, Columbia University Vagelos College of Physicians", "Orthopedic Surgery Residency, Hospital for Special Surgery (HSS)"],
+    "languages": ["English"],
+    "awards": ["Sports Medicine Clinician of the Year 2024"],
+    "slots": [
+      {
+        "date": "2026-08-24",
+        "times": ["11:00 AM", "01:30 PM", "03:30 PM"]
+      },
+      {
+        "date": "2026-08-25",
+        "times": ["09:30 AM", "11:00 AM", "02:30 PM", "04:00 PM"]
+      }
+    ]
+  },
+  {
+    "id": "doc-5",
+    "name": "Dr. Sophia Chen-Vance",
+    "title": "Lead Preventive Physician & Executive Wellness Advisor",
+    "specialtyId": "general-medicine",
+    "specialtyName": "General & Preventive Medicine",
+    "experienceYears": 12,
+    "rating": 4.96,
+    "reviewCount": 210,
+    "location": "Aura Executive Wellness Lounge, Floor 3",
+    "locationId": "loc-central",
+    "availability": "Available Today",
+    "isAvailableToday": true,
+    "gender": "female",
+    "consultationTypes": ["in-person", "video"],
+    "fee": 170,
+    "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
+    "bio": "Dr. Sophia Chen-Vance combines precision biomarker telemetry, preventative cardiology checks, and nutritional longevity planning to help patients thrive.",
+    "education": ["MD in Internal Medicine, UCSF School of Medicine", "Masters in Public Health (MPH), UC Berkeley"],
+    "languages": ["English", "Mandarin"],
+    "awards": ["Patient-Centered Care Champion 2025", "Holistic Wellness Pioneer 2023"],
+    "slots": [
+      {
+        "date": "2026-08-24",
+        "times": ["09:00 AM", "10:00 AM", "11:00 AM", "01:30 PM", "03:00 PM", "04:30 PM"]
+      },
+      {
+        "date": "2026-08-25",
+        "times": ["09:30 AM", "11:00 AM", "02:00 PM"]
+      }
+    ]
+  },
+  {
+    "id": "doc-6",
+    "name": "Dr. Tariq Al-Mansoor",
+    "title": "Consultant Psychiatrist & Integrative Mental Health",
+    "specialtyId": "mental-wellness",
+    "specialtyName": "Mental Wellness & Psychiatry",
+    "experienceYears": 15,
+    "rating": 4.93,
+    "reviewCount": 118,
+    "location": "Aura Serenity Pavilion, East Garden",
+    "locationId": "loc-gardens",
+    "availability": "Available Tomorrow",
+    "isAvailableToday": false,
+    "gender": "male",
+    "consultationTypes": ["in-person", "video"],
+    "fee": 190,
+    "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80",
+    "bio": "Dr. Tariq Al-Mansoor provides a safe, calming sanctuary for stress resilience, burnout alleviation, sleep architecture optimization, and evidence-based psychotherapy.",
+    "education": ["MD in Psychiatry, King's College London", "Cognitive Behavioral Therapy Specialization, Oxford Cognitive Therapy Centre"],
+    "languages": ["English", "Arabic"],
+    "awards": ["Mental Health Advocacy Award 2024"],
+    "slots": [
+      {
+        "date": "2026-08-25",
+        "times": ["10:30 AM", "01:00 PM", "02:30 PM", "04:00 PM"]
+      },
+      {
+        "date": "2026-08-26",
+        "times": ["09:00 AM", "11:30 AM", "03:00 PM"]
+      }
+    ]
+  },
+  {
+    "id": "doc-7",
+    "name": "Dr. Camilla Larsson",
+    "title": "Consultant Gynecologist & Women's Endocrine Health",
+    "specialtyId": "womens-health",
+    "specialtyName": "Women's Health & Gynecology",
+    "experienceYears": 13,
+    "rating": 4.91,
+    "reviewCount": 156,
+    "location": "Aura Maternal & Women's Suite",
+    "locationId": "loc-central",
+    "availability": "Next Available: Mon",
+    "isAvailableToday": false,
+    "gender": "female",
+    "consultationTypes": ["in-person", "video"],
+    "fee": 185,
+    "image": "https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=600&q=80",
+    "bio": "Dr. Camilla Larsson is dedicated to holistic women's health throughout all life stages, offering gentle, comprehensive gynecological examinations and endocrine support.",
+    "education": ["MD, Karolinska Institute", "Fellowship in Reproductive Endocrinology, McGill University"],
+    "languages": ["English", "Swedish", "German"],
+    "awards": ["Women's Health Innovator 2023"],
+    "slots": [
+      {
+        "date": "2026-08-26",
+        "times": ["09:00 AM", "10:30 AM", "01:30 PM", "03:30 PM"]
+      },
+      {
+        "date": "2026-08-27",
+        "times": ["10:00 AM", "11:30 AM", "02:00 PM"]
+      }
+    ]
+  },
+  {
+    "id": "doc-8",
+    "name": "Dr. Nathan K. Vance",
+    "title": "Consultant Endocrinologist & Metabolic Scientist",
+    "specialtyId": "endocrinology",
+    "specialtyName": "Endocrinology & Metabolism",
+    "experienceYears": 17,
+    "rating": 4.89,
+    "reviewCount": 89,
+    "location": "Aura Metabolic Center, Floor 2",
+    "locationId": "loc-gardens",
+    "availability": "Available Today",
+    "isAvailableToday": true,
+    "gender": "male",
+    "consultationTypes": ["in-person", "video"],
+    "fee": 195,
+    "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80",
+    "bio": "Dr. Nathan Vance specializes in thyroid optimization, continuous glucose telemetry, hormone modulation, and sustainable metabolic vitality.",
+    "education": ["MD, Northwestern Feinberg School of Medicine", "Endocrinology Fellowship, Mayo Clinic"],
+    "languages": ["English"],
+    "awards": ["Distinguished Endocrine Researcher 2024"],
+    "slots": [
+      {
+        "date": "2026-08-24",
+        "times": ["10:00 AM", "01:30 PM", "03:30 PM"]
+      },
+      {
+        "date": "2026-08-25",
+        "times": ["09:00 AM", "11:00 AM", "02:00 PM"]
+      }
+    ]
+  }
+]

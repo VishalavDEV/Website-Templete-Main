@@ -1,0 +1,399 @@
+/* Traditional Indian Heritage - Marwar Rasoi */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+.seafood-container {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #faf6f0; /* Traditional Warm Beige */
+  color: #3f2a1d; /* Deep Earthy Brown */
+}
+
+.seafood-font-accent {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* Colors: Maroon (#7c1524), Muted Gold (#d4af37), Palace Cream (#faf6f0), Charcoal Brown (#2d1b11) */
+
+/* Hero */
+.seafood-hero {
+  background: linear-gradient(rgba(45, 27, 17, 0.75), rgba(45, 27, 17, 0.8)), url('https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=1600&q=80') no-repeat center center;
+  background-size: cover;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  border-bottom: 3px solid #d4af37;
+}
+
+.seafood-hero-content {
+  max-width: 800px;
+  color: #ffffff;
+}
+
+.seafood-badge {
+  background-color: #d4af37;
+  color: #2d1b11;
+  padding: 6px 18px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.seafood-hero-title {
+  font-size: 3.5rem;
+  line-height: 1.15;
+  margin-bottom: 25px;
+  color: white;
+}
+
+.seafood-btn-accent {
+  background-color: #a81d34; /* Brighter Maroon */
+  color: white;
+  padding: 12px 28px;
+  font-weight: 700;
+  border: 1px solid #d4af37;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.seafood-btn-accent:hover {
+  background-color: #c92a46; /* Brighter hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(168, 29, 52, 0.4);
+}
+
+.seafood-nav-link {
+  color: #faf6f0 !important; /* Palace Cream */
+  text-decoration: none;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.seafood-nav-link:hover {
+  color: #ffb703 !important; /* Gold hover */
+}
+
+.seafood-btn-outline {
+  background-color: transparent;
+  color: white;
+  padding: 12px 28px;
+  font-weight: 700;
+  border: 1.5px solid #d4af37;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.seafood-btn-outline:hover {
+  background-color: #d4af37;
+  color: #2d1b11;
+  transform: translateY(-2px);
+}
+
+/* Sections */
+.seafood-section-padding {
+  padding: 90px 20px;
+}
+
+.seafood-section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.seafood-section-title {
+  font-size: 2.8rem;
+  color: #7c1524;
+  text-transform: uppercase;
+  margin: 0;
+  position: relative;
+}
+
+.seafood-section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: #d4af37;
+  margin: 15px auto 0 auto;
+}
+
+/* Category Tabs */
+.seafood-menu-category-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.seafood-menu-category-btn {
+  background: white;
+  border: 1px solid rgba(212,175,55,0.3);
+  color: #3f2a1d;
+  padding: 10px 22px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  font-family: 'Cinzel', serif;
+}
+
+.seafood-menu-category-btn.active, .seafood-menu-category-btn:hover {
+  background-color: #7c1524;
+  color: white;
+  border-color: #7c1524;
+}
+
+/* Menu Grid Card */
+.seafood-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.seafood-menu-card {
+  background: white;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 24px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.seafood-menu-card:hover {
+  border-color: #d4af37;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(124, 21, 36, 0.05);
+}
+
+.seafood-menu-img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .seafood-menu-card {
+    flex-direction: column !important;
+  }
+  .seafood-menu-img {
+    width: 100% !important;
+    height: 160px !important;
+  }
+}
+
+.seafood-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px dashed rgba(212, 175, 55, 0.25);
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.seafood-menu-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #7c1524;
+}
+
+.seafood-menu-price {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #d4af37;
+}
+
+.seafood-menu-desc {
+  font-size: 0.88rem;
+  color: #6c5445;
+  line-height: 1.6;
+  margin: 0 0 15px 0;
+}
+
+/* Cart side drawer */
+.seafood-cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 420px;
+  height: 100%;
+  background: white;
+  box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+  transition: right 0.3s ease;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+}
+
+.seafood-cart-drawer.open {
+  right: 0;
+}
+
+.seafood-cart-header {
+  padding: 24px;
+  background: #7c1524;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Cinzel', serif;
+}
+
+.seafood-cart-body {
+  padding: 24px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.seafood-cart-footer {
+  padding: 24px;
+  background: #fdfbf7;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.seafood-cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(212,175,55,0.1);
+}
+
+/* Table reservation Boarding Pass */
+.seafood-boarding-pass {
+  background: white;
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  display: grid;
+  grid-template-columns: 1.2fr 2.8fr;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .seafood-boarding-pass {
+    grid-template-columns: 1fr;
+  }
+}
+
+.seafood-boarding-stub {
+  background: #7c1524;
+  color: white;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 1.5px dashed #d4af37;
+}
+
+.seafood-boarding-stub-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: #d4af37;
+}
+
+.seafood-boarding-form-body {
+  padding: 40px;
+  background: #faf6f0;
+}
+
+.seafood-form-control {
+  padding: 12px 16px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: white;
+  font-family: inherit;
+  color: #3f2a1d;
+}
+
+.seafood-form-control:focus {
+  outline: 1.5px solid #7c1524;
+}
+
+/* Modals */
+.seafood-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1300;
+}
+
+.seafood-modal-content {
+  background: white;
+  padding: 35px;
+  border-radius: 4px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  border: 1px solid #d4af37;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.seafood-whatsapp-btn {
+  background-color: #15803d;
+  color: white;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-weight: 700;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+/* Navbar Alignment Styles */
+.casual-navbar {
+  backdrop-filter: blur(8px);
+  padding: 16px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.casual-nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.seafood-nav-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
+  color: #fce8eb;
+}
+.seafood-nav-link:hover {
+  color: #d4af37;
+}

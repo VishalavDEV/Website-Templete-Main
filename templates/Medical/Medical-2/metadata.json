@@ -1,0 +1,6 @@
+{
+  "name": "Medicio Healthcare",
+  "description": "A customized, comprehensive healthcare web platform with interactive appointment booking, doctor directory, department catalog, service scopes, and patient portal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

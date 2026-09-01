@@ -1,0 +1,98 @@
+/* Responsive Layout Adjustments */
+@media (max-width: 1024px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .mobile-hamburger {
+    display: flex;
+  }
+
+  .stats-banner-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 0;
+  }
+
+  .scoreboard-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .team-score-box.left,
+  .team-score-box.right {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .bracket-wrapper {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .hero-event-name {
+    font-size: 3.5rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.2rem;
+  }
+
+  .stats-banner-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .live-match-banner {
+    padding: 20px 16px;
+  }
+
+  .score-digit {
+    font-size: 3.2rem;
+    padding: 8px 16px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    width: 100%;
+  }
+
+  .countdown-grid {
+    gap: 10px;
+  }
+
+  .countdown-unit {
+    min-width: 55px;
+  }
+
+  .countdown-number {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-title {
+    font-size: 1.3rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.7rem;
+  }
+
+  .stat-number {
+    font-size: 2.8rem;
+  }
+
+  .container {
+    padding: 0 14px;
+  }
+}

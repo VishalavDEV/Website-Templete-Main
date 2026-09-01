@@ -1,0 +1,233 @@
+[
+  {
+    "id": "fn-001",
+    "slug": "7-things-scientists-just-learned-about-whales",
+    "title": "7 Things Scientists Just Learned About Whales",
+    "category": "wildlife",
+    "categoryName": "WILDLIFE",
+    "author": {
+      "id": "author-julian-reyes",
+      "name": "Julian Reyes",
+      "role": "Wildlife Ethologist",
+      "bio": "Investigating high-canopy predator acoustics and cetacean dialect networks.",
+      "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 21,
+      "location": "Manaus, Brazil"
+    },
+    "date": "September 14, 2026",
+    "readingTime": "5 min read",
+    "image": "https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=1200&q=85",
+    "imageAlt": "Humpback whale breaching off the coast of Alaska in misty ocean light",
+    "summary": "Recent bioacoustic breakthroughs reveal syntax, generational cultural transmission, and regional dialects across sperm whale and humpback clans.",
+    "keyPoints": [
+      "Sperm whales use rhythmic click sequences called 'codas' with combinatorial grammar.",
+      "Clans maintain distinct cultural traditions in hunting techniques that persist for over 80 years.",
+      "Vocal dialects allow unfamiliar pods to identify kin and friendly territory across 3,000 miles of open sea.",
+      "Deep diving physiological sensors show conscious metabolic regulation before 1,000m descents.",
+      "Mothers lower vocal amplitudes to a 'whisper' in predator-dense calving corridors.",
+      "Cetacean play behaviors include coordinated bubble-ring sculptures shared with juveniles.",
+      "Baleen isotopic ratios now preserve decadal environmental ocean temperature logs."
+    ],
+    "content": "For centuries, the ocean was presumed to be a silent abyss punctuated only by waves and wind. Today, arrays of autonomous hydrophones deployed across ocean basins have shattered that assumption. Scientists are decoding an intricate acoustic tapestry: sperm whales do not merely communicate; they converse in discrete phonetic bursts governed by phonetic rules that rival early human proto-languages. Furthermore, these communicative codes are not genetically hardwired—they are taught, modulated, and culturally inherited through matriarchal lineages.",
+    "location": "Dominica Oceanic Trench"
+  },
+  {
+    "id": "fn-002",
+    "slug": "why-deserts-arent-really-empty",
+    "title": "Why Deserts Aren't Really Empty",
+    "category": "planet",
+    "categoryName": "PLANET",
+    "author": {
+      "id": "author-marcus-thorne",
+      "name": "Marcus Thorne",
+      "role": "Expedition Photojournalist",
+      "bio": "Documenting isolated biomes and arid wilderness.",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 24,
+      "location": "Geneva / Field Bureau"
+    },
+    "date": "September 10, 2026",
+    "readingTime": "4 min read",
+    "image": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=85",
+    "imageAlt": "Dune ridges in the Namib desert illuminated by golden evening sun",
+    "summary": "Beneath arid sands lies a vast cryptobiotic crust of cyanobacteria, lichens, and nocturnal survivors adapted to hyper-efficiency.",
+    "keyPoints": [
+      "Biological soil crusts bind billions of tons of loose sand and fix atmospheric nitrogen.",
+      "Fog-harvesting beetles and subterranean reptiles generate condensation with microscopic dermal nano-grooves.",
+      "Deep root systems tap subterranean fossil aquifers dating back to the Pleistocene.",
+      "Seeds can remain dormant in dry sand for over 150 years waiting for a single 15-minute rainfall."
+    ],
+    "content": "To the untrained traveler flying overhead, the hyper-arid deserts appear as barren expanses of dead sand and jagged granite. But place your hand upon the soil and examine the micro-topography: you are looking at biological soil crusts, living communities of cyanobacteria, mosses, and fungi that hold the soil together and metabolize water vapor directly from dawn fog.",
+    "location": "Namib-Naukluft, Namibia"
+  },
+  {
+    "id": "fn-003",
+    "slug": "the-strange-sound-of-the-deep-ocean",
+    "title": "The Strange Sound of the Deep Ocean",
+    "category": "science",
+    "categoryName": "SCIENCE",
+    "author": {
+      "id": "author-elena-vance",
+      "name": "Dr. Elena Vance",
+      "role": "Chief Science Editor",
+      "bio": "Submersible expedition leader and deep-sea researcher.",
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 18,
+      "location": "Woods Hole Oceanographic Institution"
+    },
+    "date": "September 06, 2026",
+    "readingTime": "6 min read",
+    "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+    "imageAlt": "Deep underwater marine lights illuminating ethereal sea creatures",
+    "summary": "In the SOFAR acoustic channel, sounds travel thousands of miles through pressure and temperature layers, creating a global planetary hum.",
+    "keyPoints": [
+      "The SOFAR channel acts as an underwater oceanic optical fiber for acoustic waves.",
+      "Icebergs calving in Antarctica can be heard in the central Indian Ocean via low-frequency rumble.",
+      "Abyssal fish produce resonant hums using sonic muscles around their swim bladders.",
+      "Hydrothermal vent boiling and tectonic micro-fracturing create an ambient harmonic background."
+    ],
+    "content": "At a depth between 600 and 1,200 meters lies the Sound Fixing and Ranging (SOFAR) channel. Here, the unique confluence of temperature and hydrostatic pressure causes sound waves to continually refract back into the layer rather than dispersing into the open sea. Low-frequency rumbles—from tectonic fractures to the calls of blue whales—travel uninterrupted for over four thousand miles.",
+    "location": "Mariana Trench Abyssal Station"
+  },
+  {
+    "id": "fn-004",
+    "slug": "what-happens-inside-a-volcano",
+    "title": "What Happens Inside a Volcano Between Eruptions?",
+    "category": "planet",
+    "categoryName": "PLANET",
+    "author": {
+      "id": "author-kai-nordstrom",
+      "name": "Kai Nordström",
+      "role": "Geophysicist",
+      "bio": "Volcanology and seismic mapping specialist.",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 16,
+      "location": "Tromsø, Norway"
+    },
+    "date": "August 28, 2026",
+    "readingTime": "5 min read",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85",
+    "imageAlt": "Lava glow beneath rugged volcanic crater rim at twilight",
+    "summary": "Magma chambers are not giant liquid cauldrons, but sponge-like crystalline mushes undergoing constant geochemical metamorphism.",
+    "keyPoints": [
+      "Magma storage consists of 'crystal mushes' that remain 80% solid for thousands of years.",
+      "Gas pulses of sulfur dioxide and carbon dioxide trigger rapid remelting within weeks of an eruption.",
+      "Muon tomography allows scientists to X-ray the volcanic interior using cosmic rays from deep space.",
+      "Micro-earthquakes map the slow inflation and drainage of magma feeder dikes."
+    ],
+    "content": "Classic textbooks portrayed magma chambers as giant underground swimming pools of orange liquid rock. Modern seismic tomography and petrological analysis show a far more complex reality: volcanic reservoirs are dense 'crystal mushes' resembling frozen slushies, where melt resides in the tiny pore spaces between mineral grains until new hot gas surges from the mantle.",
+    "location": "Kilauea Caldera Observatory"
+  },
+  {
+    "id": "fn-005",
+    "slug": "how-trees-warn-each-other",
+    "title": "How Forests Communicate Across Fungal Networks",
+    "category": "wildlife",
+    "categoryName": "WILDLIFE",
+    "author": {
+      "id": "author-julian-reyes",
+      "name": "Julian Reyes",
+      "role": "Wildlife Ethologist",
+      "bio": "Botany and forest ecology researcher.",
+      "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 21,
+      "location": "Manaus, Brazil"
+    },
+    "date": "August 20, 2026",
+    "readingTime": "4 min read",
+    "image": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=85",
+    "imageAlt": "Sunbeams piercing through a dense temperate rainforest canopy",
+    "summary": "Mycorrhizal networks channel carbon, nitrogen, and hormonal defensive signals between mother trees and saplings in old-growth forests.",
+    "keyPoints": [
+      "Mycorrhizal hyphae connect dozens of distinct tree species into a single metabolic web.",
+      "Insect attacks trigger electrical and volatile chemical defense warnings across the network.",
+      "Dying trees dump remaining carbon stores into neighboring saplings through fungal conduits."
+    ],
+    "content": "An old-growth forest is not a battlefield of competing individual trees, but a cooperative super-organism linked by subterranean mycorrhizal fungal threads. When aphids attack a Douglas fir, neighboring birch trees begin producing tannin repellent compounds within hours—notified via subterranean mycelial signaling.",
+    "location": "Olympic National Forest, Washington"
+  },
+  {
+    "id": "fn-006",
+    "slug": "the-quantum-sense-of-migrating-birds",
+    "title": "The Quantum Magnetic Sense of Migrating Birds",
+    "category": "science",
+    "categoryName": "SCIENCE",
+    "author": {
+      "id": "author-sarah-al-mansoor",
+      "name": "Dr. Sarah Al-Mansoor",
+      "role": "Biophysicist",
+      "bio": "Quantum biology and avian navigational systems.",
+      "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 14,
+      "location": "Atacama Large Millimeter Array"
+    },
+    "date": "August 12, 2026",
+    "readingTime": "5 min read",
+    "image": "https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=1200&q=85",
+    "imageAlt": "Flock of migratory birds in flight against sunset sky",
+    "summary": "Cryptochrome proteins in avian retinas exploit quantum entanglement to literally visualize Earth's invisible magnetic field lines.",
+    "keyPoints": [
+      "Cryptochrome-4 protein undergoes light-activated radical pair electron spin entanglement.",
+      "Birds perceive magnetic vector fields as subtle patterns of light and dark overlaid on their vision.",
+      "Quantum coherence is maintained at biological body temperatures for tens of microseconds."
+    ],
+    "content": "European robins navigate thousands of miles across featureless terrain not merely by stars, but by utilizing cryptochrome-4 proteins located in their eyes. Blue photon strikes trigger a radical pair electron spin state that is sensitive to the inclination angle of Earth's magnetic lines, overlaying a navigational grid across the bird's optical field.",
+    "location": "Heligoland Ornithological Station"
+  },
+  {
+    "id": "fn-007",
+    "slug": "the-oldest-continuous-flame-on-earth",
+    "title": "The Oldest Continuous Natural Flames on Earth",
+    "category": "history",
+    "categoryName": "HISTORY",
+    "author": {
+      "id": "author-amara-okafor",
+      "name": "Amara Okafor",
+      "role": "Anthropological Archaeologist",
+      "bio": "Geoarchaeology and ancient fire sanctuaries.",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 12,
+      "location": "Lagos & Oxford"
+    },
+    "date": "August 05, 2026",
+    "readingTime": "4 min read",
+    "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=85",
+    "imageAlt": "Ancient stone temple ruins at golden hour",
+    "summary": "From Turkey's Yanartas gas vents to Australia's Burning Mountain coal seam, subterranean flames have shaped mythology for millennia.",
+    "keyPoints": [
+      "Mount Chimaera in Turkey has burned uninterrupted for over 2,500 years fueled by deep serpentinized methane.",
+      "Australia's Burning Mountain has smoldered 30 meters underground for an estimated 6,000 years.",
+      "Ancient sailors used natural coastal gas fires as the world's earliest natural lighthouses."
+    ],
+    "content": "High on the rocky slopes of Mount Chimaera in southwestern Turkey, dozens of small fires burn continuously from crevices in the serpentine rocks. Fueled by abiogenic methane escaping deep crustal vents, these eternal flames inspired Homer's mythological fire-breathing beast and the earliest Zoroastrian fire temples.",
+    "location": "Olympos National Park, Turkey"
+  },
+  {
+    "id": "fn-008",
+    "slug": "why-stars-twinkle-and-planets-shine-steady",
+    "title": "The Physics of Twinkling Stars and Steady Planets",
+    "category": "space",
+    "categoryName": "SPACE",
+    "author": {
+      "id": "author-sarah-al-mansoor",
+      "name": "Dr. Sarah Al-Mansoor",
+      "role": "Astrophysicist",
+      "bio": "Atmospheric optics and observational cosmology.",
+      "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 14,
+      "location": "Atacama Large Millimeter Array"
+    },
+    "date": "July 28, 2026",
+    "readingTime": "4 min read",
+    "image": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1200&q=85",
+    "imageAlt": "Crystalline night sky filled with stars and Milky Way galaxy over silhouettes of mountains",
+    "summary": "Atmospheric scintillation affects point-source stellar light rays while planetary discs average out thermal air pockets.",
+    "keyPoints": [
+      "Stars are so distant they behave as infinitesimal optical point sources sensitive to every air pocket.",
+      "Planets have measurable angular diameters that average out micro-refractions across their disc.",
+      "Adaptive optics mirrors deform thousands of times per second to cancel atmospheric scintillation."
+    ],
+    "content": "When you gaze at the night sky, stars sparkle and shift color in rapid pulses—a phenomenon astronomers call atmospheric scintillation. Because stars are light-years away, their incoming light arrives as a single ray that gets refracted by turbulent cells of warm and cold air in our atmosphere. Planets, by contrast, appear as small discs that average out the disturbance into a steady glow.",
+    "location": "Cerro Paranal Observatory, Atacama"
+  }
+]

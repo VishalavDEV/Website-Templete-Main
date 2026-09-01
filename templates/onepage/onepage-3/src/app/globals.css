@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-nye-light: #F3F4F3;
+  --color-nye-dark: #110814;
+  --color-nye-teal: #3C575B;
+  --color-nye-orange: #B6702F;
+  --color-nye-purple: #452099;
+  --color-nye-navy: #141C5D;
+  --color-nye-mauve: #B4ADB6;
+  --color-nye-violet: #8E559B;
+
+  --font-sans: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+:root {
+  --background: #F3F4F3;
+  --foreground: #110814;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #110814;
+    --foreground: #F3F4F3;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom noise overlay to match the premium editorial feel */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.025;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

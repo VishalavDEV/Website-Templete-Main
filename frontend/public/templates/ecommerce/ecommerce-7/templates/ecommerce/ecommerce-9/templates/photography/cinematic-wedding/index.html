@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eden Rose — Cinematic Luxury Wedding Photography</title>
+  
+  <!-- FontAwesome & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-[#f5f4f1] font-sans selection:bg-[#c5a880] selection:text-black overflow-x-hidden">
+
+  <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+  <script>
+    (function() {
+      const isPlatform = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const isTop = window.self === window.top;
+      const urlParams = new URLSearchParams(window.location.search);
+      const isIframe = urlParams.get('iframe') === 'true';
+      
+      if (isPlatform && isTop && !isIframe) {
+        document.documentElement.style.visibility = 'hidden';
+        
+        window.addEventListener('DOMContentLoaded', () => {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.searchParams.set('iframe', 'true');
+          
+          const body = document.body;
+          body.innerHTML = '';
+          body.style.margin = '0';
+          body.style.padding = '0';
+          body.style.height = '100vh';
+          body.style.width = '100vw';
+          body.style.display = 'flex';
+          body.style.flexDirection = 'column';
+          body.style.overflow = 'hidden';
+          body.style.backgroundColor = '#f1f5f9';
+          
+          // Build Top Bar (White background, Blue branding elements)
+          const topBar = document.createElement('div');
+          topBar.id = 'technosprint-preview-header';
+          topBar.style.height = '64px';
+          topBar.style.background = '#ffffff';
+          topBar.style.borderBottom = '1px solid #e2e8f0';
+          topBar.style.display = 'flex';
+          topBar.style.alignItems = 'center';
+          topBar.style.justifyContent = 'space-between';
+          topBar.style.padding = '0 24px';
+          topBar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+          topBar.style.fontFamily = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+          topBar.style.zIndex = '99999';
+          topBar.style.position = 'relative';
+          topBar.style.boxSizing = 'border-box';
+          
+          // Left side logo
+          const logoDiv = document.createElement('div');
+          logoDiv.innerHTML = `
+            <a href="/templates" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" />
+            </a>
+          `;
+          topBar.appendChild(logoDiv);
+          
+          // Center view switcher buttons
+          const centerDiv = document.createElement('div');
+          centerDiv.style.display = 'flex';
+          centerDiv.style.alignItems = 'center';
+          centerDiv.style.gap = '8px';
+          centerDiv.innerHTML = `
+            <button id="view-desktop" style="
+              background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              Desktop
+            </button>
+            <button id="view-tablet" style="
+              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Tablet
+            </button>
+            <button id="view-mobile" style="
+              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Mobile
+            </button>
+          `;
+          topBar.appendChild(centerDiv);
+          
+          const rightDiv = document.createElement('div');
+          const pathParts = window.location.pathname.split('/');
+          const templateSlug = pathParts[pathParts.length - 2] || 'wedding-template';
+          
+          rightDiv.innerHTML = `
+            <a id="download-btn-header" href="/templates/${templateSlug}?action=download" style="
+              background: #0066ff;
+              color: #ffffff;
+              text-decoration: none;
+              font-size: 0.85rem;
+              font-weight: 600;
+              padding: 10px 20px;
+              border-radius: 99px;
+              box-shadow: 0 4px 12px rgba(0, 102, 255, 0.15);
+              transition: all 0.2s ease-in-out;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              letter-spacing: 0.5px;
+              box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download Template
+            </a>
+          `;
+          topBar.appendChild(rightDiv);
+          
+          body.appendChild(topBar);
+          
+          // Create Iframe Container
+          const iframeContainer = document.createElement('div');
+          iframeContainer.style.flex = '1';
+          iframeContainer.style.display = 'flex';
+          iframeContainer.style.alignItems = 'center';
+          iframeContainer.style.justifyContent = 'center';
+          iframeContainer.style.background = '#f1f5f9';
+          iframeContainer.style.padding = '20px';
+          iframeContainer.style.boxSizing = 'border-box';
+          iframeContainer.style.overflow = 'hidden';
+          
+          const iframe = document.createElement('iframe');
+          iframe.id = 'preview-iframe';
+          iframe.src = currentUrl.toString();
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.border = 'none';
+          iframe.style.borderRadius = '12px';
+          iframe.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+          iframe.style.background = '#ffffff';
+          iframe.style.transition = 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+          
+          iframeContainer.appendChild(iframe);
+          body.appendChild(iframeContainer);
+          
+          // Interactivity
+          const btnDesktop = body.querySelector('#view-desktop');
+          const btnTablet = body.querySelector('#view-tablet');
+          const btnMobile = body.querySelector('#view-mobile');
+          
+          let activeMode = 'desktop';
+          
+          function setView(mode) {
+            activeMode = mode;
+            [btnDesktop, btnTablet, btnMobile].forEach(btn => {
+              btn.style.background = '#ffffff';
+              btn.style.color = '#475569';
+              btn.style.borderColor = '#e2e8f0';
+              btn.style.fontWeight = '500';
+            });
+            
+            if (mode === 'desktop') {
+              btnDesktop.style.background = '#eff6ff';
+              btnDesktop.style.color = '#1e40af';
+              btnDesktop.style.borderColor = '#bfdbfe';
+              btnDesktop.style.fontWeight = '600';
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+            } else if (mode === 'tablet') {
+              btnTablet.style.background = '#eff6ff';
+              btnTablet.style.color = '#1e40af';
+              btnTablet.style.borderColor = '#bfdbfe';
+              btnTablet.style.fontWeight = '600';
+              iframe.style.width = '768px';
+              iframe.style.height = '1024px';
+              iframe.style.maxHeight = '100%';
+            } else if (mode === 'mobile') {
+              btnMobile.style.background = '#eff6ff';
+              btnMobile.style.color = '#1e40af';
+              btnMobile.style.borderColor = '#bfdbfe';
+              btnMobile.style.fontWeight = '600';
+              iframe.style.width = '375px';
+              iframe.style.height = '667px';
+              iframe.style.maxHeight = '100%';
+            }
+          }
+          
+          btnDesktop.addEventListener('click', () => setView('desktop'));
+          btnTablet.addEventListener('click', () => setView('tablet'));
+          btnMobile.addEventListener('click', () => setView('mobile'));
+          
+          const btns = [
+            { btn: btnDesktop, mode: 'desktop' },
+            { btn: btnTablet, mode: 'tablet' },
+            { btn: btnMobile, mode: 'mobile' }
+          ];
+          
+          btns.forEach(item => {
+            item.btn.addEventListener('mouseenter', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#f8fafc';
+                item.btn.style.borderColor = '#cbd5e1';
+              }
+            });
+            item.btn.addEventListener('mouseleave', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#ffffff';
+                item.btn.style.borderColor = '#e2e8f0';
+              }
+            });
+          });
+          
+          document.documentElement.style.visibility = 'visible';
+        });
+      }
+    })();
+  </script>
+
+
+  <!-- Preloader Intro Curtain -->
+  <div id="preloader" class="fixed inset-0 bg-[#0a0a0a] z-50 flex flex-col items-center justify-center transition-transform duration-1000 ease-[cubic-bezier(0.76,0,0.24,1)]">
+    <div class="flex flex-col items-center space-y-4">
+      <div class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center relative">
+        <span class="text-sm uppercase tracking-widest text-[#c5a880]">ER</span>
+        <div class="absolute inset-0 rounded-full border-t border-[#c5a880] animate-spin"></div>
+      </div>
+      <span class="text-xs uppercase tracking-[0.4em] text-neutral-400 mt-4">EDEN ROSE</span>
+    </div>
+  </div>
+
+  <!-- Custom Cursor element -->
+  <div id="custom-cursor" class="hidden md:block"></div>
+
+  <!-- Sticky Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-40 py-8 transition-all duration-500 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center space-x-3 group">
+        <span class="text-xl md:text-2xl font-serif tracking-widest text-[#f5f4f1] group-hover:scale-105 duration-500 transition-transform">
+          EDEN ROSE
+        </span>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center space-x-12">
+        <a href="#" class="text-[10px] uppercase tracking-[0.35em] text-white">Home</a>
+        <a href="#portfolio" class="text-[10px] uppercase tracking-[0.35em] text-neutral-400 hover:text-white transition-colors duration-300">Portfolio</a>
+        <a href="#about" class="text-[10px] uppercase tracking-[0.35em] text-neutral-400 hover:text-white transition-colors duration-300">About</a>
+        <a href="#contact" class="text-[10px] uppercase tracking-[0.35em] text-neutral-400 hover:text-white transition-colors duration-300">Contact</a>
+      </div>
+
+      <!-- Inquire Button -->
+      <div class="hidden md:block">
+        <a href="#contact" class="px-6 py-2.5 rounded-full border border-white/20 text-[10px] uppercase tracking-[0.2em] text-[#f5f4f1] hover:bg-[#f5f4f1] hover:text-black hover:border-[#f5f4f1] transition-all duration-500">
+          Inquire
+        </a>
+      </div>
+
+      <!-- Hamburger toggle menu -->
+      <button id="menu-btn" class="flex md:hidden flex-col items-end space-y-1.5 z-50 relative">
+        <span class="h-[1px] w-6 bg-white transition-transform duration-300"></span>
+        <span class="h-[1px] w-4 bg-white transition-opacity duration-300"></span>
+        <span class="h-[1px] w-5 bg-white transition-transform duration-300"></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="fixed inset-0 bg-black z-30 flex flex-col justify-center px-8 hidden opacity-0 transition-opacity duration-300">
+    <div class="flex flex-col space-y-8 text-left">
+      <a href="#" class="mobile-link text-4xl font-serif font-light text-neutral-300 hover:text-white">Home</a>
+      <a href="#portfolio" class="mobile-link text-4xl font-serif font-light text-neutral-300 hover:text-white">Portfolio</a>
+      <a href="#about" class="mobile-link text-4xl font-serif font-light text-neutral-300 hover:text-white">About</a>
+      <a href="#contact" class="mobile-link text-4xl font-serif font-light text-neutral-300 hover:text-white">Contact</a>
+      
+      <div class="pt-8 border-t border-white/10">
+        <p class="text-xs text-neutral-500 uppercase tracking-widest mb-2">Connect</p>
+        <a href="mailto:inquiries@edenrose.com" class="text-sm tracking-wide text-neutral-300 hover:text-[#c5a880]">inquiries@edenrose.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center">
+    <div class="absolute inset-0 w-full h-full">
+      <div class="w-full h-full bg-cover bg-center grayscale opacity-70" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/70"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center">
+      <div class="w-14 h-14 rounded-full border border-[#c5a880]/30 flex items-center justify-center mb-8 bg-black/50 backdrop-blur-sm">
+        <span class="text-xs uppercase tracking-[0.25em] font-light text-[#c5a880]">ER</span>
+      </div>
+      <h1 class="text-5xl md:text-8xl lg:text-9xl font-serif font-light tracking-wider text-transparent bg-clip-text bg-gradient-to-b from-[#f5f4f1] via-[#f5f4f1] to-[#c5a880] mb-6">EDEN ROSE</h1>
+      <p class="text-[10px] md:text-xs uppercase tracking-[0.4em] text-neutral-400">Enchanting Frames &mdash; Endless Memories</p>
+      
+      <a href="#about" class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-3 cursor-pointer">
+        <span class="text-[9px] uppercase tracking-[0.3em] text-neutral-500">Scroll</span>
+        <div class="w-[1px] h-10 bg-white/20 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1/2 bg-[#c5a880] animate-bounce"></div>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <!-- About Strip -->
+  <section id="about" class="py-32 md:py-48 w-full bg-black text-[#f5f4f1] border-b border-white/5 reveal-section">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 flex flex-col items-center">
+      <span class="text-[10px] uppercase tracking-[0.4em] text-[#c5a880] mb-8 block text-center">Restrained. Elegant. Quietly Cinematic.</span>
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif font-light text-center leading-tight tracking-wide max-w-3xl mb-12 text-[#c5a880]">
+        Documenting Love as High-Fashion Poetry
+      </h2>
+      <p class="max-w-3xl text-center leading-loose tracking-wide text-neutral-400 text-sm md:text-base">
+        We believe wedding photography should transcend mere documentation. Our approach blends editorial fashion sensibilities with pure, unposed photojournalism. We chase the subtle glances, the quiet touch, and the cinematic architecture of your celebration. Based in Paris and New York, documenting connections globally.
+      </p>
+      <div class="w-16 h-[1px] bg-white/20 mt-20"></div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="portfolio" class="py-24 md:py-36 bg-black text-[#f5f4f1] w-full reveal-section">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      
+      <div class="flex flex-col md:flex-row justify-between items-baseline mb-20">
+        <h2 class="text-3xl md:text-5xl font-serif font-light tracking-wide">Selected Works</h2>
+        <span class="text-[10px] uppercase tracking-[0.3em] text-neutral-500 mt-3 md:mt-0">DOCUMENTING COUTURE LOVE STORIES</span>
+      </div>
+
+      <!-- Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        
+        <!-- Item 1 (Tall) -->
+        <div class="group cursor-pointer flex flex-col space-y-4">
+          <div class="relative overflow-hidden w-full bg-neutral-900 border border-white/5 aspect-[3/4]">
+            <div class="w-full h-full bg-cover bg-center grayscale duration-1000 ease-out group-hover:scale-105 group-hover:grayscale-0 transition-all" style="background-image: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+              <span class="text-[10px] uppercase tracking-[0.2em] text-[#c5a880] mb-1">Florence, Italy</span>
+              <p class="text-sm font-serif font-light text-[#f5f4f1]">Julian & Clara — Villa Cora</p>
+            </div>
+          </div>
+          <div class="flex justify-between items-baseline pt-2">
+            <span class="font-serif text-sm font-light text-neutral-300">Julian & Clara — Villa Cora</span>
+            <span class="text-[9px] uppercase tracking-widest text-neutral-600">Florence, Italy</span>
+          </div>
+        </div>
+
+        <!-- Item 2 (Square) -->
+        <div class="group cursor-pointer flex flex-col space-y-4">
+          <div class="relative overflow-hidden w-full bg-neutral-900 border border-white/5 aspect-square">
+            <div class="w-full h-full bg-cover bg-center grayscale duration-1000 ease-out group-hover:scale-105 group-hover:grayscale-0 transition-all" style="background-image: url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+              <span class="text-[10px] uppercase tracking-[0.2em] text-[#c5a880] mb-1">Lake Como</span>
+              <p class="text-sm font-serif font-light text-[#f5f4f1]">Mateo & Sophia — Villa d'Este</p>
+            </div>
+          </div>
+          <div class="flex justify-between items-baseline pt-2">
+            <span class="font-serif text-sm font-light text-neutral-300">Mateo & Sophia — Villa d'Este</span>
+            <span class="text-[9px] uppercase tracking-widest text-neutral-600">Lake Como</span>
+          </div>
+        </div>
+
+        <!-- Item 3 (Wide) -->
+        <div class="group cursor-pointer flex flex-col space-y-4">
+          <div class="relative overflow-hidden w-full bg-neutral-900 border border-white/5 aspect-[4/3]">
+            <div class="w-full h-full bg-cover bg-center grayscale duration-1000 ease-out group-hover:scale-105 group-hover:grayscale-0 transition-all" style="background-image: url('https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+              <span class="text-[10px] uppercase tracking-[0.2em] text-[#c5a880] mb-1">Swiss Alps</span>
+              <p class="text-sm font-serif font-light text-[#f5f4f1]">Alexander & Vivienne</p>
+            </div>
+          </div>
+          <div class="flex justify-between items-baseline pt-2">
+            <span class="font-serif text-sm font-light text-neutral-300">Alexander & Vivienne</span>
+            <span class="text-[9px] uppercase tracking-widest text-neutral-600">Swiss Alps</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Stories -->
+  <section class="bg-black text-[#f5f4f1] py-12 reveal-section">
+    
+    <!-- Story 1 -->
+    <div class="w-full py-24 md:py-36 border-t border-white/5 bg-black">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          
+          <div class="w-full lg:w-1/2">
+            <div class="relative overflow-hidden aspect-[16/10] shadow-2xl border border-white/5">
+              <div class="w-full h-full bg-cover bg-center grayscale hover:scale-104 duration-700 ease-out cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80');"></div>
+              <div class="absolute top-0 left-0 w-1.5 h-full bg-[#c5a880]"></div>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-1/2 flex flex-col justify-center space-y-6">
+            <span class="text-[10px] uppercase tracking-[0.35em] text-[#c5a880]">FEATURED EDITORIAL STORY</span>
+            <h3 class="text-3xl md:text-5xl font-serif font-light leading-tight text-[#c5a880]">A Roman Holiday</h3>
+            <p class="text-sm tracking-wide leading-relaxed text-neutral-400">An intimate, editorial micro-wedding set in the crumbling stone ruins of Rome. Documented entirely in fine art black and white medium-format film.</p>
+            <div class="pt-4">
+              <button class="px-8 py-3 rounded-full border border-white/20 hover:border-white hover:bg-white hover:text-black text-xs uppercase tracking-[0.2em] transition-all duration-500">View Film Story</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Story 2 -->
+    <div class="w-full py-24 md:py-36 border-t border-white/5 bg-[#0f0f0f]">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
+          
+          <div class="w-full lg:w-1/2">
+            <div class="relative overflow-hidden aspect-[16/10] shadow-2xl border border-white/5">
+              <div class="w-full h-full bg-cover bg-center grayscale hover:scale-104 duration-700 ease-out cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1200&q=80');"></div>
+              <div class="absolute top-0 left-0 w-1.5 h-full bg-[#c5a880]"></div>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-1/2 flex flex-col justify-center space-y-6">
+            <span class="text-[10px] uppercase tracking-[0.35em] text-[#c5a880]">HIGH-SOCIETY CELEBRATIONS</span>
+            <h3 class="text-3xl md:text-5xl font-serif font-light leading-tight text-[#c5a880]">Midnight in Versailles</h3>
+            <p class="text-sm tracking-wide leading-relaxed text-neutral-400">A decadent, multi-day evening gala event under the golden mirrors of Versailles, capturing candle-lit tables, couture gowns, and late-night champagne towers.</p>
+            <div class="pt-4">
+              <button class="px-8 py-3 rounded-full border border-white/20 hover:border-white hover:bg-white hover:text-black text-xs uppercase tracking-[0.2em] transition-all duration-500">View Versailles Story</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Packages Section -->
+  <section id="services" class="py-24 md:py-36 bg-black text-[#f5f4f1] w-full border-t border-white/5 reveal-section">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <span class="text-[10px] uppercase tracking-[0.3em] text-[#c5a880] mb-3 block">PRICING & COLLECTIBLES</span>
+        <h2 class="text-3xl md:text-5xl font-serif font-light tracking-wide mb-4">Bespoke Investment Packages</h2>
+        <p class="text-xs md:text-sm text-neutral-400 tracking-wide leading-relaxed">Every celebration is a unique piece of art. We offer curated investment formats tailored to destination requirements.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
+        
+        <!-- Box 1 -->
+        <div class="bg-[#0c0c0c] border border-white/5 p-8 md:p-10 rounded-2xl flex flex-col justify-between relative overflow-hidden group hover:border-[#c5a880]/30 transition-all duration-500 shadow-2xl hover:-translate-y-2">
+          <div class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#c5a880] group-hover:w-full transition-all duration-700"></div>
+          <div>
+            <h3 class="text-xl font-serif font-light text-[#f5f4f1] mb-2">Editorial Digital</h3>
+            <div class="flex items-baseline space-x-1 mb-8">
+              <span class="text-3xl font-serif font-light text-[#c5a880]">$6,500</span>
+              <span class="text-[9px] uppercase tracking-widest text-neutral-500">Starting from</span>
+            </div>
+            <ul class="space-y-4 mb-10 text-xs text-neutral-400">
+              <li><span class="text-[#c5a880] mr-2">•</span> Up to 8 hours of coverage</li>
+              <li><span class="text-[#c5a880] mr-2">•</span> Curated high-res digital gallery</li>
+              <li><span class="text-[#c5a880] mr-2">•</span> Online sharing platform</li>
+            </ul>
+          </div>
+          <button class="w-full py-3 rounded-full border border-white/10 group-hover:border-[#c5a880] text-xs uppercase tracking-[0.2em] text-neutral-300 transition-all duration-500">Request Booking</button>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="bg-[#0c0c0c] border border-white/5 p-8 md:p-10 rounded-2xl flex flex-col justify-between relative overflow-hidden group hover:border-[#c5a880]/30 transition-all duration-500 shadow-2xl hover:-translate-y-2">
+          <div class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#c5a880] group-hover:w-full transition-all duration-700"></div>
+          <div>
+            <h3 class="text-xl font-serif font-light text-[#f5f4f1] mb-2">Archival Film & Digital</h3>
+            <div class="flex items-baseline space-x-1 mb-8">
+              <span class="text-3xl font-serif font-light text-[#c5a880]">$9,200</span>
+              <span class="text-[9px] uppercase tracking-widest text-neutral-500">Starting from</span>
+            </div>
+            <ul class="space-y-4 mb-10 text-xs text-neutral-400">
+              <li><span class="text-[#c5a880] mr-2">•</span> Full day celebration coverage</li>
+              <li><span class="text-[#c5a880] mr-2">•</span> Medium format film + 35mm formats</li>
+              <li><span class="text-[#c5a880] mr-2">•</span> Handcrafted velvet linen gallery book</li>
+            </ul>
+          </div>
+          <button class="w-full py-3 rounded-full border border-white/10 group-hover:border-[#c5a880] text-xs uppercase tracking-[0.2em] text-neutral-300 transition-all duration-500">Request Booking</button>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="bg-[#0c0c0c] border border-white/5 p-8 md:p-10 rounded-2xl flex flex-col justify-between relative overflow-hidden group hover:border-[#c5a880]/30 transition-all duration-500 shadow-2xl hover:-translate-y-2">
+          <div class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#c5a880] group-hover:w-full transition-all duration-700"></div>
+          <div>
+            <h3 class="text-xl font-serif font-light text-[#f5f4f1] mb-2">Destination Portfolio</h3>
+            <div class="flex items-baseline space-x-1 mb-8">
+              <span class="text-3xl font-serif font-light text-[#c5a880]">$14,000</span>
+              <span class="text-[9px] uppercase tracking-widest text-neutral-500">Starting from</span>
+            </div>
+            <ul class="space-y-4 mb-10 text-xs text-neutral-400">
+              <li><span class="text-[#c5a880] mr-2">•</span> Multi-day international coverage</li>
+              <li><span class="text-[#c5a880] mr-2">•</span> Film + Digital + Video highlight reels</li>
+              <li><span class="text-[#c5a880] mr-2">•</span> Bespoke flush-mount wedding albums</li>
+            </ul>
+          </div>
+          <button class="w-full py-3 rounded-full border border-white/10 group-hover:border-[#c5a880] text-xs uppercase tracking-[0.2em] text-neutral-300 transition-all duration-500">Request Booking</button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials Carousel -->
+  <section class="py-24 md:py-36 bg-[#0a0a0a] text-[#f5f4f1] border-t border-white/5 relative overflow-hidden">
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.02]">
+      <span class="text-[20vw] font-serif font-light select-none">LOVE STORIES</span>
+    </div>
+    
+    <div class="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
+      <span class="text-4xl md:text-5xl font-serif text-[#c5a880] block mb-8">“</span>
+      
+      <!-- Slide wrapper -->
+      <div class="min-h-[160px] flex items-center justify-center">
+        <blockquote id="testimonial-quote" class="text-lg md:text-2xl font-serif font-light leading-relaxed italic text-neutral-300 transition-all duration-500">
+          "Eden Rose didn't just take photos; they created cinematic frames that felt like stills from a luxury French film."
+        </blockquote>
+      </div>
+      <cite id="testimonial-author" class="block text-[10px] uppercase tracking-[0.3em] text-[#c5a880] not-italic mt-6">— Sophia & Mateo</cite>
+
+      <!-- Carousel dots -->
+      <div class="flex justify-center items-center space-x-3 mt-10" id="carousel-dots">
+        <button class="h-[1px] w-8 bg-[#c5a880] dot" data-index="0"></button>
+        <button class="h-[1px] w-3 bg-white/20 hover:bg-white/40 dot" data-index="1"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Contact CTA Section -->
+  <footer id="contact" class="bg-black text-[#f5f4f1] border-t border-white/5 w-full">
+    
+    <!-- Social strip -->
+    <div class="w-full border-b border-white/5 py-12 md:py-16">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex justify-between items-baseline mb-8">
+          <span class="text-[10px] uppercase tracking-[0.3em] text-neutral-500">INSTAGRAM CHRONICLES</span>
+          <a href="#" class="text-[9px] uppercase tracking-widest text-[#c5a880] hover:text-white transition-colors duration-300">@edenrose.wedding</a>
+        </div>
+        
+        <!-- Row of images -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div class="relative overflow-hidden aspect-square border border-white/5 bg-neutral-900 shadow-lg">
+            <div class="w-full h-full bg-cover bg-center grayscale duration-700 ease-out hover:scale-105 hover:grayscale-0" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=300&q=80');"></div>
+          </div>
+          <div class="relative overflow-hidden aspect-square border border-white/5 bg-neutral-900 shadow-lg">
+            <div class="w-full h-full bg-cover bg-center grayscale duration-700 ease-out hover:scale-105 hover:grayscale-0" style="background-image: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=300&q=80');"></div>
+          </div>
+          <div class="relative overflow-hidden aspect-square border border-white/5 bg-neutral-900 shadow-lg">
+            <div class="w-full h-full bg-cover bg-center grayscale duration-700 ease-out hover:scale-105 hover:grayscale-0" style="background-image: url('https://images.unsplash.com/photo-1591604466107-ec97de577fad?auto=format&fit=crop&w=300&q=80');"></div>
+          </div>
+          <div class="relative overflow-hidden aspect-square border border-white/5 bg-neutral-900 shadow-lg">
+            <div class="w-full h-full bg-cover bg-center grayscale duration-700 ease-out hover:scale-105 hover:grayscale-0" style="background-image: url('https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=300&q=80');"></div>
+          </div>
+          <div class="relative overflow-hidden aspect-square border border-white/5 bg-neutral-900 shadow-lg">
+            <div class="w-full h-full bg-cover bg-center grayscale duration-700 ease-out hover:scale-105 hover:grayscale-0" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=300&q=80');"></div>
+          </div>
+          <div class="relative overflow-hidden aspect-square border border-white/5 bg-neutral-900 shadow-lg">
+            <div class="w-full h-full bg-cover bg-center grayscale duration-700 ease-out hover:scale-105 hover:grayscale-0" style="background-image: url('https://images.unsplash.com/photo-1507504038482-762618e23fc4?auto=format&fit=crop&w=300&q=80');"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Contact Form Container -->
+    <div class="py-24 md:py-36 max-w-7xl mx-auto px-6 md:px-12">
+      <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+        
+        <div class="w-full lg:w-1/2 space-y-6">
+          <span class="text-[10px] uppercase tracking-[0.3em] text-[#c5a880]">BEGIN THE CONVERSATION</span>
+          <h2 class="text-4xl md:text-6xl font-serif font-light tracking-wide leading-tight max-w-lg text-[#c5a880]">Let\'s Tell Your Story.</h2>
+          <p class="text-sm text-neutral-400 leading-relaxed tracking-wide max-w-md">Based in Paris & New York, photographing luxury editorials and destination celebrations globally.</p>
+        </div>
+
+        <div class="w-full lg:w-1/2" id="contact-form-wrapper">
+          <form id="contact-form" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <input type="text" id="contact-name" required placeholder="Your Name" class="w-full bg-transparent border-b border-white/10 pb-3 text-sm text-[#f5f4f1] focus:outline-none focus:border-white transition-colors duration-300">
+              <input type="email" id="contact-email" required placeholder="Email Address" class="w-full bg-transparent border-b border-white/10 pb-3 text-sm text-[#f5f4f1] focus:outline-none focus:border-white transition-colors duration-300">
+            </div>
+            <textarea id="contact-msg" required rows="4" placeholder="Share your wedding details (Date, Destination, Vision)..." class="w-full bg-transparent border-b border-white/10 pb-3 text-sm text-[#f5f4f1] focus:outline-none focus:border-white transition-colors duration-300 resize-none"></textarea>
+            <button type="submit" id="contact-submit-btn" class="w-full py-4 rounded-full bg-[#f5f4f1] text-[#0a0a0a] border border-[#f5f4f1] hover:bg-transparent hover:text-[#f5f4f1] text-xs uppercase tracking-[0.2em] font-medium transition-all duration-500">Send Inquiry</button>
+          </form>
+          
+          <!-- Mock Success Block -->
+          <div id="contact-success" class="bg-[#0c0c0c] border border-white/5 p-8 rounded-2xl flex flex-col items-center justify-center text-center space-y-4 py-16 hidden">
+            <div class="w-12 h-12 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-400 text-xl">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <h4 class="text-lg font-serif font-light text-green-400">Inquiry Received</h4>
+            <p class="text-xs text-neutral-400 max-w-xs leading-relaxed">Thank you. The studio concierge will follow up with our complete destination prospectus within 24 hours.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Sub Footer copyright details -->
+    <div class="border-t border-white/5 py-12 bg-black text-neutral-500 text-xs">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-center md:text-left">
+          <span class="uppercase tracking-[0.2em] text-[#c5a880]">Eden Rose Studio</span>
+          <span class="hidden md:inline text-neutral-800">|</span>
+          <span class="tracking-wide">&copy; <span id="year"></span> EDEN ROSE. All rights reserved.</span>
+        </div>
+        <div class="flex items-center space-x-8">
+          <a href="#about" class="hover:text-[#f5f4f1] transition-colors duration-300">About</a>
+          <a href="#portfolio" class="hover:text-[#f5f4f1] transition-colors duration-300">Portfolio</a>
+          <a href="mailto:inquiries@edenrose.com" class="hover:text-[#f5f4f1] transition-colors duration-300">Inquiries</a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

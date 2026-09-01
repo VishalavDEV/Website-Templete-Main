@@ -1,0 +1,260 @@
+[
+  {
+    "id": "pe-001",
+    "slug": "the-last-light-of-the-desert",
+    "title": "The Last Light of the Desert",
+    "subtitle": "A month traversing the shifting dunes and stark granite spires of the Namib-Naukluft.",
+    "photographer": {
+      "id": "author-marcus-thorne",
+      "name": "Marcus Thorne",
+      "role": "Expedition Photojournalist",
+      "bio": "For over two decades, Thorne has documented isolated biomes and uncontacted desert sanctuaries.",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 24,
+      "location": "Geneva / Field Bureau"
+    },
+    "location": "Namib Desert, Namibia",
+    "coverImage": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1600&q=85",
+    "intro": "When the sun sinks toward the Atlantic, the iron-rich dunes of Sossusvlei ignite in shades of burnt carmine, violet, and gold. Shadows stretch for miles across clay pans where ancient dead camelthorn trees have stood frozen in time for over nine hundred years.",
+    "date": "September 2026",
+    "readingTime": "8 min read",
+    "photos": [
+      {
+        "id": "p-01",
+        "url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1600&q=85",
+        "caption": "Dune 45 cutting a razor-sharp shadow boundary across the morning sand plain.",
+        "location": "Sossusvlei, Namibia",
+        "photographer": "Marcus Thorne",
+        "cameraSettings": "Leica M11 · 35mm f/1.4 · 1/500s · ISO 100",
+        "date": "August 18, 2026"
+      },
+      {
+        "id": "p-02",
+        "url": "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=1600&q=85",
+        "caption": "Silhouetted gemsbok oryx navigating a windward crest against dust-scattered evening glow.",
+        "location": "Skeleton Coast National Park",
+        "photographer": "Marcus Thorne",
+        "cameraSettings": "Hasselblad X2D 100C · 90mm · 1/800s · ISO 200",
+        "date": "August 21, 2026"
+      },
+      {
+        "id": "p-03",
+        "url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=85",
+        "caption": "Dead Vlei at astronomical twilight as the Southern Cross rises above petrified acacia branches.",
+        "location": "Dead Vlei Clay Pan",
+        "photographer": "Marcus Thorne",
+        "cameraSettings": "Sony A7R V · 24mm f/1.4 · 25s · ISO 3200",
+        "date": "August 24, 2026"
+      },
+      {
+        "id": "p-04",
+        "url": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1600&q=85",
+        "caption": "A lone vehicle track vanishing into the salt flats beneath thermal haze.",
+        "location": "Etosha Pan Border",
+        "photographer": "Marcus Thorne",
+        "cameraSettings": "Leica M11 · 50mm f/2 · 1/1200s · ISO 64",
+        "date": "August 28, 2026"
+      }
+    ]
+  },
+  {
+    "id": "pe-002",
+    "slug": "beneath-the-arctic-sky",
+    "title": "Beneath the Arctic Sky",
+    "subtitle": "Polar night expeditions through the frozen fjords and auroral curtains of Svalbard.",
+    "photographer": {
+      "id": "author-kai-nordstrom",
+      "name": "Kai Nordström",
+      "role": "Arctic Glaciologist & Photographer",
+      "bio": "Traversing high-latitude pack ice and documenting glaciological metamorphism.",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 16,
+      "location": "Tromsø, Norway"
+    },
+    "location": "Spitsbergen, Svalbard (78° N)",
+    "coverImage": "https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=1600&q=85",
+    "intro": "In the high Arctic during deep winter, the sun never clears the horizon for one hundred and twenty days. In this eternal twilight of deep cobalt and phosphorus green auroras, silence is a physical presence.",
+    "date": "August 2026",
+    "readingTime": "7 min read",
+    "photos": [
+      {
+        "id": "p-21",
+        "url": "https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=1600&q=85",
+        "caption": "Auroral geomagnetic ribbons reflecting off the sea ice of Tempelfjorden.",
+        "location": "Tempelfjorden, Svalbard",
+        "photographer": "Kai Nordström",
+        "cameraSettings": "Sony A1 · 14mm f/1.8 · 8s · ISO 1600",
+        "date": "January 14, 2026"
+      },
+      {
+        "id": "p-22",
+        "url": "https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=1600&q=85",
+        "caption": "A lone polar bear testing fresh frazil ice along the calving face of Nordenskiöldbreen.",
+        "location": "Billefjorden",
+        "photographer": "Kai Nordström",
+        "cameraSettings": "Canon R5 · 400mm f/2.8 · 1/400s · ISO 3200",
+        "date": "January 22, 2026"
+      },
+      {
+        "id": "p-23",
+        "url": "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?auto=format&fit=crop&w=1600&q=85",
+        "caption": "Seismic monitoring station illuminated by LED headlamps during a minus thirty-degree blizzard.",
+        "location": "Longyearbyen Plateau",
+        "photographer": "Kai Nordström",
+        "cameraSettings": "Leica SL2 · 28mm f/2 · 1/60s · ISO 6400",
+        "date": "February 02, 2026"
+      }
+    ]
+  },
+  {
+    "id": "pe-003",
+    "slug": "life-at-the-edge-of-the-ocean",
+    "title": "Life at the Edge of the Ocean",
+    "subtitle": "The violent and luminous interface where pelagic swells meet volcanic coasts.",
+    "photographer": {
+      "id": "author-elena-vance",
+      "name": "Dr. Elena Vance",
+      "role": "Chief Science Editor",
+      "bio": "Submersible expedition leader and deep-sea researcher.",
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 18,
+      "location": "Woods Hole Oceanographic Institution"
+    },
+    "location": "Faroe Islands & Azores",
+    "coverImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85",
+    "intro": "The intertidal fringe is Earth's most dynamic ecological theater. Here, organisms endure crushing hydrostatic impact, osmotic transitions, and sudden temperature swings every six hours.",
+    "date": "July 2026",
+    "readingTime": "9 min read",
+    "photos": [
+      {
+        "id": "p-31",
+        "url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85",
+        "caption": "Atlantic swell breaking against sea stacks at golden sunrise.",
+        "location": "Vágar, Faroe Islands",
+        "photographer": "Dr. Elena Vance",
+        "cameraSettings": "Nikon Z9 · 70-200mm f/2.8 · 1/2000s · ISO 160",
+        "date": "June 12, 2026"
+      },
+      {
+        "id": "p-32",
+        "url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=85",
+        "caption": "Bioluminescent dinoflagellates sparking in a volcanic tidepool at high midnight.",
+        "location": "São Miguel, Azores",
+        "photographer": "Dr. Elena Vance",
+        "cameraSettings": "Sony A7S III · 24mm f/1.4 · 15s · ISO 12800",
+        "date": "June 25, 2026"
+      }
+    ]
+  },
+  {
+    "id": "pe-004",
+    "slug": "in-the-footsteps-of-ancient-civilizations",
+    "title": "In the Footsteps of Ancient Civilizations",
+    "subtitle": "Documenting megalithic astronomy and subterranean temples across Anatolia.",
+    "photographer": {
+      "id": "author-amara-okafor",
+      "name": "Amara Okafor",
+      "role": "Anthropological Archaeologist",
+      "bio": "Non-invasive LiDAR imaging and prehistoric architecture.",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 12,
+      "location": "Lagos & Oxford"
+    },
+    "location": "Göbekli Tepe & Karahan Tepe, Turkey",
+    "coverImage": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1600&q=85",
+    "intro": "Twelve thousand years ago, before the invention of pottery or the wheel, hunter-gatherers carved T-shaped megaliths weighing twenty tons and aligned them precisely with Sirius and Orion.",
+    "date": "June 2026",
+    "readingTime": "10 min read",
+    "photos": [
+      {
+        "id": "p-41",
+        "url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1600&q=85",
+        "caption": "Monolithic pillar reliefs carved with leopards, foxes, and celestial serpents.",
+        "location": "Enclosure D, Göbekli Tepe",
+        "photographer": "Amara Okafor",
+        "cameraSettings": "Fujifilm GFX 100 II · 45mm · 1/250s · ISO 200",
+        "date": "May 10, 2026"
+      },
+      {
+        "id": "p-42",
+        "url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1600&q=85",
+        "caption": "Dawn shadows across the limestone bedrock quarry where unfinished monoliths remain attached to Earth.",
+        "location": "Sanliurfa Province",
+        "photographer": "Amara Okafor",
+        "cameraSettings": "Leica M11 · 35mm · 1/640s · ISO 100",
+        "date": "May 15, 2026"
+      }
+    ]
+  },
+  {
+    "id": "pe-005",
+    "slug": "the-high-canopy",
+    "title": "The High Canopy: The Hidden Roof of the Rainforest",
+    "subtitle": "Sixty meters above the Amazonian floor, an aerial ecosystem thrives in perpetual sunlight.",
+    "photographer": {
+      "id": "author-julian-reyes",
+      "name": "Julian Reyes",
+      "role": "Wildlife Ethologist & Filmmaker",
+      "bio": "Investigating high-canopy predator acoustics and biodiversity.",
+      "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 21,
+      "location": "Manaus, Brazil"
+    },
+    "location": "Rio Negro Basin, Brazil",
+    "coverImage": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?auto=format&fit=crop&w=1600&q=85",
+    "intro": "Ninety percent of all rainforest organisms never touch the ground. Suspended on hanging platforms and single-rope ascenders, we spent three weeks in the emergent crown of a seven-hundred-year-old kapok tree.",
+    "date": "May 2026",
+    "readingTime": "8 min read",
+    "photos": [
+      {
+        "id": "p-51",
+        "url": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?auto=format&fit=crop&w=1600&q=85",
+        "caption": "Harpy eagle returning to high-canopy nest with prey during early morning mist clearing.",
+        "location": "Jaú National Park",
+        "photographer": "Julian Reyes",
+        "cameraSettings": "Sony A1 · 600mm f/4 · 1/1600s · ISO 800",
+        "date": "April 08, 2026"
+      },
+      {
+        "id": "p-52",
+        "url": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=85",
+        "caption": "Epiphytic bromeliad gardens forming micro-aquatic habitats 50 meters above the jungle floor.",
+        "location": "Anavilhanas Archipelago",
+        "photographer": "Julian Reyes",
+        "cameraSettings": "Leica SL2 · 50mm f/1.4 · 1/320s · ISO 400",
+        "date": "April 19, 2026"
+      }
+    ]
+  },
+  {
+    "id": "pe-006",
+    "slug": "cities-after-dark",
+    "title": "Cities After Dark: The Human Hive from Above",
+    "subtitle": "Ultra-high altitude nocturnal photography mapping urban metabolism and artificial illumination.",
+    "photographer": {
+      "id": "author-marcus-thorne",
+      "name": "Marcus Thorne",
+      "role": "Expedition Photojournalist",
+      "bio": "Aerial and nocturnal landscape documentary.",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 24,
+      "location": "Geneva / Field Bureau"
+    },
+    "location": "Global Metropolises",
+    "coverImage": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1600&q=85",
+    "intro": "From five thousand meters in an unpressurized research aircraft, human settlements cease to look like grids and begin to resemble neural networks pulsing with electromagnetic blood.",
+    "date": "April 2026",
+    "readingTime": "6 min read",
+    "photos": [
+      {
+        "id": "p-61",
+        "url": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1600&q=85",
+        "caption": "Tokyo metropolitan web glowing with 4,000K LED street lights and train arteries.",
+        "location": "Tokyo Bay Overflight",
+        "photographer": "Marcus Thorne",
+        "cameraSettings": "Phase One IQ4 150MP · 55mm · 1/125s · ISO 1600 (Gyrostabilized)",
+        "date": "March 11, 2026"
+      }
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+/* Clean Root Reset - Custom styling is handled in styles/main.css & styles/components.css */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}

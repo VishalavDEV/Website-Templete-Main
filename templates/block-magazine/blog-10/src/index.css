@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Syne', 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Space Mono', monospace;
+    --color-accent: #F27D26;
+    --color-accent-light: #ff9345;
+    --color-surface: #100e0b;
+    --color-surface-card: #151310;
+    --color-surface-elevated: #1c1915;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #faf8f2;
+    color: #1c1917;
+  }
+
+  h1, h2, h3, .font-serif-title {
+    letter-spacing: -0.035em;
+  }
+}
+
+/* Sunset Boulevard - Aura */
+/* Base color on BODY - blend modes composite against this */
+.aura-bg {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh; /* height must be explicit - absolute layers add none */
+  /* NO background-color - layers blend against body */
+}
+
+/* Layer 1 - multiply */
+.aura-layer-1 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0) 0%, rgba(255,107,107,0.12) 28%, rgb(255,255,255) 18%, rgb(255,170,100) 68%, rgb(255,200,80) 100%);
+  mix-blend-mode: multiply;
+  filter: blur(90px); /* use 130px on desktop */
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .aura-layer-1 {
+    filter: blur(130px);
+  }
+}
+
+/* Layer 2 - multiply */
+.aura-layer-2 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0) 0%, rgba(255,107,107,0.22) 34%, rgb(255,255,255) 66%, rgb(255,170,100) 82%, rgb(255,200,80) 100%);
+  mix-blend-mode: multiply;
+  filter: blur(90px); /* use 130px on desktop */
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .aura-layer-2 {
+    filter: blur(130px);
+  }
+}
+
+.font-display {
+  font-family: 'Syne', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.font-serif {
+  font-family: 'Syne', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.font-editorial-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.font-mono {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F27D26;
+}
+
+/* Text clamp utilities */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Subtle image zoom transition */
+.img-zoom {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+.group:hover .img-zoom {
+  transform: scale(1.04);
+}
+
+/* Bold Typography Accents */
+.avnt-rule {
+  height: 1px;
+  width: 3rem;
+  background-color: #F27D26;
+}
+
+.editorial-glass {
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+

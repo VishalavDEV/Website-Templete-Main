@@ -1,0 +1,112 @@
+[
+  {
+    "id": "arch-1",
+    "volume": "Vol. I: The Age of Crucible & Cipher",
+    "years": "1500 — 1680",
+    "era": "Renaissance & Early Modern",
+    "description": "Before the establishment of peer-reviewed journals, natural knowledge was encoded in alchemical anagrams, astrological ephemerides, and private correspondence between princely patrons.",
+    "storyCount": 42,
+    "highlightTopic": "Early Science & Alchemy",
+    "keyFigures": ["Paracelsus", "Tycho Brahe", "Robert Boyle", "Margaret Cavendish"],
+    "slug": "age-of-crucible-cipher"
+  },
+  {
+    "id": "arch-2",
+    "volume": "Vol. II: The Clockwork Universe",
+    "years": "1681 — 1760",
+    "era": "The Enlightenment Dawn",
+    "description": "Gravitation, calculus disputes, the standardization of pendulum clocks, and the earliest vacuum experiments that shook Aristotelian physics.",
+    "storyCount": 56,
+    "highlightTopic": "Inventions & Discoveries",
+    "keyFigures": ["Isaac Newton", "Gottfried Leibniz", "Émilie du Châtelet", "Christiaan Huygens"],
+    "slug": "clockwork-universe"
+  },
+  {
+    "id": "arch-3",
+    "volume": "Vol. III: The Pneumatic Revolution",
+    "years": "1761 — 1815",
+    "era": "Gases, Sparks & Revolution",
+    "description": "The isolation of invisible airs: dephlogisticated gas, inflammable air, fixed air, and the chemical revolution that unfolded against the backdrop of the French Terror.",
+    "storyCount": 64,
+    "highlightTopic": "Experiments & Mistakes",
+    "keyFigures": ["Antoine Lavoisier", "Marie-Anne Paulze Lavoisier", "Joseph Priestley", "Humphry Davy"],
+    "slug": "pneumatic-revolution"
+  },
+  {
+    "id": "arch-4",
+    "volume": "Vol. IV: The Steam & Specimen Empire",
+    "years": "1816 — 1860",
+    "era": "Victorian Industrialization",
+    "description": "Global botanical plunder, railway thermodynamics, telegraph cables across ocean trenches, and the earliest geological discoveries that pushed Earth's age into the deep abyss.",
+    "storyCount": 78,
+    "highlightTopic": "Environment & Nature",
+    "keyFigures": ["Alexander von Humboldt", "Mary Anning", "Michael Faraday", "Ada Lovelace"],
+    "slug": "steam-specimen-empire"
+  },
+  {
+    "id": "arch-5",
+    "volume": "Vol. V: The Invisible Germ & Cell",
+    "years": "1861 — 1895",
+    "era": "Microbiology & Contagion",
+    "description": "The fierce resistance to antisepsis, the invention of aniline dyes that stained invisible cellular organelles, and the birth of epidemiological mapping in cholera-stricken cities.",
+    "storyCount": 85,
+    "highlightTopic": "Health & Medicine",
+    "keyFigures": ["Louis Pasteur", "Robert Koch", "Fanny Hesse", "John Snow"],
+    "slug": "invisible-germ-cell"
+  },
+  {
+    "id": "arch-6",
+    "volume": "Vol. VI: The Disintegration of Matter",
+    "years": "1896 — 1925",
+    "era": "Atomic & Quantum Dawn",
+    "description": "X-rays burning photographic plates in dark drawers, glowing radium salt tubes, the discovery of the electron, and the shattering of classical deterministic physics.",
+    "storyCount": 92,
+    "highlightTopic": "Discoveries & Inventions",
+    "keyFigures": ["Marie Curie", "Wilhelm Röntgen", "Ernest Rutherford", "Lise Meitner"],
+    "slug": "disintegration-of-matter"
+  },
+  {
+    "id": "arch-7",
+    "volume": "Vol. VII: The Laboratory of the State",
+    "years": "1926 — 1955",
+    "era": "War, Secrecy & Megaprojects",
+    "description": "Radar, synthetic penicillin mass manufacture, the Manhattan Project, codebreaking machines at Bletchley, and the agonizing moral bargains of wartime science.",
+    "storyCount": 110,
+    "highlightTopic": "Science & Politics",
+    "keyFigures": ["J. Robert Oppenheimer", "Alan Turing", "Dorothy Crowfoot Hodgkin", "Enrico Fermi"],
+    "slug": "laboratory-of-the-state"
+  },
+  {
+    "id": "arch-8",
+    "volume": "Vol. VIII: The Code of Life & The Cosmos",
+    "years": "1956 — 1985",
+    "era": "Molecular Genetics & Space",
+    "description": "Photograph 51, radio telescopes listening to pulsars, plate tectonics verified across mid-ocean ridges, and the race to decipher the genetic alphabet.",
+    "storyCount": 104,
+    "highlightTopic": "Scientists & Lives",
+    "keyFigures": ["Rosalind Franklin", "Jocelyn Bell Burnell", "Marie Tharp", "Barbara McClintock"],
+    "slug": "code-of-life-cosmos"
+  },
+  {
+    "id": "arch-9",
+    "volume": "Vol. IX: Silicon, Climate & Synthesis",
+    "years": "1986 — 2010",
+    "era": "Digital & Ecological Awakening",
+    "description": "Ice core drilling in Antarctica documenting historical atmospheres, polymerase chain reactions, the human genome project, and the dawn of computational simulation.",
+    "storyCount": 89,
+    "highlightTopic": "Science & Society",
+    "keyFigures": ["Charles David Keeling", "Kary Mullis", "Jane Goodall", "Carl Sagan"],
+    "slug": "silicon-climate-synthesis"
+  },
+  {
+    "id": "arch-10",
+    "volume": "Vol. X: The Anthropocene & The Algorithm",
+    "years": "2011 — 2026",
+    "era": "Contemporary Horizons",
+    "description": "CRISPR gene editing in living embryos, gravitational wave detectors with laser interferometers, deep learning unrolling protein folding, and space telescopes observing early galaxies.",
+    "storyCount": 68,
+    "highlightTopic": "Culture & Knowledge",
+    "keyFigures": ["Jennifer Doudna", "Kip Thorne", "Andrea Ghez", "Katalin Karikó"],
+    "slug": "anthropocene-algorithm"
+  }
+]

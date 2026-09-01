@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ts-smart-admin-backend
+  
+  # In-memory H2 database for zero-config local execution (can be overridden with SPRING_DATASOURCE_URL for MySQL)
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:h2:mem:smartadmin_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE}
+    username: ${SPRING_DATASOURCE_USERNAME:sa}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER:org.h2.Driver}
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: ${SPRING_JPA_DIALECT:org.hibernate.dialect.H2Dialect}
+        format_sql: true
+
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    root: INFO
+    com.tssmartadmin.backend: DEBUG

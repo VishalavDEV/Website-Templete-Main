@@ -1,0 +1,32 @@
+# Databases and large assets
+db-data/
+*.db
+*.log
+*.zip
+*.tar.gz
+
+# Frontend Node packages and build outputs
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+# Backend Spring Boot compilation outputs and tools
+target/
+backend/target/
+.mvn/
+*.class
+.factorypath
+
+# IDE configurations
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.settings/
+.project
+.classpath
+.gemini/
+.agents/
+bin/

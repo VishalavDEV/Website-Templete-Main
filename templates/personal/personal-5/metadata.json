@@ -1,0 +1,8 @@
+{
+  "name": "Aetherius Experimental Digital Universe",
+  "description": "A high-end, futuristic, and experimental digital universe personal portfolio template themed around Midnight Blue + Electric Purple + Neon Cyan, featuring a fully immersive orbit system, digital DNA, circular power core, horizontal journey mapping, system status dashboards, and infinite scroll playgrounds.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,91 @@
+/* Soleil Personal Portfolio CSS stylesheet */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  background-color: #fffbeb;
+  color: #1c1917;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fffbeb;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(249, 115, 22, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(249, 115, 22, 0.8);
+}
+
+/* Custom transitions and interactive tilt styles */
+.project-tilt-card {
+  transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+}
+
+.social-flex-link {
+  transition: all 0.3s ease;
+}
+.social-flex-link:hover {
+  background-color: #ffedd5 !important;
+  color: #ea580c !important;
+  border-color: #f97316 !important;
+  transform: translateY(-2px);
+}
+
+/* Orbit animations */
+@keyframes floatBlob {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-30px) scale(1.05); }
+}
+
+@keyframes floatParticle {
+  0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+  50% { transform: translateY(-15px) translateX(5px); opacity: 1; }
+  100% { transform: translateY(0) translateX(0); opacity: 0.8; }
+}
+
+@keyframes orbitReact {
+  0% { transform: rotate(0deg) translate(140px) rotate(0deg); }
+  100% { transform: rotate(360deg) translate(140px) rotate(-360deg); }
+}
+@keyframes orbitSpring {
+  0% { transform: rotate(120deg) translate(150px) rotate(-120deg); }
+  100% { transform: rotate(480deg) translate(150px) rotate(-480deg); }
+}
+@keyframes orbitJava {
+  0% { transform: rotate(240deg) translate(130px) rotate(-240deg); }
+  100% { transform: rotate(600deg) translate(130px) rotate(-600deg); }
+}
+
+/* Responsive Overrides */
+@media (max-width: 968px) {
+  .hero-grid-layout {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    text-align: center !important;
+  }
+  .hero-main-title {
+    font-size: 2.4rem !important;
+  }
+  .desktop-menu-links {
+    display: none !important;
+  }
+  .mobile-hamburger-trigger {
+    display: block !important;
+  }
+  .about-split-layout {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .contact-split-layout {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}

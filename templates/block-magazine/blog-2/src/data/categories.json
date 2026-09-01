@@ -1,0 +1,92 @@
+[
+  {
+    "id": "cat-1",
+    "name": "Discoveries & Inventions",
+    "slug": "discoveries-inventions",
+    "dek": "The unintended breakthroughs, laboratory mishaps, and strange materials that redirected human capability.",
+    "color": "#d96c4a",
+    "icon": "Compass",
+    "storyCount": 8
+  },
+  {
+    "id": "cat-2",
+    "name": "Science & Society",
+    "slug": "science-society",
+    "dek": "When laboratory facts collide with courts of law, political power, public superstition, and economic fortunes.",
+    "color": "#6f5140",
+    "icon": "Scale",
+    "storyCount": 7
+  },
+  {
+    "id": "cat-3",
+    "name": "Scientists & Lives",
+    "slug": "scientists-lives",
+    "dek": "Intimate human portraits of obsession, stubborn rebellion, rivalry, and quiet perseverance.",
+    "color": "#ffb05a",
+    "icon": "Users",
+    "storyCount": 9
+  },
+  {
+    "id": "cat-4",
+    "name": "Health & Medicine",
+    "slug": "health-medicine",
+    "dek": "The chaotic history of healing: radical experiments, misunderstood contagions, and cells deciphered in secret.",
+    "color": "#ff6b6b",
+    "icon": "Activity",
+    "storyCount": 6
+  },
+  {
+    "id": "cat-5",
+    "name": "Environment & Nature",
+    "slug": "environment-nature",
+    "dek": "Field expeditions into the untamed world, lost ecosystems, and natural forces that defied classification.",
+    "color": "#7d8a72",
+    "icon": "Leaf",
+    "storyCount": 5
+  },
+  {
+    "id": "cat-6",
+    "name": "Forgotten Science",
+    "slug": "forgotten-science",
+    "dek": "Obsolete apparatus, discarded hypotheses, and brilliant thinkers whom official history overlooked.",
+    "color": "#d96c4a",
+    "icon": "Clock",
+    "storyCount": 7
+  },
+  {
+    "id": "cat-7",
+    "name": "Early Science & Alchemy",
+    "slug": "early-science",
+    "dek": "Before science had modern names: alembics, furnace fires, celestial charts, and natural philosophy.",
+    "color": "#f7c978",
+    "icon": "Flame",
+    "storyCount": 5
+  },
+  {
+    "id": "cat-8",
+    "name": "Science & Politics",
+    "slug": "science-politics",
+    "dek": "State secrets, wartime laboratories, diplomatic tensions, and the weaponization of natural knowledge.",
+    "color": "#6f5140",
+    "icon": "Shield",
+    "storyCount": 5
+  },
+  {
+    "id": "cat-9",
+    "name": "Experiments & Mistakes",
+    "slug": "experiments-mistakes",
+    "dek": "When the reaction boiled over, the apparatus broke, or the wrong sample yielded a world-altering revelation.",
+    "color": "#ff6b6b",
+    "icon": "AlertTriangle",
+    "storyCount": 6
+  },
+  {
+    "id": "cat-10",
+    "name": "Culture & Knowledge",
+    "slug": "culture-knowledge",
+    "dek": "How scientific metaphors entered literature, art, religious dogma, and everyday human imagination.",
+    "color": "#201c18",
+    "icon": "BookOpen",
+    "storyCount": 6
+  }
+]

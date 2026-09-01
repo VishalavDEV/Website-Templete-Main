@@ -1,0 +1,219 @@
+.pricing-header {
+  padding-top: calc(var(--nav-height) + 60px);
+  padding-bottom: 40px;
+}
+
+/* Billing Toggle */
+.billing-toggle-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  padding: 8px 24px;
+  border-radius: 40px;
+}
+
+.billing-toggle-container span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.billing-toggle-container span.active {
+  color: var(--text-primary);
+}
+
+.billing-switch-btn {
+  width: 50px;
+  height: 28px;
+  border-radius: 14px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-glass);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.billing-switch-btn.yearly {
+  background: var(--color-blue);
+  border-color: var(--color-blue);
+}
+
+.switch-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.billing-switch-btn.yearly .switch-knob {
+  left: 25px;
+  background: #030014;
+}
+
+.discount-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(0, 255, 170, 0.1);
+  color: #00ffaa;
+  margin-left: 4px;
+}
+
+/* Cards Grid */
+.pricing-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.pricing-card {
+  padding: 50px 30px 40px 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.pricing-card.popular {
+  border-color: var(--border-glass-glow);
+  background: linear-gradient(135deg, rgba(123, 97, 255, 0.05) 0%, rgba(3, 0, 20, 0.35) 100%);
+  box-shadow: 0 10px 40px rgba(123, 97, 255, 0.2);
+}
+
+.popular-ribbon {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--grad-cyan-blue);
+  color: #030014;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.pricing-card-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.plan-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+}
+
+.plan-price .currency {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.plan-price .amount {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: var(--font-headline);
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.plan-price .period {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.pricing-card-body h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.plan-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.plan-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.feature-check-icon {
+  color: var(--color-blue);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pricing-card-footer {
+  margin-top: auto;
+}
+
+.pricing-cta-btn {
+  width: 100%;
+  border-radius: 30px;
+}
+
+/* Comparison Table */
+.comparison-table-wrapper {
+  padding: 30px;
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.comparison-table th, .comparison-table td {
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.comparison-table th {
+  font-family: var(--font-headline);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.comparison-table td {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.comparison-table td.feat-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.feat-check {
+  color: #00ffaa;
+}
+
+.feat-x {
+  color: #ff4a5a;
+}

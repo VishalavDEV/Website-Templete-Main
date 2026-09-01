@@ -1,0 +1,306 @@
+.services-page {
+  position: relative;
+}
+
+/* ==========================================================================
+   SERVICES DETAILED MATRIX LIST
+   ========================================================================== */
+
+.services-matrix-section {
+  position: relative;
+}
+
+.services-detailed-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(5rem, 8vw, 8rem);
+}
+
+.service-detail-row {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(3rem, 5vw, 6rem);
+  align-items: flex-start;
+  padding-bottom: clamp(4rem, 6vw, 6rem);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.service-detail-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.service-detail-row.row-reversed {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
+.service-detail-row.row-reversed .service-row-main {
+  order: 2;
+}
+
+.service-detail-row.row-reversed .service-row-card {
+  order: 1;
+}
+
+/* ==========================================================================
+   LEFT COLUMN: MAIN PRACTICE STATEMENT & STATS
+   ========================================================================== */
+
+.service-row-main {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.service-row-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.service-icon-large {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  border: 1px solid rgba(200, 169, 107, 0.3);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.service-number-pill {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  background: var(--accent-soft);
+  border: 1px solid rgba(200, 169, 107, 0.25);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+}
+
+.service-row-title {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  text-wrap: balance;
+}
+
+.service-row-tagline {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.service-row-desc {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin-bottom: 2.25rem;
+}
+
+/* Service Row Stats */
+.service-row-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+}
+
+.service-mini-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-stat-val {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+}
+
+.mini-stat-lbl {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.service-cta-btn {
+  align-self: flex-start;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN: FOCUS AREAS & TECH STACK CARD
+   ========================================================================== */
+
+.service-row-card {
+  background: var(--surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 3.5vw, 2.75rem);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
+
+.service-row-card:hover {
+  border-color: rgba(200, 169, 107, 0.35);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+}
+
+.row-card-title {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Capabilities Checklist */
+.capabilities-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.cap-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.cap-icon {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.cap-name {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.cap-desc {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Tech Stack Section */
+.tech-stack-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.tech-stack-lbl {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-tag {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 500;
+  background: rgba(244, 240, 232, 0.05);
+  border: 1px solid var(--border-subtle);
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+  color: var(--text-secondary);
+}
+
+/* Industries Served Row */
+.industries-served-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 12px;
+  color: var(--text-muted);
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.ind-lbl {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.ind-list {
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .service-detail-row,
+  .service-detail-row.row-reversed {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .service-detail-row.row-reversed .service-row-main {
+    order: 1;
+  }
+  .service-detail-row.row-reversed .service-row-card {
+    order: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .service-row-stats {
+    gap: 1.5rem;
+  }
+  .service-cta-btn {
+    width: 100%;
+  }
+}

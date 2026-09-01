@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', sans-serif;
+  --font-script: 'Dancing Script', cursive;
+  
+  --color-brand-coral: #F2545B;
+  --color-brand-orange: #F7941D;
+  
+  --color-charcoal: #1C1C1C;
+  --color-near-black: #0E0E10;
+  --color-muted-gray: #6B7280;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: #1C1C1C;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utility helpers */
+.glass-panel {
+  background: rgba(14, 14, 16, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Hide scrollbar but keep scroll functionality or customize it */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0E0E10;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #F2545B, #F7941D);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #FF6B72, #FFAB4C);
+}

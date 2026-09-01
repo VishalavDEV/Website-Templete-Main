@@ -1,0 +1,239 @@
+.problemsol-section {
+  position: relative;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+}
+
+.problemsol-glow {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
+  width: 500px;
+  height: 500px;
+}
+
+.problemsol-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+@media (max-width: 992px) {
+  .problemsol-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.problemsol-pane {
+  padding: 32px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  height: 100%;
+}
+
+/* Before Pane */
+.problemsol-pane.before-flowly {
+  background: rgba(220, 38, 38, 0.02);
+  border: 1px solid rgba(220, 38, 38, 0.1);
+  box-shadow: 0 10px 30px -15px rgba(220, 38, 38, 0.05);
+}
+
+.problemsol-pane.before-flowly:hover {
+  border-color: rgba(220, 38, 38, 0.2);
+  box-shadow: 0 15px 40px -10px rgba(220, 38, 38, 0.1);
+}
+
+/* With Pane */
+.problemsol-pane.with-flowly {
+  background: rgba(139, 92, 246, 0.02);
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 10px 30px -15px rgba(139, 92, 246, 0.05);
+}
+
+.problemsol-pane.with-flowly:hover {
+  border-color: var(--border-glow-active);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.pane-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 100px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.before-flowly .pane-badge {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.with-flowly .pane-badge {
+  color: var(--color-accent);
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.pane-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.before-flowly .pane-title {
+  color: #fca5a5;
+}
+
+.with-flowly .pane-title {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pane-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.comparison-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comparison-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.comparison-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.before-flowly .comparison-icon-container {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.with-flowly .comparison-icon-container {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.comparison-item-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.comparison-item-desc {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+/* Clutter/Clean Layout Mini Mockups */
+.mini-mockup {
+  background: rgba(10, 8, 20, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.before-flowly .mini-mockup {
+  border-color: rgba(239, 68, 68, 0.15);
+}
+
+.with-flowly .mini-mockup {
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+/* Chaos Elements inside Before Mockup */
+.chaos-box {
+  position: absolute;
+  background: rgba(220, 38, 38, 0.05);
+  border: 1px dashed rgba(220, 38, 38, 0.3);
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 0.65rem;
+  color: #fca5a5;
+  width: 130px;
+  box-shadow: var(--shadow-sm);
+}
+
+.chaos-1 {
+  top: 15px;
+  left: 20px;
+  transform: rotate(-4deg);
+}
+
+.chaos-2 {
+  top: 50px;
+  right: 20px;
+  transform: rotate(3deg);
+}
+
+.chaos-3 {
+  bottom: 15px;
+  left: 35px;
+  transform: rotate(-2deg);
+}
+
+.chaos-4 {
+  bottom: 40px;
+  right: 45px;
+  transform: rotate(6deg);
+}
+
+/* Clean Elements inside With Mockup */
+.clean-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.clean-flow-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(139, 92, 246, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.75rem;
+}
+
+.clean-flow-line {
+  position: absolute;
+  left: 36px;
+  top: 36px;
+  bottom: 36px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+  z-index: 0;
+}

@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #ffffff; /* White content backgrounds */
+    color: #0d0d0d; /* Deep black text */
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Serif Typography tags */
+.font-serif-heading {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-serif-italic {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+/* Oversized ghost text watermark layer helper */
+.ghost-watermark-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 10rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #141414;
+  opacity: 0.04;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Scroll indicator animation */
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.bounce-slow {
+  animation: bounceSlow 2s infinite ease-in-out;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37; /* Accent gold scrollbars */
+}

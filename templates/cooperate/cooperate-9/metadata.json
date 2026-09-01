@@ -1,0 +1,6 @@
+{
+  "name": "Finora",
+  "description": "Finora — Finance Relationship Platform. Stronger relationships, better financial outcomes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

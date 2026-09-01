@@ -1,0 +1,6 @@
+{
+  "name": "Ember Glow Dashboard",
+  "description": "A premium modern sales and performance analytics dashboard designed with the Ember Glow visual system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

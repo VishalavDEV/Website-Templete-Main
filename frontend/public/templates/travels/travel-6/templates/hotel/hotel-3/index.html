@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurelia Velvet Obsidian Resort - Ultra-Luxury Sanctuary</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="ao-dark-theme">
+  <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+  <script>
+    (function() {
+      const isPlatform = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const isTop = window.self === window.top;
+      const urlParams = new URLSearchParams(window.location.search);
+      const isIframe = urlParams.get('iframe') === 'true';
+      
+      if (isPlatform && isTop && !isIframe) {
+        document.documentElement.style.visibility = 'hidden';
+        
+        window.addEventListener('DOMContentLoaded', () => {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.searchParams.set('iframe', 'true');
+          
+          const body = document.body;
+          body.innerHTML = '';
+          body.style.margin = '0';
+          body.style.padding = '0';
+          body.style.height = '100vh';
+          body.style.width = '100vw';
+          body.style.display = 'flex';
+          body.style.flexDirection = 'column';
+          body.style.overflow = 'hidden';
+          body.style.backgroundColor = '#f1f5f9';
+          
+          // Build Top Bar
+          const topBar = document.createElement('div');
+          topBar.id = 'technosprint-preview-header';
+          topBar.style.height = '64px';
+          topBar.style.background = '#ffffff';
+          topBar.style.borderBottom = '1px solid #e2e8f0';
+          topBar.style.display = 'flex';
+          topBar.style.alignItems = 'center';
+          topBar.style.justifyContent = 'space-between';
+          topBar.style.padding = '0 24px';
+          topBar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+          topBar.style.fontFamily = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+          topBar.style.zIndex = '99999';
+          topBar.style.position = 'relative';
+          topBar.style.boxSizing = 'border-box';
+          
+          // Left side logo
+          const logoDiv = document.createElement('div');
+          logoDiv.innerHTML = '<a href="/templates" style="display: flex; align-items: center; text-decoration: none;"><img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" /></a>';
+          topBar.appendChild(logoDiv);
+          
+          // Center Template Name
+          const titleDiv = document.createElement('div');
+          titleDiv.style.fontWeight = '600';
+          titleDiv.style.fontSize = '0.9rem';
+          titleDiv.style.color = '#334155';
+          titleDiv.innerText = '< ' + (document.title || 'Template Preview') + ' >';
+          topBar.appendChild(titleDiv);
+          
+          // Right view switcher buttons
+          const rightDiv = document.createElement('div');
+          rightDiv.style.display = 'flex';
+          rightDiv.style.alignItems = 'center';
+          rightDiv.style.gap = '8px';
+          rightDiv.innerHTML = '' +
+            '<button id="view-desktop" style="' +
+            '  background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;' +
+            '  padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;' +
+            '  cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;' +
+            '  outline: none; box-sizing: border-box;' +
+            '">' +
+            '  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>' +
+            '  Desktop' +
+            '</button>' +
+            '<button id="view-tablet" style="' +
+            '  background: #ffffff; color: #475569; border: 1px solid #e2e8f0;' +
+            '  padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;' +
+            '  cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;' +
+            '  outline: none; box-sizing: border-box;' +
+            '">' +
+            '  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>' +
+            '  Tablet' +
+            '</button>' +
+            '<button id="view-mobile" style="' +
+            '  background: #ffffff; color: #475569; border: 1px solid #e2e8f0;' +
+            '  padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;' +
+            '  cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;' +
+            '  outline: none; box-sizing: border-box;' +
+            '">' +
+            '  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>' +
+            '  Mobile' +
+            '</button>';
+          topBar.appendChild(rightDiv);
+          body.appendChild(topBar);
+          
+          // Create Iframe Container
+          const iframeContainer = document.createElement('div');
+          iframeContainer.style.flex = '1';
+          iframeContainer.style.display = 'flex';
+          iframeContainer.style.alignItems = 'center';
+          iframeContainer.style.justifyContent = 'center';
+          iframeContainer.style.background = '#f1f5f9';
+          iframeContainer.style.padding = '20px';
+          iframeContainer.style.boxSizing = 'border-box';
+          iframeContainer.style.overflow = 'hidden';
+          
+          const iframe = document.createElement('iframe');
+          iframe.id = 'preview-iframe';
+          iframe.src = currentUrl.toString();
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.border = 'none';
+          iframe.style.borderRadius = '12px';
+          iframe.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+          iframe.style.background = '#ffffff';
+          iframe.style.transition = 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+          
+          iframeContainer.appendChild(iframe);
+          body.appendChild(iframeContainer);
+          
+          // Interactivity
+          const btnDesktop = body.querySelector('#view-desktop');
+          const btnTablet = body.querySelector('#view-tablet');
+          const btnMobile = body.querySelector('#view-mobile');
+          
+          let activeMode = 'desktop';
+          
+          function setView(mode) {
+            activeMode = mode;
+            [btnDesktop, btnTablet, btnMobile].forEach(btn => {
+              btn.style.background = '#ffffff';
+              btn.style.color = '#475569';
+              btn.style.borderColor = '#e2e8f0';
+              btn.style.fontWeight = '500';
+            });
+            
+            if (mode === 'desktop') {
+              btnDesktop.style.background = '#eff6ff';
+              btnDesktop.style.color = '#1e40af';
+              btnDesktop.style.borderColor = '#bfdbfe';
+              btnDesktop.style.fontWeight = '600';
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+              iframe.style.borderRadius = '12px';
+              iframe.style.border = 'none';
+            } else if (mode === 'tablet') {
+              btnTablet.style.background = '#eff6ff';
+              btnTablet.style.color = '#1e40af';
+              btnTablet.style.borderColor = '#bfdbfe';
+              btnTablet.style.fontWeight = '600';
+              iframe.style.width = '768px';
+              iframe.style.height = '1024px';
+              iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '24px';
+              iframe.style.border = '12px solid #0f172a';
+            } else if (mode === 'mobile') {
+              btnMobile.style.background = '#eff6ff';
+              btnMobile.style.color = '#1e40af';
+              btnMobile.style.borderColor = '#bfdbfe';
+              btnMobile.style.fontWeight = '600';
+              iframe.style.width = '375px';
+              iframe.style.height = '667px';
+              iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '32px';
+              iframe.style.border = '14px solid #0f172a';
+            }
+          }
+          
+          btnDesktop.addEventListener('click', () => setView('desktop'));
+          btnTablet.addEventListener('click', () => setView('tablet'));
+          btnMobile.addEventListener('click', () => setView('mobile'));
+          
+          const btns = [
+            { btn: btnDesktop, mode: 'desktop' },
+            { btn: btnTablet, mode: 'tablet' },
+            { btn: btnMobile, mode: 'mobile' }
+          ];
+          
+          btns.forEach(item => {
+            item.btn.addEventListener('mouseenter', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#f8fafc';
+                item.btn.style.borderColor = '#cbd5e1';
+              }
+            });
+            item.btn.addEventListener('mouseleave', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#ffffff';
+                item.btn.style.borderColor = '#e2e8f0';
+              }
+            });
+          });
+          
+          document.documentElement.style.visibility = 'visible';
+        });
+      }
+    })();
+  </script>
+
+
+  <!-- ─── 1. FLOATING NAVIGATION DOCK ─── -->
+  <nav class="ao-navbar ao-glass" id="aoNavbar">
+    <div class="ao-nav-container">
+      <a href="#hero-section" class="ao-logo ao-serif">Aurelia</a>
+      
+      <div class="ao-nav-links" id="aoNavLinks">
+        <a href="#hero-section" class="ao-nav-item active" data-target="hero-section">Home</a>
+        <a href="#suites-showcase" class="ao-nav-item" data-target="suites-showcase">Suites</a>
+        <a href="#experiences-showcase" class="ao-nav-item" data-target="experiences-showcase">Experiences</a>
+        <a href="#testimonials-section" class="ao-nav-item" data-target="testimonials-section">Reviews</a>
+      </div>
+
+      <div class="ao-nav-actions">
+        <button class="ao-theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <button class="ao-btn-gold" id="reserveNavBtn">Reserve Now</button>
+        <button class="ao-mobile-toggle" id="aoMobileToggle" aria-label="Toggle Menu">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── 2. HERO ENTRANCE SECTION ─── -->
+  <header id="hero-section" class="ao-hero">
+    <div class="ao-hero-bg" style="background-image: linear-gradient(rgba(11, 12, 16, 0.5), rgba(11, 12, 16, 0.85)), url('./assets/images/aura_haven_hero.jpg');"></div>
+    <div class="ao-hero-content">
+      <span class="ao-hero-tagline ao-reveal">✦ AN AWARD-WINNING ARCHITECTURAL SANCTUARY ✦</span>
+      <h1 class="ao-serif ao-reveal">Where Raw Obsidian Meets Golden Elegance</h1>
+      <p class="ao-reveal">Aurelia is a private cliffside refuge offering luxury architectural pods crafted from volcanic stone, glass canopies, and polished teakwood.</p>
+      <div class="ao-hero-actions ao-reveal">
+        <button class="ao-btn-gold btn-scroll" data-target="suites-showcase">Explore Habitats</button>
+        <button class="ao-btn-outline btn-scroll" data-target="experiences-showcase">Discover Experiences</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── 3. OVERLAY FLOATING BOOKING BAR ─── -->
+  <div class="ao-booking-wrapper">
+    <div class="ao-booking-bar ao-glass card-elevation">
+      <form class="ao-booking-form" id="aoBookingForm">
+        <!-- Check-In -->
+        <div class="ao-booking-group">
+          <label class="ao-booking-label"><i class="bi bi-calendar-event"></i> Check-In</label>
+          <input type="date" class="ao-booking-input" id="checkIn" required>
+        </div>
+
+        <!-- Check-Out -->
+        <div class="ao-booking-group">
+          <label class="ao-booking-label"><i class="bi bi-calendar-check"></i> Check-Out</label>
+          <input type="date" class="ao-booking-input" id="checkOut" required>
+        </div>
+
+        <!-- Guests -->
+        <div class="ao-booking-group dropdown-wrapper">
+          <label class="ao-booking-label" id="guestTrigger"><i class="bi bi-people"></i> Guests</label>
+          <div class="ao-booking-input-fake" id="guestDisplay">2 Guests</div>
+          <div class="ao-guest-dropdown ao-glass" id="guestDropdown">
+            <div class="ao-guest-row">
+              <span>Adults</span>
+              <div class="ao-counter">
+                <button type="button" id="guestMinus">-</button>
+                <span id="guestCount">2</span>
+                <button type="button" id="guestPlus">+</button>
+              </div>
+            </div>
+            <small>Max 8 guests per pod.</small>
+          </div>
+        </div>
+
+        <!-- Habitat Type -->
+        <div class="ao-booking-group">
+          <label class="ao-booking-label"><i class="bi bi-house-door"></i> Sanctuary Pod</label>
+          <select class="ao-booking-input" id="roomType">
+            <option value="Deluxe Forest Habitat">Deluxe Forest Habitat</option>
+            <option value="Obsidian Ocean Crest Suite">Obsidian Ocean Crest Suite</option>
+            <option value="Velvet Obsidian Sanctuary">Velvet Obsidian Sanctuary</option>
+            <option value="Imperial Aurelia Estate">Imperial Aurelia Estate</option>
+          </select>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="ao-booking-action">
+          <button type="submit" class="ao-btn-gold">Check Availability</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ─── 4. CURATED BENTO ROOMS GRID ─── -->
+  <section id="suites-showcase" class="ao-suites-section ao-reveal">
+    <div class="ao-section-header">
+      <span class="ao-subtitle">✦ CURATED HABITATS</span>
+      <h2 class="ao-serif">Luxury Suites & Refuges</h2>
+      <p>Experience architectural isolation in structural pods built using lava stones, glass canopies, and polished teakwood.</p>
+    </div>
+
+    <!-- Bento Grid Layout -->
+    <div class="ao-bento-grid">
+      <!-- Card 1 (Large - col-8) -->
+      <div class="ao-bento-card col-8 ao-glass" data-room="Deluxe Forest Habitat">
+        <div class="ao-card-img" style="background-image: url('./assets/images/aura_haven_suite.jpg');"></div>
+        <div class="ao-card-content">
+          <div class="ao-card-header-row">
+            <h3 class="ao-serif">Deluxe Forest Habitat</h3>
+            <span class="ao-card-price">$450 <small>/ night</small></span>
+          </div>
+          <p>Nested directly within the redwood forest canopy, featuring floor-to-ceiling glass panel walls, a volcanic slate hot tub, and organic basalt structures.</p>
+          <div class="ao-card-badges">
+            <span>Forest Vista</span>
+            <span>Heated Bath</span>
+            <span>King Bed</span>
+          </div>
+          <div class="ao-card-actions">
+            <button class="ao-btn-outline btn-peek-room">Details</button>
+            <button class="ao-btn-gold btn-book-room">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 (Small - col-4) -->
+      <div class="ao-bento-card col-4 ao-glass" data-room="Obsidian Ocean Crest Suite">
+        <div class="ao-card-img" style="background-image: url('./assets/images/aura_haven_pool.jpg');"></div>
+        <div class="ao-card-content">
+          <div class="ao-card-header-row">
+            <h3 class="ao-serif">Obsidian Ocean Crest</h3>
+            <span class="ao-card-price">$750 <small>/ night</small></span>
+          </div>
+          <p>On the precipice of granite cliffs, featuring outdoor lounge decks, fire pit, and infinite ocean vistas.</p>
+          <div class="ao-card-badges">
+            <span>Ocean View</span>
+            <span>Infinity Pool</span>
+            <span>Fire Pit</span>
+          </div>
+          <div class="ao-card-actions">
+            <button class="ao-btn-outline btn-peek-room">Details</button>
+            <button class="ao-btn-gold btn-book-room">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 (Small - col-4) -->
+      <div class="ao-bento-card col-4 ao-glass" data-room="Velvet Obsidian Sanctuary">
+        <div class="ao-card-img" style="background-image: url('./assets/images/hotel_hero.jpg');"></div>
+        <div class="ao-card-content">
+          <div class="ao-card-header-row">
+            <h3 class="ao-serif">Obsidian Sanctuary</h3>
+            <span class="ao-card-price">$1200 <small>/ night</small></span>
+          </div>
+          <p>Double-height ceilings, raw obsidian masonry walls, wood-burning hearth, and a private botanical courtyard.</p>
+          <div class="ao-card-badges">
+            <span>Bespoke Concierge</span>
+            <span>Obsidian Hearth</span>
+            <span>Plunge Pool</span>
+          </div>
+          <div class="ao-card-actions">
+            <button class="ao-btn-outline btn-peek-room">Details</button>
+            <button class="ao-btn-gold btn-book-room">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 (Large - col-8) -->
+      <div class="ao-bento-card col-8 ao-glass" data-room="Imperial Aurelia Estate">
+        <div class="ao-card-img" style="background-image: url('./assets/images/aura_haven_dining.jpg');"></div>
+        <div class="ao-card-content">
+          <div class="ao-card-header-row">
+            <h3 class="ao-serif">Imperial Aurelia Estate</h3>
+            <span class="ao-card-price">$2500 <small>/ night</small></span>
+          </div>
+          <p>Sprawling 3-bedroom cliffside estate featuring direct private beach tunnel entrance, infinite pool, custom whiskey bar, and exclusive helipad landing clearance.</p>
+          <div class="ao-card-badges">
+            <span>Helipad Access</span>
+            <span>Private Tunnel</span>
+            <span>Whiskey Cellar</span>
+          </div>
+          <div class="ao-card-actions">
+            <button class="ao-btn-outline btn-peek-room">Details</button>
+            <button class="ao-btn-gold btn-book-room">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 5. INTERACTIVE EXPERIENCES SECTION ─── -->
+  <section id="experiences-showcase" class="ao-experiences ao-reveal">
+    <div class="ao-section-header">
+      <span class="ao-subtitle">✦ CURATED EXPERIENCE SESSIONS</span>
+      <h2 class="ao-serif">Somatic & Elemental Retreats</h2>
+    </div>
+
+    <div class="ao-exp-grid">
+      <!-- Exp 1 -->
+      <div class="ao-exp-card ao-glass">
+        <img src="./assets/images/hotel_dining.jpg" alt="Dining" class="ao-exp-img">
+        <div class="ao-exp-info">
+          <span class="ao-exp-tag">FINE DINING</span>
+          <h4 class="ao-serif">The Basalt Flame Hearth</h4>
+          <p>Open volcanic hearth fire cooking and private somatic tasting sessions overlooking the waves.</p>
+        </div>
+      </div>
+      <!-- Exp 2 -->
+      <div class="ao-exp-card ao-glass">
+        <img src="./assets/images/hotel_spa.jpg" alt="Spa" class="ao-exp-img">
+        <div class="ao-exp-info">
+          <span class="ao-exp-tag">WELLNESS RITUALS</span>
+          <h4 class="ao-serif">Steam & Basalt Bath</h4>
+          <p>Thermal water cave rituals combining warm steam pools and therapeutic hot obsidian stone therapy.</p>
+        </div>
+      </div>
+      <!-- Exp 3 -->
+      <div class="ao-exp-card ao-glass">
+        <img src="./assets/images/ao_amber_canopy.jpg" alt="Canopy" class="ao-exp-img">
+        <div class="ao-exp-info">
+          <span class="ao-exp-tag">ARCHAEOLOGY</span>
+          <h4 class="ao-serif">Redwood Forest Canopy Walk</h4>
+          <p>Private naturalist excursions walking high suspension bridges nested 150 feet high in redwoods.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 6. TESTIMONIALS LOOPING MARQUEE ─── -->
+  <section id="testimonials-section" class="ao-testimonials ao-reveal">
+    <div class="ao-section-header">
+      <span class="ao-subtitle">JURY & ACCREDITATIONS</span>
+      <h2 class="ao-serif">Refined Testimonials</h2>
+    </div>
+
+    <div class="ao-marquee-wrapper">
+      <div class="ao-marquee-track">
+        <!-- Review 1 -->
+        <div class="ao-review-card ao-glass">
+          <div class="ao-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+          <p>"Aurelia is not a hotel; it is a spiritual reconnection with architecture and the elements. The contrast between raw obsidian and gold lighting is sublime."</p>
+          <div class="ao-author">
+            <div class="ao-avatar">L</div>
+            <div class="ao-author-info">
+              <h5>Lord Sebastian Sterling</h5>
+              <span>London, UK</span>
+            </div>
+          </div>
+        </div>
+        <!-- Review 2 -->
+        <div class="ao-review-card ao-glass">
+          <div class="ao-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+          <p>"The floating navbar, bento suite layouts, and subtle 3D details set a new benchmark for web interactive craft in the hospitality industry. Masterpiece."</p>
+          <div class="ao-author">
+            <div class="ao-avatar">C</div>
+            <div class="ao-author-info">
+              <h5>Clara Delacroix</h5>
+              <span>Awwwards Jury</span>
+            </div>
+          </div>
+        </div>
+        <!-- Review 3 -->
+        <div class="ao-review-card ao-glass">
+          <div class="ao-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+          <p>"Stunning organic layout. The private spa tunnel is a masterpiece of biophilic planning. An architectural sanctuary of absolute peace."</p>
+          <div class="ao-author">
+            <div class="ao-avatar">K</div>
+            <div class="ao-author-info">
+              <h5>Kenji Takahashi</h5>
+              <span>Tokyo, Japan</span>
+            </div>
+          </div>
+        </div>
+        <!-- Review 4 -->
+        <div class="ao-review-card ao-glass">
+          <div class="ao-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+          <p>"A profound level of service. The helipad coordinators scheduled everything down to the minute. The spa treatment stone massage is unmatched."</p>
+          <div class="ao-author">
+            <div class="ao-avatar">E</div>
+            <div class="ao-author-info">
+              <h5>Dr. Evelyn Vance</h5>
+              <span>Zurich, Switzerland</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 7. EDITORIAL FOOTER ─── -->
+  <footer class="ao-footer">
+    <div class="ao-footer-container">
+      <div class="ao-footer-branding">
+        <h2 class="ao-serif">AURELIA</h2>
+        <p>A cliffside organic resort sanctuary designed for sensory retreat, physical equilibrium, and absolute architectural silence.</p>
+      </div>
+      <div class="ao-footer-links">
+        <div class="ao-links-col">
+          <h5>RESERVATIONS</h5>
+          <p>inquire@aureliaresort.com</p>
+          <p>+1 800 555 0192</p>
+        </div>
+        <div class="ao-links-col">
+          <h5>HABITAT SPECS</h5>
+          <p>Basalt Pods</p>
+          <p>Teak Estates</p>
+          <p>Heli-Access</p>
+        </div>
+        <div class="ao-links-col">
+          <h5>LEGAL</h5>
+          <p>Privacy Policy</p>
+          <p>Terms of Service</p>
+          <p>&copy; <span id="currentYear">2026</span> Aurelia Resort</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── 8. SLIDING BOOKING DRAWER / MODAL ─── -->
+  <div class="ao-drawer" id="bookingDrawer">
+    <div class="ao-drawer-content ao-glass">
+      <button class="ao-drawer-close" id="drawerClose"><i class="bi bi-x-lg"></i></button>
+      
+      <!-- Screen 1: Form -->
+      <div id="drawerFormScreen">
+        <h3 class="ao-serif">Inquire Reservation</h3>
+        <p>A concierge will review your select date ranges and confirm details in 2 hours.</p>
+        
+        <div class="ao-summary-box">
+          <div><strong>Sanctuary:</strong> <span id="summaryRoom">Deluxe Forest Habitat</span></div>
+          <div><strong>Dates:</strong> <span id="summaryDates">Today - Tomorrow</span></div>
+          <div><strong>Guests:</strong> <span id="summaryGuests">2 Guests</span></div>
+        </div>
+
+        <form id="drawerConfirmForm">
+          <div class="ao-form-group">
+            <label class="ao-form-label">Full Name</label>
+            <input type="text" class="ao-form-input" id="guestName" required placeholder="John Doe">
+          </div>
+          <div class="ao-form-group">
+            <label class="ao-form-label">Email Address</label>
+            <input type="email" class="ao-form-input" id="guestEmail" required placeholder="john@example.com">
+          </div>
+          <div class="ao-form-group">
+            <label class="ao-form-label">Phone Number</label>
+            <input type="tel" class="ao-form-input" id="guestPhone" required placeholder="+1 (555) 012-3456">
+          </div>
+          <button type="submit" class="ao-btn-gold w-100" style="margin-top: 15px;">Send Inquiry</button>
+        </form>
+      </div>
+
+      <!-- Screen 2: Success -->
+      <div id="drawerSuccessScreen" style="display: none; text-align: center; padding: 40px 10px;">
+        <i class="bi bi-check-circle text-gold" style="font-size: 4rem; display: block; margin-bottom: 20px;"></i>
+        <h3 class="ao-serif">Inquiry Transmitted</h3>
+        <p style="margin-bottom: 20px;">Thank you, <strong id="successGuestName">Guest</strong>. We have logged your request under reference <strong id="successRefId">#AR-000000</strong>.</p>
+        <p>A confirmation contract is being forwarded to <span id="successGuestEmail">your email</span>.</p>
+        <button class="ao-btn-gold" id="successReturnBtn" style="margin-top: 25px;">Back to Sanctuary</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

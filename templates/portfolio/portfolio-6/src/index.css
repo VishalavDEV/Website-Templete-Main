@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #0a0a0a; /* Deep black background */
+    color: #f3f4f6; /* Light gray text */
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Green glow radial background helpers */
+.green-radial-glow {
+  background: radial-gradient(circle 600px at 50% 200px, rgba(62, 207, 110, 0.08), transparent 80%);
+}
+
+.green-radial-glow-footer {
+  background: radial-gradient(circle 400px at 50% 100%, rgba(62, 207, 110, 0.06), transparent 80%);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c1c1c;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3ecf6e; /* Green accent thumb hover */
+}

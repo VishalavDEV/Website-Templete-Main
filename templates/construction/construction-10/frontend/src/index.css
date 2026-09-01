@@ -1,0 +1,348 @@
+/* ==========================================================================
+   AEROVISION // MONOCHROME BLACK & WHITE SKYRISE CONSTRUCTION SYSTEM
+   ARCHITECTURAL HIGH-CONTRAST DESIGN TOKENS
+   ========================================================================== */
+
+:root,
+[data-theme="light"] {
+  /* LIGHT THEME (DEFAULT) — Pure Architectural White & Bold Onyx Black */
+  --bg-main: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.94);
+  --bg-glass-card: rgba(255, 255, 255, 0.96);
+  --bg-overlay: rgba(15, 23, 42, 0.5);
+
+  --border-subtle: #e2e8f0;
+  --border-strong: #94a3b8;
+  --border-active: #0f172a;
+  --border-highlight: #000000;
+
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #64748b;
+  --text-inverse: #ffffff;
+
+  /* Primary Accent: Deep Crisp Black */
+  --accent-primary: #0f172a;
+  --accent-primary-text: #ffffff;
+  --accent-secondary: #334155;
+  --accent-contrast: #000000;
+  --accent-subtle: #f1f5f9;
+
+  /* Form & Component Tokens */
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --input-text: #0f172a;
+  --card-subtle-bg: #f8fafc;
+  --badge-bg: #f1f5f9;
+  --badge-border: #cbd5e1;
+  --badge-text: #0f172a;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --gradient-dark-glass: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  --gradient-glow-line: linear-gradient(90deg, transparent, #0f172a, transparent);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-primary: 0 4px 14px rgba(15, 23, 42, 0.18);
+
+  --grid-color: rgba(15, 23, 42, 0.05);
+  --canvas-bg: #f1f5f9;
+}
+
+[data-theme="dark"] {
+  /* DARK THEME — Pure Onyx Black & Crisp Architectural White */
+  --bg-main: #09090b;
+  --bg-surface: #121215;
+  --bg-surface-elevated: #18181b;
+  --bg-card: #121215;
+  --bg-glass: rgba(18, 18, 21, 0.92);
+  --bg-glass-card: rgba(24, 24, 27, 0.88);
+  --bg-overlay: rgba(0, 0, 0, 0.82);
+
+  --border-subtle: #27272a;
+  --border-strong: #3f3f46;
+  --border-active: #ffffff;
+  --border-highlight: #ffffff;
+
+  --text-main: #fafafa;
+  --text-muted: #a1a1aa;
+  --text-dim: #71717a;
+  --text-inverse: #09090b;
+
+  /* Primary Accent: Pure Crisp White */
+  --accent-primary: #ffffff;
+  --accent-primary-text: #09090b;
+  --accent-secondary: #e4e4e7;
+  --accent-contrast: #ffffff;
+  --accent-subtle: #18181b;
+
+  /* Form & Component Tokens */
+  --input-bg: #18181b;
+  --input-border: #27272a;
+  --input-text: #fafafa;
+  --card-subtle-bg: #09090b;
+  --badge-bg: #18181b;
+  --badge-border: #27272a;
+  --badge-text: #ffffff;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #ffffff 0%, #e4e4e7 100%);
+  --gradient-dark-glass: linear-gradient(180deg, rgba(24, 24, 27, 0.9) 0%, rgba(18, 18, 21, 0.95) 100%);
+  --gradient-glow-line: linear-gradient(90deg, transparent, #ffffff, transparent);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.85);
+  --shadow-primary: 0 0 20px rgba(255, 255, 255, 0.25);
+
+  --grid-color: rgba(255, 255, 255, 0.04);
+  --canvas-bg: #050507;
+}
+
+/* Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* CAD & Construction Grid Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: 
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-main);
+}
+
+.font-display {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Header */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--badge-text);
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  padding: 6px 14px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  color: var(--text-main);
+}
+
+.section-desc {
+  font-size: 1.08rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  line-height: 1.65;
+}
+
+/* Monochrome Card */
+.aero-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.aero-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-glow-line);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.aero-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.aero-card:hover::before {
+  opacity: 1;
+}
+
+/* High-Contrast Button System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  outline: none;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--accent-primary);
+  color: var(--accent-primary-text);
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-primary);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+}
+
+.btn-secondary {
+  background: var(--bg-surface);
+  color: var(--text-main);
+  border: 1px solid var(--border-strong);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--border-active);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-strong);
+}
+
+.btn-outline:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--border-active);
+}
+
+/* Form Controls */
+input, select, textarea {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--input-text);
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--border-active);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Pulse animation */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+}

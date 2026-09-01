@@ -1,0 +1,138 @@
+/* Microphone Floating Animation */
+@keyframes floatMicrophone {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(4deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.anim-float-mic {
+  animation: floatMicrophone 7s ease-in-out infinite;
+}
+.anim-float-mic-reverse {
+  animation: floatMicrophone 9s ease-in-out infinite reverse;
+}
+
+/* Speaker Bass Pulsing Animation */
+@keyframes pulseSpeaker {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px rgba(245, 185, 0, 0.2));
+  }
+  50% {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 30px rgba(255, 201, 40, 0.6));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px rgba(245, 185, 0, 0.2));
+  }
+}
+
+.anim-pulse-speaker {
+  animation: pulseSpeaker 1.8s ease-in-out infinite;
+}
+
+/* Stage Spotlight Moving Beams Animation */
+@keyframes movingBeams {
+  0% {
+    transform: rotate(-15deg) scaleX(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: rotate(15deg) scaleX(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotate(-15deg) scaleX(1);
+    opacity: 0.3;
+  }
+}
+
+.anim-moving-beam {
+  animation: movingBeams 8s ease-in-out infinite alternate;
+}
+.anim-moving-beam-delayed {
+  animation: movingBeams 11s ease-in-out infinite alternate-reverse;
+}
+
+/* Music Particles Drift */
+@keyframes particleDrift {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-800px) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Sound Wave Bars Animation */
+@keyframes soundwaveBars {
+  0%, 100% {
+    height: 12px;
+  }
+  50% {
+    height: 55px;
+  }
+}
+
+.soundwave-bar {
+  width: 4px;
+  background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold-amber) 100%);
+  border-radius: 4px;
+  animation: soundwaveBars 1.2s ease-in-out infinite;
+  box-shadow: 0 0 10px var(--gold-bright);
+}
+
+/* Vinyl Record Slow Rotation */
+@keyframes rotateVinyl {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.anim-rotate-vinyl {
+  animation: rotateVinyl 25s linear infinite;
+}
+
+/* Spotlight Glow Pulse */
+@keyframes spotlightPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0.9;
+  }
+}
+
+/* Fade Up Page Transitions */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

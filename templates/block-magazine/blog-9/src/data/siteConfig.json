@@ -1,0 +1,23 @@
+{
+  "brand": "ATLAS",
+  "tagline": "THE MAGAZINE OF DISCOVERY",
+  "motto": "There is always more to discover.",
+  "subMotto": "Stories from the wild, the unknown, the ancient and the infinite.",
+  "navItems": [
+    { "label": "HOME", "href": "/" },
+    { "label": "EXPLORE", "href": "/explore" },
+    { "label": "WILDLIFE", "href": "/wildlife" },
+    { "label": "PLANET", "href": "/planet" },
+    { "label": "SCIENCE", "href": "/science" },
+    { "label": "SPACE", "href": "/space" },
+    { "label": "HISTORY", "href": "/history" },
+    { "label": "PHOTOGRAPHY", "href": "/photography" },
+    { "label": "MAGAZINE", "href": "/magazine" }
+  ],
+  "socials": [
+    { "name": "Instagram", "url": "https://instagram.com" },
+    { "name": "YouTube", "url": "https://youtube.com" },
+    { "name": "X", "url": "https://x.com" },
+    { "name": "LinkedIn", "url": "https://linkedin.com" }
+  ]
+}

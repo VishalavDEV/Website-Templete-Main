@@ -1,0 +1,205 @@
+[
+  {
+    "id": "tl-1",
+    "date": "Aug 22, 2026",
+    "isoDate": "2026-08-22",
+    "time": "10:30 AM",
+    "title": "Preventive Longevity Consultation Completed",
+    "category": "appointment",
+    "description": "Comprehensive 45-minute clinical consultation reviewing latest cardiometabolic blood panel, continuous glucose metrics, and lifestyle vitality trajectory.",
+    "doctorName": "Dr. Sophia Chen-Vance",
+    "doctorSpecialty": "General & Preventive Medicine",
+    "location": "Aura Executive Wellness Lounge, Floor 3",
+    "statusBadge": "Completed Visit",
+    "actionText": "View Visit Summary",
+    "targetId": "rep-blood-panel-2026",
+    "keyMetrics": [
+      { "label": "Blood Pressure", "value": "118/76 mmHg", "isOptimal": true },
+      { "label": "Resting HR", "value": "58 bpm", "isOptimal": true },
+      { "label": "BMI", "value": "22.8", "isOptimal": true }
+    ],
+    "notes": "Patient advised to continue current physical training protocol. Vitamin D3 2000 IU softgels daily recommended."
+  },
+  {
+    "id": "tl-2",
+    "date": "Aug 14, 2026",
+    "isoDate": "2026-08-14",
+    "time": "08:15 AM",
+    "title": "Biomarker Blood Panel Uploaded & Synced",
+    "category": "report",
+    "description": "7 biomarker metrics synchronized directly from the Clinical Biochemistry laboratory. Reviewed and digitally validated by lead physician.",
+    "doctorName": "Dr. Sophia Chen-Vance",
+    "doctorSpecialty": "Clinical Biochemistry & Pathology",
+    "location": "Aura Central Laboratory Pavilion",
+    "statusBadge": "Reviewed & Ready",
+    "actionText": "Open Lab Report",
+    "targetId": "rep-blood-panel-2026",
+    "keyMetrics": [
+      { "label": "ApoB", "value": "72 mg/dL", "isOptimal": true },
+      { "label": "hs-CRP", "value": "0.62 mg/L", "isOptimal": true },
+      { "label": "25-OH Vit D", "value": "29.4 ng/mL", "isOptimal": false }
+    ],
+    "notes": "Vascular inflammation is negligible. Glycemic stability is optimal."
+  },
+  {
+    "id": "tl-3",
+    "date": "Aug 03, 2026",
+    "isoDate": "2026-08-03",
+    "time": "02:45 PM",
+    "title": "Prescription Protocol Renewed (Vitamin D3 + K2)",
+    "category": "prescription",
+    "description": "Prescription renewed for Vitamin D3 + K2 (2,000 IU / 100 mcg) with 2 active refills remaining at Aura Central Pharmacy.",
+    "doctorName": "Dr. Sophia Chen-Vance",
+    "doctorSpecialty": "Preventive Medicine",
+    "location": "Aura Central Pharmacy",
+    "statusBadge": "Active Protocol",
+    "actionText": "View Medication Details",
+    "targetId": "rx-01",
+    "keyMetrics": [
+      { "label": "Dosage", "value": "2,000 IU Daily", "isOptimal": true },
+      { "label": "Refills Left", "value": "2 Refills", "isOptimal": true }
+    ],
+    "notes": "Dispensed under Rx #88419. Take once daily with breakfast."
+  },
+  {
+    "id": "tl-4",
+    "date": "Jul 28, 2026",
+    "isoDate": "2026-07-28",
+    "time": "11:00 AM",
+    "title": "Lumbar Spine 3T High-Resolution MRI",
+    "category": "procedure",
+    "description": "Silent wide-bore 3T MRI neuro-imaging performed at the diagnostic pavilion. Clear neural pathways without canal stenosis.",
+    "doctorName": "Dr. Julian Sterling",
+    "doctorSpecialty": "Neuro-Radiology & Neurology",
+    "location": "Aura Imaging Pavilion, Suite 100",
+    "statusBadge": "Diagnostic Clear",
+    "actionText": "View Imaging Notes",
+    "targetId": "rep-mri-spine-2026",
+    "keyMetrics": [
+      { "label": "Spinal Canal", "value": "14.2 mm (Optimal)", "isOptimal": true },
+      { "label": "Thecal Sac", "value": "Clear / Negative", "isOptimal": true }
+    ],
+    "notes": "Mild early L4-L5 disc desiccation without neural impingement. Conservative physical therapy recommended."
+  },
+  {
+    "id": "tl-5",
+    "date": "Jul 20, 2026",
+    "isoDate": "2026-07-20",
+    "time": "03:15 PM",
+    "title": "Neurology Diagnostic Consultation",
+    "category": "appointment",
+    "description": "Clinical assessment regarding mild intermittent lower back stiffness following athletic training. 3T MRI study ordered for preventative confirmation.",
+    "doctorName": "Dr. Julian Sterling",
+    "doctorSpecialty": "Senior Neurologist",
+    "location": "Aura Neuro Science Center, Level 4",
+    "statusBadge": "Completed Visit",
+    "actionText": "View Notes",
+    "targetId": "rep-mri-spine-2026",
+    "keyMetrics": [
+      { "label": "Reflexes", "value": "2+ Symmetric", "isOptimal": true },
+      { "label": "Motor Exam", "value": "5/5 Normal", "isOptimal": true }
+    ],
+    "notes": "No radicular signs. Ordered elective Lumbar MRI to rule out disc protrusion."
+  },
+  {
+    "id": "tl-6",
+    "date": "Jun 19, 2026",
+    "isoDate": "2026-06-19",
+    "time": "09:30 AM",
+    "title": "12-Lead Rest ECG & Holter Rhythm Analysis",
+    "category": "report",
+    "description": "Resting electrical heart rhythm analyzed by Dr. Maya Raman. Normal athletic sinus rhythm with excellent cardiac recovery.",
+    "doctorName": "Dr. Maya Raman",
+    "doctorSpecialty": "Consultant Cardiologist",
+    "location": "Aura Medical Pavilion, West Wing",
+    "statusBadge": "Reviewed & Ready",
+    "actionText": "View ECG Report",
+    "targetId": "rep-ecg-cardiac-2026",
+    "keyMetrics": [
+      { "label": "Resting HR", "value": "62 bpm", "isOptimal": true },
+      { "label": "QTc Interval", "value": "408 ms", "isOptimal": true },
+      { "label": "Rhythm", "value": "Sinus Rhythm", "isOptimal": true }
+    ],
+    "notes": "Electrical conduction is normal. Athletic adaptation confirmed."
+  },
+  {
+    "id": "tl-7",
+    "date": "Jun 12, 2026",
+    "isoDate": "2026-06-12",
+    "time": "11:45 AM",
+    "title": "Prescription Initiated: Omega-3 EPA/DHA Protocol",
+    "category": "prescription",
+    "description": "Prescribed pure ethyl esters Omega-3 (1,000 mg twice daily) for vascular wall protection and lipid particle balance.",
+    "doctorName": "Dr. Maya Raman",
+    "doctorSpecialty": "Consultant Cardiologist",
+    "location": "Aura Central Pharmacy",
+    "statusBadge": "Protocol Completed",
+    "actionText": "View Medication Details",
+    "targetId": "rx-03",
+    "keyMetrics": [
+      { "label": "Dosage", "value": "1,000 mg 2x Daily", "isOptimal": true },
+      { "label": "Course", "value": "90 Days (Completed)", "isOptimal": true }
+    ],
+    "notes": "Initial 90-day course concluded. ApoB reassessment showed 18% improvement."
+  },
+  {
+    "id": "tl-8",
+    "date": "May 18, 2026",
+    "isoDate": "2026-05-18",
+    "time": "01:30 PM",
+    "title": "Comprehensive Cardiovascular Health Intake",
+    "category": "appointment",
+    "description": "Initial cardiovascular prevention evaluation, family pedigree risk analysis, and resting baseline electrocardiogram scheduling.",
+    "doctorName": "Dr. Maya Raman",
+    "doctorSpecialty": "Consultant Cardiologist",
+    "location": "Aura Medical Pavilion, West Wing",
+    "statusBadge": "Completed Visit",
+    "actionText": "View Consultation Summary",
+    "targetId": "rep-ecg-cardiac-2026",
+    "keyMetrics": [
+      { "label": "BP Baseline", "value": "120/78 mmHg", "isOptimal": true },
+      { "label": "Oxygen Saturation", "value": "99% SpO2", "isOptimal": true }
+    ],
+    "notes": "Patient cleared for progressive endurance training. Baseline ECG scheduled."
+  },
+  {
+    "id": "tl-9",
+    "date": "Apr 05, 2026",
+    "isoDate": "2026-04-05",
+    "time": "10:00 AM",
+    "title": "Annual Executive Health Screening & Baseline Blueprint",
+    "category": "procedure",
+    "description": "Annual multi-system biometric baseline screening including body composition scan, VO2 max test, and metabolic biomarkers.",
+    "doctorName": "Dr. Sophia Chen-Vance",
+    "doctorSpecialty": "Executive Wellness Director",
+    "location": "Aura Longevity Pavilion, Suite 300",
+    "statusBadge": "Annual Milestone",
+    "actionText": "View Baseline Profile",
+    "targetId": "rep-blood-panel-2026",
+    "keyMetrics": [
+      { "label": "VO2 Max", "value": "48.5 mL/kg/min", "isOptimal": true },
+      { "label": "Biological Age Index", "value": "-3.2 Years", "isOptimal": true }
+    ],
+    "notes": "High baseline functional reserve. Annual follow-up scheduled for August 2026."
+  },
+  {
+    "id": "tl-10",
+    "date": "Jan 15, 2026",
+    "isoDate": "2026-01-15",
+    "time": "09:00 AM",
+    "title": "Aura Health Member Account Initialized",
+    "category": "procedure",
+    "description": "Electronic health record portal initialized. Blue Cross Blue Shield coverage verified and emergency contacts logged.",
+    "doctorName": "Clinical Care Coordinator",
+    "doctorSpecialty": "Patient Concierge Team",
+    "location": "Aura Health Cloud & Security",
+    "statusBadge": "Account Verified",
+    "actionText": "View Patient Profile",
+    "targetId": "profile",
+    "keyMetrics": [
+      { "label": "Insurance Status", "value": "Active PPO", "isOptimal": true },
+      { "label": "HIPAA Vault", "value": "256-bit Encrypted", "isOptimal": true }
+    ],
+    "notes": "Alexander Claire enrolled into Aura Comprehensive Preventative Health membership."
+  }
+]

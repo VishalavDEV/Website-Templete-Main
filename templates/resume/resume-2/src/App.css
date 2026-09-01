@@ -1,0 +1,4 @@
+﻿/* App-level layout resets — specific component CSS handles the rest */
+main {
+  padding-top: 0;
+}

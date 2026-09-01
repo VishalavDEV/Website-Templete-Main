@@ -1,0 +1,11 @@
+{
+  "name": "Aura Haven Resorts — Luxury Sanctuary Resort",
+  "slug": "aura-haven-resorts",
+  "category": "hotel",
+  "description": "A luxury boutique sanctuary resort landing page. Features responsive editorial slideshows, immersive accommodation galleries, interactive basalt thermal spa sections, and fine dining reservation flow.",
+  "techStack": {
+    "frontend": "HTML5 / CSS3 / Vanilla JavaScript",
+    "backend": "Java 21 + Spring Boot 3"
+  },
+  "demoUrl": "/templates/hotel/hotel-1/index.html"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Skillora - Online Education & Learning Platform",
+  "description": "Skillora is a modern education platform offering practical courses, university programs, industry mentorship, and career certifications.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

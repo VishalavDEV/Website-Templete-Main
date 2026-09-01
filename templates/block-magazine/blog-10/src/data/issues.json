@@ -1,0 +1,188 @@
+[
+  {
+    "id": "issue-sep-2026",
+    "slug": "september-2026-the-unknown-earth",
+    "month": "September",
+    "year": 2026,
+    "title": "THE UNKNOWN EARTH",
+    "subtitle": "Unmapped abyssal basins, subterranean forests, and ancient atmospheric relics.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85",
+    "editorNote": "We inhabit a world where satellites map every rooftop, yet eighty percent of our seafloor remains as dark and unseen as the lunar far side. This issue is dedicated to what is still hidden beneath our boots and beyond our sensors.",
+    "editorName": "Dr. Elena Vance, Editor in Chief",
+    "featuredStories": [
+      {
+        "title": "The Forests That Breathe at Night",
+        "category": "Wildlife",
+        "slug": "the-forests-that-breathe",
+        "readingTime": "14 min read"
+      },
+      {
+        "title": "Life Below the Ice: Lake Vostok's Echoes",
+        "category": "Science",
+        "slug": "beneath-a-world-of-ice",
+        "readingTime": "12 min read"
+      },
+      {
+        "title": "The Last Dark Skies on Earth",
+        "category": "Space",
+        "slug": "the-last-dark-skies",
+        "readingTime": "16 min read"
+      },
+      {
+        "title": "Searching for Worlds Beyond Earth",
+        "category": "Space",
+        "slug": "searching-for-worlds-beyond",
+        "readingTime": "18 min read"
+      }
+    ],
+    "storyCount": 12,
+    "theme": "Exploration & Deep Biosphere",
+    "isCurrent": true,
+    "downloadSize": "84 MB"
+  },
+  {
+    "id": "issue-aug-2026",
+    "slug": "august-2026-oceanic-frontiers",
+    "month": "August",
+    "year": 2026,
+    "title": "OCEANIC FRONTIERS",
+    "subtitle": "Into the Hadal Trench and the deep pelagic corridors.",
+    "coverImage": "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=1200&q=85",
+    "editorNote": "Water defines our planet, but the deep ocean remains our true alien world. Here we examine the immense hydrothermal chimneys sustaining life without sunlight.",
+    "editorName": "Marcus Thorne, Special Issue Curator",
+    "featuredStories": [
+      {
+        "title": "Into the Deep Hadal Zone",
+        "category": "Planet",
+        "slug": "into-the-hadal-zone",
+        "readingTime": "15 min read"
+      },
+      {
+        "title": "The Whale Dialect Network",
+        "category": "Wildlife",
+        "slug": "whale-dialect-network",
+        "readingTime": "11 min read"
+      },
+      {
+        "title": "Mapping the Submerged Zealandia Continent",
+        "category": "History",
+        "slug": "mapping-zealandia-continent",
+        "readingTime": "13 min read"
+      }
+    ],
+    "storyCount": 10,
+    "theme": "Marine Ecology & Geology",
+    "isCurrent": false,
+    "downloadSize": "76 MB"
+  },
+  {
+    "id": "issue-jul-2026",
+    "slug": "july-2026-deep-time-chronicles",
+    "month": "July",
+    "year": 2026,
+    "title": "DEEP TIME CHRONICLES",
+    "subtitle": "When stone reveals forty thousand years of human memory.",
+    "coverImage": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=85",
+    "editorNote": "From cave walls in Sulawesi to buried temples beneath Anatolian wheat fields, our ancestors left blueprints of wonder.",
+    "editorName": "Amara Okafor, Senior Anthropology Editor",
+    "featuredStories": [
+      {
+        "title": "The Oldest Painted Dreams",
+        "category": "History",
+        "slug": "oldest-painted-dreams",
+        "readingTime": "12 min read"
+      },
+      {
+        "title": "The Silent Language of Desert Monoliths",
+        "category": "Culture",
+        "slug": "silent-language-desert-monoliths",
+        "readingTime": "10 min read"
+      }
+    ],
+    "storyCount": 9,
+    "theme": "Archaeology & Anthropocene",
+    "isCurrent": false,
+    "downloadSize": "68 MB"
+  },
+  {
+    "id": "issue-jun-2026",
+    "slug": "june-2026-cosmic-horizons",
+    "month": "June",
+    "year": 2026,
+    "title": "COSMIC HORIZONS",
+    "subtitle": "First light from gravitational wave observatories and stellar nurseries.",
+    "coverImage": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=85",
+    "editorNote": "Looking up into the night is not looking at an empty vault, but into the furnace that forged every atom in our blood.",
+    "editorName": "Dr. Sarah Al-Mansoor",
+    "featuredStories": [
+      {
+        "title": "The Life and Death of Stellar Giants",
+        "category": "Space",
+        "slug": "life-and-death-stellar-giants",
+        "readingTime": "17 min read"
+      },
+      {
+        "title": "Atmospheres of Water Worlds",
+        "category": "Space",
+        "slug": "atmospheres-of-water-worlds",
+        "readingTime": "14 min read"
+      }
+    ],
+    "storyCount": 11,
+    "theme": "Astrophysics & Cosmology",
+    "isCurrent": false,
+    "downloadSize": "82 MB"
+  },
+  {
+    "id": "issue-may-2026",
+    "slug": "may-2026-the-frozen-sanctuaries",
+    "month": "May",
+    "year": 2026,
+    "title": "THE FROZEN SANCTUARIES",
+    "subtitle": "Living at the absolute thermal boundary of life on Earth.",
+    "coverImage": "https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=1200&q=85",
+    "editorNote": "In the cold deserts of Antarctica, survival is not an instinct; it is a complex metabolic dance perfected over millions of ice ages.",
+    "editorName": "Kai Nordström",
+    "featuredStories": [
+      {
+        "title": "Beneath the Ross Ice Shelf",
+        "category": "Science",
+        "slug": "beneath-ross-ice-shelf",
+        "readingTime": "13 min read"
+      },
+      {
+        "title": "The Emperor's Winter Odyssey",
+        "category": "Wildlife",
+        "slug": "emperor-winter-odyssey",
+        "readingTime": "15 min read"
+      }
+    ],
+    "storyCount": 10,
+    "theme": "Polar Science & Cryosphere",
+    "isCurrent": false,
+    "downloadSize": "79 MB"
+  },
+  {
+    "id": "issue-dec-2025",
+    "slug": "december-2025-the-annual-retrospective",
+    "month": "December",
+    "year": 2025,
+    "title": "EXPEDITIONS OF THE YEAR",
+    "subtitle": "The definitive photographic portfolio of discoveries that reshaped 2025.",
+    "coverImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=85",
+    "editorNote": "A celebration of daring field photojournalism, remote botanical expeditions, and deep space telemetry.",
+    "editorName": "The Editorial Board",
+    "featuredStories": [
+      {
+        "title": "Fifty Moments of Awe: The Portfolio",
+        "category": "Photography",
+        "slug": "fifty-moments-of-awe",
+        "readingTime": "22 min read"
+      }
+    ],
+    "storyCount": 16,
+    "theme": "Photography & Discovery",
+    "isCurrent": false,
+    "downloadSize": "110 MB"
+  }
+]

@@ -1,0 +1,250 @@
+/* Matches & Live Scoreboard Styles */
+.live-match-banner {
+  background: linear-gradient(135deg, rgba(27, 27, 27, 0.95), rgba(17, 17, 17, 0.98));
+  border: 1px solid var(--border-orange);
+  border-radius: 8px;
+  padding: 30px 40px;
+  box-shadow: 0 10px 40px rgba(255, 77, 0, 0.25);
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.live-match-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 77, 0, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.live-banner-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.live-clock-badge {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--orange-light);
+  letter-spacing: 2px;
+  background: rgba(5, 5, 5, 0.8);
+  padding: 6px 16px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.scoreboard-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.team-score-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.team-score-box.left {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.team-score-box.right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.team-logo-badge {
+  width: 70px;
+  height: 70px;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.team-display-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  line-height: 0.9;
+  letter-spacing: 1px;
+  color: var(--white);
+}
+
+.team-city-name {
+  font-family: var(--font-sports);
+  font-size: 0.95rem;
+  color: var(--gray);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.score-digit {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+  background: #080808;
+  padding: 10px 24px;
+  border-radius: 6px;
+  border: 2px solid var(--border-orange);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 77, 0, 0.3);
+}
+
+.vs-divider {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Quarter Breakdown Table */
+.quarter-breakdown {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: var(--font-sports);
+}
+
+.quarter-breakdown th {
+  background: rgba(255, 77, 0, 0.15);
+  color: var(--orange);
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  padding: 10px 14px;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.quarter-breakdown td {
+  padding: 12px 14px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  background: rgba(17, 17, 17, 0.6);
+}
+
+/* Commentary Feed */
+.commentary-feed {
+  max-height: 380px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 10px;
+}
+
+.commentary-item {
+  background: rgba(27, 27, 27, 0.8);
+  border-left: 4px solid var(--border);
+  padding: 14px 18px;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: var(--transition-fast);
+}
+
+.commentary-item.highlight {
+  border-left-color: var(--orange);
+  background: rgba(255, 77, 0, 0.1);
+}
+
+.commentary-time {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--orange-light);
+  min-width: 55px;
+}
+
+.commentary-text {
+  font-size: 0.98rem;
+  color: var(--white);
+  line-height: 1.4;
+}
+
+/* Match Cards Grid */
+.matches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.match-card {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+  position: relative;
+  transition: var(--transition-normal);
+}
+
+.match-card:hover {
+  border-color: var(--orange);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+}
+
+.match-stage-badge {
+  font-family: var(--font-sports);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.match-teams-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.match-team-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.match-team-name {
+  font-family: var(--font-sports);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+
+.match-team-score {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--orange);
+}
+
+.match-meta-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 0.88rem;
+  color: var(--gray);
+}

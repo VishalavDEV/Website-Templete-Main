@@ -1,0 +1,146 @@
+@import "tailwindcss";
+@import "./fluid-type.css";
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: #F3F5FA;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.13) 0px, transparent 50%),
+      radial-gradient(at 100% 5%, rgba(124, 58, 237, 0.11) 0px, transparent 55%),
+      radial-gradient(at 10% 45%, rgba(6, 182, 212, 0.09) 0px, transparent 45%),
+      radial-gradient(at 95% 55%, rgba(244, 63, 94, 0.09) 0px, transparent 50%),
+      radial-gradient(at 50% 85%, rgba(16, 185, 129, 0.09) 0px, transparent 48%),
+      radial-gradient(at 85% 95%, rgba(245, 158, 11, 0.08) 0px, transparent 45%),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    color: #0F172A;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', -apple-system, sans-serif;
+  }
+
+  /* Strict GPU Acceleration & Smooth Compositing */
+  .gpu-layer {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+  }
+}
+
+/* Glassmorphism & High-Transparency Spatial Surfaces */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.04);
+}
+
+.glass-card-airy {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.90) 100%);
+  backdrop-filter: blur(20px) saturate(170%);
+  -webkit-backdrop-filter: blur(20px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 20px 45px -12px rgba(30, 41, 59, 0.07),
+    0 4px 12px -2px rgba(15, 23, 42, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+@media (hover: hover) {
+  .glass-card-airy:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+      0 28px 60px -15px rgba(37, 99, 235, 0.12),
+      0 6px 20px -2px rgba(15, 23, 42, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 1);
+    border-color: rgba(37, 99, 235, 0.35);
+  }
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+/* Gradient Text Styles */
+.text-gradient-electric {
+  background: linear-gradient(135deg, #2563EB 0%, #7C3AED 45%, #F43F5E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-hero {
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 40%, #2563EB 85%, #7C3AED 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-azure {
+  background: linear-gradient(135deg, #0F172A 0%, #2563EB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-aurora {
+  background: linear-gradient(135deg, #06B6D4 0%, #2563EB 50%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-sunset {
+  background: linear-gradient(135deg, #F43F5E 0%, #FB923C 50%, #FBBF24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Text Reveal Masking Container */
+.mask-reveal-container {
+  overflow: hidden;
+  display: block;
+}
+
+/* Touch & Velocity Horizontal Rail */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fixed Aspect Ratio Utilities for Zero CLS */
+.aspect-feature-hero {
+  aspect-ratio: 16 / 9;
+}
+.aspect-bento-tall {
+  aspect-ratio: 4 / 3;
+}
+.aspect-bento-wide {
+  aspect-ratio: 16 / 9;
+}
+.aspect-bento-thumb {
+  aspect-ratio: 16 / 10;
+}

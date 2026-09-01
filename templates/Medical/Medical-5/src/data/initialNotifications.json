@@ -1,0 +1,49 @@
+[
+  {
+    "id": "notif-1",
+    "title": "Appointment Reminder",
+    "message": "Upcoming consultation with Dr. Maya Raman on August 28 at 10:30 AM at Aura Medical Pavilion.",
+    "time": "10 minutes ago",
+    "read": false,
+    "type": "appointment",
+    "actionTarget": {
+      "view": "portal",
+      "id": "APT-89241"
+    }
+  },
+  {
+    "id": "notif-2",
+    "title": "Biomarker Report Available",
+    "message": "Comprehensive Cardio-Metabolic Panel results are now ready for review.",
+    "time": "2 hours ago",
+    "read": false,
+    "type": "report",
+    "actionTarget": {
+      "view": "portal",
+      "id": "rep-blood-panel-2026"
+    }
+  },
+  {
+    "id": "notif-3",
+    "title": "Prescription Refill Ready",
+    "message": "Vitamin D3 + K2 refill has been authorized at Aura Central Pharmacy.",
+    "time": "1 day ago",
+    "read": true,
+    "type": "prescription",
+    "actionTarget": {
+      "view": "portal",
+      "id": "rx-01"
+    }
+  },
+  {
+    "id": "notif-4",
+    "title": "Care Team Message",
+    "message": "Clinical Nurse Sarah sent instructions regarding hydration before your follow-up.",
+    "time": "2 days ago",
+    "read": true,
+    "type": "message",
+    "actionTarget": {
+      "view": "portal"
+    }
+  }
+]

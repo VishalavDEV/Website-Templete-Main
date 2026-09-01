@@ -1,0 +1,11 @@
+{
+  "name": "Aurelia Velvet Obsidian Resort - Ultra-Luxury Sanctuary",
+  "slug": "aurelia-velvet-obsidian-resort",
+  "category": "hotel",
+  "description": "A private cliffside refuge offering luxury architectural pods crafted from volcanic stone, glass canopies, and polished teakwood.",
+  "techStack": {
+    "frontend": "HTML5 / CSS3 / Vanilla JavaScript",
+    "backend": "Java 21 + Spring Boot 3"
+  },
+  "demoUrl": "/templates/hotel/hotel-3/index.html"
+}

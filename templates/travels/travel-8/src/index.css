@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --color-primary: #0A0E14;
+}
+
+/* Custom scrollbar - luxury minimal look */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0E14;
+}
+::-webkit-scrollbar-thumb {
+  background: #232d3f;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}

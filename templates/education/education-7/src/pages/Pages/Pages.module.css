@@ -1,0 +1,116 @@
+.page { min-height: 80vh; }
+
+.banner {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 60%, var(--color-primary-light) 100%);
+  padding-block: var(--space-16);
+  margin-bottom: var(--space-12);
+  position: relative;
+  overflow: hidden;
+}
+.banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.04'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.bannerTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: var(--space-3);
+  position: relative;
+}
+
+.bannerSub {
+  font-size: var(--text-lg);
+  color: rgba(255,255,255,0.8);
+  max-width: 600px;
+  position: relative;
+}
+
+/* About */
+.aboutSection { margin-bottom: var(--space-12); }
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.aboutCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--color-accent);
+}
+
+.aboutHeading {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.aboutBody { color: var(--color-text-muted); line-height: 1.75; }
+
+/* Divider */
+.divider { border: none; border-top: 1px solid var(--color-border); margin-bottom: var(--space-12); }
+
+/* FAQ */
+.faqSection { padding-bottom: var(--space-16); }
+
+.faqHeader { margin-bottom: var(--space-8); }
+
+.faqList { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.faqItem {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: box-shadow var(--transition);
+}
+.faqItem.faqOpen { box-shadow: var(--shadow); border-color: var(--color-primary); }
+
+.faqQ {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  gap: var(--space-4);
+  transition: background var(--transition-fast);
+}
+.faqQ:hover { background: var(--color-surface-2); }
+
+.chevron {
+  flex-shrink: 0;
+  transition: transform var(--transition);
+  color: var(--color-accent);
+}
+.faqOpen .chevron { transform: rotate(180deg); }
+
+.faqA {
+  padding: 0 var(--space-6) var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+@media (max-width: 768px) {
+  .aboutGrid { grid-template-columns: 1fr; }
+  .bannerTitle { font-size: var(--text-3xl); }
+}

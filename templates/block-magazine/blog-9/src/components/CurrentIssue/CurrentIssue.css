@@ -1,0 +1,125 @@
+.current-issue-section {
+  padding: 7rem 0 6rem;
+  background: radial-gradient(circle at 50% 30%, rgba(255, 230, 180, 0.18) 0%, rgba(250, 248, 242, 0.6) 70%);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.current-issue-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.current-issue-editorial {
+  padding-right: 1rem;
+}
+
+.current-issue-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent-ochre);
+  margin-bottom: 1rem;
+}
+
+.current-issue-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.current-issue-dek {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.current-issue-stories-box {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-bottom: 2.25rem;
+  box-shadow: 0 10px 30px -10px rgba(80, 60, 40, 0.06);
+  backdrop-filter: blur(10px);
+}
+
+.current-issue-stories-heading {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-ochre);
+  margin-bottom: 1rem;
+}
+
+.current-issue-stories-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.current-issue-story-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.current-issue-story-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.current-issue-story-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.current-issue-story-title:hover {
+  color: var(--accent-ochre);
+}
+
+.current-issue-story-cat {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.current-issue-carousel-wrap {
+  height: 520px;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .current-issue-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .current-issue-carousel-wrap {
+    height: 440px;
+  }
+}

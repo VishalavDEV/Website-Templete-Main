@@ -1,0 +1,8 @@
+{
+  "name": "Soleil Premium Personal Portfolio",
+  "description": "A premium, light-orange and cream animated personal brand portfolio featuring Framer Motion transitions, 3D tilt cards, timelines, dashboard charts, and Spring Boot REST API integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

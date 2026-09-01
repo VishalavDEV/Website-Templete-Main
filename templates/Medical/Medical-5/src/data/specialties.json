@@ -1,0 +1,110 @@
+[
+  {
+    "id": "cardiology",
+    "name": "Cardiology",
+    "iconName": "HeartPulse",
+    "description": "Comprehensive cardiac diagnostics, arrhythmia treatment, non-invasive imaging, and preventive cardiovascular care.",
+    "doctorCount": 8,
+    "commonConditions": ["Hypertension", "Coronary Artery Disease", "Arrhythmia", "Heart Failure Screening"],
+    "colorHex": "#8B6FAE"
+  },
+  {
+    "id": "neurology",
+    "name": "Neurology",
+    "iconName": "Brain",
+    "description": "Advanced neuro-diagnostics, cognitive health, headache management, and specialist neurological assessments.",
+    "doctorCount": 6,
+    "commonConditions": ["Migraine & Headaches", "Neuropathy", "Sleep Disorders", "Memory & Focus Assessment"],
+    "colorHex": "#665080"
+  },
+  {
+    "id": "dermatology",
+    "name": "Dermatology",
+    "iconName": "Sparkles",
+    "description": "Clinical and aesthetic skin medicine, dermoscopy, allergy testing, and non-invasive restorative therapies.",
+    "doctorCount": 7,
+    "commonConditions": ["Eczema & Psoriasis", "Acne & Rosacea", "Mole Mapping", "Skin Barrier Health"],
+    "colorHex": "#D98B9C"
+  },
+  {
+    "id": "orthopedics",
+    "name": "Orthopedics & Joint Care",
+    "iconName": "Activity",
+    "description": "Musculoskeletal health, minimally invasive arthroscopy, sports injury rehabilitation, and spine alignment.",
+    "doctorCount": 9,
+    "commonConditions": ["Joint Pain & Arthritis", "Sports Injuries", "Spinal Health", "Tendon & Ligament Recovery"],
+    "colorHex": "#8B6FAE"
+  },
+  {
+    "id": "pediatrics",
+    "name": "Pediatrics",
+    "iconName": "Baby",
+    "description": "Gentle developmental tracking, pediatric wellness exams, vaccination scheduling, and adolescent care.",
+    "doctorCount": 5,
+    "commonConditions": ["Growth Milestones", "Pediatric Allergies", "Immunizations", "Childhood Nutrition"],
+    "colorHex": "#B9A1D0"
+  },
+  {
+    "id": "womens-health",
+    "name": "Women's Health & Gynecology",
+    "iconName": "Flower2",
+    "description": "Dedicated gynecological wellness, fertility counseling, hormonal balancing, and routine screening.",
+    "doctorCount": 8,
+    "commonConditions": ["Hormonal Balance", "Prenatal Consultations", "Preventive Screenings", "Menopause Management"],
+    "colorHex": "#D98B9C"
+  },
+  {
+    "id": "ent",
+    "name": "ENT (Otolaryngology)",
+    "iconName": "Headphones",
+    "description": "Specialized ear, nose, throat, and sinus care with micro-endoscopy and audiology testing.",
+    "doctorCount": 4,
+    "commonConditions": ["Sinusitis", "Hearing & Audiometry", "Voice Strain", "Tinnitus Evaluation"],
+    "colorHex": "#739B82"
+  },
+  {
+    "id": "ophthalmology",
+    "name": "Ophthalmology & Vision",
+    "iconName": "Eye",
+    "description": "Precision optical exams, retina diagnostics, dry eye treatments, and computer vision strain therapies.",
+    "doctorCount": 5,
+    "commonConditions": ["Refractive Care", "Glaucoma Screening", "Dry Eye Syndrome", "Retinal Imaging"],
+    "colorHex": "#8B6FAE"
+  },
+  {
+    "id": "general-medicine",
+    "name": "General & Preventive Medicine",
+    "iconName": "Stethoscope",
+    "description": "Primary consultations, executive health checks, bio-marker monitoring, and holistic preventive pathways.",
+    "doctorCount": 12,
+    "commonConditions": ["Annual Physicals", "Metabolic Screening", "Immunology Check", "Fatigue Investigation"],
+    "colorHex": "#665080"
+  },
+  {
+    "id": "mental-wellness",
+    "name": "Mental Wellness & Psychiatry",
+    "iconName": "Smile",
+    "description": "Compassionate psychotherapy, stress reduction programs, clinical psychology, and mindfulness-based care.",
+    "doctorCount": 6,
+    "commonConditions": ["Anxiety & Stress", "Burnout Recovery", "Sleep Therapy", "Mood Management"],
+    "colorHex": "#B9A1D0"
+  },
+  {
+    "id": "endocrinology",
+    "name": "Endocrinology & Metabolism",
+    "iconName": "Zap",
+    "description": "Thyroid disorders, insulin sensitivity, lipid optimization, and personalized metabolic medicine.",
+    "doctorCount": 5,
+    "commonConditions": ["Thyroid Regulation", "Prediabetes Management", "Hormonal Fatigue", "Metabolic Health"],
+    "colorHex": "#C99A62"
+  },
+  {
+    "id": "pathology-diagnostics",
+    "name": "Diagnostics & Precision Lab",
+    "iconName": "Microscope",
+    "description": "Same-day molecular assays, ultra-quiet 3T MRI, high-resolution ultrasound, and comprehensive biomarker panels.",
+    "doctorCount": 10,
+    "commonConditions": ["Full Biomarker Panel", "Cardio-Lipid Assay", "Genetic Markers", "Inflammatory Profiling"],
+    "colorHex": "#739B82"
+  }
+]

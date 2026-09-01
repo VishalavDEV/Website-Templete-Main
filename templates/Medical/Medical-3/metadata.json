@@ -1,0 +1,6 @@
+{
+  "name": "Aurevia Health",
+  "description": "Premium healthcare technology platform for discovering specialists, clinical departments, intelligent appointment booking, and comprehensive patient-doctor ecosystems.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

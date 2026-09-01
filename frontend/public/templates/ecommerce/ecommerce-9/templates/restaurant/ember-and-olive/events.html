@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Dining & Events — Ember & Olive Restaurant</title>
+  <meta name="description" content="Host your private dinner, corporate gathering, or milestone celebration at Ember & Olive. Explore our private dining suites, custom menus, and event packages.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Scroll Progress Indicator -->
+  <div class="scroll-progress-bar"></div>
+
+  <!-- Desktop Custom Follower Cursor -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+
+  <!-- Header -->
+  <header id="mainHeader" class="site-header header-light">
+    <div class="container-xl d-flex align-items-center justify-content-between">
+      
+      <a href="index.html" class="brand-logo">
+        <span class="brand-logo-text">EMBER <span>&</span> OLIVE</span>
+        <span class="brand-subtext">Est. 2012 · Artisan Cuisine</span>
+      </a>
+
+      <nav class="d-none d-lg-flex align-items-center gap-1">
+        <a href="index.html" class="nav-link-custom">Home</a>
+        <a href="about.html" class="nav-link-custom">About</a>
+        <a href="menu.html" class="nav-link-custom">Menu</a>
+        <a href="index.html#signature" class="nav-link-custom">Experience</a>
+        <a href="events.html" class="nav-link-custom active">Events</a>
+        <a href="gallery.html" class="nav-link-custom">Gallery</a>
+        <a href="contact.html" class="nav-link-custom">Contact</a>
+      </nav>
+
+      <div class="d-flex align-items-center gap-3">
+        <a href="#eventInquiryForm" class="btn-custom btn-primary-accent d-none d-sm-inline-flex">
+          <i class="bi bi-calendar2-heart"></i>
+          <span>Plan an Event</span>
+        </a>
+        <button class="mobile-nav-toggle d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas -->
+  <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="mobileNavOffcanvas">
+    <div class="offcanvas-header border-bottom border-dark-subtle p-4">
+      <div class="brand-logo">
+        <span class="brand-logo-text fs-4 text-white">EMBER <span>&</span> OLIVE</span>
+        <span class="brand-subtext text-bone">Seasonal Dining</span>
+      </div>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body p-4 d-flex flex-column justify-content-between">
+      <nav class="offcanvas-nav d-flex flex-column gap-2">
+        <a href="index.html" class="nav-link-mobile">Home</a>
+        <a href="about.html" class="nav-link-mobile">About Our Story</a>
+        <a href="menu.html" class="nav-link-mobile">Seasonal Menu</a>
+        <a href="events.html" class="nav-link-mobile active">Private Dining & Events</a>
+        <a href="gallery.html" class="nav-link-mobile">Visual Gallery</a>
+        <a href="contact.html" class="nav-link-mobile">Contact & Location</a>
+      </nav>
+      <div class="mt-4 pt-4 border-top border-dark-subtle">
+        <a href="#eventInquiryForm" class="btn-custom btn-primary-accent w-100 mb-3">Plan an Event</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container-xl page-hero-content">
+      <div class="eyebrow text-accent">BESPOKE GATHERINGS</div>
+      <h1 class="page-hero-title">Private Dining & Celebrations</h1>
+      <p class="page-hero-subtitle">
+        Intimate wine cellar suites, live-hearth Chef's table experiences, and alfresco terrace receptions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Event Spaces Grid -->
+  <section class="section-spacing bg-surface">
+    <div class="container-xl">
+      
+      <div class="text-center max-w-700 mx-auto mb-5 reveal-fade-up">
+        <div class="eyebrow center-eyebrow">DISTINCTIVE SPACES</div>
+        <h2 class="section-title">Our Private Venues</h2>
+        <p class="section-desc text-muted-custom">
+          Each room offers a distinct architectural personality, dedicated culinary team, and bespoke wine pairings.
+        </p>
+      </div>
+
+      <div class="row g-5 align-items-center mb-5 pb-5 border-bottom border-bone">
+        <div class="col-lg-6">
+          <div class="about-image-composition reveal-fade-right">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80" alt="The Olive Cellar Suite" class="about-img-primary" loading="eager">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="ps-lg-3 reveal-fade-left">
+            <span class="badge bg-accent text-white mb-2">Seated Capacity: 10 – 24 Guests</span>
+            <h3 class="font-heading fs-2 text-primary-dark mb-3">The Olive Cellar Suite</h3>
+            <p class="lead">
+              Surrounded by our 400-bottle reserve wine vault, this subterranean private dining room features reclaimed teak dining tables and customized acoustic lighting.
+            </p>
+            <ul class="list-unstyled text-muted-custom d-flex flex-column gap-2 mb-4">
+              <li><i class="bi bi-check2 text-accent me-2"></i> Dedicated private sommelier & waitstaff</li>
+              <li><i class="bi bi-check2 text-accent me-2"></i> Tailored 5-course or 7-course seasonal menu</li>
+              <li><i class="bi bi-check2 text-accent me-2"></i> Integrated AV & personalized background soundscape</li>
+            </ul>
+            <a href="#eventInquiryForm" class="btn-custom btn-primary-accent">Inquire for Cellar Suite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-5 align-items-center mb-5 pb-5 border-bottom border-bone">
+        <div class="col-lg-6 order-lg-2">
+          <div class="about-image-composition reveal-fade-left">
+            <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1000&q=80" alt="Hearth Chef's Table" class="about-img-primary" loading="eager">
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="pe-lg-3 reveal-fade-right">
+            <span class="badge bg-accent text-white mb-2">Exclusivity: Up to 8 Guests</span>
+            <h3 class="font-heading fs-2 text-primary-dark mb-3">The Hearth Chef's Counter</h3>
+            <p class="lead">
+              An exhilarating culinary performance where guests sit directly at the live fire hearth. Chef Arjun prepares each dish before your eyes with storytelling behind every harvest.
+            </p>
+            <ul class="list-unstyled text-muted-custom d-flex flex-column gap-2 mb-4">
+              <li><i class="bi bi-check2 text-accent me-2"></i> 9-course interactive firecraft tasting</li>
+              <li><i class="bi bi-check2 text-accent me-2"></i> Rare vintage cellar pairings</li>
+              <li><i class="bi bi-check2 text-accent me-2"></i> Signed personalized menus and chef gift box</li>
+            </ul>
+            <a href="#eventInquiryForm" class="btn-custom btn-primary-accent">Book Chef's Counter</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Celebration Packages Grid -->
+      <div class="pt-4">
+        <div class="text-center max-w-700 mx-auto mb-5">
+          <div class="eyebrow center-eyebrow">EVENT PACKAGES</div>
+          <h2 class="section-title">All-Inclusive Celebrations</h2>
+          <p class="section-desc text-muted-custom">Transparent, beautifully organized hospitality tiers for effortless event planning.</p>
+        </div>
+
+        <div class="row g-4 mb-5 pb-5">
+          <div class="col-lg-4">
+            <div class="package-card">
+              <h4 class="package-title text-primary-dark">Intimate Soirée</h4>
+              <p class="text-center small text-muted-custom">Birthdays, milestones & small reunions</p>
+              <div class="package-price-wrap">
+                <div class="package-price">₹2,800</div>
+                <div class="package-price-period">Per Guest · 4 Courses</div>
+              </div>
+              <ul class="package-features-list">
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Welcome cocktail upon arrival</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> 4-course wood-fired dinner</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Handcrafted celebration dessert</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Personalized place cards</li>
+              </ul>
+              <a href="#eventInquiryForm" class="btn-custom btn-outline-dark-custom w-100">Select Soirée</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="package-card featured-package">
+              <span class="package-badge">Premier Choice</span>
+              <h4 class="package-title">Executive Dining</h4>
+              <p class="text-center small opacity-75">Board dinners & client entertainment</p>
+              <div class="package-price-wrap">
+                <div class="package-price">₹3,900</div>
+                <div class="package-price-period">Per Guest · 6 Courses</div>
+              </div>
+              <ul class="package-features-list">
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Private room reservation included</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Sommelier wine pairing (3 glasses)</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> 6-course Chef signature tasting</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Digestif & artisan truffle service</li>
+              </ul>
+              <a href="#eventInquiryForm" class="btn-custom btn-primary-accent w-100">Book Executive</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="package-card">
+              <h4 class="package-title text-primary-dark">Full Venue Buyout</h4>
+              <p class="text-center small text-muted-custom">Weddings, galas & luxury events</p>
+              <div class="package-price-wrap">
+                <div class="package-price">Custom</div>
+                <div class="package-price-period">Up to 120 Guests</div>
+              </div>
+              <ul class="package-features-list">
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Exclusive access to all rooms & garden</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Full culinary customization with Chef</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Open premium bar & mixologist team</li>
+                <li class="package-feature-item"><i class="bi bi-check2"></i> Valet & security personnel</li>
+              </ul>
+              <a href="#eventInquiryForm" class="btn-custom btn-outline-dark-custom w-100">Request Custom Quote</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Interactive Event Inquiry Form -->
+      <div id="eventInquiryForm" class="p-4 p-lg-5 bg-surface-subtle rounded-4 border border-dark-subtle shadow-sm">
+        <div class="text-center max-w-700 mx-auto mb-4">
+          <div class="eyebrow center-eyebrow">EVENT CONCIERGE</div>
+          <h3 class="font-heading text-primary fs-2">Inquire About Your Event</h3>
+          <p class="text-muted-custom">Share your vision with our events coordinator and receive a detailed proposal within 24 hours.</p>
+        </div>
+
+        <form class="contact-form-interactive form-light" novalidate>
+          <div class="form-feedback-alert"></div>
+          
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label-custom">Your Name *</label>
+              <input type="text" class="form-control form-control-custom" required placeholder="Priya Sharma">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-custom">Email Address *</label>
+              <input type="email" class="form-control form-control-custom" required placeholder="priya@company.com">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-custom">Phone Number *</label>
+              <input type="tel" class="form-control form-control-custom" required placeholder="+91 98765 43210">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-custom">Event Type</label>
+              <select class="form-select form-select-custom">
+                <option value="Private Dinner">Private Dinner / Birthday</option>
+                <option value="Corporate Dinner">Corporate Dinner / Board Meeting</option>
+                <option value="Anniversary">Anniversary Celebration</option>
+                <option value="Intimate Wedding">Intimate Wedding Reception</option>
+                <option value="Chef Table">Chef's Table Experience</option>
+                <option value="Full Buyout">Full Restaurant Buyout</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label-custom">Estimated Guests *</label>
+              <input type="number" min="4" max="150" class="form-control form-control-custom" required placeholder="16">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label-custom">Desired Date *</label>
+              <input type="date" class="form-control form-control-custom" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label-custom">Desired Venue Space</label>
+              <select class="form-select form-select-custom">
+                <option value="Olive Cellar Suite">The Olive Cellar Suite (10-24 guests)</option>
+                <option value="Hearth Counter">The Hearth Counter (up to 8 guests)</option>
+                <option value="Terrace Garden">Terrace Garden Pergola (up to 60 guests)</option>
+                <option value="Full Buyout">Complete Venue Buyout</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label-custom">Event Details & Special Requests</label>
+              <textarea class="form-control form-control-custom" rows="3" placeholder="Tell us about the occasion, dietary preferences, wine pairing interests, or budget requirements..."></textarea>
+            </div>
+            <div class="col-12 text-center mt-4">
+              <button type="submit" class="btn-custom btn-primary-accent px-5 py-3 fs-6">
+                <i class="bi bi-send-fill me-1"></i> Submit Event Inquiry
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container-xl">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="brand-logo">
+            <span class="brand-logo-text">EMBER <span>&</span> OLIVE</span>
+            <span class="brand-subtext text-bone">Artisan Hearth & Wine Cellar</span>
+          </a>
+          <p class="footer-brand-desc">
+            Thoughtful seasonal cooking, local organic ingredients, and warm hospitality come together around every table.
+          </p>
+        </div>
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="index.html" class="footer-link">Home</a></li>
+            <li class="footer-link-item"><a href="about.html" class="footer-link">Our Story</a></li>
+            <li class="footer-link-item"><a href="menu.html" class="footer-link">Seasonal Menu</a></li>
+            <li class="footer-link-item"><a href="events.html" class="footer-link">Private Events</a></li>
+            <li class="footer-link-item"><a href="gallery.html" class="footer-link">Photo Gallery</a></li>
+            <li class="footer-link-item"><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">Opening Hours</h4>
+          <div class="footer-hours-row"><span class="footer-hours-day">Mon – Thu</span><span class="footer-hours-time">11:00 AM – 10:00 PM</span></div>
+          <div class="footer-hours-row"><span class="footer-hours-day">Fri – Sun</span><span class="footer-hours-time">11:00 AM – 11:30 PM</span></div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">Newsletter</h4>
+          <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required>
+            <button type="submit" class="newsletter-btn"><i class="bi bi-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>© 2026 Ember & Olive. All Rights Reserved.</div>
+        <div>28 Garden Avenue, Chennai · +91 98765 43210</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

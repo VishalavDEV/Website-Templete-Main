@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #FFFFFF;
+  --color-brand-text: #17202A;
+  --color-brand-muted: #667085;
+  --color-brand-accent: #D4A253;
+  --color-brand-light: #F7F7F5;
+  --color-brand-border: #E7E5E1;
+  --color-brand-dark: #111827;
+
+  --font-corporate: "Playfair Display", serif;
+  --font-tech: "Outfit", sans-serif;
+  --font-creative: "Syne", sans-serif;
+  --font-consulting: "Inter", sans-serif;
+  --font-startup: "Plus Jakarta Sans", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-brand-text antialiased;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Diagonal Layout clip-paths */
+.clip-diag-top-left {
+  clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%);
+}
+
+.clip-diag-bottom-left {
+  clip-path: polygon(0 0, 88% 0, 100% 100%, 0 100%);
+}
+
+.clip-diag-right-inset {
+  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom transitions and scrollbar overrides */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F7F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4A253;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B9873E;
+}

@@ -1,0 +1,112 @@
+/* ==========================================================================
+   XTRA FLUID MAXIMALIST TYPOGRAPHY UTILITIES
+   ========================================================================== */
+
+/* Font Family Classes */
+.font-display-serif {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+.font-display-y2k {
+  font-family: 'Unbounded', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.font-brutal-head {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-brutal-body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-mono-tag {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: -0.01em;
+}
+
+/* Fluid Size Clamps */
+.text-fluid-mega {
+  font-size: var(--text-fluid-mega);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+
+.text-fluid-hero {
+  font-size: var(--text-fluid-hero);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+}
+
+.text-fluid-display {
+  font-size: var(--text-fluid-display);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.text-fluid-h1 {
+  font-size: var(--text-fluid-h1);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.text-fluid-h2 {
+  font-size: var(--text-fluid-h2);
+  line-height: 1.25;
+}
+
+.text-fluid-h3 {
+  font-size: var(--text-fluid-h3);
+  line-height: 1.35;
+}
+
+.text-fluid-body-lg {
+  font-size: var(--text-fluid-body-lg);
+  line-height: 1.6;
+}
+
+.text-fluid-body {
+  font-size: var(--text-fluid-body);
+  line-height: 1.65;
+}
+
+.text-fluid-caption {
+  font-size: var(--text-fluid-caption);
+  line-height: 1.4;
+}
+
+/* Kinetic & Dopamine Text Effects */
+.text-stroke-obsidian {
+  -webkit-text-stroke: 1.5px #0A0A0E;
+  color: transparent;
+}
+
+.text-stroke-pink {
+  -webkit-text-stroke: 2px #FF007A;
+  color: transparent;
+}
+
+.text-stroke-white {
+  -webkit-text-stroke: 2px #FFFFFF;
+  color: transparent;
+}
+
+.text-dopamine-gradient {
+  background: linear-gradient(135deg, #FF007A 0%, #9D00FF 50%, #0047FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-acid-gradient {
+  background: linear-gradient(135deg, #10FF70 0%, #00D2FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-solar-gradient {
+  background: linear-gradient(135deg, #FFE600 0%, #FF5500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

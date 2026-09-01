@@ -1,0 +1,214 @@
+[
+  {
+    "id": "monument-brand-identity",
+    "number": "01",
+    "title": "MONUMENT",
+    "client": "Monument Architectural Group",
+    "category": "BRANDING",
+    "year": "2025",
+    "tagline": "Architectural permanence translated into a dynamic fluid identity system.",
+    "services": ["Brand Strategy", "Visual Identity", "Print & Signage", "Digital Guidelines"],
+    "description": "Monument is an international architectural collective redefining brutalist and bioclimatic structures across Tokyo, Zurich, and New York. We built an identity rooted in spatial proportion, tactile typography, and bespoke grid systems that adapt across physical monoliths and digital touchpoints.",
+    "challenge": "Monument was struggling with a fragmented global brand presence across 4 continents. Their previous visual identity was rigid, unable to reflect their shift toward adaptive bioclimatic engineering.",
+    "approach": "We created a proprietary variable typeface system and modular spatial layout engine inspired by architectural floor plans and natural sunlight angles.",
+    "heroImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85",
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "accentColor": "#E86F51",
+    "results": [
+      { "label": "Global RFP Win Rate", "value": "+142%" },
+      { "label": "Brand Recall", "value": "94.8%" },
+      { "label": "Industry Design Awards", "value": "6" }
+    ],
+    "awards": ["Awwwards Site of the Day", "FWA of the Day", "Red Dot Best of the Best"],
+    "testimonial": {
+      "quote": "Valence took 20 years of architectural history and distilled it into an identity that feels simultaneously timeless and fifty years ahead of its time.",
+      "author": "Elena Rostova",
+      "role": "Founding Partner, Monument"
+    },
+    "featured": true
+  },
+  {
+    "id": "north-digital-experience",
+    "number": "02",
+    "title": "NORTH",
+    "client": "North Autonomous Mobility",
+    "category": "DIGITAL",
+    "year": "2025",
+    "tagline": "Next-generation vehicular interface and immersive telematics platform.",
+    "services": ["UI/UX Architecture", "Design System", "Motion Design", "Frontend Prototyping"],
+    "description": "North is engineering autonomous fleet logistics across Nordic freight networks. We crafted the in-cab heads-up display, command center interface, and companion web apps, balancing critical split-second legibility with high-craft Scandinavian minimalism.",
+    "challenge": "Operators were inundated with high-density data telemetry. The challenge was reducing cognitive load by 60% while maintaining absolute safety compliance.",
+    "approach": "We engineered a dynamic spatial UI with adaptive high-contrast palettes, contextual micro-interactions, and real-time WebGL spatial fleet visualizations.",
+    "heroImage": "https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=1600&q=85",
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "accentColor": "#C8B6FF",
+    "results": [
+      { "label": "Operator Response Time", "value": "-58%" },
+      { "label": "Daily Active Fleets", "value": "12,400+" },
+      { "label": "System Error Rate", "value": "0.01%" }
+    ],
+    "awards": ["iF Design Award 2025", "UX Design Award Gold"],
+    "testimonial": {
+      "quote": "The telematics interface Valence designed is now the industry benchmark. Drivers and fleet managers praise the clarity every single day.",
+      "author": "Lars Lindqvist",
+      "role": "VP Product, North Mobility"
+    },
+    "featured": true
+  },
+  {
+    "id": "arc-product-design",
+    "number": "03",
+    "title": "ARC",
+    "client": "Arc Acoustic Labs",
+    "category": "PRODUCT",
+    "year": "2024",
+    "tagline": "Spatial audio hardware companion ecosystem and physical-digital synergy.",
+    "services": ["Product Strategy", "Industrial Interaction", "App Architecture", "Motion Systems"],
+    "description": "Arc produces precision spatial audio monitors for sound designers and film composers. We designed the complete digital companion ecosystem, including haptic touch curves, parametric equalizer canvases, and 3D spatial room calibrators.",
+    "challenge": "Professional acoustic engineers demand millisecond-level precision without complex, unintuitive menus.",
+    "approach": "We created tactile rotary digital dials and a real-time ray-traced acoustic simulation canvas that lets users sculpt room soundwaves effortlessly.",
+    "heroImage": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1600&q=85",
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "accentColor": "#E86F51",
+    "results": [
+      { "label": "Product Pre-Orders", "value": "$4.8M" },
+      { "label": "Studio Adoption", "value": "850+ Studios" },
+      { "label": "App Store Rating", "value": "4.9 / 5.0" }
+    ],
+    "awards": ["Good Design Award", "Webby Award Winner"],
+    "featured": true
+  },
+  {
+    "id": "motion-campaign",
+    "number": "04",
+    "title": "MOTION",
+    "client": "Motion Biennale Paris",
+    "category": "CAMPAIGN",
+    "year": "2024",
+    "tagline": "Generative typography and dynamic visual campaign for European contemporary art.",
+    "services": ["Campaign Strategy", "Generative Motion", "Interactive Billboards", "Web Platform"],
+    "description": "A cross-media brand campaign spanning interactive digital billboards in Paris, Berlin, and London, powered by real-time pedestrian density sensors and generative audio-reactive algorithms.",
+    "challenge": "Capturing the attention of over 2 million passersby across European cultural hubs with non-static, algorithmic art.",
+    "approach": "Built custom WebGL shaders and kinetic type engines that continuously reformed headline typography based on ambient sound and crowd velocity.",
+    "heroImage": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=1600&q=85",
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "accentColor": "#C8B6FF",
+    "results": [
+      { "label": "Biennale Attendance", "value": "380,000+" },
+      { "label": "Social Reach", "value": "18.4M" },
+      { "label": "Engagement Lift", "value": "+240%" }
+    ],
+    "awards": ["D&AD Yellow Pencil", "Cannes Lions Bronze"],
+    "featured": true
+  },
+  {
+    "id": "atlas-web-experience",
+    "number": "05",
+    "title": "ATLAS",
+    "client": "Atlas Renewable Ventures",
+    "category": "WEB",
+    "year": "2025",
+    "tagline": "Immersive storytelling platform for planetary-scale geothermal infrastructure.",
+    "services": ["Creative Direction", "3D WebGL Development", "Editorial Copywriting", "Performance Optimization"],
+    "description": "Atlas transforms deep crust geothermal energy into carbon-negative power. We created an interactive web globe and underground strata explorer that visualizes subterranean temperature gradients and megawatts generated in real time.",
+    "challenge": "Demystifying deep-earth drilling physics for institutional investors and climate policy leaders without overwhelming technical jargon.",
+    "approach": "Seamless scroll-scrubbed 3D geological drill journeys, micro-interactions, and instant WebGL data visualizers running at 60fps across mobile and desktop.",
+    "heroImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=85",
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "accentColor": "#E86F51",
+    "results": [
+      { "label": "Capital Raised", "value": "$120M" },
+      { "label": "Avg. Session Duration", "value": "4m 48s" },
+      { "label": "Organic Press Mentions", "value": "140+" }
+    ],
+    "awards": ["Awwwards Site of the Month", "FWA of the Month"],
+    "featured": true
+  },
+  {
+    "id": "form-brand-strategy",
+    "number": "06",
+    "title": "FORM",
+    "client": "Form Sustainable Ceramics",
+    "category": "BRANDING",
+    "year": "2024",
+    "tagline": "Artisanal ceramic craftsmanship elevated through minimalist digital commerce.",
+    "services": ["Brand Positioning", "Packaging System", "E-Commerce Experience", "Art Direction"],
+    "description": "Form produces zero-waste tableware handcrafted in Kyoto using reclaimed volcanic clay. We articulated their brand ethos into an understated, warm editorial e-commerce platform and tactile unboxing experience.",
+    "challenge": "Communicating the unique, organic imperfections of handmade ceramics through a two-dimensional screen.",
+    "approach": "High-fidelity micro-photography, slow-panning video textures, and an editorial catalog layout reminiscent of a Japanese art monograph.",
+    "heroImage": "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=1600&q=85",
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "accentColor": "#C8B6FF",
+    "results": [
+      { "label": "Direct-to-Consumer Sales", "value": "+310%" },
+      { "label": "Average Order Value", "value": "$340" },
+      { "label": "Return Rate", "value": "< 1.2%" }
+    ],
+    "featured": false
+  },
+  {
+    "id": "syntex-motion-system",
+    "number": "07",
+    "title": "SYNTEX",
+    "client": "Syntex Molecular AI",
+    "category": "MOTION",
+    "year": "2025",
+    "tagline": "Cinematic visual design and 3D molecular choreography for generative bio-tech.",
+    "services": ["Motion Guidelines", "3D Simulation", "Brand World", "UI Choreography"],
+    "description": "Syntex utilizes generative artificial intelligence to predict protein folds and accelerate clinical breakthroughs. We created their complete 3D motion language, depicting molecular binding dynamics with luminous elegance.",
+    "challenge": "Translating complex structural biology into an inspiring, aesthetically breathtaking visual narrative.",
+    "approach": "Developed procedural 3D particle animations and mathematical ribbon simulations rendered in real-time.",
+    "heroImage": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1600&q=85",
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "accentColor": "#E86F51",
+    "results": [
+      { "label": "Series B Valuation", "value": "$350M" },
+      { "label": "Key Talent Inbound", "value": "+400%" },
+      { "label": "Keynote Viewership", "value": "1.2M" }
+    ],
+    "featured": false
+  },
+  {
+    "id": "lumen-digital-platform",
+    "number": "08",
+    "title": "LUMEN",
+    "client": "Lumen Smart Optics",
+    "category": "DIGITAL",
+    "year": "2025",
+    "tagline": "Spatial computing companion app for next-generation smart eyewear.",
+    "services": ["Spatial UI", "Design Systems", "Prototyping", "Design Engineering"],
+    "description": "Lumen is building augmented reality optics that adapt to ambient luminescence. We designed their spatial operating system preview, wearable pairing interface, and high-precision HUD typography.",
+    "challenge": "Creating an interface that feels weightless and stays invisible until activated by gaze or subtle hand gestures.",
+    "approach": "Implemented low-chroma luminous UI shaders, peripheral awareness indicators, and contextual glanceable widgets.",
+    "heroImage": "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=1600&q=85",
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "accentColor": "#C8B6FF",
+    "results": [
+      { "label": "Beta Waitlist", "value": "145,000+" },
+      { "label": "Interaction Latency", "value": "< 8ms" },
+      { "label": "Patent Filings", "value": "12" }
+    ],
+    "featured": false
+  }
+]

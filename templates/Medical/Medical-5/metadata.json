@@ -1,0 +1,6 @@
+{
+  "name": "Aura Health - Lilac Frost Medical Platform",
+  "description": "A premium, calm, and modern medical healthcare platform template with Lilac Frost aesthetic, specialist booking, patient portal, medical records, and clinical services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

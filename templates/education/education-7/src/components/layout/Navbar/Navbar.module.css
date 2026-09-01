@@ -1,0 +1,153 @@
+.navbar {
+  background: var(--color-surface);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  border-bottom: 1px solid var(--color-border);
+  transition: box-shadow var(--transition);
+}
+
+.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding-block: 0.9rem;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brandName {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.brandTagline {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+/* Desktop nav */
+.desktopNav {
+  flex: 1;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  justify-content: center;
+}
+
+.navLink {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  border-radius: var(--radius);
+  transition: color var(--transition-fast), background var(--transition-fast);
+  letter-spacing: 0.02em;
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+  background: var(--color-surface-2);
+}
+
+.navLink.active {
+  color: var(--color-primary);
+  font-weight: 600;
+  background: rgba(26, 46, 90, 0.07);
+}
+
+/* CTA */
+.cta {
+  flex-shrink: 0;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-primary);
+  padding: var(--space-2);
+  margin-left: auto;
+}
+
+/* Mobile nav */
+.mobileNav {
+  display: none;
+  overflow: hidden;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.mobileList {
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.mobileLink {
+  display: block;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text);
+  border-radius: var(--radius);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.mobileLink:hover, .mobileLink.mobileActive {
+  background: var(--color-surface-2);
+  color: var(--color-primary);
+}
+
+.mobileCta {
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 900px) {
+  .desktopNav, .cta { display: none; }
+  .hamburger { display: flex; }
+  .mobileNav { display: block; max-height: 0; transition: max-height var(--transition-slow); }
+  .mobileNav.open { max-height: 500px; }
+}
+
+@media (max-width: 480px) {
+  .brandTagline { display: none; }
+}

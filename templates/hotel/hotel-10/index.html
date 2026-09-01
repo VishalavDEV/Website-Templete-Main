@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aetheria Haven Resorts — Weightless Luxury, Timeless Solitude</title>
+  
+  <!-- Preconnect & Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="aetheriaScope">
+    
+    <!-- 1. Navigation Bar -->
+    <nav class="navbar" id="navbar">
+      <div class="navContainer">
+        <div class="brand" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+          <span class="logoAether">AETHERIA</span>
+          <span class="logoHaven">HAVEN</span>
+        </div>
+
+        <div class="desktopLinks">
+          <a href="#suites" class="navLink">Suites</a>
+          <a href="#experiences" class="navLink">Amenities</a>
+          <a href="#experiences" class="navLink">Experiences</a>
+          <a href="#reviews" class="navLink">Reviews</a>
+          <a href="#contact" class="navLink">Contact</a>
+        </div>
+
+        <div class="rightActions">
+          <div class="currencySelector">
+            <svg class="globeIcon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            <select id="currencySelect" class="select">
+              <option value="USD">USD ($)</option>
+              <option value="EUR">EUR (€)</option>
+              <option value="GBP">GBP (£)</option>
+            </select>
+          </div>
+          <button class="btn btn-goldPulse" onclick="openBookingDrawer()">Reserve a Suite</button>
+        </div>
+
+        <button class="hamburger" onclick="toggleMobileMenu(true)" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div class="mobileDrawerOverlay" id="drawerOverlay" onclick="toggleMobileMenu(false)">
+      <div class="mobileDrawer" onclick="event.stopPropagation()">
+        <div class="drawerHeader">
+          <div class="brand">
+            <span class="logoAether">AETHERIA</span>
+            <span class="logoHaven">HAVEN</span>
+          </div>
+          <button class="closeDrawer" onclick="toggleMobileMenu(false)" aria-label="Close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+          </button>
+        </div>
+        
+        <div class="drawerLinks">
+          <a href="#suites" class="drawerLink" onclick="toggleMobileMenu(false)">Suites</a>
+          <a href="#experiences" class="drawerLink" onclick="toggleMobileMenu(false)">Amenities</a>
+          <a href="#experiences" class="drawerLink" onclick="toggleMobileMenu(false)">Experiences</a>
+          <a href="#reviews" class="drawerLink" onclick="toggleMobileMenu(false)">Reviews</a>
+          <a href="#contact" class="drawerLink" onclick="toggleMobileMenu(false)">Contact</a>
+        </div>
+
+        <div class="drawerFooter">
+          <div class="mobileCurrency">
+            <span>Currency:</span>
+            <select id="mobileCurrencySelect" class="select">
+              <option value="USD">USD ($)</option>
+              <option value="EUR">EUR (€)</option>
+              <option value="GBP">GBP (£)</option>
+            </select>
+          </div>
+          <button class="btn btn-goldPulse btn-fullWidth" onclick="toggleMobileMenu(false); openBookingDrawer()">Reserve a Suite</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Hero Section -->
+    <section class="heroSection">
+      <div class="heroBg" id="heroBg"></div>
+      <div class="heroOverlay"></div>
+
+      <div class="heroContent">
+        <div class="tagline">AETHERIA HAVEN RESORTS</div>
+        <h1 class="title">
+          Weightless Luxury,<br>
+          <span class="italicText">Timeless Solitude</span>
+        </h1>
+        <p class="description">
+          Suspended along obsidian peaks and sapphire waves, experience a retreat crafted for pure gravity-free elevation and sanctuary.
+        </p>
+
+        <!-- Floating Booking Widget -->
+        <div class="bookingWidget">
+          <div class="widgetGrid">
+            
+            <div class="widgetField">
+              <label class="fieldLabel">Check In</label>
+              <div class="fieldValueWrapper">
+                <svg class="fieldIcon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                <input type="date" id="heroCheckIn" class="dateInput">
+              </div>
+            </div>
+
+            <div class="widgetField">
+              <label class="fieldLabel">Check Out</label>
+              <div class="fieldValueWrapper">
+                <svg class="fieldIcon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                <input type="date" id="heroCheckOut" class="dateInput">
+              </div>
+            </div>
+
+            <div class="widgetField" onclick="toggleHeroGuestPopup(event)">
+              <label class="fieldLabel">Guests &amp; Rooms</label>
+              <div class="fieldValueWrapper" style="cursor: pointer;">
+                <svg class="fieldIcon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span id="heroGuestSummary" class="fieldValueText">2 Guests, 1 Room</span>
+                <svg class="arrowIcon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </div>
+
+              <!-- Guest Counter Popup -->
+              <div class="guestPopup" id="heroGuestPopup" onclick="event.stopPropagation()">
+                <div class="popupRow">
+                  <div>
+                    <div class="popupTitle">Guests</div>
+                    <div class="popupDesc">Ages 12+</div>
+                  </div>
+                  <div class="popupCounter">
+                    <button type="button" class="counterBtn" onclick="updateHeroGuests(-1)">-</button>
+                    <span class="counterVal" id="heroGuestsVal">2</span>
+                    <button type="button" class="counterBtn" onclick="updateHeroGuests(1)">+</button>
+                  </div>
+                </div>
+                <div class="popupRow">
+                  <div>
+                    <div class="popupTitle">Rooms</div>
+                    <div class="popupDesc">Max 3 suites</div>
+                  </div>
+                  <div class="popupCounter">
+                    <button type="button" class="counterBtn" onclick="updateHeroRooms(-1)">-</button>
+                    <span class="counterVal" id="heroRoomsVal">1</span>
+                    <button type="button" class="counterBtn" onclick="updateHeroRooms(1)">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="widgetField">
+              <label class="fieldLabel">Suite Class</label>
+              <div class="fieldValueWrapper">
+                <select id="heroSuiteClass" class="widgetSelect">
+                  <option value="all">All Habitats</option>
+                  <option value="floating-villa">Floating Villa</option>
+                  <option value="cliffside-suite">Cliffside Suite</option>
+                  <option value="penthouse">Penthouse</option>
+                  <option value="sky-chalet">Sky Chalet</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="widgetAction">
+              <button class="btn btn-gold btn-widget" onclick="searchAvailability()">Search</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Room & Suite Catalog -->
+    <section id="suites" class="gridSection">
+      <div class="headerBlock">
+        <h2 class="sectionTitle">Curated Havens</h2>
+        <p class="sectionSubtitle">
+          Architectural masterworks suspended weightlessly. Tailored for absolute solitude and high-altitude luxury.
+        </p>
+
+        <!-- Category Tabs -->
+        <div class="tabContainer">
+          <button class="tabBtn tabBtnActive" id="tab-all" onclick="filterCategory('all')">All Habitats</button>
+          <button class="tabBtn" id="tab-oceanfront" onclick="filterCategory('oceanfront')">Oceanfront</button>
+          <button class="tabBtn" id="tab-sky-chalets" onclick="filterCategory('sky-chalets')">Sky Chalets</button>
+          <button class="tabBtn" id="tab-forest-pods" onclick="filterCategory('forest-pods')">Forest Pods</button>
+          <button class="tabBtn" id="tab-cliffside" onclick="filterCategory('cliffside')">Cliffside</button>
+        </div>
+      </div>
+
+      <!-- Grid listing -->
+      <div class="roomsGrid" id="roomsGrid">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </section>
+
+    <!-- 4. Resort Amenities / Experiences -->
+    <section id="experiences" class="experiencesSection reveal">
+      <div class="expHeader">
+        <span class="expTag">CURATED EXPERIENCES</span>
+        <h2 class="expSectionTitle">Transcendent Retreats</h2>
+        <p class="expSubtitle">
+          Curated journeys designed to elevate perception and restore raw tranquility. Beyond traditional hospitality.
+        </p>
+      </div>
+
+      <div class="experiencesGrid">
+        <!-- Card 1 -->
+        <article class="expCard">
+          <div class="expImageWrapper">
+            <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=800&q=80" alt="Float Spa" class="expImage">
+            <div class="expOverlay"></div>
+          </div>
+          <div class="expStaticContent">
+            <span class="expCategory">Restorative Ritual</span>
+            <h3 class="expTitle">Zero-Gravity Float Spa</h3>
+          </div>
+          <div class="expHoverReveal">
+            <span class="expCategory">Restorative Ritual</span>
+            <h3 class="expTitle">Zero-Gravity Float Spa</h3>
+            <p class="expDesc">Realign your mind and body inside mineral-dense float tanks calibrated to human temperature. Supported by celestial soundscapes.</p>
+            <div class="exploreTrigger">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg>
+              <span>Inquire with Butler</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="expCard">
+          <div class="expImageWrapper">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Cliffside Dining" class="expImage">
+            <div class="expOverlay"></div>
+          </div>
+          <div class="expStaticContent">
+            <span class="expCategory">Michelin Starred</span>
+            <h3 class="expTitle">Cliffside Fine Dining</h3>
+          </div>
+          <div class="expHoverReveal">
+            <span class="expCategory">Michelin Starred</span>
+            <h3 class="expTitle">Cliffside Fine Dining</h3>
+            <p class="expDesc">Gastronomy suspended 500 meters above the bay. Indulge in 9-course organic pairing menus crafted by leading culinary alchemists.</p>
+            <div class="exploreTrigger">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg>
+              <span>Inquire with Butler</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="expCard">
+          <div class="expImageWrapper">
+            <img src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=800&q=80" alt="Helipad Access" class="expImage">
+            <div class="expOverlay"></div>
+          </div>
+          <div class="expStaticContent">
+            <span class="expCategory">Seamless Transit</span>
+            <h3 class="expTitle">Summit Helipad Access</h3>
+          </div>
+          <div class="expHoverReveal">
+            <span class="expCategory">Seamless Transit</span>
+            <h3 class="expTitle">Summit Helipad Access</h3>
+            <p class="expDesc">Arrive weightlessly. Our dedicated mountaintop helipad manages incoming transfers directly, ensuring instant in-suite check-ins.</p>
+            <div class="exploreTrigger">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg>
+              <span>Inquire with Butler</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="expCard">
+          <div class="expImageWrapper">
+            <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80" alt="Yacht Charters" class="expImage">
+            <div class="expOverlay"></div>
+          </div>
+          <div class="expStaticContent">
+            <span class="expCategory">Bespoke Journeys</span>
+            <h3 class="expTitle">Obsidian Yacht Charters</h3>
+          </div>
+          <div class="expHoverReveal">
+            <span class="expCategory">Bespoke Journeys</span>
+            <h3 class="expTitle">Obsidian Yacht Charters</h3>
+            <p class="expDesc">Navigate sapphire waters on Aetheria’s custom fleet. Fully crewed excursions with onboard plunge pools and diving decks.</p>
+            <div class="exploreTrigger">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg>
+              <span>Inquire with Butler</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. Testimonials & Ratings -->
+    <section id="reviews" class="reviewsSection reveal">
+      <div class="reviewsContainer">
+        
+        <!-- Ratings Breakdown -->
+        <div class="ratingBox">
+          <div class="ratingHeader">
+            <div class="verifiedBadge">VERIFIED RATINGS</div>
+            <h2 class="ratingTitle">Aetherial Standards</h2>
+          </div>
+
+          <div class="scoreRow">
+            <span class="scoreVal">4.9</span>
+            <div>
+              <div class="stars">
+                <!-- Stars rendered by CSS/Unicode -->
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+              </div>
+              <span class="scoreCount">Out of 5.0 based on 184 reviews</span>
+            </div>
+          </div>
+
+          <div class="breakdown">
+            <div class="rateRow">
+              <div class="rateLabelRow">
+                <span class="rateName">View &amp; Orientation</span>
+                <span class="rateVal">5.0</span>
+              </div>
+              <div class="barOuter"><div class="barInner" style="width: 100%;"></div></div>
+            </div>
+            <div class="rateRow">
+              <div class="rateLabelRow">
+                <span class="rateName">Service &amp; Discretion</span>
+                <span class="rateVal">4.9</span>
+              </div>
+              <div class="barOuter"><div class="barInner" style="width: 98%;"></div></div>
+            </div>
+            <div class="rateRow">
+              <div class="rateLabelRow">
+                <span class="rateName">Comfort &amp; Acoustics</span>
+                <span class="rateVal">4.9</span>
+              </div>
+              <div class="barOuter"><div class="barInner" style="width: 98%;"></div></div>
+            </div>
+            <div class="rateRow">
+              <div class="rateLabelRow">
+                <span class="rateName">Wellness Rituals</span>
+                <span class="rateVal">4.8</span>
+              </div>
+              <div class="barOuter"><div class="barInner" style="width: 96%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Testimonials Slider */}
+        <div class="testimonialSlider">
+          <svg class="quoteIcon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          
+          <div class="sliderWindow">
+            <!-- Slides rendered dynamically by script.js -->
+            <div id="testimonialsContainer"></div>
+          </div>
+
+          <div class="controls">
+            <button class="controlBtn" onclick="prevTestimonial()" aria-label="Previous Review">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <span class="slideCounter" id="testimonialCounter">1 / 3</span>
+            <button class="controlBtn" onclick="nextTestimonial()" aria-label="Next Review">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. Footer -->
+    <footer class="footer">
+      <div class="footerContainer">
+        
+        <div class="brandingBlock">
+          <div class="brand">
+            <span class="logoAether">AETHERIA</span>
+            <span class="logoHaven">HAVEN RESORTS</span>
+          </div>
+          <p class="brandDesc">
+            A sanctuary designed for weightless luxury and quiet elevation. High-altitude living crafted to restore complete solitude.
+          </p>
+
+          <!-- Newsletter Signup -->
+          <div class="newsletterBox">
+            <h4 class="footerSectionTitle">Reserve Your Priority Access</h4>
+            <p class="footerSectionDesc">Subscribe to our private circular for priority suite allocations and seasonal retreats.</p>
+            
+            <div id="subscriptionSuccess" class="successPanel" style="display: none;">
+              <svg class="successIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Priority Access Confirmed. Check your inbox shortly.</span>
+            </div>
+
+            <form id="subscribeForm" onsubmit="handleSubscribe(event)" class="footerForm">
+              <div class="footerInputWrapper">
+                <input type="email" id="subscribeEmail" placeholder="Enter your VIP code/email..." class="footerInput">
+                <button type="submit" class="sendBtn" aria-label="Subscribe">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+              </div>
+              <span id="subscribeError" class="errorSpan" style="display: none;"></span>
+            </form>
+          </div>
+
+          <div class="awardsBlock">
+            <div class="awardItem">
+              <svg class="awardIcon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+              <div>
+                <span class="awardName">Grand Gold Winner 2026</span>
+                <span class="awardOrg">Elite Wilderness Retreats</span>
+              </div>
+            </div>
+            <div class="awardItem">
+              <svg class="awardIcon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+              <div>
+                <span class="awardName">Triple Platinum Rating</span>
+                <span class="awardOrg">Eco-Architecture Guild</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coordinates Details Card -->
+        <div class="locationCard">
+          <div class="cardHeader">
+            <svg class="compassIcon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            <div>
+              <span class="locTitle">Haven Coordinates</span>
+              <span class="locCoords">46°35'24.8"N, 8°14'06.2"E</span>
+            </div>
+          </div>
+          
+          <div class="cardDetails">
+            <div class="locRow">
+              <span>Elevation:</span>
+              <strong>1,480 meters (Cloud Level)</strong>
+            </div>
+            <div class="locRow">
+              <span>Access:</span>
+              <strong>15-minute heli-transit from Geneva (GVA)</strong>
+            </div>
+            <div class="locRow">
+              <span>Inquiries:</span>
+              <strong>butler@aetheriahaven.luxury</strong>
+            </div>
+            <div class="locRow">
+              <span>Secure Line:</span>
+              <strong>+41 22 984 0000</strong>
+            </div>
+          </div>
+
+          <!-- Radar mock -->
+          <div class="mapMock">
+            <div class="mapDot"></div>
+            <div class="mapRadar"></div>
+            <div class="mapGrid"></div>
+            <span class="mapText">GPS SECURE RETREAT CONNECTED</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bottomBar">
+        <div class="bottomContainer">
+          <span>&copy; 2026 Aetheria Haven Resorts. Weightless solitude guaranteed.</span>
+          <div class="bottomLinks">
+            <a href="#suites">Suites Catalog</a>
+            <a href="#experiences">Experiences</a>
+            <a href="#contact">Disclosures</a>
+            <a href="#contact">VIP Terms</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 7. Detailed Room View Modal -->
+    <div class="modalOverlay" id="roomModal" onclick="closeRoomModal()">
+      <div class="modalContent" onclick="event.stopPropagation()">
+        <button class="modalCloseBtn" onclick="closeRoomModal()">&times;</button>
+        
+        <div class="modalContainer">
+          <!-- Photo Gallery Grid -->
+          <div class="photoGrid" id="modalPhotoGrid"></div>
+
+          <!-- Info Details -->
+          <div class="modalInfoCol">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+              <span class="modalBadge" id="modalBadge"></span>
+              <span class="modalSpecLabel" id="modalView"></span>
+            </div>
+
+            <h2 class="modalTitle" id="modalTitle"></h2>
+            <p class="modalDescription" id="modalDesc"></p>
+
+            <!-- Seasonal Rate Matrix (7 Days) -->
+            <div class="modalSectionBlock">
+              <h4 class="modalSectionTitle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                Seasonal Rate Matrix (7-Day Overview)
+              </h4>
+              <p class="modalSectionHint">Rates adjust for weekend premiums. Select a date to view pricing:</p>
+              <div class="calendarSlider" id="modalCalendarSlider"></div>
+            </div>
+
+            <!-- Add-ons Configurations -->
+            <div class="modalSectionBlock">
+              <h4 class="modalSectionTitle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg>
+                Enhance Your Sanctuary
+              </h4>
+              <div class="modalExtrasList">
+                
+                <label class="modalExtraItem" id="extraHeliItem">
+                  <input type="checkbox" id="modalHeliCheck" onchange="toggleModalExtra('heli')" class="modalExtraCheck">
+                  <div class="modalExtraBody">
+                    <div class="modalExtraTitle">Airport Heli-Transfer (One-way)</div>
+                    <div class="modalExtraDesc">Skip the drive; fly straight to our peaks. Includes VIP escort.</div>
+                  </div>
+                  <div class="modalExtraCost" id="modalHeliCost"></div>
+                </label>
+
+                <label class="modalExtraItem" id="extraChefItem">
+                  <input type="checkbox" id="modalChefCheck" onchange="toggleModalExtra('chef')" class="modalExtraCheck">
+                  <div class="modalExtraBody">
+                    <div class="modalExtraTitle">Private In-Suite Chef (Daily)</div>
+                    <div class="modalExtraDesc">Customized morning &amp; evening fine-dining tailored to your dietary bio-profile.</div>
+                  </div>
+                  <div class="modalExtraCost" id="modalChefCost"></div>
+                </label>
+
+                <label class="modalExtraItem" id="extraSpaItem">
+                  <input type="checkbox" id="modalSpaCheck" onchange="toggleModalExtra('spa')" class="modalExtraCheck">
+                  <div class="modalExtraBody">
+                    <div class="modalExtraTitle">Floating Spa &amp; Wellness Ritual</div>
+                    <div class="modalExtraDesc">3-hour exclusive session in the Zero-Gravity Salt Float chamber. Includes sound bath.</div>
+                  </div>
+                  <div class="modalExtraCost" id="modalSpaCost"></div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Inclusions -->
+            <div class="modalSectionBlock">
+              <h4 class="modalSectionTitle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Suite Amenities &amp; Inclusions
+              </h4>
+              <div class="modalAmenitiesGrid" id="modalAmenitiesGrid"></div>
+            </div>
+
+            <!-- Price Sticky Bottom Panel -->
+            <div class="modalSummaryPanel">
+              <div class="modalSummaryGrid">
+                <div>
+                  <div class="modalTotalLabel">Nightly Suite Rate (Active Date)</div>
+                  <div class="modalTotalPrice" id="modalDailyTotal"></div>
+                </div>
+                <div id="modalOneTimeBlock" style="display: none;">
+                  <div class="modalTotalLabel">One-time Add-ons</div>
+                  <div class="modalTotalPrice" id="modalOneTimeTotal"></div>
+                </div>
+              </div>
+              <div class="modalActionBlock">
+                <button class="btn btn-gold modalSubmitBookBtn" onclick="bookFromModal()">Confirm Habitat &amp; Continue</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Static Image Lightbox -->
+    <div class="lightboxOverlay" id="lightboxOverlay" onclick="closeLightbox()">
+      <button class="closeLightboxBtn" onclick="closeLightbox()">&times;</button>
+      <img src="" id="lightboxImg" alt="lightbox view" class="lightboxImg">
+    </div>
+
+    <!-- 8. Booking Drawer (Fixed Slide-in Sidebar) -->
+    <div class="drawerOverlay" id="bookingDrawerOverlay" onclick="closeBookingDrawer()">
+      <div class="drawerContainer" onclick="event.stopPropagation()">
+        
+        <!-- Header -->
+        <div class="drawerHeader">
+          <div>
+            <span class="drawerTitle">Suite Reservation</span>
+            <div class="drawerStepIndicator" id="drawerStepLabel">Step 1 of 4 &bull; Details</div>
+          </div>
+          <button class="drawerCloseBtn" onclick="closeBookingDrawer()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+          </button>
+        </div>
+
+        <!-- Scrollable Content -->
+        <div class="drawerScrollContent">
+          
+          <!-- Step 1: Details -->
+          <div class="drawerStep" id="bookingStep1">
+            <h3 class="drawerSectionHeader">Configure Habitat</h3>
+            
+            <div class="drawerFieldBlock">
+              <label class="drawerFieldLabel">Select Sanctuary</label>
+              <select id="drawerSuiteSelect" onchange="syncDrawerSuite()" class="drawerSelect">
+                <option value="floating-villa">Aetheria Oceanfront Villa</option>
+                <option value="cliffside-suite">Cliffside Obsidian Oasis</option>
+                <option value="sky-chalet">Aetheria Sky Chalet</option>
+                <option value="forest-pod">Ethereal Forest Pod</option>
+                <option value="penthouse">Nebula Glass Penthouse</option>
+              </select>
+            </div>
+
+            <div class="drawerRowFields">
+              <div class="drawerFieldBlock">
+                <label class="drawerFieldLabel">Check In</label>
+                <input type="date" id="drawerCheckIn" class="drawerDateInput">
+              </div>
+              <div class="drawerFieldBlock">
+                <label class="drawerFieldLabel">Check Out</label>
+                <input type="date" id="drawerCheckOut" class="drawerDateInput">
+              </div>
+            </div>
+            <span id="drawerDatesError" class="drawerErrorSpan" style="display: none;"></span>
+
+            <div class="drawerRowFields">
+              <div class="drawerFieldBlock">
+                <label class="drawerFieldLabel">Guests (12+)</label>
+                <div class="drawerCounterRow">
+                  <button type="button" class="drawerCounterBtn" onclick="updateDrawerGuests(-1)">-</button>
+                  <span class="drawerCounterVal" id="drawerGuestsVal">2</span>
+                  <button type="button" class="drawerCounterBtn" onclick="updateDrawerGuests(1)">+</button>
+                </div>
+              </div>
+              <div class="drawerFieldBlock">
+                <label class="drawerFieldLabel">Suites</label>
+                <div class="drawerCounterRow">
+                  <button type="button" class="drawerCounterBtn" onclick="updateDrawerRooms(-1)">-</button>
+                  <span class="drawerCounterVal" id="drawerRoomsVal">1</span>
+                  <button type="button" class="drawerCounterBtn" onclick="updateDrawerRooms(1)">+</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="drawerPreviewCard">
+              <img src="" id="drawerPreviewImg" alt="sanctuary preview" class="drawerPreviewImg">
+              <div class="drawerPreviewInfo">
+                <div class="drawerPreviewTitle" id="drawerPreviewTitle"></div>
+                <div class="drawerPreviewPrice" id="drawerPreviewPrice"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Extras -->
+          <div class="drawerStep" id="bookingStep2" style="display: none;">
+            <h3 class="drawerSectionHeader">Sanctuary Enhancements</h3>
+            <p class="drawerSectionText">Select additional rituals and transfers to customize your retreat.</p>
+
+            <div class="drawerExtrasList">
+              <label class="drawerExtraLabel" id="drawerHeliLabel">
+                <input type="checkbox" id="drawerHeliCheck" onchange="syncDrawerExtras()" class="drawerExtraInput">
+                <div class="drawerExtraDescBlock">
+                  <span class="drawerExtraTitle">Heli-Transfer Service</span>
+                  <span class="drawerExtraSub">Airport direct helipad transfer. Converted rate per person.</span>
+                </div>
+                <span class="drawerExtraPrice" id="drawerHeliCost"></span>
+              </label>
+
+              <label class="drawerExtraLabel" id="drawerChefLabel">
+                <input type="checkbox" id="drawerChefCheck" onchange="syncDrawerExtras()" class="drawerExtraInput">
+                <div class="drawerExtraDescBlock">
+                  <span class="drawerExtraTitle">Dedicated Private Chef</span>
+                  <span class="drawerExtraSub">Bespoke organic dining mapped to your bio-profile (daily).</span>
+                </div>
+                <span class="drawerExtraPrice" id="drawerChefCost"></span>
+              </label>
+
+              <label class="drawerExtraLabel" id="drawerSpaLabel">
+                <input type="checkbox" id="drawerSpaCheck" onchange="syncDrawerExtras()" class="drawerExtraInput">
+                <div class="drawerExtraDescBlock">
+                  <span class="drawerExtraTitle">Zero-Gravity Spa Chamber Access</span>
+                  <span class="drawerExtraSub">3-hour floatation ritual session including sound bath therapy.</span>
+                </div>
+                <span class="drawerExtraPrice" id="drawerSpaCost"></span>
+              </label>
+            </div>
+
+            <div class="drawerFieldBlock" style="margin-top: 24px;">
+              <label class="drawerFieldLabel">Special Requests &amp; Dietary Notes</label>
+              <textarea id="drawerRequestsText" placeholder="E.g., pillow preferences, allergies, or helicopter arrival timing..." class="drawerTextarea"></textarea>
+            </div>
+          </div>
+
+          <!-- Step 3: Payment -->
+          <div class="drawerStep" id="bookingStep3" style="display: none;">
+            <h3 class="drawerSectionHeader">Guest &amp; Payment Details</h3>
+            
+            <div class="drawerFormBlock">
+              <label class="drawerFieldLabel">Full Name</label>
+              <input type="text" id="drawerGuestName" placeholder="E.g. Evelyn Sterling" class="drawerInput">
+              <span id="drawerNameError" class="drawerErrorSpan" style="display: none;"></span>
+            </div>
+
+            <div class="drawerFormBlock">
+              <label class="drawerFieldLabel">Email Address</label>
+              <input type="email" id="drawerGuestEmail" placeholder="E.g. evelyn@sterling.co.uk" class="drawerInput">
+              <span id="drawerEmailError" class="drawerErrorSpan" style="display: none;"></span>
+            </div>
+
+            <div class="drawerFormBlock">
+              <label class="drawerFieldLabel">Contact Number</label>
+              <input type="tel" id="drawerGuestPhone" placeholder="E.g. +44 7700 900077" class="drawerInput">
+              <span id="drawerPhoneError" class="drawerErrorSpan" style="display: none;"></span>
+            </div>
+
+            <div class="drawerFormBlock">
+              <label class="drawerFieldLabel">Payment Method</label>
+              <div class="paymentMethods">
+                <button type="button" id="pay-credit" onclick="selectPayment('credit')" class="paymentBtn paymentBtnActive">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                  <span>Credit Card</span>
+                </button>
+                <button type="button" id="pay-paypal" onclick="selectPayment('paypal')" class="paymentBtn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 2.9 2.5 5 2.5 5h7s2.5-2.1 2.5-5Z"/><path d="M9 13v7h6v-7"/></svg>
+                  <span>PayPal</span>
+                </button>
+                <button type="button" id="pay-crypto" onclick="selectPayment('crypto')" class="paymentBtn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <span>Crypto</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4: Success -->
+          <div class="drawerStep" id="bookingStep4" style="display: none;">
+            <div class="confirmationBlock">
+              <div class="badgeWrapper">
+                <div class="checkCircle">
+                  <svg class="checkIcon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+              </div>
+
+              <h2 class="confirmationTitle">Sanctuary Reserved</h2>
+              <p class="confirmationText">
+                Your elevation retreat has been logged. A VIP travel coordinator will contact you shortly to align your helicopter itinerary.
+              </p>
+
+              <!-- Voucher card -->
+              <div class="voucherCard">
+                <div class="voucherHeader">
+                  <span>Aetheria Haven Reference</span>
+                  <span class="voucherRef" id="voucherRefVal"></span>
+                </div>
+                <div class="voucherBody">
+                  <div class="voucherRow">
+                    <span>Habitat Class:</span>
+                    <strong id="vouchSuite"></strong>
+                  </div>
+                  <div class="voucherRow">
+                    <span>Guests &amp; Suites:</span>
+                    <strong id="vouchGuests"></strong>
+                  </div>
+                  <div class="voucherRow">
+                    <span>Check In / Out:</span>
+                    <strong id="vouchDates"></strong>
+                  </div>
+                  <div class="voucherRow" style="border-top: 1px solid rgba(15,17,21,0.06); padding-top: 10px; margin-top: 10px;">
+                    <span>Amount Handled:</span>
+                    <strong id="vouchTotal" style="color: #C5A880; font-size: 1.1rem;"></strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="drawerFooterBlock" id="drawerFooter">
+          <div class="summaryRow">
+            <div>
+              <span class="summaryLabel" id="drawerNightsLabel">Total Estimate (1 night)</span>
+              <div class="summaryPrice" id="drawerGrandTotal"></div>
+            </div>
+            <span class="premiumBadge">PREMIUM</span>
+          </div>
+
+          <div class="drawerActions">
+            <button class="btn btn-secondary drawerBackBtn" id="drawerBackBtn" onclick="prevDrawerStep()" style="display: none;">Back</button>
+            <button class="btn btn-gold drawerNextBtn" id="drawerNextBtn" onclick="nextDrawerStep()">Continue</button>
+          </div>
+        </div>
+
+        <div class="drawerFooterBlock" id="drawerSuccessFooter" style="display: none;">
+          <button class="btn btn-primary btn-fullWidth" onclick="closeBookingDrawer()">Return to Resorts</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 24px 0;
+  transition: var(--transition-normal);
+  background: transparent;
+}
+
+.navbar.scrolled {
+  padding: 14px 0;
+  background: rgba(5, 5, 5, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(245, 185, 0, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--text-white);
+  text-transform: uppercase;
+}
+
+.navbar-logo .logo-accent {
+  color: var(--gold-primary);
+  text-shadow: var(--glow-text);
+}
+
+.navbar-logo-icon {
+  color: var(--gold-bright);
+}
+
+.desktop-nav-group {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  list-style: none;
+}
+
+.navbar-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  transition: var(--transition-fast);
+  position: relative;
+  padding: 6px 0;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-bright), var(--gold-amber));
+  transition: var(--transition-fast);
+  box-shadow: 0 0 8px var(--gold-bright);
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+  color: var(--gold-bright);
+  text-shadow: 0 0 12px rgba(245, 185, 0, 0.5);
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+  width: 100%;
+}
+
+/* Extra spacing between CONTACT link and GET TICKETS button */
+.navbar-cta-wrapper {
+  margin-left: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-cta-btn {
+  padding: 10px 24px;
+  font-size: 0.8rem;
+}
+
+/* Mobile Hamburger Toggle */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-white);
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1002;
+  transition: var(--transition-fast);
+}
+
+.mobile-toggle:hover {
+  color: var(--gold-bright);
+}
+
+/* Mobile Fullscreen Drawer Menu */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(5, 5, 5, 0.98);
+  backdrop-filter: blur(25px);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(-20px);
+}
+
+.mobile-menu-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobile-menu-links {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.mobile-menu-link {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  transition: var(--transition-fast);
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link.active {
+  color: var(--gold-bright);
+  text-shadow: var(--glow-text);
+  transform: scale(1.05);
+}
+
+.mobile-cta-btn {
+  width: 100%;
+  padding: 16px 0;
+  font-size: 1rem;
+  text-align: center;
+}

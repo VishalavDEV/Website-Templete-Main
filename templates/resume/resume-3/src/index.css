@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #94a3b8;
+  --accent-navy: #0f172a;
+  --accent-blue: #0284c7;
+  --accent-cyan: #06b6d4;
+  --accent-blue-deep: #1e3a8a;
+  --border-light: #e2e8f0;
+  --border-medium: #cbd5e1;
+  --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono);
+}
+
+/* Technical Grid Pattern Backgrounds */
+.bg-tech-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(203, 213, 225, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(203, 213, 225, 0.25) 1px, transparent 1px);
+}
+
+.bg-tech-dots {
+  background-image: radial-gradient(rgba(2, 132, 199, 0.2) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-blueprint {
+  background-color: #f8fafc;
+  background-image: 
+    linear-gradient(to right, rgba(2, 132, 199, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(2, 132, 199, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+
+/* Scanning Line Effect for Technical Visuals */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(1000%);
+    opacity: 0;
+  }
+}
+
+.animate-scan {
+  animation: scanline 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Pulse Animation for Active Status */
+@keyframes radar-ping {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(2, 132, 199, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(2, 132, 199, 0);
+  }
+}
+
+.status-ping {
+  animation: radar-ping 2.5s infinite;
+}
+
+/* Orbit Motion Keyframes */
+@keyframes orbit-rotate-cw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit-rotate-ccw {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.animate-orbit-cw {
+  animation: orbit-rotate-cw 45s linear infinite;
+}
+
+.animate-orbit-cw-fast {
+  animation: orbit-rotate-cw 25s linear infinite;
+}
+
+.animate-orbit-ccw {
+  animation: orbit-rotate-ccw 60s linear infinite;
+}
+
+/* Counter rotate node content so text stays upright */
+.animate-counter-rotate-cw {
+  animation: orbit-rotate-ccw 45s linear infinite;
+}
+
+.animate-counter-rotate-cw-fast {
+  animation: orbit-rotate-ccw 25s linear infinite;
+}
+
+.animate-counter-rotate-ccw {
+  animation: orbit-rotate-cw 60s linear infinite;
+}
+
+/* Technical Corner Markings */
+.tech-corner-box {
+  position: relative;
+}
+.tech-corner-box::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #0284c7;
+  border-left: 2px solid #0284c7;
+}
+.tech-corner-box::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid #0284c7;
+  border-right: 2px solid #0284c7;
+}
+
+/* Technical Line Draw Effect */
+.tech-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(2, 132, 199, 0.4), transparent);
+}
+
+/* Button pulse signal effect */
+@keyframes signal-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(2, 132, 199, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(2, 132, 199, 0);
+  }
+}
+
+.btn-signal:hover {
+  animation: signal-pulse 1.2s infinite;
+}

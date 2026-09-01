@@ -1,0 +1,14 @@
+[
+  { "id": "monument", "name": "MONUMENT", "industry": "Architecture & Spatial", "year": "2025", "location": "Zurich" },
+  { "id": "north", "name": "NORTH", "industry": "Autonomous Systems", "year": "2025", "location": "Stockholm" },
+  { "id": "arc", "name": "ARC", "industry": "Acoustic Hardware", "year": "2024", "location": "London" },
+  { "id": "atlas", "name": "ATLAS", "industry": "Clean Energy Infrastructure", "year": "2025", "location": "Dubai" },
+  { "id": "motion", "name": "MOTION", "industry": "Contemporary Art Biennale", "year": "2024", "location": "Paris" },
+  { "id": "form", "name": "FORM", "industry": "Artisanal Goods", "year": "2024", "location": "Kyoto" },
+  { "id": "syntex", "name": "SYNTEX", "industry": "Molecular Intelligence", "year": "2025", "location": "Boston" },
+  { "id": "lumen", "name": "LUMEN", "industry": "Spatial Computing", "year": "2025", "location": "San Francisco" },
+  { "id": "field", "name": "FIELD", "industry": "Robotics & Agriculture", "year": "2024", "location": "Copenhagen" },
+  { "id": "nova", "name": "NOVA-X", "industry": "Aerospace Research", "year": "2024", "location": "Berlin" },
+  { "id": "strata", "name": "STRATA", "industry": "Venture Capital", "year": "2025", "location": "New York" },
+  { "id": "vessel", "name": "VESSEL", "industry": "Maritime Electric Mobility", "year": "2024", "location": "Oslo" }
+]

@@ -1,0 +1,294 @@
+[
+  {
+    "id": "brand-strategy",
+    "number": "01",
+    "title": "BRAND STRATEGY",
+    "tagline": "Clarifying purpose, positioning, and narrative for category-defining leaders.",
+    "shortDescription": "We define core competitive narratives, audience psychology, and brand architecture that anchor your company in culture.",
+    "fullDescription": "Before creating a single pixel or choosing a typeface, we define the strategic foundations of your brand. We analyze category whitespace, cultural shifts, and customer desires to build an unmistakable market posture.",
+    "capabilities": [
+      "Brand Positioning & Whitespace Mapping",
+      "Core Purpose & Manifesto Creation",
+      "Brand Architecture & Portfolio Structuring",
+      "Tone of Voice & Editorial Messaging",
+      "Audience Personas & Behavioral Archetypes"
+    ],
+    "deliverables": [
+      "Brand Strategy Monograph",
+      "Verbal Identity & Editorial Playbook",
+      "Market Positioning Quadrant",
+      "Key Executive Narrative Deck"
+    ],
+    "process": [
+      {
+        "phase": "01",
+        "title": "Immersion & Audit",
+        "description": "Deep-dive interviews, competitive positioning scans, and cultural trend dissection."
+      },
+      {
+        "phase": "02",
+        "title": "Strategic Thesis",
+        "description": "Synthesizing market friction into an undeniable brand proposition and unfair advantage."
+      },
+      {
+        "phase": "03",
+        "title": "Narrative Synthesis",
+        "description": "Crafting the brand manifesto, elevator pitch, core pillars, and voice guidelines."
+      }
+    ],
+    "accentColor": "#E86F51",
+    "icon": "Compass",
+    "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
+    "featuredProjects": ["monument-brand-identity", "form-brand-strategy"],
+    "faqs": [
+      {
+        "q": "How long does a brand strategy sprint take?",
+        "a": "Our foundational brand strategy engagements typically run 3 to 5 weeks, delivering a comprehensive playbook before design commences."
+      },
+      {
+        "q": "Can strategy be done independently of visual design?",
+        "a": "Yes. Many high-growth companies engage us solely for positioning sprints prior to major funding rounds or IPO filings."
+      }
+    ]
+  },
+  {
+    "id": "visual-identity",
+    "number": "02",
+    "title": "VISUAL IDENTITY",
+    "tagline": "Distinctive design systems that command attention and endure across eras.",
+    "shortDescription": "We create bespoke typography, dynamic logomarks, color sciences, and scalable design guidelines.",
+    "fullDescription": "A visual identity should be a living, breathing ecosystem. We craft visual languages that scale effortlessly from 16px digital favicons to massive physical billboards, balancing art direction with technical rigor.",
+    "capabilities": [
+      "Logomark & Symbol Design",
+      "Custom Variable Typography",
+      "Color Theory & Material Palettes",
+      "Dynamic Motion Guidelines",
+      "Comprehensive Digital Brand Hubs"
+    ],
+    "deliverables": [
+      "Complete Vector & Variable Asset Suite",
+      "Interactive Digital Brand Guidelines Hub",
+      "Packaging & Physical Print Specifications",
+      "Iconography & Illustration Systems"
+    ],
+    "process": [
+      {
+        "phase": "01",
+        "title": "Visual Exploration",
+        "description": "Developing 3 distinct creative directions with moodboards, type pairings, and lockups."
+      },
+      {
+        "phase": "02",
+        "title": "System Refinement",
+        "description": "Stress-testing the chosen direction across mobile apps, websites, packaging, and video."
+      },
+      {
+        "phase": "03",
+        "title": "Asset Production & Hub",
+        "description": "Final vectorization, font licensing, asset optimization, and live design token hub."
+      }
+    ],
+    "accentColor": "#C8B6FF",
+    "icon": "Palette",
+    "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+    "featuredProjects": ["monument-brand-identity", "form-brand-strategy"],
+    "faqs": [
+      {
+        "q": "Do you design custom fonts?",
+        "a": "Yes. We frequently design proprietary custom display typefaces or partner with world-class type foundries for tailored licensing."
+      }
+    ]
+  },
+  {
+    "id": "digital-experiences",
+    "number": "03",
+    "title": "DIGITAL EXPERIENCES",
+    "tagline": "Immersive digital interfaces crafted with emotional resonance and surgical precision.",
+    "shortDescription": "We design and engineer bespoke web platforms, software interfaces, and spatial interactions that turn visitors into loyal advocates.",
+    "fullDescription": "We reject generic card grids and cookie-cutter frameworks. We design digital worlds where typography, cinematic scroll storytelling, smooth micro-interactions, and instant performance converge.",
+    "capabilities": [
+      "Editorial Web Design & Art Direction",
+      "Product UI/UX & Design Systems",
+      "Spatial & Interactive Prototyping",
+      "Conversion & Information Architecture",
+      "Accessibility & Usability Auditing"
+    ],
+    "deliverables": [
+      "Figma Design Systems with Auto-Layout Tokens",
+      "High-Fidelity Interactive Micro-Prototypes",
+      "Component Architecture Documentation",
+      "User Journey & Analytics Blueprints"
+    ],
+    "process": [
+      {
+        "phase": "01",
+        "title": "Experience Architecture",
+        "description": "User journeys, wireframes, and information hierarchy modeling."
+      },
+      {
+        "phase": "02",
+        "title": "High-Craft UI Art Direction",
+        "description": "Designing high-fidelity screens, bespoke transitions, and editorial typography rhythms."
+      },
+      {
+        "phase": "03",
+        "title": "Interactive Prototyping",
+        "description": "Validating physics, touch targets, and motion curves in live code and Figma prototypes."
+      }
+    ],
+    "accentColor": "#E86F51",
+    "icon": "Monitor",
+    "image": "https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=1200&q=80",
+    "featuredProjects": ["north-digital-experience", "atlas-web-experience"],
+    "faqs": [
+      {
+        "q": "How do you handle responsiveness?",
+        "a": "Every breakpoint is intentionally art-directed from the ground up, ensuring mobile feels bespoke rather than shrunken."
+      }
+    ]
+  },
+  {
+    "id": "web-development",
+    "number": "04",
+    "title": "WEB DEVELOPMENT",
+    "tagline": "High-performance creative engineering powered by modern web technologies.",
+    "shortDescription": "We bring complex interactions to life with React, WebGL, GSAP, and headless architectures running at 60fps.",
+    "fullDescription": "Our engineering team bridges the gap between ambitious visual art direction and robust technical performance. We obsess over lighthouse scores, fluid frame rates, clean semantic code, and effortless CMS authoring.",
+    "capabilities": [
+      "React, TypeScript, Next.js, & Vite Engineering",
+      "GSAP & WebGL 3D Shader Implementation",
+      "Headless CMS Integration (Sanity / Contentful)",
+      "Core Web Vitals & Performance Optimization",
+      "Full API & Microservice Integration"
+    ],
+    "deliverables": [
+      "Production-Grade Clean Git Repository",
+      "Automated CI/CD Deployment Pipelines",
+      "Modular Headless CMS Setup",
+      "Documentation & Technical Handoff"
+    ],
+    "process": [
+      {
+        "phase": "01",
+        "title": "Technical Scaffolding",
+        "description": "Architecture planning, component hierarchy, design token integration, and state design."
+      },
+      {
+        "phase": "02",
+        "title": "Interactive Development",
+        "description": "Implementing fluid scroll physics, canvas renderers, responsive views, and animations."
+      },
+      {
+        "phase": "03",
+        "title": "Optimization & QA",
+        "description": "Cross-browser testing, accessibility audit, lighthouse score tuning, and load testing."
+      }
+    ],
+    "accentColor": "#C8B6FF",
+    "icon": "Code",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+    "featuredProjects": ["atlas-web-experience", "north-digital-experience"],
+    "faqs": [
+      {
+        "q": "Which technologies do you specialize in?",
+        "a": "React, TypeScript, Next.js, Vite, Tailwind CSS, GSAP, Three.js, Canvas 2D/WebGL, Node.js, and modern serverless ecosystems."
+      }
+    ]
+  },
+  {
+    "id": "campaigns",
+    "number": "05",
+    "title": "CAMPAIGNS",
+    "tagline": "Cross-channel creative launches that capture imagination and spark cultural dialogue.",
+    "shortDescription": "We conceptualize and produce integrated campaigns across digital out-of-home, social worlds, interactive stunts, and editorial media.",
+    "fullDescription": "We create campaign moments that break through digital noise. From algorithmic generative billboards to viral digital launch experiences, we orchestrate memorable milestones for ambitious brands.",
+    "capabilities": [
+      "Creative Concept & Stunt Ideation",
+      "Interactive Digital Out-of-Home (DOOH)",
+      "Motion Assets & Social Toolkits",
+      "Launch Microsites & Product Drops",
+      "Media Planning & Art Direction"
+    ],
+    "deliverables": [
+      "Master Campaign Hero Assets",
+      "Multi-Format Video Cuts & Motion Graphics",
+      "Real-Time Interactive Display Software",
+      "Campaign Launch Playbook"
+    ],
+    "process": [
+      {
+        "phase": "01",
+        "title": "Creative Concepting",
+        "description": "Brainstorming provocative ideas and testing resonance with core audiences."
+      },
+      {
+        "phase": "02",
+        "title": "Production & Direction",
+        "description": "3D rendering, video choreography, typography animation, and sound design."
+      },
+      {
+        "phase": "03",
+        "title": "Deployment & Amplification",
+        "description": "Multi-channel release, live billboard sync, and viral launch tracking."
+      }
+    ],
+    "accentColor": "#E86F51",
+    "icon": "Sparkles",
+    "image": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=1200&q=80",
+    "featuredProjects": ["motion-campaign"],
+    "faqs": [
+      {
+        "q": "Can you coordinate physical installations?",
+        "a": "Yes. We regularly produce interactive software for LED walls, exhibitions, and architectural installations worldwide."
+      }
+    ]
+  },
+  {
+    "id": "motion-3d",
+    "number": "06",
+    "title": "MOTION & 3D",
+    "tagline": "Choreographed kinetic physics and cinematic 3D worlds that bring ideas into dimension.",
+    "shortDescription": "We produce 3D product renders, spatial simulations, kinetic typography, and motion design systems.",
+    "fullDescription": "Motion is not an afterthought; it is our primary storytelling medium. We design physical-inspired motion systems with custom easing curves, spatial audio pairing, and hyper-realistic 3D materials.",
+    "capabilities": [
+      "Cinematic 3D Product Visualizations",
+      "Procedural Physics & Particle Simulations",
+      "Kinetic Typography Choreography",
+      "WebGL Shader Creation",
+      "Sonic Branding & Sound Design"
+    ],
+    "deliverables": [
+      "4K Master Motion Reels & Video Files",
+      "Real-Time Optimized 3D GLTF / WebGL Assets",
+      "Motion Token Guidelines (Cubic-Bezier Specs)",
+      "Audio Stems & Sound Assets"
+    ],
+    "process": [
+      {
+        "phase": "01",
+        "title": "Animatic & Storyboard",
+        "description": "Frame-by-frame pacing, camera movement paths, and lighting studies."
+      },
+      {
+        "phase": "02",
+        "title": "3D Geometry & Shader Design",
+        "description": "Material texturing, raytracing, caustics, and volumetric lighting."
+      },
+      {
+        "phase": "03",
+        "title": "Final Composite & Web Export",
+        "description": "Grading, sound design sync, lightweight web optimization, and canvas integration."
+      }
+    ],
+    "accentColor": "#C8B6FF",
+    "icon": "Layers",
+    "image": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&q=80",
+    "featuredProjects": ["syntex-motion-system", "arc-product-design"],
+    "faqs": [
+      {
+        "q": "Can 3D assets run directly on mobile web browsers?",
+        "a": "Yes. We optimize poly counts, use draco compression, and bake textures to ensure fluid 60fps rendering on modern smartphones."
+      }
+    ]
+  }
+]

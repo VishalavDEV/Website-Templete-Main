@@ -1,0 +1,181 @@
+[
+  {
+    "id": "rep-blood-panel-2026",
+    "patientName": "Alexander Claire",
+    "reportType": "Comprehensive Cardio-Metabolic & Biomarker Panel",
+    "category": "Laboratory",
+    "date": "August 14, 2026",
+    "doctorName": "Dr. Sophia Chen-Vance",
+    "doctorId": "doc-5",
+    "department": "Clinical Biochemistry & Pathology",
+    "status": "Reviewed",
+    "summary": "Biomarker profile shows optimal fasting glycemic stability and low systemic inflammation markers. ApoB is well-controlled. Cellular 25-OH Vitamin D is slightly suboptimal.",
+    "measurements": [
+      {
+        "parameter": "Apolipoprotein B (ApoB)",
+        "value": "72",
+        "unit": "mg/dL",
+        "referenceRange": "< 80 mg/dL",
+        "status": "Optimal"
+      },
+      {
+        "parameter": "High-Sensitivity CRP (hs-CRP)",
+        "value": "0.62",
+        "unit": "mg/L",
+        "referenceRange": "< 1.0 mg/L",
+        "status": "Optimal"
+      },
+      {
+        "parameter": "Fasting Blood Glucose",
+        "value": "88",
+        "unit": "mg/dL",
+        "referenceRange": "70 - 99 mg/dL",
+        "status": "Normal"
+      },
+      {
+        "parameter": "Fasting Insulin",
+        "value": "4.2",
+        "unit": "uIU/mL",
+        "referenceRange": "2.0 - 6.0 uIU/mL",
+        "status": "Optimal"
+      },
+      {
+        "parameter": "25-OH Vitamin D",
+        "value": "29.4",
+        "unit": "ng/mL",
+        "referenceRange": "30.0 - 80.0 ng/mL",
+        "status": "Low"
+      },
+      {
+        "parameter": "Thyroid Stimulating Hormone (TSH)",
+        "value": "1.85",
+        "unit": "uIU/mL",
+        "referenceRange": "0.45 - 4.50 uIU/mL",
+        "status": "Normal"
+      },
+      {
+        "parameter": "Estimated GFR (Kidney Function)",
+        "value": "> 95",
+        "unit": "mL/min/1.73m2",
+        "referenceRange": "> 90 mL/min",
+        "status": "Optimal"
+      }
+    ],
+    "observations": [
+      "Endothelial inflammation is negligible (hs-CRP 0.62 mg/L).",
+      "Metabolic flexibility is well maintained with optimal fasting insulin indices.",
+      "Vitamin D3 supplementation is recommended to restore level to >45 ng/mL."
+    ],
+    "doctorNotes": "Patient exhibits excellent cardiovascular and metabolic markers consistent with regular physical training and anti-inflammatory nutrition. Advised to start 2000 IU Vitamin D3 daily with breakfast.",
+    "recommendations": [
+      "Initiate Vitamin D3 + K2 2,000 IU softgel daily",
+      "Maintain Mediterranean-style nutritional pattern",
+      "Repeat basic metabolic panel in 6 months"
+    ]
+  },
+  {
+    "id": "rep-mri-spine-2026",
+    "patientName": "Alexander Claire",
+    "reportType": "Lumbar Spine 3T High-Resolution MRI",
+    "category": "Radiology",
+    "date": "July 28, 2026",
+    "doctorName": "Dr. Julian Sterling",
+    "doctorId": "doc-2",
+    "department": "Neuro-Radiology",
+    "status": "Ready",
+    "summary": "No focal spinal canal stenosis or cord compression. Mild disc desiccation at L4-L5 without neural impingement. Alignment and vertebral height preserved.",
+    "measurements": [
+      {
+        "parameter": "L1-L2 Disc Space",
+        "value": "Normal",
+        "unit": "Anatomical",
+        "referenceRange": "Normal morphology",
+        "status": "Normal"
+      },
+      {
+        "parameter": "L4-L5 Disc Signal",
+        "value": "Mild Desiccation",
+        "unit": "T2 Signal",
+        "referenceRange": "Normal hydration",
+        "status": "Elevated"
+      },
+      {
+        "parameter": "Spinal Canal Diameter",
+        "value": "14.2",
+        "unit": "mm",
+        "referenceRange": "> 12.0 mm",
+        "status": "Optimal"
+      },
+      {
+        "parameter": "Thecal Sac Impingement",
+        "value": "Negative",
+        "unit": "Visual",
+        "referenceRange": "Negative",
+        "status": "Optimal"
+      }
+    ],
+    "observations": [
+      "Normal lordotic curvature of the lumbar spine.",
+      "Mild early disc desiccation at L4-L5 level with no significant disk herniation.",
+      "No evidence of nerve root compression or spinal cord edema."
+    ],
+    "doctorNotes": "Findings are benign and typical for active adults. Core strengthening and targeted physical therapy exercises are fully sufficient without surgical requirement.",
+    "recommendations": [
+      "Core stabilization exercises with physical therapist 2x weekly",
+      "Ergonomic lumbar support for desk work",
+      "Re-evaluate only if radicular pain recurs"
+    ]
+  },
+  {
+    "id": "rep-ecg-cardiac-2026",
+    "patientName": "Alexander Claire",
+    "reportType": "12-Lead Rest ECG & Holter Rhythm Analysis",
+    "category": "Cardiology",
+    "date": "June 19, 2026",
+    "doctorName": "Dr. Maya Raman",
+    "doctorId": "doc-1",
+    "department": "Cardiovascular Diagnostics",
+    "status": "Reviewed",
+    "summary": "Normal sinus rhythm at 62 bpm. Normal PR and QT intervals. No ischemic ST-T segment abnormalities detected.",
+    "measurements": [
+      {
+        "parameter": "Heart Rate",
+        "value": "62",
+        "unit": "bpm",
+        "referenceRange": "55 - 90 bpm",
+        "status": "Optimal"
+      },
+      {
+        "parameter": "PR Interval",
+        "value": "152",
+        "unit": "ms",
+        "referenceRange": "120 - 200 ms",
+        "status": "Normal"
+      },
+      {
+        "parameter": "QRS Duration",
+        "value": "86",
+        "unit": "ms",
+        "referenceRange": "70 - 100 ms",
+        "status": "Normal"
+      },
+      {
+        "parameter": "QTc Interval",
+        "value": "408",
+        "unit": "ms",
+        "referenceRange": "< 440 ms",
+        "status": "Optimal"
+      }
+    ],
+    "observations": [
+      "Healthy resting autonomic cardiac regulation.",
+      "No ectopic ventricular or atrial bursts.",
+      "Excellent electrical recovery wave."
+    ],
+    "doctorNotes": "Electrical axis is normal. Cardiac rhythm shows healthy athletic baseline.",
+    "recommendations": [
+      "Continue moderate aerobic endurance sessions",
+      "Hydration maintenance during high-intensity workouts"
+    ]
+  }
+]

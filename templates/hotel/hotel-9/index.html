@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HavenLuxe Retreat & Sanctuary — Luxury Boutique Resort</title>
+  
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="havenLuxeScope">
+    
+    <!-- 1. Top Navigation Bar -->
+    <nav class="navbar" id="navbar">
+      <div class="logoContainer" onclick="scrollToTop()">
+        <span class="logoText">HavenLuxe</span>
+        <span class="logoSubtext">Retreat & Sanctuary</span>
+      </div>
+      
+      <ul class="navLinks">
+        <li><span class="navLink" onclick="scrollToSection('#accommodations')">Suites</span></li>
+        <li><span class="navLink" onclick="scrollToSection('#amenities')">Experiences</span></li>
+        <li><span class="navLink" onclick="scrollToSection('#reviews')">Reviews</span></li>
+        <li><span class="navLink" onclick="scrollToSection('#gallery')">Gallery</span></li>
+        <li><span class="navLink" onclick="scrollToSection('#footer')">Contact</span></li>
+      </ul>
+      
+      <div class="actions">
+        <select class="currencySelector" id="currencySelect" aria-label="Select Currency">
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+        </select>
+        <button class="reserveBtn" onclick="openBookingModal()">Reserve Now</button>
+        
+        <!-- Hamburger Menu -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+    
+    <!-- Mobile Drawer Overlay -->
+    <div class="drawerBg" id="drawerBg" onclick="toggleMobileMenu(false)"></div>
+    <div class="mobileDrawer" id="mobileDrawer">
+      <ul class="mobileNavLinks">
+        <li><span class="mobileNavLink" onclick="scrollToSection('#accommodations')">Accommodations</span></li>
+        <li><span class="mobileNavLink" onclick="scrollToSection('#amenities')">Experiences</span></li>
+        <li><span class="mobileNavLink" onclick="scrollToSection('#reviews')">Testimonials</span></li>
+        <li><span class="mobileNavLink" onclick="scrollToSection('#gallery')">Gallery</span></li>
+        <li><span class="mobileNavLink" onclick="scrollToSection('#footer')">Get in Touch</span></li>
+      </ul>
+      <div class="mobileActions">
+        <select class="currencySelector" id="mobileCurrencySelect" aria-label="Select Currency">
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+        </select>
+        <button class="reserveBtn" style="display: block; width: 100%;" onclick="openBookingModal()">Reserve Now</button>
+      </div>
+    </div>
+    
+    <!-- 2. Hero Section -->
+    <section class="heroContainer">
+      <div class="slideshow">
+        <div class="slide slideActive">
+          <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1920&q=85" alt="Resort Pool Sunset" class="slideImage">
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=85" alt="Resort Facade" class="slideImage">
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1920&q=85" alt="Infinity Pool Horizon" class="slideImage">
+        </div>
+      </div>
+      
+      <div class="overlay"></div>
+      
+      <div class="heroContent">
+        <span class="badge">Award Winning Sanctuary</span>
+        <h1 class="headline">The Art of <br><em>Soulful Living</em></h1>
+        <p class="tagline">An exclusive sanctuary carved into the coastline, where architecture merges with nature and time slows to a whisper.</p>
+      </div>
+      
+      <!-- Floating Circular Award Badge -->
+      <div class="circularBadge" onclick="scrollToSection('#accommodations')">
+        <div class="circularBadgeText">
+          <span>No. 1</span> Resort<br>2026
+        </div>
+      </div>
+      
+      <!-- Floating Availability Bar -->
+      <div class="bookingBarWrapper">
+        <form class="bookingBar" id="bookingBarForm" onsubmit="handleAvailabilitySubmit(event)">
+          <!-- Check In -->
+          <div class="inputGroup">
+            <label class="inputLabel">
+              <svg class="labelIcon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" fill="none" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/></svg>
+              Check In
+            </label>
+            <input type="date" class="inputField" id="checkInInput" required>
+          </div>
+          
+          <!-- Check Out -->
+          <div class="inputGroup">
+            <label class="inputLabel">
+              <svg class="labelIcon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" fill="none" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/></svg>
+              Check Out
+            </label>
+            <input type="date" class="inputField" id="checkOutInput" required>
+          </div>
+          
+          <!-- Residence Type -->
+          <div class="inputGroup">
+            <label class="inputLabel">
+              <svg class="labelIcon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" fill="none" stroke-width="2"/><polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" fill="none" stroke-width="2"/></svg>
+              Residence
+            </label>
+            <select class="selectField" id="residenceSelect">
+              <option value="all">All Residences</option>
+              <option value="villas">Villas</option>
+              <option value="ocean-suites">Ocean Suites</option>
+              <option value="penthouses">Penthouses</option>
+            </select>
+          </div>
+          
+          <!-- Guests -->
+          <div class="inputGroup">
+            <label class="inputLabel">
+              <svg class="labelIcon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" fill="none" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" fill="none" stroke-width="2"/><path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" fill="none" stroke-width="2"/><path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" fill="none" stroke-width="2"/></svg>
+              Guests
+            </label>
+            <select class="selectField" id="guestsSelect">
+              <option value="1">1 Guest</option>
+              <option value="2" selected>2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5">5+ Guests</option>
+            </select>
+          </div>
+          
+          <button type="submit" class="submitBtn">Check Availability</button>
+        </form>
+      </div>
+    </section>
+    
+    <!-- 3. Accommodations & Suites Showcase -->
+    <section id="accommodations" class="accommodationsSection reveal">
+      <div class="sectionHeader">
+        <span class="sectionSubtitle">Selected Residences</span>
+        <h2 class="sectionTitle">Suites & <em>Private Villas</em></h2>
+      </div>
+      
+      <!-- Filter Tabs -->
+      <div class="filterTabs">
+        <button class="filterTab filterTabActive" onclick="filterResidences('all', this)">All Residences</button>
+        <button class="filterTab" onclick="filterResidences('villas', this)">Villas</button>
+        <button class="filterTab" onclick="filterResidences('ocean-suites', this)">Ocean Suites</button>
+        <button class="filterTab" onclick="filterResidences('penthouses', this)">Penthouses</button>
+      </div>
+      
+      <!-- Rooms Grid -->
+      <div class="roomsGrid" id="roomsGrid">
+        <!-- Will be populated dynamically by JS to handle state and filters -->
+      </div>
+    </section>
+    
+    <!-- 4. Amenities & Experiences -->
+    <section id="amenities" class="amenitiesSection reveal">
+      <div class="sectionHeader">
+        <span class="sectionSubtitle">Resort Inclusions</span>
+        <h2 class="sectionTitle" style="color: var(--color-white);">Experiences & <em>Sanctuary Amenities</em></h2>
+      </div>
+      
+      <div class="amenitiesGrid">
+        <!-- Spa -->
+        <div class="amenityCard">
+          <div class="amenityIconWrapper">
+            <svg class="amenityIcon" viewBox="0 0 24 24">
+              <path d="M12 22C12 22 3 16 3 10C3 7 5 4 8.5 4C10.5 4 11.5 5 12 6C12.5 5 13.5 4 15.5 4C19 4 21 7 21 10C21 16 12 22 12 22Z" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M12 6V22" stroke="currentColor" fill="none" stroke-width="1.5" />
+              <path d="M7 10C7 10 9.5 12 12 12C14.5 12 17 10 17 10" stroke="currentColor" fill="none" stroke-width="1.5" />
+            </svg>
+          </div>
+          <h3 class="amenityTitle">The Serenity Spa</h3>
+          <p class="amenityDesc">Immerse in holistic physical therapy and signature ocean salt rituals. Designed in warm cedar, featuring stone baths, thermal steam suites, and outdoor massage salas.</p>
+        </div>
+        
+        <!-- Pool -->
+        <div class="amenityCard">
+          <div class="amenityIconWrapper">
+            <svg class="amenityIcon" viewBox="0 0 24 24">
+              <path d="M2 12C7 10 9 14 12 12C15 10 17 14 22 12" stroke="currentColor" fill="none" stroke-width="1.5" />
+              <path d="M2 16C7 14 9 18 12 16C15 14 17 18 22 16" stroke="currentColor" fill="none" stroke-width="1.5" />
+              <path d="M12 8C14.2091 8 16 6.20914 16 4C16 1.79086 14.2091 0 12 0C9.79086 0 8 1.79086 8 4C8 6.20914 9.79086 8 12 8Z" stroke="currentColor" stroke-dasharray="3 3" fill="none" stroke-width="1.5" />
+            </svg>
+          </div>
+          <h3 class="amenityTitle">Infinity Shoreline Pool</h3>
+          <p class="amenityDesc">A heated saltwater infinity pool that blends seamlessly into the ocean horizon. Features floating daybeds, poolside cabanas, and custom sunset mixology bar.</p>
+        </div>
+        
+        <!-- Dining -->
+        <div class="amenityCard">
+          <div class="amenityIconWrapper">
+            <svg class="amenityIcon" viewBox="0 0 24 24">
+              <path d="M3 17h18" stroke="currentColor" fill="none" stroke-width="1.5" />
+              <path d="M3 17a9 9 0 0 1 18 0" stroke="currentColor" fill="none" stroke-width="1.5" />
+              <path d="M12 4V2" stroke="currentColor" fill="none" stroke-width="1.5" />
+              <path d="M12 2a2 2 0 1 0 0 4 2 2 0 1 0 0-4z" stroke="currentColor" fill="none" stroke-width="1.5" />
+              <circle cx="8" cy="11" r="1" fill="currentColor" />
+              <circle cx="16" cy="11" r="1" fill="currentColor" />
+            </svg>
+          </div>
+          <h3 class="amenityTitle">The Hearth (Michelin Star)</h3>
+          <p class="amenityDesc">Open-fire culinary artistry using local, coastal-harvested organic ingredients. Complemented by an underground limestone cellar with over 600 select vintages.</p>
+        </div>
+        
+        <!-- Concierge -->
+        <div class="amenityCard">
+          <div class="amenityIconWrapper">
+            <svg class="amenityIcon" viewBox="0 0 24 24">
+              <circle cx="6" cy="10" r="3" stroke="currentColor" fill="none" stroke-width="1.5" />
+              <path d="M8.5 11.5L18 21" stroke="currentColor" fill="none" stroke-width="1.5" />
+              <path d="M15.5 14L18 16.5" stroke="currentColor" fill="none" stroke-width="1.5" />
+              <path d="M13 11.5L15.5 14" stroke="currentColor" fill="none" stroke-width="1.5" />
+              <circle cx="16" cy="6" r="2" stroke="currentColor" fill="none" stroke-width="1.5" />
+              <path d="M14.5 7.5L10 12" stroke="currentColor" fill="none" stroke-width="1.5" />
+            </svg>
+          </div>
+          <h3 class="amenityTitle">Curated Guest Journeys</h3>
+          <p class="amenityDesc">Around-the-clock dedicated butler service, yacht charters, custom coastal hikes, and tailored in-suite wellness sessions designed around your personal itinerary.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 5. Guest Experience / Reviews Carousel -->
+    <section id="reviews" class="reviewsSection reveal">
+      <div class="reviewsCarousel">
+        <button class="navBtn prevBtn" onclick="navigateReview(-1)" aria-label="Previous Review">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        
+        <div id="reviewsSlidesContainer">
+          <!-- Populated dynamically via JS -->
+        </div>
+        
+        <button class="navBtn nextBtn" onclick="navigateReview(1)" aria-label="Next Review">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+      
+      <div class="dotsContainer" id="dotsContainer">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </section>
+    
+    <!-- 6. Interactive Gallery / Instagram Feed -->
+    <section id="gallery" class="gallerySection reveal">
+      <div class="sectionHeader">
+        <span class="sectionSubtitle">Curated Chronicles</span>
+        <h2 class="sectionTitle">Visual Feed & <em>Shoreline Stories</em></h2>
+      </div>
+      
+      <div class="bentoGrid">
+        <!-- Item 1 (Large) -->
+        <div class="gridItem itemLarge">
+          <img src="/hl_gallery_pool.jpg" alt="Sunset Infinity Pool" class="gridImage">
+          <div class="gridOverlay">
+            <svg class="instagramIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            <p class="gridCaption">Sunset over the Cliffside Infinity Pool</p>
+            <span class="gridTag">@havenluxe.retreat</span>
+          </div>
+        </div>
+        
+        <!-- Item 2 -->
+        <div class="gridItem">
+          <img src="/hl_gallery_spa.jpg" alt="Cedar Wellness Tub" class="gridImage">
+          <div class="gridOverlay">
+            <svg class="instagramIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            <p class="gridCaption">Private Cedar Wellness Tub</p>
+            <span class="gridTag">#sanctuarylife</span>
+          </div>
+        </div>
+        
+        <!-- Item 3 (Tall) -->
+        <div class="gridItem itemTall">
+          <img src="/hl_gallery_dining.jpg" alt="Michelin Dining" class="gridImage">
+          <div class="gridOverlay">
+            <svg class="instagramIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            <p class="gridCaption">Wood-fired Coastal Dining at The Hearth</p>
+            <span class="gridTag">#michelinexperience</span>
+          </div>
+        </div>
+        
+        <!-- Item 4 -->
+        <div class="gridItem">
+          <img src="/hl_gallery_suite.jpg" alt="Ocean Terrace Sunrise" class="gridImage">
+          <div class="gridOverlay">
+            <svg class="instagramIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            <p class="gridCaption">The Champagne Ocean Terrace Sunrise</p>
+            <span class="gridTag">#havenluxeretreat</span>
+          </div>
+        </div>
+        
+        <!-- Item 5 (Wide) -->
+        <div class="gridItem itemWide">
+          <img src="/hl_gallery_villa.jpg" alt="Lagoon Access Deck" class="gridImage">
+          <div class="gridOverlay">
+            <svg class="instagramIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            <p class="gridCaption">Direct Saltwater Cove access deck</p>
+            <span class="gridTag">#secludedhaven</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 7. Footer -->
+    <footer id="footer" class="footerSection reveal">
+      <div class="footerGrid">
+        <!-- Story -->
+        <div class="footerCol">
+          <div class="footerBrandText">HavenLuxe</div>
+          <div class="footerBrandSubtext">Retreat & Sanctuary</div>
+          <p class="footerStory">An editorial sanctuary designed to slow down the senses. Carved into the coastal cliffs, we redefine luxury through quiet spaces, architectural intent, and soulful hospitality.</p>
+          <div class="footerSocials">
+            <a href="#" class="footerSocialIcon" aria-label="Visit Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="footerSocialIcon" aria-label="Visit Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" class="footerSocialIcon" aria-label="Visit Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="footerCol">
+          <h4 class="footerHeading">Sanctuary</h4>
+          <ul class="footerLinks">
+            <li><span class="footerLink" onclick="scrollToSection('#accommodations')">Residences & Suites</span></li>
+            <li><span class="footerLink" onclick="scrollToSection('#amenities')">Spa & Experiences</span></li>
+            <li><span class="footerLink" onclick="scrollToSection('#reviews')">Guest Chronicles</span></li>
+            <li><span class="footerLink" onclick="scrollToSection('#gallery')">Visual Feed</span></li>
+          </ul>
+        </div>
+        
+        <!-- Address -->
+        <div class="footerCol">
+          <h4 class="footerHeading">The Sanctuary</h4>
+          <address class="footerAddress">
+            <p>1200 Serenity Cove Road<br>Cliffside Coast, CA 90210</p>
+            <p><strong>Inquiries:</strong> info@havenluxe.com<br><strong>Concierge:</strong> +1 (800) 555-0199</p>
+          </address>
+        </div>
+        
+        <!-- Newsletter -->
+        <div class="footerCol">
+          <h4 class="footerHeading">Chronicle</h4>
+          <p class="footerNewsletterText">Subscribe to receive curated seasonal releases, retreat openings, and culinary updates.</p>
+          <form class="footerForm" onsubmit="handleNewsletterSubmit(event)">
+            <input type="email" id="newsletterEmailInput" placeholder="Your email address" class="footerFormInput" required>
+            <button type="submit" class="footerFormSubmitBtn" id="newsletterSubmitBtn">Subscribe</button>
+          </form>
+          <div class="footerSuccessAlert" id="newsletterSuccessAlert" style="display: none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span>We welcome you to our seasonal newsletter.</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footerBottom">
+        <span>&copy; <span id="currentYear">2026</span> HavenLuxe Retreat & Sanctuary. All Rights Reserved.</span>
+        <div class="footerBottomLinks">
+          <a href="#" class="footerBottomLink">Privacy Policy</a>
+          <a href="#" class="footerBottomLink">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- 8. Detail Modal -->
+    <div class="modalOverlay" id="detailsModalOverlay" onclick="closeRoomDetailsModal()">
+      <div class="modalBox" onclick="event.stopPropagation()">
+        <button class="modalCloseBtn" onclick="closeRoomDetailsModal()" aria-label="Close details">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        
+        <div class="modalContentSplit">
+          <div class="modalImageSection">
+            <img src="" alt="" id="modalRoomImage" class="modalImage">
+          </div>
+          <div class="modalDetailsSection">
+            <span class="modalTag" id="modalRoomCategory">Villa</span>
+            <h3 class="modalTitle" id="modalRoomName">The Amber Canopy Villa</h3>
+            <p class="modalDesc" id="modalRoomDesc">Description here</p>
+            
+            <div class="modalSpecs">
+              <div class="modalSpecItem">
+                <svg class="modalSpecIcon" viewBox="0 0 24 24"><path d="M15 3h6v6" stroke="currentColor" fill="none" stroke-width="2"/><path d="M9 21H3v-6" stroke="currentColor" fill="none" stroke-width="2"/><path d="M21 3l-7 7" stroke="currentColor" fill="none" stroke-width="2"/><path d="M3 21l7-7" stroke="currentColor" fill="none" stroke-width="2"/></svg>
+                <span id="modalRoomSize">1800 SQ FT</span>
+              </div>
+              <div class="modalSpecItem">
+                <svg class="modalSpecIcon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" fill="none" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" fill="none" stroke-width="2"/></svg>
+                <span id="modalRoomGuests">2 GUESTS</span>
+              </div>
+              <div class="modalSpecItem">
+                <svg class="modalSpecIcon" viewBox="0 0 24 24"><path d="M2 4v16" stroke="currentColor" fill="none" stroke-width="2"/><path d="M2 11h20" stroke="currentColor" fill="none" stroke-width="2"/><path d="M22 4v16" stroke="currentColor" fill="none" stroke-width="2"/><path d="M6 11v-3c0-1.657 1.343-3 3-3h6c1.657 0 3 1.343 3 3v3" stroke="currentColor" fill="none" stroke-width="2"/></svg>
+                <span id="modalRoomBeds">1 King Bed</span>
+              </div>
+            </div>
+            
+            <h4 class="modalInclusionsTitle">Exclusive Inclusions</h4>
+            <ul class="modalInclusionsGrid" id="modalRoomInclusions">
+              <!-- Populated by JS -->
+            </ul>
+            
+            <div class="modalFooter">
+              <div class="modalPriceWrapper">
+                <span class="modalPriceLabel">Price Per Night</span>
+                <span class="modalPriceValue">
+                  <span id="modalRoomPrice">$1,200</span><span class="modalPriceUnit"> / Night</span>
+                </span>
+              </div>
+              <button class="modalBookBtn" id="modalBookNowBtn">Reserve Residence</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 9. Stateful Booking Checkout Modal -->
+    <div class="modalOverlay" id="bookingModalOverlay" onclick="closeBookingModal()">
+      <div class="modalBox" style="max-width: 900px;" onclick="event.stopPropagation()">
+        <button class="modalCloseBtn" onclick="closeBookingModal()" aria-label="Close Reservation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        
+        <!-- Form step -->
+        <div id="bookingStepForm">
+          <div class="checkoutHeader">
+            <h3 class="checkoutTitle">Secure Your Sanctuary</h3>
+            <p class="checkoutSubtitle">Complete your booking for HavenLuxe Retreat</p>
+          </div>
+          
+          <form class="checkoutBody" onsubmit="handleBookingFormSubmit(event)">
+            <!-- Left: Personal Data Inputs -->
+            <div class="checkoutFormSection">
+              <div class="checkoutGrid">
+                <div class="checkoutGroup">
+                  <label class="checkoutLabel">First Name</label>
+                  <input type="text" class="checkoutInput" id="guestFirstName" required>
+                </div>
+                <div class="checkoutGroup">
+                  <label class="checkoutLabel">Last Name</label>
+                  <input type="text" class="checkoutInput" id="guestLastName" required>
+                </div>
+                <div class="checkoutGroup checkoutFullWidth">
+                  <label class="checkoutLabel">Email Address</label>
+                  <input type="email" class="checkoutInput" id="guestEmail" placeholder="name@luxury.com" required>
+                </div>
+                <div class="checkoutGroup checkoutFullWidth">
+                  <label class="checkoutLabel">Contact Phone</label>
+                  <input type="tel" class="checkoutInput" id="guestPhone" placeholder="+1 (555) 000-0000" required>
+                </div>
+                <div class="checkoutGroup checkoutFullWidth">
+                  <label class="checkoutLabel">Special Accoutrements</label>
+                  <textarea class="checkoutTextarea" id="guestNotes" placeholder="Dietary requirements, airport transfer, preferred pillows..."></textarea>
+                </div>
+              </div>
+              <div class="secureNote">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <span>Your reservation details are secured by banking-level end-to-end encryption.</span>
+              </div>
+            </div>
+            
+            <!-- Right: Calculations Column -->
+            <div class="checkoutSummarySection">
+              <div class="summaryCard">
+                <h4 class="summaryTitle">Stay Itinerary</h4>
+                
+                <div class="summaryRow">
+                  <span>Residence:</span>
+                  <span style="font-weight: 600;" id="summaryRoomName">Deluxe Residence</span>
+                </div>
+                <div class="summaryRow">
+                  <span>Check In:</span>
+                  <span id="summaryCheckIn">Aug 22, 2026</span>
+                </div>
+                <div class="summaryRow">
+                  <span>Check Out:</span>
+                  <span id="summaryCheckOut">Aug 23, 2026</span>
+                </div>
+                <div class="summaryRow">
+                  <span>Duration:</span>
+                  <span style="font-weight: 600;" id="summaryNights">1 Night</span>
+                </div>
+                <div class="summaryRow">
+                  <span>Occupancy:</span>
+                  <span id="summaryGuests">2 Guests</span>
+                </div>
+                
+                <div style="height: 1px; background: rgba(30, 45, 36, 0.08); margin: 15px 0;"></div>
+                
+                <div class="summaryRow">
+                  <span>Rate per Night:</span>
+                  <span id="summaryRate">$950</span>
+                </div>
+                <div class="summaryRow">
+                  <span>Subtotal:</span>
+                  <span id="summarySubtotal">$950</span>
+                </div>
+                <div class="summaryRow">
+                  <span>Luxury Resort Tax (12%):</span>
+                  <span id="summaryTax">$114</span>
+                </div>
+                <div class="summaryRow">
+                  <span>Coastal Clean Service:</span>
+                  <span id="summaryService">$80</span>
+                </div>
+                
+                <div class="summaryRowBold">
+                  <span>Total Amount</span>
+                  <span id="summaryGrandTotal">$1,144</span>
+                </div>
+                
+                <button type="submit" class="checkoutSubmitBtn">Confirm Booking</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Loading step -->
+        <div id="bookingStepLoading" style="display: none; padding: 80px 40px; text-align: center;">
+          <div class="loadingSpinner"></div>
+          <h4 class="loadingTitle">Confirming With Concierge</h4>
+          <p class="loadingDesc">Registering your private residence allocation...</p>
+        </div>
+        
+        <!-- Success step -->
+        <div id="bookingStepSuccess" style="display: none; padding: 60px 40px; text-align: center;">
+          <div class="successIconWrapper">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h3 class="successTitle">Reserve Confirmed</h3>
+          <p class="successText">Welcome to HavenLuxe, <strong id="successGuestName">Guest</strong>. Your private reservation for the <strong id="successRoomName">Deluxe Residence</strong> is now registered. An intimate resort guide has been sent to your email.</p>
+          
+          <div class="codeBox">
+            <span class="codeLabel">Reservation Code</span>
+            <span class="codeValue" id="successConfCode">HLX-123456</span>
+          </div>
+          
+          <button class="checkoutDoneBtn" onclick="closeBookingModal()">Complete</button>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  <!-- JavaScript Core -->
+  <script src="script.js"></script>
+</body>
+</html>

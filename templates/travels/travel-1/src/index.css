@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Outfit', sans-serif;
+    @apply bg-slate-50 text-slate-800 overflow-x-hidden;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(13, 148, 136, 0.08) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-slate-900;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-50;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-indigo-200 rounded-full border border-slate-50 hover:bg-indigo-400 transition-colors;
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px -5px rgba(15, 23, 42, 0.04);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 30px -5px rgba(15, 23, 42, 0.03);
+}
+
+/* Custom Animations & Micro-Interactions */
+.glow-text {
+  text-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+}
+
+.glow-btn {
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
+}
+.glow-btn:hover {
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.6);
+}
+
+/* Wave container styling for experience page */
+.experience-wave {
+  border-radius: 43% 45% 44% 40%;
+  animation: wave-ripple 8s ease-in-out infinite alternate;
+}
+
+@keyframes wave-ripple {
+  0% { border-radius: 43% 45% 44% 40%; }
+  100% { border-radius: 50% 38% 55% 45%; }
+}
+
+/* Light theme high legibility color overrides (applies only to sections outside of .dark-section) */
+body :not(.dark-section) > h1.text-white,
+body :not(.dark-section) h1:not(.dark-section *).text-white,
+body :not(.dark-section) h2:not(.dark-section *).text-white,
+body :not(.dark-section) h3:not(.dark-section *).text-white,
+body :not(.dark-section) h4:not(.dark-section *).text-white,
+body :not(.dark-section) h5:not(.dark-section *).text-white,
+body :not(.dark-section) span:not(.dark-section *).text-white {
+  color: #0f172a !important;
+}
+
+body :not(.dark-section) :not(.dark-section *) .text-slate-100 {
+  color: #1e293b !important;
+}
+
+body :not(.dark-section) :not(.dark-section *) .text-slate-200 {
+  color: #334155 !important;
+}
+
+body :not(.dark-section) :not(.dark-section *) .text-slate-300 {
+  color: #475569 !important;
+}
+
+body :not(.dark-section) :not(.dark-section *) .text-slate-400 {
+  color: #5b687a !important;
+}
+
+body :not(.dark-section) :not(.dark-section *) .bg-slate-900\/50,
+body :not(.dark-section) :not(.dark-section *) .bg-slate-900\/60,
+body :not(.dark-section) :not(.dark-section *) .bg-slate-900 {
+  background-color: #f1f5f9 !important;
+}
+
+body :not(.dark-section) :not(.dark-section *) .border-slate-800\/50,
+body :not(.dark-section) :not(.dark-section *) .border-slate-800\/80,
+body :not(.dark-section) :not(.dark-section *) .border-slate-800,
+body :not(.dark-section) :not(.dark-section *) .border-slate-900 {
+  border-color: #cbd5e1 !important;
+}

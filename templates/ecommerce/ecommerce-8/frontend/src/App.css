@@ -1,0 +1,12 @@
+/* Overwritten default App.css */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+main.content {
+  flex-grow: 1;
+  padding-top: 80px; /* Offset for sticky header */
+}

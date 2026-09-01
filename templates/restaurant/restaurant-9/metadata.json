@@ -1,0 +1,6 @@
+{
+  "name": "Royal Tandoor - Fine Indian Dining Template",
+  "description": "An exquisite and premium Indian restaurant website template. Features fine dining menu displays, inline reservation requests, catering forms, team/chef highlights, and rich dark amber theme.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

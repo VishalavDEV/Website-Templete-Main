@@ -1,0 +1,6 @@
+{
+  "name": "Apex Wealth & Investment Management",
+  "description": "Comprehensive institutional and private wealth management platform featuring portfolio analytics, market insights, investment discovery, financial calculators, interactive client portal, advisor scheduling, and enterprise administration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

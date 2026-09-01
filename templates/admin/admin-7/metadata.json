@@ -1,0 +1,6 @@
+{
+  "name": "SprintAdmin",
+  "description": "A high-performance technology operations, management, and analytics platform designed for modern product management, finance, operations, and organizational coordination.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

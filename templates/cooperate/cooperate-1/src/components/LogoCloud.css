@@ -1,0 +1,58 @@
+.logocloud-section {
+  padding: 4.5rem 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+}
+
+.logocloud-title {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+  margin-bottom: 2.75rem;
+}
+
+.logocloud-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 3rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.logocloud-item {
+  width: 150px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748B;
+  opacity: 0.55;
+  transition: all var(--transition-normal);
+  filter: grayscale(100%);
+  cursor: default;
+}
+
+.logocloud-item:hover {
+  color: #F5F7FA;
+  opacity: 1;
+  transform: translateY(-2px) scale(1.04);
+  filter: grayscale(0%);
+}
+
+@media (max-width: 1024px) {
+  .logocloud-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .logocloud-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}

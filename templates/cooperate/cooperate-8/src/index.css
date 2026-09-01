@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #FAF8F5;
+    --text-primary: #121316;
+    --text-muted: #5E636E;
+    --brand-forest: #0A2E23;
+    --brand-lime: #CCF34A;
+    --border-subtle: #E6E2D8;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #FAF8F5;
+    color: #121316;
+  }
+
+  .font-serif-editorial {
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+  }
+
+  .font-display {
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
+  }
+
+  .font-mono-tech {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F2EFE9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4BFB2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0A2E23;
+}
+
+/* Subtle architectural grid pattern */
+.bg-tech-grid {
+  background-image: 
+    linear-gradient(to right, rgba(18, 19, 22, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(18, 19, 22, 0.04) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+}
+
+.bg-tech-grid-dark {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+}
+
+/* Precision border utilities */
+.border-precision {
+  border-color: #E6E2D8;
+}
+
+.border-precision-dark {
+  border-color: #24282F;
+}
+
+/* Noise texture simulation for editorial paper feel */
+.bg-noise {
+  background-color: #FAF8F5;
+}
+
+

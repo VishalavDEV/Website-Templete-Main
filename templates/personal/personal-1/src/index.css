@@ -1,0 +1,360 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Syne', sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-editorial: 'Cormorant Garamond', Georgia, serif;
+    --font-hero: 'Instrument Serif', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-tech: 'Space Grotesk', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #050505;
+    color: #E5E5E5;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-editorial {
+    font-family: var(--font-editorial);
+  }
+
+  .font-hero {
+    font-family: var(--font-hero);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .font-tech {
+    font-family: var(--font-tech);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(10, 10, 12, 0.9);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.6);
+}
+
+/* ==========================================================================
+   Light & Cinema Theme Overrides
+   ========================================================================== */
+
+/* Light Theme Base Styling */
+[data-theme="light"],
+.light {
+  color-scheme: light;
+}
+
+[data-theme="light"] body,
+.light body {
+  background-color: #FAF8F5 !important;
+  color: #121214 !important;
+}
+
+[data-theme="light"] section,
+.light section {
+  background-color: #FAF8F5 !important;
+  color: #121214 !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] #main-navbar,
+.light #main-navbar {
+  background-color: rgba(250, 248, 245, 0.92) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] #mobile-drawer-menu,
+.light #mobile-drawer-menu {
+  background-color: rgba(250, 248, 245, 0.98) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] footer,
+.light footer {
+  background-color: #F3EFEA !important;
+  color: #18181B !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Light Mode Text Inversions */
+[data-theme="light"] .text-white,
+.light .text-white,
+[data-theme="light"] [class*="text-white"],
+.light [class*="text-white"] {
+  color: #121214 !important;
+}
+
+[data-theme="light"] .text-neutral-100,
+.light .text-neutral-100,
+[data-theme="light"] .text-neutral-200,
+.light .text-neutral-200,
+[data-theme="light"] .text-neutral-300,
+.light .text-neutral-300,
+[data-theme="light"] .text-\[\#E5E5E5\],
+.light .text-\[\#E5E5E5\] {
+  color: #27272A !important;
+}
+
+[data-theme="light"] .text-neutral-400,
+.light .text-neutral-400 {
+  color: #52525B !important;
+}
+
+[data-theme="light"] .text-neutral-500,
+.light .text-neutral-500 {
+  color: #71717A !important;
+}
+
+/* Accent Color in Light Mode for Maximum Legibility */
+[data-theme="light"] .text-amber-400,
+.light .text-amber-400,
+[data-theme="light"] .text-\[\#D4AF37\],
+.light .text-\[\#D4AF37\] {
+  color: #B45309 !important; /* Rich amber/gold with high contrast */
+}
+
+/* Light Mode Background Inversions for Containers & Cards */
+[data-theme="light"] .bg-\[\#050505\],
+.light .bg-\[\#050505\],
+[data-theme="light"] .bg-\[\#0A0A0A\],
+.light .bg-\[\#0A0A0A\],
+[data-theme="light"] .bg-neutral-950,
+.light .bg-neutral-950,
+[data-theme="light"] .bg-neutral-950\/80,
+.light .bg-neutral-950\/80,
+[data-theme="light"] .bg-neutral-950\/90,
+.light .bg-neutral-950\/90 {
+  background-color: #FAF8F5 !important;
+}
+
+[data-theme="light"] .bg-neutral-900,
+.light .bg-neutral-900,
+[data-theme="light"] .bg-neutral-900\/95,
+.light .bg-neutral-900\/95,
+[data-theme="light"] .bg-neutral-900\/90,
+.light .bg-neutral-900\/90,
+[data-theme="light"] .bg-neutral-900\/80,
+.light .bg-neutral-900\/80,
+[data-theme="light"] .bg-neutral-900\/70,
+.light .bg-neutral-900\/70,
+[data-theme="light"] [class*="bg-white/["],
+.light [class*="bg-white/["],
+[data-theme="light"] .bg-white\/5,
+.light .bg-white\/5,
+[data-theme="light"] .bg-white\/10,
+.light .bg-white\/10 {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .bg-neutral-800,
+.light .bg-neutral-800,
+[data-theme="light"] .bg-neutral-800\/50,
+.light .bg-neutral-800\/50 {
+  background-color: #F3EFEA !important;
+}
+
+/* Light Mode Badges, Tags, and Sub-Containers */
+[data-theme="light"] .bg-black\/60,
+.light .bg-black\/60,
+[data-theme="light"] .bg-black\/80,
+.light .bg-black\/80,
+[data-theme="light"] .bg-black\/50,
+.light .bg-black\/50,
+[data-theme="light"] .bg-black\/40,
+.light .bg-black\/40,
+[data-theme="light"] .bg-black\/70,
+.light .bg-black\/70,
+[data-theme="light"] .bg-black\/30,
+.light .bg-black\/30,
+[data-theme="light"] .bg-black,
+.light .bg-black:not(button):not([class*="bg-[#D4AF37]"]):not([class*="bg-amber"]) {
+  background-color: #F3EFEA !important;
+  color: #18181B !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+[data-theme="light"] span.font-mono,
+.light span.font-mono {
+  color: #3F3F46 !important;
+}
+
+[data-theme="light"] span.font-mono.text-neutral-400,
+.light span.font-mono.text-neutral-400,
+[data-theme="light"] span.font-mono.text-neutral-300,
+.light span.font-mono.text-neutral-300 {
+  color: #27272A !important;
+}
+
+[data-theme="light"] span.text-\[\#D4AF37\],
+.light span.text-\[\#D4AF37\],
+[data-theme="light"] span.text-amber-400,
+.light span.text-amber-400 {
+  color: #B45309 !important;
+}
+
+/* Light Mode Borders */
+[data-theme="light"] .border-white\/5,
+.light .border-white\/5,
+[data-theme="light"] .border-white\/10,
+.light .border-white\/10,
+[data-theme="light"] .border-white\/15,
+.light .border-white\/15,
+[data-theme="light"] .border-white\/20,
+.light .border-white\/20,
+[data-theme="light"] [class*="border-white/"],
+.light [class*="border-white/"],
+[data-theme="light"] .border-neutral-800,
+.light .border-neutral-800,
+[data-theme="light"] .border-neutral-900,
+.light .border-neutral-900,
+[data-theme="light"] .border-neutral-700,
+.light .border-neutral-700 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Light Mode Badges & Gold Accents */
+[data-theme="light"] .border-\[\#D4AF37\],
+.light .border-\[\#D4AF37\],
+[data-theme="light"] .border-amber-400,
+.light .border-amber-400 {
+  border-color: #D97706 !important;
+}
+
+[data-theme="light"] .bg-amber-400\/10,
+.light .bg-amber-400\/10,
+[data-theme="light"] .bg-\[\#D4AF37\]\/10,
+.light .bg-\[\#D4AF37\]\/10 {
+  background-color: rgba(217, 119, 6, 0.1) !important;
+}
+
+/* Light Mode Modals & Overlays */
+[data-theme="light"] .fixed.inset-0.bg-neutral-950\/90,
+.light .fixed.inset-0.bg-neutral-950\/90,
+[data-theme="light"] .fixed.inset-0.bg-black\/95,
+.light .fixed.inset-0.bg-black\/95 {
+  background-color: rgba(18, 18, 20, 0.65) !important;
+}
+
+/* Light Mode Inputs & Form Controls */
+[data-theme="light"] input,
+.light input,
+[data-theme="light"] textarea,
+.light textarea,
+[data-theme="light"] select,
+.light select {
+  background-color: #FFFFFF !important;
+  color: #121214 !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Light Mode Scrollbar */
+[data-theme="light"] ::-webkit-scrollbar-track,
+.light ::-webkit-scrollbar-track {
+  background: #F3EFEA;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb,
+.light ::-webkit-scrollbar-thumb {
+  background: rgba(180, 83, 9, 0.4);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover,
+.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(180, 83, 9, 0.8);
+}
+
+/* Cinema Theme Styling */
+[data-theme="cinema"] body,
+.cinema body {
+  background-color: #000000 !important;
+}
+
+[data-theme="cinema"] section,
+.cinema section {
+  background-color: #000000 !important;
+}
+
+[data-theme="cinema"] #main-navbar,
+.cinema #main-navbar {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Subtle Film Grain Noise Texture */
+.bg-noise {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+[data-theme="light"] .bg-noise {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Cinematic Glow & Vignette Effects */
+.cinematic-vignette {
+  background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.gold-glow {
+  box-shadow: 0 0 40px -10px rgba(212, 175, 55, 0.3);
+}
+
+.gold-glow-lg {
+  box-shadow: 0 0 60px -5px rgba(212, 175, 55, 0.2);
+}
+
+.bg-radial-gold {
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+}
+
+.tracking-superwide {
+  letter-spacing: 0.4em;
+}
+
+.card-hover-border {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes pulseSlow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.08); }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 8s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+

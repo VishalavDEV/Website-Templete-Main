@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SprintAdmin</title>
+    <meta name="description" content="SprintAdmin - High performance operations, project, and analytics dashboard." />
+    <meta property="og:title" content="SprintAdmin" />
+    <meta property="og:description" content="SprintAdmin - High performance operations, project, and analytics dashboard." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      (function() {
+        try {
+          var savedSettings = localStorage.getItem('sprintadmin_settings') || localStorage.getItem('nexus_settings');
+          var theme = 'system';
+          if (savedSettings) {
+            var parsed = JSON.parse(savedSettings);
+            if (parsed && parsed.theme) {
+              theme = parsed.theme;
+            }
+          }
+          // Also check explicit standalone sprintadmin-theme key if exists
+          var explicitTheme = localStorage.getItem('sprintadmin-theme') || localStorage.getItem('nexus-theme');
+          if (explicitTheme) {
+            theme = explicitTheme;
+          } else {
+            localStorage.setItem('sprintadmin-theme', theme);
+          }
+          
+          var isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.documentElement.style.colorScheme = 'dark';
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.setAttribute('data-theme', 'light');
+            document.documentElement.style.colorScheme = 'light';
+          }
+        } catch (e) {
+          console.warn("Theme preloader exception:", e);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

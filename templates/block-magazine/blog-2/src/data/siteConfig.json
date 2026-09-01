@@ -1,0 +1,20 @@
+{
+  "brand": "ELEMENTAL",
+  "tagline": "STORIES BEHIND THE SCIENCE",
+  "manifesto": "Science didn't happen in a vacuum. It happened through people, mistakes, accidents, ambition, politics, culture, money, experimentation, failure, persistence, and unexpected discoveries.",
+  "edition": "ISSUE 01 — 2026",
+  "subEdition": "A Digital Narrative Archive",
+  "contactEmail": "desk@elemental-magazine.org",
+  "social": {
+    "instagram": "https://instagram.com/elementalmagazine",
+    "youtube": "https://youtube.com/@elementalstories",
+    "x": "https://x.com/elemental_sci",
+    "linkedin": "https://linkedin.com/company/elemental-magazine"
+  },
+  "stats": {
+    "articles": 32,
+    "centuriesArchived": 5,
+    "historicalArtifacts": 15,
+    "investigativeHistorians": 10
+  }
+}

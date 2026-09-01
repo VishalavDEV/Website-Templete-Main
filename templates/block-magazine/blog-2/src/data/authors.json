@@ -1,0 +1,112 @@
+[
+  {
+    "id": "author-1",
+    "name": "Dr. Maya Rowan",
+    "slug": "maya-rowan",
+    "role": "Senior Editor & Historian of Chemistry",
+    "bio": "Specializes in late 19th-century industrial laboratory accidents and the material culture of early thermodynamics. Former curator of scientific instruments.",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+    "specialties": ["Thermodynamics", "Laboratory Apparatus", "Late Victorian Chemistry"],
+    "location": "Edinburgh, UK",
+    "storyCount": 6
+  },
+  {
+    "id": "author-2",
+    "name": "Julian Vance",
+    "slug": "julian-vance",
+    "role": "Archival Investigative Journalist",
+    "bio": "Investigates lost institutional records, disputed patent wars, and the political entanglements of early modern optics and glassmaking.",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    "specialties": ["Optics", "Patent Disputes", "18th-Century Astronomy"],
+    "location": "Boston, MA",
+    "storyCount": 5
+  },
+  {
+    "id": "author-3",
+    "name": "Evelyn Moreau",
+    "slug": "evelyn-moreau",
+    "role": "Historian of Medicine & Public Health",
+    "bio": "Explores how forgotten microscopists, midwives, and sanatorium chemists shaped our understanding of cellular contagion before germ theory gained orthodoxy.",
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+    "specialties": ["Epidemiology", "Microscopy", "Women in Science"],
+    "location": "Lyon, France",
+    "storyCount": 5
+  },
+  {
+    "id": "author-4",
+    "name": "Prof. Arthur Thorne",
+    "slug": "arthur-thorne",
+    "role": "Curator of Early Modern Alchemy",
+    "bio": "Author of 'The Alembic and the Crown'. Researches Renaissance metallurgical manuscripts, furnace design, and clandestine laboratory networks.",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+    "specialties": ["Alchemy", "Renaissance Metallurgy", "Natural Philosophy"],
+    "location": "Oxford, UK",
+    "storyCount": 4
+  },
+  {
+    "id": "author-5",
+    "name": "Dr. Samira Chen",
+    "slug": "samira-chen",
+    "role": "Ecological Historian & Field Biologist",
+    "bio": "Traces colonial botanical expeditions, botanical illustration errors that persisted for centuries, and forgotten island field notebooks.",
+    "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+    "specialties": ["Botanical Expeditions", "Ecology", "19th-Century Natural History"],
+    "location": "Singapore",
+    "storyCount": 4
+  },
+  {
+    "id": "author-6",
+    "name": "Marcus Aurelius Sterling",
+    "slug": "marcus-sterling",
+    "role": "Science & Statecraft Analyst",
+    "bio": "Focuses on state censorship of scientific correspondence, cipher manuscripts, telegraph diplomacy, and atomic secrecy in the 20th century.",
+    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
+    "specialties": ["State Secrets", "Cryptology", "Cold War Physics"],
+    "location": "Washington, D.C.",
+    "storyCount": 3
+  },
+  {
+    "id": "author-7",
+    "name": "Clara Lindqvist",
+    "slug": "clara-lindqvist",
+    "role": "Astronomical Archaeologist",
+    "bio": "Deciphers glass plate photographic records, forgotten observatory night logs, and the early women computers whose calculations uncovered stellar composition.",
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+    "specialties": ["Observatory Logs", "Astrophysics History", "Glass Plate Archives"],
+    "location": "Stockholm, Sweden",
+    "storyCount": 3
+  },
+  {
+    "id": "author-8",
+    "name": "Gabriel O'Connor",
+    "slug": "gabriel-oconnor",
+    "role": "Historian of Scientific Instruments",
+    "bio": "Restores and analyzes brass chronometers, vacuum pumps, galvanometers, and the craft guilds whose precision made theoretical breakthroughs possible.",
+    "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+    "specialties": ["Horology", "Vacuum Apparatus", "Scientific Instrument Guilds"],
+    "location": "Dublin, Ireland",
+    "storyCount": 3
+  },
+  {
+    "id": "author-9",
+    "name": "Dr. Beatrice Ramos",
+    "slug": "beatrice-ramos",
+    "role": "Cultural Anthropologist of Knowledge",
+    "bio": "Studies how folk remedies, sailors' navigational folklore, and indigenous metallurgy influenced formal European royal academies.",
+    "avatar": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=400&q=80",
+    "specialties": ["Ethnobotany", "Navigation", "Informal Knowledge Systems"],
+    "location": "Lisbon, Portugal",
+    "storyCount": 3
+  },
+  {
+    "id": "author-10",
+    "name": "Thomas Finch",
+    "slug": "thomas-finch",
+    "role": "Senior Features Writer & Essayist",
+    "bio": "Writes long-form narrative inquiries on scientific hubris, monumental experimental blunders, and the psychology of solitary discovery.",
+    "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
+    "specialties": ["Experimental Blunders", "Psychology of Discovery", "Scientific Duels"],
+    "location": "New York, NY",
+    "storyCount": 4
+  }
+]

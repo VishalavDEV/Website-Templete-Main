@@ -1,0 +1,132 @@
+.search-page {
+  padding: 0 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto 4rem auto;
+}
+
+.search-panel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.search-title {
+  font-size: 3rem;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.search-subtitle {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+}
+
+.search-bar-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 650px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 40px !important;
+  background: rgba(15, 23, 42, 0.75) !important;
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 30px rgba(0, 242, 254, 0.15);
+}
+
+.search-bar-icon {
+  color: var(--accent);
+  margin-right: 0.75rem;
+}
+
+.search-bar-input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  font-family: var(--font-body);
+  outline: none;
+  padding: 0.5rem 0;
+}
+
+.search-bar-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.search-results-section {
+  min-height: 400px;
+}
+
+.results-indicator {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+}
+
+.search-state-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  gap: 1rem;
+}
+
+.detective-avatar {
+  font-size: 4rem;
+  animation: logoBounce 3s infinite ease-in-out;
+}
+
+.detective-suggestions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.detective-suggestions span {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.detective-suggestions button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  padding: 0.4rem 1rem;
+  border-radius: 15px;
+  color: var(--accent);
+  font-family: var(--font-heading);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.detective-suggestions button:hover {
+  background: var(--accent);
+  color: var(--text-dark);
+  box-shadow: var(--neon-glow-accent);
+}
+
+.search-landing-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 5rem 0;
+  color: var(--text-muted);
+  gap: 1rem;
+  font-size: 1.15rem;
+}
+
+.landing-question-icon {
+  color: var(--primary-light);
+  opacity: 0.5;
+  animation: pulse 2s infinite alternate;
+}

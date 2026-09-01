@@ -1,0 +1,444 @@
+.home-page {
+  position: relative;
+}
+
+/* Light Luxury Editorial About Section (#F0ECE3) */
+.section-light-about {
+  background-color: var(--bg-light);
+  color: var(--text-light-primary);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.about-editorial-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: clamp(3.5rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.section-tag-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-light-mode);
+  background: rgba(155, 120, 64, 0.08);
+  border: 1px solid rgba(155, 120, 64, 0.25);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.5rem;
+}
+
+.editorial-main-statement-light {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  color: var(--text-light-primary);
+  margin-bottom: 1.75rem;
+}
+
+.text-gradient-light {
+  background: linear-gradient(135deg, #171613 30%, #9B7840 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-body-paragraph-light {
+  font-size: clamp(1.02rem, 1.15vw, 1.15rem);
+  line-height: 1.75;
+  color: var(--text-light-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.btn-outline-dark {
+  background: transparent;
+  color: var(--text-light-primary);
+  border: 1.5px solid var(--border-light);
+  font-weight: 600;
+}
+
+.btn-outline-dark:hover {
+  background: rgba(23, 22, 19, 0.06);
+  border-color: var(--accent-light-mode);
+  color: var(--accent-light-mode);
+  transform: translateY(-2px);
+}
+
+.about-visual-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-editorial-card-light {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: clamp(260px, 35vw, 420px);
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 20px 45px rgba(23, 22, 19, 0.08);
+}
+
+.about-editorial-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-img-gradient-overlay-light {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(23, 22, 19, 0.75) 100%);
+}
+
+.about-floating-efficiency-badge-light {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  background: rgba(248, 245, 238, 0.95);
+  border: 1px solid rgba(155, 120, 64, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 1.15rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.badge-zap-icon-light {
+  color: var(--accent-light-mode);
+  flex-shrink: 0;
+}
+
+.eff-number-light {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-light-primary);
+}
+
+.eff-label-light {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-light-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Minimalist Editorial Stats on Light Section */
+.editorial-stats-row-light {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.editorial-stat-unit {
+  display: flex;
+  flex-direction: column;
+}
+
+.ed-stat-val-light {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--accent-light-mode);
+  line-height: 1.1;
+}
+
+.ed-stat-lbl-light {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-light-muted);
+  letter-spacing: 0.08em;
+  margin-top: 0.2rem;
+}
+
+.ed-divider-light {
+  width: 1px;
+  height: 32px;
+  background-color: var(--border-light);
+}
+
+/* Solutions Section (#211F1A) */
+.section-solutions-warm {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.editorial-solutions-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem;
+  margin-bottom: 4.5rem;
+}
+
+.editorial-solution-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 5vw, 5rem);
+  align-items: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  padding: 3rem;
+  transition: all var(--transition-normal);
+}
+
+.editorial-solution-block:hover {
+  border-color: rgba(200, 169, 107, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.editorial-solution-block.is-reversed .solution-media-half {
+  order: 2;
+}
+
+.editorial-solution-block.is-reversed .solution-content-half {
+  order: 1;
+}
+
+.solution-media-half {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: clamp(240px, 30vw, 380px);
+  width: 100%;
+  max-width: 100%;
+}
+
+.sol-half-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.editorial-solution-block:hover .sol-half-img {
+  transform: scale(1.05);
+}
+
+.sol-half-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(17, 17, 15, 0.85) 100%);
+}
+
+.sol-pill-badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  background: rgba(33, 31, 26, 0.9);
+  border: 1px solid rgba(200, 169, 107, 0.35);
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.solution-content-half {
+  display: flex;
+  flex-direction: column;
+}
+
+.sol-number-indicator {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.sol-editorial-title {
+  font-size: clamp(1.8rem, 2.6vw, 2.3rem);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.sol-editorial-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+.sol-benefits-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 2.25rem;
+}
+
+.sol-benefit-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  color: var(--text-secondary);
+}
+
+.sol-check {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.solutions-view-more {
+  text-align: center;
+}
+
+/* Luxury Industries Grid */
+.luxury-industries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+}
+
+.luxury-industry-card {
+  background: var(--surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.luxury-industry-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(200, 169, 107, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.ind-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  max-height: 160px;
+  overflow: hidden;
+}
+
+.ind-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.luxury-industry-card:hover .ind-card-img {
+  transform: scale(1.08);
+}
+
+.ind-card-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(33, 31, 26, 0.95) 100%);
+}
+
+.ind-card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ind-card-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.ind-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.ind-card-arrow-circle {
+  align-self: flex-end;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(244, 240, 232, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.luxury-industry-card:hover .ind-card-arrow-circle {
+  background: var(--accent);
+  color: #11110F;
+  border-color: var(--accent-light);
+  transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+  .about-editorial-grid,
+  .editorial-solution-block,
+  .editorial-solution-block.is-reversed {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .editorial-solution-block.is-reversed .solution-media-half {
+    order: 1;
+  }
+  .editorial-solution-block.is-reversed .solution-content-half {
+    order: 2;
+  }
+  .luxury-industries-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .editorial-stats-row-light {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .ed-divider-light {
+    display: none;
+  }
+  .editorial-solution-block {
+    padding: 1.75rem;
+  }
+  .solution-media-half {
+    height: 240px;
+  }
+  .luxury-industries-grid {
+    grid-template-columns: 1fr;
+  }
+}

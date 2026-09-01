@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo — Creative Photography Studio</title>
+  
+  <!-- Font Integrations -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+  <script>
+    (function() {
+      const isPlatform = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const isTop = window.self === window.top;
+      const urlParams = new URLSearchParams(window.location.search);
+      const isIframe = urlParams.get('iframe') === 'true';
+      
+      if (isPlatform && isTop && !isIframe) {
+        document.documentElement.style.visibility = 'hidden';
+        
+        window.addEventListener('DOMContentLoaded', () => {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.searchParams.set('iframe', 'true');
+          
+          const body = document.body;
+          body.innerHTML = '';
+          body.style.margin = '0';
+          body.style.padding = '0';
+          body.style.height = '100vh';
+          body.style.width = '100vw';
+          body.style.display = 'flex';
+          body.style.flexDirection = 'column';
+          body.style.overflow = 'hidden';
+          body.style.backgroundColor = '#f1f5f9';
+          
+          // Build Top Bar
+          const topBar = document.createElement('div');
+          topBar.id = 'technosprint-preview-header';
+          topBar.style.height = '64px';
+          topBar.style.background = '#ffffff';
+          topBar.style.borderBottom = '1px solid #e2e8f0';
+          topBar.style.display = 'flex';
+          topBar.style.alignItems = 'center';
+          topBar.style.justifyContent = 'space-between';
+          topBar.style.padding = '0 24px';
+          topBar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+          topBar.style.fontFamily = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+          topBar.style.zIndex = '99999';
+          topBar.style.position = 'relative';
+          topBar.style.boxSizing = 'border-box';
+          
+          // Left side logo
+          const logoDiv = document.createElement('div');
+          logoDiv.innerHTML = `
+            <a href="/templates" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" />
+            </a>
+          `;
+          topBar.appendChild(logoDiv);
+          
+          // Center Template Name
+          const titleDiv = document.createElement('div');
+          titleDiv.style.fontWeight = '600';
+          titleDiv.style.fontSize = '0.9rem';
+          titleDiv.style.color = '#334155';
+          titleDiv.innerText = `< ${document.title || 'Template Preview'} >`;
+          topBar.appendChild(titleDiv);
+          
+          // Right view switcher buttons
+          const rightDiv = document.createElement('div');
+          rightDiv.style.display = 'flex';
+          rightDiv.style.alignItems = 'center';
+          rightDiv.style.gap = '8px';
+          rightDiv.innerHTML = `
+            <button id="view-desktop" style="
+              background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              Desktop
+            </button>
+            <button id="view-tablet" style="
+              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Tablet
+            </button>
+            <button id="view-mobile" style="
+              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
+              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
+              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+              outline: none; box-sizing: border-box;
+            ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Mobile
+            </button>
+          `;
+          topBar.appendChild(rightDiv);
+          body.appendChild(topBar);
+          
+          // Create Iframe Container
+          const iframeContainer = document.createElement('div');
+          iframeContainer.style.flex = '1';
+          iframeContainer.style.display = 'flex';
+          iframeContainer.style.alignItems = 'center';
+          iframeContainer.style.justifyContent = 'center';
+          iframeContainer.style.background = '#f1f5f9';
+          iframeContainer.style.padding = '20px';
+          iframeContainer.style.boxSizing = 'border-box';
+          iframeContainer.style.overflow = 'hidden';
+          
+          const iframe = document.createElement('iframe');
+          iframe.id = 'preview-iframe';
+          iframe.src = currentUrl.toString();
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.border = 'none';
+          iframe.style.borderRadius = '12px';
+          iframe.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+          iframe.style.background = '#ffffff';
+          iframe.style.transition = 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+          
+          iframeContainer.appendChild(iframe);
+          body.appendChild(iframeContainer);
+          
+          // Interactivity
+          const btnDesktop = body.querySelector('#view-desktop');
+          const btnTablet = body.querySelector('#view-tablet');
+          const btnMobile = body.querySelector('#view-mobile');
+          
+          let activeMode = 'desktop';
+          
+          function setView(mode) {
+            activeMode = mode;
+            [btnDesktop, btnTablet, btnMobile].forEach(btn => {
+              btn.style.background = '#ffffff';
+              btn.style.color = '#475569';
+              btn.style.borderColor = '#e2e8f0';
+              btn.style.fontWeight = '500';
+            });
+            
+            if (mode === 'desktop') {
+              btnDesktop.style.background = '#eff6ff';
+              btnDesktop.style.color = '#1e40af';
+              btnDesktop.style.borderColor = '#bfdbfe';
+              btnDesktop.style.fontWeight = '600';
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+              iframe.style.borderRadius = '12px';
+              iframe.style.border = 'none';
+            } else if (mode === 'tablet') {
+              btnTablet.style.background = '#eff6ff';
+              btnTablet.style.color = '#1e40af';
+              btnTablet.style.borderColor = '#bfdbfe';
+              btnTablet.style.fontWeight = '600';
+              iframe.style.width = '768px';
+              iframe.style.height = '1024px';
+              iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '24px';
+              iframe.style.border = '12px solid #0f172a';
+            } else if (mode === 'mobile') {
+              btnMobile.style.background = '#eff6ff';
+              btnMobile.style.color = '#1e40af';
+              btnMobile.style.borderColor = '#bfdbfe';
+              btnMobile.style.fontWeight = '600';
+              iframe.style.width = '375px';
+              iframe.style.height = '667px';
+              iframe.style.maxHeight = '100%';
+              iframe.style.borderRadius = '32px';
+              iframe.style.border = '14px solid #0f172a';
+            }
+          }
+          
+          btnDesktop.addEventListener('click', () => setView('desktop'));
+          btnTablet.addEventListener('click', () => setView('tablet'));
+          btnMobile.addEventListener('click', () => setView('mobile'));
+          
+          const btns = [
+            { btn: btnDesktop, mode: 'desktop' },
+            { btn: btnTablet, mode: 'tablet' },
+            { btn: btnMobile, mode: 'mobile' }
+          ];
+          
+          btns.forEach(item => {
+            item.btn.addEventListener('mouseenter', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#f8fafc';
+                item.btn.style.borderColor = '#cbd5e1';
+              }
+            });
+            item.btn.addEventListener('mouseleave', () => {
+              if (activeMode !== item.mode) {
+                item.btn.style.background = '#ffffff';
+                item.btn.style.borderColor = '#e2e8f0';
+              }
+            });
+          });
+          
+          document.documentElement.style.visibility = 'visible';
+        });
+      }
+    })();
+  </script>
+
+  <!-- Asynchronous Image Preloader UI Overlay -->
+  <div id="canvas-loader" class="canvas-loader">
+    <div class="loader-content">
+      <h2 class="serif loader-brand">PHOTO STUDIO</h2>
+      <p class="loader-status">Preloading Creative Frames... <span id="loader-percent">0%</span></p>
+    </div>
+  </div>
+
+  <!-- Background Pinned Scroll Canvas Container -->
+  <div class="canvas-container">
+    <canvas id="scroll-canvas"></canvas>
+    <!-- Vignette / Gradient Overlay for contrast and readability -->
+    <div class="canvas-overlay"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="editorial-header">
+    <div class="header-logo">
+      <a href="#">Photo</a>
+    </div>
+    
+    <nav class="header-nav">
+      <a href="#" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">Pages</a>
+      <a href="#albums" class="nav-link">Albums</a>
+      <a href="#galleries" class="nav-link">Galleries</a>
+      <a href="#blog" class="nav-link">Blog</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#" class="nav-btn-buy">Buy Now</a>
+    </nav>
+    
+    <div class="header-socials">
+      <a href="#" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+      </a>
+      <a href="#" aria-label="X (Twitter)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      </a>
+      <a href="#" aria-label="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Pinned Scroll Layout Wrapper -->
+  <main class="scroll-wrapper">
+    
+    <!-- Hero Scroll-Scrub Container (Height: 500vh to allow comfortable, smooth scrub pacing) -->
+    <section class="hero-scroll-track" id="hero-track">
+      <!-- Sticky container containing the layout -->
+      <div class="hero-sticky-container">
+        
+        <div class="editorial-slides-container">
+          
+          <!-- Slide 01: Focus (0% to 25% Scroll) -->
+          <div class="editorial-slide" id="slide-0">
+            <div class="hero-split-layout">
+              <div class="hero-left glass-column">
+                <span class="section-tag">01 / FOCUS</span>
+                <h1 class="hero-headline">The Essence of Light</h1>
+                <p class="hero-subtitle">
+                  Capturing organic forms and golden shadows with visual minimalism, creating high-contrast imagery with authentic emotional weight.
+                </p>
+                <div class="hero-cta-group">
+                  <a href="#about" class="btn-primary">Explore Studio</a>
+                  <a href="#albums" class="btn-secondary">Portfolios <span class="arrow">→</span></a>
+                </div>
+              </div>
+              <div class="hero-right">
+                <div class="editorial-card-wrapper">
+                  <div class="editorial-card glass-card">
+                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80" alt="Focus Portrait" class="card-image">
+                    <div class="card-glass-label">
+                      <span class="label-category">Concept Art</span>
+                      <h3 class="label-title">Lens Focus & Form</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 02: Movement (25% to 50% Scroll) -->
+          <div class="editorial-slide" id="slide-1">
+            <div class="hero-split-layout">
+              <div class="hero-left glass-column">
+                <span class="section-tag">02 / MOVEMENT</span>
+                <h1 class="hero-headline">Cinematic Stillness</h1>
+                <p class="hero-subtitle">
+                  Freezing motions and natural interactions to tell detailed stories that resonate far beyond the boundary of a single frame.
+                </p>
+                <div class="hero-cta-group">
+                  <a href="#about" class="btn-primary">Read Narrative</a>
+                  <a href="#albums" class="btn-secondary">View Showcase <span class="arrow">→</span></a>
+                </div>
+              </div>
+              <div class="hero-right">
+                <div class="editorial-card-wrapper">
+                  <div class="editorial-card glass-card">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Cinematic Motion" class="card-image">
+                    <div class="card-glass-label">
+                      <span class="label-category">Fashion Editorial</span>
+                      <h3 class="label-title">Ethereal Motion Play</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 03: Harmony (50% to 75% Scroll) -->
+          <div class="editorial-slide" id="slide-2">
+            <div class="hero-split-layout">
+              <div class="hero-left glass-column">
+                <span class="section-tag">03 / HARMONY</span>
+                <h1 class="hero-headline">Tonal Elegance</h1>
+                <p class="hero-subtitle">
+                  Carefully balancing contrast, depth, and shadow values to showcase the natural beauty of silhouettes and environments.
+                </p>
+                <div class="hero-cta-group">
+                  <a href="#about" class="btn-primary">Our Process</a>
+                  <a href="#albums" class="btn-secondary">Gallery Albums <span class="arrow">→</span></a>
+                </div>
+              </div>
+              <div class="hero-right">
+                <div class="editorial-card-wrapper">
+                  <div class="editorial-card glass-card">
+                    <img src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=800&q=80" alt="Tonal Silhouette" class="card-image">
+                    <div class="card-glass-label">
+                      <span class="label-category">Monochrome Series</span>
+                      <h3 class="label-title">Chiaroscuro Silhouette</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 04: Creation (75% to 100% Scroll) -->
+          <div class="editorial-slide" id="slide-3">
+            <div class="hero-split-layout">
+              <div class="hero-left glass-column">
+                <span class="section-tag">04 / CREATION</span>
+                <h1 class="hero-headline">Art & Collaboration</h1>
+                <p class="hero-subtitle">
+                  Co-creating with global agencies, designers, and visual stylists to construct custom, premium visual campaigns.
+                </p>
+                <div class="hero-cta-group">
+                  <a href="#contact" class="btn-primary">Book Consultation</a>
+                  <a href="#galleries" class="btn-secondary">View Albums <span class="arrow">→</span></a>
+                </div>
+              </div>
+              <div class="hero-right">
+                <div class="editorial-card-wrapper">
+                  <div class="editorial-card glass-card">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Aesthetic Capture" class="card-image">
+                    <div class="card-glass-label">
+                      <span class="label-category">Lifestyle Portfolio</span>
+                      <h3 class="label-title">Sunset Reflection</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        <!-- Subtle indicator showing canvas frame progress -->
+        <div class="scroll-indicator">
+          <div class="progress-bar">
+            <div class="progress-fill" id="indicator-fill"></div>
+          </div>
+          <span class="indicator-text">SCROLL TO DISCOVER</span>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Subsequent Content Sections (released when hero-scroll-track is completed) -->
+    <section class="content-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text-col glass-section">
+            <span class="section-tag">About Photo</span>
+            <h2 class="section-title serif">Capturing the Essence of Light & Movement</h2>
+            <p class="section-desc">
+              We believe photography is more than capturing a frame—it is an elegant preservation of space, feeling, and time. Photo was founded on the philosophy of visual minimalism, using natural shadows and golden hour tones to highlight authentic emotions.
+            </p>
+            <div class="about-features">
+              <div class="feature-item">
+                <span class="feature-num">01 /</span>
+                <div class="feature-content">
+                  <h4 class="feature-title">Artistic Portraits</h4>
+                  <p class="feature-text">High-end creative photography with custom light sculpture setup.</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-num">02 /</span>
+                <div class="feature-content">
+                  <h4 class="feature-title">Cinematic Weddings</h4>
+                  <p class="feature-text">Discreet documentary-style romantic captures across the globe.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-img-col">
+            <div class="image-frame">
+              <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80" alt="Behind the Lens at Photo" class="about-img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section bg-darker" id="albums">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-tag">Featured Work</span>
+          <h2 class="section-title serif">The Master Collection</h2>
+          <p class="section-desc-center">A handpicked collection of editorial portfolios, highlighting visual narrative and tonal harmony.</p>
+        </div>
+        
+        <div class="portfolio-grid">
+          <div class="portfolio-item glass-section-small">
+            <div class="portfolio-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=800&q=80" alt="Minimal Portrait Portfolio" class="portfolio-img">
+            </div>
+            <div class="portfolio-meta">
+              <span class="portfolio-num">01.</span>
+              <h3 class="portfolio-title serif">Monochrome Silhouette</h3>
+              <span class="portfolio-cat">Portraits / Fine Art</span>
+            </div>
+          </div>
+          
+          <div class="portfolio-item glass-section-small">
+            <div class="portfolio-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=800&q=80" alt="Cinematic Concert Light" class="portfolio-img">
+            </div>
+            <div class="portfolio-meta">
+              <span class="portfolio-num">02.</span>
+              <h3 class="portfolio-title serif">Ethereal Concert Tones</h3>
+              <span class="portfolio-cat">Cinematic / Editorial</span>
+            </div>
+          </div>
+
+          <div class="portfolio-item glass-section-small">
+            <div class="portfolio-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Ethereal Wedding" class="portfolio-img">
+            </div>
+            <div class="portfolio-meta">
+              <span class="portfolio-num">03.</span>
+              <h3 class="portfolio-title serif">Timeless Vows</h3>
+              <span class="portfolio-cat">Weddings / Lifestyle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galleries Section -->
+    <section class="content-section" id="galleries">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-tag">Visual Galleries</span>
+          <h2 class="section-title serif">Curated Visual Narratives</h2>
+          <p class="section-desc-center">Explore detailed albums categorized by visual emotion, style, and art direction.</p>
+        </div>
+        
+        <div class="galleries-masonry">
+          <div class="gallery-card size-tall">
+            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80" alt="Fine Art Gallery" class="gallery-img">
+            <div class="gallery-overlay-hover">
+              <h4 class="serif">Fine Art Shadows</h4>
+              <span>View Album (24 Photos)</span>
+            </div>
+          </div>
+          <div class="gallery-card size-wide">
+            <img src="https://images.unsplash.com/photo-1513829096960-ef04829846e4?auto=format&fit=crop&w=800&q=80" alt="Nature Light Gallery" class="gallery-img">
+            <div class="gallery-overlay-hover">
+              <h4 class="serif">Whispering Forests</h4>
+              <span>View Album (18 Photos)</span>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="Vogue Fashion Gallery" class="gallery-img">
+            <div class="gallery-overlay-hover">
+              <h4 class="serif">Vogue Editorial</h4>
+              <span>View Album (32 Photos)</span>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" alt="Architectural Form Gallery" class="gallery-img">
+            <div class="gallery-overlay-hover">
+              <h4 class="serif">Architectural Lines</h4>
+              <span>View Album (15 Photos)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial Journal / Blog Section -->
+    <section class="content-section bg-darker" id="blog">
+      <div class="container">
+        <div class="section-header-left">
+          <span class="section-tag">Editorial Journal</span>
+          <h2 class="section-title serif">Insights & Photographic Journeys</h2>
+        </div>
+        
+        <div class="blog-grid">
+          <article class="blog-card glass-section-small">
+            <div class="blog-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=800&q=80" alt="Chasing Light in the Mountains" class="blog-img">
+            </div>
+            <div class="blog-body">
+              <span class="blog-date">August 12, 2026 — Journal</span>
+              <h3 class="blog-title serif"><a href="#">Chasing Light in the Scottish Highlands</a></h3>
+              <p class="blog-excerpt">An exploration of patience, shifting weather conditions, and capturing dynamic shadows across the dramatic peaks of Glen Coe.</p>
+              <a href="#" class="blog-link">Read Journal →</a>
+            </div>
+          </article>
+          
+          <article class="blog-card glass-section-small">
+            <div class="blog-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?auto=format&fit=crop&w=800&q=80" alt="The Art of Subtle Shadows" class="blog-img">
+            </div>
+            <div class="blog-body">
+              <span class="blog-date">July 28, 2026 — Tutorial</span>
+              <h3 class="blog-title serif"><a href="#">The Art of Subtle Shadows in Studio Portraits</a></h3>
+              <p class="blog-excerpt">How utilizing a single light source and black reflector boards creates dramatic, emotional depth in minimalist studio layouts.</p>
+              <a href="#" class="blog-link">Read Journal →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="content-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info-col glass-section">
+            <span class="section-tag">Get in Touch</span>
+            <h2 class="section-title serif">Let's Frame Your Story</h2>
+            <p class="section-desc">
+              Whether you are planning a high-end editorial showcase, a commercial launch, or looking to preserve cinematic personal milestones, we would love to collaborate.
+            </p>
+            
+            <div class="contact-details">
+              <div class="detail-item">
+                <span class="detail-label">Studio Address</span>
+                <span class="detail-value">244 Golden Hour Boulevard, Suite 100, Los Angeles, CA</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">General Inquiry</span>
+                <span class="detail-value">inquire@photostudio.com</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Direct Phone</span>
+                <span class="detail-value">+1 (310) 555-0198</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-form-col">
+            <form class="editorial-form glass-form" onsubmit="event.preventDefault(); alert('Booking request sent successfully!');">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" required placeholder="Alexander Vance">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" required placeholder="alex@vance.com">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="service">Select Project Type</label>
+                <select id="service">
+                  <option value="editorial">Editorial & Fine Art</option>
+                  <option value="wedding">Cinematic Wedding</option>
+                  <option value="portrait">Studio Portrait Session</option>
+                  <option value="commercial">Commercial Campaign</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Describe Your Vision</label>
+                <textarea id="message" rows="5" required placeholder="Tell us about your project, timeline, and aesthetic goals..."></textarea>
+              </div>
+              
+              <button type="submit" class="btn-primary form-submit-btn">Send Booking Request</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gleam-footer">
+      <div class="container footer-content">
+        <div class="footer-left">
+          <span class="footer-logo serif">Photo</span>
+          <p class="footer-credits">
+            &copy; 2026 Photo Creative Studio. All Rights Reserved.<br>
+            Designed for high-end web platforms.
+          </p>
+        </div>
+        <div class="footer-right">
+          <div class="footer-links-col">
+            <h5 class="footer-heading">Studio</h5>
+            <a href="#about" class="footer-link">About Us</a>
+            <a href="#albums" class="footer-link">Portfolios</a>
+            <a href="#blog" class="footer-link">Journal</a>
+          </div>
+          <div class="footer-links-col">
+            <h5 class="footer-heading">Connect</h5>
+            <a href="#" class="footer-link">Instagram</a>
+            <a href="#" class="footer-link">Pinterest</a>
+            <a href="#" class="footer-link">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Canvas Sequence Controller script -->
+  <script src="script.js"></script>
+</body>
+</html>

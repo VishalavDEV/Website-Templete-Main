@@ -1,0 +1,588 @@
+[
+  {
+    "id": "art-001",
+    "slug": "beneath-a-world-of-ice",
+    "title": "Beneath a World of Ice",
+    "subtitle": "Four kilometers beneath the Antarctic ice sheet, Lake Vostok has remained sealed from our atmosphere for fifteen million years. What lives in the total dark?",
+    "category": "science",
+    "categoryName": "SCIENCE",
+    "author": {
+      "id": "author-elena-vance",
+      "name": "Dr. Elena Vance",
+      "role": "Chief Science Editor & Marine Biogeochemist",
+      "bio": "Dr. Vance has led eleven deep-sea submersible expeditions and sub-ice exploration missions.",
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 18,
+      "location": "Woods Hole Oceanographic Institution"
+    },
+    "date": "September 18, 2026",
+    "readingTime": "12 min read",
+    "heroImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2000&q=85",
+    "heroImageAlt": "Deep crystalline ice core illuminated by blue laser spectrometry",
+    "heroCaption": "An accretion ice core retrieved from 3,600 meters depth, glowing with refracted structural light in the field cleanroom.",
+    "heroCredit": "Kai Nordström / TERRA Expedition",
+    "excerpt": "Under immense hydrostatic pressure and complete solar absence, subglacial lakes harbor microbial ecosystems that rewrite what we know about the limits of carbon life.",
+    "location": "East Antarctic Ice Sheet, -78.46° S, 106.84° E",
+    "featured": true,
+    "leadStory": true,
+    "editorsPick": true,
+    "issueSlug": "september-2026-the-unknown-earth",
+    "tags": ["Antarctica", "Cryobiology", "Astrobiology", "Extreme Ecosystems", "Microbiology"],
+    "bodySections": [
+      {
+        "id": "sec-1",
+        "heading": "The Sealed Ocean Under Two Miles of Pressure",
+        "content": [
+          "The thermometer outside the tracked traverse vehicle read minus sixty-eight degrees Celsius. The wind across the East Antarctic plateau does not gust; it presses steadily like a cold iron slab. Yet four thousand meters directly beneath our boots lies a freshwater lake the size of Lake Ontario, warm enough to remain liquid and super-saturated with dissolved oxygen.",
+          "Lake Vostok is not alone. Geothermal imaging and airborne ice-penetrating radar have now cataloged more than four hundred subglacial lakes interconnected by a labyrinth of pressurized basal rivers. Sealed off from the global atmosphere when the Antarctic continent iced over roughly fifteen million years ago, this subterranean biosphere is Earth's closest analog to the sub-surface oceans of Europa and Enceladus."
+        ]
+      },
+      {
+        "id": "sec-2",
+        "heading": "Sterile Drilling and the First Pristine Samples",
+        "content": [
+          "Reaching the water without introducing surface microbes required a revolutionary thermal melting drill utilizing pressurized silicone oil and cleanroom laser sterilizers. When the drill bit broke through the final ceiling of accretion ice, scientists recovered ice crystals exceeding one meter in length.",
+          "Sequencing the ribosomal DNA locked within these ice lattices revealed thousands of distinct bacterial and fungal genomes. These organisms do not rely on sunlight; they derive energy from geochemical reactions between the fractured granite lakebed and mineral-rich geothermal fluids."
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=1600&q=85",
+          "alt": "Snow traverse team setting up radar arrays on ice plateau",
+          "caption": "Expedition researchers deploy ground-penetrating radar sleds to trace the shorelines of the subglacial basin.",
+          "credit": "Marcus Thorne / TERRA"
+        },
+        "pullQuote": {
+          "quote": "If life can thrive beneath two miles of crushing ice in total darkness for millions of years, the frozen moons of Jupiter and Saturn are almost certainly inhabited.",
+          "author": "Dr. Elena Vance"
+        }
+      },
+      {
+        "id": "sec-3",
+        "heading": "Metabolic Mysteries: Life Without Photons",
+        "content": [
+          "Chemolithoautotrophy is the foundation of Lake Vostok's food pyramid. Microbes oxidize ferrous iron, sulfur compounds, and methane seeping from ancient sediments. Even more surprising was the discovery of complex multicellular sequences: genetic signatures related to tardigrades, anemones, and extremophile crustaceans.",
+          "As we peer deeper into the core records, we are not simply looking into a dark pool in Antarctica. We are looking at the resilient architecture of life itself—an architecture that does not ask for blue skies or temperate seasons, only a trickle of chemistry and time."
+        ],
+        "callout": {
+          "title": "Subglacial Lakes By The Numbers",
+          "text": "Over 400 cataloged subglacial lakes in Antarctica • 5.4 million km³ of basal ice • Estimated 15 million years of isolation • Oxygen levels 50x higher than typical freshwater lakes."
+        }
+      }
+    ],
+    "relatedArticleSlugs": ["the-forests-that-breathe", "the-last-dark-skies", "into-the-hadal-zone"]
+  },
+  {
+    "id": "art-002",
+    "slug": "the-forests-that-breathe",
+    "title": "The Forests That Breathe at Night",
+    "subtitle": "High-resolution thermal lidar reveals how tropical canopies regulate nocturnal moisture cycles, generating their own atmospheric weather.",
+    "category": "wildlife",
+    "categoryName": "WILDLIFE",
+    "author": {
+      "id": "author-julian-reyes",
+      "name": "Julian Reyes",
+      "role": "Wildlife Ethologist & Wilderness Filmmaker",
+      "bio": "Investigating high-canopy predator acoustics and cetacean dialect networks across the South Pacific and Amazon basin.",
+      "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 21,
+      "location": "Manaus, Brazil"
+    },
+    "date": "September 15, 2026",
+    "readingTime": "14 min read",
+    "heroImage": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?auto=format&fit=crop&w=2000&q=85",
+    "heroImageAlt": "Misty morning over virgin tropical rainforest canopy",
+    "heroCaption": "Flying rivers of condensation rising from the primary canopy of the central Amazonian wilderness at dawn.",
+    "heroCredit": "Julian Reyes / TERRA",
+    "excerpt": "A single mature kapok tree pumps more than one thousand liters of water vapor into the air each day, creating microscopic aerosol particles that seed rain clouds across an entire continent.",
+    "location": "Rio Negro Basin, Brazil",
+    "featured": true,
+    "editorsPick": true,
+    "tags": ["Rainforest", "Canopy Ecology", "Atmosphere", "Amazon", "Biodiversity"],
+    "bodySections": [
+      {
+        "id": "sec-1",
+        "heading": "The Continental Vapor Engine",
+        "content": [
+          "Stand on an eddy covariance research tower at three in the morning, sixty meters above the rainforest floor. Below you, billions of leaves are quietly inhaling oxygen and transpiring moisture in a coordinated planetary rhythm. This is not passive vegetation; it is a biotic biotic pump that pulls moist air from the equatorial Atlantic across thousands of miles of South America.",
+          "Biogenic volatile organic compounds (BVOCs)—terpenes, isoprenes, and sesquiterpenes—are emitted by the trees as defense mechanisms against nocturnal insects. Once in the cool night air, these molecules oxidize and act as cloud condensation nuclei. Without these tree-made chemical seeds, rainfall in the interior would drop by sixty percent."
+        ]
+      },
+      {
+        "id": "sec-2",
+        "heading": "Life at the Top: The Emergent Layer",
+        "content": [
+          "Suspended in custom canopy hammocks, our team documented the nocturnal shifts among high-canopy fauna. While ground-dwelling species sleep, the emergent layer comes alive with kinkajous, night monkeys, and thousands of newly discovered moth species whose pollinating flights are timed precisely to the nocturnal blooming of canopy orchids.",
+          "Using hyperspectral thermal imaging from drones, we observed localized temperature drops of up to seven degrees Celsius above dense old-growth canopies compared to degraded forest patches—demonstrating that pristine forests act as biological air conditioners on a continental scale."
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=85",
+          "alt": "Dense sunlight filtering through old-growth jungle trees",
+          "caption": "The stratification of light creates vertical ecosystems where organisms on the top branch may never encounter species living on the lower bark.",
+          "credit": "Julian Reyes"
+        }
+      }
+    ],
+    "relatedArticleSlugs": ["beneath-a-world-of-ice", "the-whale-dialect-network", "the-last-dark-skies"]
+  },
+  {
+    "id": "art-003",
+    "slug": "the-last-dark-skies",
+    "title": "The Last Dark Skies on Earth",
+    "subtitle": "As artificial light pollution floods 80% of the planet's surface, astronomers and indigenous skykeepers fight to preserve the raw cosmos.",
+    "category": "space",
+    "categoryName": "SPACE",
+    "author": {
+      "id": "author-sarah-al-mansoor",
+      "name": "Dr. Sarah Al-Mansoor",
+      "role": "Astrophysicist & Planetary Geologist",
+      "bio": "Specializing in cryovolcanism and atmospheric spectroscopy of Jovian moons.",
+      "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 14,
+      "location": "Atacama Large Millimeter Array, Chile"
+    },
+    "date": "September 12, 2026",
+    "readingTime": "16 min read",
+    "heroImage": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=2000&q=85",
+    "heroImageAlt": "Milky Way galaxy arching over silhouetted observatory domes in high desert",
+    "heroCaption": "The central galactic bulge glowing with interstellar dust lanes over the Atacama Plateau in northern Chile.",
+    "heroCredit": "Sarah Al-Mansoor / TERRA",
+    "excerpt": "In the hyper-arid high plateau of the Atacama, where five thousand meters of altitude strip away atmospheric moisture, the night sky is not a distant canvas—it is a three-dimensional cathedral.",
+    "location": "Chajnantor Plateau, Chile (5,050m)",
+    "featured": true,
+    "tags": ["Space", "Astronomy", "Dark Sky Reserves", "Atacama", "Cosmology"],
+    "bodySections": [
+      {
+        "id": "sec-1",
+        "heading": "The Extinction of True Night",
+        "content": [
+          "More than eighty percent of humanity now lives beneath light-polluted skies where the Milky Way is completely invisible. For hundreds of millions of children growing up in modern cities, the universe ends at the glow of sodium and LED lamps three hundred meters up.",
+          "In the Atacama Desert, the silence of the night is absolute. At an altitude of five thousand meters, with atmospheric water vapor near zero, you can see the Magellanic Clouds with your naked eye as clear, textured islands of light. You can even read printed text by the collective glow of the galactic center."
+        ]
+      },
+      {
+        "id": "sec-2",
+        "heading": "Indigenous Dark Cloud Constellations",
+        "content": [
+          "For millennia, the indigenous Likan Antai people looked at the sky differently from Western astronomers. Rather than connecting the bright stars into geometric shapes, they read the 'Yacana'—the dark interstellar dust lanes silhouetted against the bright background of the Milky Way: the Celestial Llama, the Partridge, and the Serpent.",
+          "Today, mega-constellations of low-Earth orbit communications satellites streak through telescope exposures every nine minutes, threatening the sensitive optical surveys that scan for near-Earth asteroids and distant exoplanetary transits."
+        ],
+        "image": {
+          "url": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1600&q=85",
+          "alt": "Observatory telescope under cosmic night sky",
+          "caption": "Submillimeter radiotelescope dishes track a star-forming nebula 4,000 light years away.",
+          "credit": "Sarah Al-Mansoor"
+        }
+      }
+    ],
+    "relatedArticleSlugs": ["searching-for-worlds-beyond", "the-life-of-a-star", "the-strange-sound-of-the-deep-ocean"]
+  },
+  {
+    "id": "art-004",
+    "slug": "searching-for-worlds-beyond",
+    "title": "Searching for Worlds Beyond Earth",
+    "subtitle": "Next-generation coronagraphs and direct-imaging space telescopes begin detecting atmospheric biosignatures on rocky exoplanets.",
+    "category": "space",
+    "categoryName": "SPACE",
+    "author": {
+      "id": "author-sarah-al-mansoor",
+      "name": "Dr. Sarah Al-Mansoor",
+      "role": "Astrophysicist & Planetary Geologist",
+      "bio": "Specializing in cryovolcanism and atmospheric spectroscopy.",
+      "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 14,
+      "location": "Atacama Large Millimeter Array"
+    },
+    "date": "September 08, 2026",
+    "readingTime": "18 min read",
+    "heroImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=85",
+    "heroImageAlt": "Deep space exoplanet orbiting a distant star with atmospheric haze",
+    "heroCaption": "Artist representation of an M-dwarf planetary system with an ocean world within the habitable zone.",
+    "heroCredit": "NASA / ESA / TERRA Concept",
+    "excerpt": "With the discovery of over six thousand confirmed exoplanets, the question has shifted from 'Are there planets?' to 'Does that planet have an ocean that breathes?'",
+    "location": "Keck & James Webb Telescopes",
+    "featured": false,
+    "tags": ["Exoplanets", "Habitable Zone", "Atmospheres", "Spectroscopy", "SETI"],
+    "bodySections": [
+      {
+        "id": "sec-1",
+        "heading": "The Shift to Atmospheric Spectroscopy",
+        "content": [
+          "When a distant planet crosses in front of its parent star, a fraction of starlight filters through the planet's atmospheric ring. Molecules in that atmosphere—water vapor, carbon dioxide, methane, ozone—absorb specific wavelengths of light, leaving telltale spectral fingerprints.",
+          "Recent observations of the TRAPPIST-1 system and the nearby super-Earth LHS 1140 b have yielded tentative detections of nitrogen-dominated atmospheres with possible water clouds. If confirmed, these worlds represent the first temperate rocky planets with stable surface oceans outside our solar system."
+        ]
+      }
+    ],
+    "relatedArticleSlugs": ["the-last-dark-skies", "beneath-a-world-of-ice", "the-life-and-death-stellar-giants"]
+  },
+  {
+    "id": "art-005",
+    "slug": "into-the-hadal-zone",
+    "title": "Into the Hadal Trench: Biology at 1,000 Atmospheres",
+    "subtitle": "Inside the titanium pressure hull of the deepest human submersible, entering the seven-mile-deep abyss of the Kermadec Trench.",
+    "category": "planet",
+    "categoryName": "PLANET",
+    "author": {
+      "id": "author-elena-vance",
+      "name": "Dr. Elena Vance",
+      "role": "Chief Science Editor",
+      "bio": "Submersible expedition leader and deep-sea researcher.",
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 18,
+      "location": "Woods Hole Oceanographic Institution"
+    },
+    "date": "August 30, 2026",
+    "readingTime": "15 min read",
+    "heroImage": "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=2000&q=85",
+    "heroImageAlt": "Deep underwater exploration submarine headlights illuminating oceanic trench wall",
+    "heroCaption": "The manipulator arm of the DSV Nereus collecting sediment cores along the sheer basalt cliffs of the Kermadec Trench.",
+    "heroCredit": "Elena Vance / Woods Hole",
+    "excerpt": "At ten thousand meters below sea level, water pressure is equivalent to balancing an elephant on your thumb. Yet snailfish, amphipods, and xenophyophores flourish without bones.",
+    "location": "South Pacific Hadal Trench",
+    "featured": true,
+    "tags": ["Oceans", "Hadal Zone", "Submersibles", "Deep Sea", "Geology"],
+    "bodySections": [
+      {
+        "id": "sec-1",
+        "heading": "The Descent into Perpetual Night",
+        "content": [
+          "The descent takes four hours. Outside our ninety-millimeter acrylic viewport, the tropical turquoise gives way to royal blue, then slate grey, then ink. By one thousand meters, the ocean is blacker than space.",
+          "At eight thousand meters, we switch on the twenty-thousand-lumen LED arrays. The trench wall is not a barren cliff; it is populated by translucent hadal snailfish whose scaleless skin reveals their internal organs. Their cellular membranes are reinforced with high concentrations of trimethylamine N-oxide (TMAO), preventing their proteins from being crushed under hydrostatic pressure."
+        ]
+      }
+    ],
+    "relatedArticleSlugs": ["beneath-a-world-of-ice", "the-strange-sound-of-the-deep-ocean", "the-whale-dialect-network"]
+  },
+  {
+    "id": "art-006",
+    "slug": "the-whale-dialect-network",
+    "title": "The Whale Dialect Network",
+    "subtitle": "Machine learning decodes the click sequences of sperm whale clans across the Caribbean basin.",
+    "category": "wildlife",
+    "categoryName": "WILDLIFE",
+    "author": {
+      "id": "author-julian-reyes",
+      "name": "Julian Reyes",
+      "role": "Wildlife Ethologist",
+      "bio": "Cetacean bioacoustics and animal communication systems.",
+      "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 21,
+      "location": "Manaus, Brazil"
+    },
+    "date": "August 24, 2026",
+    "readingTime": "11 min read",
+    "heroImage": "https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=2000&q=85",
+    "heroImageAlt": "Sperm whale mother and calf swimming synchronously through crystal blue water",
+    "heroCaption": "A Caribbean clan matriarch leading three generations on an offshore deep canyon foraging dive.",
+    "heroCredit": "Julian Reyes / Project CETI",
+    "excerpt": "Sperm whales converse in rhythmic clicks called codas that possess phonetic variations, rubato timing, and clan-specific dialects that take years for calves to master.",
+    "location": "Roseau Basin, Dominica",
+    "featured": false,
+    "tags": ["Whales", "Acoustics", "Culture in Animals", "Marine Biology", "Cognition"],
+    "bodySections": [
+      {
+        "id": "sec-1",
+        "heading": "Phonetics Beneath the Waves",
+        "content": [
+          "When a sperm whale clicks, the acoustic pulse is loud enough to register on submarine sonar hundreds of miles away. But analyzing millions of recordings using transformer-based language models has revealed something unprecedented: whales modify their tempo, add ornamentations, and engage in turn-taking conversations that follow structured conversational etiquette."
+        ]
+      }
+    ],
+    "relatedArticleSlugs": ["the-forests-that-breathe", "into-the-hadal-zone", "7-things-scientists-just-learned-about-whales"]
+  },
+  {
+    "id": "art-007",
+    "slug": "mapping-zealandia-continent",
+    "title": "Mapping Zealandia: The Submerged Eighth Continent",
+    "subtitle": "Marine seismologists map the vast continental crust stretching beneath New Zealand into the South Pacific.",
+    "category": "history",
+    "categoryName": "HISTORY",
+    "author": {
+      "id": "author-amara-okafor",
+      "name": "Amara Okafor",
+      "role": "Anthropological Archaeologist & Cartographer",
+      "bio": "Non-invasive LiDAR imaging and prehistoric maritime trade.",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 12,
+      "location": "Lagos & Oxford"
+    },
+    "date": "August 18, 2026",
+    "readingTime": "13 min read",
+    "heroImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=85",
+    "heroImageAlt": "Rugged coastal cliffs where continental shelf plunges into South Pacific",
+    "heroCaption": "High-resolution bathymetric surveys indicate 94% of Zealandia sits one kilometer beneath the ocean surface.",
+    "heroCredit": "GNS Science / TERRA",
+    "excerpt": "Five million square kilometers of granite crust—nearly twice the size of India—sank into the Pacific eighty million years ago during the breakup of Gondwana.",
+    "location": "Tasman Sea & South Pacific",
+    "featured": false,
+    "tags": ["Geology", "Tectonics", "Zealandia", "Cartography", "Gondwana"],
+    "bodySections": [
+      {
+        "id": "sec-1",
+        "heading": "The Continent That Slipped Away",
+        "content": [
+          "Most continents are elevated above the sea, but Zealandia's crust was stretched and thinned by tectonic forces until it subsided beneath the waves. Drilling expeditions into its submerged plateaus have yielded terrestrial pollen cores, fossilized tree trunks, and shallow-water bivalves—proving it was once a lush temperate paradise."
+        ]
+      }
+    ],
+    "relatedArticleSlugs": ["oldest-painted-dreams", "the-oldest-continuous-flame-on-earth", "beneath-a-world-of-ice"]
+  },
+  {
+    "id": "art-008",
+    "slug": "oldest-painted-dreams",
+    "title": "The Oldest Painted Dreams: 45,000-Year-Old Art in Sulawesi",
+    "subtitle": "Deep within karst limestone caves, hands blown with ochre and red-pigmented warty pigs challenge the birthplace of human symbolic thought.",
+    "category": "history",
+    "categoryName": "HISTORY",
+    "author": {
+      "id": "author-amara-okafor",
+      "name": "Amara Okafor",
+      "role": "Anthropological Archaeologist",
+      "bio": "Non-invasive LiDAR imaging and prehistoric art chronology.",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 12,
+      "location": "Lagos & Oxford"
+    },
+    "date": "August 10, 2026",
+    "readingTime": "12 min read",
+    "heroImage": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=2000&q=85",
+    "heroImageAlt": "Ancient limestone cave walls covered in hand stencils and mineral formations",
+    "heroCaption": "Uranium-series dating of calcite coralloids confirms these cave paintings predate European cave art by thousands of years.",
+    "heroCredit": "Amara Okafor / TERRA",
+    "excerpt": "Long before Lascaux or Chauvet, early hunter-gatherers in Island Southeast Asia were creating figurative narrative art, depicting human-animal therianthropes and hunting myths.",
+    "location": "Maros-Pangkep Karst, Sulawesi, Indonesia",
+    "featured": true,
+    "tags": ["Archaeology", "Cave Art", "Human Origins", "Paleolithic", "Sulawesi"],
+    "bodySections": [
+      {
+        "id": "sec-1",
+        "heading": "The Shadow Hands of the Ancestors",
+        "content": [
+          "To reach Leang Tedongnge cave, you must trek through tropical rice paddies surrounded by towering limestone karst towers. Inside the chamber, six meters above the damp floor, a life-sized Sulawesi warty pig rendered in mineral ochre stares out through forty-five thousand years of mineral crust.",
+          "Placing your own hand beside the negative stencil of an artist who lived before the last Ice Age is an electric, humbling experience. The human mind that mixed that pigment was identical in capacity, longing, and storytelling impulse to our own."
+        ]
+      }
+    ],
+    "relatedArticleSlugs": ["mapping-zealandia-continent", "the-rise-of-a-civilization", "the-last-light-of-the-desert"]
+  },
+  {
+    "id": "art-009",
+    "slug": "silent-language-desert-monoliths",
+    "title": "The Silent Language of Desert Monoliths",
+    "subtitle": "Astronomical alignments of North African stone circles from the Saharan wet phase.",
+    "category": "culture",
+    "categoryName": "CULTURE",
+    "author": {
+      "id": "author-amara-okafor",
+      "name": "Amara Okafor",
+      "role": "Anthropological Archaeologist",
+      "bio": "Non-invasive LiDAR imaging and prehistoric architecture.",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 12,
+      "location": "Lagos & Oxford"
+    },
+    "date": "August 02, 2026",
+    "readingTime": "10 min read",
+    "heroImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2000&q=85",
+    "heroImageAlt": "Stark standing stone megaliths cast long shadows across golden desert sand",
+    "heroCaption": "Nabta Playa calendar circle aligned with the summer solstice sunrise seven thousand years ago.",
+    "heroCredit": "Amara Okafor",
+    "excerpt": "When the Sahara was a green savannah dotted with mega-lakes and hippos, nomadic pastoralists constructed the world's earliest astronomical observatories.",
+    "location": "Western Desert, Egypt",
+    "featured": false,
+    "tags": ["Sahara", "Astronomy", "Megaliths", "Pastoralism", "Monoliths"],
+    "bodySections": [
+      {
+        "id": "sec-1",
+        "heading": "The Green Sahara Observatories",
+        "content": [
+          "Between 11,000 and 5,000 years ago, cyclical changes in Earth's orbital tilt intensified the African monsoon, turning what is now hyper-arid desert into grasslands. Here, cattle herders built stone megaliths aligned to the rising of Sirius and Orion to predict the arrival of life-giving monsoon rains."
+        ]
+      }
+    ],
+    "relatedArticleSlugs": ["oldest-painted-dreams", "why-deserts-arent-really-empty", "the-last-dark-skies"]
+  },
+  {
+    "id": "art-010",
+    "slug": "beneath-ross-ice-shelf",
+    "title": "Beneath the Ross Ice Shelf: The Hidden Sea Floor",
+    "subtitle": "Autonomous deep-glider drones map the dark cavernous ocean circulation beneath eight hundred meters of floating shelf ice.",
+    "category": "exploration",
+    "categoryName": "EXPLORATION",
+    "author": {
+      "id": "author-kai-nordstrom",
+      "name": "Kai Nordström",
+      "role": "Arctic Glaciologist & Climate Cartographer",
+      "bio": "Nordström traverses Greenland ice sheets and Svalbard glaciers.",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 16,
+      "location": "Tromsø, Norway"
+    },
+    "date": "July 26, 2026",
+    "readingTime": "13 min read",
+    "heroImage": "https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=2000&q=85",
+    "heroImageAlt": "Vast turquoise glacial ice wall meeting open ocean water",
+    "heroCaption": "The vertical front of the Ross Ice Shelf, rising sixty meters above the Ross Sea.",
+    "heroCredit": "Kai Nordström",
+    "excerpt": "Beneath an ice shelf the size of France lies a completely unmapped marine ecosystem driven by sub-ice supercooling and brine drainage currents.",
+    "location": "Ross Ice Shelf, Antarctica",
+    "featured": false,
+    "tags": ["Antarctica", "Glaciology", "Ocean Currents", "Robotics", "Exploration"],
+    "bodySections": [
+      {
+        "id": "sec-1",
+        "heading": "The Cavity Beneath France-Sized Ice",
+        "content": [
+          "Lowering an acoustic glider through an eight-hundred-meter hot-water borehole is like sending an interplanetary probe into an alien atmosphere. The water temperature is minus two degrees Celsius—liquid only because of salt content and pressure. In this cavity, autonomous vehicles found fields of sea anemones burrowed upside-down directly into the bottom of the ice shelf."
+        ]
+      }
+    ],
+    "relatedArticleSlugs": ["beneath-a-world-of-ice", "into-the-hadal-zone", "the-last-light-of-the-desert"]
+  },
+  {
+    "id": "art-011",
+    "slug": "the-quantum-leap-in-paleogenomics",
+    "title": "The Quantum Leap in Paleogenomics",
+    "subtitle": "Ancient environmental DNA sifted from cave dust without fossils reconstructs lost Neanderthal and Denisovan worlds.",
+    "category": "science",
+    "categoryName": "SCIENCE",
+    "author": {
+      "id": "author-elena-vance",
+      "name": "Dr. Elena Vance",
+      "role": "Chief Science Editor",
+      "bio": "Biogeochemist and evolutionary genomics researcher.",
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 18,
+      "location": "Woods Hole Oceanographic Institution"
+    },
+    "date": "July 19, 2026",
+    "readingTime": "14 min read",
+    "heroImage": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=2000&q=85",
+    "heroImageAlt": "Scientist in cleanroom isolating DNA sequencing cartridges under ultraviolet light",
+    "heroCaption": "High-throughput capillary sequencers processing sedimentary eDNA from Siberian cave strata.",
+    "heroCredit": "Max Planck Institute / TERRA",
+    "excerpt": "A single spoonful of Pleistocene cave dirt contains fragments of skin cells, hair, and fecal matter from dozens of extinct species that trod that floor a hundred thousand years ago.",
+    "location": "Denisova Cave, Altai Mountains",
+    "featured": false,
+    "tags": ["Genomics", "Ancient DNA", "Neanderthals", "Evolution", "Paleontology"],
+    "bodySections": [
+      {
+        "id": "sec-1",
+        "heading": "Reading History in the Soil",
+        "content": [
+          "For over a century, archaeology depended on finding intact bones or stone tools. Today, environmental DNA (eDNA) extraction allows researchers to reconstruct the entire flora and fauna of a prehistoric valley from a single soil core, revealing waves of human and hominin migrations that left no fossil trace."
+        ]
+      }
+    ],
+    "relatedArticleSlugs": ["oldest-painted-dreams", "beneath-a-world-of-ice", "how-trees-warn-each-other"]
+  },
+  {
+    "id": "art-012",
+    "slug": "the-lost-cities-of-the-llanos",
+    "title": "The Lost Cities of the Llanos de Moxos",
+    "subtitle": "LiDAR pulses reveal geometric agrarian settlements and monumental mounds in the southwestern Amazon basin.",
+    "category": "exploration",
+    "categoryName": "EXPLORATION",
+    "author": {
+      "id": "author-marcus-thorne",
+      "name": "Marcus Thorne",
+      "role": "Expedition Photojournalist",
+      "bio": "Documenting isolated biomes and remote archaeological discoveries.",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 24,
+      "location": "Geneva / Field Bureau"
+    },
+    "date": "July 12, 2026",
+    "readingTime": "15 min read",
+    "heroImage": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=85",
+    "heroImageAlt": "Aerial view of Amazon river oxbows and emerald canopy at sunset",
+    "heroCaption": "Centuries-old causeways and elevated farm fields emerge from beneath the tree cover on laser elevation maps.",
+    "heroCredit": "Marcus Thorne",
+    "excerpt": "Far from being an untouched virgin wilderness, pre-Columbian Amazonia was home to dense urbanized societies that engineered canals, fish weirs, and nutrient-rich black soils.",
+    "location": "Beni Department, Bolivia",
+    "featured": true,
+    "tags": ["Amazon", "LiDAR", "Archaeology", "Lost Cities", "Exploration"],
+    "bodySections": [
+      {
+        "id": "sec-1",
+        "heading": "Stripping the Canopy with Lasers",
+        "content": [
+          "From a Cessna flying at five hundred meters, the lidar scanner emits 1.5 million laser pulses every second. When algorithms filter out the tree foliage, the naked ground beneath is crisscrossed with raised causeways fifteen meters wide, reservoirs the size of football stadiums, and stepped pyramid mounds rising twenty meters into the humid air."
+        ]
+      }
+    ],
+    "relatedArticleSlugs": ["the-forests-that-breathe", "the-rise-of-a-civilization", "the-last-light-of-the-desert"]
+  },
+  {
+    "id": "art-013",
+    "slug": "the-song-of-the-dune-sea",
+    "title": "The Song of the Dune Sea: Acoustic Sand Physics",
+    "subtitle": "In thirty-five deserts around the globe, shifting sands produce a low-frequency hum like an immense pipe organ.",
+    "category": "photography",
+    "categoryName": "PHOTOGRAPHY",
+    "author": {
+      "id": "author-marcus-thorne",
+      "name": "Marcus Thorne",
+      "role": "Expedition Photojournalist",
+      "bio": "For over two decades, Thorne has documented isolated biomes.",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 24,
+      "location": "Geneva / Field Bureau"
+    },
+    "date": "July 05, 2026",
+    "readingTime": "9 min read",
+    "heroImage": "https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?auto=format&fit=crop&w=2000&q=85",
+    "heroImageAlt": "Photographer walking along the razor crest of a sand dune at sunset",
+    "heroCaption": "Recording the acoustic resonances of the Badain Jaran dunes in northern China with seismic geophones.",
+    "heroCredit": "Marcus Thorne",
+    "excerpt": "When dry, well-sorted quartz grains avalanche down a slip face, synchrony among billions of tumbling grains produces a pure acoustic tone up to 105 decibels.",
+    "location": "Badain Jaran Desert & Rub' al Khali",
+    "featured": false,
+    "tags": ["Photography", "Deserts", "Acoustics", "Sand Dunes", "Geology"],
+    "bodySections": [
+      {
+        "id": "sec-1",
+        "heading": "The Singing Dunes",
+        "content": [
+          "Marco Polo wrote of the 'spirits of the desert' that filled travelers with dread through otherworldly droning. Today we understand that when quartz grains coated in a thin silica glaze avalanche in synchrony, they create an acoustic feedback loop that resonates at 90 to 110 Hertz."
+        ]
+      }
+    ],
+    "relatedArticleSlugs": ["the-last-light-of-the-desert", "why-deserts-arent-really-empty", "the-strange-sound-of-the-deep-ocean"]
+  },
+  {
+    "id": "art-014",
+    "slug": "fifty-moments-of-awe",
+    "title": "Fifty Moments of Awe: The Portfolio",
+    "subtitle": "The definitive photographic portfolio of field discoveries, extreme environments, and extraordinary creatures from the past decade.",
+    "category": "photography",
+    "categoryName": "PHOTOGRAPHY",
+    "author": {
+      "id": "author-marcus-thorne",
+      "name": "Marcus Thorne",
+      "role": "Expedition Photojournalist",
+      "bio": "Visual portfolio curator and documentary photographer.",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      "articlesCount": 24,
+      "location": "Geneva / Field Bureau"
+    },
+    "date": "June 28, 2026",
+    "readingTime": "22 min read",
+    "heroImage": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=2000&q=85",
+    "heroImageAlt": "Photographic landscape of salt flats and endless horizon",
+    "heroCaption": "The salt flats of Salar de Uyuni reflecting thunderclouds after seasonal rains.",
+    "heroCredit": "TERRA Field Photography Collective",
+    "excerpt": "A curated master collection of fifty images from the highest peaks of the Karakoram to the abyssal trenches of the Pacific.",
+    "location": "Global Expeditions",
+    "featured": true,
+    "tags": ["Photography", "Portfolio", "Landscapes", "Wildlife", "Expeditions"],
+    "bodySections": [
+      {
+        "id": "sec-1",
+        "heading": "The Power of the Visual Witness",
+        "content": [
+          "Photography in the field is more than documenting reality—it is preserving fleeting moments of planetary elegance before they vanish. From volcanic eruptions in Iceland to the nocturnal migration of deep-sea plankton, these frames remind us of the vastness of the world beyond our screens."
+        ]
+      }
+    ],
+    "relatedArticleSlugs": ["the-last-light-of-the-desert", "beneath-the-arctic-sky", "the-high-canopy"]
+  }
+]

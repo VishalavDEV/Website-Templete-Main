@@ -1,0 +1,64 @@
+:root {
+  /* ==========================================================================
+     XTRA MAXIMALIST & DOPAMINE COLOR TOKENS (LIGHT THEME ONLY)
+     ========================================================================== */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #FAFAFD;
+  --bg-cream: #FFFDF8;
+  --bg-butter: #FFFBE6;
+  --bg-pastel-pink: #FFEBF3;
+  --bg-pastel-blue: #EBF4FF;
+  --bg-pastel-lime: #F2FFE6;
+  --bg-pastel-lavender: #F6EEFF;
+  --bg-pastel-peach: #FFF0E6;
+
+  /* Dopamine Clashing Neons */
+  --neon-pink: #FF007A;
+  --neon-pink-hover: #E6006E;
+  --neon-lime: #10FF70;
+  --neon-acid: #C8FF00;
+  --electric-blue: #0047FF;
+  --hyper-cyan: #00D2FF;
+  --solar-orange: #FF5500;
+  --lavender-punch: #9D00FF;
+  --sunshine-yellow: #FFE600;
+
+  /* Stark Brutalist Inks */
+  --ink-primary: #0A0A0E;
+  --ink-secondary: #2C2D35;
+  --ink-muted: #626470;
+  --ink-border: #14141A;
+  --ink-border-light: #E2E4EB;
+
+  /* Brutalist Hard Shadows & Dopamine Glows */
+  --shadow-brutal-sm: 2px 2px 0px #0A0A0E;
+  --shadow-brutal-md: 4px 4px 0px #0A0A0E;
+  --shadow-brutal-lg: 6px 6px 0px #0A0A0E;
+  --shadow-brutal-xl: 8px 8px 0px #0A0A0E;
+  --shadow-brutal-pink: 4px 4px 0px #FF007A;
+  --shadow-brutal-blue: 4px 4px 0px #0047FF;
+  --shadow-brutal-lime: 4px 4px 0px #10FF70;
+  --shadow-brutal-yellow: 4px 4px 0px #FFE600;
+
+  /* Fluid Spacing Scale */
+  --space-xs: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+  --space-sm: clamp(0.75rem, 0.6rem + 0.75vw, 1.25rem);
+  --space-md: clamp(1.25rem, 1rem + 1.25vw, 2rem);
+  --space-lg: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+  --space-xl: clamp(3rem, 2rem + 5vw, 6rem);
+
+  /* Fluid Typography Clamps */
+  --text-fluid-mega: clamp(2.75rem, 6.5vw + 1rem, 7.5rem);
+  --text-fluid-hero: clamp(2.25rem, 4.5vw + 0.75rem, 5.25rem);
+  --text-fluid-display: clamp(1.75rem, 3vw + 0.5rem, 3.75rem);
+  --text-fluid-h1: clamp(1.5rem, 2.2vw + 0.5rem, 2.75rem);
+  --text-fluid-h2: clamp(1.25rem, 1.6vw + 0.4rem, 2rem);
+  --text-fluid-h3: clamp(1.1rem, 1.1vw + 0.3rem, 1.5rem);
+  --text-fluid-body-lg: clamp(1rem, 0.9vw + 0.3rem, 1.25rem);
+  --text-fluid-body: clamp(0.9rem, 0.5vw + 0.5rem, 1.05rem);
+  --text-fluid-caption: clamp(0.75rem, 0.3vw + 0.5rem, 0.875rem);
+
+  /* Spring Transitions */
+  --spring-snappy: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --spring-bouncy: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}

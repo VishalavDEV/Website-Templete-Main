@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AVELUNE VOWS — Olivia & Alexander Wedding | 18 December 2026</title>
+  <meta name="description" content="AVELUNE VOWS - Where Two Stories Become One. Join us for the luxury wedding celebration of Olivia & Alexander in Chennai, India." />
+  
+  <!-- Google Fonts for Editorial Luxury Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- React & React DOM CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  
+  <!-- React Router DOM CDN -->
+  <script src="https://unpkg.com/react-router-dom@6/umd/react-router-dom.min.js" crossorigin></script>
+
+  <!-- Babel Standalone for inline JSX compilation -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    /* Inline CSS Design Tokens & Styles */
+    :root {
+      --background: #e8e6e2;
+      --cream: #f5f2ed;
+      --text: #111111;
+      --muted: #4a4744;
+      --border: #a8a49c;
+      --accent: #544434;
+      --dark: #181716;
+      --white: #ffffff;
+      --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+      --font-display: 'Cinzel', 'Cormorant Garamond', serif;
+      --font-sans: 'Montserrat', 'Inter', sans-serif;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+      --shadow-card: 0 15px 45px rgba(20, 19, 18, 0.12);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: var(--background); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #111111; }
+    h1 { font-size: clamp(2.5rem, 6vw, 5.5rem); }
+    h2 { font-size: clamp(2rem, 4.5vw, 3.8rem); }
+    .container { width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 1.5rem; }
+    .section-padding { padding: 5rem 0; }
+    .text-center { text-align: center; }
+    .section-label { font-family: var(--font-sans); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.25em; color: #4a3a28; margin-bottom: 0.75rem; display: inline-block; font-weight: 700; }
+    .hero-word { font-family: var(--font-serif); font-size: clamp(3rem, 7.5vw, 6.5rem); font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; line-height: 0.95; color: #0d0d0d; text-shadow: 0 2px 10px rgba(255,255,255,0.9); }
+    .hero-couple-names { font-family: var(--font-serif); font-size: clamp(2.2rem, 5vw, 4.2rem); letter-spacing: 0.18em; text-transform: uppercase; margin: 1.5rem 0 0.5rem; color: #0d0d0d; font-weight: 700; text-shadow: 0 2px 10px rgba(255,255,255,0.9); }
+    
+    /* Custom Red Cursor Styles */
+    @media (min-width: 1025px) {
+      body { cursor: none; }
+      a, button, input, select, textarea, .clickable { cursor: none !important; }
+      .custom-cursor-dot { position: fixed; top: 0; left: 0; width: 8px; height: 8px; background-color: #ff3344; border-radius: 50%; pointer-events: none; z-index: 10000; transform: translate(-50%, -50%); box-shadow: 0 0 10px rgba(255, 51, 68, 0.6); }
+      .custom-cursor-ring { position: fixed; top: 0; left: 0; width: 36px; height: 36px; border: 1.5px solid #ff3344; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease; }
+      .custom-cursor-ring.hovered { width: 60px; height: 60px; border-color: #ff1a2d; background-color: rgba(255, 51, 68, 0.15); }
+    }
+    
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.9rem 2.2rem; background-color: var(--text); color: var(--cream); font-family: var(--font-sans); font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; border: 1px solid var(--text); border-radius: var(--radius-sm); cursor: pointer; text-decoration: none; transition: all 0.25s ease; }
+    .btn-primary:hover { background-color: var(--accent); border-color: var(--accent); color: var(--white); transform: translateY(-2px); }
+    .btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.9rem 2.2rem; background-color: transparent; color: var(--text); font-family: var(--font-sans); font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; border: 1px solid var(--border); border-radius: var(--radius-sm); cursor: pointer; text-decoration: none; transition: all 0.25s ease; }
+    .btn-secondary:hover { border-color: var(--text); background-color: var(--cream); transform: translateY(-2px); }
+    .btn-accent { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.9rem 2.2rem; background-color: var(--accent); color: var(--white); font-family: var(--font-sans); font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; border: 1px solid var(--accent); border-radius: var(--radius-sm); cursor: pointer; text-decoration: none; transition: all 0.25s ease; }
+    .btn-accent:hover { background-color: var(--dark); border-color: var(--dark); }
+    
+    /* Navbar Styles */
+    .navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 1.4rem 0; background-color: rgba(245, 242, 237, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { font-family: var(--font-display); font-size: 1.15rem; letter-spacing: 0.22em; font-weight: 600; color: var(--text); text-decoration: none; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+    .nav-link { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 500; color: var(--text); text-decoration: none; }
+    .nav-link:hover, .nav-link.active { color: var(--accent); }
+    .nav-rsvp-btn { padding: 0.5rem 1.3rem; background-color: var(--text); color: var(--cream); border-radius: var(--radius-sm); font-size: 0.7rem; letter-spacing: 0.2em; text-decoration: none; }
+
+    /* Hero Styles */
+    .hero-section { position: relative; min-height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 8rem 1.5rem 4rem; overflow: hidden; background: url('./public/images/wedding-bg.png') center/cover no-repeat; }
+    .hero-section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(245, 242, 237, 0.2) 0%, rgba(232, 230, 226, 0.4) 70%, rgba(37, 35, 33, 0.45) 100%); z-index: 1; }
+    .hero-content { position: relative; z-index: 10; width: 100%; max-width: 1200px; }
+    .hero-word { font-family: var(--font-serif); font-size: clamp(3rem, 7.5vw, 6.5rem); font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; line-height: 0.95; }
+    .hero-collage-container { width: 100%; max-width: 1050px; margin: 1.5rem auto 3rem; display: grid; grid-template-columns: 0.9fr 1.3fr 0.9fr; align-items: center; gap: 1.5rem; }
+    .collage-item { position: relative; overflow: hidden; border-radius: var(--radius-md); border: 1px solid var(--border); box-shadow: var(--shadow-card); }
+    .collage-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+    .collage-item:hover img { transform: scale(1.04); }
+    .collage-left { height: 380px; transform: translateY(15px); }
+    .collage-center { height: 480px; border-radius: var(--radius-lg); z-index: 5; }
+    .collage-right { height: 380px; transform: translateY(-15px); }
+    .hero-couple-names { font-family: var(--font-serif); font-size: clamp(2.2rem, 5vw, 4.2rem); letter-spacing: 0.18em; text-transform: uppercase; margin: 1.5rem 0 0.5rem; }
+    .hero-underline { width: 180px; height: 1px; background-color: var(--text); margin: 0.5rem auto 1.5rem; }
+
+    /* Component Grids & Cards */
+    .events-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2rem; }
+    .event-card { background-color: var(--cream); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-card); padding-bottom: 1.5rem; }
+    .event-image-wrap { height: 240px; overflow: hidden; }
+    .event-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .event-body { padding: 1.8rem; }
+    .event-name { font-family: var(--font-serif); font-size: 1.7rem; margin-bottom: 0.4rem; }
+
+    /* Footer */
+    .footer { background-color: var(--dark); color: var(--cream); padding: 5rem 1.5rem 3rem; text-align: center; border-top: 1px solid var(--border); margin-top: 4rem; }
+    .footer-brand { font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 0.25em; margin-bottom: 0.5rem; color: var(--cream); }
+    .footer-nav { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1.8rem; list-style: none; margin: 2.5rem 0; }
+    .footer-nav a { color: var(--background); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; }
+
+    @media (max-width: 768px) {
+      .hero-collage-container { grid-template-columns: 1fr; gap: 1.2rem; }
+      .collage-left, .collage-center, .collage-right { height: 320px; transform: none !important; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { HashRouter, Routes, Route, Link, useLocation } = ReactRouterDOM;
+    const { useState, useEffect, useRef } = React;
+
+    const weddingData = {
+      brand: { name: "AVELUNE VOWS", tagline: "Where Two Stories Become One." },
+      couple: { namesCombined: "OLIVIA & ALEXANDER", bride: "OLIVIA", groom: "ALEXANDER" },
+      details: { date: "18 DECEMBER 2026", locationFull: "CHENNAI, INDIA", time: "6:30 PM ONWARDS" },
+      heroImages: {
+        centerCouple: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=85",
+        leftBouquet: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=85",
+        rightBride: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=85",
+        videoPoster: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=85"
+      },
+      events: [
+        { name: "ENGAGEMENT", tagline: "The Formal Promise", date: "16 DEC 2026", time: "5:00 PM", venue: "Taj Connemara", image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=85", desc: "An intimate ring exchange ceremony and champagne toast." },
+        { name: "HALDI CEREMONY", tagline: "Sunlight & Marigolds", date: "17 DEC 2026", time: "10:00 AM", venue: "Royal Courtyard", image: "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=85", desc: "Joyful traditional ritual with turmeric blessings." },
+        { name: "MEHENDI NIGHT", tagline: "Henna & Folk Music", date: "17 DEC 2026", time: "4:00 PM", venue: "Terrace Gardens", image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=85", desc: "Afternoon filled with henna artists and acoustic melodies." },
+        { name: "SANGEET NIGHT", tagline: "Dance & Celebration", date: "17 DEC 2026", time: "7:30 PM", venue: "Crystal Hall", image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=85", desc: "Evening of choreograph dance performances and live music." },
+        { name: "WEDDING CEREMONY", tagline: "The Sacred Vows", date: "18 DEC 2026", time: "6:30 PM", venue: "Grand Heritage Mandapam", image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=85", desc: "The core holy ritual around the sacred fire." },
+        { name: "GRAND RECEPTION", tagline: "Gala Dinner & Toast", date: "18 DEC 2026", time: "8:30 PM", venue: "Palace Oceanfront Lawn", image: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=85", desc: "Champagne toasts, multi-course dining, and fireworks." }
+      ]
+    };
+
+    function Navbar() {
+      return (
+        <nav className="navbar">
+          <div className="container navbar-inner">
+            <Link to="/" className="nav-brand">{weddingData.brand.name}</Link>
+            <ul className="nav-links">
+              <li><Link to="/" className="nav-link">HOME</Link></li>
+              <li><Link to="/our-story" className="nav-link">OUR STORY</Link></li>
+              <li><Link to="/events" className="nav-link">EVENTS</Link></li>
+              <li><Link to="/schedule" className="nav-link">SCHEDULE</Link></li>
+              <li><Link to="/venue" className="nav-link">VENUE</Link></li>
+              <li><Link to="/gallery" className="nav-link">GALLERY</Link></li>
+              <li><Link to="/family" className="nav-link">FAMILY</Link></li>
+              <li><Link to="/rsvp" className="nav-rsvp-btn">RSVP</Link></li>
+            </ul>
+          </div>
+        </nav>
+      );
+    }
+
+    function Hero() {
+      return (
+        <section className="hero-section">
+          <div className="hero-editorial-title">
+            <span className="hero-word">OUR</span>
+            <span className="hero-word">WEDDING</span>
+            <span className="hero-word">PLANNER</span>
+            <span style={{ fontSize: '0.75rem', letterSpacing: '0.3em', color: 'var(--accent)', marginTop: '0.6rem', fontWeight: 600 }}>
+              {weddingData.brand.tagline}
+            </span>
+          </div>
+
+          <div className="hero-collage-container">
+            <div className="collage-item collage-left">
+              <img src={weddingData.heroImages.leftBouquet} alt="Bouquet" />
+            </div>
+            <div className="collage-item collage-center">
+              <img src={weddingData.heroImages.centerCouple} alt="Couple" />
+            </div>
+            <div className="collage-item collage-right">
+              <img src={weddingData.heroImages.rightBride} alt="Bride" />
+            </div>
+          </div>
+
+          <h1 className="hero-couple-names">{weddingData.couple.namesCombined}</h1>
+          <div className="hero-underline"></div>
+          <div style={{ fontSize: '0.85rem', letterSpacing: '0.25em', color: 'var(--muted)', marginBottom: '2rem' }}>
+            {weddingData.details.date} • {weddingData.details.locationFull}
+          </div>
+
+          <div style={{ display: 'flex', gap: '1.2rem' }}>
+            <Link to="/rsvp" className="btn-primary">RSVP NOW</Link>
+            <Link to="/our-story" className="btn-secondary">OUR STORY →</Link>
+          </div>
+        </section>
+      );
+    }
+
+    function Home() {
+      return (
+        <div>
+          <Hero />
+          <section className="section-padding text-center">
+            <div className="container">
+              <span className="section-label">WELCOME</span>
+              <h2>TOGETHER WITH OUR FAMILIES</h2>
+              <p style={{ maxWidth: '750px', margin: '1rem auto 3rem', color: 'var(--muted)', fontSize: '1.1rem' }}>
+                We invite you to celebrate the beginning of our forever. Join us for a beautiful gathering filled with love, laughter, traditions and unforgettable memories.
+              </p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', borderTop: '1px solid var(--border)', paddingTop: '2rem' }}>
+                <div><div className="section-label">DATE</div><div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem' }}>18 DEC 2026</div></div>
+                <div><div className="section-label">VENUE</div><div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem' }}>CHENNAI, INDIA</div></div>
+                <div><div className="section-label">TIME</div><div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem' }}>6:30 PM ONWARDS</div></div>
+              </div>
+            </div>
+          </section>
+
+          <section className="section-padding" style={{ backgroundColor: 'var(--cream)', borderTop: '1px solid var(--border)' }}>
+            <div className="container">
+              <div className="text-center" style={{ marginBottom: '3rem' }}>
+                <span className="section-label">THE CELEBRATION</span>
+                <h2>WEDDING EVENTS</h2>
+              </div>
+
+              <div className="events-grid">
+                {weddingData.events.map((ev, idx) => (
+                  <div key={idx} className="event-card">
+                    <div className="event-image-wrap"><img src={ev.image} alt={ev.name} /></div>
+                    <div className="event-body">
+                      <span className="section-label">{ev.tagline}</span>
+                      <h3 className="event-name">{ev.name}</h3>
+                      <p style={{ fontSize: '0.9rem', color: 'var(--muted)', margin: '0.8rem 0 1.2rem' }}>{ev.desc}</p>
+                      <Link to="/rsvp" className="btn-secondary" style={{ width: '100%' }}>RSVP NOW</Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </div>
+      );
+    }
+
+    function SimplePage({ title, label, content }) {
+      return (
+        <div className="section-padding text-center" style={{ paddingTop: '8rem' }}>
+          <div className="container">
+            <span className="section-label">{label}</span>
+            <h1>{title}</h1>
+            <p style={{ color: 'var(--muted)', fontSize: '1.1rem', maxWidth: '700px', margin: '1.5rem auto 2.5rem' }}>
+              {content}
+            </p>
+            <Link to="/rsvp" className="btn-primary">CONFIRM RSVP</Link>
+          </div>
+        </div>
+      );
+    }
+
+    function Footer() {
+      return (
+        <footer className="footer">
+          <div className="container">
+            <div className="footer-brand">{weddingData.brand.name}</div>
+            <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem', color: 'var(--accent)', marginBottom: '1rem' }}>
+              {weddingData.couple.namesCombined}
+            </div>
+            <p style={{ fontStyle: 'italic', fontFamily: 'var(--font-serif)', color: 'var(--muted)' }}>
+              "{weddingData.brand.tagline}"
+            </p>
+            <ul className="footer-nav">
+              <li><Link to="/">HOME</Link></li>
+              <li><Link to="/our-story">OUR STORY</Link></li>
+              <li><Link to="/events">EVENTS</Link></li>
+              <li><Link to="/schedule">SCHEDULE</Link></li>
+              <li><Link to="/venue">VENUE</Link></li>
+              <li><Link to="/gallery">GALLERY</Link></li>
+              <li><Link to="/rsvp">RSVP</Link></li>
+            </ul>
+            <div style={{ fontSize: '0.78rem', color: 'var(--muted)', marginTop: '2rem' }}>
+              © 2026 {weddingData.brand.name}. ALL RIGHTS RESERVED.
+            </div>
+          </div>
+        </footer>
+      );
+    }
+
+    function App() {
+      return (
+        <HashRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/our-story" element={<SimplePage title="OUR STORY" label="EVERY FOREVER BEGINS SOMEWHERE" content="Olivia and Alexander met in Paris during an architecture exhibit. Shared coffee at sunset turned into a lifelong love story leading to their dream wedding in Chennai." />} />
+            <Route path="/events" element={<Home />} />
+            <Route path="/schedule" element={<SimplePage title="THE SCHEDULE" label="ORDER OF EVENTS" content="08:00 AM Preparations • 10:00 AM Family Breakfast • 01:00 PM Guest Arrival • 04:00 PM Photo Session • 06:30 PM Vows & Ceremony • 08:00 PM Gala Dinner • 10:30 PM Reception Celebration." />} />
+            <Route path="/venue" element={<SimplePage title="CHENNAI GRAND HERITAGE PALACE" label="THE VENUE" content="Located on East Coast Road (ECR), Injambakkam, Chennai, India. Featuring valet parking, sea views, luxury accommodation, and transport concierge." />} />
+            <Route path="/gallery" element={<SimplePage title="OUR GALLERY" label="CAPTURED MOMENTS" content="Explore photos from couple portraits, engagement, pre-wedding, family, haldi, mehendi, sangeet, and reception." />} />
+            <Route path="/family" element={<SimplePage title="OUR FAMILIES" label="WITH BOUNDLESS LOVE" content="The Vance Family & The Sterling Family warmly welcome you to join us in Chennai." />} />
+            <Route path="/rsvp" element={<SimplePage title="RSVP FOR OUR WEDDING" label="PLEASE RESPOND BY 1ST NOVEMBER 2026" content="We look forward to celebrating our special day with you in Chennai, India!" />} />
+          </Routes>
+          <Footer />
+        </HashRouter>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

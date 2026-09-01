@@ -1,0 +1,98 @@
+[
+  {
+    "id": "wildlife",
+    "slug": "wildlife",
+    "name": "Wildlife",
+    "title": "The Untamed Kingdom",
+    "description": "The behavior, survival and hidden lives of Earth's species.",
+    "longDescription": "From the deepest oceanic trenches to the canopy of cloud forests, witness the extraordinary adaptations and untold behaviors of the creatures sharing our living planet.",
+    "heroImage": "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=2000&q=85",
+    "panelImage": "https://images.unsplash.com/photo-1564349683136-77e08dba1ef6?auto=format&fit=crop&w=1200&q=85",
+    "color": "#3f5e4d",
+    "featuredStorySlug": "beneath-the-ice-giants"
+  },
+  {
+    "id": "planet",
+    "slug": "planet",
+    "name": "Planet",
+    "title": "Forces Shaping Earth",
+    "description": "Oceans, climate, geology and the systems shaping Earth.",
+    "longDescription": "Explore volcanic calderas, glacial tongues, atmospheric rivers, and the delicate planetary equilibria that sustain dynamic life across terrestrial biomes.",
+    "heroImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=85",
+    "panelImage": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85",
+    "color": "#1e3a5f",
+    "featuredStorySlug": "the-breathing-forests"
+  },
+  {
+    "id": "science",
+    "slug": "science",
+    "name": "Science",
+    "title": "Frontiers of Knowledge",
+    "description": "Discoveries that change how we understand reality.",
+    "longDescription": "Peer into quantum coherence, deep time paleontology, synthetic biology, and the revolutionary instruments redefining the boundaries of human comprehension.",
+    "heroImage": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=2000&q=85",
+    "panelImage": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=85",
+    "color": "#2c485e",
+    "featuredStorySlug": "beneath-a-world-of-ice"
+  },
+  {
+    "id": "space",
+    "slug": "space",
+    "name": "Space",
+    "title": "The Infinite Frontier",
+    "description": "Planets, stars, galaxies and the search beyond Earth.",
+    "longDescription": "From stellar nurseries across the Orion arm to the icy plumes of Enceladus, journey across cosmic horizons where light and time intertwine.",
+    "heroImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=85",
+    "panelImage": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1200&q=85",
+    "color": "#151c33",
+    "featuredStorySlug": "the-last-dark-skies"
+  },
+  {
+    "id": "history",
+    "slug": "history",
+    "name": "History",
+    "title": "Echoes of Antiquity",
+    "description": "Civilizations, archaeology and stories buried by time.",
+    "longDescription": "Unearth lost temple complexes, decipher forgotten trade routes, and rediscover the masterworks of ancient cultures buried beneath sands and jungle canopies.",
+    "heroImage": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=2000&q=85",
+    "panelImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85",
+    "color": "#7a5c37",
+    "featuredStorySlug": "secrets-of-the-sand-sea"
+  },
+  {
+    "id": "culture",
+    "slug": "culture",
+    "name": "Culture",
+    "title": "Human Tapestry",
+    "description": "People, traditions, identity and changing societies.",
+    "longDescription": "Immerse in indigenous stewardship, ancestral musical traditions, architectural resilience, and the enduring human spirit in a rapidly globalizing era.",
+    "heroImage": "https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=2000&q=85",
+    "panelImage": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=1200&q=85",
+    "color": "#8c4f39",
+    "featuredStorySlug": "guardians-of-the-cloud-forest"
+  },
+  {
+    "id": "exploration",
+    "slug": "exploration",
+    "name": "Exploration",
+    "title": "Beyond the Frontier",
+    "description": "Remote places and journeys beyond the familiar.",
+    "longDescription": "Join expeditions traversing uncharted subterranean karst systems, polar ice sheets, and high alpine ridges where maps yield to discovery.",
+    "heroImage": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2000&q=85",
+    "panelImage": "https://images.unsplash.com/photo-1527489377706-5bf97e608852?auto=format&fit=crop&w=1200&q=85",
+    "color": "#384d48",
+    "featuredStorySlug": "into-the-abyssal-canyon"
+  },
+  {
+    "id": "photography",
+    "slug": "photography",
+    "name": "Photography",
+    "title": "The Visual Chronicle",
+    "description": "Stories told through extraordinary images.",
+    "longDescription": "A celebration of visual narrative, medium-format field work, rare natural phenomena, and the dedicated photographers braving extremes to bring back truth in light.",
+    "heroImage": "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=2000&q=85",
+    "panelImage": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=85",
+    "color": "#404040",
+    "featuredStorySlug": "the-last-light-of-the-desert"
+  }
+]

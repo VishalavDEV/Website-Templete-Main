@@ -1,0 +1,8 @@
+{
+  "name": "Veylora Health Multi-Speciality Hospital",
+  "description": "Comprehensive healthcare platform featuring specialized medical departments, verified doctor profiles, instant appointment booking, and patient health tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

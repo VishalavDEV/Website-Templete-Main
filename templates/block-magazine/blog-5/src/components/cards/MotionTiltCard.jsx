@@ -1,0 +1,74 @@
+import React, { useRef, useState } from 'react';
+import { motion, useSpring, useMotionValue, useTransform, useReducedMotion } from 'framer-motion';
+
+/**
+ * 3D Motion Tilt Card Component with Inner Opposite-Direction Parallax
+ */
+export function MotionTiltCard({
+  children,
+  className = '',
+  tiltStrength = 14,
+  glare = true,
+  onClick,
+  ...props
+}) {
+  const cardRef = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 24, stiffness: 260, mass: 0.15 };
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [tiltStrength, -tiltStrength]), springConfig);
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-tiltStrength, tiltStrength]), springConfig);
+
+  // Inner Image Opposite-Direction Parallax
+  const innerImageX = useSpring(useTransform(mouseX, [-0.5, 0.5], [12, -12]), springConfig);
+  const innerImageY = useSpring(useTransform(mouseY, [-0.5, 0.5], [12, -12]), springConfig);
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = (e) => {
+    if (shouldReduceMotion || !cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    mouseX.set(x);
+    mouseY.set(y);
+  };
+
+  const handleMouseEnter = () => setIsHovered(true);
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    mouseX.set(0);
+    mouseY.set(0);
+  };
+
+  return (
+    <div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={onClick}
+      className={`perspective-[1000px] select-none ${className}`}
+      {...props}
+    >
+      <motion.div
+        style={{
+          rotateX: shouldReduceMotion ? 0 : rotateX,
+          rotateY: shouldReduceMotion ? 0 : rotateY,
+          transformStyle: 'preserve-3d',
+        }}
+        whileHover={{ scale: 1.015 }}
+        transition={{ duration: 0.3 }}
+        className="w-full h-full relative"
+      >
+        {typeof children === 'function'
+          ? children({ innerImageX, innerImageY, isHovered })
+          : children}
+      </motion.div>
+    </div>
+  );
+}

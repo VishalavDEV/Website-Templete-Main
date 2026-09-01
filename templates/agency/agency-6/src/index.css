@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #f8f7f4;
+    --bg-secondary: #f0eee8;
+    --bg-dark: #090909;
+    --text-primary: #121316;
+    --text-muted: #626670;
+    --accent: #D1FF00; /* Neon Yellow-Lime from Bold Typography theme */
+    --accent-dark: #b6de00;
+    --border-color: rgba(18, 19, 22, 0.12);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Syne', 'Space Grotesk', sans-serif;
+    letter-spacing: -0.04em;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090909;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1FF00;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: #D1FF00;
+  color: #090909;
+}
+
+/* Theme utility helpers */
+.bg-theme-dark {
+  background-color: #090909;
+}
+.text-accent {
+  color: #D1FF00;
+}
+.bg-accent {
+  background-color: #D1FF00;
+}
+.border-accent {
+  border-color: #D1FF00;
+}
+
+/* Bold Typography display helpers */
+.text-giant-watermark {
+  font-size: clamp(140px, 28vw, 420px);
+  line-height: 0.75;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+}
+
+.text-hero-ultra {
+  font-size: clamp(52px, 11vw, 150px);
+  line-height: 0.82;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+/* 3D Perspective Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Grain / Noise Overlay */
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0%200%20200%20200'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter%20id='noiseFilter'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.8'%20numOctaves='3'%20stitchTiles='stitch'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23noiseFilter)'%20opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Ticker Marquee Keyframes */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Pulse Glow */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Clip path reveals */
+.clip-split-top {
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+.clip-split-bottom {
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+}
+
+/* Subtle border grid */
+.grid-lines {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(18, 19, 22, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(18, 19, 22, 0.04) 1px, transparent 1px);
+}
+
+.grid-lines-dark {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Hide default cursor when custom cursor active */
+@media (hover: hover) and (pointer: fine) {
+  body.custom-cursor-enabled,
+  body.custom-cursor-enabled * {
+    cursor: none !important;
+  }
+}

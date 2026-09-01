@@ -1,0 +1,64 @@
+:root {
+  /* Editorial Color Palette */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #FAFAFA;
+  --bg-warm: #F8F6F2;
+  --bg-ivory: #F4F1EA;
+  --bg-dark: #111111;
+  --bg-card: #FFFFFF;
+
+  --text-main: #111111;
+  --text-muted: #555555;
+  --text-light: #888888;
+  --text-subtle: #AAAAAA;
+
+  /* Fashion Accents */
+  --accent-burgundy: #5A1F26;
+  --accent-burgundy-light: #7A2E37;
+  --accent-silver: #959390;
+  --accent-dusty-rose: #C8A99E;
+  --accent-gold: #B8975A;
+
+  /* Borders & Fine Lines */
+  --border-subtle: rgba(17, 17, 17, 0.08);
+  --border-medium: rgba(17, 17, 17, 0.16);
+  --border-dark: rgba(17, 17, 17, 0.85);
+
+  /* Typography Families */
+  --font-serif: 'Bodoni Moda', 'Cormorant Garamond', Georgia, serif;
+  --font-editorial: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Typography Scales */
+  --fs-hero: clamp(3.2rem, 8vw, 8.5rem);
+  --fs-title-1: clamp(2.4rem, 5vw, 5rem);
+  --fs-title-2: clamp(1.8rem, 3.5vw, 3.2rem);
+  --fs-title-3: clamp(1.3rem, 2.2vw, 2rem);
+  --fs-body: clamp(0.95rem, 1.1vw, 1.15rem);
+  --fs-small: 0.85rem;
+  --fs-micro: 0.75rem;
+
+  /* Letter Spacings */
+  --ls-tight: -0.02em;
+  --ls-normal: 0.01em;
+  --ls-wide: 0.18em;
+  --ls-editorial: 0.35em;
+  --ls-ultrawide: 0.5em;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 7rem;
+  --space-2xl: 10rem;
+
+  /* Transitions */
+  --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.25s ease;
+  --transition-editorial: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Elevation */
+  --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.03);
+  --shadow-editorial: 0 20px 50px rgba(0, 0, 0, 0.07);
+}

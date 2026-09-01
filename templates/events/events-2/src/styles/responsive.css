@@ -1,0 +1,116 @@
+/* Responsive Media Queries */
+
+@media (max-width: 1200px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .speaker-grid,
+  .why-attend-grid,
+  .gallery-grid,
+  .tickets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .archive-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-hamburger {
+    display: block;
+  }
+
+  .modal-speaker-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-speaker-img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .hero-section {
+    padding-top: 120px;
+  }
+
+  .hero-meta-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .speaker-grid,
+  .why-attend-grid,
+  .gallery-grid,
+  .tickets-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .session-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+
+  .registration-form-card {
+    padding: 24px;
+  }
+
+  .lightbox-prev { left: 10px; }
+  .lightbox-next { right: 10px; }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .day-tabs {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .day-tab-btn {
+    width: 100%;
+  }
+}

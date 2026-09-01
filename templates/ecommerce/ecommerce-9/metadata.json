@@ -1,0 +1,6 @@
+{
+  "name": "Ember & Olive - Restaurant Website Template",
+  "description": "An original commercial restaurant website template for Ember & Olive featuring seasonal dining, reservation booking, filterable menu, events, and gallery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

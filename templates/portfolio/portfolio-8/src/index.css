@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #fbfbfb; /* Elegant off-white background throughout */
+    color: #1a1a1a; /* Dark charcoal text */
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Serif Italic helper classes */
+.font-serif-italic {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+.font-serif-normal {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fbfbfb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a1a1a;
+}

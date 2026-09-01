@@ -1,0 +1,59 @@
+/* Champagne Fizz - Aura Theme Styles */
+
+.aura-bg {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  /* NO background-color - layers blend against body (#faf8f2) */
+}
+
+/* Layer 1 - multiply */
+.aura-layer-1 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0) 0%,
+    rgba(255, 230, 180, 0.12) 28%,
+    rgb(255, 255, 255) 18%,
+    rgb(255, 200, 140) 68%,
+    rgb(230, 170, 100) 100%
+  );
+  mix-blend-mode: multiply;
+  filter: blur(130px);
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Layer 2 - multiply */
+.aura-layer-2 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0) 0%,
+    rgba(255, 230, 180, 0.22) 34%,
+    rgb(255, 255, 255) 66%,
+    rgb(255, 200, 140) 82%,
+    rgb(230, 170, 100) 100%
+  );
+  mix-blend-mode: multiply;
+  filter: blur(130px);
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .aura-layer-1,
+  .aura-layer-2 {
+    filter: blur(90px);
+  }
+}
+
+.aura-content-wrapper {
+  position: relative;
+  z-index: 1;
+}

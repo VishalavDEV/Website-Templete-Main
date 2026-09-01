@@ -1,0 +1,111 @@
+/* Responsive Breakpoints */
+
+@media (max-width: 1200px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 50px;
+  }
+  .hero-details-row {
+    justify-content: center;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-performer-container {
+    margin: 0 auto;
+  }
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1150px) {
+  .desktop-nav-group {
+    display: none;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+  .section-padding {
+    padding: 70px 0;
+  }
+  .section-title {
+    font-size: 2.3rem;
+  }
+  .schedule-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .schedule-stage-tag {
+    align-self: flex-start;
+  }
+  .lightbox-btn.prev { left: 10px; }
+  .lightbox-btn.next { right: 10px; }
+  .venue-map-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title-main {
+    font-size: clamp(3rem, 12vw, 4.5rem);
+  }
+  .hero-year-badge {
+    font-size: 2.2rem;
+  }
+  .newsletter-form {
+    flex-direction: column;
+  }
+  .newsletter-input,
+  .newsletter-form button {
+    width: 100%;
+  }
+  .venue-map-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  .ticket-card.popular {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+  .hero-details-row {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .hero-detail-divider {
+    display: none;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: 14px 20px;
+  }
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  .custom-modal-box {
+    padding: 28px 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-title-main {
+    font-size: 2.5rem;
+  }
+  .navbar-logo {
+    font-size: 1.2rem;
+  }
+}

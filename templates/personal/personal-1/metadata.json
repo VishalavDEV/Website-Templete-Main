@@ -1,0 +1,8 @@
+{
+  "name": "Julian Riviera Personal",
+  "description": "An ultra-premium, cinematic 4K personal portfolio and design agency showcase featuring editorial visual storytelling, interactive 3D elements, asymmetric case studies, resume explorer, and interactive experiences.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

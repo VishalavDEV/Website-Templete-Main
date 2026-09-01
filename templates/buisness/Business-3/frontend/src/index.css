@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-background: #1E1033;
+  --color-primaryText: #F9FAFB;
+  --color-secondaryText: #C4B5FD;
+  --color-primaryAccent: #7C3AED;
+  --color-secondaryAccent: #4C1D95;
+  --color-lightAccent: #2E1A47;
+  --color-customBorder: #3B2163;
+  
+  --font-sans: 'Outfit', 'Inter', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-primaryText antialiased overflow-x-hidden;
+    font-family: 'Outfit', 'Inter', sans-serif;
+  }
+}
+
+/* Reusable premium SaaS utility classes */
+.glass-panel {
+  background: rgba(46, 26, 71, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+.glass-panel-dark {
+  background: rgba(30, 16, 51, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#7C3AED] via-[#C4B5FD] to-[#8B5CF6];
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #7C3AED 0%, #4C1D95 100%);
+}
+
+/* Card hover glow */
+.card-glow {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-glow::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(76, 29, 149, 0.2) 100%);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card-glow:hover::after {
+  opacity: 1;
+}
+
+.card-glow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(124, 58, 237, 0.3);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1E1033;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4C1D95;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7C3AED;
+}

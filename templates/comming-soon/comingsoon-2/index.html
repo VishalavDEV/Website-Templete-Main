@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA X1 | The Future Has Arrived | NOVA MOTORS</title>
+    <meta name="description" content="A new era of driving. Experience the future with NOVA X1, the next generation of electric performance. Volumetric WebGL visualizer, dual motor AWD, and 800V fast-charging architecture.">
+    <meta name="keywords" content="NOVA MOTORS, NOVA X1, Electric SUV, EV Performance, 3D Showroom, WebGL Car, Coming Soon, Automotive Launch">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#040405',
+                            charcoal: '#0d0d0f',
+                            graphite: '#17171a',
+                            electric: '#00d2ff',
+                            blueGlow: '#0055ff',
+                            accent: '#00a3ff',
+                            neonRed: '#ff2d55',
+                            neonGreen: '#00ff66',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['Orbitron', 'monospace'],
+                    },
+                    boxShadow: {
+                        'neon-cyan': '0 0 15px rgba(0, 210, 255, 0.4)',
+                        'neon-blue': '0 0 15px rgba(0, 85, 255, 0.4)',
+                        'neon-red': '0 0 15px rgba(255, 45, 85, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-black text-white selection:bg-brand-electric selection:text-black overflow-x-hidden font-sans">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

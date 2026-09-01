@@ -1,0 +1,81 @@
+@use "abstracts/variables" as *;
+@use "base/reset";
+@use "base/typography";
+@use "components/cards";
+@use "components/navigation";
+@use "components/article";
+
+/* Editorial Theme Utility Classes */
+.bg-canvas {
+  background-color: #FAF9F5;
+}
+
+.bg-surface {
+  background-color: #FFFFFF;
+}
+
+.bg-ivory {
+  background-color: #F4F1EA;
+}
+
+.text-ink {
+  color: #141413;
+}
+
+.text-editorial-muted {
+  color: #6E6D66;
+}
+
+.border-editorial {
+  border-color: #E8E5DC;
+}
+
+.border-editorial-strong {
+  border-color: #141413;
+}
+
+.shadow-editorial {
+  box-shadow: 0 1px 3px rgba(20, 20, 19, 0.04), 0 16px 32px -12px rgba(20, 20, 19, 0.06);
+}
+
+.shadow-editorial-hover {
+  box-shadow: 0 4px 12px rgba(20, 20, 19, 0.06), 0 24px 48px -12px rgba(20, 20, 19, 0.12);
+}
+
+/* Fluid Typography Utilities */
+.text-fluid-hero {
+  font-size: clamp(2.25rem, 4.5vw + 1rem, 5.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.text-fluid-bento-title {
+  font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text-fluid-lead {
+  font-size: clamp(1rem, 1.15vw + 0.25rem, 1.25rem);
+  line-height: 1.65;
+}
+
+/* Warm Paper Frosted Glass (Strictly Light Mode) */
+.glass-paper-frosted {
+  background: rgba(250, 249, 245, 0.82);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(229, 226, 218, 0.85);
+  box-shadow: 
+    0 16px 36px -10px rgba(26, 25, 23, 0.04),
+    0 2px 8px -2px rgba(26, 25, 23, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.glass-floating-pill {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(26, 25, 23, 0.08);
+  box-shadow: 0 8px 24px -4px rgba(26, 25, 23, 0.08);
+}
+

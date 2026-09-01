@@ -1,0 +1,11 @@
+{
+  "name": "Futurix Constructions — 3D BIM Technology",
+  "slug": "futurix-constructions",
+  "category": "construction",
+  "description": "Next-generation commercial construction and BIM engineering landing page with real-time 3D telemetry, parametric cost estimator, live statistics, and Java Spring Boot REST backend.",
+  "techStack": {
+    "frontend": "React + Vite + Vanilla CSS Glassmorphism",
+    "backend": "Java 21 + Spring Boot 3"
+  },
+  "demoUrl": "/templates/construction/construction-3/index.html"
+}

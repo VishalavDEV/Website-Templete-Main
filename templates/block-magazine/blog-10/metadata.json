@@ -1,0 +1,6 @@
+{
+  "name": "TERRA Magazine",
+  "description": "The Magazine of Discovery — A premium digital exploration and science publication covering Wildlife, Planet, Science, Space, History, and Photography.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

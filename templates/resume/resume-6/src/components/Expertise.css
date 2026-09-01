@@ -1,0 +1,103 @@
+/* ================================================================
+   Expertise.css — scoped under .em-portfolio
+   ================================================================ */
+
+.em-portfolio .em-expertise {
+  background: var(--em-ivory);
+  border-top: 1px solid var(--em-gray-border-light);
+}
+
+.em-portfolio .em-expertise__header {
+  margin-bottom: clamp(2rem, 5vh, 4rem);
+}
+
+.em-portfolio .em-expertise__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.em-portfolio .em-expertise-item {
+  padding: 3rem 0;
+  position: relative;
+}
+
+.em-portfolio .em-expertise-item:first-child {
+  border-top: 1px solid var(--em-gray-border-light);
+}
+
+.em-portfolio .em-expertise-item__inner {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 3rem;
+  align-items: start;
+  transition: transform var(--em-transition-mid);
+}
+
+.em-portfolio .em-expertise-item:hover .em-expertise-item__inner {
+  transform: translateX(8px);
+}
+
+.em-portfolio .em-expertise-item__number {
+  padding-top: 0.75rem;
+  color: var(--em-gray-light);
+  font-size: 0.65rem;
+}
+
+.em-portfolio .em-expertise-item__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.em-portfolio .em-expertise-item__title {
+  font-family: var(--em-font-serif);
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  font-weight: 600;
+  color: var(--em-charcoal);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  transition: color var(--em-transition-fast);
+}
+
+.em-portfolio .em-expertise-item:hover .em-expertise-item__title {
+  color: var(--em-burgundy);
+}
+
+.em-portfolio .em-expertise-item__desc {
+  max-width: 600px;
+  line-height: 1.7;
+  margin-top: 0.25rem;
+}
+
+.em-portfolio .em-expertise-item__tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.em-portfolio .em-expertise-item__tag {
+  font-family: var(--em-font-sans);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--em-gray-mid);
+  border: 1px solid var(--em-gray-border);
+  padding: 0.2rem 0.6rem;
+  transition: all var(--em-transition-fast);
+}
+
+.em-portfolio .em-expertise-item:hover .em-expertise-item__tag {
+  border-color: var(--em-burgundy-pale);
+  background: var(--em-burgundy-pale);
+  color: var(--em-burgundy);
+}
+
+@media (max-width: 640px) {
+  .em-portfolio .em-expertise-item__inner {
+    grid-template-columns: 40px 1fr;
+    gap: 1.5rem;
+  }
+  .em-portfolio .em-expertise-item:hover .em-expertise-item__inner { transform: none; }
+  .em-portfolio .em-expertise-item__title { font-size: 1.5rem; }
+}

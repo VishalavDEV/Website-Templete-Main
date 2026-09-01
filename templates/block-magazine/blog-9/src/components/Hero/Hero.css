@@ -1,0 +1,130 @@
+.atlas-hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 5rem;
+  padding-top: 8rem;
+  overflow: hidden;
+  background-color: #090a0c;
+}
+
+.atlas-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.atlas-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: brightness(0.65) contrast(1.1);
+  transform: scale(1.04);
+  transition: transform 8s ease;
+}
+
+.atlas-hero:hover .atlas-hero-bg img {
+  transform: scale(1.08);
+}
+
+.atlas-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(9, 10, 12, 0.4) 0%,
+    rgba(9, 10, 12, 0.2) 40%,
+    rgba(9, 10, 12, 0.8) 80%,
+    rgba(9, 10, 12, 1) 100%
+  );
+}
+
+.atlas-hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+}
+
+.atlas-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-ochre);
+  margin-bottom: 1.25rem;
+  background: rgba(9, 10, 12, 0.6);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 147, 59, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.atlas-hero-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 6.5vw, 5.8rem);
+  font-weight: 600;
+  line-height: 1.04;
+  color: #ffffff;
+  max-width: 1000px;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  letter-spacing: -0.02em;
+}
+
+.atlas-hero-sub {
+  font-family: var(--font-sans);
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  color: rgba(245, 242, 235, 0.85);
+  max-width: 640px;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  font-weight: 300;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.atlas-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.atlas-hero-scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 235, 0.6);
+}
+
+.atlas-scroll-line {
+  width: 32px;
+  height: 1px;
+  background: rgba(245, 242, 235, 0.4);
+}
+
+@media (max-width: 768px) {
+  .atlas-hero {
+    padding-top: 7rem;
+    padding-bottom: 3.5rem;
+  }
+  .atlas-hero-scroll-hint {
+    display: none;
+  }
+}

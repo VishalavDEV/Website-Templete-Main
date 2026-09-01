@@ -1,0 +1,8 @@
+{
+  "name": "Living Digital Canvas — Animated Portfolio",
+  "description": "A premium, highly interactive, and experimental animated personal website designed as a single continuous digital canvas themed around Black, Electric Lime, and Violet.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

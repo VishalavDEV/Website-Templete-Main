@@ -1,0 +1,74 @@
+[
+  {
+    "id": "dr-elena-vance",
+    "name": "Dr. Elena Vance",
+    "role": "Glaciologist & Polar Explorer",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+    "bio": "Fellow at the Institute for Arctic Studies with 14 seasons in Antarctica and Greenland investigating sub-ice hydrological systems.",
+    "location": "Tromsø, Norway",
+    "articleCount": 6
+  },
+  {
+    "id": "marcus-thorne",
+    "name": "Marcus Thorne",
+    "role": "Staff Photographer & Fellow",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    "bio": "Award-winning wildlife and landscape photographer who has documented extreme environments across all seven continents for two decades.",
+    "location": "Vancouver, Canada",
+    "articleCount": 8
+  },
+  {
+    "id": "dr-arjun-patel",
+    "name": "Dr. Arjun Patel",
+    "role": "Astrophysicist & Planetary Geologist",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+    "bio": "Researcher focusing on exoplanetary atmospheres and deep-space spectroscopy at the Mauna Kea Observatories.",
+    "location": "Hilo, Hawaii",
+    "articleCount": 5
+  },
+  {
+    "id": "sarah-lin",
+    "name": "Sarah Lin",
+    "role": "Senior Science Editor",
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+    "bio": "Investigative science journalist specializing in biosphere conservation, neurobiology, and evolutionary genetics.",
+    "location": "Edinburgh, UK",
+    "articleCount": 9
+  },
+  {
+    "id": "tariq-al-mansoor",
+    "name": "Tariq Al-Mansoor",
+    "role": "Archaeologist & Deep Field Historian",
+    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
+    "bio": "Director of the Levant Paleo-Landscape Project, uncovering lost Bronze Age trade routes with satellite LiDAR.",
+    "location": "Amman, Jordan",
+    "articleCount": 4
+  },
+  {
+    "id": "maya-sorensen",
+    "name": "Maya Sørensen",
+    "role": "Marine Biologist & Technical Diver",
+    "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+    "bio": "Pioneering research into deep ocean benthic ecosystems and bioluminescence in pelagic abyssal zones.",
+    "location": "Bergen, Norway",
+    "articleCount": 7
+  },
+  {
+    "id": "mateo-silva",
+    "name": "Mateo Silva",
+    "role": "Ethnobotanist & Cultural Anthropologist",
+    "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+    "bio": "Over 15 years collaborating with Amazonian communities to document ancestral botanical knowledge and forest canopy biodiversity.",
+    "location": "Manaus, Brazil",
+    "articleCount": 5
+  },
+  {
+    "id": "chloe-dubois",
+    "name": "Chloé Dubois",
+    "role": "Documentary Photojournalist",
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+    "bio": "Specializing in visual essays on human adaptation at the world's most severe climatic thresholds.",
+    "location": "Lyon, France",
+    "articleCount": 6
+  }
+]

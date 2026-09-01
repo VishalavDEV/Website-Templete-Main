@@ -1,0 +1,189 @@
+﻿.research__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  align-items: start;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.research__inner--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.research__sub-heading {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-gray-500);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--clr-gray-200);
+}
+
+/* Project cards */
+.research__projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.research__project-card {
+  background: var(--clr-white);
+  border: 1px solid var(--clr-gray-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-xs);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.research__project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.research__project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.research__project-year {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--clr-blue-600);
+}
+
+.research__status {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.18rem 0.6rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.research__status--active {
+  background: var(--clr-green-100);
+  color: var(--clr-green-600);
+  border: 1px solid #bbf7d0;
+}
+
+.research__status--completed {
+  background: var(--clr-gray-100);
+  color: var(--clr-gray-500);
+  border: 1px solid var(--clr-gray-200);
+}
+
+.research__project-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--clr-gray-900);
+  margin-bottom: var(--space-sm);
+  line-height: 1.5;
+}
+
+.research__project-desc {
+  font-size: 0.85rem;
+  color: var(--clr-gray-500);
+  line-height: 1.7;
+}
+
+/* Publications */
+.research__pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.research__pub-item {
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--clr-gray-200);
+  transition: background var(--transition-fast);
+}
+
+.research__pub-item:last-child {
+  border-bottom: none;
+}
+
+.research__pub-item:hover {
+  background: var(--clr-blue-50);
+  border-radius: var(--radius-md);
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  margin-left: calc(-1 * var(--space-md));
+  margin-right: calc(-1 * var(--space-md));
+}
+
+.research__pub-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.research__pub-category {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--clr-teal-50);
+  color: var(--clr-teal-600);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--clr-teal-100);
+}
+
+.research__pub-year {
+  font-size: 0.75rem;
+  color: var(--clr-gray-400);
+}
+
+.research__pub-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--clr-gray-800);
+  line-height: 1.5;
+  margin-bottom: var(--space-xs);
+}
+
+.research__pub-journal {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  color: var(--clr-gray-400);
+  font-style: italic;
+}
+
+.research__disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+  padding: var(--space-md);
+  background: var(--clr-gray-50);
+  border: 1px solid var(--clr-gray-200);
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  color: var(--clr-gray-500);
+  line-height: 1.6;
+}
+
+.research__disclaimer svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .research__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+}

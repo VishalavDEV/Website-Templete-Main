@@ -1,0 +1,34 @@
+[
+  {
+    "id": "impact-1",
+    "value": "184",
+    "prefix": "+",
+    "suffix": "%",
+    "label": "ENGAGEMENT ELEVATION",
+    "description": "Average increase in user session interaction across redesigned digital platforms."
+  },
+  {
+    "id": "impact-2",
+    "value": "3.2",
+    "prefix": "",
+    "suffix": "M+",
+    "label": "GLOBAL AUDIENCE REACH",
+    "description": "Active users interacting with our clients' digital products and spatial campaigns."
+  },
+  {
+    "id": "impact-3",
+    "value": "76",
+    "prefix": "+",
+    "suffix": "%",
+    "label": "CONVERSION VELOCITY",
+    "description": "Demonstrated lift in qualified inbound lead conversion and customer acquisition."
+  },
+  {
+    "id": "impact-4",
+    "value": "42",
+    "prefix": "",
+    "suffix": "",
+    "label": "GLOBAL MARKETS",
+    "description": "Countries where our brand identities, interfaces, and physical installations are deployed."
+  }
+]
