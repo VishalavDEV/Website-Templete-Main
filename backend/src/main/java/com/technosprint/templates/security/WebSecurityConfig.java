@@ -36,13 +36,10 @@ public class WebSecurityConfig {
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/**").permitAll()
-                .requestMatchers("/api/templates", "/api/templates/**").permitAll()
-                .requestMatchers("/api/categories", "/api/categories/**").permitAll()
-                .requestMatchers("/api/seed/**").permitAll()
+                .requestMatchers("/api/**").permitAll()
                 .requestMatchers("/templates/**").permitAll()
                 .requestMatchers("/error").permitAll()
-                .anyRequest().authenticated()
+                .anyRequest().permitAll()
             );
 
         http.addFilterBefore(authTokenFilter, UsernamePasswordAuthenticationFilter.class);

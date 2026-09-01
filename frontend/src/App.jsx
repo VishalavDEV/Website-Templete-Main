@@ -378,12 +378,32 @@ function Footer() {
   );
 }
 
+function RedirectToStaticTemplate() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const parts = location.pathname.split('/').filter(Boolean);
+    if (parts.length >= 3) {
+      const category = parts[1];
+      const template = parts[2];
+      const targetUrl = `/templates/${category}/${template}/index.html`;
+      if (window.location.pathname !== targetUrl) {
+        window.location.replace(targetUrl);
+      }
+    }
+  }, [location]);
+
+  return null;
+}
+
 function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLogin, handleLogout }) {
   const location = useLocation();
+  const pathSegments = location.pathname.split('/').filter(Boolean);
   const isTemplateRoute = 
     location.pathname === '/hotel-template' ||
-    location.pathname.startsWith('/templates/photography/photography-') ||
-    location.pathname.startsWith('/templates/portfolio/portfolio-');
+    (location.pathname.startsWith('/templates/') && 
+     pathSegments.length >= 3 && 
+     location.pathname !== '/templates/photography');
 
   // Full-screen template routes
   if (isTemplateRoute) {
@@ -425,6 +445,9 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
         <Route path="/templates/portfolio/portfolio-8/index.html" element={<DevicePreviewWrapper><EditorialPortfolio /></DevicePreviewWrapper>} />
         <Route path="/templates/portfolio/portfolio-9/*" element={<DevicePreviewWrapper><PhotographyPortfolio /></DevicePreviewWrapper>} />
         <Route path="/templates/portfolio/portfolio-10/*" element={<DevicePreviewWrapper><CreativeMultipagePortfolio /></DevicePreviewWrapper>} />
+
+        {/* Redirect for all static HTML templates */}
+        <Route path="/templates/*" element={<RedirectToStaticTemplate />} />
       </Routes>
     );
   }
