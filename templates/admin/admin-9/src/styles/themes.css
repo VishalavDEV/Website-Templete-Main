@@ -1,0 +1,124 @@
+/* src/styles/themes.css */
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  /* Colors extracted from the uploaded pastel gradient image (Lavender/Periwinkle/Lilac) */
+  --background: #f4f5fc;
+  --foreground: #1c1a35;
+  --card: #ffffff;
+  --card-foreground: #1c1a35;
+  --popover: #ffffff;
+  --popover-foreground: #1c1a35;
+  --primary: #7c82f4; /* Medium Periwinkle */
+  --primary-foreground: #ffffff;
+  --secondary: #a78bfa; /* Soft Lilac/Purple */
+  --secondary-foreground: #ffffff;
+  --muted: #edf0fe; /* Very Soft Lavender */
+  --muted-foreground: #6c6a85;
+  --accent: #e0e4ff; /* Light Periwinkle */
+  --accent-foreground: #4c4980;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --success: #10b981;
+  --success-foreground: #ffffff;
+  --warning: #f59e0b;
+  --warning-foreground: #1c1a35;
+  --info: #06b6d4;
+  --info-foreground: #ffffff;
+  --border: #dbe0ff; /* Lavender Border */
+  --input: #e2e6ff;
+  --ring: #7c82f4;
+}
+
+.dark {
+  --background: #0b0a16; /* Deep Violet Black */
+  --foreground: #eae8f5;
+  --card: #121124; /* Deep Periwinkle Slate */
+  --card-foreground: #eae8f5;
+  --popover: #121124;
+  --popover-foreground: #eae8f5;
+  --primary: #9499ff; /* Bright Periwinkle */
+  --primary-foreground: #0b0a16;
+  --secondary: #b79eff; /* Bright Lilac */
+  --secondary-foreground: #ffffff;
+  --muted: #1e1b38;
+  --muted-foreground: #9a97b2;
+  --accent: #272448;
+  --accent-foreground: #eae8f5;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --success: #10b981;
+  --success-foreground: #ffffff;
+  --warning: #f59e0b;
+  --warning-foreground: #1c1a35;
+  --info: #06b6d4;
+  --info-foreground: #ffffff;
+  --border: #222040;
+  --input: #222040;
+  --ring: #9499ff;
+}
+
+/* Custom Theme Variations */
+.theme-corporate {
+  --primary: #1e3a8a; /* Corporate Blue */
+  --secondary: #475569; /* Slate Gray */
+  --background: #f8fafc;
+  --border: #e2e8f0;
+  --ring: #1e3a8a;
+}
+
+.theme-minimal {
+  --primary: #09090b; /* Pure Black */
+  --secondary: #71717a; /* Neutral Gray */
+  --background: #fafafa;
+  --border: #e4e4e7;
+  --ring: #09090b;
+}
+
+.theme-glass {
+  --card: rgba(255, 255, 255, 0.45);
+  --popover: rgba(255, 255, 255, 0.5);
+  --border: rgba(255, 255, 255, 0.2);
+}
+.dark .theme-glass {
+  --card: rgba(18, 17, 36, 0.45);
+  --popover: rgba(18, 17, 36, 0.5);
+  --border: rgba(255, 255, 255, 0.05);
+}
+
+.theme-neumorphic {
+  --shadow-sm: 3px 3px 6px #d1d5db, -3px -3px 6px #ffffff;
+  --shadow-md: 6px 6px 12px #d1d5db, -6px -6px 12px #ffffff;
+  --shadow-lg: 10px 10px 20px #d1d5db, -10px -10px 20px #ffffff;
+}
+.dark .theme-neumorphic {
+  --shadow-sm: 3px 3px 6px #05050a, -3px -3px 6px #111122;
+  --shadow-md: 6px 6px 12px #05050a, -6px -6px 12px #111122;
+  --shadow-lg: 10px 10px 20px #05050a, -10px -10px 20px #111122;
+}
