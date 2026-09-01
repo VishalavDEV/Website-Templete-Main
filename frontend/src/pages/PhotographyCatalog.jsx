@@ -12,56 +12,63 @@ export default function PhotographyCatalog() {
 
   const TEMPLATES = [
     {
-      slug: 'snapfolio-template',
+      slug: 'photography-1',
       name: 'SnapFolio — Dark Minimalist Portfolio',
       previewImage: '/snapfolio_cover.png',
+      demoUrl: '/templates/photography/photography-1/index.html',
       tags: ['Dark Theme', 'Masonry Gallery', 'Lightbox Modal'],
       description: 'A dark-themed photography portfolio featuring a floating glass sidebar navigation, animated typewriter hero headlines, responsive masonry layouts, next/prev arrow keyboard navigation lightbox, and integrated booking validation feedback.'
     },
     {
-      slug: 'photo-template',
+      slug: 'photography-2',
       name: 'Photo — Editorial Photography Studio',
       previewImage: '/photo_cover.png',
+      demoUrl: '/templates/photography/photography-2/index.html',
       tags: ['Editorial Layout', 'Scroll Pinned Canvas', 'Golden Hour Theme'],
       description: 'A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.'
     },
     {
-      slug: 'wedding-template',
+      slug: 'photography-3',
       name: 'Lumière — High-End Wedding & Event Photography',
       previewImage: '/wedding_cover.png',
+      demoUrl: '/templates/photography/photography-3/index.html',
       tags: ['Minimalist Editorial', 'Split Layout Navbar', 'Floating Contact Buttons'],
       description: 'A responsive, high-end wedding and event photography portfolio web template with a warm ivory backdrop, center-split navigation, elegant serif headings, and sticky whatsapp/phone buttons.'
     },
     {
-      slug: 'fineart-template',
-      name: 'Aura — Premium Fine Art Studio',
-      previewImage: '/fineart_cover.png',
-      tags: ['Premium Serif', 'Wipe Reveals', 'Hover Custom Cursor'],
-      description: 'A premium, dynamic React portfolio website for a fine art photography studio. Features Ken Burns hero animations, scroll-triggered wipe reveals, and interactive circular gallery navigations.'
-    },
-    {
-      slug: 'cinematic-wedding',
+      slug: 'photography-4',
       name: 'Eden Rose — Cinematic Luxury Wedding Portfolio',
       previewImage: '/cinematic_cover.png',
+      demoUrl: '/templates/photography/photography-4/index.html',
       tags: ['Luxury Monocrom', 'Preloader curtain', 'Staggered Grid'],
       description: 'A cinematic wedding photography portfolio template in deep black and luxury gold tones. Features intro curtain loaders, route transition reveals, staggered portfolio grids, and boutique inquiry options.'
     },
     {
-      slug: 'kairo-template',
+      slug: 'photography-5',
+      name: 'Aura — Premium Fine Art Studio',
+      previewImage: '/fineart_cover.png',
+      demoUrl: '/templates/photography/photography-5/index.html',
+      tags: ['Premium Serif', 'Wipe Reveals', 'Hover Custom Cursor'],
+      description: 'A premium, dynamic React portfolio website for a fine art photography studio. Features Ken Burns hero animations, scroll-triggered wipe reveals, and interactive circular gallery navigations.'
+    },
+    {
+      slug: 'photography-6',
       name: 'Kairo — Modern 3D Photography Portfolio',
       previewImage: '/kairo_cover.png',
+      demoUrl: '/templates/photography/photography-6/index.html',
       tags: ['3D Scene', 'Interactive Parallax', 'Luxury Editorial'],
       description: 'A modern photography portfolio featuring interactive 3D camera lens aperture graphics rendered in React Three Fiber, scroll-linked fade animations, split-layout bio sections, and fullscreen responsive image tiles.'
     },
     {
-      slug: 'isteady-template',
+      slug: 'photography-7',
       name: 'Lume Studio — Fashion & Editorial Portfolio',
       previewImage: '/lume_cover.png',
+      demoUrl: '/templates/photography/photography-7/index.html',
       tags: ['Editorial Fashion', 'Moody Spotlight', 'Bespoke Lighting'],
       description: 'A premium photography portfolio website. Features full-bleed moody editorial layouts, ambient gold twinkling particle overlays, and fluid smooth scroll interactions.'
     },
     {
-      slug: 'sage-shutter-photography',
+      slug: 'photography-8',
       name: 'Sage & Shutter — Fine Art Wedding Photography',
       previewImage: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80',
       demoUrl: '/templates/photography/photography-8/index.html',
@@ -69,7 +76,7 @@ export default function PhotographyCatalog() {
       description: 'An elegant, high-end fine art wedding photography showcase template. Features delicate earthy desaturated filters, parallax image carousels, custom cursor indicators, and responsive testimonial sliders.'
     },
     {
-      slug: 'blush-lens-photography',
+      slug: 'photography-9',
       name: 'Blush Lens — Fine Art Wedding Photography',
       previewImage: '/wedding_cover.png',
       demoUrl: '/templates/photography/photography-9/index.html',
@@ -77,7 +84,7 @@ export default function PhotographyCatalog() {
       description: 'A premium React wedding photography template featuring romantic blush and warm ivory tones, editorial serif typography, interactive booking forms, and dynamic parallax portfolio galleries.'
     },
     {
-      slug: 'aether-studio-photography',
+      slug: 'photography-10',
       name: 'Aether Studio — Fine Art Editorial Photography',
       previewImage: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80',
       demoUrl: '/templates/photography/photography-10/index.html',
@@ -108,85 +115,72 @@ export default function PhotographyCatalog() {
   });
 
   const TEMPLATE_FILES = {
-    'snapfolio-template': [
-      'package.json', 'vite.config.js', 'index.html',
-      'src/main.jsx', 'src/App.jsx', 'src/index.css'
-    ],
-    'photo-template': [
-      'package.json', 'vite.config.js', 'index.html',
-      'src/main.jsx', 'src/App.jsx', 'src/index.css'
-    ],
-    'wedding-template': [
-      'package.json', 'vite.config.js', 'index.html',
-      'src/main.jsx', 'src/App.jsx', 'src/index.css'
-    ],
-    'fineart-template': [
-      'package.json', 'vite.config.js', 'index.html',
-      'src/main.jsx', 'src/App.jsx', 'src/index.css',
-      'src/components/CollectionCircle.jsx',
-      'src/components/CollectionsGrid.jsx',
-      'src/components/FeatureBlock.jsx',
-      'src/components/Footer.jsx',
-      'src/components/Hero.jsx',
-      'src/components/Navbar.jsx',
-      'src/components/Newsletter.jsx',
+    'photography-1': ['package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css'],
+    'snapfolio-template': ['package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css'],
+    'photography-2': ['package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css'],
+    'photo-template': ['package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css'],
+    'photography-3': ['package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css'],
+    'wedding-template': ['package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css'],
+    'photography-4': [
+      'package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css',
+      'src/components/About.jsx', 'src/components/FeaturedStories.jsx', 'src/components/Footer.jsx',
+      'src/components/Gallery.jsx', 'src/components/Hero.jsx', 'src/components/Navbar.jsx',
+      'src/components/ScrollReveal.jsx', 'src/components/Services.jsx', 'src/components/Testimonials.jsx',
       'src/data/config.js'
     ],
     'cinematic-wedding': [
-      'package.json', 'vite.config.js', 'index.html',
-      'src/main.jsx', 'src/App.jsx', 'src/index.css',
-      'src/components/About.jsx',
-      'src/components/FeaturedStories.jsx',
-      'src/components/Footer.jsx',
-      'src/components/Gallery.jsx',
-      'src/components/Hero.jsx',
-      'src/components/Navbar.jsx',
-      'src/components/ScrollReveal.jsx',
-      'src/components/Services.jsx',
-      'src/components/Testimonials.jsx',
+      'package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css',
+      'src/components/About.jsx', 'src/components/FeaturedStories.jsx', 'src/components/Footer.jsx',
+      'src/components/Gallery.jsx', 'src/components/Hero.jsx', 'src/components/Navbar.jsx',
+      'src/components/ScrollReveal.jsx', 'src/components/Services.jsx', 'src/components/Testimonials.jsx',
       'src/data/config.js'
     ],
-    'kairo-template': [
-      'package.json', 'vite.config.js', 'index.html',
-      'src/main.jsx', 'src/App.jsx', 'src/index.css',
-      'src/components/AboutSection.jsx',
-      'src/components/CameraModel.jsx',
-      'src/components/ContactSection.jsx',
-      'src/components/Footer.jsx',
-      'src/components/Hero3DScene.jsx',
-      'src/components/HeroContent.jsx',
-      'src/components/HeroGrid.jsx',
-      'src/components/Navbar.jsx',
-      'src/components/ParticleField.jsx',
-      'src/components/Scene3D.jsx',
-      'src/components/ServicesSection.jsx'
+    'photography-5': [
+      'package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css',
+      'src/components/CollectionCircle.jsx', 'src/components/CollectionsGrid.jsx', 'src/components/FeatureBlock.jsx',
+      'src/components/Footer.jsx', 'src/components/Hero.jsx', 'src/components/Navbar.jsx',
+      'src/components/Newsletter.jsx', 'src/data/config.js'
     ],
-    'isteady-template': [
-      'package.json', 'vite.config.js', 'index.html',
-      'src/main.jsx', 'src/App.jsx', 'src/index.css',
-      'src/components/AboutSection.jsx',
-      'src/components/ContactSection.jsx',
-      'src/components/Footer.jsx',
-      'src/components/HeroContent.jsx',
-      'src/components/Navbar.jsx',
-      'src/components/ParticleField.jsx',
-      'src/components/PortfolioGrid.jsx',
-      'src/components/Scene3D.jsx',
-      'src/components/ServicesSection.jsx',
+    'fineart-template': [
+      'package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css',
+      'src/components/CollectionCircle.jsx', 'src/components/CollectionsGrid.jsx', 'src/components/FeatureBlock.jsx',
+      'src/components/Footer.jsx', 'src/components/Hero.jsx', 'src/components/Navbar.jsx',
+      'src/components/Newsletter.jsx', 'src/data/config.js'
+    ],
+    'photography-6': [
+      'package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css',
+      'src/components/AboutSection.jsx', 'src/components/CameraModel.jsx', 'src/components/ContactSection.jsx',
+      'src/components/Footer.jsx', 'src/components/Hero3DScene.jsx', 'src/components/HeroContent.jsx',
+      'src/components/HeroGrid.jsx', 'src/components/Navbar.jsx', 'src/components/ParticleField.jsx',
+      'src/components/Scene3D.jsx', 'src/components/ServicesSection.jsx'
+    ],
+    'kairo-template': [
+      'package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css',
+      'src/components/AboutSection.jsx', 'src/components/CameraModel.jsx', 'src/components/ContactSection.jsx',
+      'src/components/Footer.jsx', 'src/components/Hero3DScene.jsx', 'src/components/HeroContent.jsx',
+      'src/components/HeroGrid.jsx', 'src/components/Navbar.jsx', 'src/components/ParticleField.jsx',
+      'src/components/Scene3D.jsx', 'src/components/ServicesSection.jsx'
+    ],
+    'photography-7': [
+      'package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css',
+      'src/components/AboutSection.jsx', 'src/components/ContactSection.jsx', 'src/components/Footer.jsx',
+      'src/components/HeroContent.jsx', 'src/components/Navbar.jsx', 'src/components/ParticleField.jsx',
+      'src/components/PortfolioGrid.jsx', 'src/components/Scene3D.jsx', 'src/components/ServicesSection.jsx',
       'src/components/Testimonials.jsx'
     ],
-    'sage-shutter-photography': [
-      'package.json', 'vite.config.js', 'index.html',
-      'src/main.jsx', 'src/App.jsx', 'src/index.css'
+    'isteady-template': [
+      'package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css',
+      'src/components/AboutSection.jsx', 'src/components/ContactSection.jsx', 'src/components/Footer.jsx',
+      'src/components/HeroContent.jsx', 'src/components/Navbar.jsx', 'src/components/ParticleField.jsx',
+      'src/components/PortfolioGrid.jsx', 'src/components/Scene3D.jsx', 'src/components/ServicesSection.jsx',
+      'src/components/Testimonials.jsx'
     ],
-    'blush-lens-photography': [
-      'package.json', 'vite.config.js', 'index.html',
-      'src/main.jsx', 'src/App.jsx', 'src/index.css'
-    ],
-    'aether-studio-photography': [
-      'package.json', 'vite.config.js', 'index.html',
-      'src/main.jsx', 'src/App.jsx', 'src/index.css'
-    ]
+    'photography-8': ['package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css'],
+    'sage-shutter-photography': ['package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css'],
+    'photography-9': ['package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css'],
+    'blush-lens-photography': ['package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css'],
+    'photography-10': ['package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css'],
+    'aether-studio-photography': ['package.json', 'vite.config.js', 'index.html', 'src/main.jsx', 'src/App.jsx', 'src/index.css']
   };
 
   const handleDownload = async (slug, templateName) => {
@@ -197,6 +191,13 @@ export default function PhotographyCatalog() {
 
     // Map slug to directory folder name if they differ
     const folderMapping = {
+      'snapfolio-template': 'photography-1',
+      'photo-template': 'photography-2',
+      'wedding-template': 'photography-3',
+      'cinematic-wedding': 'photography-4',
+      'fineart-template': 'photography-5',
+      'kairo-template': 'photography-6',
+      'isteady-template': 'photography-7',
       'sage-shutter-photography': 'photography-8',
       'blush-lens-photography': 'photography-9',
       'aether-studio-photography': 'photography-10'
