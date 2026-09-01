@@ -214,7 +214,7 @@ export default function Templates() {
     : `Category: ${matchedCatObj ? matchedCatObj.name : selectedCategory} Templates`;
 
   return (
-    <div style={{ animation: 'fadeIn 0.5s ease-out', padding: '30px 0', maxWidth: '1100px', margin: '0 auto' }}>
+    <div style={{ animation: 'fadeIn 0.5s ease-out', padding: '30px 0' }}>
       
       {/* Uniform Category Header */}
       <div style={{ marginBottom: 35 }}>

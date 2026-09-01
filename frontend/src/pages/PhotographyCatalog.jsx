@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import JSZip from 'jszip';
+import { Search } from 'lucide-react';
 
 export default function PhotographyCatalog() {
   const [downloadingSlug, setDownloadingSlug] = useState('');
   const [toastMessage, setToastMessage] = useState('');
   const [toastType, setToastType] = useState('success');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState('popular');
 
   const TEMPLATES = [
     {
@@ -90,6 +93,19 @@ export default function PhotographyCatalog() {
       setToastMessage('');
     }, 4000);
   };
+
+  const filteredTemplates = TEMPLATES.filter((tpl) => {
+    if (!searchQuery.trim()) return true;
+    const query = searchQuery.toLowerCase();
+    const matchName = tpl.name.toLowerCase().includes(query);
+    const matchDesc = tpl.description.toLowerCase().includes(query);
+    const matchTags = tpl.tags && tpl.tags.some(t => t.toLowerCase().includes(query));
+    return matchName || matchDesc || matchTags;
+  }).sort((a, b) => {
+    if (sortBy === 'a-z') return a.name.localeCompare(b.name);
+    if (sortBy === 'z-a') return b.name.localeCompare(a.name);
+    return 0;
+  });
 
   const TEMPLATE_FILES = {
     'snapfolio-template': [
@@ -292,16 +308,77 @@ export default function PhotographyCatalog() {
         <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>Discover isolated, production-ready, dark minimalist layouts tailored for visual storytellers, freelance portfolios, and photography studios.</p>
       </div>
 
-      {/* Catalog Grid */}
+      {/* Controls Bar */}
       <div style={{
         display: 'flex',
-        flexDirection: 'column',
-        gap: '36px',
-        marginTop: '30px',
-        width: '100%'
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: 20,
+        marginBottom: 35,
+        background: 'white',
+        padding: '16px 24px',
+        borderRadius: '16px',
+        border: '1px solid #e2e8f0',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.02)'
       }}>
-        
-        {TEMPLATES.map((tpl) => (
+        <div style={{ display: 'flex', alignItems: 'center', gap: 15 }}>
+          <div style={{ position: 'relative', width: '280px' }}>
+            <Search size={18} color="#94a3b8" style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)' }} />
+            <input
+              type="text"
+              placeholder="Search templates..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              style={{
+                padding: '10px 16px 10px 42px',
+                width: '100%',
+                borderRadius: '99px',
+                border: '1px solid #cbd5e1',
+                fontSize: '0.85rem',
+                outline: 'none',
+                background: '#f8fafc'
+              }}
+            />
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: 15 }}>
+          <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+            Showing <strong>{filteredTemplates.length}</strong> matching templates
+          </span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Sort by</span>
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              style={{
+                padding: '8px 16px',
+                borderRadius: '8px',
+                border: '1px solid #cbd5e1',
+                fontSize: '0.85rem',
+                outline: 'none',
+                background: 'white',
+                cursor: 'pointer'
+              }}
+            >
+              <option value="popular">Most Popular</option>
+              <option value="a-z">Name: A to Z</option>
+              <option value="z-a">Name: Z to A</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      {/* Catalog Grid */}
+      {filteredTemplates.length > 0 ? (
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '36px',
+          width: '100%'
+        }}>
+          {filteredTemplates.map((tpl) => (
           <div key={tpl.slug} style={{
             backgroundColor: '#ffffff',
             border: '1px solid #e2e8f0',
@@ -557,8 +634,19 @@ export default function PhotographyCatalog() {
 
           </div>
         ))}
-
-      </div>
+        </div>
+      ) : (
+        <div style={{
+          textAlign: 'center',
+          padding: '60px 20px',
+          background: 'white',
+          borderRadius: 16,
+          border: '1px dashed #cbd5e1'
+        }}>
+          <h3 style={{ marginBottom: 10, color: '#0f172a' }}>No Templates Found</h3>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Try searching with different keywords.</p>
+        </div>
+      )}
     </div>
   );
 }
