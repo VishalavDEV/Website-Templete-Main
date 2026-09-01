@@ -44,6 +44,7 @@ export default function App() {
           <main className="flex-grow pb-16">
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/index.html" element={<HomePage />} />
               <Route path="/category/:slug" element={<CategoryArchivePage />} />
               <Route path="/article/:slug" element={<SingleArticlePage />} />
               <Route path="/author/:id" element={<AuthorPage />} />
@@ -52,7 +53,7 @@ export default function App() {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/saved" element={<SavedArticlesPage />} />
               <Route path="/style-guide" element={<StyleGuidePage />} />
-              <Route path="*" element={<NotFoundPage />} />
+              <Route path="*" element={<HomePage />} />
             </Routes>
           </main>
 

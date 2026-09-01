@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider } from './store/appStore';
 import MainLayout from './layouts/MainLayout';
 
@@ -18,10 +18,11 @@ import About from './pages/About/About';
 export default function App() {
   return (
     <AppProvider>
-      <BrowserRouter basename="/templates/block-magazine/blog-9">
+      <HashRouter>
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/index.html" element={<Home />} />
             
             {/* Exploration & Category Routes */}
             <Route path="/explore" element={<Explore />} />
@@ -50,10 +51,10 @@ export default function App() {
             <Route path="/about" element={<About />} />
 
             {/* Fallback */}
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="*" element={<Home />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </AppProvider>
   );
 }

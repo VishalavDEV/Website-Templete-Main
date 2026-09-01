@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { MagazineProvider } from './context/MagazineContext';
 import MotionConfigWrapper from './context/MotionConfigWrapper';
@@ -19,7 +19,9 @@ function AnimatedRoutes() {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Home />} />
+            <Route path="index.html" element={<Home />} />
             <Route path="article/:slug" element={<Article />} />
+            <Route path="*" element={<Home />} />
           </Route>
         </Routes>
       </Suspense>
@@ -29,13 +31,13 @@ function AnimatedRoutes() {
 
 export function App() {
   return (
-    <BrowserRouter basename="/templates/block-magazine/blog-8">
+    <HashRouter>
       <MotionConfigWrapper>
         <MagazineProvider>
           <AnimatedRoutes />
         </MagazineProvider>
       </MotionConfigWrapper>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { BookmarkProvider } from './context/BookmarkContext';
 import { MainLayout } from './components/layout/MainLayout';
 import { Home } from './pages/Home';
@@ -18,10 +18,11 @@ import { NotFound } from './pages/NotFound';
 export default function App() {
   return (
     <BookmarkProvider>
-      <BrowserRouter basename="/templates/block-magazine/blog-4">
+      <HashRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
+            <Route path="index.html" element={<Home />} />
             <Route path="stories" element={<Stories />} />
             <Route path="story/:slug" element={<StoryDetail />} />
             <Route path="categories" element={<Categories />} />
@@ -36,10 +37,10 @@ export default function App() {
             <Route path="terms" element={<Legal />} />
             <Route path="licensing" element={<Legal />} />
             <Route path="copyright" element={<Legal />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<Home />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </BookmarkProvider>
   );
 }

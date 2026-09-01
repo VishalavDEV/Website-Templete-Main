@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { MagazineProvider } from './context/MagazineContext';
 import { MainLayout } from './layouts/MainLayout';
 import { ArticleLayout } from './layouts/ArticleLayout';
@@ -15,17 +15,18 @@ import { NotFound } from './pages/NotFound';
 export default function App() {
   return (
     <MagazineProvider>
-      <BrowserRouter basename="/templates/block-magazine/blog-7">
+      <HashRouter>
         <Routes>
           {/* Main Layout Wrapped Routes */}
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/index.html" element={<Home />} />
             <Route path="/category/:category" element={<Category />} />
             <Route path="/search" element={<Search />} />
             <Route path="/author/:slug" element={<Author />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<Home />} />
           </Route>
 
           {/* Article Monographic Layout (Includes Top Reading Progress Bar) */}
@@ -33,7 +34,7 @@ export default function App() {
             <Route path="/article/:slug" element={<Article />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </MagazineProvider>
   );
 }

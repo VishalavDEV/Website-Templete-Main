@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider } from './store/AppContext';
 import { AuraBackground } from './components/AuraBackground/AuraBackground';
 import { PillNav } from './components/PillNav/PillNav';
@@ -22,7 +22,7 @@ import { ExplorePage } from './pages/Explore/ExplorePage';
 export function App() {
   return (
     <AppProvider>
-      <BrowserRouter basename="/templates/block-magazine/blog-10">
+      <HashRouter>
         <div className="relative min-h-screen text-white flex flex-col font-sans selection:bg-[#F27D26] selection:text-black">
           {/* Sunset Boulevard Aura Gradient Layers (Fixed, blends against body #faf8f2) */}
           <AuraBackground />
@@ -37,6 +37,7 @@ export function App() {
             <Routes>
               {/* Homepage */}
               <Route path="/" element={<Home />} />
+              <Route path="/index.html" element={<Home />} />
 
               {/* Direct Category Routes */}
               <Route path="/wildlife" element={<CategoryPage forcedSlug="wildlife" />} />
@@ -74,7 +75,7 @@ export function App() {
               <Route path="/about" element={<AboutPage />} />
 
               {/* Catch-all Fallback */}
-              <Route path="*" element={<Navigate to="/" replace />} />
+              <Route path="*" element={<Home />} />
             </Routes>
           </main>
 
@@ -87,7 +88,7 @@ export function App() {
           <SubscribeModal />
           <ToastContainer />
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </AppProvider>
   );
 }
