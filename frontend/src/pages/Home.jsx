@@ -44,12 +44,10 @@ export default function Home({ addToCart, cart }) {
     const target = targetCat.toLowerCase().trim();
 
     return tSlug === target || tName === target ||
-      (target === 'comming-soon' && tSlug === 'coming-soon') ||
-      (target === 'coming-soon' && tSlug === 'comming-soon') ||
-      (target === 'buisness' && tSlug === 'business') ||
-      (target === 'business' && tSlug === 'buisness') ||
-      (target === 'cooperate' && tSlug === 'corporate') ||
-      (target === 'corporate' && tSlug === 'cooperate');
+      ((target === 'coming-soon' || target === 'comming-soon') && (tSlug === 'coming-soon' || tSlug === 'comming-soon')) ||
+      ((target === 'business' || target === 'buisness') && (tSlug === 'business' || tSlug === 'buisness')) ||
+      ((target === 'corporate' || target === 'cooperate') && (tSlug === 'corporate' || tSlug === 'cooperate')) ||
+      ((target === 'blog-magazine' || target === 'block-magazine') && (tSlug === 'blog-magazine' || tSlug === 'block-magazine'));
   };
 
   // Filter and sort templates for the home page showcase

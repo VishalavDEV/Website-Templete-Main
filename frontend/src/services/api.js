@@ -3376,12 +3376,10 @@ export const api = {
         const slug = (t.category.slug || '').toLowerCase().trim();
         const name = (t.category.name || '').toLowerCase().trim();
         return slug === target || name === target ||
-          (target === 'comming-soon' && slug === 'coming-soon') ||
-          (target === 'coming-soon' && slug === 'comming-soon') ||
-          (target === 'buisness' && slug === 'business') ||
-          (target === 'business' && slug === 'buisness') ||
-          (target === 'cooperate' && slug === 'corporate') ||
-          (target === 'corporate' && slug === 'cooperate');
+          ((target === 'coming-soon' || target === 'comming-soon') && (slug === 'coming-soon' || slug === 'comming-soon')) ||
+          ((target === 'business' || target === 'buisness') && (slug === 'business' || slug === 'buisness')) ||
+          ((target === 'corporate' || target === 'cooperate') && (slug === 'corporate' || slug === 'cooperate')) ||
+          ((target === 'blog-magazine' || target === 'block-magazine') && (slug === 'blog-magazine' || slug === 'block-magazine'));
       });
     }
     if (params.type && params.type !== 'all') {
@@ -3461,6 +3459,23 @@ export const api = {
 
   // Categories
   async getCategories() {
+    try {
+      const res = await fetch(`${BASE_URL}/categories`);
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          return data.map(c => {
+            let slug = (c.slug || '').toLowerCase().trim();
+            let name = c.name;
+            if (slug === 'block-magazine') { slug = 'blog-magazine'; name = 'Blog Magazine'; }
+            if (slug === 'comming-soon') { slug = 'coming-soon'; name = 'Coming Soon'; }
+            if (slug === 'buisness') { slug = 'business'; name = 'Business'; }
+            if (slug === 'cooperate') { slug = 'corporate'; name = 'Corporate'; }
+            return { ...c, slug, name };
+          });
+        }
+      }
+    } catch (e) {}
     return Promise.resolve(MOCK_CATEGORIES);
   },
 
