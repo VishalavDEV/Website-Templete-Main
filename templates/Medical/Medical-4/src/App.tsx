@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Header } from './components/common/Header';
 import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
@@ -35,7 +35,7 @@ function ScrollToTop() {
 
 export function App() {
   return (
-    <BrowserRouter basename="/templates/medical/medical-4">
+    <HashRouter>
       <ScrollToTop />
       <div className="floating-canvas min-h-screen flex flex-col font-sans text-slate-900 selection:bg-blue-600 selection:text-white relative">
         {/* Ambient background decoration */}
@@ -49,6 +49,7 @@ export function App() {
           <RouteTransition>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/index.html" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/departments" element={<Departments />} />
               <Route path="/departments/:slug" element={<DepartmentDetail />} />
@@ -63,14 +64,14 @@ export function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/privacy" element={<Privacy />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="*" element={<Home />} />
             </Routes>
           </RouteTransition>
         </main>
         <Footer />
         <AIHealthAdvisorModal />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
