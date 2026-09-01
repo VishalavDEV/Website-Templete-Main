@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import JSZip from 'jszip';
+import TemplateCard from '../components/TemplateCard';
 
 export default function PhotographyCatalog() {
   const [downloadingSlug, setDownloadingSlug] = useState('');
@@ -294,270 +295,26 @@ export default function PhotographyCatalog() {
 
       {/* Catalog Grid */}
       <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '36px',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+        gap: '28px',
         marginTop: '30px',
         width: '100%'
       }}>
-        
         {TEMPLATES.map((tpl) => (
-          <div key={tpl.slug} style={{
-            backgroundColor: '#ffffff',
-            border: '1px solid #e2e8f0',
-            borderRadius: '24px',
-            padding: '32px',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-            gap: '36px',
-            alignItems: 'center',
-            boxShadow: '0 4px 20px rgba(15, 23, 42, 0.03)',
-            width: '100%',
-            transition: 'all 0.3s ease-in-out',
-            boxSizing: 'border-box'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = 'rgba(84, 78, 232, 0.2)';
-            e.currentTarget.style.boxShadow = '0 10px 30px rgba(15, 23, 42, 0.06)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = '#e2e8f0';
-            e.currentTarget.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.03)';
-          }}
-          >
-            {/* Left Column: Responsive Multi-Device CSS Mockup */}
-            <div style={{
-              position: 'relative',
-              width: '100%',
-              aspectRatio: '16/11',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: '#f8fafc',
-              borderRadius: '16px',
-              overflow: 'hidden',
-              border: '1px solid #f1f5f9',
-              boxSizing: 'border-box',
-              padding: '24px'
-            }}>
-              {/* 1. Laptop Mockup Frame */}
-              <div style={{
-                position: 'relative',
-                width: '72%',
-                aspectRatio: '16/10',
-                background: '#0f172a',
-                borderRadius: '8px 8px 0 0',
-                border: '4px solid #1e293b',
-                boxShadow: '0 15px 35px rgba(0,0,0,0.12)',
-                overflow: 'hidden',
-                zIndex: 1,
-                transform: 'translateX(-8%)',
-                boxSizing: 'border-box'
-              }}>
-                <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative' }}>
-                  <img 
-                    src={tpl.previewImage} 
-                    alt={`${tpl.name} Desktop Preview`} 
-                    style={{ 
-                      width: '100%', 
-                      height: '112%', 
-                      objectFit: 'cover', 
-                      objectPosition: 'top',
-                      marginTop: '-12%' 
-                    }} 
-                  />
-                </div>
-                {/* Keyboard Base thin border */}
-                <div style={{
-                  position: 'absolute',
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  height: '3px',
-                  background: '#64748b'
-                }} />
-              </div>
-
-              {/* 2. Tablet Mockup Frame (overlaid on the right side) */}
-              <div style={{
-                position: 'absolute',
-                right: '18%',
-                bottom: '18%',
-                width: '24%',
-                aspectRatio: '3/4',
-                background: '#0f172a',
-                border: '4px solid #0f172a',
-                borderRadius: '10px',
-                boxShadow: '0 15px 25px rgba(0,0,0,0.18)',
-                overflow: 'hidden',
-                zIndex: 2,
-                boxSizing: 'border-box'
-              }}>
-                {/* Camera sensor dot */}
-                <div style={{
-                  position: 'absolute',
-                  top: '3px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  width: '4px',
-                  height: '4px',
-                  borderRadius: '50%',
-                  background: '#334155',
-                  zIndex: 10
-                }} />
-                <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
-                  <img 
-                    src={tpl.previewImage} 
-                    alt={`${tpl.name} Tablet Preview`} 
-                    style={{ 
-                      width: '100%', 
-                      height: '112%', 
-                      objectFit: 'cover', 
-                      objectPosition: 'top',
-                      marginTop: '-12%' 
-                    }} 
-                  />
-                </div>
-              </div>
-
-              {/* 3. Mobile Mockup Frame (overlaid in front) */}
-              <div style={{
-                position: 'absolute',
-                right: '6%',
-                bottom: '12%',
-                width: '15%',
-                aspectRatio: '9/19',
-                background: '#090d16',
-                border: '3px solid #090d16',
-                borderRadius: '12px',
-                boxShadow: '0 15px 30px rgba(0,0,0,0.22)',
-                overflow: 'hidden',
-                zIndex: 3,
-                boxSizing: 'border-box'
-              }}>
-                {/* Speaker pill notch */}
-                <div style={{
-                  position: 'absolute',
-                  top: '2px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  width: '18px',
-                  height: '3px',
-                  borderRadius: '99px',
-                  background: '#1e293b',
-                  zIndex: 10
-                }} />
-                <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
-                  <img 
-                    src={tpl.previewImage} 
-                    alt={`${tpl.name} Mobile Preview`} 
-                    style={{ 
-                      width: '100%', 
-                      height: '112%', 
-                      objectFit: 'cover', 
-                      objectPosition: 'top',
-                      marginTop: '-12%' 
-                    }} 
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: Title, Metadata, Description & Pill Buttons */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-              
-              {/* Badges / Tags */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                {tpl.tags.map((tag) => (
-                  <span key={tag} style={{
-                    padding: '4px 10px',
-                    borderRadius: '99px',
-                    backgroundColor: '#eff6ff',
-                    color: '#1d4ed8',
-                    fontSize: '10px',
-                    fontWeight: '700',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px'
-                  }}>{tag}</span>
-                ))}
-              </div>
-
-              {/* Typography */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <h3 style={{
-                  fontSize: '1.6rem',
-                  fontWeight: '800',
-                  color: '#0f172a',
-                  margin: 0,
-                  fontFamily: 'var(--font-title)',
-                  lineHeight: '1.25'
-                }}>
-                  <a 
-                    href={tpl.demoUrl || `/templates/photography/${tpl.slug}`} 
-                    style={{ color: '#0f172a', transition: 'color 0.2s' }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = '#0066ff'}
-                    onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
-                  >
-                    {tpl.name}
-                  </a>
-                </h3>
-                
-                {/* Updated metadata */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#64748b' }}>
-                  <i className="fa-regular fa-clock" style={{ fontSize: '0.85rem' }}></i>
-                  <span>Updated recently</span>
-                </div>
-
-                <p style={{
-                  fontSize: '0.88rem',
-                  color: '#64748b',
-                  lineHeight: '1.7',
-                  margin: '6px 0 0 0',
-                  fontWeight: 400
-                }}>
-                  {tpl.description}
-                </p>
-              </div>
-
-              {/* Action Buttons */}
-              <div style={{
-                marginTop: '10px'
-              }}>
-                <a 
-                  href={tpl.demoUrl || `/templates/photography/${tpl.slug}`} 
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '6px',
-                    padding: '12px 24px',
-                    backgroundColor: '#1e40af',
-                    color: 'white',
-                    borderRadius: '99px',
-                    border: 'none',
-                    fontWeight: '600',
-                    fontSize: '0.85rem',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s',
-                    textDecoration: 'none',
-                    boxShadow: '0 4px 12px rgba(30, 64, 175, 0.25)'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#1d4ed8';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#1e40af';
-                  }}
-                >
-                  Live Demo <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '10px' }}></i>
-                </a>
-              </div>
-
-            </div>
-
-          </div>
+          <TemplateCard
+            key={tpl.slug}
+            template={{
+              ...tpl,
+              categoryName: 'Photography',
+              categorySlug: 'photography',
+              templateType: 'FREE',
+              price: 0
+            }}
+            onDownloadZip={handleDownloadZip}
+            isDownloading={downloadingSlug === tpl.slug}
+          />
         ))}
-
       </div>
     </div>
   );
