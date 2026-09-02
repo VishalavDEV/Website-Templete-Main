@@ -22,8 +22,8 @@ export const SidebarIconStrip = () => {
 
   return (
     <aside className={`sidebar-icon-strip ${mobileMenuOpen ? 'mobile-visible' : ''}`}>
-      <div className="brand-logo" title="TS Smart Admin">
-        <div className="logo-badge">TS</div>
+      <div className="brand-logo" title="Speed Admin">
+        <div className="logo-badge">SA</div>
       </div>
 
         <nav className="icon-nav">
