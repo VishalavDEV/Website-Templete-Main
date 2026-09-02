@@ -226,7 +226,7 @@ export default function Templates() {
     const target = targetCat.toLowerCase().trim();
 
     return tSlug === target || tName === target ||
-      ((target === 'coming-soon' || target === 'comming-soon') && (tSlug === 'coming-soon' || tSlug === 'comming-soon')) ||
+      ((target === 'coming-soon' || target === 'coming-soon') && (tSlug === 'coming-soon' || tSlug === 'coming-soon')) ||
       ((target === 'business' || target === 'buisness') && (tSlug === 'business' || tSlug === 'buisness')) ||
       ((target === 'corporate' || target === 'cooperate') && (tSlug === 'corporate' || tSlug === 'cooperate')) ||
       ((target === 'blog-magazine' || target === 'block-magazine') && (tSlug === 'blog-magazine' || tSlug === 'block-magazine'));

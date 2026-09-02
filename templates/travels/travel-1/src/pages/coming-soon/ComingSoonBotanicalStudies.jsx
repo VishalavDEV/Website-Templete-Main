@@ -24,7 +24,7 @@ export default function ComingSoonBotanicalStudies() {
       title: 'Plate IV: Rosa Canina',
       latin: 'Rosa canina L. (Wild Dog Rose)',
       date: 'London, 1884',
-      image: '/templates/comming-soon/cm-4/rosa-canina.jpg',
+      image: '/templates/coming-soon/cm-4/rosa-canina.jpg',
       desc: 'Five-petaled blush corolla with curative rosehips prized for restorative distillations. Hand-engraved on copperplate with natural mineral pigments.',
       habitat: 'European hedgerows & chalk hills',
       uses: 'Restorative cordials, vitamin C tonics'
@@ -33,7 +33,7 @@ export default function ComingSoonBotanicalStudies() {
       title: 'Plate VII: Lavandula Angustifolia',
       latin: 'Lavandula angustifolia Mill. (True English Lavender)',
       date: 'Kew, 1891',
-      image: '/templates/comming-soon/cm-4/lavandula.jpg',
+      image: '/templates/coming-soon/cm-4/lavandula.jpg',
       desc: 'Slender whorled violet spikelets and aromatic linear leaves collected at Royal Gardens. Prized for calming tisanes and floral waters.',
       habitat: 'Mediterranean rocky limestone soils',
       uses: 'Aromatherapy, calming tisanes'
@@ -42,7 +42,7 @@ export default function ComingSoonBotanicalStudies() {
       title: 'Plate V: Fagus Sylvatica',
       latin: 'Fagus sylvatica L. (European Beech Foliage)',
       date: 'Edinburgh, 1887',
-      image: '/templates/comming-soon/cm-4/fagus-sylvatica.jpg',
+      image: '/templates/coming-soon/cm-4/fagus-sylvatica.jpg',
       desc: 'Autumnal golden venation and cellular leaf architecture dried using 19th-century specimen presses.',
       habitat: 'Ancient temperate deciduous woodlands',
       uses: 'Tannins, medicinal bark decoctions'
@@ -51,7 +51,7 @@ export default function ComingSoonBotanicalStudies() {
       title: 'The Heritage Folio Binding',
       latin: 'Artisanal Hand-Bound Moroccan Leather',
       date: 'Edinburgh Bindery, 1884',
-      image: '/templates/comming-soon/cm-4/botanical-cover.jpg',
+      image: '/templates/coming-soon/cm-4/botanical-cover.jpg',
       desc: 'Gold-leaf embossed Moroccan calfskin cover with marbled endpapers and hand-sewn deckled cotton rag pages.',
       habitat: 'Collector Archives & Premier Libraries',
       uses: 'Archival Preservation'
@@ -144,7 +144,7 @@ export default function ComingSoonBotanicalStudies() {
       {/* Cinematic Looping Background Image / Video */}
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none overflow-hidden">
         <img 
-          src="/templates/comming-soon/cm-4/bg-book.gif" 
+          src="/templates/coming-soon/cm-4/bg-book.gif" 
           alt="Botanical Studies Video Background" 
           className="w-full h-full object-cover object-center opacity-80 filter contrast-[1.18] brightness-[0.88] saturate-[1.25] scale-105"
         />
@@ -252,7 +252,7 @@ export default function ComingSoonBotanicalStudies() {
                 onClick={() => setModalPlate('cover')}
                 className="w-full max-w-sm rounded-r-2xl overflow-hidden shadow-2xl border-2 border-amber-600/40 relative cursor-pointer group hover:scale-[1.02] transition-transform"
               >
-                <img src="/templates/comming-soon/cm-4/botanical-cover.jpg" alt="Botanical Studies Cover" className="w-full h-auto object-cover" />
+                <img src="/templates/coming-soon/cm-4/botanical-cover.jpg" alt="Botanical Studies Cover" className="w-full h-auto object-cover" />
                 <div className="absolute bottom-4 left-4 right-4 p-3 bg-white/95 backdrop-blur-md rounded-lg border border-amber-600/30 text-center shadow-md">
                   <div className="font-cinzel text-xs text-amber-950 uppercase tracking-widest font-bold">The Heritage Folio</div>
                   <div className="text-[0.65rem] font-mono text-stone-600 mt-0.5">Hand-Bound Calfskin & 24k Gold Foil</div>

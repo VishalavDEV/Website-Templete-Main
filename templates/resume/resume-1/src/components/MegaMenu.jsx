@@ -13,7 +13,7 @@ const categories = [
     { name: 'Admin', slug: 'admin', icon: LayoutDashboard },
     { name: 'Medical', slug: 'medical', icon: Activity },
     { name: 'Block magazine', slug: 'block-magazine', icon: BookOpen },
-    { name: 'Comming soon', slug: 'comming-soon', icon: Clock },
+    { name: 'Comming soon', slug: 'coming-soon', icon: Clock },
     { name: 'Travels', slug: 'travels', icon: Plane },
     { name: 'Hotel', slug: 'hotel', icon: Hotel },
   ],

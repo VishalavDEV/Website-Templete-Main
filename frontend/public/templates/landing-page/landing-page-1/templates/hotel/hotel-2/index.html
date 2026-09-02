@@ -16,7 +16,7 @@
       const isIframe = urlParams.get('iframe') === 'true';
       
       if (isTop && !isIframe) {
-        document.documentElement.style.visibility = 'hidden';
+        // document.documentElement.style.visibility = 'hidden';
         
         window.addEventListener('DOMContentLoaded', () => {
           const currentUrl = new URL(window.location.href);
@@ -299,7 +299,7 @@
       const isIframe = urlParams.get('iframe') === 'true';
       
       if (isPlatform && isTop && !isIframe) {
-        document.documentElement.style.visibility = 'hidden';
+        // document.documentElement.style.visibility = 'hidden';
         
         window.addEventListener('DOMContentLoaded', () => {
           const currentUrl = new URL(window.location.href);

@@ -4,7 +4,7 @@ const MOCK_CATEGORIES = [
   { id: 1, name: 'Admin', slug: 'admin' },
   { id: 2, name: 'Medical', slug: 'medical' },
   { id: 3, name: 'Block magazine', slug: 'block-magazine' },
-  { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+  { id: 4, name: 'Comming soon', slug: 'coming-soon' },
   { id: 5, name: 'Travels', slug: 'travels' },
   { id: 6, name: 'Hotel', slug: 'hotel' },
   { id: 7, name: 'Events', slug: 'events' },

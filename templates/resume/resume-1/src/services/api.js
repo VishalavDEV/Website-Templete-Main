@@ -4,7 +4,7 @@ const MOCK_CATEGORIES = [
   { id: 1, name: 'Admin', slug: 'admin' },
   { id: 2, name: 'Medical', slug: 'medical' },
   { id: 3, name: 'Block magazine', slug: 'block-magazine' },
-  { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+  { id: 4, name: 'Comming soon', slug: 'coming-soon' },
   { id: 5, name: 'Travels', slug: 'travels' },
   { id: 6, name: 'Hotel', slug: 'hotel' },
   { id: 7, name: 'Events', slug: 'events' },
@@ -886,76 +886,76 @@ const MOCK_TEMPLATES = [
     id: 140,
     name: 'Orange 16  -  Coming Soon Template',
     slug: 'coming-soon-template',
-    previewImage: '/templates/comming-soon/coming-soon-template/orange-cover.jpg',
+    previewImage: '/templates/coming-soon/coming-soon-template/orange-cover.jpg',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Comming soon', slug: 'coming-soon' },
     pagesCount: 1,
     downloadsCount: 1200,
     description: 'A new experience of performance, photography and design is about to arrive. Explore the revolutionary Orange 16 with White and Black Titanium craft, O18 Pro chip, slow-motion video, and exploded engineering architecture.',
     bootstrapVersion: 'HTML5 / Vanilla CSS',
     version: '1.0',
-    demoUrl: '/templates/comming-soon/coming-soon-template/index.html'
+    demoUrl: '/templates/coming-soon/coming-soon-template/index.html'
   },
   {
     id: 141,
     name: 'NOVA X1  -  Cinematic Coming Soon Template',
     slug: 'nova-x1-template',
-    previewImage: '/templates/comming-soon/cm-2/car-cover.jpg',
+    previewImage: '/templates/coming-soon/cm-2/car-cover.jpg',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Comming soon', slug: 'coming-soon' },
     pagesCount: 1,
     downloadsCount: 1850,
     description: 'A production-quality futuristic automotive showroom template. Explore the NOVA X1 electric SUV with interactive 3D WebGL visuals, scroll-driven camera reveals, dynamic paint customizer, performance analytics, and pre-booking capture.',
     bootstrapVersion: 'React / Three.js / GSAP',
     version: '1.0',
-    demoUrl: '/templates/comming-soon/cm-2/index.html'
+    demoUrl: '/templates/coming-soon/cm-2/index.html'
   },
   {
     id: 142,
     name: 'AURA SKY RESIDENCES  -  Premium Cinematic Building Launch Template',
     slug: 'aura-sky-template',
-    previewImage: '/templates/comming-soon/cm-3/buliding-jpg/ezgif-frame-001.jpg',
+    previewImage: '/templates/coming-soon/cm-3/buliding-jpg/ezgif-frame-001.jpg',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Comming soon', slug: 'coming-soon' },
     pagesCount: 1,
     downloadsCount: 950,
     description: 'Create a modern, premium, cinematic coming soon website for luxury real-estate projects. Features continuous slow-motion building rendering background loops, Lenis smooth scrolling, architectural specification grids, and modular registration capture forms.',
     bootstrapVersion: 'HTML5 / Tailwind CSS',
     version: '1.0',
-    demoUrl: '/templates/comming-soon/cm-3/index.html'
+    demoUrl: '/templates/coming-soon/cm-3/index.html'
   },
   {
     id: 143,
     name: 'BOTANICAL STUDIES  -  Heritage Folio Book Launch Template',
     slug: 'botanical-studies-template',
-    previewImage: '/templates/comming-soon/cm-4/botanical-cover.jpg',
+    previewImage: '/templates/coming-soon/cm-4/botanical-cover.jpg',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Comming soon', slug: 'coming-soon' },
     pagesCount: 1,
     downloadsCount: 1420,
     description: 'An exquisite collector’s edition book coming soon website template. Features interactive 9-frame video background engine, live millisecond-precision countdown timer, Linnean author showcase, antiquarian Web Audio synthesizer, botanical plate inspector modal, and responsive laptop/tab/phone preview.',
     bootstrapVersion: 'HTML5 / Tailwind / Vanilla JS',
     version: '1.0',
-    demoUrl: '/templates/comming-soon/cm-4/index.html'
+    demoUrl: '/templates/coming-soon/cm-4/index.html'
   },
   {
     id: 144,
     name: 'AURELIA CHRONOS  -  18K Luxury Golden Watch Launch Template',
     slug: 'aurelia-chronos-template',
-    previewImage: '/templates/comming-soon/cm-5/watch-hero.jpg',
+    previewImage: '/templates/coming-soon/cm-5/watch-hero.jpg',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Comming soon', slug: 'coming-soon' },
     pagesCount: 1,
     downloadsCount: 1680,
     description: 'A luxurious 18k solid gold watch launch template. Features weightless floating antigravity 3D physics, interactive 360-degree studio orbit rotation, fluted crown and sunburst guilloché macro lens inspectors, 28,800 vph mechanical escapement audio synthesizer, and VIP allocation reservation capture.',
     bootstrapVersion: 'HTML5 / Tailwind CSS / Vanilla JS',
     version: '1.0',
-    demoUrl: '/templates/comming-soon/cm-5/index.html'
+    demoUrl: '/templates/coming-soon/cm-5/index.html'
   },
   {
     id: 152,
@@ -1219,13 +1219,13 @@ const MOCK_TEMPLATES = [
     previewImage: 'https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Comming soon', slug: 'coming-soon' },
     pagesCount: 1,
     downloadsCount: 2450,
     description: 'A beautiful 3D interactive hardware and smartphone coming soon launch platform. Features a responsive 3D interactive model previewer, countdown launch timer, product specifications tray, and subscription capture form.',
     bootstrapVersion: 'React / Three.js / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/comming-soon/comingsoon-6/index.html'
+    demoUrl: '/templates/coming-soon/comingsoon-6/index.html'
   },
   {
     id: 181,
@@ -1234,13 +1234,13 @@ const MOCK_TEMPLATES = [
     previewImage: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Comming soon', slug: 'coming-soon' },
     pagesCount: 1,
     downloadsCount: 1980,
     description: 'A stunning sportswear and footwear launch teaser landing page. Features digital interactive shoe galleries, pre-launch countdown, interactive specs drawer, customer review sliders, and product pre-order capture forms.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/comming-soon/comingsoon-7/index.html'
+    demoUrl: '/templates/coming-soon/comingsoon-7/index.html'
   },
   {
     id: 182,
@@ -1834,13 +1834,13 @@ const MOCK_TEMPLATES = [
     previewImage: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Comming soon', slug: 'coming-soon' },
     pagesCount: 1,
     downloadsCount: 2540,
     description: 'A premium interactive motorcycle showcase and coming soon page. Features a fully controllable 3D motorcycle model canvas, interactive control dock, and reservation modal.',
     bootstrapVersion: 'React / Three.js / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/comming-soon/comingsoon-8/index.html'
+    demoUrl: '/templates/coming-soon/comingsoon-8/index.html'
   },
   {
     id: 1009,
@@ -1849,13 +1849,13 @@ const MOCK_TEMPLATES = [
     previewImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Comming soon', slug: 'coming-soon' },
     pagesCount: 1,
     downloadsCount: 2120,
     description: 'An elegant multipurpose pre-launch landing page. Features modern typography, countdown timer, responsive visual showcases, and newsletter capture forms.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/comming-soon/comingsoon-9/index.html'
+    demoUrl: '/templates/coming-soon/comingsoon-9/index.html'
   },
   {
     id: 1010,
@@ -1864,13 +1864,13 @@ const MOCK_TEMPLATES = [
     previewImage: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
-    category: { id: 4, name: 'Comming soon', slug: 'comming-soon' },
+    category: { id: 4, name: 'Comming soon', slug: 'coming-soon' },
     pagesCount: 1,
     downloadsCount: 1890,
     description: 'A premium multi-design landing page template for events coming soon showcases. Features clean grids, responsive visual transitions, and client contact selectors.',
     bootstrapVersion: 'React / Tailwind CSS / Vite',
     version: '1.0.0',
-    demoUrl: '/templates/comming-soon/comingsoon-10/index.html'
+    demoUrl: '/templates/coming-soon/comingsoon-10/index.html'
   },
   {
     id: 1101,

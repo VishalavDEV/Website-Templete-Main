@@ -66,17 +66,17 @@ export default function ComingSoonAureliaChronos() {
     crown: {
       title: 'Fluted 18K Gold Crown & Triple-Gasket Bezel',
       desc: 'Micro-lathed fluted grip ridges with double internal O-ring pressure seals and solid gold crown flank protection.',
-      src: '/templates/comming-soon/cm-5/watch-crown.jpg'
+      src: '/templates/coming-soon/cm-5/watch-crown.jpg'
     },
     dial: {
       title: 'Sunburst Rose-Engine Guilloché Dial',
       desc: 'Hand-turned geometric guilloché engraving radiating from center with diamond-faceted solid gold dauphine hands.',
-      src: '/templates/comming-soon/cm-5/watch-dial.jpg'
+      src: '/templates/coming-soon/cm-5/watch-dial.jpg'
     },
     caseback: {
       title: 'Calibre TS-9080 Exhibition Sapphire Caseback',
       desc: 'High-beat Swiss automatic movement showcasing 18K gold oscillating weight, perlage circular graining, and 26 synthetic rubies.',
-      src: '/templates/comming-soon/cm-5/watch-caseback.jpg'
+      src: '/templates/coming-soon/cm-5/watch-caseback.jpg'
     }
   };
 
@@ -402,7 +402,7 @@ export default function ComingSoonAureliaChronos() {
                 <div className="watch-floating-actor">
                   <img 
                     ref={visualRef}
-                    src="/templates/comming-soon/cm-5/watch-hero.jpg" 
+                    src="/templates/coming-soon/cm-5/watch-hero.jpg" 
                     alt="Aurelia Chronos Floating Watch" 
                     className="watch-hero-render"
                     style={{ transform: `scale(${zoom}) rotateY(${currentAngle}deg)` }}

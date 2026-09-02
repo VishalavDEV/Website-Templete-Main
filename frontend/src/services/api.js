@@ -3376,7 +3376,7 @@ export const api = {
         const slug = (t.category.slug || '').toLowerCase().trim();
         const name = (t.category.name || '').toLowerCase().trim();
         return slug === target || name === target ||
-          ((target === 'coming-soon' || target === 'comming-soon') && (slug === 'coming-soon' || slug === 'comming-soon')) ||
+          ((target === 'coming-soon' || target === 'coming-soon') && (slug === 'coming-soon' || slug === 'coming-soon')) ||
           ((target === 'business' || target === 'buisness') && (slug === 'business' || slug === 'buisness')) ||
           ((target === 'corporate' || target === 'cooperate') && (slug === 'corporate' || slug === 'cooperate')) ||
           ((target === 'blog-magazine' || target === 'block-magazine') && (slug === 'blog-magazine' || slug === 'block-magazine'));
@@ -3468,7 +3468,7 @@ export const api = {
             let slug = (c.slug || '').toLowerCase().trim();
             let name = c.name;
             if (slug === 'block-magazine') { slug = 'blog-magazine'; name = 'Blog Magazine'; }
-            if (slug === 'comming-soon') { slug = 'coming-soon'; name = 'Coming Soon'; }
+            if (slug === 'coming-soon') { slug = 'coming-soon'; name = 'Coming Soon'; }
             if (slug === 'buisness') { slug = 'business'; name = 'Business'; }
             if (slug === 'cooperate') { slug = 'corporate'; name = 'Corporate'; }
             return { ...c, slug, name };

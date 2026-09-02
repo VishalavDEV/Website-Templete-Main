@@ -317,7 +317,7 @@ function Footer() {
             <li><Link to="/templates?category=admin" style={{ color: '#94a3b8' }}>Admin & Dashboards</Link></li>
             <li><Link to="/templates?category=medical" style={{ color: '#94a3b8' }}>Medical & Health</Link></li>
             <li><Link to="/templates?category=block-magazine" style={{ color: '#94a3b8' }}>Block magazine</Link></li>
-            <li><Link to="/templates?category=comming-soon" style={{ color: '#94a3b8' }}>Comming soon</Link></li>
+            <li><Link to="/templates?category=coming-soon" style={{ color: '#94a3b8' }}>Comming soon</Link></li>
             <li><Link to="/templates?category=travels" style={{ color: '#94a3b8' }}>Travel & Tourism</Link></li>
             <li><Link to="/templates?category=hotel" style={{ color: '#94a3b8' }}>Hotel & Lodging</Link></li>
           </ul>

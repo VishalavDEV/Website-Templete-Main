@@ -3,6 +3,6 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/templates/comming-soon/comingsoon-9/',
+  base: '/templates/coming-soon/comingsoon-9/',
   plugins: [react()],
 })
