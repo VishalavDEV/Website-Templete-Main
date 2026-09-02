@@ -1656,7 +1656,7 @@ category: { id: 20105, name: 'Blog Magazine', slug: 'blog-magazine' },
   },
   {
     id: 9009,
-    name: 'Vantage — Premium Admin & Dashboard Hub',
+    name: 'TIS Admin — Premium Admin & Dashboard Hub',
     slug: 'admin-9',
     previewImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
