@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
-import { Monitor, Tablet, Smartphone, RotateCcw, RotateCw, ArrowLeft, Download } from 'lucide-react';
+import { Monitor, Tablet, Smartphone, RotateCcw, RotateCw, ArrowLeft, Download, Pencil } from 'lucide-react';
 
 export default function DevicePreviewWrapper({ children }) {
   const [searchParams] = useSearchParams();
@@ -15,15 +15,22 @@ export default function DevicePreviewWrapper({ children }) {
     return <>{children}</>;
   }
 
-  // Determine template slug for download / back link
+  // Determine template slug and category slug for builder / download / back link
   const pathParts = location.pathname.split('/').filter(Boolean);
   let templateSlug = 'template';
+  let categorySlug = 'admin';
   if (pathParts.length > 0) {
-    const lastPart = pathParts[pathParts.length - 1];
-    if (lastPart === 'index.html' && pathParts.length > 1) {
-      templateSlug = pathParts[pathParts.length - 2];
+    if (pathParts[0] === 'templates' && pathParts.length >= 3) {
+      categorySlug = pathParts[1];
+      templateSlug = pathParts[2];
     } else {
-      templateSlug = lastPart;
+      const lastPart = pathParts[pathParts.length - 1];
+      if (lastPart === 'index.html' && pathParts.length > 1) {
+        templateSlug = pathParts[pathParts.length - 2];
+        categorySlug = pathParts.length > 2 ? pathParts[pathParts.length - 3] : 'admin';
+      } else {
+        templateSlug = lastPart;
+      }
     }
   }
 
@@ -233,6 +240,32 @@ export default function DevicePreviewWrapper({ children }) {
             <RotateCcw size={14} />
           </button>
 
+          {/* Edit Template in Visual Builder */}
+          <a
+            href={`/builder?template=${templateSlug}&category=${categorySlug}&page=index.html`}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              background: '#4f46e5',
+              color: '#ffffff',
+              textDecoration: 'none',
+              fontSize: '0.82rem',
+              fontWeight: 600,
+              padding: '7px 16px',
+              borderRadius: '99px',
+              boxShadow: '0 2px 8px rgba(79,70,229,0.25)',
+              transition: 'all 0.2s',
+              marginLeft: '4px'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#4338ca'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#4f46e5'}
+            title="Customize in Visual Website Builder"
+          >
+            <Pencil size={14} />
+            Edit Template
+          </a>
+
           {/* Download Action */}
           <a
             href={`/templates/${templateSlug}?action=download`}
@@ -249,7 +282,7 @@ export default function DevicePreviewWrapper({ children }) {
               borderRadius: '99px',
               boxShadow: '0 2px 8px rgba(37,99,235,0.2)',
               transition: 'all 0.2s',
-              marginLeft: '4px'
+              marginLeft: '2px'
             }}
             onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
             onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}

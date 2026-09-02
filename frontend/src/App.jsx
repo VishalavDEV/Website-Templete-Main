@@ -499,6 +499,15 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
     );
   }
 
+  // Full-screen builder route
+  if (location.pathname === '/builder') {
+    return (
+      <Routes>
+        <Route path="/builder" element={<Builder user={user} />} />
+      </Routes>
+    );
+  }
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Header cartCount={cart.length} user={user} onLogout={handleLogout} />
