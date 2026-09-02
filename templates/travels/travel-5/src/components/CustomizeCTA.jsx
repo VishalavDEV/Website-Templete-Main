@@ -194,7 +194,7 @@ export default function CustomizeCTA() {
             <div className="lg:col-span-5 h-full min-h-[350px] lg:min-h-[600px] relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-transparent lg:from-primary lg:via-primary/20 lg:to-transparent z-10 pointer-events-none" />
               <img
-                src="/assets/tropical_lagoon.jpg"
+                src="./assets/tropical_lagoon.jpg"
                 alt="Tropical Custom Adventure"
                 className="w-full h-full object-cover absolute inset-0"
               />

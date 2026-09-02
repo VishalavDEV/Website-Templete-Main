@@ -7,7 +7,7 @@ export default function Categories() {
     {
       title: 'Ocean Beach',
       description: 'Ride waves, soak in sun, and explore reef lagoons.',
-      image: '/assets/beach_surfing.jpg',
+      image: './assets/beach_surfing.jpg',
       icon: Waves,
       count: '12 Tours',
       color: 'from-blue-600/80 to-teal-500/50',
@@ -15,7 +15,7 @@ export default function Categories() {
     {
       title: 'Alpine Peak',
       description: 'Conquer heights, traverse glaciers, and witness horizons.',
-      image: '/assets/mountain_hiking.jpg',
+      image: './assets/mountain_hiking.jpg',
       icon: Trees,
       count: '18 Tours',
       color: 'from-orange-600/80 to-amber-500/50',
@@ -23,7 +23,7 @@ export default function Categories() {
     {
       title: 'Wild Camping',
       description: 'Stargaze under galaxy dust, pitch tents, and campfire.',
-      image: '/assets/camping_stars.jpg',
+      image: './assets/camping_stars.jpg',
       icon: Flame,
       count: '9 Tours',
       color: 'from-indigo-600/80 to-purple-500/50',
@@ -31,7 +31,7 @@ export default function Categories() {
     {
       title: 'Tropical Lagoons',
       description: 'Escape to private islands, sand beaches, and coral diving.',
-      image: '/assets/tropical_lagoon.jpg',
+      image: './assets/tropical_lagoon.jpg',
       icon: Compass,
       count: '15 Tours',
       color: 'from-teal-600/80 to-emerald-500/50',

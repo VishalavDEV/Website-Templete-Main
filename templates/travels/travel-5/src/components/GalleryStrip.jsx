@@ -12,12 +12,12 @@ const InstagramIcon = (props) => (
 
 export default function GalleryStrip() {
   const photos = [
-    { id: 1, img: '/assets/beach_surfing.jpg', likes: '1.2k', comments: 45, tag: '#surfMaui' },
-    { id: 2, img: '/assets/mountain_hiking.jpg', likes: '890', comments: 32, tag: '#wildSummit' },
-    { id: 3, img: '/assets/camping_stars.jpg', likes: '2.4k', comments: 110, tag: '#milkywayCamp' },
-    { id: 4, img: '/assets/tropical_lagoon.jpg', likes: '1.7k', comments: 54, tag: '#lagoonVibe' },
-    { id: 5, img: '/assets/mountain_hiking.jpg', likes: '950', comments: 28, tag: '#patagoniaW' },
-    { id: 6, img: '/assets/beach_surfing.jpg', likes: '3.1k', comments: 142, tag: '#waveRiders' }
+    { id: 1, img: './assets/beach_surfing.jpg', likes: '1.2k', comments: 45, tag: '#surfMaui' },
+    { id: 2, img: './assets/mountain_hiking.jpg', likes: '890', comments: 32, tag: '#wildSummit' },
+    { id: 3, img: './assets/camping_stars.jpg', likes: '2.4k', comments: 110, tag: '#milkywayCamp' },
+    { id: 4, img: './assets/tropical_lagoon.jpg', likes: '1.7k', comments: 54, tag: '#lagoonVibe' },
+    { id: 5, img: './assets/mountain_hiking.jpg', likes: '950', comments: 28, tag: '#patagoniaW' },
+    { id: 6, img: './assets/beach_surfing.jpg', likes: '3.1k', comments: 142, tag: '#waveRiders' }
   ];
 
   return (
