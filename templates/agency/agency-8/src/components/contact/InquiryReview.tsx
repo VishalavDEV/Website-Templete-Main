@@ -25,7 +25,7 @@ export const InquiryReview: React.FC<InquiryReviewProps> = ({
         {/* Top Header */}
         <div className="flex items-center justify-between border-b border-white/10 pb-6">
           <div className="flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-[#10b981]" />
+            <span className="w-2 h-2 rounded-full bg-[#ffffff]" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
               INQUIRY SPECIFICATION
             </span>
@@ -36,7 +36,7 @@ export const InquiryReview: React.FC<InquiryReviewProps> = ({
             onClick={() => onEdit(1)}
             onMouseEnter={() => setCursorType('pointer')}
             onMouseLeave={() => setCursorType('default')}
-            className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-[#10b981] hover:text-white transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-[#ffffff] hover:text-white transition-colors cursor-pointer"
           >
             <Edit3 className="w-3.5 h-3.5" />
             <span>EDIT ALL</span>
@@ -54,7 +54,7 @@ export const InquiryReview: React.FC<InquiryReviewProps> = ({
               <button
                 type="button"
                 onClick={() => onEdit(1)}
-                className="text-[10px] font-mono text-[#10b981] hover:underline cursor-pointer"
+                className="text-[10px] font-mono text-[#ffffff] hover:underline cursor-pointer"
               >
                 EDIT
               </button>
@@ -64,7 +64,7 @@ export const InquiryReview: React.FC<InquiryReviewProps> = ({
                 formData.services.map((s) => (
                   <span
                     key={s}
-                    className="px-2.5 py-0.5 rounded-full text-xs font-mono bg-[#10b981]/15 text-[#10b981] border border-[#10b981]/30"
+                    className="px-2.5 py-0.5 rounded-full text-xs font-mono bg-[#ffffff]/15 text-[#ffffff] border border-[#ffffff]/30"
                   >
                     {s}
                   </span>
@@ -84,7 +84,7 @@ export const InquiryReview: React.FC<InquiryReviewProps> = ({
               <button
                 type="button"
                 onClick={() => onEdit(2)}
-                className="text-[10px] font-mono text-[#10b981] hover:underline cursor-pointer"
+                className="text-[10px] font-mono text-[#ffffff] hover:underline cursor-pointer"
               >
                 EDIT
               </button>
@@ -103,7 +103,7 @@ export const InquiryReview: React.FC<InquiryReviewProps> = ({
               <button
                 type="button"
                 onClick={() => onEdit(3)}
-                className="text-[10px] font-mono text-[#10b981] hover:underline cursor-pointer"
+                className="text-[10px] font-mono text-[#ffffff] hover:underline cursor-pointer"
               >
                 EDIT
               </button>
@@ -122,7 +122,7 @@ export const InquiryReview: React.FC<InquiryReviewProps> = ({
               <button
                 type="button"
                 onClick={() => onEdit(4)}
-                className="text-[10px] font-mono text-[#10b981] hover:underline cursor-pointer"
+                className="text-[10px] font-mono text-[#ffffff] hover:underline cursor-pointer"
               >
                 EDIT
               </button>
@@ -142,7 +142,7 @@ export const InquiryReview: React.FC<InquiryReviewProps> = ({
             <button
               type="button"
               onClick={() => onEdit(5)}
-              className="text-[10px] font-mono text-[#10b981] hover:underline cursor-pointer"
+              className="text-[10px] font-mono text-[#ffffff] hover:underline cursor-pointer"
             >
               EDIT
             </button>
@@ -193,7 +193,7 @@ export const InquiryReview: React.FC<InquiryReviewProps> = ({
           onClick={onSubmit}
           onCursorEnter={() => setCursorType('button')}
           onCursorLeave={() => setCursorType('default')}
-          className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#10b981] hover:bg-white text-white hover:text-black font-mono text-xs sm:text-sm uppercase tracking-widest font-bold rounded-full transition-all duration-300 shadow-2xl shadow-[#10b981]/30 cursor-pointer"
+          className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#ffffff] hover:bg-white text-white hover:text-black font-mono text-xs sm:text-sm uppercase tracking-widest font-bold rounded-full transition-all duration-300 shadow-2xl shadow-[#ffffff]/30 cursor-pointer"
         >
           <span>{isSubmitting ? 'PROCESSING INQUIRY...' : 'SEND INQUIRY'}</span>
           <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

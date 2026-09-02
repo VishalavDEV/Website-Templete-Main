@@ -76,7 +76,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className="min-h-screen bg-[#080808] text-[#FAF9F6] selection:bg-[#10b981] selection:text-white"
+      className="min-h-screen bg-[#080808] text-[#FAF9F6] selection:bg-[#ffffff] selection:text-white"
     >
       {/* 1. Monumental Cinematic Work Hero */}
       <WorkHero

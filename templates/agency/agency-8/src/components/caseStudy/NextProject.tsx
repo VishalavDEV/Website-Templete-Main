@@ -67,7 +67,7 @@ export const NextProject: React.FC<NextProjectProps> = ({ study, onNavigate, set
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 border border-white/20 flex items-center justify-center text-white backdrop-blur-md group-hover:rotate-45 group-hover:bg-[#10b981] transition-all">
+                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 border border-white/20 flex items-center justify-center text-white backdrop-blur-md group-hover:rotate-45 group-hover:bg-[#ffffff] transition-all">
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
               </div>

@@ -20,7 +20,7 @@ export const RelatedArticles: React.FC<RelatedArticlesProps> = ({
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between pb-8 border-b border-white/10 mb-12">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#888888]">
               PERSPECTIVES
             </span>
@@ -50,7 +50,7 @@ export const RelatedArticles: React.FC<RelatedArticlesProps> = ({
                     className="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute top-4 left-4 px-2 py-0.5 bg-black/60 border border-white/10 font-mono text-[9px] uppercase tracking-widest text-[#10b981]">
+                  <div className="absolute top-4 left-4 px-2 py-0.5 bg-black/60 border border-white/10 font-mono text-[9px] uppercase tracking-widest text-[#ffffff]">
                     {article.category}
                   </div>
                 </div>
@@ -58,7 +58,7 @@ export const RelatedArticles: React.FC<RelatedArticlesProps> = ({
                 {/* Typography & Details */}
                 <div className="space-y-3 flex-1 flex flex-col justify-between">
                   <div className="space-y-2">
-                    <h3 className="font-display font-bold text-lg sm:text-xl text-[#FAF9F6] uppercase tracking-tight group-hover:text-[#10b981] transition-colors leading-snug">
+                    <h3 className="font-display font-bold text-lg sm:text-xl text-[#FAF9F6] uppercase tracking-tight group-hover:text-[#ffffff] transition-colors leading-snug">
                       {article.title}
                     </h3>
                     <p className="font-body text-xs text-[#888888] font-light line-clamp-2 leading-relaxed">
@@ -68,7 +68,7 @@ export const RelatedArticles: React.FC<RelatedArticlesProps> = ({
 
                   <div className="pt-4 border-t border-white/10 flex items-center justify-between font-mono text-[10px] text-[#666666]">
                     <span>{article.readTime}</span>
-                    <div className="flex items-center gap-1 text-[#FAF9F6] group-hover:text-[#10b981] transition-colors font-semibold uppercase">
+                    <div className="flex items-center gap-1 text-[#FAF9F6] group-hover:text-[#ffffff] transition-colors font-semibold uppercase">
                       <span>READ ESSAY</span>
                       <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>

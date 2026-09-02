@@ -76,8 +76,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="group flex items-center gap-3 text-[#FAF9F6] tracking-tighter font-display font-bold text-xl sm:text-2xl transition-opacity cursor-pointer"
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10b981] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#10b981]"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ffffff] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ffffff]"></span>
             </span>
             <span className="tracking-tighter uppercase font-bold">
               STUDIO
@@ -119,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   {isActive && (
                     <motion.span
                       layoutId="activeNavBubble"
-                      className="absolute inset-0 bg-[#10b981]/20 border border-[#10b981]/40 rounded-full -z-10"
+                      className="absolute inset-0 bg-[#ffffff]/20 border border-[#ffffff]/40 rounded-full -z-10"
                       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -151,7 +151,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => setMobileMenuOpen(true)}
               onMouseEnter={() => setCursorType('pointer', 'MENU')}
               onMouseLeave={() => setCursorType('default')}
-              className="lg:hidden p-2.5 rounded-full bg-white/[0.04] border border-white/15 text-[#FAF9F6] hover:bg-white/10 hover:border-white/30 transition-colors focus:outline-hidden focus:ring-1 focus:ring-[#10b981] cursor-pointer"
+              className="lg:hidden p-2.5 rounded-full bg-white/[0.04] border border-white/15 text-[#FAF9F6] hover:bg-white/10 hover:border-white/30 transition-colors focus:outline-hidden focus:ring-1 focus:ring-[#ffffff] cursor-pointer"
               aria-label="Open fullscreen navigation menu"
             >
               <Menu className="w-5 h-5" />

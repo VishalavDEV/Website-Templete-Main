@@ -22,13 +22,13 @@ export const FeaturedArticle: React.FC<FeaturedArticleProps> = ({
         {/* Section Marker */}
         <div className="flex items-center justify-between gap-4 mb-12 sm:mb-16 pb-6 border-b border-[#ffffff10]">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#888888]">
               01 / FEATURED PERSPECTIVE
             </span>
           </div>
 
-          <span className="font-mono text-xs text-[#10b981] uppercase tracking-widest hidden sm:inline flex items-center gap-1.5">
+          <span className="font-mono text-xs text-[#ffffff] uppercase tracking-widest hidden sm:inline flex items-center gap-1.5">
             <Sparkles className="w-3 h-3" />
             COVER STORY
           </span>
@@ -53,14 +53,14 @@ export const FeaturedArticle: React.FC<FeaturedArticleProps> = ({
             
             {/* Cinematic Gradient Overlays */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/90 via-[#080808]/30 to-transparent" />
-            <div className="absolute inset-0 bg-[#10b981]/[0.06] mix-blend-screen opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-[#ffffff]/[0.06] mix-blend-screen opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             {/* Corner Coordinates Badge */}
             <div className="absolute top-6 left-6 font-mono text-[10px] uppercase tracking-widest text-white/70 bg-black/60 backdrop-blur-md px-3 py-1 border border-white/10">
               EDITORIAL NO. 01 // 2026
             </div>
 
-            <div className="absolute bottom-6 right-6 font-mono text-[10px] uppercase tracking-widest text-[#10b981] bg-black/70 backdrop-blur-md px-3.5 py-1.5 border border-[#10b981]/30 flex items-center gap-2">
+            <div className="absolute bottom-6 right-6 font-mono text-[10px] uppercase tracking-widest text-[#ffffff] bg-black/70 backdrop-blur-md px-3.5 py-1.5 border border-[#ffffff]/30 flex items-center gap-2">
               <span>EXPLORE PIECE</span>
               <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </div>
@@ -69,8 +69,8 @@ export const FeaturedArticle: React.FC<FeaturedArticleProps> = ({
           {/* 2. Large Typography + Metadata + Action (Magazine Layout) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* Left Category & Metadata column */}
-            <div className="lg:col-span-3 space-y-4 font-mono text-xs border-l-2 border-[#10b981] pl-4">
-              <div className="text-[#10b981] font-bold uppercase tracking-[0.2em]">
+            <div className="lg:col-span-3 space-y-4 font-mono text-xs border-l-2 border-[#ffffff] pl-4">
+              <div className="text-[#ffffff] font-bold uppercase tracking-[0.2em]">
                 {article.category}
               </div>
               <div className="text-[#888888] uppercase tracking-widest space-y-1">
@@ -86,7 +86,7 @@ export const FeaturedArticle: React.FC<FeaturedArticleProps> = ({
                 onClick={() => onNavigate(targetPath)}
                 onMouseEnter={() => setCursorType('pointer')}
                 onMouseLeave={() => setCursorType('default')}
-                className="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#FAF9F6] uppercase tracking-tight leading-[1.02] hover:text-[#10b981] transition-colors cursor-pointer"
+                className="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#FAF9F6] uppercase tracking-tight leading-[1.02] hover:text-[#ffffff] transition-colors cursor-pointer"
               >
                 {article.title}
               </h2>
@@ -102,7 +102,7 @@ export const FeaturedArticle: React.FC<FeaturedArticleProps> = ({
                 onClick={() => onNavigate(targetPath)}
                 onMouseEnter={() => setCursorType('button')}
                 onMouseLeave={() => setCursorType('default')}
-                className="group w-full sm:w-auto inline-flex items-center justify-between sm:justify-start gap-4 px-6 py-4 bg-white/[0.03] hover:bg-[#10b981] text-[#FAF9F6] hover:text-white font-mono text-xs uppercase tracking-widest border border-white/10 hover:border-[#10b981] transition-all duration-300 cursor-pointer"
+                className="group w-full sm:w-auto inline-flex items-center justify-between sm:justify-start gap-4 px-6 py-4 bg-white/[0.03] hover:bg-[#ffffff] text-[#FAF9F6] hover:text-white font-mono text-xs uppercase tracking-widest border border-white/10 hover:border-[#ffffff] transition-all duration-300 cursor-pointer"
               >
                 <span className="font-bold">READ ARTICLE</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

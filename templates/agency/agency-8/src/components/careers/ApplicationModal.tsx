@@ -66,14 +66,14 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
           className="relative w-full max-w-3xl bg-[#0B0B0F] border border-white/15 text-[#FAF9F6] p-6 sm:p-10 z-10 my-8 shadow-2xl overflow-hidden"
         >
           {/* Top ambient glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-32 bg-[#10b981]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-32 bg-[#ffffff]/10 rounded-full blur-3xl pointer-events-none" />
 
           {/* Modal Header */}
           <div className="flex items-start justify-between gap-6 pb-6 border-b border-white/10 relative z-10">
             <div className="space-y-1.5">
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
-                <span className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#10b981] font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
+                <span className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#ffffff] font-semibold">
                   {roleDept}
                 </span>
               </div>
@@ -111,12 +111,12 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 className="py-12 sm:py-16 text-center space-y-8 max-w-lg mx-auto"
               >
-                <div className="w-16 h-16 rounded-full bg-[#10b981]/10 border border-[#10b981]/40 flex items-center justify-center mx-auto text-[#10b981]">
+                <div className="w-16 h-16 rounded-full bg-[#ffffff]/10 border border-[#ffffff]/40 flex items-center justify-center mx-auto text-[#ffffff]">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
 
                 <div className="space-y-4">
-                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#10b981] font-semibold block">
+                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#ffffff] font-semibold block">
                     TRANSMISSION RECORDED
                   </span>
                   <h3 className="font-display font-extrabold text-4xl sm:text-5xl text-[#FAF9F6] uppercase tracking-tight leading-[0.95]">
@@ -134,7 +134,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                     onClick={onClose}
                     onMouseEnter={() => setCursorType('button')}
                     onMouseLeave={() => setCursorType('default')}
-                    className="px-8 py-4 bg-white/[0.05] hover:bg-[#10b981] border border-white/20 hover:border-[#10b981] text-[#FAF9F6] hover:text-white font-mono text-xs uppercase tracking-widest font-bold transition-all cursor-pointer"
+                    className="px-8 py-4 bg-white/[0.05] hover:bg-[#ffffff] border border-white/20 hover:border-[#ffffff] text-[#FAF9F6] hover:text-white font-mono text-xs uppercase tracking-widest font-bold transition-all cursor-pointer"
                   >
                     CLOSE
                   </button>

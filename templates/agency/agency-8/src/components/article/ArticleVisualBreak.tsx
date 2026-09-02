@@ -27,7 +27,7 @@ export const ArticleVisualBreak: React.FC<ArticleVisualBreakProps> = ({
           transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
           className="relative z-10 text-center px-6"
         >
-          <span className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#10b981] block mb-4">
+          <span className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#ffffff] block mb-4">
             ETHOS // CORE AXIOM
           </span>
 
@@ -35,7 +35,7 @@ export const ArticleVisualBreak: React.FC<ArticleVisualBreakProps> = ({
             {text}
           </h2>
 
-          <div className="w-12 h-[2px] bg-[#10b981] mx-auto mt-6" />
+          <div className="w-12 h-[2px] bg-[#ffffff] mx-auto mt-6" />
         </motion.div>
       </div>
     </section>

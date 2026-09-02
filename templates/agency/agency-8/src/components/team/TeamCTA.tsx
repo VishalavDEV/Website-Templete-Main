@@ -13,7 +13,7 @@ export const TeamCTA: React.FC<TeamCTAProps> = ({ onOpenProjectModal, setCursorT
   return (
     <section className="py-28 sm:py-44 bg-[#080808] border-t border-[#ffffff10] relative overflow-hidden text-center">
       {/* Immersive radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[550px] bg-[#10b981]/[0.04] rounded-full blur-[200px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[550px] bg-[#ffffff]/[0.04] rounded-full blur-[200px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-10">
         {/* Section tag */}
@@ -23,7 +23,7 @@ export const TeamCTA: React.FC<TeamCTAProps> = ({ onOpenProjectModal, setCursorT
           viewport={{ once: true }}
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.02]"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
           <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#888888]">
             COLLABORATION & ENGAGEMENT
           </span>
@@ -38,7 +38,7 @@ export const TeamCTA: React.FC<TeamCTAProps> = ({ onOpenProjectModal, setCursorT
           className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.92]"
         >
           GOOD PEOPLE MAKE <br />
-          <span className="font-editorial italic font-normal text-[#10b981] tracking-normal lowercase text-[1.05em]">
+          <span className="font-editorial italic font-normal text-[#ffffff] tracking-normal lowercase text-[1.05em]">
             good projects.
           </span>
         </motion.h2>
@@ -66,7 +66,7 @@ export const TeamCTA: React.FC<TeamCTAProps> = ({ onOpenProjectModal, setCursorT
             onClick={onOpenProjectModal}
             onCursorEnter={() => setCursorType('button')}
             onCursorLeave={() => setCursorType('default')}
-            className="group inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-[#10b981] hover:bg-white text-white hover:text-black font-mono text-xs sm:text-sm uppercase tracking-widest font-bold rounded-full transition-all duration-300 shadow-2xl shadow-[#10b981]/30 cursor-pointer"
+            className="group inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-[#ffffff] hover:bg-white text-white hover:text-black font-mono text-xs sm:text-sm uppercase tracking-widest font-bold rounded-full transition-all duration-300 shadow-2xl shadow-[#ffffff]/30 cursor-pointer"
           >
             <span>START A PROJECT</span>
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

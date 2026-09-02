@@ -14,7 +14,7 @@ export const CultureSection: React.FC<CultureSectionProps> = ({
   return (
     <section className="py-28 sm:py-40 border-t border-[#ffffff10] bg-[#080808] relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 right-1/4 w-[600px] h-[500px] bg-[#10b981]/[0.025] rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 w-[600px] h-[500px] bg-[#ffffff]/[0.025] rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Section Tag */}
@@ -24,7 +24,7 @@ export const CultureSection: React.FC<CultureSectionProps> = ({
           viewport={{ once: true }}
           className="flex items-center gap-2 mb-12 sm:mb-16"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
             STUDIO CULTURE
           </span>
@@ -41,7 +41,7 @@ export const CultureSection: React.FC<CultureSectionProps> = ({
               className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tight text-[#FAF9F6] leading-[0.98]"
             >
               THE PEOPLE <br />
-              <span className="font-editorial italic font-normal text-[#10b981] tracking-normal lowercase text-[1.1em]">
+              <span className="font-editorial italic font-normal text-[#ffffff] tracking-normal lowercase text-[1.1em]">
                 behind the work.
               </span>
             </motion.h2>
@@ -98,7 +98,7 @@ export const CultureSection: React.FC<CultureSectionProps> = ({
           {/* Bottom Bar Details */}
           <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between pointer-events-none">
             <div className="space-y-1">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-[#10b981] block font-bold">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[#ffffff] block font-bold">
                 CORE LEADERSHIP & CREATIVE ENGINEERS
               </span>
               <p className="text-xs sm:text-sm text-[#FAF9F6] font-medium">

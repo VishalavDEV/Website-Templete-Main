@@ -6,13 +6,13 @@ export const CultureSection: React.FC = () => {
   return (
     <section className="py-24 sm:py-36 md:py-44 border-b border-white/10 relative overflow-hidden bg-[#080808]">
       {/* Subtle ambient light */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#10b981]/[0.02] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#ffffff]/[0.02] rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-12 sm:space-y-16">
         {/* Label */}
         <div className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#10b981] font-semibold">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
+          <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#ffffff] font-semibold">
             {CULTURE_DATA.label}
           </span>
         </div>
@@ -29,7 +29,7 @@ export const CultureSection: React.FC = () => {
             WE BELIEVE <br />
             <span className="text-[#666666]">GREAT WORK</span> <br />
             COMES FROM <br />
-            <span className="text-[#10b981]">GREAT CURIOSITY.</span>
+            <span className="text-[#ffffff]">GREAT CURIOSITY.</span>
           </h2>
         </motion.div>
 

@@ -21,12 +21,12 @@ export const ServiceNotFound: React.FC<ServiceNotFoundProps> = ({
           animate={{ opacity: 1, y: 0 }}
           className="space-y-4"
         >
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#10b981] font-bold">
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#ffffff] font-bold">
             404 // CAPABILITY NOT FOUND
           </span>
           <h1 className="font-display text-4xl sm:text-6xl font-black uppercase text-[#FAF9F6] tracking-tight">
             SPECIFICATION <br />
-            <span className="font-editorial italic font-normal text-[#10b981] lowercase">
+            <span className="font-editorial italic font-normal text-[#ffffff] lowercase">
               unavailable
             </span>
           </h1>

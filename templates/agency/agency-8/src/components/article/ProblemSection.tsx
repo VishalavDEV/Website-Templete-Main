@@ -19,8 +19,8 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
     <section id={id} className="scroll-mt-32 pt-16 sm:pt-24 border-t border-white/10">
       {/* Section Header */}
       <div className="flex items-center gap-2 mb-6">
-        <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
-        <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#10b981] font-semibold">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
+        <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#ffffff] font-semibold">
           01 / THE PROBLEM
         </span>
       </div>

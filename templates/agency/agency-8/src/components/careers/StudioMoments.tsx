@@ -15,8 +15,8 @@ export const StudioMoments: React.FC<StudioMomentsProps> = ({ setCursorType }) =
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-8 border-b border-white/10">
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#10b981] font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#ffffff] font-semibold">
                 08 / GLIMPSES & PROCESS
               </span>
             </div>
@@ -50,7 +50,7 @@ export const StudioMoments: React.FC<StudioMomentsProps> = ({ setCursorType }) =
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4 space-y-1">
-                <span className="font-mono text-[9px] uppercase tracking-widest text-[#10b981] block font-semibold">
+                <span className="font-mono text-[9px] uppercase tracking-widest text-[#ffffff] block font-semibold">
                   {STUDIO_MOMENTS_DATA[0].category}
                 </span>
                 <p className="font-display text-sm font-bold text-[#FAF9F6] uppercase">
@@ -79,7 +79,7 @@ export const StudioMoments: React.FC<StudioMomentsProps> = ({ setCursorType }) =
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-4 left-4 right-4 space-y-1">
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-[#10b981] block font-semibold">
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-[#ffffff] block font-semibold">
                     {STUDIO_MOMENTS_DATA[1].category}
                   </span>
                   <p className="font-display text-sm font-bold text-[#FAF9F6] uppercase">
@@ -109,7 +109,7 @@ export const StudioMoments: React.FC<StudioMomentsProps> = ({ setCursorType }) =
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent pointer-events-none" />
                     <div className="absolute bottom-4 left-4 right-4 space-y-1">
-                      <span className="font-mono text-[9px] uppercase tracking-widest text-[#10b981] block font-semibold">
+                      <span className="font-mono text-[9px] uppercase tracking-widest text-[#ffffff] block font-semibold">
                         {moment.category}
                       </span>
                       <p className="font-display text-sm font-bold text-[#FAF9F6] uppercase">

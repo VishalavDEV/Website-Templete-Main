@@ -22,7 +22,7 @@ export const FeaturedServicesWork: React.FC<FeaturedServicesWorkProps> = ({
         {/* Header */}
         <div className="flex items-center justify-between border-b border-[#ffffff12] pb-6 mb-16 sm:mb-24">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
               SELECTED CASE STUDIES
             </span>
@@ -42,7 +42,7 @@ export const FeaturedServicesWork: React.FC<FeaturedServicesWorkProps> = ({
             className="font-display text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.92]"
           >
             DISCIPLINES <br />
-            <span className="font-editorial italic font-normal text-[#10b981] tracking-normal lowercase text-[1.05em]">
+            <span className="font-editorial italic font-normal text-[#ffffff] tracking-normal lowercase text-[1.05em]">
               in action.
             </span>
           </motion.h2>
@@ -83,7 +83,7 @@ export const FeaturedServicesWork: React.FC<FeaturedServicesWorkProps> = ({
 
                     {/* Metric badge if available */}
                     {project.metrics && (
-                      <div className="absolute top-6 right-6 px-3.5 py-1.5 bg-black/75 backdrop-blur-md rounded-full border border-white/15 text-xs font-mono text-[#10b981] font-semibold">
+                      <div className="absolute top-6 right-6 px-3.5 py-1.5 bg-black/75 backdrop-blur-md rounded-full border border-white/15 text-xs font-mono text-[#ffffff] font-semibold">
                         {project.metrics}
                       </div>
                     )}
@@ -98,7 +98,7 @@ export const FeaturedServicesWork: React.FC<FeaturedServicesWorkProps> = ({
                 >
                   <div className="space-y-2">
                     <div className="flex items-center gap-3">
-                      <span className="font-mono text-xs text-[#10b981] font-bold">
+                      <span className="font-mono text-xs text-[#ffffff] font-bold">
                         {project.number}
                       </span>
                       <span className="text-white/20">•</span>
@@ -133,10 +133,10 @@ export const FeaturedServicesWork: React.FC<FeaturedServicesWorkProps> = ({
                       onClick={onOpenProjectModal}
                       onMouseEnter={() => setCursorType('pointer')}
                       onMouseLeave={() => setCursorType('default')}
-                      className="group inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#FAF9F6] hover:text-[#10b981] transition-colors font-semibold cursor-pointer"
+                      className="group inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#FAF9F6] hover:text-[#ffffff] transition-colors font-semibold cursor-pointer"
                     >
                       <span>VIEW PROJECT DETAILS</span>
-                      <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 text-[#10b981]" />
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 text-[#ffffff]" />
                     </button>
                   </div>
                 </div>

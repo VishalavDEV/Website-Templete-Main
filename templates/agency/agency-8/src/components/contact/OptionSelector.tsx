@@ -47,13 +47,13 @@ export const OptionSelector: React.FC<OptionSelectorProps> = ({
             onMouseLeave={() => setCursorType('default')}
             className={`group relative text-left p-5 sm:p-7 rounded-2xl border transition-all duration-300 cursor-pointer overflow-hidden flex items-center justify-between ${
               active
-                ? 'bg-white/[0.07] border-[#10b981] shadow-lg shadow-[#10b981]/10 text-white'
+                ? 'bg-white/[0.07] border-[#ffffff] shadow-lg shadow-[#ffffff]/10 text-white'
                 : 'bg-white/[0.02] border-[#ffffff12] hover:border-white/25 hover:bg-white/[0.04] text-[#A1A1AA]'
             }`}
           >
             {/* Active Accent Left Line */}
             <div
-              className={`absolute left-0 top-0 bottom-0 w-1 bg-[#10b981] transition-all duration-300 ${
+              className={`absolute left-0 top-0 bottom-0 w-1 bg-[#ffffff] transition-all duration-300 ${
                 active ? 'opacity-100' : 'opacity-0 group-hover:opacity-40'
               }`}
             />
@@ -78,7 +78,7 @@ export const OptionSelector: React.FC<OptionSelectorProps> = ({
             <div
               className={`w-7 h-7 rounded-full flex items-center justify-center border transition-all duration-300 shrink-0 ${
                 active
-                  ? 'bg-[#10b981] border-[#10b981] text-white scale-105'
+                  ? 'bg-[#ffffff] border-[#ffffff] text-white scale-105'
                   : 'border-white/15 bg-white/5 text-transparent group-hover:border-white/30'
               }`}
             >

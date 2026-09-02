@@ -16,7 +16,7 @@ export const InsightsStats: React.FC = () => {
               <div className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#FAF9F6] tracking-tight">
                 {stat.value}
               </div>
-              <div className="font-mono text-xs text-[#10b981] uppercase tracking-widest font-semibold">
+              <div className="font-mono text-xs text-[#ffffff] uppercase tracking-widest font-semibold">
                 {stat.label}
               </div>
               <p className="text-xs text-[#888888] font-light leading-relaxed max-w-xs font-body">

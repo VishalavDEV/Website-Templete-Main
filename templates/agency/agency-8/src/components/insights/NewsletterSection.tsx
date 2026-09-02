@@ -28,14 +28,14 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
   return (
     <section className="py-24 sm:py-36 px-6 sm:px-8 lg:px-12 bg-[#080808] border-b border-[#ffffff10] relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[300px] bg-[#10b981]/[0.03] rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[300px] bg-[#ffffff]/[0.03] rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Editorial Heading */}
           <div className="lg:col-span-6 space-y-6">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#888888]">
                 04 / DISPATCHES
               </span>
@@ -82,7 +82,7 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
                             if (error) setError('');
                           }}
                           placeholder="name@company.com"
-                          className="w-full bg-[#080808] border border-white/15 px-5 py-4 text-sm text-[#FAF9F6] font-mono focus:border-[#10b981] focus:outline-none transition-colors placeholder:text-white/20"
+                          className="w-full bg-[#080808] border border-white/15 px-5 py-4 text-sm text-[#FAF9F6] font-mono focus:border-[#ffffff] focus:outline-none transition-colors placeholder:text-white/20"
                         />
                       </div>
                       {error && (
@@ -97,7 +97,7 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
                         type="submit"
                         onMouseEnter={() => setCursorType('button')}
                         onMouseLeave={() => setCursorType('default')}
-                        className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#10b981] hover:brightness-110 text-white font-mono text-xs uppercase tracking-widest font-bold border border-[#10b981]/40 transition-all duration-300 cursor-pointer shadow-lg shadow-[#10b981]/10"
+                        className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#ffffff] hover:brightness-110 text-white font-mono text-xs uppercase tracking-widest font-bold border border-[#ffffff]/40 transition-all duration-300 cursor-pointer shadow-lg shadow-[#ffffff]/10"
                       >
                         <span>SUBSCRIBE</span>
                         <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -116,7 +116,7 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                     className="space-y-4 py-4 text-center sm:text-left"
                   >
-                    <div className="w-12 h-12 rounded-full bg-[#10b981]/20 border border-[#10b981] flex items-center justify-center text-[#10b981] mb-4 mx-auto sm:mx-0">
+                    <div className="w-12 h-12 rounded-full bg-[#ffffff]/20 border border-[#ffffff] flex items-center justify-center text-[#ffffff] mb-4 mx-auto sm:mx-0">
                       <Check className="w-6 h-6" />
                     </div>
 
@@ -124,7 +124,7 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
                       YOU'RE IN.
                     </h3>
 
-                    <p className="font-mono text-xs sm:text-sm text-[#10b981] uppercase tracking-wider font-semibold">
+                    <p className="font-mono text-xs sm:text-sm text-[#ffffff] uppercase tracking-wider font-semibold">
                       THANK YOU FOR SUBSCRIBING.
                     </p>
 

@@ -13,7 +13,7 @@ export const StatementQuote: React.FC<StatementQuoteProps> = ({
   return (
     <section className="my-28 sm:my-40 py-16 sm:py-24 border-y border-white/15 relative overflow-hidden bg-[#060608]">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#10b981]/[0.035] rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#ffffff]/[0.035] rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
         <motion.div
@@ -33,8 +33,8 @@ export const StatementQuote: React.FC<StatementQuoteProps> = ({
         </motion.div>
 
         <div className="pt-4 flex items-center justify-center gap-3">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
-          <span className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#10b981] font-semibold">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
+          <span className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#ffffff] font-semibold">
             STUDIO EDITORIAL MONOGRAPH // 2026
           </span>
         </div>

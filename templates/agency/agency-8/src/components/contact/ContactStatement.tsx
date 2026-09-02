@@ -11,7 +11,7 @@ export const ContactStatement: React.FC<ContactStatementProps> = ({ setCursorTyp
   return (
     <section className="py-32 sm:py-44 bg-[#080808] border-t border-[#ffffff15] relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#10b981]/5 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#ffffff]/5 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center space-y-8 relative z-10">
         <motion.div
@@ -19,7 +19,7 @@ export const ContactStatement: React.FC<ContactStatementProps> = ({ setCursorTyp
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.35em] text-[#10b981]"
+          className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.35em] text-[#ffffff]"
         >
           <Sparkles className="w-3.5 h-3.5" />
           <span>STUDIO PHILOSOPHY</span>
@@ -35,7 +35,7 @@ export const ContactStatement: React.FC<ContactStatementProps> = ({ setCursorTyp
           >
             GOOD THINGS <br />
             START WITH <br />
-            <span className="text-[#10b981]">A CONVERSATION.</span>
+            <span className="text-[#ffffff]">A CONVERSATION.</span>
           </motion.h2>
         </div>
 

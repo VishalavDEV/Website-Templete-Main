@@ -82,8 +82,8 @@ export const FullscreenMobileMenu: React.FC<FullscreenMobileMenuProps> = ({
           {/* Top Bar inside Menu */}
           <div className="flex items-center justify-between pb-6 border-b border-white/10 max-w-7xl mx-auto w-full">
             <div className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#10b981] font-semibold">
+              <span className="w-2 h-2 rounded-full bg-[#ffffff] animate-pulse" />
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#ffffff] font-semibold">
                 STUDIO DIRECTORY
               </span>
             </div>
@@ -125,19 +125,19 @@ export const FullscreenMobileMenu: React.FC<FullscreenMobileMenuProps> = ({
                       onMouseEnter={() => setCursorType('pointer', 'GOTO ↗')}
                       onMouseLeave={() => setCursorType('default')}
                       className={`group w-full text-left py-3 border-b border-white/5 hover:border-white/20 transition-all flex items-baseline justify-between cursor-pointer ${
-                        isActive ? 'text-[#10b981]' : 'text-[#FAF9F6]'
+                        isActive ? 'text-[#ffffff]' : 'text-[#FAF9F6]'
                       }`}
                     >
                       <div className="flex items-baseline gap-4 sm:gap-6">
-                        <span className="font-mono text-xs text-[#666666] group-hover:text-[#10b981] transition-colors">
+                        <span className="font-mono text-xs text-[#666666] group-hover:text-[#ffffff] transition-colors">
                           [ {item.number} ]
                         </span>
                         <div>
                           <span
                             className={`font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight transition-all duration-300 block ${
                               isActive
-                                ? 'text-[#10b981]'
-                                : 'text-[#FAF9F6] group-hover:text-[#10b981] group-hover:translate-x-2'
+                                ? 'text-[#ffffff]'
+                                : 'text-[#FAF9F6] group-hover:text-[#ffffff] group-hover:translate-x-2'
                             }`}
                           >
                             {item.name}
@@ -151,7 +151,7 @@ export const FullscreenMobileMenu: React.FC<FullscreenMobileMenuProps> = ({
                       <ArrowUpRight
                         className={`w-5 h-5 transition-transform duration-300 ${
                           isActive
-                            ? 'text-[#10b981] opacity-100'
+                            ? 'text-[#ffffff] opacity-100'
                             : 'text-white/30 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5'
                         }`}
                       />
@@ -173,7 +173,7 @@ export const FullscreenMobileMenu: React.FC<FullscreenMobileMenuProps> = ({
               onClick={() => handleLinkClick('/contact')}
               onMouseEnter={() => setCursorType('button', 'START ↗')}
               onMouseLeave={() => setCursorType('default')}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-[#10b981] hover:brightness-110 text-white font-mono text-xs uppercase tracking-widest font-bold border border-[#10b981]/50 transition-all cursor-pointer shadow-lg shadow-[#10b981]/20"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#ffffff] hover:brightness-110 text-white font-mono text-xs uppercase tracking-widest font-bold border border-[#ffffff]/50 transition-all cursor-pointer shadow-lg shadow-[#ffffff]/20"
             >
               <span>START A PROJECT</span>
               <ArrowUpRight className="w-4 h-4" />

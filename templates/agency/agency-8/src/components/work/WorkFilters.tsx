@@ -76,7 +76,7 @@ export const WorkFilters: React.FC<WorkFiltersProps> = ({
                   {isActive && (
                     <motion.span
                       layoutId="activeCategoryHighlight"
-                      className="absolute inset-0 bg-[#10b981] rounded-full -z-10 shadow-lg shadow-[#10b981]/30"
+                      className="absolute inset-0 bg-[#ffffff] rounded-full -z-10 shadow-lg shadow-[#ffffff]/30"
                       transition={{ type: 'spring', stiffness: 400, damping: 32 }}
                     />
                   )}
@@ -111,7 +111,7 @@ export const WorkFilters: React.FC<WorkFiltersProps> = ({
                 onMouseLeave={() => setCursorType('default')}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.08] hover:bg-white/[0.14] text-[#FAF9F6] text-xs font-mono uppercase tracking-wider transition-all duration-200 cursor-pointer border border-white/10"
               >
-                <RotateCcw className="w-3 h-3 text-[#10b981]" />
+                <RotateCcw className="w-3 h-3 text-[#ffffff]" />
                 <span>CLEAR FILTERS</span>
               </button>
             )}
@@ -121,7 +121,7 @@ export const WorkFilters: React.FC<WorkFiltersProps> = ({
         {/* Secondary Industry Sub-filter Pills */}
         <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pt-1 text-[11px] font-mono border-t border-[#ffffff08]">
           <span className="text-[#888888] uppercase tracking-widest text-[10px] shrink-0 mr-1 flex items-center gap-1">
-            <Filter className="w-3 h-3 text-[#10b981]" />
+            <Filter className="w-3 h-3 text-[#ffffff]" />
             <span>INDUSTRY:</span>
           </span>
 

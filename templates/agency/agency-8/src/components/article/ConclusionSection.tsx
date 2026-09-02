@@ -18,8 +18,8 @@ export const ConclusionSection: React.FC<ConclusionSectionProps> = ({
     <section id={id} className="scroll-mt-32 pt-16 sm:pt-24 border-t border-white/10">
       {/* Section Header */}
       <div className="flex items-center gap-2 mb-6">
-        <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
-        <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#10b981] font-semibold">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
+        <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#ffffff] font-semibold">
           05 / WHAT COMES NEXT
         </span>
       </div>
@@ -45,7 +45,7 @@ export const ConclusionSection: React.FC<ConclusionSectionProps> = ({
         <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#888888] block mb-3">
           FINAL AXIOM
         </span>
-        <div className="font-display font-extrabold text-2xl sm:text-4xl text-[#10b981] uppercase tracking-tight">
+        <div className="font-display font-extrabold text-2xl sm:text-4xl text-[#ffffff] uppercase tracking-tight">
           {finalQuote}
         </div>
       </motion.div>

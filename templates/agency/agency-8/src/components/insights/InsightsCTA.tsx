@@ -15,11 +15,11 @@ export const InsightsCTA: React.FC<InsightsCTAProps> = ({
   return (
     <section className="py-28 sm:py-40 px-6 sm:px-8 lg:px-12 bg-[#080808] relative overflow-hidden text-center">
       {/* Subtle radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-[#10b981]/[0.035] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-[#ffffff]/[0.035] rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto space-y-8 relative z-10">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
           <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#888888]">
             INITIATION
           </span>
@@ -39,7 +39,7 @@ export const InsightsCTA: React.FC<InsightsCTAProps> = ({
             onClick={() => onNavigate('/contact')}
             onCursorEnter={() => setCursorType('button')}
             onCursorLeave={() => setCursorType('default')}
-            className="inline-flex items-center gap-3 px-10 py-5 bg-[#10b981] hover:brightness-110 text-white font-mono text-xs uppercase tracking-widest font-bold border border-[#10b981]/40 transition-all duration-300 cursor-pointer shadow-xl shadow-[#10b981]/10"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-[#ffffff] hover:brightness-110 text-white font-mono text-xs uppercase tracking-widest font-bold border border-[#ffffff]/40 transition-all duration-300 cursor-pointer shadow-xl shadow-[#ffffff]/10"
           >
             <span>START A PROJECT</span>
             <ArrowUpRight className="w-4 h-4" />

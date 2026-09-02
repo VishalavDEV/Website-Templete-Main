@@ -10,7 +10,7 @@ export const TeamIntro: React.FC<TeamIntroProps> = ({ setCursorType }) => {
   return (
     <section className="py-24 sm:py-36 bg-[#080808] border-t border-[#ffffff10] relative overflow-hidden">
       {/* Background glow subtle */}
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#10b981]/[0.02] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#ffffff]/[0.02] rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-16 sm:space-y-24">
         {/* Section Tag */}
@@ -20,7 +20,7 @@ export const TeamIntro: React.FC<TeamIntroProps> = ({ setCursorType }) => {
           viewport={{ once: true }}
           className="flex items-center gap-2"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
           <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#888888]">
             OUR COLLECTIVE
           </span>
@@ -37,7 +37,7 @@ export const TeamIntro: React.FC<TeamIntroProps> = ({ setCursorType }) => {
               className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.92]"
             >
               DIFFERENT MINDS. <br />
-              <span className="font-editorial italic font-normal text-[#10b981] tracking-normal lowercase text-[1.05em]">
+              <span className="font-editorial italic font-normal text-[#ffffff] tracking-normal lowercase text-[1.05em]">
                 one point of view.
               </span>
             </motion.h2>
@@ -87,7 +87,7 @@ export const TeamIntro: React.FC<TeamIntroProps> = ({ setCursorType }) => {
 
             <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between pointer-events-none">
               <div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#10b981] block font-bold">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#ffffff] block font-bold">
                   TACTILE CRITIQUE
                 </span>
                 <p className="text-xs sm:text-sm text-[#FAF9F6] font-medium">
@@ -119,7 +119,7 @@ export const TeamIntro: React.FC<TeamIntroProps> = ({ setCursorType }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between pointer-events-none">
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#10b981] block font-bold">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#ffffff] block font-bold">
                     PROTOTYPING LAB
                   </span>
                   <p className="text-xs text-[#FAF9F6] font-medium">Physical specimens & digital shaders</p>
@@ -147,7 +147,7 @@ export const TeamIntro: React.FC<TeamIntroProps> = ({ setCursorType }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between pointer-events-none">
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#10b981] block font-bold">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#ffffff] block font-bold">
                     QUIET FOCUS
                   </span>
                   <p className="text-xs text-[#FAF9F6] font-medium">Tokyo Bureau Architectural Space</p>

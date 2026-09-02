@@ -66,7 +66,7 @@ export const TestimonialStats: React.FC = () => {
     <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#060608] border-b border-[#ffffff10]">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-2 mb-12 sm:mb-16">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
           <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#888888]">
             07 / MEASURED IMPACT
           </span>
@@ -78,7 +78,7 @@ export const TestimonialStats: React.FC = () => {
               <div className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#FAF9F6] tracking-tight">
                 <AnimatedCounter end={stat.value} suffix={stat.suffix} />
               </div>
-              <div className="font-mono text-xs text-[#10b981] uppercase tracking-widest font-semibold">
+              <div className="font-mono text-xs text-[#ffffff] uppercase tracking-widest font-semibold">
                 {stat.label}
               </div>
               <p className="text-xs text-[#888888] font-light leading-relaxed max-w-xs">

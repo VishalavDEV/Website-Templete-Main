@@ -13,7 +13,7 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ service }) => {
         {/* Eyebrow */}
         <div className="flex items-center justify-between border-b border-[#ffffff12] pb-6 mb-12 sm:mb-16">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
               PROVEN PERFORMANCE
             </span>
@@ -33,7 +33,7 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ service }) => {
             className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.92]"
           >
             {service.impactHeading.line1} <br />
-            <span className="font-editorial italic font-normal text-[#10b981] tracking-normal lowercase text-[1.05em]">
+            <span className="font-editorial italic font-normal text-[#ffffff] tracking-normal lowercase text-[1.05em]">
               {service.impactHeading.line2}
             </span> <br />
             {service.impactHeading.line3}
@@ -53,10 +53,10 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ service }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.15 }}
-              className="p-8 sm:p-10 rounded-2xl bg-white/[0.02] border border-white/[0.08] relative overflow-hidden group hover:border-[#10b981]/40 transition-colors"
+              className="p-8 sm:p-10 rounded-2xl bg-white/[0.02] border border-white/[0.08] relative overflow-hidden group hover:border-[#ffffff]/40 transition-colors"
             >
               <div className="space-y-4">
-                <span className="font-mono text-xs text-[#10b981] block font-bold">
+                <span className="font-mono text-xs text-[#ffffff] block font-bold">
                   METRIC // 0{idx + 1}
                 </span>
 

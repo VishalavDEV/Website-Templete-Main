@@ -66,7 +66,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       onMouseLeave={handleMouseLeave}
       className="group relative cursor-pointer block h-full select-none"
     >
-      <div className="flex flex-col h-full rounded-2xl overflow-hidden bg-[#0d0d10] border border-[#ffffff14] hover:border-[#10b981]/50 transition-all duration-500 shadow-xl">
+      <div className="flex flex-col h-full rounded-2xl overflow-hidden bg-[#0d0d10] border border-[#ffffff14] hover:border-[#ffffff]/50 transition-all duration-500 shadow-xl">
         {/* Visual Media Container */}
         <div className={`relative w-full overflow-hidden ${getAspectClass()} bg-[#111114]`}>
           <motion.img
@@ -93,7 +93,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
 
             {project.metrics && (
-              <span className="px-3 py-1 bg-[#10b981] text-[10px] font-mono tracking-widest text-white uppercase font-bold shadow-md shadow-[#10b981]/20">
+              <span className="px-3 py-1 bg-[#ffffff] text-[10px] font-mono tracking-widest text-white uppercase font-bold shadow-md shadow-[#ffffff]/20">
                 {project.metrics}
               </span>
             )}
@@ -104,7 +104,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="p-6 sm:p-8 flex flex-col justify-between grow space-y-4">
           <div className="space-y-2.5">
             <div className="flex items-center justify-between text-xs font-mono">
-              <span className="text-[#888888] tracking-widest uppercase group-hover:text-[#10b981] transition-colors duration-300 font-semibold">
+              <span className="text-[#888888] tracking-widest uppercase group-hover:text-[#ffffff] transition-colors duration-300 font-semibold">
                 {project.client}
               </span>
               <span className="text-[#888888] uppercase tracking-wider text-[11px]">
@@ -121,8 +121,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 {project.title}
               </motion.h3>
 
-              <div className="w-10 h-10 rounded-full border border-[#ffffff18] flex items-center justify-center group-hover:border-[#10b981] group-hover:bg-[#10b981]/10 transition-all duration-300 shrink-0">
-                <ArrowUpRight className="w-4 h-4 text-[#888888] group-hover:text-[#10b981] group-hover:rotate-45 transition-all duration-300" />
+              <div className="w-10 h-10 rounded-full border border-[#ffffff18] flex items-center justify-center group-hover:border-[#ffffff] group-hover:bg-[#ffffff]/10 transition-all duration-300 shrink-0">
+                <ArrowUpRight className="w-4 h-4 text-[#888888] group-hover:text-[#ffffff] group-hover:rotate-45 transition-all duration-300" />
               </div>
             </div>
 
@@ -142,7 +142,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
 
             {project.award && (
-              <div className="flex items-center gap-1 text-[10px] text-[#10b981] shrink-0 font-medium">
+              <div className="flex items-center gap-1 text-[10px] text-[#ffffff] shrink-0 font-medium">
                 <Award className="w-3 h-3" />
                 <span className="truncate max-w-[150px]">{project.award}</span>
               </div>

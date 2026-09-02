@@ -43,7 +43,7 @@ const ServiceSectionItem: React.FC<{
     >
       {/* Subtle ambient spotlight for experimental / creative technology section */}
       {service.id === 'creative-technology' && (
-        <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-[#10b981]/[0.04] rounded-full blur-[180px] pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-[#ffffff]/[0.04] rounded-full blur-[180px] pointer-events-none" />
       )}
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -55,7 +55,7 @@ const ServiceSectionItem: React.FC<{
           className="flex items-center justify-between border-b border-[#ffffff12] pb-6 mb-12 sm:mb-16"
         >
           <div className="flex items-center gap-3">
-            <span className="font-mono text-sm font-bold text-[#10b981]">
+            <span className="font-mono text-sm font-bold text-[#ffffff]">
               {service.number}
             </span>
             <span className="text-white/20">/</span>
@@ -107,16 +107,16 @@ const ServiceSectionItem: React.FC<{
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-3 pt-2"
             >
-              <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#10b981] font-semibold block">
+              <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#ffffff] font-semibold block">
                 DELIVERABLES &amp; CAPABILITIES
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                 {service.capabilities.map((cap) => (
                   <div
                     key={cap}
-                    className="flex items-center gap-2.5 text-xs sm:text-sm font-mono text-[#FAF9F6]/90 bg-white/[0.02] border border-white/[0.08] px-3.5 py-2.5 rounded-sm hover:border-[#10b981]/40 transition-colors"
+                    className="flex items-center gap-2.5 text-xs sm:text-sm font-mono text-[#FAF9F6]/90 bg-white/[0.02] border border-white/[0.08] px-3.5 py-2.5 rounded-sm hover:border-[#ffffff]/40 transition-colors"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
                     <span>{cap}</span>
                   </div>
                 ))}
@@ -167,7 +167,7 @@ const ServiceSectionItem: React.FC<{
               {/* Bottom Image Overlay Details */}
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between pointer-events-none">
                 <div className="space-y-1">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#10b981] block font-bold">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#ffffff] block font-bold">
                     SAMPLE OUTPUT / BENCHMARK
                   </span>
                   <p className="text-xs sm:text-sm text-[#FAF9F6] font-semibold">

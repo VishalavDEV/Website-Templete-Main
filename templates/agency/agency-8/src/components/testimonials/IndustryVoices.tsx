@@ -20,7 +20,7 @@ export const IndustryVoices: React.FC<IndustryVoicesProps> = ({ setCursorType })
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 sm:mb-20 pb-8 border-b border-[#ffffff10]">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#888888]">
                 04 / SECTOR BENCHMARKS
               </span>
@@ -54,12 +54,12 @@ export const IndustryVoices: React.FC<IndustryVoicesProps> = ({ setCursorType })
                   onFocus={() => setActiveIndex(index)}
                   className={`w-full text-left py-4 sm:py-5 px-6 border transition-all duration-300 flex items-center justify-between cursor-pointer ${
                     isActive
-                      ? 'bg-white/[0.04] border-[#10b981] text-[#FAF9F6]'
+                      ? 'bg-white/[0.04] border-[#ffffff] text-[#FAF9F6]'
                       : 'border-transparent text-[#666666] hover:text-[#FAF9F6] hover:border-white/10'
                   }`}
                 >
                   <div className="flex items-baseline gap-4">
-                    <span className={`font-mono text-xs ${isActive ? 'text-[#10b981]' : 'text-[#666666]'}`}>
+                    <span className={`font-mono text-xs ${isActive ? 'text-[#ffffff]' : 'text-[#666666]'}`}>
                       0{index + 1}
                     </span>
                     <span className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight">
@@ -68,7 +68,7 @@ export const IndustryVoices: React.FC<IndustryVoicesProps> = ({ setCursorType })
                   </div>
 
                   <span className={`font-mono text-xs uppercase tracking-widest transition-opacity ${
-                    isActive ? 'opacity-100 text-[#10b981]' : 'opacity-0'
+                    isActive ? 'opacity-100 text-[#ffffff]' : 'opacity-0'
                   }`}>
                     ACTIVE ↗
                   </span>
@@ -87,7 +87,7 @@ export const IndustryVoices: React.FC<IndustryVoicesProps> = ({ setCursorType })
 
               <div className="relative z-10 space-y-6">
                 <div className="flex items-center justify-between pb-4 border-b border-white/10 font-mono text-xs">
-                  <span className="text-[#10b981] uppercase tracking-widest">
+                  <span className="text-[#ffffff] uppercase tracking-widest">
                     [ {activeItem.industry} SECTOR EXPERIENCE ]
                   </span>
                   <span className="text-[#888888]">

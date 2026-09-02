@@ -13,7 +13,7 @@ export const WorkCTA: React.FC<WorkCTAProps> = ({ onOpenProjectModal, setCursorT
   return (
     <section className="py-32 sm:py-48 bg-[#080808] relative overflow-hidden text-center">
       {/* Cinematic Aura */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#10b981]/[0.05] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#ffffff]/[0.05] rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-6 sm:px-8 relative z-10 space-y-10">
         {/* Label */}
@@ -23,7 +23,7 @@ export const WorkCTA: React.FC<WorkCTAProps> = ({ onOpenProjectModal, setCursorT
           viewport={{ once: true }}
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.03] border border-[#ffffff15]"
         >
-          <Sparkles className="w-3.5 h-3.5 text-[#10b981]" />
+          <Sparkles className="w-3.5 h-3.5 text-[#ffffff]" />
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
             INITIATE COLLABORATION
           </span>
@@ -39,7 +39,7 @@ export const WorkCTA: React.FC<WorkCTAProps> = ({ onOpenProjectModal, setCursorT
         >
           YOUR PROJECT<br />
           COULD BE<br />
-          <span className="text-[#10b981]">NEXT.</span>
+          <span className="text-[#ffffff]">NEXT.</span>
         </motion.h2>
 
         {/* Supporting Subtitle */}
@@ -66,7 +66,7 @@ export const WorkCTA: React.FC<WorkCTAProps> = ({ onOpenProjectModal, setCursorT
             onClick={onOpenProjectModal}
             onCursorEnter={() => setCursorType('button')}
             onCursorLeave={() => setCursorType('default')}
-            className="group px-10 sm:px-14 py-5 sm:py-6 rounded-full bg-[#10b981] text-white font-display font-black text-sm sm:text-base uppercase tracking-widest flex items-center gap-3 hover:brightness-110 transition-all duration-300 shadow-2xl shadow-[#10b981]/40 cursor-pointer"
+            className="group px-10 sm:px-14 py-5 sm:py-6 rounded-full bg-[#ffffff] text-white font-display font-black text-sm sm:text-base uppercase tracking-widest flex items-center gap-3 hover:brightness-110 transition-all duration-300 shadow-2xl shadow-[#ffffff]/40 cursor-pointer"
           >
             <span>START A PROJECT</span>
             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

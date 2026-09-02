@@ -12,7 +12,7 @@ export const WorkStatement: React.FC<WorkStatementProps> = ({ onNavigate, setCur
   return (
     <section className="py-28 sm:py-40 bg-[#080808] border-b border-[#ffffff10] relative overflow-hidden">
       {/* Background Ambience */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#10b981]/[0.025] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#ffffff]/[0.025] rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -24,7 +24,7 @@ export const WorkStatement: React.FC<WorkStatementProps> = ({ onNavigate, setCur
               viewport={{ once: true }}
               className="flex items-center gap-3"
             >
-              <span className="w-2 h-2 rounded-full bg-[#10b981]" />
+              <span className="w-2 h-2 rounded-full bg-[#ffffff]" />
               <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#888888]">
                 BEYOND THE IMAGE
               </span>
@@ -39,7 +39,7 @@ export const WorkStatement: React.FC<WorkStatementProps> = ({ onNavigate, setCur
             >
               EVERY PROJECT<br />
               STARTS WITH<br />
-              <span className="text-[#10b981]">A PROBLEM.</span>
+              <span className="text-[#ffffff]">A PROBLEM.</span>
             </motion.h2>
           </div>
 
@@ -61,7 +61,7 @@ export const WorkStatement: React.FC<WorkStatementProps> = ({ onNavigate, setCur
                 onClick={() => onNavigate('/services')}
                 onMouseEnter={() => setCursorType('pointer')}
                 onMouseLeave={() => setCursorType('default')}
-                className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-white text-black font-display font-bold text-xs uppercase tracking-widest hover:bg-[#10b981] hover:text-white transition-all duration-300 shadow-xl cursor-pointer"
+                className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-white text-black font-display font-bold text-xs uppercase tracking-widest hover:bg-[#ffffff] hover:text-white transition-all duration-300 shadow-xl cursor-pointer"
               >
                 <span>OUR APPROACH</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

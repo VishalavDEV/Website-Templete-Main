@@ -145,7 +145,7 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.4, opacity: 0 }}
               transition={{ type: 'spring', damping: 24, stiffness: 450 }}
-              className="px-4 py-2 rounded-full bg-[#10b981] text-white font-mono font-bold text-[10px] sm:text-[11px] tracking-widest flex items-center gap-1.5 shadow-2xl border border-white/30 uppercase select-none shadow-[#10b981]/40 backdrop-blur-md"
+              className="px-4 py-2 rounded-full bg-[#ffffff] text-white font-mono font-bold text-[10px] sm:text-[11px] tracking-widest flex items-center gap-1.5 shadow-2xl border border-white/30 uppercase select-none shadow-[#ffffff]/40 backdrop-blur-md"
             >
               {cursorType === 'drag' ? (
                 <MoveHorizontal className="w-3 h-3" />
@@ -161,7 +161,7 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({
               animate={{ scaleY: 1 }}
               exit={{ scaleY: 0 }}
               transition={{ duration: 0.15 }}
-              className="w-0.5 h-5 bg-[#10b981] rounded-full"
+              className="w-0.5 h-5 bg-[#ffffff] rounded-full"
             />
           ) : isPointerOrButton ? (
             /* Link / Pointer / Button Magnetic Hover Mode */
@@ -171,7 +171,7 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({
               animate={{ scale: 1.4 }}
               exit={{ scale: 0.8 }}
               transition={{ type: 'spring', damping: 22, stiffness: 450 }}
-              className="w-7 h-7 rounded-full border border-[#10b981] bg-[#10b981]/20 flex items-center justify-center backdrop-blur-[2px]"
+              className="w-7 h-7 rounded-full border border-[#ffffff] bg-[#ffffff]/20 flex items-center justify-center backdrop-blur-[2px]"
             >
               {cursorType === 'link' ? (
                 <ArrowUpRight className="w-3 h-3 text-[#FAF9F6]" />
@@ -186,7 +186,7 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
-              className="w-3.5 h-3.5 rounded-full border border-[#10b981]/80 flex items-center justify-center"
+              className="w-3.5 h-3.5 rounded-full border border-[#ffffff]/80 flex items-center justify-center"
             >
               <div className="w-1 h-1 bg-[#FAF9F6] rounded-full shadow-[0_0_4px_#FAF9F6]" />
             </motion.div>

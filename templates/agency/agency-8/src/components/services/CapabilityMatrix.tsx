@@ -14,7 +14,7 @@ export const CapabilityMatrix: React.FC<CapabilityMatrixProps> = ({ setCursorTyp
         {/* Header */}
         <div className="flex items-center justify-between border-b border-[#ffffff12] pb-6 mb-16 sm:mb-20">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
               TECHNICAL MASTERY
             </span>
@@ -34,7 +34,7 @@ export const CapabilityMatrix: React.FC<CapabilityMatrixProps> = ({ setCursorTyp
             className="font-display text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.92]"
           >
             OUR TOOLKIT <br />
-            <span className="font-editorial italic font-normal text-[#10b981] tracking-normal lowercase text-[1.05em]">
+            <span className="font-editorial italic font-normal text-[#ffffff] tracking-normal lowercase text-[1.05em]">
               &amp; stack.
             </span>
           </motion.h2>
@@ -52,7 +52,7 @@ export const CapabilityMatrix: React.FC<CapabilityMatrixProps> = ({ setCursorTyp
               className={`space-y-6 pt-8 md:pt-0 ${groupIdx !== 0 ? 'md:pl-8 lg:pl-10' : ''}`}
             >
               <div className="space-y-1">
-                <span className="font-mono text-xs text-[#10b981] uppercase tracking-widest block font-bold">
+                <span className="font-mono text-xs text-[#ffffff] uppercase tracking-widest block font-bold">
                   0{groupIdx + 1} //
                 </span>
                 <h3 className="font-display text-2xl font-bold uppercase text-[#FAF9F6] tracking-tight">
@@ -68,7 +68,7 @@ export const CapabilityMatrix: React.FC<CapabilityMatrixProps> = ({ setCursorTyp
                     onMouseLeave={() => setCursorType('default')}
                     className="text-base text-[#888888] hover:text-[#FAF9F6] hover:translate-x-1 transition-all duration-300 flex items-center gap-2 cursor-default"
                   >
-                    <span className="w-1 h-1 rounded-full bg-[#10b981]/60" />
+                    <span className="w-1 h-1 rounded-full bg-[#ffffff]/60" />
                     <span>{item}</span>
                   </li>
                 ))}

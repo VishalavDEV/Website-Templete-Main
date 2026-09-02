@@ -44,7 +44,7 @@ export const ShareArticle: React.FC<ShareArticleProps> = ({
   return (
     <div className="space-y-4 py-8 border-b border-white/10">
       <div className="flex items-center gap-2">
-        <Share2 className="w-3.5 h-3.5 text-[#10b981]" />
+        <Share2 className="w-3.5 h-3.5 text-[#ffffff]" />
         <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#FAF9F6] font-semibold">
           SHARE ARTICLE
         </span>
@@ -59,8 +59,8 @@ export const ShareArticle: React.FC<ShareArticleProps> = ({
           onMouseLeave={() => setCursorType('default')}
           className={`flex items-center gap-2 px-4 py-2.5 font-mono text-xs uppercase tracking-wider transition-all duration-300 border cursor-pointer ${
             copied
-              ? 'bg-[#10b981] border-[#10b981] text-white'
-              : 'bg-white/[0.03] border-white/15 text-[#CCCCCC] hover:border-[#10b981] hover:text-[#FAF9F6]'
+              ? 'bg-[#ffffff] border-[#ffffff] text-white'
+              : 'bg-white/[0.03] border-white/15 text-[#CCCCCC] hover:border-[#ffffff] hover:text-[#FAF9F6]'
           }`}
         >
           {copied ? (

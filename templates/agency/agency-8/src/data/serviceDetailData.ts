@@ -144,7 +144,7 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailConfig> = {
     heroMetadata: ['STRATEGY', 'RESEARCH', 'POSITIONING', 'EXPERIENCE'],
     heroImage:
       'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=85',
-    heroAccentColor: '#10b981',
+    heroAccentColor: '#ffffff',
 
     statementLabel: 'WHY IT MATTERS',
     statementHeadline: {
@@ -399,7 +399,7 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailConfig> = {
     heroMetadata: ['VISUAL IDENTITY', 'TYPOGRAPHY', 'ART DIRECTION', 'DESIGN SYSTEMS'],
     heroImage:
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85',
-    heroAccentColor: '#10b981',
+    heroAccentColor: '#ffffff',
 
     statementLabel: 'WHY IT MATTERS',
     statementHeadline: {
@@ -654,7 +654,7 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailConfig> = {
     heroMetadata: ['UI / UX', 'DESIGN SYSTEMS', 'INTERACTION', 'PROTOTYPING'],
     heroImage:
       'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1600&q=85',
-    heroAccentColor: '#10b981',
+    heroAccentColor: '#ffffff',
 
     statementLabel: 'WHY IT MATTERS',
     statementHeadline: {
@@ -909,7 +909,7 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailConfig> = {
     heroMetadata: ['FRONTEND', 'CREATIVE DEV', 'PERFORMANCE', 'FULL STACK'],
     heroImage:
       'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=85',
-    heroAccentColor: '#10b981',
+    heroAccentColor: '#ffffff',
 
     statementLabel: 'WHY IT MATTERS',
     statementHeadline: {
@@ -1164,7 +1164,7 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailConfig> = {
     heroMetadata: ['EXPERIMENTAL', 'WEBGL', 'GENERATIVE', 'PHYSICAL COMPUTING'],
     heroImage:
       'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=85',
-    heroAccentColor: '#10b981',
+    heroAccentColor: '#ffffff',
 
     statementLabel: 'WHY IT MATTERS',
     statementHeadline: {
@@ -1419,7 +1419,7 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailConfig> = {
     heroMetadata: ['MOTION DESIGN', 'ART DIRECTION', '3D ASSETS', 'BRAND FILMS'],
     heroImage:
       'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1600&q=85',
-    heroAccentColor: '#10b981',
+    heroAccentColor: '#ffffff',
 
     statementLabel: 'WHY IT MATTERS',
     statementHeadline: {

@@ -36,7 +36,7 @@ export const AboutPreview: React.FC<AboutPreviewProps> = ({
   return (
     <section id="about" className="py-28 sm:py-36 relative overflow-hidden bg-[#080808]">
       {/* Background accents */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#10b981]/[0.02] rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#ffffff]/[0.02] rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Section Tag */}
@@ -47,7 +47,7 @@ export const AboutPreview: React.FC<AboutPreviewProps> = ({
           transition={{ duration: 0.6 }}
           className="flex items-center gap-2 mb-8 sm:mb-12"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
             WHO WE ARE
           </span>
@@ -63,7 +63,7 @@ export const AboutPreview: React.FC<AboutPreviewProps> = ({
             className="font-display text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#FAF9F6] leading-[1.08] tracking-tight max-w-5xl uppercase"
           >
             We turn ambitious ideas into{' '}
-            <span className="font-editorial italic font-normal text-[#10b981] lowercase">
+            <span className="font-editorial italic font-normal text-[#ffffff] lowercase">
               meaningful digital experiences.
             </span>
           </motion.h2>
@@ -96,10 +96,10 @@ export const AboutPreview: React.FC<AboutPreviewProps> = ({
                   }}
                   onCursorEnter={() => setCursorType('button')}
                   onCursorLeave={() => setCursorType('default')}
-                  className="group inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#FAF9F6] hover:text-[#10b981] transition-colors py-2 cursor-pointer"
+                  className="group inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#FAF9F6] hover:text-[#ffffff] transition-colors py-2 cursor-pointer"
                 >
                   <span>More About Us</span>
-                  <span className="text-sm text-[#10b981] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">&nearr;</span>
+                  <span className="text-sm text-[#ffffff] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">&nearr;</span>
                 </MagneticButton>
               </div>
             </motion.div>
@@ -117,10 +117,10 @@ export const AboutPreview: React.FC<AboutPreviewProps> = ({
                 return (
                   <div
                     key={idx}
-                    className="p-6 rounded-xl bg-white/[0.02] border border-[#ffffff10] hover:border-[#10b981]/40 transition-colors group"
+                    className="p-6 rounded-xl bg-white/[0.02] border border-[#ffffff10] hover:border-[#ffffff]/40 transition-colors group"
                   >
                     <div className="flex items-center gap-3.5 mb-2">
-                      <div className="p-2 rounded-lg bg-[#10b981]/10 text-[#10b981] group-hover:bg-[#10b981]/20 transition-colors">
+                      <div className="p-2 rounded-lg bg-[#ffffff]/10 text-[#ffffff] group-hover:bg-[#ffffff]/20 transition-colors">
                         <Icon className="w-4 h-4" />
                       </div>
                       <h4 className="font-display text-lg font-bold text-[#FAF9F6] group-hover:text-white">

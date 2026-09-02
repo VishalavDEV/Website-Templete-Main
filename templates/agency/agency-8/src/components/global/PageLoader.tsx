@@ -53,7 +53,7 @@ export const PageLoader: React.FC<PageLoaderProps> = ({ onComplete }) => {
           {/* Top metadata */}
           <div className="flex items-center justify-between text-xs font-mono tracking-widest text-[#888888]">
             <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-ping" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff] animate-ping" />
               <span>STUDIO // ARCHITECTURE</span>
             </span>
             <span>2026 EDITION</span>
@@ -80,11 +80,11 @@ export const PageLoader: React.FC<PageLoaderProps> = ({ onComplete }) => {
           <div className="space-y-3">
             <div className="flex justify-between items-center text-xs font-mono text-[#888888]">
               <span className="uppercase tracking-widest">INITIALIZING EXPERIENCE</span>
-              <span className="text-[#10b981] font-bold">{Math.min(100, counter)}%</span>
+              <span className="text-[#ffffff] font-bold">{Math.min(100, counter)}%</span>
             </div>
             <div className="w-full h-0.5 bg-white/10 overflow-hidden">
               <motion.div
-                className="h-full bg-[#10b981]"
+                className="h-full bg-[#ffffff]"
                 style={{ width: `${Math.min(100, counter)}%` }}
                 transition={{ ease: 'linear' }}
               />

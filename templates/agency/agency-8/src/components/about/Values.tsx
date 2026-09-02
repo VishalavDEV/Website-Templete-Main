@@ -83,7 +83,7 @@ export const Values: React.FC<ValuesProps> = ({ setCursorType }) => {
               viewport={{ once: true }}
               className="flex items-center gap-2 mb-4"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
               <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
                 GUIDING PRINCIPLES
               </span>
@@ -134,7 +134,7 @@ export const Values: React.FC<ValuesProps> = ({ setCursorType }) => {
                 <div className="flex items-start lg:items-center justify-between gap-8">
                   {/* Number & Value Title */}
                   <div className="flex items-baseline gap-8 lg:gap-16">
-                    <span className="font-mono text-xs tracking-widest text-[#888888] group-hover:text-[#10b981] group-hover:-translate-x-1 transition-all duration-300">
+                    <span className="font-mono text-xs tracking-widest text-[#888888] group-hover:text-[#ffffff] group-hover:-translate-x-1 transition-all duration-300">
                       {val.number}
                     </span>
                     <h3 className="font-display text-3xl lg:text-6xl font-bold text-[#FAF9F6]/80 group-hover:text-white uppercase tracking-tight transition-all duration-300 group-hover:translate-x-3">
@@ -144,7 +144,7 @@ export const Values: React.FC<ValuesProps> = ({ setCursorType }) => {
 
                   {/* Description */}
                   <div className="max-w-md hidden lg:block">
-                    <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#10b981] block mb-1 font-semibold opacity-80 group-hover:opacity-100">
+                    <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#ffffff] block mb-1 font-semibold opacity-80 group-hover:opacity-100">
                       {val.tagline}
                     </span>
                     <p className="text-sm text-[#888888] group-hover:text-[#FAF9F6] leading-relaxed transition-colors">
@@ -153,13 +153,13 @@ export const Values: React.FC<ValuesProps> = ({ setCursorType }) => {
                   </div>
 
                   {/* Indicator Arrow */}
-                  <div className="w-12 h-12 rounded-full border border-[#ffffff15] flex items-center justify-center group-hover:border-[#10b981] group-hover:bg-[#10b981]/10 transition-all duration-300 shrink-0">
-                    <ArrowUpRight className="w-5 h-5 text-[#888888] group-hover:text-[#10b981] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                  <div className="w-12 h-12 rounded-full border border-[#ffffff15] flex items-center justify-center group-hover:border-[#ffffff] group-hover:bg-[#ffffff]/10 transition-all duration-300 shrink-0">
+                    <ArrowUpRight className="w-5 h-5 text-[#888888] group-hover:text-[#ffffff] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
                   </div>
                 </div>
 
                 {/* Left accent bar */}
-                <div className="absolute left-0 bottom-0 top-0 w-1 bg-[#10b981] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute left-0 bottom-0 top-0 w-1 bg-[#ffffff] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             );
           })}
@@ -177,12 +177,12 @@ export const Values: React.FC<ValuesProps> = ({ setCursorType }) => {
                   className="w-full flex items-center justify-between text-left group focus:outline-hidden"
                 >
                   <div className="flex items-center gap-4">
-                    <span className="font-mono text-xs text-[#10b981]">{val.number}</span>
+                    <span className="font-mono text-xs text-[#ffffff]">{val.number}</span>
                     <span className="font-display text-2xl font-bold text-[#FAF9F6] uppercase">
                       {val.title}
                     </span>
                   </div>
-                  <div className={`p-2 rounded-full bg-white/[0.04] transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[#10b981]' : 'text-[#888888]'}`}>
+                  <div className={`p-2 rounded-full bg-white/[0.04] transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[#ffffff]' : 'text-[#888888]'}`}>
                     <ChevronDown className="w-4 h-4" />
                   </div>
                 </button>
@@ -197,7 +197,7 @@ export const Values: React.FC<ValuesProps> = ({ setCursorType }) => {
                       className="overflow-hidden"
                     >
                       <div className="pt-4 space-y-3">
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-[#10b981] block font-bold">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-[#ffffff] block font-bold">
                           {val.tagline}
                         </span>
                         <p className="text-sm text-[#888888] leading-relaxed">
@@ -234,7 +234,7 @@ export const Values: React.FC<ValuesProps> = ({ setCursorType }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-4">
                 <div>
-                  <span className="text-[10px] font-mono text-[#10b981] uppercase tracking-widest block font-bold">
+                  <span className="text-[10px] font-mono text-[#ffffff] uppercase tracking-widest block font-bold">
                     {hoveredValue.number} // {hoveredValue.title}
                   </span>
                   <p className="text-xs text-[#FAF9F6] font-medium">{hoveredValue.tagline}</p>

@@ -42,7 +42,7 @@ export const ScrollToTop: React.FC<ScrollToTopProps> = ({ setCursorType }) => {
           onMouseEnter={() => setCursorType('button', 'TOP ↑')}
           onMouseLeave={() => setCursorType('default')}
           aria-label="Scroll back to top"
-          className="fixed bottom-8 right-6 sm:right-8 z-40 p-3 sm:p-3.5 rounded-full bg-[#080808]/80 backdrop-blur-md border border-white/20 text-[#FAF9F6] hover:bg-[#10b981] hover:border-[#10b981] hover:text-white transition-all duration-300 shadow-xl shadow-black/50 cursor-pointer group focus:outline-hidden focus:ring-2 focus:ring-[#10b981]"
+          className="fixed bottom-8 right-6 sm:right-8 z-40 p-3 sm:p-3.5 rounded-full bg-[#080808]/80 backdrop-blur-md border border-white/20 text-[#FAF9F6] hover:bg-[#ffffff] hover:border-[#ffffff] hover:text-white transition-all duration-300 shadow-xl shadow-black/50 cursor-pointer group focus:outline-hidden focus:ring-2 focus:ring-[#ffffff]"
         >
           <ArrowUp className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
         </motion.button>

@@ -145,7 +145,7 @@ export const CreativeDirection: React.FC<CreativeDirectionProps> = ({ study, set
                     <span className="font-mono text-[10px] text-[#888888] block truncate">
                       {c.name}
                     </span>
-                    <span className="font-mono text-[9px] uppercase tracking-wider text-[#10b981] block">
+                    <span className="font-mono text-[9px] uppercase tracking-wider text-[#ffffff] block">
                       {c.role}
                     </span>
                   </div>

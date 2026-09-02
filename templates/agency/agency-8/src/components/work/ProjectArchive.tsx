@@ -129,7 +129,7 @@ export const ProjectArchive: React.FC<ProjectArchiveProps> = ({
                 className="group px-8 py-4 rounded-full bg-white/[0.04] hover:bg-white/[0.1] border border-[#ffffff18] hover:border-white/40 text-[#FAF9F6] font-mono text-xs uppercase tracking-widest flex items-center gap-3 transition-all duration-300 cursor-pointer shadow-lg"
               >
                 <span>LOAD MORE PROJECTS</span>
-                <ArrowDown className="w-3.5 h-3.5 text-[#10b981] group-hover:translate-y-1 transition-transform" />
+                <ArrowDown className="w-3.5 h-3.5 text-[#ffffff] group-hover:translate-y-1 transition-transform" />
               </button>
             ) : (
               <div className="px-6 py-2.5 rounded-full bg-white/[0.02] border border-white/[0.06] text-xs font-mono text-[#888888] tracking-widest uppercase">

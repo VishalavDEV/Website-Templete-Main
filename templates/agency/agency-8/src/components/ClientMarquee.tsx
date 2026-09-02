@@ -37,7 +37,7 @@ export const ClientMarquee: React.FC<ClientMarqueeProps> = ({ setCursorType, onN
               onClick={() => onNavigate(`/work/${client.name.toLowerCase()}`)}
               className="group flex items-center gap-3.5 px-4 py-2 cursor-pointer select-none opacity-40 hover:opacity-100 transition-opacity duration-300"
             >
-              <span className="text-sm sm:text-base text-[#10b981] group-hover:scale-110 transition-transform duration-300">
+              <span className="text-sm sm:text-base text-[#ffffff] group-hover:scale-110 transition-transform duration-300">
                 {client.symbol}
               </span>
               <span className="font-display text-xl sm:text-2xl font-bold tracking-[0.15em] text-[#FAF9F6] group-hover:text-white transition-colors duration-300">

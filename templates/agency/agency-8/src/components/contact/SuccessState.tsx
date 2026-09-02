@@ -24,7 +24,7 @@ export const SuccessState: React.FC<SuccessStateProps> = ({
     >
       {/* Background ambient glow */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-        <div className="w-96 h-96 rounded-full bg-[#10b981]/10 blur-[120px]" />
+        <div className="w-96 h-96 rounded-full bg-[#ffffff]/10 blur-[120px]" />
       </div>
 
       {/* Animated Check & Ring */}
@@ -32,22 +32,22 @@ export const SuccessState: React.FC<SuccessStateProps> = ({
         <motion.div
           animate={{ scale: [1, 1.25, 1], opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute inset-0 -m-4 rounded-full border border-[#10b981]/40"
+          className="absolute inset-0 -m-4 rounded-full border border-[#ffffff]/40"
         />
-        <div className="w-20 h-20 rounded-full bg-[#10b981]/20 border border-[#10b981] flex items-center justify-center text-[#10b981]">
-          <CheckCircle className="w-10 h-10 text-[#10b981]" />
+        <div className="w-20 h-20 rounded-full bg-[#ffffff]/20 border border-[#ffffff] flex items-center justify-center text-[#ffffff]">
+          <CheckCircle className="w-10 h-10 text-[#ffffff]" />
         </div>
       </div>
 
       {/* Heading */}
       <div className="space-y-3">
-        <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.3em] text-[#10b981]">
+        <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.3em] text-[#ffffff]">
           <Sparkles className="w-3.5 h-3.5" />
           <span>INQUIRY RECEIVED</span>
         </div>
         <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.95]">
           THANK YOU. <br />
-          <span className="text-[#10b981]">WE'LL BE IN TOUCH.</span>
+          <span className="text-[#ffffff]">WE'LL BE IN TOUCH.</span>
         </h2>
       </div>
 
@@ -68,7 +68,7 @@ export const SuccessState: React.FC<SuccessStateProps> = ({
           onClick={onNavigateHome}
           onCursorEnter={() => setCursorType('button')}
           onCursorLeave={() => setCursorType('default')}
-          className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-black font-mono text-xs uppercase tracking-widest font-bold hover:bg-[#10b981] hover:text-white transition-all duration-300 cursor-pointer shadow-xl"
+          className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-black font-mono text-xs uppercase tracking-widest font-bold hover:bg-[#ffffff] hover:text-white transition-all duration-300 cursor-pointer shadow-xl"
         >
           <span>BACK TO HOME</span>
           <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

@@ -52,10 +52,10 @@ export const ExperienceShowcase: React.FC<ExperienceShowcaseProps> = ({ study, s
               <div className="flex items-center gap-2">
                 <div className="w-2.5 h-2.5 rounded-full bg-[#EF4444]/60" />
                 <div className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]/60" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#10B981]/60" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffffff]/60" />
               </div>
               <div className="px-4 py-1 rounded-md bg-white/[0.04] border border-white/10 text-[10px] sm:text-xs font-mono text-[#888888] flex items-center gap-2">
-                <Monitor className="w-3 h-3 text-[#10b981]" />
+                <Monitor className="w-3 h-3 text-[#ffffff]" />
                 <span>app.{study.slug}.systems // production</span>
               </div>
               <div className="text-[10px] font-mono text-[#888888] hidden sm:inline">120 FPS</div>

@@ -19,7 +19,7 @@ export const CapabilityMatrix: React.FC<CapabilityMatrixProps> = ({
         {/* Header */}
         <div className="flex items-center justify-between border-b border-[#ffffff12] pb-6 mb-12 sm:mb-16">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
               {service.capabilityGridHeading}
             </span>
@@ -40,17 +40,17 @@ export const CapabilityMatrix: React.FC<CapabilityMatrixProps> = ({
               transition={{ duration: 0.5, delay: index * 0.05 }}
               onMouseEnter={() => setCursorType('pointer')}
               onMouseLeave={() => setCursorType('default')}
-              className="group p-6 sm:p-8 rounded-xl bg-white/[0.02] border border-white/[0.08] hover:border-[#10b981]/40 hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between min-h-[160px] cursor-pointer"
+              className="group p-6 sm:p-8 rounded-xl bg-white/[0.02] border border-white/[0.08] hover:border-[#ffffff]/40 hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between min-h-[160px] cursor-pointer"
             >
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-[#666666] group-hover:text-[#10b981] transition-colors">
+                <span className="font-mono text-xs text-[#666666] group-hover:text-[#ffffff] transition-colors">
                   0{index + 1}
                 </span>
-                <Sparkles className="w-3.5 h-3.5 text-white/20 group-hover:text-[#10b981] transition-colors" />
+                <Sparkles className="w-3.5 h-3.5 text-white/20 group-hover:text-[#ffffff] transition-colors" />
               </div>
 
               <div>
-                <h3 className="font-display text-lg sm:text-xl font-bold uppercase text-[#FAF9F6] tracking-tight group-hover:text-[#10b981] transition-colors">
+                <h3 className="font-display text-lg sm:text-xl font-bold uppercase text-[#FAF9F6] tracking-tight group-hover:text-[#ffffff] transition-colors">
                   {item}
                 </h3>
                 <span className="font-mono text-[10px] text-[#888888] uppercase tracking-wider block mt-1">

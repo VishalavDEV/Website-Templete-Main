@@ -26,7 +26,7 @@ export const Process: React.FC<ProcessProps> = ({ setCursorType }) => {
               viewport={{ once: true }}
               className="flex items-center gap-2 mb-4"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
               <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
                 HOW WE WORK
               </span>
@@ -65,12 +65,12 @@ export const Process: React.FC<ProcessProps> = ({ setCursorType }) => {
                 onMouseLeave={() => setCursorType('default')}
                 className={`group relative p-3 sm:p-4 rounded-xl text-left transition-all duration-300 flex flex-col justify-between cursor-pointer ${
                   isActive
-                    ? 'bg-[#10b981]/20 border border-[#10b981]/40 text-white shadow-lg'
+                    ? 'bg-[#ffffff]/20 border border-[#ffffff]/40 text-white shadow-lg'
                     : 'hover:bg-white/[0.04] text-[#888888] hover:text-[#FAF9F6]'
                 }`}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <span className={`font-mono text-xs font-bold ${isActive ? 'text-[#10b981]' : 'text-[#888888]'}`}>
+                  <span className={`font-mono text-xs font-bold ${isActive ? 'text-[#ffffff]' : 'text-[#888888]'}`}>
                     {step.number}
                   </span>
                   <span className="text-[10px] font-mono text-[#888888] opacity-80">{step.duration}</span>
@@ -82,7 +82,7 @@ export const Process: React.FC<ProcessProps> = ({ setCursorType }) => {
                 {isActive && (
                   <motion.div
                     layoutId="activeProcessPill"
-                    className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#10b981] rounded-full"
+                    className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#ffffff] rounded-full"
                   />
                 )}
               </button>
@@ -105,7 +105,7 @@ export const Process: React.FC<ProcessProps> = ({ setCursorType }) => {
                 {/* Left Step Narrative */}
                 <div className="lg:col-span-7 space-y-6">
                   <div className="flex items-center gap-3">
-                    <span className="px-3 py-1 bg-[#10b981]/15 border border-[#10b981]/30 text-[#10b981] text-xs font-mono font-semibold">
+                    <span className="px-3 py-1 bg-[#ffffff]/15 border border-[#ffffff]/30 text-[#ffffff] text-xs font-mono font-semibold">
                       PHASE {currentStep.number}
                     </span>
                     <span className="text-[#888888] text-xs font-mono flex items-center gap-1.5">
@@ -132,7 +132,7 @@ export const Process: React.FC<ProcessProps> = ({ setCursorType }) => {
                   <div className="space-y-3">
                     {currentStep.deliverables.map((deliv, dIdx) => (
                       <div key={dIdx} className="flex items-center gap-3 text-sm text-[#FAF9F6]">
-                        <CheckCircle2 className="w-4 h-4 text-[#10b981] shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-[#ffffff] shrink-0" />
                         <span>{deliv}</span>
                       </div>
                     ))}

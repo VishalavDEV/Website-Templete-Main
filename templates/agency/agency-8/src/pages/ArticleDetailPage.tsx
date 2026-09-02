@@ -49,12 +49,12 @@ export const ArticleDetailPage: React.FC<ArticleDetailPageProps> = ({
     return (
       <div className="min-h-screen bg-[#080808] text-[#FAF9F6] pt-36 pb-24 px-6 sm:px-8 flex items-center justify-center">
         <div className="max-w-xl text-center space-y-8">
-          <div className="w-16 h-16 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center mx-auto text-[#10b981]">
+          <div className="w-16 h-16 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center mx-auto text-[#ffffff]">
             <FileQuestion className="w-8 h-8" />
           </div>
 
           <div className="space-y-3">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#10b981] font-semibold">
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#ffffff] font-semibold">
               404 // DISPATCH MISSING
             </span>
             <h1 className="font-display font-extrabold text-4xl sm:text-6xl text-[#FAF9F6] uppercase tracking-tight">
@@ -70,7 +70,7 @@ export const ArticleDetailPage: React.FC<ArticleDetailPageProps> = ({
               onClick={() => onNavigate('/insights')}
               onMouseEnter={() => setCursorType('button')}
               onMouseLeave={() => setCursorType('default')}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-[#10b981] hover:brightness-110 text-white font-mono text-xs uppercase tracking-widest font-bold border border-[#10b981]/40 transition-all cursor-pointer shadow-lg shadow-[#10b981]/10"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#ffffff] hover:brightness-110 text-white font-mono text-xs uppercase tracking-widest font-bold border border-[#ffffff]/40 transition-all cursor-pointer shadow-lg shadow-[#ffffff]/10"
             >
               <span>BACK TO INSIGHTS</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -138,7 +138,7 @@ export const ArticleDetailPage: React.FC<ArticleDetailPageProps> = ({
           onClick={() => onNavigate('/insights')}
           onMouseEnter={() => setCursorType('pointer')}
           onMouseLeave={() => setCursorType('default')}
-          className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#888888] hover:text-[#10b981] transition-colors cursor-pointer group"
+          className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#888888] hover:text-[#ffffff] transition-colors cursor-pointer group"
         >
           <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
           <span>BACK TO INSIGHTS</span>
@@ -169,7 +169,7 @@ export const ArticleDetailPage: React.FC<ArticleDetailPageProps> = ({
           <div className="lg:col-span-6 space-y-16">
             {/* 4. Article Intro: Large Editorial Typography */}
             <div className="space-y-6">
-              <p className="font-body text-xl sm:text-2xl md:text-3xl text-[#FAF9F6] font-normal leading-relaxed border-l-2 border-[#10b981] pl-6 py-1">
+              <p className="font-body text-xl sm:text-2xl md:text-3xl text-[#FAF9F6] font-normal leading-relaxed border-l-2 border-[#ffffff] pl-6 py-1">
                 {detail.introParagraphs[0]}
               </p>
               {detail.introParagraphs.slice(1).map((para, i) => (
@@ -253,7 +253,7 @@ export const ArticleDetailPage: React.FC<ArticleDetailPageProps> = ({
             />
 
             <div className="p-6 bg-white/[0.02] border border-white/10 space-y-4">
-              <span className="font-mono text-[10px] uppercase tracking-widest text-[#10b981] font-semibold block">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-[#ffffff] font-semibold block">
                 CITATION NOTE
               </span>
               <p className="font-body text-xs text-[#888888] font-light leading-relaxed">

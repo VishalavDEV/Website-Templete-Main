@@ -14,7 +14,7 @@ export const TeamDisciplines: React.FC<TeamDisciplinesProps> = ({ setCursorType 
   return (
     <section className="py-24 sm:py-36 bg-[#080808] border-t border-[#ffffff10] relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-[#10b981]/[0.025] rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-[#ffffff]/[0.025] rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-16">
         {/* Section Header */}
@@ -25,7 +25,7 @@ export const TeamDisciplines: React.FC<TeamDisciplinesProps> = ({ setCursorType 
             viewport={{ once: true }}
             className="flex items-center gap-2"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
             <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#888888]">
               CORE CAPABILITIES & DISCIPLINES
             </span>
@@ -39,7 +39,7 @@ export const TeamDisciplines: React.FC<TeamDisciplinesProps> = ({ setCursorType 
             className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.92]"
           >
             ONE STUDIO. <br />
-            <span className="font-editorial italic font-normal text-[#10b981] tracking-normal lowercase text-[1.05em]">
+            <span className="font-editorial italic font-normal text-[#ffffff] tracking-normal lowercase text-[1.05em]">
               many perspectives.
             </span>
           </motion.h2>
@@ -62,11 +62,11 @@ export const TeamDisciplines: React.FC<TeamDisciplinesProps> = ({ setCursorType 
                   }}
                   onMouseLeave={() => setCursorType('default')}
                   className={`group py-6 sm:py-8 border-b border-[#ffffff15] transition-all duration-300 cursor-pointer flex items-center justify-between ${
-                    isSelected ? 'opacity-100 pl-4 border-[#10b981]/40' : 'opacity-40 hover:opacity-80'
+                    isSelected ? 'opacity-100 pl-4 border-[#ffffff]/40' : 'opacity-40 hover:opacity-80'
                   }`}
                 >
                   <div className="flex items-baseline gap-6 sm:gap-8">
-                    <span className="font-mono text-xs sm:text-sm text-[#10b981] font-bold tracking-widest">
+                    <span className="font-mono text-xs sm:text-sm text-[#ffffff] font-bold tracking-widest">
                       {disc.number}
                     </span>
                     <h3 className="font-display text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase tracking-tight text-[#FAF9F6]">
@@ -81,7 +81,7 @@ export const TeamDisciplines: React.FC<TeamDisciplinesProps> = ({ setCursorType 
                     <div
                       className={`w-7 h-7 rounded-full flex items-center justify-center border transition-all duration-300 ${
                         isSelected
-                          ? 'bg-[#10b981] border-[#10b981] text-white rotate-45'
+                          ? 'bg-[#ffffff] border-[#ffffff] text-white rotate-45'
                           : 'border-white/10 text-[#888888] group-hover:border-white group-hover:text-white'
                       }`}
                     >
@@ -112,14 +112,14 @@ export const TeamDisciplines: React.FC<TeamDisciplinesProps> = ({ setCursorType 
                     className="w-full h-full object-cover grayscale-[10%] contrast-[110%]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[10px] font-mono tracking-widest text-[#10b981] uppercase">
+                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[10px] font-mono tracking-widest text-[#ffffff] uppercase">
                     DISCIPLINE // {activeDiscipline.number}
                   </div>
                 </div>
 
                 {/* Statement & Description */}
                 <div className="space-y-3">
-                  <span className="font-mono text-xs text-[#10b981] tracking-widest uppercase font-bold block">
+                  <span className="font-mono text-xs text-[#ffffff] tracking-widest uppercase font-bold block">
                     {activeDiscipline.statement}
                   </span>
                   <p className="text-sm sm:text-base text-[#A1A1AA] leading-relaxed">
