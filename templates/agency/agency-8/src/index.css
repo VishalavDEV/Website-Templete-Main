@@ -104,7 +104,7 @@
 
 /* Custom Background Color Overrides for Royal Blue theme */
 body {
-  background-color: #3b66f5 !important;
+  background-color: #2563eb !important;
   color: #ffffff !important;
 }
 
@@ -133,12 +133,31 @@ body {
 [class*="bg-[#0a0a0d]"],
 [class*="bg-[#141418]"],
 [class*="bg-[#111114]"] {
-  background-color: #3b66f5 !important;
+  background-color: #2563eb !important;
 }
 
 [class*="bg-[#111111]"],
 [class*="bg-[#0A0A0A]"],
 [class*="bg-[#0a0a0a]"],
 [class*="bg-[#1a1a1f]"] {
-  background-color: #2b52d9 !important;
+  background-color: #1d4ed8 !important;
+}
+
+/* High Contrast Font Typography Rule */
+body, p, span, a, h1, h2, h3, h4, h5, h6, div, li, td, button {
+  color: #ffffff;
+}
+
+p, [class*="text-[#888888]"], [class*="text-[#999999]"], [class*="text-slate-"] {
+  color: #f8fafc !important;
+  opacity: 1 !important;
+}
+
+/* Micro-tags, badges, mono labels, and metadata highlight color */
+[class*="font-mono"][class*="text-xs"],
+[class*="font-mono"][class*="text-[10px]"],
+[class*="tracking-widest"][class*="text-xs"],
+[class*="tracking-[0.25em]"] {
+  color: #fde047 !important;
+  font-weight: 700 !important;
 }
