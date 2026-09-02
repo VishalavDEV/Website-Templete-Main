@@ -1,0 +1,6 @@
+{
+  "name": "HORIZON // Creative Technology Studio",
+  "description": "A dark premium creative technology agency website featuring immersive interactive systems, dynamic case studies, service deep-dives, command palette, and interactive project inquiry engine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
