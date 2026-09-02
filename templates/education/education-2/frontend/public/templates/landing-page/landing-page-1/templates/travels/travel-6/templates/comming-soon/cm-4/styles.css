@@ -1,0 +1,371 @@
+/* ==========================================================================
+   BOTANICAL STUDIES: THE HERITAGE FOLIO — COMING SOON TEMPLATE (CM-4)
+   Aesthetic: White & Cream Antiquarian Luxury, Botanical Gold Foil & Deep Emerald
+   ========================================================================== */
+
+:root {
+    --bg-primary: #fcfbf7;
+    --bg-secondary: #f4efe4;
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --bg-card-hover: #ffffff;
+    --bg-glass: rgba(255, 255, 255, 0.82);
+    
+    --gold-primary: #b88822;
+    --gold-light: #946c15;
+    --gold-dark: #6e500b;
+    --gold-gradient: linear-gradient(135deg, #b88822 0%, #d4af37 50%, #946c15 100%);
+    --gold-glow: 0 4px 20px rgba(184, 136, 34, 0.25);
+    
+    --emerald-accent: #0b7a53;
+    --emerald-dark: #064e3b;
+    --parchment: #1c2720;
+    --parchment-muted: #526359;
+    --text-muted: #66796e;
+    --border-gold: rgba(184, 136, 34, 0.28);
+    --border-gold-hover: rgba(184, 136, 34, 0.65);
+
+    --font-serif: 'Cormorant Garamond', 'Cinzel', serif;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Space Mono', monospace;
+    
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f8f6f0;
+}
+::-webkit-scrollbar-thumb {
+    background: #d8cebc;
+    border-radius: 4px;
+    border: 1px solid rgba(184, 136, 34, 0.25);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #b88822;
+}
+
+/* Global Reset & Base */
+html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--parchment);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+::selection {
+    background: #e6c86e;
+    color: #1a241e;
+}
+
+/* Typography Enhancements */
+.font-heading {
+    font-family: var(--font-heading);
+}
+
+.font-serif-title {
+    font-family: var(--font-serif);
+    letter-spacing: 0.04em;
+}
+
+.font-mono {
+    font-family: var(--font-mono);
+}
+
+.gold-text {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.gold-glow {
+    box-shadow: var(--gold-glow);
+}
+
+.gold-border {
+    border: 1px solid var(--border-gold);
+    transition: var(--transition-smooth);
+}
+
+.gold-border:hover {
+    border-color: var(--border-gold-hover);
+    box-shadow: 0 0 20px rgba(184, 136, 34, 0.18);
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-gold);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(44, 34, 18, 0.05);
+    transition: var(--transition-smooth);
+}
+
+.glass-panel:hover {
+    border-color: var(--border-gold-hover);
+    background: var(--bg-card-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(44, 34, 18, 0.08);
+}
+
+/* Background Canvas Video Engine */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+#book-canvas, #bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.82;
+    filter: contrast(1.18) brightness(0.88) saturate(1.25);
+    transition: opacity 0.8s ease, filter 0.8s ease;
+}
+
+.canvas-overlay-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(15, 22, 18, 0.18) 0%, rgba(18, 26, 20, 0.38) 60%, rgba(10, 16, 12, 0.68) 100%),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.28) 45%, rgba(244, 239, 228, 0.55) 100%);
+    pointer-events: none;
+}
+
+/* Floating Spores/Particles Overlay */
+.particles-dust {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(184, 136, 34, 0.2) 1px, transparent 0);
+    background-size: 48px 48px;
+    opacity: 0.4;
+    animation: drift 25s linear infinite;
+}
+
+@keyframes drift {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+
+/* Live Countdown Digit Cards */
+.countdown-card {
+    background: linear-gradient(180deg, #ffffff 0%, #f9f7f2 100%);
+    border: 1px solid rgba(184, 136, 34, 0.3);
+    border-radius: 12px;
+    padding: 16px 12px;
+    min-width: 80px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(44, 34, 18, 0.06), inset 0 1px 0 rgba(255, 255, 255, 1);
+    transition: var(--transition-smooth);
+}
+
+.countdown-card:hover {
+    border-color: var(--gold-primary);
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(44, 34, 18, 0.12), 0 0 20px rgba(184, 136, 34, 0.2);
+}
+
+.countdown-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: rgba(184, 136, 34, 0.15);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* 3D Realistic Book Component */
+.book-3d-wrapper {
+    perspective: 1200px;
+    cursor: pointer;
+}
+
+.book-3d-card {
+    width: 260px;
+    height: 360px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s ease;
+    border-radius: 4px 12px 12px 4px;
+    box-shadow: -12px 18px 36px rgba(40, 30, 15, 0.25), 0 0 25px rgba(184, 136, 34, 0.15);
+}
+
+.book-3d-card:hover {
+    transform: rotateY(-18deg) rotateX(8deg) translateY(-10px);
+    box-shadow: -18px 26px 48px rgba(40, 30, 15, 0.32), 0 0 35px rgba(184, 136, 34, 0.3);
+}
+
+.book-spine-effect {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 24px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.35) 0%, rgba(255,255,255,0.3) 50%, rgba(0,0,0,0.2) 100%);
+    border-radius: 4px 0 0 4px;
+    z-index: 10;
+}
+
+.book-gold-emboss {
+    border: 2px solid rgba(184, 136, 34, 0.6);
+    box-shadow: inset 0 0 15px rgba(184, 136, 34, 0.2);
+}
+
+/* Video Frame Controller Pill */
+.video-control-pill {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(184, 136, 34, 0.35);
+    border-radius: 30px;
+    padding: 8px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 20px rgba(40, 30, 15, 0.08);
+}
+
+/* Button & Interactive Glows */
+.btn-gold {
+    background: var(--gold-gradient);
+    color: #1a221a;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 14px 28px;
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 16px rgba(184, 136, 34, 0.28);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 26px rgba(184, 136, 34, 0.42);
+    filter: brightness(1.05);
+}
+
+.btn-outline-gold {
+    background: rgba(255, 255, 255, 0.8);
+    color: #876008;
+    border: 1px solid #b88822;
+    padding: 13px 26px;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    transition: var(--transition-smooth);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(44, 34, 18, 0.04);
+}
+
+.btn-outline-gold:hover {
+    background: rgba(184, 136, 34, 0.12);
+    border-color: #876008;
+    color: #614300;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(184, 136, 34, 0.2);
+}
+
+/* Modal Overlay & Modal Window */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(25, 30, 26, 0.6);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    padding: 20px;
+}
+
+.modal-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: #ffffff;
+    border: 1px solid var(--gold-primary);
+    border-radius: 16px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 25px 60px rgba(30, 20, 10, 0.25), 0 0 30px rgba(184, 136, 34, 0.2);
+    transform: scale(0.92) translateY(20px);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+.modal-backdrop.active .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+/* Shimmer Light Sweep Effect */
+@keyframes shimmerSweep {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(200%) rotate(45deg); }
+}
+
+.shimmer-badge {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-badge::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(60deg, transparent 30%, rgba(255,255,255,0.7) 50%, transparent 70%);
+    transform: translateX(-100%) rotate(45deg);
+    animation: shimmerSweep 4s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .countdown-card {
+        min-width: 64px;
+        padding: 10px 8px;
+    }
+    .countdown-val {
+        font-size: 1.75rem !important;
+    }
+    .book-3d-card {
+        width: 210px;
+        height: 290px;
+    }
+}

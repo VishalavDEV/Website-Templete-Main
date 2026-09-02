@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College — Higher Education & Research Portal</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Style Sheet -->
+  <link rel="stylesheet" href="/templates/education/education-7/style-unscoped.css">
+</head>
+<body>
+  <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+  <script>
+    (function() {
+      const isTop = window.self === window.top;
+      const urlParams = new URLSearchParams(window.location.search);
+      const isIframe = urlParams.get('iframe') === 'true';
+      
+      if (isTop && !isIframe) {
+        // document.documentElement.style.visibility = 'hidden';
+        
+        window.addEventListener('DOMContentLoaded', () => {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.searchParams.set('iframe', 'true');
+          
+          // Clear any theme classes from html & body to prevent dark template CSS leakage
+          document.documentElement.className = '';
+          document.documentElement.removeAttribute('style');
+          
+          const body = document.body;
+          body.className = '';
+          body.innerHTML = '';
+          body.removeAttribute('style');
+          
+          // Inject high-priority stylesheet to ensure pure white/light backdrop UI
+          const overrideStyle = document.createElement('style');
+          overrideStyle.id = 'technosprint-preview-backdrop-style';
+          overrideStyle.textContent = `
+            html, body {
+              margin: 0 !important;
+              padding: 0 !important;
+              width: 100vw !important;
+              height: 100vh !important;
+              overflow: hidden !important;
+              background-color: #f8fafc !important;
+              background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important;
+              background-size: 20px 20px !important;
+              color: #0f172a !important;
+            }
+            #technosprint-preview-header {
+              background-color: #ffffff !important;
+              color: #0f172a !important;
+            }
+            #technosprint-preview-header button {
+              font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+            }
+          `;
+          document.head.appendChild(overrideStyle);
+          
+          body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important;';
+          
+          // Build Top Bar Header
+          const topBar = document.createElement('header');
+          topBar.id = 'technosprint-preview-header';
+          topBar.style.height = '64px';
+          topBar.style.minHeight = '64px';
+          topBar.style.background = '#ffffff';
+          topBar.style.borderBottom = '1px solid #e2e8f0';
+          topBar.style.display = 'flex';
+          topBar.style.alignItems = 'center';
+          topBar.style.justifyContent = 'space-between';
+          topBar.style.padding = '0 24px';
+          topBar.style.boxShadow = '0 1px 4px rgba(0, 0, 0, 0.04)';
+          topBar.style.fontFamily = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+          topBar.style.zIndex = '99999';
+          topBar.style.position = 'relative';
+          topBar.style.boxSizing = 'border-box';
+          
+          // Left: Brand Logo & Back
+          const logoDiv = document.createElement('div');
+          logoDiv.style.display = 'flex';
+          logoDiv.style.alignItems = 'center';
+          logoDiv.style.gap = '16px';
+          logoDiv.innerHTML = '<a href="/templates" style="display: flex; align-items: center; text-decoration: none;" title="Back to Templates"><img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" onerror="this.style.display=\'none\'" /></a>' +
+            '<a href="/templates" style="display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: #64748b; text-decoration: none; font-weight: 600; padding: 6px 12px; border-radius: 8px; background: #f8fafc; border: 1px solid #e2e8f0;">' +
+            '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Back</a>';
+          topBar.appendChild(logoDiv);
+          
+          // Center: Segmented View Switcher (Desktop / Tablet / Mobile)
+          const switcherDiv = document.createElement('div');
+          switcherDiv.style.display = 'inline-flex';
+          switcherDiv.style.alignItems = 'center';
+          switcherDiv.style.background = '#ffffff';
+          switcherDiv.style.border = '1px solid #e2e8f0';
+          switcherDiv.style.borderRadius = '12px';
+          switcherDiv.style.padding = '4px';
+          switcherDiv.style.gap = '4px';
+          switcherDiv.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)';
+          
+          switcherDiv.innerHTML = '' +
+            '<button id="view-desktop" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.15s; outline: none; box-sizing: border-box; box-shadow: 0 1px 2px rgba(37,99,235,0.08);">' +
+            '  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>' +
+            '  Desktop' +
+            '</button>' +
+            '<button id="view-tablet" style="background: transparent; color: #64748b; border: 1px solid transparent; padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.15s; outline: none; box-sizing: border-box;">' +
+            '  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>' +
+            '  Tablet' +
+            '</button>' +
+            '<button id="view-mobile" style="background: transparent; color: #64748b; border: 1px solid transparent; padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.15s; outline: none; box-sizing: border-box;">' +
+            '  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>' +
+            '  Mobile' +
+            '</button>';
+          topBar.appendChild(switcherDiv);
+          
+          // Right: Action Controls (Orientation & Refresh)
+          const rightDiv = document.createElement('div');
+          rightDiv.style.display = 'flex';
+          rightDiv.style.alignItems = 'center';
+          rightDiv.style.gap = '10px';
+          rightDiv.innerHTML = '' +
+            '<button id="toggle-orientation" style="display: none; align-items: center; gap: 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 6px 12px; font-size: 0.82rem; color: #475569; font-weight: 600; cursor: pointer; transition: all 0.15s; outline: none; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">' +
+            '  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>' +
+            '  <span id="orientation-text">Portrait</span>' +
+            '</button>' +
+            '<button id="btn-refresh" style="display: flex; align-items: center; justify-content: center; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; width: 34px; height: 34px; color: #475569; cursor: pointer; transition: all 0.15s; outline: none; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">' +
+            '  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>' +
+            '</button>';
+          topBar.appendChild(rightDiv);
+          body.appendChild(topBar);
+          
+          // Canvas Area with clean white backdrop
+          const canvas = document.createElement('main');
+          canvas.style.cssText = 'flex: 1 !important; display: flex !important; align-items: center !important; justify-content: center !important; padding: 24px !important; overflow: auto !important; box-sizing: border-box !important; position: relative !important; background-color: transparent !important;';
+          
+          // Device Frame Container (Default Desktop)
+          const frameContainer = document.createElement('div');
+          frameContainer.id = 'device-frame';
+          frameContainer.style.width = '100%';
+          frameContainer.style.height = '100%';
+          frameContainer.style.maxHeight = '100%';
+          frameContainer.style.maxWidth = '100%';
+          frameContainer.style.backgroundColor = 'transparent';
+          frameContainer.style.border = 'none';
+          frameContainer.style.borderRadius = '12px';
+          frameContainer.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04)';
+          frameContainer.style.position = 'relative';
+          frameContainer.style.display = 'flex';
+          frameContainer.style.flexDirection = 'column';
+          frameContainer.style.overflow = 'hidden';
+          frameContainer.style.boxSizing = 'border-box';
+          frameContainer.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+          
+          // Dynamic Island Notch (Hidden by default on Desktop)
+          const notch = document.createElement('div');
+          notch.id = 'phone-notch';
+          notch.style.position = 'absolute';
+          notch.style.top = '8px';
+          notch.style.left = '50%';
+          notch.style.transform = 'translateX(-50%)';
+          notch.style.width = '96px';
+          notch.style.height = '24px';
+          notch.style.backgroundColor = '#0f172a';
+          notch.style.borderRadius = '99px';
+          notch.style.zIndex = '20';
+          notch.style.display = 'none';
+          notch.style.alignItems = 'center';
+          notch.style.justifyContent = 'space-between';
+          notch.style.padding = '0 10px';
+          notch.style.boxSizing = 'border-box';
+          notch.innerHTML = '<div style="width: 8px; height: 8px; border-radius: 50%; background-color: #1e293b;"></div><div style="width: 6px; height: 6px; border-radius: 50%; background-color: #090d16;"></div>';
+          frameContainer.appendChild(notch);
+          
+          const iframe = document.createElement('iframe');
+          iframe.id = 'preview-iframe';
+          iframe.src = currentUrl.toString();
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.border = 'none';
+          iframe.style.borderRadius = '12px';
+          iframe.style.background = '#ffffff';
+          
+          frameContainer.appendChild(iframe);
+          canvas.appendChild(frameContainer);
+          body.appendChild(canvas);
+          
+          // Interactivity
+          const btnDesktop = body.querySelector('#view-desktop');
+          const btnTablet = body.querySelector('#view-tablet');
+          const btnMobile = body.querySelector('#view-mobile');
+          const btnOrientation = body.querySelector('#toggle-orientation');
+          const orientationText = body.querySelector('#orientation-text');
+          const btnRefresh = body.querySelector('#btn-refresh');
+          
+          let activeMode = 'desktop';
+          let orientation = 'portrait';
+          
+          function updateStyles() {
+            [btnDesktop, btnTablet, btnMobile].forEach(btn => {
+              btn.style.background = 'transparent';
+              btn.style.color = '#64748b';
+              btn.style.border = '1px solid transparent';
+              btn.style.fontWeight = '500';
+              btn.style.boxShadow = 'none';
+            });
+            
+            if (activeMode === 'desktop') {
+              btnDesktop.style.background = '#eff6ff';
+              btnDesktop.style.color = '#2563eb';
+              btnDesktop.style.border = '1px solid #bfdbfe';
+              btnDesktop.style.fontWeight = '600';
+              btnDesktop.style.boxShadow = '0 1px 2px rgba(37,99,235,0.08)';
+              
+              btnOrientation.style.display = 'none';
+              notch.style.display = 'none';
+              
+              frameContainer.style.width = '100%';
+              frameContainer.style.height = '100%';
+              frameContainer.style.maxHeight = '100%';
+              frameContainer.style.maxWidth = '100%';
+              frameContainer.style.backgroundColor = 'transparent';
+              frameContainer.style.border = 'none';
+              frameContainer.style.borderRadius = '12px';
+              frameContainer.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04)';
+              
+              iframe.style.borderRadius = '12px';
+            } else if (activeMode === 'tablet') {
+              btnTablet.style.background = '#eff6ff';
+              btnTablet.style.color = '#2563eb';
+              btnTablet.style.border = '1px solid #bfdbfe';
+              btnTablet.style.fontWeight = '600';
+              btnTablet.style.boxShadow = '0 1px 2px rgba(37,99,235,0.08)';
+              
+              btnOrientation.style.display = 'flex';
+              notch.style.display = 'none';
+              
+              const isP = orientation === 'portrait';
+              frameContainer.style.width = isP ? '768px' : '980px';
+              frameContainer.style.height = isP ? '920px' : '680px';
+              frameContainer.style.maxHeight = 'calc(100vh - 120px)';
+              frameContainer.style.maxWidth = 'calc(100vw - 60px)';
+              frameContainer.style.backgroundColor = '#0f172a';
+              frameContainer.style.border = '14px solid #0f172a';
+              frameContainer.style.borderRadius = '38px';
+              frameContainer.style.boxShadow = '0 25px 50px -12px rgba(15, 23, 42, 0.35)';
+              
+              iframe.style.borderRadius = '24px';
+            } else if (activeMode === 'mobile') {
+              btnMobile.style.background = '#eff6ff';
+              btnMobile.style.color = '#2563eb';
+              btnMobile.style.border = '1px solid #bfdbfe';
+              btnMobile.style.fontWeight = '600';
+              btnMobile.style.boxShadow = '0 1px 2px rgba(37,99,235,0.08)';
+              
+              btnOrientation.style.display = 'flex';
+              
+              const isP = orientation === 'portrait';
+              notch.style.display = isP ? 'flex' : 'none';
+              
+              frameContainer.style.width = isP ? '390px' : '780px';
+              frameContainer.style.height = isP ? '800px' : '390px';
+              frameContainer.style.maxHeight = 'calc(100vh - 110px)';
+              frameContainer.style.maxWidth = 'calc(100vw - 40px)';
+              frameContainer.style.backgroundColor = '#0f172a';
+              frameContainer.style.border = '12px solid #0f172a';
+              frameContainer.style.borderRadius = '48px';
+              frameContainer.style.boxShadow = '0 25px 50px -12px rgba(15, 23, 42, 0.38)';
+              
+              iframe.style.borderRadius = '36px';
+            }
+          }
+          
+          btnDesktop.addEventListener('click', () => { activeMode = 'desktop'; updateStyles(); });
+          btnTablet.addEventListener('click', () => { activeMode = 'tablet'; updateStyles(); });
+          btnMobile.addEventListener('click', () => { activeMode = 'mobile'; updateStyles(); });
+          
+          btnOrientation.addEventListener('click', () => {
+            orientation = orientation === 'portrait' ? 'landscape' : 'portrait';
+            orientationText.innerText = orientation === 'portrait' ? 'Portrait' : 'Landscape';
+            updateStyles();
+          });
+          
+          btnRefresh.addEventListener('click', () => {
+            iframe.src = currentUrl.toString();
+          });
+          
+          document.documentElement.style.visibility = 'visible';
+        });
+      } else {
+        document.documentElement.style.visibility = 'visible';
+      }
+    })();
+  </script>
+
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-container">
+      <div class="top-info">
+        <span><i class="fa-solid fa-phone"></i> +1 (555) 342-8900</span>
+        <span><i class="fa-solid fa-envelope"></i> admissions@college-portal.edu</span>
+        <span><i class="fa-solid fa-location-dot"></i> 450 University Ave, NY</span>
+      </div>
+      <div class="top-links">
+        <a href="#login">Login</a>
+        <a href="#contact">Contact</a>
+        <button class="top-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <div class="logo">
+        <i class="fa-solid fa-graduation-cap logo-icon"></i>
+        <span>College</span>
+      </div>
+      <nav class="nav-menu">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#campus">Campus</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#admissions" class="btn btn-accent">Get Started</a>
+    </div>
+  </header>
+
+  <!-- Hero Section (Split Layout) -->
+  <section id="home" class="hero-split">
+    <div class="container hero-split-grid">
+      <!-- Left: Student Image Box -->
+      <div class="hero-split-image">
+        <img src="/templates/education/education-7/images/about-college.jpg" alt="Students studying with laptop">
+      </div>
+      <!-- Right: Stacked Info Boxes -->
+      <div class="hero-split-info-stack">
+        <!-- Navy Card Box -->
+        <div class="info-box box-navy">
+          <span class="box-tag">Admissions Open</span>
+          <h2>International Programmes</h2>
+          <p>Our modern curriculum and research-driven programs are open to ambitious students from all over the world.</p>
+          <a href="#admissions" class="btn btn-accent btn-box-action">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+        <!-- Light Gray Card Box -->
+        <div class="info-box box-light">
+          <span class="box-tag tag-primary">Degree Programs</span>
+          <h2>UG Degree Programmes</h2>
+          <p>We offer standard degree courses designed to develop the advanced skills and expertise needed for global careers.</p>
+          <a href="#courses" class="btn btn-outline-dark btn-box-action">Explore Majors <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Banner -->
+  <section class="stats-banner">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <h3><span class="count" data-target="30">0</span>+</h3>
+        <p>Departments</p>
+      </div>
+      <div class="stat-item">
+        <h3><span class="count" data-target="500">0</span>+</h3>
+        <p>Faculty Members</p>
+      </div>
+      <div class="stat-item">
+        <h3><span class="count" data-target="8000">0</span>+</h3>
+        <p>Students</p>
+      </div>
+      <div class="stat-item">
+        <h3><span class="count" data-target="25">0</span>+</h3>
+        <p>Years of Legacy</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Finder Section -->
+  <section class="finder-section">
+    <div class="container finder-grid">
+      <!-- Left: Finder Box -->
+      <div class="finder-search-card">
+        <h3>Find Your Course</h3>
+        <p>Search your focus fields in our academic listings</p>
+        <form id="finder-form">
+          <div class="finder-radios">
+            <label class="radio-label">
+              <input type="radio" name="search-type" value="category" checked>
+              <span>By Category</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="search-type" value="title">
+              <span>By Title</span>
+            </label>
+          </div>
+          <div class="finder-input-wrapper">
+            <input type="text" id="finder-search-input" placeholder="Type keyword (e.g. Science)...">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          </div>
+          <button type="submit" class="btn btn-primary full-width">Search Listings</button>
+        </form>
+      </div>
+      <!-- Right: Category Grid -->
+      <div class="finder-categories-grid">
+        <div class="cat-card" data-category="business">
+          <i class="fa-solid fa-briefcase"></i>
+          <span>Business</span>
+        </div>
+        <div class="cat-card" data-category="humanities">
+          <i class="fa-solid fa-book-open"></i>
+          <span>Humanities</span>
+        </div>
+        <div class="cat-card" data-category="math">
+          <i class="fa-solid fa-calculator"></i>
+          <span>Math</span>
+        </div>
+        <div class="cat-card" data-category="science">
+          <i class="fa-solid fa-flask"></i>
+          <span>Science</span>
+        </div>
+        <div class="cat-card" data-category="engineering">
+          <i class="fa-solid fa-gear"></i>
+          <span>Engineering</span>
+        </div>
+        <div class="cat-card" data-category="arts">
+          <i class="fa-solid fa-palette"></i>
+          <span>Arts</span>
+        </div>
+        <div class="cat-card" data-category="law">
+          <i class="fa-solid fa-gavel"></i>
+          <span>Law</span>
+        </div>
+        <div class="cat-card" data-category="medicine">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <span>Medicine</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container about-grid">
+      <div class="about-content">
+        <span class="section-tag">About Our Institution</span>
+        <h2 class="section-title left-align">A Legacy of Academic Excellence & Innovation</h2>
+        <p class="about-p">For over 25 years, our College of Higher Education has stood as a beacon of academic excellence, cutting-edge scientific research, and active student-centered mentorship. We empower students to tackle global challenges through collaborative thinking, design innovation, and hands-on lab programs.</p>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Global Accreditation and Degrees</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Over 35 Undergraduate & Graduate Fields</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Advanced Research Centers and Robotics Labs</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-image-card">
+        <img src="/templates/education/education-7/images/about-college.jpg" alt="University Campus Life">
+        <div class="experience-badge">
+          <h4>25+</h4>
+          <span>Years of Legacy</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Finder -->
+  <section id="courses" class="courses">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Academic Catalog</span>
+        <h2 class="section-title">Our Popular Courses</h2>
+        <p class="section-desc">Choose from our wide range of academic programs and shape your path</p>
+      </div>
+      
+      <!-- Empty Filter Alert (Hidden by default) -->
+      <div id="no-courses-alert" style="display: none; text-align: center; padding: 40px; background-color: #fff; border: 1px solid var(--border); border-radius: 12px; margin-bottom: 30px;">
+        <i class="fa-solid fa-magnifying-glass" style="font-size: 2.5rem; color: var(--text-muted); margin-bottom: 12px;"></i>
+        <h4 style="font-size: 1.2rem; color: var(--secondary); margin-bottom: 6px;">No Matching Programs Found</h4>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Try adjusting your keywords or select another categories tab.</p>
+      </div>
+
+      <div class="courses-grid" id="courses-grid">
+        <div class="course-card" data-category="science engineering math">
+          <img src="/templates/education/education-7/images/course-cs.jpg" alt="Computer Science">
+          <div class="course-body">
+            <h3>B.Sc. Computer Science Major</h3>
+            <p>Master algorithms, coding structures, database query sheets, and modern app building tracks.</p>
+            <span class="course-duration"><i class="fa-regular fa-clock"></i> 3 Years</span>
+          </div>
+        </div>
+        <div class="course-card" data-category="business">
+          <img src="/templates/education/education-7/images/course-business.jpg" alt="Business Administration">
+          <div class="course-body">
+            <h3>BBA - Business Administration</h3>
+            <p>Understand marketing, strategic management, corporate logic, finance models, and organizational leadership.</p>
+            <span class="course-duration"><i class="fa-regular fa-clock"></i> 3 Years</span>
+          </div>
+        </div>
+        <div class="course-card" data-category="humanities arts">
+          <img src="/templates/education/education-7/images/course-english.jpg" alt="English Literature">
+          <div class="course-body">
+            <h3>B.A. English Literature</h3>
+            <p>Explore classic writings, poetry systems, comparative media, linguistics, and creative essays.</p>
+            <span class="course-duration"><i class="fa-regular fa-clock"></i> 3 Years</span>
+          </div>
+        </div>
+        <div class="course-card" data-category="science medicine">
+          <img src="/templates/education/education-7/images/course-biotech.jpg" alt="Biotechnology">
+          <div class="course-body">
+            <h3>B.Tech. Biotechnology</h3>
+            <p>Delve into genetics, bio-informatics, lab procedures, chemistry, and research modules.</p>
+            <span class="course-duration"><i class="fa-regular fa-clock"></i> 4 Years</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admissions Section -->
+  <section id="admissions" class="admissions-section">
+    <div class="container admissions-grid">
+      <div class="admissions-info">
+        <span class="section-tag">Admissions & Enrollment</span>
+        <h2 class="section-title left-align">Enroll for the Upcoming Term</h2>
+        <p class="admissions-p">We look for passionate minds eager to grow, discover, and collaborate. Review our simple enrollment roadmap and submit your inquiry form to connect with our academic counselors.</p>
+        <div class="roadmap-steps">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-text">
+              <h4>Choose Program</h4>
+              <p>Explore our catalog and choose your target degree major.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-text">
+              <h4>Submit Details</h4>
+              <p>Complete the quick application form with contact records.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-text">
+              <h4>Counselor Call</h4>
+              <p>Align on curriculum roadmap and complete verification.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="admissions-card">
+        <h3>Application Inquiry Form</h3>
+        <p>Start your application process by providing your information below.</p>
+        <form id="admissions-form" class="inquiry-form">
+          <div class="form-group">
+            <label for="student-name">Full Name</label>
+            <input type="text" id="student-name" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="student-email">Email Address</label>
+            <input type="email" id="student-email" placeholder="john@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="student-degree">Target Degree Program</label>
+            <select id="student-degree" required>
+              <option value="">Select a Program</option>
+              <option value="B.Sc. Computer Science Major">B.Sc. Computer Science Major</option>
+              <option value="BBA - Business Administration">BBA - Business Administration</option>
+              <option value="B.A. English Literature">B.A. English Literature</option>
+              <option value="B.Tech. Biotechnology">B.Tech. Biotechnology</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="student-notes">Counselor Notes</label>
+            <textarea id="student-notes" rows="3" placeholder="Tell us about your academic interests..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent full-width">Submit Application Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campus Showcase -->
+  <section id="campus" class="campus-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Campus Tour & Spaces</span>
+        <h2 class="section-title">Explore Our Campus</h2>
+        <p class="section-desc">Experience our modern student spaces, historic central quads, and labs</p>
+      </div>
+      <div class="campus-grid">
+        <div class="campus-card">
+          <img src="/templates/education/education-7/images/campus-library.jpg" alt="University Library">
+          <div class="campus-card-content">
+            <h4>Modern Central Library</h4>
+            <p>Peaceful collaborative study lounges and extensive physical/digital books collections.</p>
+          </div>
+        </div>
+        <div class="campus-card">
+          <img src="/templates/education/education-7/images/campus-quad.jpg" alt="Central Quadrangle">
+          <div class="campus-card-content">
+            <h4>Central Quad Courtyard</h4>
+            <p>Traditional architecture meets open green areas for vibrant student community interactions.</p>
+          </div>
+        </div>
+        <div class="campus-card">
+          <img src="/templates/education/education-7/images/campus-labs.jpg" alt="Engineering Labs">
+          <div class="campus-card-content">
+            <h4>Robotics & STEM Labs</h4>
+            <p>Equipped with state-of-the-art computational systems, robotics kits, and hardware gears.</p>
+          </div>
+        </div>
+        <div class="campus-card">
+          <img src="/templates/education/education-7/images/campus-sports.jpg" alt="Sports Center">
+          <div class="campus-card-content">
+            <h4>Athletics Field Complex</h4>
+            <p>High-quality sports facilities supporting soccer championships, track drills, and running events.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section id="news" class="news-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Campus News & Announcements</span>
+        <h2 class="section-title">Latest from Our College</h2>
+        <p class="section-desc">Stay updated with academic breakthroughs, events, and community stories</p>
+      </div>
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="news-header">
+            <span class="news-tag">Research</span>
+            <span class="news-date">Aug 18, 2026</span>
+          </div>
+          <h3>Robotics Lab Team Wins National STEM Development Grant</h3>
+          <p>Our undergraduate engineering team was awarded a $150,000 grant to build next-generation autonomous agricultural drones.</p>
+          <a href="#" class="news-link">Read Story <i class="fa-solid fa-arrow-right-long"></i></a>
+        </article>
+        <article class="news-card">
+          <div class="news-header">
+            <span class="news-tag">Campus Event</span>
+            <span class="news-date">Aug 12, 2026</span>
+          </div>
+          <h3>Global Lit Forum 2026 Scheduled for Next Month</h3>
+          <p>We are welcoming renowned writers, novelists, and linguistics specialists from 12 countries for keynote speeches and panel debates.</p>
+          <a href="#" class="news-link">Read Story <i class="fa-solid fa-arrow-right-long"></i></a>
+        </article>
+        <article class="news-card">
+          <div class="news-header">
+            <span class="news-tag">Alumni</span>
+            <span class="news-date">Aug 05, 2026</span>
+          </div>
+          <h3>Alumni Spotlight: Shaping Tech Frontiers in AI</h3>
+          <p>Class of 2021 B.Sc. CS graduate Sophia Lin discusses how her undergraduate research projects launched her career in neural mapping systems.</p>
+          <a href="#" class="news-link">Read Story <i class="fa-solid fa-arrow-right-long"></i></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <span class="section-tag">Get in Touch</span>
+        <h2 class="section-title left-align">We'd Love to Hear from You</h2>
+        <p class="contact-p">Have questions about degrees, admissions timelines, or campus tours? Reach out using our details or drop a message via the form.</p>
+        <div class="info-blocks">
+          <div class="info-item-block">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <div>
+              <h4>Campus Location</h4>
+              <p>450 University Avenue, Academic Square, NY 10001</p>
+            </div>
+          </div>
+          <div class="info-item-block">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <div>
+              <h4>Admissions Email</h4>
+              <p>admissions@college-portal.edu</p>
+            </div>
+          </div>
+          <div class="info-item-block">
+            <i class="fa-solid fa-phone-volume"></i>
+            <div>
+              <h4>General Inquiries</h4>
+              <p>+1 (555) 342-8900 (Mon - Fri, 9am - 5pm)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <form id="contact-form" class="inquiry-form">
+          <div class="form-group">
+            <label for="contact-name">Your Name</label>
+            <input type="text" id="contact-name" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email Address</label>
+            <input type="email" id="contact-email" placeholder="john@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Subject</label>
+            <input type="text" id="contact-subject" placeholder="Degree query / Tour reservation" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" rows="4" placeholder="How can our administration help you?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent full-width">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Receipt Overlay -->
+  <div class="modal-overlay" id="receipt-modal">
+    <div class="modal-card">
+      <button class="modal-close" id="close-receipt-btn"><i class="fa-solid fa-times"></i></button>
+      <div class="receipt-icon"><i class="fa-solid fa-circle-check"></i></div>
+      <h3 id="receipt-title">Submission Successful</h3>
+      <p id="receipt-desc">We have received your application inquiry. Our admissions office will get back to you shortly.</p>
+      <div class="receipt-summary" id="receipt-summary">
+        <!-- Injected dynamically -->
+      </div>
+      <button class="btn btn-primary" id="close-receipt-btn-main">Done</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-box">
+      <p>&copy; 2026 College of Higher Education. All Rights Reserved. Built without copyrights.</p>
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/templates/education/education-7/script.js"></script>
+</body>
+</html>

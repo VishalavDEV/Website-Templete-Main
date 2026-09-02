@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg3Pt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a0800"/>
+      <stop offset="50%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+    <linearGradient id="ball3Pt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff7518"/>
+      <stop offset="100%" stop-color="#ff4d00"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg3Pt)"/>
+
+  <!-- Court 3-Point Line & Speed Arcs -->
+  <path d="M 80 400 Q 380 180 720 180" fill="none" stroke="#ff4d00" stroke-width="4" stroke-dasharray="12 8"/>
+
+  <!-- Flaming 3-Point Shot Trajectory Arc -->
+  <path d="M 280 140 Q 480 20, 680 140" fill="none" stroke="url(#ball3Pt)" stroke-width="6"/>
+  <path d="M 280 140 Q 480 20, 680 140" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+
+  <!-- Basketball in Flight Arcing Towards Hoop -->
+  <circle cx="500" cy="50" r="22" fill="url(#ball3Pt)" stroke="#050505" stroke-width="2.5"/>
+  <circle cx="500" cy="50" r="30" fill="#ff4d00" opacity="0.35"/>
+
+  <!-- Basketball Hoop & Backboard at Right -->
+  <rect x="680" y="80" width="10" height="120" fill="#ffffff"/>
+  <rect x="690" y="100" width="80" height="60" fill="none" stroke="#ff4d00" stroke-width="4"/>
+  <ellipse cx="680" cy="145" rx="30" ry="8" fill="none" stroke="#ff4d00" stroke-width="5"/>
+  <!-- Net -->
+  <path d="M 655 145 L 662 190 M 670 145 L 672 190 M 685 145 L 682 190 M 695 145 L 690 190" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Marcus Vance Jump Shot Shooter Silhouette in Mid-Air -->
+  <g transform="translate(140, 40)">
+    <!-- Follow-Through Arms Extended -->
+    <path d="M 120 140 L 160 80 L 180 50" stroke="#ff4d00" stroke-width="24" stroke-linecap="round" fill="none"/>
+    <path d="M 120 140 L 160 80 L 180 50" stroke="#ffffff" stroke-width="18" stroke-linecap="round" fill="none"/>
+
+    <!-- Head -->
+    <circle cx="110" cy="140" r="20" fill="#ff4d00"/>
+    <!-- Headband -->
+    <rect x="95" y="130" width="30" height="8" rx="2" fill="#ffffff"/>
+
+    <!-- Jersey #04 -->
+    <path d="M 90 160 L 140 180 L 120 280 L 70 260 Z" fill="#ff4d00"/>
+    <text x="105" y="230" font-family="'Bebas Neue', sans-serif" font-size="38" font-weight="900" fill="#ffffff">04</text>
+
+    <!-- Elevated Jumping Legs -->
+    <path d="M 85 270 L 60 360 L 40 400" stroke="#ff4d00" stroke-width="22" stroke-linecap="round" fill="none"/>
+    <path d="M 110 275 L 95 370 L 85 410" stroke="#ff4d00" stroke-width="22" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Title Banner overlay at bottom -->
+  <rect x="0" y="420" width="800" height="80" fill="#050505" opacity="0.9"/>
+  <text x="400" y="465" font-family="'Bebas Neue', sans-serif" font-size="38" font-weight="900" fill="#ff4d00" text-anchor="middle" letter-spacing="4">MARCUS VANCE CLUTCH 3-POINTER JUMP SHOT</text>
+</svg>

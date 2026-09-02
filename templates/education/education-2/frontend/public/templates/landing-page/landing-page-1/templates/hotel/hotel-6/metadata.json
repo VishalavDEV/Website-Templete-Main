@@ -1,0 +1,11 @@
+{
+  "name": "VillaBliss — Luxury Mediterranean Villa & Exclusive Resort",
+  "slug": "villabliss-luxury-resort",
+  "category": "hotel",
+  "description": "An ultra-premium Mediterranean luxury villa and resort template. Features an editorial architectural layout, 'Spacious and cozy' room category showcase, panoramic twilight reviews banner, curated experiences, and real-time interactive booking engine.",
+  "techStack": {
+    "frontend": "React / HTML5 / Modern CSS / Vanilla JavaScript",
+    "backend": "Java 21 + Spring Boot 3"
+  },
+  "demoUrl": "/templates/hotel/hotel-6/index.html"
+}

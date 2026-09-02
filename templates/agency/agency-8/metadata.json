@@ -1,0 +1,7 @@
+{
+  "name": "Studio — Creative Agency",
+  "description": "Award-quality creative agency website featuring dark editorial aesthetics, interactive digital exhibition portfolio archive (/work), case study detail pages (/work/:slug), team collective (/team), bespoke interactive project inquiry experience (/contact), client stories archive (/testimonials), digital magazine & editorial insights archive (/insights), immersive article detail reading experience (/insights/:slug), studio careers & invitation (/careers), and bespoke micro-interactions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
