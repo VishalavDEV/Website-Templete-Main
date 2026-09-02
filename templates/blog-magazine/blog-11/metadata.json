@@ -1,6 +1,0 @@
-{
-  "name": "Chronicle & Co. Magazine",
-  "description": "A fully responsive typography-first blog and magazine publishing platform ready for Spring Boot REST API integration.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_AI_API"]
-}
