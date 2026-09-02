@@ -1581,7 +1581,7 @@ category: { id: 20105, name: 'Blog Magazine', slug: 'blog-magazine' },
   },
   {
     id: 20122,
-    name: 'CoreVista — Enterprise PM & Resource Intelligence System',
+    name: 'Speed Admin — Enterprise PM & Resource Intelligence System',
     slug: 'admin-4',
     previewImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
