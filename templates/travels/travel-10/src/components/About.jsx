@@ -93,7 +93,7 @@ export default function About() {
             <motion.img
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              src="/about_travel.jpg"
+              src="./about_travel.jpg"
               alt="Road winding towards mountains"
               className="w-full h-[320px] md:h-[400px] object-cover"
             />

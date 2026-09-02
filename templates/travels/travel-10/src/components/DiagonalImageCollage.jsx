@@ -80,7 +80,7 @@ export default function DiagonalImageCollage() {
           className="relative h-[200px] rounded-xl overflow-hidden shadow-md"
         >
           <img 
-            src="/mountain_lake.jpg" 
+            src="./mountain_lake.jpg" 
             alt="Majestic Mountain Lake" 
             className="w-full h-full object-cover"
           />
@@ -96,7 +96,7 @@ export default function DiagonalImageCollage() {
           className="relative h-[150px] rounded-xl overflow-hidden shadow-md"
         >
           <img 
-            src="/city_skyline.jpg" 
+            src="./city_skyline.jpg" 
             alt="Cityscape Skyline" 
             className="w-full h-full object-cover"
           />
@@ -112,7 +112,7 @@ export default function DiagonalImageCollage() {
           className="relative h-[220px] rounded-xl overflow-hidden shadow-md"
         >
           <img 
-            src="/hiker_valley.jpg" 
+            src="./hiker_valley.jpg" 
             alt="Hiker Overlooking Valley" 
             className="w-full h-full object-cover"
           />
@@ -141,7 +141,7 @@ export default function DiagonalImageCollage() {
             className="w-full h-full scale-110"
           >
             <img
-              src="/mountain_lake.jpg"
+              src="./mountain_lake.jpg"
               alt="Mountain Lake"
               className="w-full h-full object-cover select-none pointer-events-none"
             />
@@ -161,7 +161,7 @@ export default function DiagonalImageCollage() {
             className="w-full h-full scale-115"
           >
             <img
-              src="/city_skyline.jpg"
+              src="./city_skyline.jpg"
               alt="City Skyline"
               className="w-full h-full object-cover select-none pointer-events-none"
             />
@@ -181,7 +181,7 @@ export default function DiagonalImageCollage() {
             className="w-full h-full scale-110"
           >
             <img
-              src="/hiker_valley.jpg"
+              src="./hiker_valley.jpg"
               alt="Hiker Valley"
               className="w-full h-full object-cover select-none pointer-events-none"
             />
