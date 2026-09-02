@@ -1,9 +1,0 @@
-{
-  "cleanUrls": true,
-  "trailingSlash": true,
-  "rewrites": [
-    { "source": "/templates/:category/:template/:path*", "destination": "/templates/:category/:template/:path*" },
-    { "source": "/assets/:path*", "destination": "/assets/:path*" },
-    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
-  ]
-}
