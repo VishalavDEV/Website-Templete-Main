@@ -1,0 +1,7 @@
+{
+  "name": "HealthPlus - Your Health. Our Priority.",
+  "description": "A modern consumer healthcare and wellness platform featuring intelligent health tracking, doctor consultations, lab tests, pharmacy, mental wellness, and an AI health assistant.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
