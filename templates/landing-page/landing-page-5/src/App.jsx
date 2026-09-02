@@ -506,6 +506,7 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
       <main style={{ flex: 1, maxWidth: 1300, width: '100%', margin: '0 auto', padding: '0 20px' }}>
         <Routes>
           <Route path="/" element={<Home addToCart={addToCart} cart={cart} />} />
+          <Route path="/index.html" element={<Home addToCart={addToCart} cart={cart} />} />
           <Route path="/templates" element={<Templates />} />
           <Route path="/templates/:categorySlug" element={<Templates />} />
           <Route path="/photography-catalog" element={<PhotographyCatalog />} />
@@ -562,7 +563,7 @@ function MainApp() {
   };
 
   return (
-    <Router>
+    <Router basename="/templates/landing-page/landing-page-5">
       <AppRoutes
         user={user}
         cart={cart}
