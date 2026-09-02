@@ -92,7 +92,7 @@ export const AboutStats: React.FC = () => {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               className="space-y-3 group border-l border-[#ffffff10] pl-6"
             >
-              <div className="font-display text-4xl sm:text-6xl lg:text-7xl font-black text-[#FAF9F6] group-hover:text-[#6366f1] transition-colors duration-300">
+              <div className="font-display text-4xl sm:text-6xl lg:text-7xl font-black text-[#FAF9F6] group-hover:text-[#10b981] transition-colors duration-300">
                 <StatCounter value={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
               </div>
               <h3 className="font-display text-base sm:text-lg font-bold uppercase tracking-tight text-[#FAF9F6]">

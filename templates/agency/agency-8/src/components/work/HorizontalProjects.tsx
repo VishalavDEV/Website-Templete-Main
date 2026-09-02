@@ -44,13 +44,13 @@ export const HorizontalProjects: React.FC<HorizontalProjectsProps> = ({
   return (
     <section className="py-24 sm:py-36 bg-[#060608] border-y border-[#ffffff10] relative overflow-hidden">
       {/* Subtle background glow */}
-      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-[#6366f1]/[0.025] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-[#10b981]/[0.025] rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-12 sm:mb-16">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
               <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
                 CURATED SPOTLIGHT
               </span>
@@ -58,7 +58,7 @@ export const HorizontalProjects: React.FC<HorizontalProjectsProps> = ({
             <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-[#FAF9F6] tracking-tight uppercase leading-[0.95]">
               A FEW<br />
               THINGS WE’RE<br />
-              <span className="text-[#6366f1]">PROUD OF.</span>
+              <span className="text-[#10b981]">PROUD OF.</span>
             </h2>
           </div>
 
@@ -108,7 +108,7 @@ export const HorizontalProjects: React.FC<HorizontalProjectsProps> = ({
             onClick={() => onNavigate(`/work/${project.slug}`)}
             onMouseEnter={() => setCursorType('project', 'EXPLORE ↗')}
             onMouseLeave={() => setCursorType('default')}
-            className="group relative flex-none w-[320px] sm:w-[420px] lg:w-[500px] snap-start cursor-pointer rounded-2xl overflow-hidden bg-[#0e0e12] border border-[#ffffff14] hover:border-[#6366f1]/60 transition-all duration-500 shadow-2xl select-none"
+            className="group relative flex-none w-[320px] sm:w-[420px] lg:w-[500px] snap-start cursor-pointer rounded-2xl overflow-hidden bg-[#0e0e12] border border-[#ffffff14] hover:border-[#10b981]/60 transition-all duration-500 shadow-2xl select-none"
           >
             {/* Visual Container */}
             <div className="relative aspect-[16/11] sm:aspect-[16/10] overflow-hidden bg-[#141418]">
@@ -134,7 +134,7 @@ export const HorizontalProjects: React.FC<HorizontalProjectsProps> = ({
             {/* Bottom Info */}
             <div className="p-6 sm:p-8 space-y-3">
               <div className="flex items-center justify-between text-xs font-mono">
-                <span className="text-[#6366f1] tracking-widest uppercase font-semibold">
+                <span className="text-[#10b981] tracking-widest uppercase font-semibold">
                   {project.client}
                 </span>
                 <span className="text-[#888888] tracking-wider uppercase">
@@ -146,8 +146,8 @@ export const HorizontalProjects: React.FC<HorizontalProjectsProps> = ({
                 <h3 className="font-display text-2xl sm:text-3xl font-bold text-[#FAF9F6] group-hover:text-white uppercase tracking-tight">
                   {project.title}
                 </h3>
-                <div className="w-9 h-9 rounded-full border border-[#ffffff15] flex items-center justify-center group-hover:border-[#6366f1] group-hover:bg-[#6366f1]/10 transition-all duration-300">
-                  <ArrowUpRight className="w-4 h-4 text-[#888888] group-hover:text-[#6366f1] group-hover:rotate-45 transition-transform" />
+                <div className="w-9 h-9 rounded-full border border-[#ffffff15] flex items-center justify-center group-hover:border-[#10b981] group-hover:bg-[#10b981]/10 transition-all duration-300">
+                  <ArrowUpRight className="w-4 h-4 text-[#888888] group-hover:text-[#10b981] group-hover:rotate-45 transition-transform" />
                 </div>
               </div>
 
@@ -163,7 +163,7 @@ export const HorizontalProjects: React.FC<HorizontalProjectsProps> = ({
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mt-8">
         <div className="h-[2px] w-full bg-white/[0.08] rounded-full overflow-hidden">
           <div
-            className="h-full bg-[#6366f1] transition-all duration-150 rounded-full"
+            className="h-full bg-[#10b981] transition-all duration-150 rounded-full"
             style={{ width: `${Math.max(15, scrollProgress)}%` }}
           />
         </div>

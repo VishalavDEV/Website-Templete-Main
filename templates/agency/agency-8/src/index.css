@@ -63,7 +63,7 @@
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #6366f1;
+  background: #10b981;
 }
 
 /* Hide cursor when custom cursor is active on non-touch */
@@ -143,7 +143,7 @@ body {
 }
 
 /* Add a black outline to blue text to ensure high contrast against the royal blue background */
-.text-\[\#6366f1\] {
+.text-\[\#10b981\] {
   text-shadow: 
     -1px -1px 0 #000000,  
      1px -1px 0 #000000,
@@ -152,18 +152,18 @@ body {
 }
 
 /* Thicker outline for large blue headings and titles to keep them extremely readable */
-h1.text-\[\#6366f1\],
-h2.text-\[\#6366f1\],
-h3.text-\[\#6366f1\],
-.text-\[\#6366f1\][class*="text-3xl"],
-.text-\[\#6366f1\][class*="text-4xl"],
-.text-\[\#6366f1\][class*="text-5xl"],
-.text-\[\#6366f1\][class*="text-6xl"],
-.text-\[\#6366f1\][class*="text-7xl"],
-.text-\[\#6366f1\][class*="text-8xl"],
-.text-\[\#6366f1\][class*="text-9xl"],
-.text-\[\#6366f1\][class*="text-\["],
-.text-\[\#6366f1\][class*="font-display"] {
+h1.text-\[\#10b981\],
+h2.text-\[\#10b981\],
+h3.text-\[\#10b981\],
+.text-\[\#10b981\][class*="text-3xl"],
+.text-\[\#10b981\][class*="text-4xl"],
+.text-\[\#10b981\][class*="text-5xl"],
+.text-\[\#10b981\][class*="text-6xl"],
+.text-\[\#10b981\][class*="text-7xl"],
+.text-\[\#10b981\][class*="text-8xl"],
+.text-\[\#10b981\][class*="text-9xl"],
+.text-\[\#10b981\][class*="text-\["],
+.text-\[\#10b981\][class*="font-display"] {
   -webkit-text-stroke: 4px #000000 !important;
   paint-order: stroke fill;
   text-shadow: none !important;

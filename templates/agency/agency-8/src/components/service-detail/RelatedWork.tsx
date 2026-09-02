@@ -21,7 +21,7 @@ export const RelatedWork: React.FC<RelatedWorkProps> = ({
         {/* Eyebrow */}
         <div className="flex items-center justify-between border-b border-[#ffffff12] pb-6 mb-12 sm:mb-16">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
               SELECTED EVIDENCE
             </span>
@@ -41,7 +41,7 @@ export const RelatedWork: React.FC<RelatedWorkProps> = ({
             className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.92]"
           >
             {service.workHeading.line1} <br />
-            <span className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-[1.05em]">
+            <span className="font-editorial italic font-normal text-[#10b981] tracking-normal lowercase text-[1.05em]">
               {service.workHeading.line2}
             </span>
           </motion.h2>
@@ -89,13 +89,13 @@ export const RelatedWork: React.FC<RelatedWorkProps> = ({
 
                       {/* Top Metric Badge if exists */}
                       {project.metrics && (
-                        <div className="absolute top-4 left-4 px-3 py-1 bg-black/70 backdrop-blur-md rounded-full border border-white/15 text-[11px] font-mono text-[#6366f1] uppercase tracking-wider font-semibold">
+                        <div className="absolute top-4 left-4 px-3 py-1 bg-black/70 backdrop-blur-md rounded-full border border-white/15 text-[11px] font-mono text-[#10b981] uppercase tracking-wider font-semibold">
                           {project.metrics}
                         </div>
                       )}
 
                       {/* Floating View Badge on Hover */}
-                      <div className="absolute bottom-4 right-4 w-11 h-11 rounded-full bg-[#6366f1] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-lg">
+                      <div className="absolute bottom-4 right-4 w-11 h-11 rounded-full bg-[#10b981] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-lg">
                         <ArrowUpRight className="w-5 h-5" />
                       </div>
                     </div>
@@ -108,7 +108,7 @@ export const RelatedWork: React.FC<RelatedWorkProps> = ({
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <span className="font-mono text-xs text-[#6366f1] font-bold">
+                      <span className="font-mono text-xs text-[#10b981] font-bold">
                         {project.number}
                       </span>
                       <span className="text-white/20">•</span>
@@ -118,7 +118,7 @@ export const RelatedWork: React.FC<RelatedWorkProps> = ({
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-[#FAF9F6] tracking-tight group-hover:text-[#6366f1] transition-colors duration-300">
+                      <h3 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-[#FAF9F6] tracking-tight group-hover:text-[#10b981] transition-colors duration-300">
                         {project.title}
                       </h3>
                       <p className="font-editorial italic text-lg sm:text-xl text-[#FAF9F6]/80 lowercase">

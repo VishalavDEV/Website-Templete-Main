@@ -65,7 +65,7 @@ export const TestimonialStory: React.FC<TestimonialStoryProps> = ({
           {/* Top Bar with Story Meta & Close Button */}
           <div className="flex items-center justify-between pb-6 sm:pb-8 border-b border-[#ffffff10] mb-8 sm:mb-10">
             <div className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-[#6366f1]" />
+              <span className="w-2 h-2 rounded-full bg-[#10b981]" />
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#888888]">
                 CLIENT PERSPECTIVE / 0{story.id}
               </span>
@@ -116,7 +116,7 @@ export const TestimonialStory: React.FC<TestimonialStoryProps> = ({
               <span className="text-[10px] uppercase tracking-widest text-[#888888] block">
                 PROJECT
               </span>
-              <span className="text-sm text-[#6366f1] uppercase font-semibold block truncate">
+              <span className="text-sm text-[#10b981] uppercase font-semibold block truncate">
                 {story.project}
               </span>
             </div>
@@ -124,7 +124,7 @@ export const TestimonialStory: React.FC<TestimonialStoryProps> = ({
 
           {/* Quotation Section */}
           <div className="mb-8 sm:mb-10 space-y-4">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-[#6366f1] block">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-[#10b981] block">
               CORE PERSPECTIVE
             </span>
             <blockquote className="font-display font-extrabold text-2xl sm:text-4xl lg:text-5xl text-[#FAF9F6] leading-[1.12] uppercase tracking-tight">
@@ -172,7 +172,7 @@ export const TestimonialStory: React.FC<TestimonialStoryProps> = ({
               }}
               onMouseEnter={() => setCursorType('pointer')}
               onMouseLeave={() => setCursorType('default')}
-              className="group inline-flex items-center gap-2 px-6 py-4 bg-[#6366f1] hover:brightness-110 text-white font-mono text-xs uppercase tracking-widest font-bold transition-all cursor-pointer"
+              className="group inline-flex items-center gap-2 px-6 py-4 bg-[#10b981] hover:brightness-110 text-white font-mono text-xs uppercase tracking-widest font-bold transition-all cursor-pointer"
             >
               <span>VIEW PROJECT</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

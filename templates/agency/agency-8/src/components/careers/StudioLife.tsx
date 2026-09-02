@@ -21,8 +21,8 @@ export const StudioLife: React.FC<StudioLifeProps> = ({ setCursorType }) => {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-8 border-b border-white/10">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#6366f1] font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#10b981] font-semibold">
                 LIFE AT THE STUDIO
               </span>
             </div>
@@ -52,12 +52,12 @@ export const StudioLife: React.FC<StudioLifeProps> = ({ setCursorType }) => {
                   }}
                   onMouseLeave={() => setCursorType('default')}
                   className={`py-6 sm:py-8 cursor-pointer transition-all duration-300 group flex items-baseline justify-between ${
-                    isActive ? 'pl-4 border-l-2 border-[#6366f1]' : 'hover:pl-2'
+                    isActive ? 'pl-4 border-l-2 border-[#10b981]' : 'hover:pl-2'
                   }`}
                 >
                   <div className="space-y-1">
                     <div className="flex items-center gap-4">
-                      <span className="font-mono text-xs text-[#666666] group-hover:text-[#6366f1] transition-colors">
+                      <span className="font-mono text-xs text-[#666666] group-hover:text-[#10b981] transition-colors">
                         0{idx + 1}
                       </span>
                       <h3
@@ -74,7 +74,7 @@ export const StudioLife: React.FC<StudioLifeProps> = ({ setCursorType }) => {
                     <p
                       className={`font-mono text-xs uppercase tracking-wider transition-colors duration-300 pl-8 ${
                         isActive
-                          ? 'text-[#6366f1]'
+                          ? 'text-[#10b981]'
                           : 'text-[#666666] group-hover:text-[#888888]'
                       }`}
                     >
@@ -85,7 +85,7 @@ export const StudioLife: React.FC<StudioLifeProps> = ({ setCursorType }) => {
                   <ArrowUpRight
                     className={`w-6 h-6 transition-all duration-300 ${
                       isActive
-                        ? 'text-[#6366f1] opacity-100 translate-x-0'
+                        ? 'text-[#10b981] opacity-100 translate-x-0'
                         : 'text-white/20 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'
                     }`}
                   />
@@ -119,7 +119,7 @@ export const StudioLife: React.FC<StudioLifeProps> = ({ setCursorType }) => {
                 {/* Narrative Floating Card */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 space-y-3 z-10">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#6366f1]" />
+                    <span className="w-2 h-2 rounded-full bg-[#10b981]" />
                     <span className="font-mono text-xs uppercase tracking-widest text-[#FAF9F6] font-bold">
                       {activeItem.word} // {activeItem.subtext}
                     </span>

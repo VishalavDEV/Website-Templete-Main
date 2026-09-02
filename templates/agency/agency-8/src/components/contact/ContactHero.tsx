@@ -17,7 +17,7 @@ export const ContactHero: React.FC<ContactHeroProps> = ({
   return (
     <section className="relative min-h-[85vh] sm:min-h-[90vh] pt-32 pb-16 flex flex-col justify-between overflow-hidden bg-[#080808]">
       {/* Ambient background glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full blur-[200px] pointer-events-none opacity-20 bg-[#6366f1]" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full blur-[200px] pointer-events-none opacity-20 bg-[#10b981]" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10 space-y-12">
         {/* Eyebrow / Label */}
@@ -28,7 +28,7 @@ export const ContactHero: React.FC<ContactHeroProps> = ({
           className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#ffffff15] pb-6"
         >
           <div className="flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-[#6366f1]" />
+            <span className="w-2 h-2 rounded-full bg-[#10b981]" />
             <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#888888]">
               START A PROJECT
             </span>
@@ -62,7 +62,7 @@ export const ContactHero: React.FC<ContactHeroProps> = ({
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 className={`font-display text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-black uppercase tracking-[-0.03em] leading-[0.88] ${
-                  idx === 2 ? 'text-[#6366f1]' : 'text-[#FAF9F6]'
+                  idx === 2 ? 'text-[#10b981]' : 'text-[#FAF9F6]'
                 }`}
               >
                 {line}
@@ -86,7 +86,7 @@ export const ContactHero: React.FC<ContactHeroProps> = ({
 
           <div className="lg:col-span-5 flex flex-col justify-end space-y-2 font-mono text-xs text-[#888888] tracking-wider uppercase">
             <div className="flex items-center gap-2">
-              <Sparkles className="w-3.5 h-3.5 text-[#6366f1]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#10b981]" />
               <span>DIRECT ACCESS TO STUDIO PARTNERS</span>
             </div>
             <p className="text-[11px] text-[#888888] lowercase font-sans">
@@ -107,9 +107,9 @@ export const ContactHero: React.FC<ContactHeroProps> = ({
           onClick={onScrollToInquiry}
           onMouseEnter={() => setCursorType('pointer')}
           onMouseLeave={() => setCursorType('default')}
-          className="inline-flex items-center gap-2 text-[#FAF9F6] hover:text-[#6366f1] transition-colors cursor-pointer"
+          className="inline-flex items-center gap-2 text-[#FAF9F6] hover:text-[#10b981] transition-colors cursor-pointer"
         >
-          <ArrowDown className="w-3.5 h-3.5 animate-bounce text-[#6366f1]" />
+          <ArrowDown className="w-3.5 h-3.5 animate-bounce text-[#10b981]" />
           <span>BEGIN INQUIRY EXPERIENCE</span>
         </button>
         <span className="hidden sm:inline">01 // PROJECT INTAKE</span>

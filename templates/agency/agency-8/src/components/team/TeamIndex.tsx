@@ -59,7 +59,7 @@ export const TeamIndex: React.FC<TeamIndexProps> = ({ setCursorType }) => {
       className="py-24 sm:py-36 bg-[#080808] border-t border-[#ffffff10] relative overflow-hidden"
     >
       {/* Background ambient lighting */}
-      <div className="absolute top-1/3 right-10 w-[600px] h-[600px] bg-[#6366f1]/[0.025] rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/3 right-10 w-[600px] h-[600px] bg-[#10b981]/[0.025] rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-16">
         {/* Header & Filter Controls */}
@@ -71,7 +71,7 @@ export const TeamIndex: React.FC<TeamIndexProps> = ({ setCursorType }) => {
             className="flex items-center justify-between gap-4 border-b border-[#ffffff15] pb-6"
           >
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
               <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#888888]">
                 TEAM DIRECTORY // INDEX
               </span>
@@ -91,7 +91,7 @@ export const TeamIndex: React.FC<TeamIndexProps> = ({ setCursorType }) => {
                 className="font-display text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-[#FAF9F6] leading-none"
               >
                 THE STUDIO <br />
-                <span className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-[1.1em]">
+                <span className="font-editorial italic font-normal text-[#10b981] tracking-normal lowercase text-[1.1em]">
                   index.
                 </span>
               </motion.h2>
@@ -164,7 +164,7 @@ export const TeamIndex: React.FC<TeamIndexProps> = ({ setCursorType }) => {
               >
                 {/* Left: Number & Name */}
                 <div className="flex items-center gap-8 xl:gap-12">
-                  <span className="font-mono text-xs text-[#888888] tracking-widest uppercase transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[#6366f1]">
+                  <span className="font-mono text-xs text-[#888888] tracking-widest uppercase transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[#10b981]">
                     {member.number}
                   </span>
 
@@ -179,7 +179,7 @@ export const TeamIndex: React.FC<TeamIndexProps> = ({ setCursorType }) => {
                     {member.role}
                   </span>
 
-                  <span className="px-3 py-1 rounded-full text-[10px] font-mono tracking-widest uppercase border border-white/10 text-[#888888] group-hover:border-[#6366f1]/40 group-hover:text-[#6366f1] transition-colors">
+                  <span className="px-3 py-1 rounded-full text-[10px] font-mono tracking-widest uppercase border border-white/10 text-[#888888] group-hover:border-[#10b981]/40 group-hover:text-[#10b981] transition-colors">
                     {member.discipline}
                   </span>
                 </div>
@@ -225,7 +225,7 @@ export const TeamIndex: React.FC<TeamIndexProps> = ({ setCursorType }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
 
                 <div className="absolute bottom-4 left-4 right-4 pointer-events-none">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#6366f1] font-bold block">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#10b981] font-bold block">
                     {hoveredMember.discipline} &bull; {hoveredMember.experienceYears}
                   </span>
                   <p className="text-xs text-white font-medium truncate mt-0.5">
@@ -257,7 +257,7 @@ export const TeamIndex: React.FC<TeamIndexProps> = ({ setCursorType }) => {
                 >
                   <div className="space-y-1">
                     <div className="flex items-center gap-3">
-                      <span className="font-mono text-xs text-[#6366f1] font-bold">
+                      <span className="font-mono text-xs text-[#10b981] font-bold">
                         {member.number}
                       </span>
                       <h3 className="font-display text-xl font-bold uppercase tracking-tight text-[#FAF9F6]">
@@ -273,7 +273,7 @@ export const TeamIndex: React.FC<TeamIndexProps> = ({ setCursorType }) => {
                     <span className="hidden sm:inline-block px-2.5 py-0.5 rounded-full text-[9px] font-mono tracking-widest uppercase border border-white/10 text-[#888888]">
                       {member.discipline}
                     </span>
-                    <div className={`p-1.5 rounded-full bg-white/5 text-white transition-transform duration-300 ${isExpanded ? 'rotate-180 bg-[#6366f1]' : ''}`}>
+                    <div className={`p-1.5 rounded-full bg-white/5 text-white transition-transform duration-300 ${isExpanded ? 'rotate-180 bg-[#10b981]' : ''}`}>
                       <ChevronDown className="w-4 h-4" />
                     </div>
                   </div>
@@ -326,13 +326,13 @@ export const TeamIndex: React.FC<TeamIndexProps> = ({ setCursorType }) => {
                         {/* Meta strip & Action */}
                         <div className="flex items-center justify-between pt-2 text-xs font-mono text-[#888888]">
                           <div className="flex items-center gap-1.5">
-                            <MapPin className="w-3.5 h-3.5 text-[#6366f1]" />
+                            <MapPin className="w-3.5 h-3.5 text-[#10b981]" />
                             <span>{member.location}</span>
                           </div>
 
                           <button
                             onClick={() => setSelectedMemberModal(member)}
-                            className="inline-flex items-center gap-1 text-[#6366f1] hover:underline"
+                            className="inline-flex items-center gap-1 text-[#10b981] hover:underline"
                           >
                             <span>Full Profile</span>
                             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -390,7 +390,7 @@ export const TeamIndex: React.FC<TeamIndexProps> = ({ setCursorType }) => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F12] md:bg-gradient-to-r md:from-transparent md:to-[#0F0F12] opacity-80" />
 
-                  <div className="absolute top-5 left-5 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-[10px] font-mono uppercase tracking-widest text-[#6366f1]">
+                  <div className="absolute top-5 left-5 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-[10px] font-mono uppercase tracking-widest text-[#10b981]">
                     {selectedMemberModal.number} // {selectedMemberModal.discipline}
                   </div>
                 </div>
@@ -402,7 +402,7 @@ export const TeamIndex: React.FC<TeamIndexProps> = ({ setCursorType }) => {
                       <h3 className="font-display text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white">
                         {selectedMemberModal.name}
                       </h3>
-                      <p className="text-sm font-mono text-[#6366f1] uppercase tracking-wider mt-1">
+                      <p className="text-sm font-mono text-[#10b981] uppercase tracking-wider mt-1">
                         {selectedMemberModal.role}
                       </p>
                     </div>
@@ -448,7 +448,7 @@ export const TeamIndex: React.FC<TeamIndexProps> = ({ setCursorType }) => {
                       href={selectedMemberModal.social.linkedin || 'https://linkedin.com'}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-[#6366f1] hover:underline"
+                      className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-[#10b981] hover:underline"
                     >
                       <span>LinkedIn Profile</span>
                       <ExternalLink className="w-3.5 h-3.5" />

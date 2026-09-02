@@ -18,7 +18,7 @@ export const ServiceTestimonial: React.FC<ServiceTestimonialProps> = ({ service 
           viewport={{ once: true }}
           className="mb-8"
         >
-          <Quote className="w-12 h-12 text-[#6366f1] opacity-60" />
+          <Quote className="w-12 h-12 text-[#10b981] opacity-60" />
         </motion.div>
 
         {/* Large Quote Typography */}
@@ -49,7 +49,7 @@ export const ServiceTestimonial: React.FC<ServiceTestimonialProps> = ({ service 
             </div>
           </div>
 
-          <div className="font-mono text-xs text-[#6366f1] uppercase tracking-widest">
+          <div className="font-mono text-xs text-[#10b981] uppercase tracking-widest">
             {service.testimonial.context}
           </div>
         </motion.div>

@@ -24,7 +24,7 @@ export const CareersHero: React.FC<CareersHeroProps> = ({ setCursorType }) => {
       className="relative pt-32 sm:pt-40 md:pt-48 pb-16 sm:pb-24 overflow-hidden border-b border-white/10"
     >
       {/* Background ambient lighting */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#6366f1]/[0.035] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#10b981]/[0.035] rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16 sm:space-y-24 relative z-10">
         {/* Top Header Grid */}
@@ -36,7 +36,7 @@ export const CareersHero: React.FC<CareersHeroProps> = ({ setCursorType }) => {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1] animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse" />
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#FAF9F6]">
               {CAREERS_HERO_DATA.label}
             </span>
@@ -54,7 +54,7 @@ export const CareersHero: React.FC<CareersHeroProps> = ({ setCursorType }) => {
                     ease: [0.16, 1, 0.3, 1],
                     delay: 0.15 + idx * 0.12,
                   }}
-                  className={`block ${idx === 2 ? 'text-[#6366f1]' : ''}`}
+                  className={`block ${idx === 2 ? 'text-[#10b981]' : ''}`}
                 >
                   {line}
                 </motion.span>
@@ -116,7 +116,7 @@ export const CareersHero: React.FC<CareersHeroProps> = ({ setCursorType }) => {
             {/* Inset Metadata Badge */}
             <div className="absolute bottom-6 left-6 right-6 sm:right-auto flex items-center justify-between sm:justify-start gap-4 p-3 bg-black/70 backdrop-blur-md border border-white/15">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#6366f1]" />
+                <span className="w-2 h-2 rounded-full bg-[#10b981]" />
                 <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-[#FAF9F6] font-semibold">
                   STUDIO ARCHIVE // AUTUMN 2026
                 </span>

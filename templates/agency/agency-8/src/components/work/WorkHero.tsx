@@ -12,14 +12,14 @@ export const WorkHero: React.FC<WorkHeroProps> = ({ totalProjects, setCursorType
   const headingWords = [
     { line: 'WORK', color: 'text-[#FAF9F6]' },
     { line: 'THAT', color: 'text-[#FAF9F6]' },
-    { line: 'MOVES.', color: 'text-[#6366f1]' },
+    { line: 'MOVES.', color: 'text-[#10b981]' },
   ];
 
   return (
     <section className="relative min-h-[85vh] lg:min-h-[92vh] flex flex-col justify-between pt-36 sm:pt-44 pb-16 bg-[#080808] overflow-hidden border-b border-[#ffffff10]">
       {/* Cinematic Ambient Atmosphere */}
-      <div className="absolute top-1/3 -left-48 w-[650px] h-[650px] bg-[#6366f1]/[0.035] rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute top-1/2 -right-48 w-[550px] h-[550px] bg-[#6366f1]/[0.025] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 -left-48 w-[650px] h-[650px] bg-[#10b981]/[0.035] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 -right-48 w-[550px] h-[550px] bg-[#10b981]/[0.025] rounded-full blur-[140px] pointer-events-none" />
 
       {/* Grid Pattern with subtle opacity */}
       <div 
@@ -34,10 +34,10 @@ export const WorkHero: React.FC<WorkHeroProps> = ({ totalProjects, setCursorType
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="flex items-center gap-3 mb-8 sm:mb-12"
         >
-          <span className="w-2 h-2 rounded-full bg-[#6366f1] animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
           <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#888888] flex items-center gap-2 font-medium">
             <span>SELECTED WORK</span>
-            <span className="text-[#6366f1]">/</span>
+            <span className="text-[#10b981]">/</span>
             <span className="text-[#FAF9F6]">2026 ARCHIVE</span>
           </span>
         </motion.div>
@@ -85,8 +85,8 @@ export const WorkHero: React.FC<WorkHeroProps> = ({ totalProjects, setCursorType
           >
             <div className="px-5 py-3 rounded-full bg-white/[0.03] border border-[#ffffff15] backdrop-blur-md flex items-center gap-3">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#6366f1] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#6366f1]" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10b981] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#10b981]" />
               </span>
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#FAF9F6] font-semibold">
                 {totalProjects} CURATED PROJECTS
@@ -104,12 +104,12 @@ export const WorkHero: React.FC<WorkHeroProps> = ({ totalProjects, setCursorType
         className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full pt-8 flex items-center justify-between text-[11px] font-mono text-[#888888] uppercase tracking-widest pointer-events-none"
       >
         <span className="flex items-center gap-2">
-          <Sparkles className="w-3.5 h-3.5 text-[#6366f1]" />
+          <Sparkles className="w-3.5 h-3.5 text-[#10b981]" />
           <span>Interactive Exhibition</span>
         </span>
         <div className="flex items-center gap-2">
           <span>Scroll to explore</span>
-          <ArrowDown className="w-3.5 h-3.5 text-[#6366f1] animate-bounce" />
+          <ArrowDown className="w-3.5 h-3.5 text-[#10b981] animate-bounce" />
         </div>
       </motion.div>
     </section>

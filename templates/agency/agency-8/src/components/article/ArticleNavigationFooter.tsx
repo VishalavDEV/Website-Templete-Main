@@ -25,7 +25,7 @@ export const ArticleNavigationFooter: React.FC<ArticleNavigationFooterProps> = (
           onMouseLeave={() => setCursorType('default')}
           className="p-8 sm:p-14 group cursor-pointer hover:bg-white/[0.015] transition-colors flex flex-col justify-between space-y-6"
         >
-          <div className="flex items-center gap-2 text-[#888888] font-mono text-xs uppercase tracking-widest group-hover:text-[#6366f1] transition-colors">
+          <div className="flex items-center gap-2 text-[#888888] font-mono text-xs uppercase tracking-widest group-hover:text-[#10b981] transition-colors">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             <span>PREVIOUS ESSAY</span>
           </div>
@@ -34,7 +34,7 @@ export const ArticleNavigationFooter: React.FC<ArticleNavigationFooterProps> = (
             <span className="font-mono text-[10px] uppercase tracking-widest text-[#666666]">
               {previous.category} // {previous.readTime}
             </span>
-            <h3 className="font-display font-extrabold text-xl sm:text-2xl lg:text-3xl text-[#FAF9F6] uppercase tracking-tight group-hover:text-[#6366f1] transition-colors leading-tight">
+            <h3 className="font-display font-extrabold text-xl sm:text-2xl lg:text-3xl text-[#FAF9F6] uppercase tracking-tight group-hover:text-[#10b981] transition-colors leading-tight">
               {previous.title}
             </h3>
           </div>
@@ -47,7 +47,7 @@ export const ArticleNavigationFooter: React.FC<ArticleNavigationFooterProps> = (
           onMouseLeave={() => setCursorType('default')}
           className="p-8 sm:p-14 group cursor-pointer hover:bg-white/[0.015] transition-colors flex flex-col justify-between space-y-6 text-left md:text-right"
         >
-          <div className="flex items-center md:justify-end gap-2 text-[#888888] font-mono text-xs uppercase tracking-widest group-hover:text-[#6366f1] transition-colors">
+          <div className="flex items-center md:justify-end gap-2 text-[#888888] font-mono text-xs uppercase tracking-widest group-hover:text-[#10b981] transition-colors">
             <span>NEXT ESSAY</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </div>
@@ -56,7 +56,7 @@ export const ArticleNavigationFooter: React.FC<ArticleNavigationFooterProps> = (
             <span className="font-mono text-[10px] uppercase tracking-widest text-[#666666]">
               {next.category} // {next.readTime}
             </span>
-            <h3 className="font-display font-extrabold text-xl sm:text-2xl lg:text-3xl text-[#FAF9F6] uppercase tracking-tight group-hover:text-[#6366f1] transition-colors leading-tight">
+            <h3 className="font-display font-extrabold text-xl sm:text-2xl lg:text-3xl text-[#FAF9F6] uppercase tracking-tight group-hover:text-[#10b981] transition-colors leading-tight">
               {next.title}
             </h3>
           </div>

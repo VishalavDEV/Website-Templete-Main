@@ -31,7 +31,7 @@ export const ArticleNavigation: React.FC<ArticleNavigationProps> = ({
       {/* Desktop Sticky Table of Contents */}
       <nav aria-label="Table of contents" className="hidden lg:block sticky top-32 space-y-6">
         <div className="flex items-center gap-2 pb-4 border-b border-white/10">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
           <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#FAF9F6] font-semibold">
             IN THIS ARTICLE
           </span>
@@ -49,13 +49,13 @@ export const ArticleNavigation: React.FC<ArticleNavigationProps> = ({
                   onMouseLeave={() => setCursorType('default')}
                   className={`group flex items-start gap-4 text-left w-full transition-all duration-300 cursor-pointer ${
                     isActive
-                      ? 'text-[#6366f1] translate-x-1.5'
+                      ? 'text-[#10b981] translate-x-1.5'
                       : 'text-[#666666] hover:text-[#FAF9F6]'
                   }`}
                 >
                   <span
                     className={`font-mono text-xs transition-colors duration-300 font-bold ${
-                      isActive ? 'text-[#6366f1]' : 'text-white/30 group-hover:text-white/60'
+                      isActive ? 'text-[#10b981]' : 'text-white/30 group-hover:text-white/60'
                     }`}
                   >
                     {item.number}
@@ -63,7 +63,7 @@ export const ArticleNavigation: React.FC<ArticleNavigationProps> = ({
                   <span
                     className={`font-mono text-xs uppercase tracking-wider font-medium leading-tight ${
                       isActive
-                        ? 'text-[#6366f1] font-bold'
+                        ? 'text-[#10b981] font-bold'
                         : 'text-[#888888] group-hover:text-[#FAF9F6]'
                     }`}
                   >
@@ -95,7 +95,7 @@ export const ArticleNavigation: React.FC<ArticleNavigationProps> = ({
             className="flex items-center gap-3 text-left w-full text-xs font-mono text-[#FAF9F6] justify-between cursor-pointer"
           >
             <div className="flex items-center gap-2 truncate">
-              <span className="text-[#6366f1] font-bold">{activeItem?.number}</span>
+              <span className="text-[#10b981] font-bold">{activeItem?.number}</span>
               <span className="truncate uppercase text-[#FAF9F6] tracking-wider">
                 {activeItem?.title}
               </span>
@@ -104,7 +104,7 @@ export const ArticleNavigation: React.FC<ArticleNavigationProps> = ({
               <span className="text-[10px] uppercase tracking-widest">TOC</span>
               <ChevronDown
                 className={`w-3.5 h-3.5 transition-transform duration-300 ${
-                  isMobileMenuOpen ? 'rotate-180 text-[#6366f1]' : ''
+                  isMobileMenuOpen ? 'rotate-180 text-[#10b981]' : ''
                 }`}
               />
             </div>
@@ -133,16 +133,16 @@ export const ArticleNavigation: React.FC<ArticleNavigationProps> = ({
                           setIsMobileMenuOpen(false);
                         }}
                         className={`flex items-center justify-between w-full py-1 text-xs font-mono uppercase tracking-wider text-left ${
-                          isActive ? 'text-[#6366f1] font-bold' : 'text-[#888888]'
+                          isActive ? 'text-[#10b981] font-bold' : 'text-[#888888]'
                         }`}
                       >
                         <span className="flex items-center gap-3">
-                          <span className={isActive ? 'text-[#6366f1]' : 'text-white/30'}>
+                          <span className={isActive ? 'text-[#10b981]' : 'text-white/30'}>
                             {item.number}
                           </span>
                           <span>{item.title}</span>
                         </span>
-                        {isActive && <Check className="w-3.5 h-3.5 text-[#6366f1]" />}
+                        {isActive && <Check className="w-3.5 h-3.5 text-[#10b981]" />}
                       </button>
                     </li>
                   );

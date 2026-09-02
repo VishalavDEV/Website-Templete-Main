@@ -36,7 +36,7 @@ export const DirectContact: React.FC<DirectContactProps> = ({ setCursorType }) =
           {/* Left Column: Heading & Context */}
           <div className="lg:col-span-5 space-y-6">
             <div className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-[#6366f1]" />
+              <span className="w-2 h-2 rounded-full bg-[#10b981]" />
               <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
                 DIRECT COMMUNICATION
               </span>
@@ -44,7 +44,7 @@ export const DirectContact: React.FC<DirectContactProps> = ({ setCursorType }) =
 
             <h2 className="font-display text-4xl sm:text-6xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.95]">
               PREFER TO TALK <br />
-              <span className="text-[#6366f1]">DIRECTLY?</span>
+              <span className="text-[#10b981]">DIRECTLY?</span>
             </h2>
 
             <p className="text-base sm:text-lg text-[#A1A1AA] leading-relaxed max-w-md font-normal">
@@ -60,7 +60,7 @@ export const DirectContact: React.FC<DirectContactProps> = ({ setCursorType }) =
                 <span className="text-xs font-mono uppercase tracking-widest text-[#888888]">
                   EMAIL INQUIRIES
                 </span>
-                <Mail className="w-4 h-4 text-[#6366f1]" />
+                <Mail className="w-4 h-4 text-[#10b981]" />
               </div>
 
               <div className="space-y-1">
@@ -68,7 +68,7 @@ export const DirectContact: React.FC<DirectContactProps> = ({ setCursorType }) =
                   href="mailto:hello@studio.com"
                   onMouseEnter={() => setCursorType('pointer')}
                   onMouseLeave={() => setCursorType('default')}
-                  className="font-display text-xl sm:text-2xl font-bold text-[#FAF9F6] hover:text-[#6366f1] transition-colors block cursor-pointer"
+                  className="font-display text-xl sm:text-2xl font-bold text-[#FAF9F6] hover:text-[#10b981] transition-colors block cursor-pointer"
                 >
                   hello@studio.com
                 </a>
@@ -93,7 +93,7 @@ export const DirectContact: React.FC<DirectContactProps> = ({ setCursorType }) =
                 <span className="text-xs font-mono uppercase tracking-widest text-[#888888]">
                   STUDIO DESK
                 </span>
-                <Phone className="w-4 h-4 text-[#6366f1]" />
+                <Phone className="w-4 h-4 text-[#10b981]" />
               </div>
 
               <div className="space-y-1">
@@ -101,7 +101,7 @@ export const DirectContact: React.FC<DirectContactProps> = ({ setCursorType }) =
                   href="tel:+10000000000"
                   onMouseEnter={() => setCursorType('pointer')}
                   onMouseLeave={() => setCursorType('default')}
-                  className="font-display text-xl sm:text-2xl font-bold text-[#FAF9F6] hover:text-[#6366f1] transition-colors block cursor-pointer"
+                  className="font-display text-xl sm:text-2xl font-bold text-[#FAF9F6] hover:text-[#10b981] transition-colors block cursor-pointer"
                 >
                   +1 000 000 0000
                 </a>
@@ -126,7 +126,7 @@ export const DirectContact: React.FC<DirectContactProps> = ({ setCursorType }) =
                 <span className="text-xs font-mono uppercase tracking-widest text-[#888888]">
                   PHYSICAL & VIRTUAL
                 </span>
-                <MapPin className="w-4 h-4 text-[#6366f1]" />
+                <MapPin className="w-4 h-4 text-[#10b981]" />
               </div>
 
               <div className="space-y-1">
@@ -154,7 +154,7 @@ export const DirectContact: React.FC<DirectContactProps> = ({ setCursorType }) =
                     rel="noreferrer"
                     onMouseEnter={() => setCursorType('project', 'OPEN ↗')}
                     onMouseLeave={() => setCursorType('default')}
-                    className="flex items-center justify-between py-1 text-[#FAF9F6] hover:text-[#6366f1] border-b border-white/5 last:border-0 transition-colors cursor-pointer"
+                    className="flex items-center justify-between py-1 text-[#FAF9F6] hover:text-[#10b981] border-b border-white/5 last:border-0 transition-colors cursor-pointer"
                   >
                     <span>{soc.name}</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />

@@ -20,7 +20,7 @@ export const ArchiveFeature: React.FC<ArchiveFeatureProps> = ({
     <section className="py-24 sm:py-36 px-6 sm:px-8 lg:px-12 bg-[#080808] border-b border-[#ffffff10] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-2 mb-12 sm:mb-16 pb-6 border-b border-[#ffffff10]">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
           <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#888888]">
             05 / RETROSPECTIVE
           </span>
@@ -29,7 +29,7 @@ export const ArchiveFeature: React.FC<ArchiveFeatureProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left Column: Typography & Archive Label */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-block px-3 py-1 bg-white/[0.04] border border-white/10 font-mono text-[10px] uppercase tracking-widest text-[#6366f1]">
+            <div className="inline-block px-3 py-1 bg-white/[0.04] border border-white/10 font-mono text-[10px] uppercase tracking-widest text-[#10b981]">
               FROM THE ARCHIVE
             </div>
 
@@ -37,7 +37,7 @@ export const ArchiveFeature: React.FC<ArchiveFeatureProps> = ({
               onClick={() => onNavigate(targetPath)}
               onMouseEnter={() => setCursorType('pointer')}
               onMouseLeave={() => setCursorType('default')}
-              className="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#FAF9F6] uppercase tracking-tight leading-[1.02] hover:text-[#6366f1] transition-colors cursor-pointer"
+              className="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#FAF9F6] uppercase tracking-tight leading-[1.02] hover:text-[#10b981] transition-colors cursor-pointer"
             >
               {article.title}
             </h2>
@@ -47,7 +47,7 @@ export const ArchiveFeature: React.FC<ArchiveFeatureProps> = ({
             </p>
 
             <div className="pt-4 flex flex-wrap items-center gap-6 font-mono text-xs text-[#888888]">
-              <span className="text-[#6366f1] font-semibold uppercase tracking-widest">
+              <span className="text-[#10b981] font-semibold uppercase tracking-widest">
                 {article.category}
               </span>
               <span>{article.date}</span>
@@ -59,7 +59,7 @@ export const ArchiveFeature: React.FC<ArchiveFeatureProps> = ({
                 onClick={() => onNavigate(targetPath)}
                 onMouseEnter={() => setCursorType('button')}
                 onMouseLeave={() => setCursorType('default')}
-                className="group inline-flex items-center gap-4 px-8 py-4 bg-white/[0.03] hover:bg-[#6366f1] text-[#FAF9F6] hover:text-white font-mono text-xs uppercase tracking-widest border border-white/10 hover:border-[#6366f1] transition-all duration-300 cursor-pointer"
+                className="group inline-flex items-center gap-4 px-8 py-4 bg-white/[0.03] hover:bg-[#10b981] text-[#FAF9F6] hover:text-white font-mono text-xs uppercase tracking-widest border border-white/10 hover:border-[#10b981] transition-all duration-300 cursor-pointer"
               >
                 <span className="font-bold">READ ARTICLE</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

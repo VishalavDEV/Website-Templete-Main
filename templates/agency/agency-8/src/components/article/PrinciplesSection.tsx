@@ -20,8 +20,8 @@ export const PrinciplesSection: React.FC<PrinciplesSectionProps> = ({
     <section id={id} className="scroll-mt-32 pt-16 sm:pt-24 border-t border-white/10">
       {/* Section Header */}
       <div className="flex items-center gap-2 mb-6">
-        <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
-        <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#6366f1] font-semibold">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+        <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#10b981] font-semibold">
           04 / FIVE PRINCIPLES
         </span>
       </div>
@@ -42,7 +42,7 @@ export const PrinciplesSection: React.FC<PrinciplesSectionProps> = ({
             className="py-10 sm:py-14 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-baseline"
           >
             <div className="md:col-span-2">
-              <span className="font-mono text-sm sm:text-base text-[#6366f1] font-bold tracking-widest">
+              <span className="font-mono text-sm sm:text-base text-[#10b981] font-bold tracking-widest">
                 [ {principle.number} ]
               </span>
             </div>

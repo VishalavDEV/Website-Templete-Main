@@ -16,7 +16,7 @@ export const PullQuote: React.FC<PullQuoteProps> = ({ quote, attribution }) => {
       className="my-16 sm:my-24 py-8 sm:py-12 border-y border-white/15 relative"
     >
       {/* Decorative accent mark */}
-      <span className="font-serif italic text-6xl sm:text-7xl text-[#6366f1] absolute -top-5 left-0 leading-none select-none">
+      <span className="font-serif italic text-6xl sm:text-7xl text-[#10b981] absolute -top-5 left-0 leading-none select-none">
         “
       </span>
 
@@ -25,8 +25,8 @@ export const PullQuote: React.FC<PullQuoteProps> = ({ quote, attribution }) => {
       </blockquote>
 
       {attribution && (
-        <figcaption className="mt-6 font-mono text-xs text-[#6366f1] uppercase tracking-widest font-semibold flex items-center gap-2">
-          <span className="w-4 h-[1px] bg-[#6366f1]" />
+        <figcaption className="mt-6 font-mono text-xs text-[#10b981] uppercase tracking-widest font-semibold flex items-center gap-2">
+          <span className="w-4 h-[1px] bg-[#10b981]" />
           {attribution}
         </figcaption>
       )}

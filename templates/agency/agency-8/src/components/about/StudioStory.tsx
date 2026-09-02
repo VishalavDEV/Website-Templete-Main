@@ -10,7 +10,7 @@ export const StudioStory: React.FC<StudioStoryProps> = ({ setCursorType }) => {
   return (
     <section className="py-28 sm:py-40 border-t border-[#ffffff10] relative overflow-hidden bg-[#080808]">
       {/* Background Subtle Gradient Aura */}
-      <div className="absolute top-1/3 right-0 w-[550px] h-[550px] bg-[#6366f1]/[0.02] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-[550px] h-[550px] bg-[#10b981]/[0.02] rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Section Tag */}
@@ -21,7 +21,7 @@ export const StudioStory: React.FC<StudioStoryProps> = ({ setCursorType }) => {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-2 mb-12 sm:mb-16"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
             OUR ORIGIN & PURPOSE
           </span>
@@ -39,7 +39,7 @@ export const StudioStory: React.FC<StudioStoryProps> = ({ setCursorType }) => {
               className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-[#FAF9F6] leading-[0.98]"
             >
               A STUDIO BUILT <br />
-              <span className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-[1.1em]">
+              <span className="font-editorial italic font-normal text-[#10b981] tracking-normal lowercase text-[1.1em]">
                 around curiosity.
               </span>
             </motion.h2>
@@ -74,11 +74,11 @@ export const StudioStory: React.FC<StudioStoryProps> = ({ setCursorType }) => {
               className="grid grid-cols-2 gap-6 pt-8 border-t border-[#ffffff10] font-mono text-xs text-[#888888]"
             >
               <div>
-                <span className="text-[#6366f1] block font-bold mb-1">DISCIPLINE</span>
+                <span className="text-[#10b981] block font-bold mb-1">DISCIPLINE</span>
                 <span>Interdisciplinary Digital Practice</span>
               </div>
               <div>
-                <span className="text-[#6366f1] block font-bold mb-1">FOUNDED</span>
+                <span className="text-[#10b981] block font-bold mb-1">FOUNDED</span>
                 <span>London & New York, 2018</span>
               </div>
             </motion.div>
@@ -106,7 +106,7 @@ export const StudioStory: React.FC<StudioStoryProps> = ({ setCursorType }) => {
 
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between pointer-events-none">
                 <div className="space-y-1">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#6366f1] block font-bold">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#10b981] block font-bold">
                     STUDIO ENVIRONMENT
                   </span>
                   <p className="text-xs sm:text-sm text-[#FAF9F6] font-medium">

@@ -35,8 +35,8 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
   return (
     <section id="work" className="py-28 sm:py-36 bg-[#080808] relative overflow-hidden">
       {/* Background Subtle Gradient Aura */}
-      <div className="absolute top-1/4 -left-32 w-[600px] h-[600px] bg-[#6366f1]/[0.02] rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-32 w-[600px] h-[600px] bg-[#6366f1]/[0.02] rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/4 -left-32 w-[600px] h-[600px] bg-[#10b981]/[0.02] rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-32 w-[600px] h-[600px] bg-[#10b981]/[0.02] rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Section Header */}
@@ -48,7 +48,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
               viewport={{ once: true }}
               className="flex items-center gap-2 mb-4"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
               <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
                 SELECTED WORK
               </span>
@@ -112,7 +112,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
                 }`}>
                   {/* Project Image Showcase Container */}
                   <div className={`lg:col-span-8 ${isEven ? '' : 'lg:order-2'}`}>
-                    <div className="relative overflow-hidden rounded-2xl bg-[#111111] border border-[#ffffff15] group-hover:border-[#6366f1]/40 transition-all duration-500 shadow-2xl">
+                    <div className="relative overflow-hidden rounded-2xl bg-[#111111] border border-[#ffffff15] group-hover:border-[#10b981]/40 transition-all duration-500 shadow-2xl">
                       {/* Image with zoom on hover */}
                       <div className="aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden">
                         <img
@@ -129,7 +129,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
                           {project.number} // {project.year}
                         </span>
                         {project.metrics && (
-                          <span className="px-3 py-1 bg-[#6366f1] text-[10px] font-mono tracking-widest text-white uppercase font-bold shadow-lg">
+                          <span className="px-3 py-1 bg-[#10b981] text-[10px] font-mono tracking-widest text-white uppercase font-bold shadow-lg">
                             {project.metrics}
                           </span>
                         )}
@@ -144,7 +144,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
                   <div className={`lg:col-span-4 space-y-6 ${isEven ? '' : 'lg:order-1'}`}>
                     <div className="space-y-2">
                       <div className="flex items-center gap-3">
-                        <span className="text-xs font-mono tracking-[0.2em] text-[#6366f1] uppercase font-bold">
+                        <span className="text-xs font-mono tracking-[0.2em] text-[#10b981] uppercase font-bold">
                           {project.category}
                         </span>
                         <span className="text-white/20">•</span>
@@ -157,8 +157,8 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
                         <h3 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-[#FAF9F6] group-hover:text-white transition-all duration-300 group-hover:translate-x-2 uppercase">
                           {project.title}
                         </h3>
-                        <div className="w-12 h-12 rounded-full border border-[#ffffff15] flex items-center justify-center group-hover:border-[#6366f1] group-hover:bg-[#6366f1]/10 transition-all duration-300">
-                          <ArrowUpRight className="w-5 h-5 text-[#888888] group-hover:text-[#6366f1] group-hover:rotate-45 transition-transform duration-300" />
+                        <div className="w-12 h-12 rounded-full border border-[#ffffff15] flex items-center justify-center group-hover:border-[#10b981] group-hover:bg-[#10b981]/10 transition-all duration-300">
+                          <ArrowUpRight className="w-5 h-5 text-[#888888] group-hover:text-[#10b981] group-hover:rotate-45 transition-transform duration-300" />
                         </div>
                       </div>
                     </div>
@@ -182,7 +182,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
                     {/* Awards badges if any */}
                     {project.awards && (
                       <div className="pt-2 flex items-center gap-2 text-xs font-mono text-[#888888]">
-                        <Award className="w-3.5 h-3.5 text-[#6366f1] shrink-0" />
+                        <Award className="w-3.5 h-3.5 text-[#10b981] shrink-0" />
                         <span className="truncate">{project.awards.join(' • ')}</span>
                       </div>
                     )}
@@ -197,7 +197,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
         {onNavigate && (
           <div className="mt-20 pt-12 border-t border-[#ffffff12] flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-1 text-center sm:text-left">
-              <span className="font-mono text-xs text-[#6366f1] uppercase tracking-[0.25em] font-semibold block">
+              <span className="font-mono text-xs text-[#10b981] uppercase tracking-[0.25em] font-semibold block">
                 FULL 2026 ARCHIVE
               </span>
               <p className="text-sm text-[#888888]">
@@ -209,7 +209,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
               onClick={() => onNavigate('/work')}
               onMouseEnter={() => setCursorType('pointer')}
               onMouseLeave={() => setCursorType('default')}
-              className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-white text-black font-display font-bold text-xs uppercase tracking-widest hover:bg-[#6366f1] hover:text-white transition-all duration-300 shadow-xl cursor-pointer"
+              className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-white text-black font-display font-bold text-xs uppercase tracking-widest hover:bg-[#10b981] hover:text-white transition-all duration-300 shadow-xl cursor-pointer"
             >
               <span>EXPLORE ALL PROJECTS</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -251,7 +251,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
               <div className="space-y-8">
                 {/* Header */}
                 <div>
-                  <div className="flex items-center gap-3 text-xs font-mono text-[#6366f1] uppercase tracking-widest mb-2 font-bold">
+                  <div className="flex items-center gap-3 text-xs font-mono text-[#10b981] uppercase tracking-widest mb-2 font-bold">
                     <span>{selectedProject.number}</span>
                     <span>//</span>
                     <span>{selectedProject.category}</span>
@@ -292,7 +292,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
                   </div>
 
                   <div className="space-y-4 bg-white/[0.02] p-5 rounded-xl border border-[#ffffff10]">
-                    <h4 className="text-xs uppercase font-mono tracking-widest text-[#6366f1] font-bold">
+                    <h4 className="text-xs uppercase font-mono tracking-widest text-[#10b981] font-bold">
                       Commercial Impact
                     </h4>
                     {selectedProject.metrics && (
@@ -305,7 +305,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
                         <span className="text-[10px] font-mono uppercase tracking-wider text-[#888888]">Accolades:</span>
                         {selectedProject.awards.map((award, aIdx) => (
                           <div key={aIdx} className="text-xs text-[#FAF9F6] flex items-center gap-1.5">
-                            <Award className="w-3.5 h-3.5 text-[#6366f1]" />
+                            <Award className="w-3.5 h-3.5 text-[#10b981]" />
                             <span>{award}</span>
                           </div>
                         ))}
@@ -323,7 +323,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
                         setSelectedProject(null);
                         onNavigate(`/work/${slug}`);
                       }}
-                      className="px-6 py-3.5 bg-white text-black font-display font-bold text-xs uppercase tracking-wider flex items-center gap-2 hover:bg-[#6366f1] hover:text-white transition-all cursor-pointer rounded-full"
+                      className="px-6 py-3.5 bg-white text-black font-display font-bold text-xs uppercase tracking-wider flex items-center gap-2 hover:bg-[#10b981] hover:text-white transition-all cursor-pointer rounded-full"
                     >
                       <span>Read Full Case Study &nearr;</span>
                     </button>
@@ -333,7 +333,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
                       setSelectedProject(null);
                       onOpenProjectModal();
                     }}
-                    className="px-6 py-3.5 bg-[#6366f1] text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 hover:brightness-110 transition-all cursor-pointer rounded-full"
+                    className="px-6 py-3.5 bg-[#10b981] text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 hover:brightness-110 transition-all cursor-pointer rounded-full"
                   >
                     <span>Start Your Project &nearr;</span>
                   </button>

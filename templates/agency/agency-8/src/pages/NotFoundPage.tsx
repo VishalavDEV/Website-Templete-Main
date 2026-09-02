@@ -23,7 +23,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="font-display font-black text-8xl sm:text-9xl md:text-[12rem] text-[#6366f1]/20 select-none tracking-tighter"
+          className="font-display font-black text-8xl sm:text-9xl md:text-[12rem] text-[#10b981]/20 select-none tracking-tighter"
         >
           404
         </motion.div>
@@ -60,7 +60,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
             onClick={() => onNavigate('/')}
             onMouseEnter={() => setCursorType('button', 'HOME ↗')}
             onMouseLeave={() => setCursorType('default')}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#6366f1] text-white font-mono text-xs uppercase tracking-widest font-bold hover:brightness-110 transition-all shadow-lg shadow-[#6366f1]/30 cursor-pointer"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#10b981] text-white font-mono text-xs uppercase tracking-widest font-bold hover:brightness-110 transition-all shadow-lg shadow-[#10b981]/30 cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>RETURN TO HOMEPAGE</span>

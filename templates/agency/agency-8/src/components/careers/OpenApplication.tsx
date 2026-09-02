@@ -16,15 +16,15 @@ export const OpenApplication: React.FC<OpenApplicationProps> = ({
   return (
     <section className="py-24 sm:py-36 border-b border-white/10 relative overflow-hidden bg-[#080808]">
       {/* Subtle ambient light */}
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#6366f1]/[0.025] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#10b981]/[0.025] rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="p-8 sm:p-16 lg:p-20 bg-[#0C0C10] border border-white/15 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           {/* Text Info */}
           <div className="lg:col-span-8 space-y-6">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#6366f1] font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#10b981] font-semibold">
                 OPEN INVITATION
               </span>
             </div>
@@ -46,7 +46,7 @@ export const OpenApplication: React.FC<OpenApplicationProps> = ({
               onClick={onOpenGeneralModal}
               onCursorEnter={() => setCursorType('button', 'APPLY ↗')}
               onCursorLeave={() => setCursorType('default')}
-              className="inline-flex items-center gap-3 px-8 py-5 bg-[#FAF9F6] hover:bg-[#6366f1] text-black hover:text-white font-mono text-xs uppercase tracking-widest font-bold border border-white/20 transition-all duration-300 cursor-pointer shadow-xl"
+              className="inline-flex items-center gap-3 px-8 py-5 bg-[#FAF9F6] hover:bg-[#10b981] text-black hover:text-white font-mono text-xs uppercase tracking-widest font-bold border border-white/20 transition-all duration-300 cursor-pointer shadow-xl"
             >
               <span>SEND GENERAL APPLICATION</span>
               <ArrowUpRight className="w-4 h-4" />

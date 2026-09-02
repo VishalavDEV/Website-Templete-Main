@@ -125,7 +125,7 @@ export const PROJECTS: Project[] = [
     tags: ['Digital Identity', 'Spatial Audio', 'Interactive WebGL', 'Typography System'],
     metrics: '1.2M Unique Visitors',
     awards: ['FWA of the Day', 'Type Directors Club Award'],
-    accentColor: '#818cf8'
+    accentColor: '#34d399'
   }
 ];
 

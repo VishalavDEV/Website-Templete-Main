@@ -72,7 +72,7 @@ export const InteractiveHeroVisual: React.FC<InteractiveHeroVisualProps> = ({
         {/* Layer 1: Back Card (Tilted -4deg with Aura Project & Concentric Radar) */}
         <div className="absolute w-full h-full bg-[#111111] border border-white/10 -rotate-3 sm:-rotate-4 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 hover:-rotate-1">
           {/* Blue aura gradient */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#6366f1]/20 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#10b981]/20 via-transparent to-transparent pointer-events-none" />
 
           {/* Background image overlay */}
           <div className="absolute inset-0 opacity-20 mix-blend-luminosity">
@@ -86,7 +86,7 @@ export const InteractiveHeroVisual: React.FC<InteractiveHeroVisualProps> = ({
           {/* Concentric Pulser Ring Artwork */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-white/5 rounded-full flex items-center justify-center pointer-events-none">
             <div className="w-36 h-36 border border-white/10 rounded-full flex items-center justify-center">
-              <div className="w-24 h-24 border border-[#6366f1]/30 rounded-full animate-ping opacity-30" />
+              <div className="w-24 h-24 border border-[#10b981]/30 rounded-full animate-ping opacity-30" />
             </div>
           </div>
 
@@ -100,7 +100,7 @@ export const InteractiveHeroVisual: React.FC<InteractiveHeroVisualProps> = ({
                 Aura Brand Experience
               </div>
             </div>
-            <span className="text-[10px] font-mono text-[#6366f1] px-2.5 py-1 rounded-full bg-[#6366f1]/10 border border-[#6366f1]/30">
+            <span className="text-[10px] font-mono text-[#10b981] px-2.5 py-1 rounded-full bg-[#10b981]/10 border border-[#10b981]/30">
               LIVE
             </span>
           </div>
@@ -111,7 +111,7 @@ export const InteractiveHeroVisual: React.FC<InteractiveHeroVisualProps> = ({
           {/* Top Metrology Header */}
           <div className="flex justify-between items-start border-b border-white/10 pb-4">
             <div className="text-xs uppercase tracking-[0.2em] text-[#888888] font-mono flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
               <span>Selected Works</span>
             </div>
             <div className="text-xs font-mono text-[#888888] opacity-60">
@@ -126,7 +126,7 @@ export const InteractiveHeroVisual: React.FC<InteractiveHeroVisualProps> = ({
               onMouseEnter={() => setHoveredProject('NORTH')}
               className={`flex justify-between items-center transition-all duration-300 cursor-pointer ${
                 hoveredProject === 'NORTH'
-                  ? 'opacity-100 text-[#6366f1]'
+                  ? 'opacity-100 text-[#10b981]'
                   : 'opacity-40 grayscale text-[#FAF9F6] hover:opacity-75'
               }`}
             >
@@ -145,7 +145,7 @@ export const InteractiveHeroVisual: React.FC<InteractiveHeroVisualProps> = ({
               onMouseEnter={() => setHoveredProject('MONO')}
               className={`flex justify-between items-center transition-all duration-300 cursor-pointer ${
                 hoveredProject === 'MONO'
-                  ? 'opacity-100 text-[#6366f1]'
+                  ? 'opacity-100 text-[#10b981]'
                   : 'opacity-40 grayscale text-[#FAF9F6] hover:opacity-75'
               }`}
             >
@@ -164,7 +164,7 @@ export const InteractiveHeroVisual: React.FC<InteractiveHeroVisualProps> = ({
               onMouseEnter={() => setHoveredProject('FORM')}
               className={`flex justify-between items-center transition-all duration-300 cursor-pointer ${
                 hoveredProject === 'FORM'
-                  ? 'opacity-100 text-[#6366f1]'
+                  ? 'opacity-100 text-[#10b981]'
                   : 'opacity-40 grayscale text-[#FAF9F6] hover:opacity-75'
               }`}
             >
@@ -183,7 +183,7 @@ export const InteractiveHeroVisual: React.FC<InteractiveHeroVisualProps> = ({
               <span className="w-6 h-px bg-white/30" />
               <span>Explore Works</span>
             </div>
-            <span className="text-[#6366f1] flex items-center gap-1 font-bold">
+            <span className="text-[#10b981] flex items-center gap-1 font-bold">
               2026 ARCHIVE &nearr;
             </span>
           </div>

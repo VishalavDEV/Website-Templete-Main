@@ -115,7 +115,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     industry: 'LIFESTYLE & TECH',
     year: '2026',
     services: ['Brand Identity', 'Spatial UX', 'WebGL Shaders', 'Design System', 'Sound Identity'],
-    accent: '#6366f1',
+    accent: '#10b981',
     accentRgb: '0, 102, 255',
     heroImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=2000&q=85',
     description: 'An ethereal brand and spatial interface ecosystem designed for next-generation holographic computing hardware, combining real-time audio reactivity with tactile micro-interactions.',
@@ -154,7 +154,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
       },
       colors: [
         { name: 'Pure Obsidian', hex: '#080808', role: 'Canvas Base' },
-        { name: 'Aura Electric', hex: '#6366f1', role: 'Primary Luminescence' },
+        { name: 'Aura Electric', hex: '#10b981', role: 'Primary Luminescence' },
         { name: 'Ethereal Cyan', hex: '#60A5FA', role: 'Secondary Accent' },
         { name: 'Warm Parchment', hex: '#FAF9F6', role: 'Typographic White' },
         { name: 'Titanium Graphite', hex: '#1E293B', role: 'Structural Surface' },
@@ -969,7 +969,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
       title: 'AURA',
       category: 'BRAND EXPERIENCE',
       image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1800&q=85',
-      accent: '#6366f1',
+      accent: '#10b981',
     },
   },
 };
@@ -1021,7 +1021,7 @@ export function getProjectCaseStudy(slug: string): CaseStudy {
     industry: found.industryDisplay || 'Technology',
     year: found.year,
     services: found.services || ['Brand Identity', 'Digital Design', 'Development'],
-    accent: found.accent || '#6366f1',
+    accent: found.accent || '#10b981',
     accentRgb: '0, 102, 255',
     heroImage: found.image,
     description: found.description,
@@ -1060,7 +1060,7 @@ export function getProjectCaseStudy(slug: string): CaseStudy {
       },
       colors: [
         { name: 'Obsidian Black', hex: '#080808', role: 'Background Canvas' },
-        { name: 'Signature Accent', hex: found.accent || '#6366f1', role: 'Primary Focus' },
+        { name: 'Signature Accent', hex: found.accent || '#10b981', role: 'Primary Focus' },
         { name: 'Parchment White', hex: '#FAF9F6', role: 'Primary Typography' },
         { name: 'Slate Gray', hex: '#888888', role: 'Secondary Metadata' },
       ],
@@ -1133,7 +1133,7 @@ export function getProjectCaseStudy(slug: string): CaseStudy {
       title: nextProj.title,
       category: nextProj.categoryDisplay || nextProj.category,
       image: nextProj.image,
-      accent: nextProj.accent || '#6366f1',
+      accent: nextProj.accent || '#10b981',
     },
   };
 }

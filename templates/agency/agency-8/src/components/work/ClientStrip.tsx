@@ -32,9 +32,9 @@ export const ClientStrip: React.FC<ClientStripProps> = ({ setCursorType }) => {
               transition={{ delay: idx * 0.04, duration: 0.5 }}
               onMouseEnter={() => setCursorType('pointer')}
               onMouseLeave={() => setCursorType('default')}
-              className="p-5 rounded-xl bg-white/[0.02] border border-[#ffffff0e] hover:border-[#6366f1]/40 hover:bg-white/[0.04] transition-all duration-300 flex flex-col items-center justify-center text-center gap-2 group cursor-default"
+              className="p-5 rounded-xl bg-white/[0.02] border border-[#ffffff0e] hover:border-[#10b981]/40 hover:bg-white/[0.04] transition-all duration-300 flex flex-col items-center justify-center text-center gap-2 group cursor-default"
             >
-              <span className="text-sm font-mono text-[#6366f1] group-hover:scale-110 transition-transform">
+              <span className="text-sm font-mono text-[#10b981] group-hover:scale-110 transition-transform">
                 {client.symbol}
               </span>
               <span className="font-display font-bold text-base sm:text-lg text-[#FAF9F6] tracking-wider uppercase group-hover:text-white transition-colors">

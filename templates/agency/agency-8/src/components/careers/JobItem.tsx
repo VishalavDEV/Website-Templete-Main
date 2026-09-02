@@ -51,12 +51,12 @@ export const JobItem: React.FC<JobItemProps> = ({
           setIsHovered(false);
           setCursorType('default');
         }}
-        className="w-full text-left py-8 sm:py-12 px-4 sm:px-8 group cursor-pointer focus:outline-none focus:ring-1 focus:ring-[#6366f1] transition-all duration-300"
+        className="w-full text-left py-8 sm:py-12 px-4 sm:px-8 group cursor-pointer focus:outline-none focus:ring-1 focus:ring-[#10b981] transition-all duration-300"
       >
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-center">
           {/* Number & Department */}
           <div className="md:col-span-2 flex items-center gap-3">
-            <span className="font-mono text-xs text-[#888888] group-hover:text-[#6366f1] transition-colors">
+            <span className="font-mono text-xs text-[#888888] group-hover:text-[#10b981] transition-colors">
               [ {job.number} ]
             </span>
             <span className="px-2.5 py-1 bg-white/[0.04] border border-white/10 font-mono text-[10px] uppercase tracking-widest text-[#888888] group-hover:text-[#FAF9F6] group-hover:border-white/30 transition-all">
@@ -95,8 +95,8 @@ export const JobItem: React.FC<JobItemProps> = ({
             <div
               className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 ${
                 isExpanded
-                  ? 'bg-[#6366f1] border-[#6366f1] text-white rotate-180'
-                  : 'bg-white/[0.02] border-white/15 text-[#888888] group-hover:border-[#6366f1] group-hover:text-[#FAF9F6]'
+                  ? 'bg-[#10b981] border-[#10b981] text-white rotate-180'
+                  : 'bg-white/[0.02] border-white/15 text-[#888888] group-hover:border-[#10b981] group-hover:text-[#FAF9F6]'
               }`}
             >
               <ChevronDown className="w-4 h-4 transition-transform duration-300" />
@@ -120,7 +120,7 @@ export const JobItem: React.FC<JobItemProps> = ({
                 className="w-full h-full object-cover grayscale contrast-125 brightness-95"
               />
               <div className="absolute inset-0 bg-black/40" />
-              <div className="absolute bottom-2 left-2 font-mono text-[9px] uppercase tracking-widest text-[#6366f1] font-bold">
+              <div className="absolute bottom-2 left-2 font-mono text-[9px] uppercase tracking-widest text-[#10b981] font-bold">
                 VIEW SPECS ↗
               </div>
             </motion.div>

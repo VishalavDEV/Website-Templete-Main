@@ -16,13 +16,13 @@ export const HowWeWorkSection: React.FC<HowWeWorkSectionProps> = ({ setCursorTyp
   return (
     <section className="py-32 sm:py-48 bg-[#080808] border-t border-[#ffffff10] relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-[#6366f1]/[0.025] rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-[#10b981]/[0.025] rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Header Eyebrow */}
         <div className="flex items-center justify-between border-b border-[#ffffff12] pb-6 mb-12 sm:mb-16">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
               METHODOLOGY
             </span>
@@ -42,7 +42,7 @@ export const HowWeWorkSection: React.FC<HowWeWorkSectionProps> = ({ setCursorTyp
             className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.92]"
           >
             FROM IDEA <br />
-            <span className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-[1.05em]">
+            <span className="font-editorial italic font-normal text-[#10b981] tracking-normal lowercase text-[1.05em]">
               to impact.
             </span>
           </motion.h2>
@@ -64,7 +64,7 @@ export const HowWeWorkSection: React.FC<HowWeWorkSectionProps> = ({ setCursorTyp
                 }`}
               >
                 <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
-                  <span className={`font-mono text-xs sm:text-sm font-bold ${isActive ? 'text-[#6366f1]' : ''}`}>
+                  <span className={`font-mono text-xs sm:text-sm font-bold ${isActive ? 'text-[#10b981]' : ''}`}>
                     {step.number}
                   </span>
                   <span className="font-display text-xs sm:text-base font-bold uppercase tracking-tight truncate">
@@ -76,7 +76,7 @@ export const HowWeWorkSection: React.FC<HowWeWorkSectionProps> = ({ setCursorTyp
                 {isActive && (
                   <motion.div
                     layoutId="activeProcessTab"
-                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#6366f1]"
+                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#10b981]"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -98,7 +98,7 @@ export const HowWeWorkSection: React.FC<HowWeWorkSectionProps> = ({ setCursorTyp
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
               {/* Left Column (Phase summary & duration) */}
               <div className="lg:col-span-5 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/[0.04] border border-white/10 rounded-full font-mono text-xs text-[#6366f1] uppercase tracking-wider">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/[0.04] border border-white/10 rounded-full font-mono text-xs text-[#10b981] uppercase tracking-wider">
                   <Clock className="w-3.5 h-3.5" />
                   <span>TIMEFRAME: {activeStep.duration}</span>
                 </div>
@@ -110,7 +110,7 @@ export const HowWeWorkSection: React.FC<HowWeWorkSectionProps> = ({ setCursorTyp
                   <h3 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-[#FAF9F6]">
                     {activeStep.title}
                   </h3>
-                  <p className="font-editorial italic text-xl text-[#6366f1]">
+                  <p className="font-editorial italic text-xl text-[#10b981]">
                     {activeStep.subtitle}
                   </p>
                 </div>
@@ -122,7 +122,7 @@ export const HowWeWorkSection: React.FC<HowWeWorkSectionProps> = ({ setCursorTyp
 
               {/* Right Column (Deliverables & artifacts breakdown) */}
               <div className="lg:col-span-7 space-y-4 lg:border-l lg:border-white/10 lg:pl-12">
-                <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#6366f1] font-semibold block">
+                <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#10b981] font-semibold block">
                   KEY ARTIFACTS &amp; MILESTONES
                 </span>
 
@@ -130,17 +130,17 @@ export const HowWeWorkSection: React.FC<HowWeWorkSectionProps> = ({ setCursorTyp
                   {activeStep.deliverables.map((item, idx) => (
                     <div
                       key={item}
-                      className="flex items-center justify-between p-4 bg-white/[0.02] border border-white/[0.08] rounded-lg hover:border-[#6366f1]/30 transition-colors"
+                      className="flex items-center justify-between p-4 bg-white/[0.02] border border-white/[0.08] rounded-lg hover:border-[#10b981]/30 transition-colors"
                     >
                       <div className="flex items-center gap-3">
-                        <span className="font-mono text-xs text-[#6366f1]">
+                        <span className="font-mono text-xs text-[#10b981]">
                           0{idx + 1}
                         </span>
                         <span className="font-sans text-sm sm:text-base text-[#FAF9F6] font-medium">
                           {item}
                         </span>
                       </div>
-                      <CheckCircle2 className="w-4 h-4 text-[#6366f1]" />
+                      <CheckCircle2 className="w-4 h-4 text-[#10b981]" />
                     </div>
                   ))}
                 </div>

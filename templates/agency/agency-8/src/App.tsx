@@ -131,7 +131,7 @@ export default function App() {
     currentRoute === '/careers';
 
   return (
-    <div className="relative min-h-screen bg-[#080808] text-[#FAF9F6] overflow-x-hidden selection:bg-[#6366f1] selection:text-white custom-cursor-active">
+    <div className="relative min-h-screen bg-[#080808] text-[#FAF9F6] overflow-x-hidden selection:bg-[#10b981] selection:text-white custom-cursor-active">
       {/* Accessible Skip Link */}
       <SkipNavigation />
 

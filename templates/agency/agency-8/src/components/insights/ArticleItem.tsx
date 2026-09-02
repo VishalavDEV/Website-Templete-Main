@@ -57,14 +57,14 @@ export const ArticleItem: React.FC<ArticleItemProps> = ({
             [{formattedIndex}]
           </span>
 
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#6366f1] font-semibold">
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#10b981] font-semibold">
             {article.category}
           </span>
         </div>
 
         {/* Title & Description Column */}
         <div className="lg:col-span-6 space-y-3">
-          <h3 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#FAF9F6] uppercase tracking-tight leading-[1.08] group-hover:text-[#6366f1] group-hover:translate-x-1 sm:group-hover:translate-x-2 transition-all duration-300">
+          <h3 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#FAF9F6] uppercase tracking-tight leading-[1.08] group-hover:text-[#10b981] group-hover:translate-x-1 sm:group-hover:translate-x-2 transition-all duration-300">
             {article.title}
           </h3>
 
@@ -94,7 +94,7 @@ export const ArticleItem: React.FC<ArticleItemProps> = ({
             </div>
           </div>
 
-          <div className="w-10 h-10 rounded-full border border-white/10 group-hover:border-[#6366f1] group-hover:bg-[#6366f1] flex items-center justify-center text-white/50 group-hover:text-white transition-all duration-300">
+          <div className="w-10 h-10 rounded-full border border-white/10 group-hover:border-[#10b981] group-hover:bg-[#10b981] flex items-center justify-center text-white/50 group-hover:text-white transition-all duration-300">
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
         </div>

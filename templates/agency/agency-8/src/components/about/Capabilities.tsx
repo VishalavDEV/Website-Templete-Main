@@ -97,7 +97,7 @@ export const Capabilities: React.FC<CapabilitiesProps> = ({ setCursorType }) => 
               viewport={{ once: true }}
               className="flex items-center gap-2 mb-4"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
               <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
                 STUDIO EXPERTISE
               </span>
@@ -141,13 +141,13 @@ export const Capabilities: React.FC<CapabilitiesProps> = ({ setCursorType }) => 
                 setHoveredCap(null);
                 setCursorType('default');
               }}
-              className="group relative p-8 sm:p-10 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-[#ffffff10] hover:border-[#6366f1]/40 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[190px]"
+              className="group relative p-8 sm:p-10 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-[#ffffff10] hover:border-[#10b981]/40 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[190px]"
             >
               <div className="flex items-start justify-between">
-                <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#6366f1] font-semibold">
+                <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#10b981] font-semibold">
                   {cap.category}
                 </span>
-                <ArrowUpRight className="w-5 h-5 text-[#888888] group-hover:text-[#6366f1] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+                <ArrowUpRight className="w-5 h-5 text-[#888888] group-hover:text-[#10b981] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
               </div>
 
               <div>

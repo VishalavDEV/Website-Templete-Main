@@ -31,7 +31,7 @@ export const ServiceDetailHero: React.FC<ServiceDetailHeroProps> = ({
       className="relative min-h-[92vh] sm:min-h-screen pt-32 sm:pt-40 pb-20 sm:pb-28 px-6 sm:px-8 lg:px-12 flex flex-col justify-between overflow-hidden bg-[#080808]"
     >
       {/* Background ambient lighting */}
-      <div className="absolute top-1/4 right-10 w-[600px] h-[600px] bg-[#6366f1]/[0.05] rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/4 right-10 w-[600px] h-[600px] bg-[#10b981]/[0.05] rounded-full blur-[180px] pointer-events-none" />
 
       {/* Top subtle grid lines */}
       <div className="absolute inset-0 bg-grid-subtle opacity-25 pointer-events-none" />
@@ -44,8 +44,8 @@ export const ServiceDetailHero: React.FC<ServiceDetailHeroProps> = ({
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="flex items-center gap-3 mb-8 sm:mb-12"
         >
-          <span className="w-2 h-2 rounded-full bg-[#6366f1] animate-pulse" />
-          <span className="font-mono text-xs sm:text-sm uppercase tracking-[0.35em] text-[#6366f1] font-bold">
+          <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
+          <span className="font-mono text-xs sm:text-sm uppercase tracking-[0.35em] text-[#10b981] font-bold">
             {service.badge}
           </span>
           <span className="text-white/20">•</span>
@@ -75,7 +75,7 @@ export const ServiceDetailHero: React.FC<ServiceDetailHeroProps> = ({
                   initial={{ y: '100%' }}
                   animate={{ y: 0 }}
                   transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                  className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.92]"
+                  className="font-editorial italic font-normal text-[#10b981] tracking-normal lowercase text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.92]"
                 >
                   {service.headline.line2}
                 </motion.h1>
@@ -114,7 +114,7 @@ export const ServiceDetailHero: React.FC<ServiceDetailHeroProps> = ({
                 onClick={onOpenProjectModal}
                 onCursorEnter={() => setCursorType('button')}
                 onCursorLeave={() => setCursorType('default')}
-                className="group inline-flex items-center gap-3 px-8 py-4 bg-[#6366f1] hover:bg-[#0055dd] text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 rounded-full shadow-lg shadow-[#6366f1]/20"
+                className="group inline-flex items-center gap-3 px-8 py-4 bg-[#10b981] hover:bg-[#0055dd] text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 rounded-full shadow-lg shadow-[#10b981]/20"
               >
                 <span>START A PROJECT</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -155,7 +155,7 @@ export const ServiceDetailHero: React.FC<ServiceDetailHeroProps> = ({
               {/* Float Glass Indicator */}
               <div className="absolute bottom-6 left-6 right-6 p-4 bg-black/60 backdrop-blur-md border border-white/10 rounded-xl flex items-center justify-between pointer-events-none">
                 <div>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-[#6366f1] block font-bold">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-[#10b981] block font-bold">
                     CAPABILITY FOCUS
                   </span>
                   <span className="font-display font-bold text-sm uppercase text-[#FAF9F6]">
@@ -174,7 +174,7 @@ export const ServiceDetailHero: React.FC<ServiceDetailHeroProps> = ({
       {/* Bottom Scroll Telemetry Line */}
       <div className="max-w-7xl mx-auto w-full pt-12 border-t border-white/10 flex items-center justify-between font-mono text-xs text-[#666666] uppercase tracking-widest">
         <span>SCROLL TO EXPLORE SPECIFICATION</span>
-        <span className="text-[#6366f1]">CAPABILITY CASE STUDY</span>
+        <span className="text-[#10b981]">CAPABILITY CASE STUDY</span>
       </div>
     </section>
   );

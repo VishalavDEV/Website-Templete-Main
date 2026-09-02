@@ -29,7 +29,7 @@ export const MediaTestimonial: React.FC<MediaTestimonialProps> = ({ setCursorTyp
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 sm:mb-20 pb-8 border-b border-[#ffffff10]">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#888888]">
                 05 / CINEMATIC TESTIMONIAL
               </span>
@@ -60,7 +60,7 @@ export const MediaTestimonial: React.FC<MediaTestimonialProps> = ({ setCursorTyp
           <div className="absolute top-6 left-6 font-mono text-[10px] uppercase tracking-widest text-white/60">
             [ REC / 4K LOG ]
           </div>
-          <div className="absolute top-6 right-6 font-mono text-[10px] uppercase tracking-widest text-[#6366f1] flex items-center gap-2">
+          <div className="absolute top-6 right-6 font-mono text-[10px] uppercase tracking-widest text-[#10b981] flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
             <span>03:42 DOC</span>
           </div>
@@ -73,7 +73,7 @@ export const MediaTestimonial: React.FC<MediaTestimonialProps> = ({ setCursorTyp
             className="relative z-10 flex flex-col items-center gap-4 group/btn cursor-pointer outline-none"
             aria-label="Play client documentary video"
           >
-            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white text-black flex items-center justify-center shadow-2xl group-hover/btn:scale-110 group-hover/btn:bg-[#6366f1] group-hover/btn:text-white transition-all duration-300">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white text-black flex items-center justify-center shadow-2xl group-hover/btn:scale-110 group-hover/btn:bg-[#10b981] group-hover/btn:text-white transition-all duration-300">
               <Play className="w-8 h-8 ml-1 fill-current" />
             </div>
 
@@ -161,7 +161,7 @@ export const MediaTestimonial: React.FC<MediaTestimonialProps> = ({ setCursorTyp
                   <blockquote className="font-editorial italic text-2xl sm:text-3xl text-white leading-relaxed">
                     "When you work with Studio, there is no compromise between engineering capability and emotional beauty."
                   </blockquote>
-                  <p className="font-mono text-xs uppercase tracking-widest text-[#6366f1] pt-4">
+                  <p className="font-mono text-xs uppercase tracking-widest text-[#10b981] pt-4">
                     — MAYA RICHARDSON, CMO / AURA
                   </p>
                 </div>
@@ -170,14 +170,14 @@ export const MediaTestimonial: React.FC<MediaTestimonialProps> = ({ setCursorTyp
                 <div className="relative z-10 pt-4 border-t border-white/15 flex flex-col gap-3">
                   {/* Progress Scrubber */}
                   <div className="w-full h-1 bg-white/20 relative rounded-full overflow-hidden">
-                    <div className="h-full bg-[#6366f1] w-[45%]" />
+                    <div className="h-full bg-[#10b981] w-[45%]" />
                   </div>
 
                   <div className="flex items-center justify-between text-xs font-mono text-[#888888]">
                     <div className="flex items-center gap-4">
                       <button
                         onClick={() => setIsPlaying(!isPlaying)}
-                        className="text-white hover:text-[#6366f1] transition-colors cursor-pointer"
+                        className="text-white hover:text-[#10b981] transition-colors cursor-pointer"
                       >
                         {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
                       </button>

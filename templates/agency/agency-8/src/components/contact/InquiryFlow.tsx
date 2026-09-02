@@ -212,7 +212,7 @@ export const InquiryFlow: React.FC<InquiryFlowProps> = ({
           <div className="space-y-10 mb-12">
             {/* Editorial Intro Banner */}
             <div className="space-y-4 border-b border-[#ffffff15] pb-10">
-              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-[0.3em] text-[#6366f1]">
+              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-[0.3em] text-[#10b981]">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>INTERACTIVE INQUIRY FLOW</span>
               </div>
@@ -246,12 +246,12 @@ export const InquiryFlow: React.FC<InquiryFlowProps> = ({
                       isCurrent
                         ? 'bg-white/10 text-white font-bold border border-white/20'
                         : isCompleted
-                        ? 'text-[#6366f1] hover:text-white cursor-pointer'
+                        ? 'text-[#10b981] hover:text-white cursor-pointer'
                         : 'text-[#888888]/50 cursor-not-allowed'
                     }`}
                   >
                     <span className="w-4 h-4 rounded-full flex items-center justify-center text-[10px] bg-white/5 border border-white/10">
-                      {isCompleted ? <Check className="w-2.5 h-2.5 text-[#6366f1]" /> : stepNum}
+                      {isCompleted ? <Check className="w-2.5 h-2.5 text-[#10b981]" /> : stepNum}
                     </span>
                     <span className="hidden md:inline">{stepNames[stepNum - 1]}</span>
                   </button>
@@ -426,7 +426,7 @@ export const InquiryFlow: React.FC<InquiryFlowProps> = ({
             >
               <div className="space-y-6">
                 <div className="space-y-2">
-                  <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#6366f1]">
+                  <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#10b981]">
                     STEP 06 // FINAL REVIEW
                   </span>
                   <h3 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#FAF9F6]">

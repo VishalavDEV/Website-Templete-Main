@@ -11,7 +11,7 @@ export const ServiceTestimonial: React.FC = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="font-editorial text-7xl sm:text-9xl text-[#6366f1] leading-none mb-6 select-none opacity-80"
+          className="font-editorial text-7xl sm:text-9xl text-[#10b981] leading-none mb-6 select-none opacity-80"
         >
           &ldquo;
         </motion.div>
@@ -38,7 +38,7 @@ export const ServiceTestimonial: React.FC = () => {
           <div className="font-display font-bold text-lg sm:text-xl uppercase tracking-wider text-[#FAF9F6]">
             MAYA RICHARDSON
           </div>
-          <div className="font-mono text-xs uppercase tracking-[0.25em] text-[#6366f1] flex items-center justify-center gap-2">
+          <div className="font-mono text-xs uppercase tracking-[0.25em] text-[#10b981] flex items-center justify-center gap-2">
             <span>CMO, AURA</span>
             <span className="text-white/20">•</span>
             <span className="text-[#888888]">ENTERPRISE SPATIAL PLATFORM</span>

@@ -26,7 +26,7 @@ export const ContactDetails: React.FC<ContactDetailsProps> = ({
             className="flex items-center justify-between text-xs font-mono uppercase tracking-widest text-[#888888]"
           >
             <span className="flex items-center gap-1.5">
-              <User className="w-3.5 h-3.5 text-[#6366f1]" />
+              <User className="w-3.5 h-3.5 text-[#10b981]" />
               <span>Your Name *</span>
             </span>
             {errors.name && (
@@ -47,7 +47,7 @@ export const ContactDetails: React.FC<ContactDetailsProps> = ({
             className={`w-full px-5 py-4 rounded-xl bg-white/[0.03] border text-[#FAF9F6] placeholder-[#888888]/60 focus:outline-none transition-all duration-300 ${
               errors.name
                 ? 'border-rose-500/60 focus:border-rose-500 focus:ring-1 focus:ring-rose-500'
-                : 'border-white/15 focus:border-[#6366f1] focus:bg-white/[0.06]'
+                : 'border-white/15 focus:border-[#10b981] focus:bg-white/[0.06]'
             }`}
           />
         </div>
@@ -59,7 +59,7 @@ export const ContactDetails: React.FC<ContactDetailsProps> = ({
             className="flex items-center justify-between text-xs font-mono uppercase tracking-widest text-[#888888]"
           >
             <span className="flex items-center gap-1.5">
-              <Mail className="w-3.5 h-3.5 text-[#6366f1]" />
+              <Mail className="w-3.5 h-3.5 text-[#10b981]" />
               <span>Email Address *</span>
             </span>
             {errors.email && (
@@ -80,7 +80,7 @@ export const ContactDetails: React.FC<ContactDetailsProps> = ({
             className={`w-full px-5 py-4 rounded-xl bg-white/[0.03] border text-[#FAF9F6] placeholder-[#888888]/60 focus:outline-none transition-all duration-300 ${
               errors.email
                 ? 'border-rose-500/60 focus:border-rose-500 focus:ring-1 focus:ring-rose-500'
-                : 'border-white/15 focus:border-[#6366f1] focus:bg-white/[0.06]'
+                : 'border-white/15 focus:border-[#10b981] focus:bg-white/[0.06]'
             }`}
           />
         </div>
@@ -94,7 +94,7 @@ export const ContactDetails: React.FC<ContactDetailsProps> = ({
             htmlFor="inquiry-company"
             className="flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-[#888888]"
           >
-            <Building className="w-3.5 h-3.5 text-[#6366f1]" />
+            <Building className="w-3.5 h-3.5 text-[#10b981]" />
             <span>Company / Studio (Optional)</span>
           </label>
           <input
@@ -105,7 +105,7 @@ export const ContactDetails: React.FC<ContactDetailsProps> = ({
             placeholder="e.g. Acme Studio"
             onFocus={() => setCursorType('text')}
             onBlur={() => setCursorType('default')}
-            className="w-full px-5 py-4 rounded-xl bg-white/[0.03] border border-white/15 text-[#FAF9F6] placeholder-[#888888]/60 focus:outline-none focus:border-[#6366f1] focus:bg-white/[0.06] transition-all duration-300"
+            className="w-full px-5 py-4 rounded-xl bg-white/[0.03] border border-white/15 text-[#FAF9F6] placeholder-[#888888]/60 focus:outline-none focus:border-[#10b981] focus:bg-white/[0.06] transition-all duration-300"
           />
         </div>
 
@@ -115,7 +115,7 @@ export const ContactDetails: React.FC<ContactDetailsProps> = ({
             htmlFor="inquiry-website"
             className="flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-[#888888]"
           >
-            <Globe className="w-3.5 h-3.5 text-[#6366f1]" />
+            <Globe className="w-3.5 h-3.5 text-[#10b981]" />
             <span>Website / URL (Optional)</span>
           </label>
           <input
@@ -126,7 +126,7 @@ export const ContactDetails: React.FC<ContactDetailsProps> = ({
             placeholder="https://"
             onFocus={() => setCursorType('text')}
             onBlur={() => setCursorType('default')}
-            className="w-full px-5 py-4 rounded-xl bg-white/[0.03] border border-white/15 text-[#FAF9F6] placeholder-[#888888]/60 focus:outline-none focus:border-[#6366f1] focus:bg-white/[0.06] transition-all duration-300"
+            className="w-full px-5 py-4 rounded-xl bg-white/[0.03] border border-white/15 text-[#FAF9F6] placeholder-[#888888]/60 focus:outline-none focus:border-[#10b981] focus:bg-white/[0.06] transition-all duration-300"
           />
         </div>
       </div>
@@ -138,7 +138,7 @@ export const ContactDetails: React.FC<ContactDetailsProps> = ({
           className="flex items-center justify-between text-xs font-mono uppercase tracking-widest text-[#888888]"
         >
           <span className="flex items-center gap-1.5">
-            <MessageSquare className="w-3.5 h-3.5 text-[#6366f1]" />
+            <MessageSquare className="w-3.5 h-3.5 text-[#10b981]" />
             <span>Project Overview *</span>
           </span>
           {errors.message && (
@@ -159,7 +159,7 @@ export const ContactDetails: React.FC<ContactDetailsProps> = ({
           className={`w-full px-5 py-4 rounded-xl bg-white/[0.03] border text-[#FAF9F6] placeholder-[#888888]/60 focus:outline-none transition-all duration-300 resize-none ${
             errors.message
               ? 'border-rose-500/60 focus:border-rose-500 focus:ring-1 focus:ring-rose-500'
-              : 'border-white/15 focus:border-[#6366f1] focus:bg-white/[0.06]'
+              : 'border-white/15 focus:border-[#10b981] focus:bg-white/[0.06]'
           }`}
         />
       </div>

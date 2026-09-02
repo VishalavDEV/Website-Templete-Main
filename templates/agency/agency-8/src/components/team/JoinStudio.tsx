@@ -19,7 +19,7 @@ export const JoinStudio: React.FC<JoinStudioProps> = ({ setCursorType, onNavigat
   return (
     <section className="py-24 sm:py-36 bg-[#080808] border-t border-[#ffffff10] relative overflow-hidden">
       {/* Subtle ambient lighting */}
-      <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-[#6366f1]/[0.025] rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-[#10b981]/[0.025] rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-16">
         {/* Section Tag */}
@@ -29,7 +29,7 @@ export const JoinStudio: React.FC<JoinStudioProps> = ({ setCursorType, onNavigat
           viewport={{ once: true }}
           className="flex items-center gap-2"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
           <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#888888]">
             JOIN THE STUDIO // CAREERS
           </span>
@@ -45,7 +45,7 @@ export const JoinStudio: React.FC<JoinStudioProps> = ({ setCursorType, onNavigat
               className="font-display text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.92]"
             >
               WANT TO MAKE <br />
-              <span className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-[1.05em]">
+              <span className="font-editorial italic font-normal text-[#10b981] tracking-normal lowercase text-[1.05em]">
                 something great?
               </span>
             </motion.h2>
@@ -72,7 +72,7 @@ export const JoinStudio: React.FC<JoinStudioProps> = ({ setCursorType, onNavigat
                 onClick={() => onNavigate && onNavigate('/careers')}
                 onMouseEnter={() => setCursorType('pointer')}
                 onMouseLeave={() => setCursorType('default')}
-                className="group inline-flex items-center gap-3 px-7 py-4 bg-[#FAF9F6] hover:bg-[#6366f1] text-black hover:text-white text-xs font-mono uppercase tracking-widest font-bold rounded-full transition-all duration-300 shadow-lg cursor-pointer"
+                className="group inline-flex items-center gap-3 px-7 py-4 bg-[#FAF9F6] hover:bg-[#10b981] text-black hover:text-white text-xs font-mono uppercase tracking-widest font-bold rounded-full transition-all duration-300 shadow-lg cursor-pointer"
               >
                 <span>SEE OPEN POSITIONS</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -95,7 +95,7 @@ export const JoinStudio: React.FC<JoinStudioProps> = ({ setCursorType, onNavigat
                 className="group p-6 rounded-2xl bg-white/[0.02] border border-[#ffffff15] hover:border-white/30 hover:bg-white/[0.04] transition-all duration-300 flex items-center justify-between cursor-pointer"
               >
                 <div className="space-y-1">
-                  <h3 className="font-display text-xl font-bold uppercase tracking-tight text-[#FAF9F6] group-hover:text-[#6366f1] transition-colors">
+                  <h3 className="font-display text-xl font-bold uppercase tracking-tight text-[#FAF9F6] group-hover:text-[#10b981] transition-colors">
                     {role.title}
                   </h3>
                   <div className="flex items-center gap-3 text-xs font-mono text-[#888888]">
@@ -106,7 +106,7 @@ export const JoinStudio: React.FC<JoinStudioProps> = ({ setCursorType, onNavigat
                 </div>
 
                 <div
-                  className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/70 group-hover:bg-[#6366f1] group-hover:border-[#6366f1] group-hover:text-white transition-all"
+                  className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/70 group-hover:bg-[#10b981] group-hover:border-[#10b981] group-hover:text-white transition-all"
                 >
                   <ArrowUpRight className="w-4 h-4" />
                 </div>

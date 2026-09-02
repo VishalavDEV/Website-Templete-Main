@@ -17,13 +17,13 @@ export const FeaturedTestimonial: React.FC<FeaturedTestimonialProps> = ({
   return (
     <section className="py-24 sm:py-36 px-6 sm:px-8 lg:px-12 bg-[#080808] border-b border-[#ffffff10] relative overflow-hidden">
       {/* Subtle backdrop lighting */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#6366f1]/[0.025] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#10b981]/[0.025] rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto">
         {/* Section meta tag */}
         <div className="flex items-center justify-between gap-4 mb-12 sm:mb-16">
           <div className="flex items-center gap-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#888888]">
               01 / FEATURED PERSPECTIVE
             </span>
@@ -39,7 +39,7 @@ export const FeaturedTestimonial: React.FC<FeaturedTestimonialProps> = ({
           {/* Column 1: Dominant Quotation Typography */}
           <div className="lg:col-span-7 space-y-8 sm:space-y-10">
             <div className="space-y-4">
-              <span className="font-mono text-[11px] uppercase tracking-widest text-[#6366f1] block">
+              <span className="font-mono text-[11px] uppercase tracking-widest text-[#10b981] block">
                 [ AURA SPATIAL SYSTEMS ]
               </span>
               
@@ -62,7 +62,7 @@ export const FeaturedTestimonial: React.FC<FeaturedTestimonialProps> = ({
                   CMO / <span className="text-white font-medium">AURA</span>
                 </p>
                 <p className="font-mono text-[11px] text-[#888888]">
-                  PROJECT: <span className="text-[#6366f1]">AURA — BRAND EXPERIENCE</span>
+                  PROJECT: <span className="text-[#10b981]">AURA — BRAND EXPERIENCE</span>
                 </p>
               </div>
 
@@ -82,7 +82,7 @@ export const FeaturedTestimonial: React.FC<FeaturedTestimonialProps> = ({
                   onClick={() => onNavigate('/work/aura')}
                   onMouseEnter={() => setCursorType('pointer')}
                   onMouseLeave={() => setCursorType('default')}
-                  className="group inline-flex items-center gap-2 px-5 py-3 rounded-none bg-[#6366f1] hover:brightness-110 text-white text-xs font-mono uppercase tracking-widest font-bold transition-all cursor-pointer"
+                  className="group inline-flex items-center gap-2 px-5 py-3 rounded-none bg-[#10b981] hover:brightness-110 text-white text-xs font-mono uppercase tracking-widest font-bold transition-all cursor-pointer"
                 >
                   <span>VIEW CASE STUDY</span>
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -108,7 +108,7 @@ export const FeaturedTestimonial: React.FC<FeaturedTestimonialProps> = ({
                 {/* Bottom Overlay Label */}
                 <div className="absolute bottom-6 left-6 right-6 p-4 bg-[#080808]/90 backdrop-blur-md border border-white/10 flex items-center justify-between">
                   <div>
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#6366f1] block">
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#10b981] block">
                       VERIFIED PARTNERSHIP
                     </span>
                     <span className="font-display font-bold text-sm text-white uppercase tracking-wide">

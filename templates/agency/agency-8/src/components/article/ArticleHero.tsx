@@ -20,7 +20,7 @@ export const ArticleHero: React.FC<ArticleHeroProps> = ({
   return (
     <header className="pt-32 sm:pt-40 lg:pt-48 pb-16 sm:pb-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#6366f1]/[0.035] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#10b981]/[0.035] rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">
         {/* Category & Breadcrumb */}
@@ -30,8 +30,8 @@ export const ArticleHero: React.FC<ArticleHeroProps> = ({
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="flex items-center gap-3 mb-8 sm:mb-10"
         >
-          <span className="w-2 h-2 rounded-full bg-[#6366f1]" />
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#6366f1] font-semibold">
+          <span className="w-2 h-2 rounded-full bg-[#10b981]" />
+          <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#10b981] font-semibold">
             {article.category.toUpperCase()} / INSIGHTS
           </span>
         </motion.div>
@@ -83,7 +83,7 @@ export const ArticleHero: React.FC<ArticleHeroProps> = ({
             <span className="block text-[10px] uppercase tracking-widest text-white/40 mb-1">
               AUTHOR
             </span>
-            <span className="text-[#6366f1] uppercase font-semibold">
+            <span className="text-[#10b981] uppercase font-semibold">
               {article.author.toUpperCase()}
             </span>
           </div>
@@ -120,7 +120,7 @@ export const ArticleHero: React.FC<ArticleHeroProps> = ({
             <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/60">
               FIG. 01 // EDITORIAL ESSAY ARCHIVE
             </span>
-            <span className="font-mono text-[10px] uppercase tracking-widest text-[#6366f1]">
+            <span className="font-mono text-[10px] uppercase tracking-widest text-[#10b981]">
               HIGH RESOLUTION ↗
             </span>
           </div>

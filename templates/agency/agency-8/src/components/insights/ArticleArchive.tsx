@@ -79,7 +79,7 @@ export const ArticleArchive: React.FC<ArticleArchiveProps> = ({
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3 font-mono text-[9px] uppercase tracking-widest text-white/90 flex justify-between">
-                    <span className="text-[#6366f1] font-bold">{hoveredArticle.category}</span>
+                    <span className="text-[#10b981] font-bold">{hoveredArticle.category}</span>
                     <span>{hoveredArticle.readTime}</span>
                   </div>
                 </motion.div>
@@ -91,7 +91,7 @@ export const ArticleArchive: React.FC<ArticleArchiveProps> = ({
         {/* Section Header */}
         <div className="flex items-center justify-between gap-4 mb-10 pb-6 border-b border-[#ffffff10]">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#888888]">
               02 / CURATED WRITINGS
             </span>
