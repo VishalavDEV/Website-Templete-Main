@@ -1,0 +1,11 @@
+{
+  "name": "TeleCare - Telemedicine & Patient Portal",
+  "description": "Modern telemedicine and patient care desktop portal with live video consultations, medication checklist, health metrics, doctor profiles, and calendar appointments.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
