@@ -1611,7 +1611,7 @@ category: { id: 20105, name: 'Blog Magazine', slug: 'blog-magazine' },
   },
   {
     id: 9006,
-    name: 'ApexAdmin — Enterprise Operations Dashboard',
+    name: 'NexusPro — Enterprise Operations Dashboard',
     slug: 'admin-6',
     previewImage: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
