@@ -30,16 +30,16 @@ export default function RevenueChart({ isRefreshing }: RevenueChartProps) {
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-[#1e293b]/84 backdrop-blur-[18px] border border-[rgba(255, 255, 255, 0.1)] p-3 rounded-xl shadow-md">
-          <p className="text-xs font-bold text-[#f8fafc] mb-1.5">{label}</p>
+        <div className="bg-white/84 backdrop-blur-[18px] border border-[rgba(33,29,26,0.09)] p-3 rounded-xl shadow-md">
+          <p className="text-xs font-bold text-[#211d1a] mb-1.5">{label}</p>
           <div className="space-y-1">
             {payload.map((item: any, i: number) => (
               <div key={i} className="flex items-center gap-4 justify-between">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full" style={{ backgroundColor: item.color }} />
-                  <span className="text-[10px] font-semibold text-[#cbd5e1]">{item.name}</span>
+                  <span className="text-[10px] font-semibold text-[#706861]">{item.name}</span>
                 </div>
-                <span className="text-xs font-extrabold text-[#f8fafc]">
+                <span className="text-xs font-extrabold text-[#211d1a]">
                   ${item.value.toLocaleString('en-US', { minimumFractionDigits: 0 })}
                 </span>
               </div>
@@ -54,16 +54,16 @@ export default function RevenueChart({ isRefreshing }: RevenueChartProps) {
   return (
     <div 
       id="revenue-chart-section"
-      className="bg-[#1e293b]/68 backdrop-blur-[18px] border border-[rgba(255, 255, 255, 0.1)] rounded-2xl p-4 sm:p-5 md:p-6 shadow-[0_12px_40px_rgba(63,42,27,0.08)] flex flex-col h-full"
+      className="bg-white/68 backdrop-blur-[18px] border border-[rgba(33,29,26,0.09)] rounded-2xl p-4 sm:p-5 md:p-6 shadow-[0_12px_40px_rgba(63,42,27,0.08)] flex flex-col h-full"
     >
       {/* Chart Headers and Controls */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-4 sm:mb-6">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-[11px] sm:text-xs font-bold text-[#cbd5e1] uppercase tracking-wider">Financial Streams</span>
+            <span className="text-[11px] sm:text-xs font-bold text-[#706861] uppercase tracking-wider">Financial Streams</span>
             <div className="px-1.5 py-0.5 bg-[#ff6a3d]/10 text-[#ff6a3d] text-[9px] font-extrabold rounded">Live</div>
           </div>
-          <h3 className="text-base sm:text-lg font-extrabold text-[#f8fafc] tracking-tight">
+          <h3 className="text-base sm:text-lg font-extrabold text-[#211d1a] tracking-tight">
             Revenue & Capital Distribution
           </h3>
         </div>
@@ -75,8 +75,8 @@ export default function RevenueChart({ isRefreshing }: RevenueChartProps) {
             onClick={() => setChartMode('revenue')}
             className={`flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-2 sm:py-1.5 rounded-lg text-xs font-bold transition-all min-h-[36px] cursor-pointer ${
               chartMode === 'revenue'
-                ? 'bg-[#1e293b] text-[#ff6a3d] shadow-sm'
-                : 'text-[#cbd5e1] hover:text-[#f8fafc]'
+                ? 'bg-white text-[#ff6a3d] shadow-sm'
+                : 'text-[#706861] hover:text-[#211d1a]'
             }`}
           >
             <TrendingUp className="w-3.5 h-3.5 shrink-0" />
@@ -87,8 +87,8 @@ export default function RevenueChart({ isRefreshing }: RevenueChartProps) {
             onClick={() => setChartMode('cashflow')}
             className={`flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-2 sm:py-1.5 rounded-lg text-xs font-bold transition-all min-h-[36px] cursor-pointer ${
               chartMode === 'cashflow'
-                ? 'bg-[#1e293b] text-[#ff3d77] shadow-sm'
-                : 'text-[#cbd5e1] hover:text-[#f8fafc]'
+                ? 'bg-white text-[#ff3d77] shadow-sm'
+                : 'text-[#706861] hover:text-[#211d1a]'
             }`}
           >
             <Wallet className="w-3.5 h-3.5 shrink-0" />
@@ -111,7 +111,7 @@ export default function RevenueChart({ isRefreshing }: RevenueChartProps) {
               <CartesianGrid strokeDasharray="3 3" stroke="rgba(33,29,26,0.04)" vertical={false} />
               <XAxis 
                 dataKey="date" 
-                stroke="#94a3b8" 
+                stroke="#9b928a" 
                 fontSize={10} 
                 fontWeight={600} 
                 tickLine={false} 
@@ -119,7 +119,7 @@ export default function RevenueChart({ isRefreshing }: RevenueChartProps) {
                 dy={10}
               />
               <YAxis 
-                stroke="#94a3b8" 
+                stroke="#9b928a" 
                 fontSize={10} 
                 fontWeight={600} 
                 tickLine={false} 
@@ -153,7 +153,7 @@ export default function RevenueChart({ isRefreshing }: RevenueChartProps) {
               <CartesianGrid strokeDasharray="3 3" stroke="rgba(33,29,26,0.04)" vertical={false} />
               <XAxis 
                 dataKey="date" 
-                stroke="#94a3b8" 
+                stroke="#9b928a" 
                 fontSize={10} 
                 fontWeight={600} 
                 tickLine={false} 
@@ -161,7 +161,7 @@ export default function RevenueChart({ isRefreshing }: RevenueChartProps) {
                 dy={10}
               />
               <YAxis 
-                stroke="#94a3b8" 
+                stroke="#9b928a" 
                 fontSize={10} 
                 fontWeight={600} 
                 tickLine={false} 
@@ -176,7 +176,7 @@ export default function RevenueChart({ isRefreshing }: RevenueChartProps) {
                 iconType="circle"
                 iconSize={8}
                 content={({ payload }) => (
-                  <div className="flex gap-3 justify-end text-[10px] font-bold text-[#cbd5e1] uppercase tracking-wider">
+                  <div className="flex gap-3 justify-end text-[10px] font-bold text-[#706861] uppercase tracking-wider">
                     {payload?.map((entry: any, index: number) => (
                       <div key={index} className="flex items-center gap-1.5">
                         <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: entry.color }} />
@@ -210,12 +210,12 @@ export default function RevenueChart({ isRefreshing }: RevenueChartProps) {
       </div>
 
       {/* Helpful context banner below chart */}
-      <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-white/10 flex items-center justify-between text-[11px] sm:text-xs">
-        <div className="flex items-center gap-1.5 sm:gap-2 text-[#cbd5e1] truncate">
+      <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-black/[0.04] flex items-center justify-between text-[11px] sm:text-xs">
+        <div className="flex items-center gap-1.5 sm:gap-2 text-[#706861] truncate">
           <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#ff6a3d] shrink-0" />
-          <span className="truncate">Average daily revenue: <strong className="text-[#f8fafc]">$5,240.00</strong></span>
+          <span className="truncate">Average daily revenue: <strong className="text-[#211d1a]">$5,240.00</strong></span>
         </div>
-        <span className="text-[#94a3b8] font-medium shrink-0 ml-2">Live sync</span>
+        <span className="text-[#9b928a] font-medium shrink-0 ml-2">Live sync</span>
       </div>
     </div>
   );

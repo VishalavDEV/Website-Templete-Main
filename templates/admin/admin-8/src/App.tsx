@@ -199,10 +199,10 @@ export default function App() {
 
             {currentTab === 'products' && (
               <div id="tab-panel-products" className="space-y-4 sm:space-y-6">
-                <div className="bg-[#1e293b]/68 backdrop-blur-[18px] p-4 sm:p-6 border border-[rgba(255, 255, 255, 0.1)] rounded-2xl shadow-[0_12px_40px_rgba(63,42,27,0.08)] flex items-center justify-between">
+                <div className="bg-white/68 backdrop-blur-[18px] p-4 sm:p-6 border border-[rgba(33,29,26,0.09)] rounded-2xl shadow-[0_12px_40px_rgba(63,42,27,0.08)] flex items-center justify-between">
                   <div>
-                    <h2 className="text-lg sm:text-xl font-extrabold text-[#f8fafc]">Product Inventory Overview</h2>
-                    <p className="text-xs text-[#cbd5e1] mt-1">Status logs, stock quantities, and return metrics for sales items.</p>
+                    <h2 className="text-lg sm:text-xl font-extrabold text-[#211d1a]">Product Inventory Overview</h2>
+                    <p className="text-xs text-[#706861] mt-1">Status logs, stock quantities, and return metrics for sales items.</p>
                   </div>
                 </div>
                 <ProductOverview products={INITIAL_PRODUCTS} />
@@ -211,10 +211,10 @@ export default function App() {
 
             {currentTab === 'transactions' && (
               <div id="tab-panel-transactions" className="space-y-4 sm:space-y-6">
-                <div className="bg-[#1e293b]/68 backdrop-blur-[18px] p-4 sm:p-6 border border-[rgba(255, 255, 255, 0.1)] rounded-2xl shadow-[0_12px_40px_rgba(63,42,27,0.08)] flex items-center justify-between">
+                <div className="bg-white/68 backdrop-blur-[18px] p-4 sm:p-6 border border-[rgba(33,29,26,0.09)] rounded-2xl shadow-[0_12px_40px_rgba(63,42,27,0.08)] flex items-center justify-between">
                   <div>
-                    <h2 className="text-lg sm:text-xl font-extrabold text-[#f8fafc]">Ledger Registry Audit</h2>
-                    <p className="text-xs text-[#cbd5e1] mt-1">Review complete transactions records. Filter by boundary periods or download ledger backups.</p>
+                    <h2 className="text-lg sm:text-xl font-extrabold text-[#211d1a]">Ledger Registry Audit</h2>
+                    <p className="text-xs text-[#706861] mt-1">Review complete transactions records. Filter by boundary periods or download ledger backups.</p>
                   </div>
                 </div>
                 <TransactionsTable 
@@ -227,9 +227,9 @@ export default function App() {
 
             {currentTab === 'calendar' && (
               <div id="tab-panel-calendar" className="space-y-4 sm:space-y-6">
-                <div className="bg-[#1e293b]/68 backdrop-blur-[18px] p-4 sm:p-6 border border-[rgba(255, 255, 255, 0.1)] rounded-2xl shadow-[0_12px_40px_rgba(63,42,27,0.08)]">
-                  <h2 className="text-lg sm:text-xl font-extrabold text-[#f8fafc]">Schedules & Calendar View</h2>
-                  <p className="text-xs text-[#cbd5e1] mt-1">Select calendar milestones to isolate specific daily metrics and transactions audits.</p>
+                <div className="bg-white/68 backdrop-blur-[18px] p-4 sm:p-6 border border-[rgba(33,29,26,0.09)] rounded-2xl shadow-[0_12px_40px_rgba(63,42,27,0.08)]">
+                  <h2 className="text-lg sm:text-xl font-extrabold text-[#211d1a]">Schedules & Calendar View</h2>
+                  <p className="text-xs text-[#706861] mt-1">Select calendar milestones to isolate specific daily metrics and transactions audits.</p>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
                   <div className="lg:col-span-1">
@@ -239,30 +239,30 @@ export default function App() {
                       setSelectedDate={setSelectedDate}
                     />
                   </div>
-                  <div className="lg:col-span-2 bg-[#1e293b]/68 backdrop-blur-[18px] border border-[rgba(255, 255, 255, 0.1)] p-4 sm:p-6 rounded-2xl shadow-[0_12px_40px_rgba(63,42,27,0.08)]">
-                    <h3 className="text-sm font-extrabold text-[#f8fafc] uppercase tracking-wider mb-4 flex items-center gap-2">
+                  <div className="lg:col-span-2 bg-white/68 backdrop-blur-[18px] border border-[rgba(33,29,26,0.09)] p-4 sm:p-6 rounded-2xl shadow-[0_12px_40px_rgba(63,42,27,0.08)]">
+                    <h3 className="text-sm font-extrabold text-[#211d1a] uppercase tracking-wider mb-4 flex items-center gap-2">
                       <Sparkles className="w-4 h-4 text-[#ff6a3d]" />
                       <span>Filtered Operations Log for {selectedDate || 'All Days'}</span>
                     </h3>
                     
                     {activeTransactionsForLedger.length === 0 ? (
                       <div className="py-12 flex flex-col items-center justify-center text-center">
-                        <span className="text-xs font-bold text-[#cbd5e1]">No Ledger Records Found</span>
-                        <span className="text-[10px] text-[#94a3b8] mt-1">Choose a highlighted day with active indicators.</span>
+                        <span className="text-xs font-bold text-[#706861]">No Ledger Records Found</span>
+                        <span className="text-[10px] text-[#9b928a] mt-1">Choose a highlighted day with active indicators.</span>
                       </div>
                     ) : (
                       <div className="space-y-2.5 sm:space-y-3">
                         {activeTransactionsForLedger.map((tx) => (
-                          <div key={tx.id} className="flex items-center justify-between p-3 sm:p-3.5 bg-[#1e293b]/80 rounded-xl border border-white/10 shadow-xs">
+                          <div key={tx.id} className="flex items-center justify-between p-3 sm:p-3.5 bg-white/80 rounded-xl border border-black/[0.04] shadow-xs">
                             <div className="min-w-0 pr-2">
-                              <span className="block text-xs font-bold text-[#f8fafc] truncate">{tx.customer.name}</span>
-                              <span className="text-[10px] text-[#cbd5e1] mt-0.5 block truncate">{tx.id} • {tx.category}</span>
+                              <span className="block text-xs font-bold text-[#211d1a] truncate">{tx.customer.name}</span>
+                              <span className="text-[10px] text-[#706861] mt-0.5 block truncate">{tx.id} • {tx.category}</span>
                             </div>
                             <div className="text-right shrink-0">
                               <span className={`block text-xs font-extrabold ${tx.amount < 0 ? 'text-[#ff3d77]' : 'text-emerald-600'}`}>
                                 {tx.amount < 0 ? '-' : '+'}${Math.abs(tx.amount).toLocaleString('en-US', { minimumFractionDigits: 2 })}
                               </span>
-                              <span className="text-[10px] text-[#94a3b8]">{tx.method}</span>
+                              <span className="text-[10px] text-[#9b928a]">{tx.method}</span>
                             </div>
                           </div>
                         ))}
@@ -280,7 +280,7 @@ export default function App() {
       {toastMessage && (
         <div 
           id="system-feedback-toast"
-          className="fixed bottom-4 right-4 left-4 sm:left-auto sm:max-w-md z-50 flex items-center gap-3 bg-[#1e293b]/95 backdrop-blur-xl border border-white/10 shadow-xl p-3.5 sm:p-4 rounded-2xl animate-bounce"
+          className="fixed bottom-4 right-4 left-4 sm:left-auto sm:max-w-md z-50 flex items-center gap-3 bg-white/95 backdrop-blur-xl border border-black/[0.08] shadow-xl p-3.5 sm:p-4 rounded-2xl animate-bounce"
         >
           {isRefreshing ? (
             <RefreshCw className="w-5 h-5 text-[#ff6a3d] animate-spin shrink-0" />
@@ -288,8 +288,8 @@ export default function App() {
             <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
           )}
           <div className="flex flex-col min-w-0">
-            <span className="text-xs font-extrabold text-[#f8fafc]">System Event Notification</span>
-            <span className="text-[10px] text-[#cbd5e1] font-medium mt-0.5 truncate">{toastMessage}</span>
+            <span className="text-xs font-extrabold text-[#211d1a]">System Event Notification</span>
+            <span className="text-[10px] text-[#706861] font-medium mt-0.5 truncate">{toastMessage}</span>
           </div>
         </div>
       )}

@@ -98,16 +98,16 @@ export default function MiniCalendar({
   return (
     <div 
       id="mini-calendar-panel"
-      className="bg-[#1e293b]/68 backdrop-blur-[18px] border border-[rgba(255, 255, 255, 0.1)] rounded-2xl p-6 shadow-[0_12px_40px_rgba(63,42,27,0.08)] flex flex-col h-full"
+      className="bg-white/68 backdrop-blur-[18px] border border-[rgba(33,29,26,0.09)] rounded-2xl p-6 shadow-[0_12px_40px_rgba(63,42,27,0.08)] flex flex-col h-full"
     >
       {/* Calendar Header with Navigation */}
       <div className="flex items-center justify-between gap-4 mb-4">
         <div>
-          <div className="flex items-center gap-1.5 text-xs font-bold text-[#cbd5e1] uppercase tracking-wider">
+          <div className="flex items-center gap-1.5 text-xs font-bold text-[#706861] uppercase tracking-wider">
             <Calendar className="w-3.5 h-3.5 text-[#ff6a3d]" />
             <span>Operational Planner</span>
           </div>
-          <h3 className="text-lg font-extrabold text-[#f8fafc] tracking-tight mt-0.5">
+          <h3 className="text-lg font-extrabold text-[#211d1a] tracking-tight mt-0.5">
             {monthsList[currentMonth]} {currentYear}
           </h3>
         </div>
@@ -118,7 +118,7 @@ export default function MiniCalendar({
             <button
               id="clear-calendar-filter-btn"
               onClick={() => setSelectedDate(null)}
-              className="p-1.5 rounded-lg border border-white/10 bg-[#1e293b] hover:bg-white/5 text-[#ff3d77] hover:text-[#ff3d77]/80 flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider transition-all"
+              className="p-1.5 rounded-lg border border-black/[0.05] bg-white hover:bg-black/[0.02] text-[#ff3d77] hover:text-[#ff3d77]/80 flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider transition-all"
               title="Clear active date filter"
             >
               <FilterX className="w-3.5 h-3.5" />
@@ -128,7 +128,7 @@ export default function MiniCalendar({
           <button
             id="calendar-prev-month-btn"
             onClick={handlePrevMonth}
-            className="p-1.5 rounded-lg border border-white/10 bg-[#1e293b] hover:bg-white/5 text-[#cbd5e1] hover:text-[#f8fafc]"
+            className="p-1.5 rounded-lg border border-black/[0.05] bg-white hover:bg-black/[0.02] text-[#706861] hover:text-[#211d1a]"
             aria-label="Previous Month"
           >
             <ChevronLeft className="w-4 h-4" />
@@ -136,7 +136,7 @@ export default function MiniCalendar({
           <button
             id="calendar-next-month-btn"
             onClick={handleNextMonth}
-            className="p-1.5 rounded-lg border border-white/10 bg-[#1e293b] hover:bg-white/5 text-[#cbd5e1] hover:text-[#f8fafc]"
+            className="p-1.5 rounded-lg border border-black/[0.05] bg-white hover:bg-black/[0.02] text-[#706861] hover:text-[#211d1a]"
             aria-label="Next Month"
           >
             <ChevronRight className="w-4 h-4" />
@@ -145,7 +145,7 @@ export default function MiniCalendar({
       </div>
 
       {/* Weekday Label Row */}
-      <div className="grid grid-cols-7 gap-1 text-center text-[10px] font-extrabold text-[#94a3b8] uppercase tracking-wider mb-2">
+      <div className="grid grid-cols-7 gap-1 text-center text-[10px] font-extrabold text-[#9b928a] uppercase tracking-wider mb-2">
         {weekdays.map(wd => (
           <div key={wd} className="py-1">{wd}</div>
         ))}
@@ -166,12 +166,12 @@ export default function MiniCalendar({
               onClick={() => handleDaySelect(day.dateStr)}
               className={`relative flex flex-col items-center justify-center py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer select-none ${
                 !day.isCurrentMonth 
-                  ? 'text-black/[0.22] hover:bg-white/5' 
+                  ? 'text-black/[0.22] hover:bg-black/[0.01]' 
                   : isSelected
                   ? 'bg-gradient-to-br from-[#ff6a3d] to-[#ff3d77] text-white shadow-sm'
                   : isToday
                   ? 'bg-[#ff6a3d]/10 text-[#ff6a3d] ring-1 ring-[#ff6a3d]/30'
-                  : 'text-[#f8fafc] hover:bg-white/5'
+                  : 'text-[#211d1a] hover:bg-black/[0.03]'
               }`}
               style={{ contentVisibility: 'auto' }}
               title={`${day.dateStr}: ${dayTx.length} transactions`}
@@ -180,7 +180,7 @@ export default function MiniCalendar({
               
               {/* Activity indicator dots */}
               {dayTx.length > 0 && (
-                <span className={`absolute bottom-1 w-1.5 h-1.5 rounded-full ${isSelected ? 'bg-[#1e293b]' : 'bg-[#ff6a3d]'}`} />
+                <span className={`absolute bottom-1 w-1.5 h-1.5 rounded-full ${isSelected ? 'bg-white' : 'bg-[#ff6a3d]'}`} />
               )}
             </button>
           );
@@ -188,8 +188,8 @@ export default function MiniCalendar({
       </div>
 
       {/* Bottom context list */}
-      <div className="mt-4 pt-4 border-t border-white/10">
-        <div className="flex items-center justify-between text-[11px] font-semibold text-[#cbd5e1]">
+      <div className="mt-4 pt-4 border-t border-black/[0.04]">
+        <div className="flex items-center justify-between text-[11px] font-semibold text-[#706861]">
           <div className="flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-[#ff6a3d]" />
             <span>Has Transactions</span>
@@ -197,7 +197,7 @@ export default function MiniCalendar({
           {selectedDate ? (
             <span className="text-[#ff3d77] font-bold">Filtered to: {selectedDate}</span>
           ) : (
-            <span className="text-[#94a3b8]">Click day to filter ledger</span>
+            <span className="text-[#9b928a]">Click day to filter ledger</span>
           )}
         </div>
       </div>

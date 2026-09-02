@@ -65,7 +65,7 @@ export default function Header({
   };
 
   return (
-    <header className="sticky top-0 z-20 w-full bg-[#1e293b]/40 backdrop-blur-md border-b border-[rgba(255, 255, 255, 0.1)] px-3 sm:px-5 md:px-8 py-2.5 sm:py-3 md:py-4 transition-all">
+    <header className="sticky top-0 z-20 w-full bg-white/40 backdrop-blur-md border-b border-[rgba(33,29,26,0.09)] px-3 sm:px-5 md:px-8 py-2.5 sm:py-3 md:py-4 transition-all">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 max-w-full">
         {/* Row 1 on Mobile: Mobile Hamburger, Brand Breadcrumb, and Right Compact Actions */}
         <div className="flex items-center justify-between gap-2 min-w-0 w-full sm:w-auto">
@@ -73,19 +73,19 @@ export default function Header({
             <button
               id="mobile-menu-toggle"
               onClick={() => setMobileOpen(true)}
-              className="md:hidden p-2 min-h-[38px] min-w-[38px] flex items-center justify-center rounded-xl bg-[#1e293b]/80 border border-[rgba(255, 255, 255, 0.1)] text-[#cbd5e1] hover:text-[#f8fafc] active:scale-95 transition-all cursor-pointer shrink-0 shadow-xs"
+              className="md:hidden p-2 min-h-[38px] min-w-[38px] flex items-center justify-center rounded-xl bg-white/80 border border-[rgba(33,29,26,0.09)] text-[#706861] hover:text-[#211d1a] active:scale-95 transition-all cursor-pointer shrink-0 shadow-xs"
               aria-label="Open navigation menu"
             >
               <Menu className="w-4.5 h-4.5" />
             </button>
 
             <div className="flex flex-col min-w-0">
-              <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] font-semibold text-[#94a3b8] tracking-tight">
-                <span className="text-[#cbd5e1] font-bold">Spark Admin</span>
+              <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] font-semibold text-[#9b928a] tracking-tight">
+                <span className="text-[#706861] font-bold">Spark Admin</span>
                 <span>/</span>
                 <span className="text-[#ff6a3d] truncate font-medium">{getBreadcrumb()}</span>
               </div>
-              <h1 className="text-sm sm:text-base md:text-lg font-extrabold text-[#f8fafc] tracking-tight truncate leading-tight">
+              <h1 className="text-sm sm:text-base md:text-lg font-extrabold text-[#211d1a] tracking-tight truncate leading-tight">
                 {getBreadcrumb()}
               </h1>
             </div>
@@ -96,7 +96,7 @@ export default function Header({
             <button
               id="mobile-notification-bell-btn"
               onClick={() => setNotificationActive(false)}
-              className="relative p-2 min-h-[36px] min-w-[36px] flex items-center justify-center bg-[#1e293b]/80 hover:bg-[#1e293b] border border-[rgba(255, 255, 255, 0.1)] rounded-xl text-[#cbd5e1] transition-all cursor-pointer shadow-xs"
+              className="relative p-2 min-h-[36px] min-w-[36px] flex items-center justify-center bg-white/80 hover:bg-white border border-[rgba(33,29,26,0.09)] rounded-xl text-[#706861] transition-all cursor-pointer shadow-xs"
               aria-label="Notifications"
             >
               <Bell className="w-3.5 h-3.5" />
@@ -122,7 +122,7 @@ export default function Header({
             <button
               id="date-range-selector-btn"
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="w-full sm:w-auto flex items-center justify-between sm:justify-start gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 sm:py-2 text-xs md:text-sm font-medium text-[#cbd5e1] bg-[#1e293b]/90 hover:bg-[#1e293b] border border-[rgba(33,29,26,0.1)] rounded-xl shadow-xs transition-all min-h-[38px] sm:min-h-[40px] cursor-pointer"
+              className="w-full sm:w-auto flex items-center justify-between sm:justify-start gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 sm:py-2 text-xs md:text-sm font-medium text-[#706861] bg-white/90 hover:bg-white border border-[rgba(33,29,26,0.1)] rounded-xl shadow-xs transition-all min-h-[38px] sm:min-h-[40px] cursor-pointer"
               aria-haspopup="true"
               aria-expanded={dropdownOpen}
               title={`Active Reporting Period: ${getActivePeriodName()}`}
@@ -130,8 +130,8 @@ export default function Header({
               <div className="flex items-center gap-1.5 min-w-0">
                 <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#ff6a3d] shrink-0" />
                 <div className="flex flex-col text-left min-w-0">
-                  <span className="text-[9px] text-[#94a3b8] font-bold uppercase tracking-wider hidden xs:block sm:hidden leading-none mb-0.5">Date Range</span>
-                  <span className="text-[11px] sm:text-xs md:text-sm font-bold text-[#f8fafc] truncate leading-tight">
+                  <span className="text-[9px] text-[#9b928a] font-bold uppercase tracking-wider hidden xs:block sm:hidden leading-none mb-0.5">Date Range</span>
+                  <span className="text-[11px] sm:text-xs md:text-sm font-bold text-[#211d1a] truncate leading-tight">
                     {getActivePeriodName()}
                   </span>
                 </div>
@@ -148,9 +148,9 @@ export default function Header({
                 />
                 <div 
                   id="date-dropdown-menu"
-                  className="fixed sm:absolute left-3 right-3 sm:left-auto sm:right-0 top-20 sm:top-auto sm:mt-2 w-auto sm:w-80 max-w-sm bg-[#1e293b] border border-[rgba(255, 255, 255, 0.1)] rounded-2xl shadow-2xl p-4 z-40 transition-all duration-200"
+                  className="fixed sm:absolute left-3 right-3 sm:left-auto sm:right-0 top-20 sm:top-auto sm:mt-2 w-auto sm:w-80 max-w-sm bg-white border border-[rgba(33,29,26,0.09)] rounded-2xl shadow-2xl p-4 z-40 transition-all duration-200"
                 >
-                  <span className="block text-[11px] font-bold text-[#94a3b8] uppercase tracking-wider mb-2 px-1">Select Reporting Period</span>
+                  <span className="block text-[11px] font-bold text-[#9b928a] uppercase tracking-wider mb-2 px-1">Select Reporting Period</span>
                   <div className="space-y-1">
                     {PRESETS.map((p, i) => {
                       const isSelected = dateRange.startDate === p.start && dateRange.endDate === p.end;
@@ -162,7 +162,7 @@ export default function Header({
                           className={`w-full flex items-center justify-between px-3 py-2.5 sm:py-2 text-xs rounded-xl transition-all min-h-[38px] cursor-pointer ${
                             isSelected 
                               ? 'bg-[#ff6a3d]/10 text-[#ff6a3d] font-semibold' 
-                              : 'text-[#cbd5e1] hover:bg-white/5 hover:text-[#f8fafc]'
+                              : 'text-[#706861] hover:bg-black/[0.03] hover:text-[#211d1a]'
                           }`}
                         >
                           <span className="font-medium">{p.label}</span>
@@ -172,27 +172,27 @@ export default function Header({
                     })}
                   </div>
 
-                  <div className="border-t border-white/10 my-3 pt-3">
-                    <span className="block text-[11px] font-bold text-[#94a3b8] uppercase tracking-wider mb-2 px-1">Custom Boundaries</span>
+                  <div className="border-t border-black/[0.04] my-3 pt-3">
+                    <span className="block text-[11px] font-bold text-[#9b928a] uppercase tracking-wider mb-2 px-1">Custom Boundaries</span>
                     <div className="grid grid-cols-2 gap-2">
                       <div>
-                        <label htmlFor="custom-start-date" className="block text-[9px] font-semibold text-[#94a3b8] uppercase tracking-wider mb-1">Start Date</label>
+                        <label htmlFor="custom-start-date" className="block text-[9px] font-semibold text-[#9b928a] uppercase tracking-wider mb-1">Start Date</label>
                         <input
                           id="custom-start-date"
                           type="date"
                           value={dateRange.startDate}
                           onChange={(e) => setDateRange({ ...dateRange, startDate: e.target.value })}
-                          className="w-full text-xs p-1.5 border border-white/10 rounded-lg bg-[#0b0f19]"
+                          className="w-full text-xs p-1.5 border border-black/[0.08] rounded-lg bg-[#faf8f2]"
                         />
                       </div>
                       <div>
-                        <label htmlFor="custom-end-date" className="block text-[9px] font-semibold text-[#94a3b8] uppercase tracking-wider mb-1">End Date</label>
+                        <label htmlFor="custom-end-date" className="block text-[9px] font-semibold text-[#9b928a] uppercase tracking-wider mb-1">End Date</label>
                         <input
                           id="custom-end-date"
                           type="date"
                           value={dateRange.endDate}
                           onChange={(e) => setDateRange({ ...dateRange, endDate: e.target.value })}
-                          className="w-full text-xs p-1.5 border border-white/10 rounded-lg bg-[#0b0f19]"
+                          className="w-full text-xs p-1.5 border border-black/[0.08] rounded-lg bg-[#faf8f2]"
                         />
                       </div>
                     </div>
@@ -208,7 +208,7 @@ export default function Header({
             <button
               id="refresh-dashboard-btn"
               onClick={onRefresh}
-              className={`p-2 min-h-[38px] min-w-[38px] sm:min-h-[40px] sm:min-w-[40px] flex items-center justify-center bg-[#1e293b]/80 hover:bg-[#1e293b] border border-[rgba(255, 255, 255, 0.1)] rounded-xl shadow-xs transition-all text-[#cbd5e1] hover:text-[#ff6a3d] active:scale-95 cursor-pointer ${isRefreshing ? 'animate-spin text-[#ff6a3d]' : ''}`}
+              className={`p-2 min-h-[38px] min-w-[38px] sm:min-h-[40px] sm:min-w-[40px] flex items-center justify-center bg-white/80 hover:bg-white border border-[rgba(33,29,26,0.09)] rounded-xl shadow-xs transition-all text-[#706861] hover:text-[#ff6a3d] active:scale-95 cursor-pointer ${isRefreshing ? 'animate-spin text-[#ff6a3d]' : ''}`}
               title="Refresh statistics & simulate live updates"
               aria-label="Refresh dashboard data"
             >
@@ -231,7 +231,7 @@ export default function Header({
             <button
               id="notification-bell-btn"
               onClick={() => setNotificationActive(false)}
-              className="hidden sm:flex relative p-2 min-h-[40px] min-w-[40px] items-center justify-center bg-[#1e293b]/80 hover:bg-[#1e293b] border border-[rgba(255, 255, 255, 0.1)] rounded-xl text-[#cbd5e1] transition-all cursor-pointer shadow-xs"
+              className="hidden sm:flex relative p-2 min-h-[40px] min-w-[40px] items-center justify-center bg-white/80 hover:bg-white border border-[rgba(33,29,26,0.09)] rounded-xl text-[#706861] transition-all cursor-pointer shadow-xs"
               aria-label="Notifications"
             >
               <Bell className="w-4 h-4" />
@@ -253,8 +253,8 @@ export default function Header({
                 EK
               </div>
               <div className="hidden xl:flex flex-col min-w-0">
-                <span className="text-xs font-bold text-[#f8fafc] truncate leading-tight">ek6132389@gmail.com</span>
-                <span className="text-[9px] text-[#94a3b8] font-medium leading-tight">Administrator</span>
+                <span className="text-xs font-bold text-[#211d1a] truncate leading-tight">ek6132389@gmail.com</span>
+                <span className="text-[9px] text-[#9b928a] font-medium leading-tight">Administrator</span>
               </div>
             </div>
           </div>

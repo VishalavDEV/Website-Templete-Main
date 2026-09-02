@@ -80,8 +80,8 @@ export default function StatCards({ kpis }: StatCardsProps) {
       default:
         return {
           bg: 'hover:border-black/[0.1]',
-          accent: '#cbd5e1',
-          badgeBg: 'bg-black/[0.04] text-[#cbd5e1]',
+          accent: '#706861',
+          badgeBg: 'bg-black/[0.04] text-[#706861]',
         };
     }
   };
@@ -96,7 +96,7 @@ export default function StatCards({ kpis }: StatCardsProps) {
           <div
             key={kpi.id}
             id={`kpi-card-${kpi.id}`}
-            className={`relative overflow-hidden bg-[#1e293b]/68 backdrop-blur-[18px] border border-[rgba(255, 255, 255, 0.1)] rounded-2xl p-4 sm:p-5 md:p-6 shadow-[0_12px_40px_rgba(63,42,27,0.08)] hover:shadow-md transition-all duration-300 ${theme.bg} ${isThirdOnTablet ? 'sm:col-span-2 lg:col-span-1' : ''} group`}
+            className={`relative overflow-hidden bg-white/68 backdrop-blur-[18px] border border-[rgba(33,29,26,0.09)] rounded-2xl p-4 sm:p-5 md:p-6 shadow-[0_12px_40px_rgba(63,42,27,0.08)] hover:shadow-md transition-all duration-300 ${theme.bg} ${isThirdOnTablet ? 'sm:col-span-2 lg:col-span-1' : ''} group`}
           >
             {/* Soft background active hover bubble */}
             <div 
@@ -105,7 +105,7 @@ export default function StatCards({ kpis }: StatCardsProps) {
             />
 
             <div className="flex items-center justify-between">
-              <span className="text-[11px] sm:text-xs font-bold text-[#cbd5e1] uppercase tracking-wider">{kpi.title}</span>
+              <span className="text-[11px] sm:text-xs font-bold text-[#706861] uppercase tracking-wider">{kpi.title}</span>
               <span className={`inline-flex items-center gap-0.5 px-2.5 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold ${theme.badgeBg}`}>
                 {kpi.isPositive ? (
                   <ArrowUpRight className="w-3 sm:w-3.5 h-3 sm:h-3.5 shrink-0" />
@@ -118,10 +118,10 @@ export default function StatCards({ kpis }: StatCardsProps) {
 
             <div className="mt-3 sm:mt-4 flex items-baseline justify-between gap-2">
               <div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-[#f8fafc] tracking-tight">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-[#211d1a] tracking-tight">
                   {kpi.value}
                 </h3>
-                <span className="text-[10px] text-[#94a3b8] font-medium block mt-0.5 sm:mt-1">{kpi.timeframe}</span>
+                <span className="text-[10px] text-[#9b928a] font-medium block mt-0.5 sm:mt-1">{kpi.timeframe}</span>
               </div>
 
               {/* Sparkline Visualizer */}
