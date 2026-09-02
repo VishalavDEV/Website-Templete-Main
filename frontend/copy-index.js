@@ -3,7 +3,10 @@ import path from 'path';
 
 try {
   const dest = path.resolve('dist');
-  console.log('Copying index.html to templates/index.html inside dist...');
+  const templateDir = path.join(dest, 'templates');
+  if (!fs.existsSync(templateDir)) {
+    fs.mkdirSync(templateDir, { recursive: true });
+  }
   fs.cpSync(path.join(dest, 'index.html'), path.join(dest, 'templates/index.html'));
   console.log('Copy completed successfully!');
 } catch (error) {

@@ -1,6 +1,6 @@
 {
-  "name": "Ember & Olive - Restaurant Website Template",
-  "description": "An original commercial restaurant website template for Ember & Olive featuring seasonal dining, reservation booking, filterable menu, events, and gallery.",
+  "name": "LuminaFrame - Modern Photography & Creative Portfolio",
+  "description": "An editorial photography and visual direction portfolio website template featuring minimalist dark-mode aesthetics, Ken-Burns hero showcase, multi-column media grid with category filters, and an interactive EXIF lightbox.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }
