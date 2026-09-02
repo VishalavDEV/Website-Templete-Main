@@ -1119,7 +1119,7 @@ category: { id: 20078, name: 'Coming Soon', slug: 'coming-soon' },
   },
   {
     id: 180,
-    name: 'Aura Pro X1 — Next-Gen 3D Device Launch Hub',
+    name: 'TENFIVE GAMING PRO — Next-Gen 3D Device Launch Hub',
     slug: 'aura-pro-x1',
     previewImage: 'https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1919,7 +1919,7 @@ category: { id: 20139, name: 'Corporate', slug: 'corporate' },
   },
   {
 id: 20140,
-    name: '—H—T—M— —3—5—0— —D—U—D—E— —/—/— —T—h—e— —F—u—t—u—r—e— —o—f— —R—i—d—i—n—g— —-— —3—6—0—°— —E—x—p—e—r—i—e—n—c—e—',
+    name: 'HTM 350 DUDE — Interactive Motorcycle Showcase',
 
     slug: 'comingsoon-8',
     previewImage: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80',
@@ -1936,7 +1936,7 @@ category: { id: 20141, name: 'Coming Soon', slug: 'coming-soon' },
   },
   {
 id: 20142,
-    name: '—A—U—R—A— —/—/— —N—e—x—t—-—G—e—n— —M—u—l—t—i—p—u—r—p—o—s—e— —L—a—u—n—c—h—p—a—d— —&— —C—o—m—i—n—g— —S—o—o—n— —E—x—p—e—r—i—e—n—c—e—',
+    name: 'Apex Neural — Next-Gen Multipurpose Launchpad',
 
     slug: 'comingsoon-9',
     previewImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
@@ -1953,7 +1953,7 @@ category: { id: 20143, name: 'Coming Soon', slug: 'coming-soon' },
   },
   {
 id: 20144,
-    name: '—C—o—m—i—n—g— —S—o—o—n— —E—v—e—n—t— —L—a—n—d—i—n—g— —P—a—g—e— —T—e—m—p—l—a—t—e—s— —|— —M—u—l—t—i—-—D—e—s—i—g—n— —S—t—u—d—i—o—',
+    name: 'Coming Soon Event Studio — Multi-Design Premiere',
 
     slug: 'comingsoon-10',
     previewImage: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80',
