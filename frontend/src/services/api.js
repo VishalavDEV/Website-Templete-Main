@@ -1308,7 +1308,7 @@ category: { id: 20104, name: 'Blog Magazine', slug: 'blog-magazine' },
   },
   {
     id: 190,
-    name: 'Wilderness — Animated Outdoor Tourism Portal',
+    name: 'Roam & Wild — Animated Outdoor Tourism Portal',
     slug: 'wilderness-tourism',
     previewImage: 'https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
