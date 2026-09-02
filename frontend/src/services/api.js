@@ -736,7 +736,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 136,
-    name: 'Chronicle — Typography-First Magazine',
+    name: 'AURA MAGAZINE — Typography-First Magazine',
     slug: 'chronicle-magazine',
     previewImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
@@ -1231,7 +1231,7 @@ category: { id: 20102, name: 'Blog Magazine', slug: 'blog-magazine' },
   },
   {
     id: 9109,
-    name: 'CHRONICLE — Premium Editorial & News Platform',
+    name: 'ATLAS — Premium Editorial & News Platform',
     slug: 'blog-9',
     previewImage: 'https://images.unsplash.com/photo-1507633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
