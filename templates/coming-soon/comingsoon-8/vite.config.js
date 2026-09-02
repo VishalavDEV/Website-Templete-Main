@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
+  base: './',
   base: '/templates/coming-soon/comingsoon-8/',
   plugins: [react()],
   server: {
