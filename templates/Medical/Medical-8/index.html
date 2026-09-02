@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PulseCare — Modern Dynamic Healthcare Platform</title>
-  <meta name="description" content="Discover top doctors, compare availability, book instant appointments, and manage health records securely with PulseCare Healthcare Platform.">
-  
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- App Styles -->
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/public.css">
-  <link rel="stylesheet" href="css/portals.css">
-  <link rel="stylesheet" href="css/components.css">
-</head>
-<body>
-  <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230284c7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/><path d='M12 5v14'/><path d='M5 12h14'/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aura Medical Center — Human Anatomy Reimagined</title>
+    <meta name="description" content="Aura Health Medical Center provides next-generation healthcare, interactive anatomy exploration, world-class specialists, and seamless patient care." />
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Cormorant Garamond -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
   <script>
     (function() {
       const isTop = window.self === window.top;
@@ -25,13 +19,10 @@
       const isIframe = urlParams.get('iframe') === 'true';
       
       if (isTop && !isIframe) {
-        document.documentElement.style.visibility = 'hidden';
-        
-        window.addEventListener('DOMContentLoaded', () => {
+        function buildPreviewWrapper() {
           const currentUrl = new URL(window.location.href);
           currentUrl.searchParams.set('iframe', 'true');
           
-          // Clear any theme classes from html & body to prevent dark template CSS leakage
           document.documentElement.className = '';
           document.documentElement.removeAttribute('style');
           
@@ -40,34 +31,13 @@
           body.innerHTML = '';
           body.removeAttribute('style');
           
-          // Inject high-priority stylesheet to ensure pure white/light backdrop UI
           const overrideStyle = document.createElement('style');
           overrideStyle.id = 'technosprint-preview-backdrop-style';
-          overrideStyle.textContent = `
-            html, body {
-              margin: 0 !important;
-              padding: 0 !important;
-              width: 100vw !important;
-              height: 100vh !important;
-              overflow: hidden !important;
-              background-color: #f8fafc !important;
-              background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important;
-              background-size: 20px 20px !important;
-              color: #0f172a !important;
-            }
-            #technosprint-preview-header {
-              background-color: #ffffff !important;
-              color: #0f172a !important;
-            }
-            #technosprint-preview-header button {
-              font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-            }
-          `;
+          overrideStyle.textContent = 'html, body { margin: 0 !important; padding: 0 !important; width: 100vw !important; height: 100vh !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important; color: #0f172a !important; } #technosprint-preview-header { background-color: #ffffff !important; color: #0f172a !important; }';
           document.head.appendChild(overrideStyle);
           
           body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important;';
           
-          // Build Top Bar Header
           const topBar = document.createElement('header');
           topBar.id = 'technosprint-preview-header';
           topBar.style.height = '64px';
@@ -84,7 +54,6 @@
           topBar.style.position = 'relative';
           topBar.style.boxSizing = 'border-box';
           
-          // Left: Brand Logo & Back
           const logoDiv = document.createElement('div');
           logoDiv.style.display = 'flex';
           logoDiv.style.alignItems = 'center';
@@ -94,7 +63,6 @@
             '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Back</a>';
           topBar.appendChild(logoDiv);
           
-          // Center: Segmented View Switcher (Desktop / Tablet / Mobile)
           const switcherDiv = document.createElement('div');
           switcherDiv.style.display = 'inline-flex';
           switcherDiv.style.alignItems = 'center';
@@ -120,7 +88,6 @@
             '</button>';
           topBar.appendChild(switcherDiv);
           
-          // Right: Action Controls (Orientation & Refresh)
           const rightDiv = document.createElement('div');
           rightDiv.style.display = 'flex';
           rightDiv.style.alignItems = 'center';
@@ -136,11 +103,9 @@
           topBar.appendChild(rightDiv);
           body.appendChild(topBar);
           
-          // Canvas Area with clean white backdrop
           const canvas = document.createElement('main');
           canvas.style.cssText = 'flex: 1 !important; display: flex !important; align-items: center !important; justify-content: center !important; padding: 24px !important; overflow: auto !important; box-sizing: border-box !important; position: relative !important; background-color: transparent !important;';
           
-          // Device Frame Container (Default Desktop)
           const frameContainer = document.createElement('div');
           frameContainer.id = 'device-frame';
           frameContainer.style.width = '100%';
@@ -158,7 +123,6 @@
           frameContainer.style.boxSizing = 'border-box';
           frameContainer.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
           
-          // Dynamic Island Notch (Hidden by default on Desktop)
           const notch = document.createElement('div');
           notch.id = 'phone-notch';
           notch.style.position = 'absolute';
@@ -191,7 +155,6 @@
           canvas.appendChild(frameContainer);
           body.appendChild(canvas);
           
-          // Interactivity
           const btnDesktop = body.querySelector('#view-desktop');
           const btnTablet = body.querySelector('#view-tablet');
           const btnMobile = body.querySelector('#view-mobile');
@@ -223,14 +186,10 @@
               
               frameContainer.style.width = '100%';
               frameContainer.style.height = '100%';
-              frameContainer.style.maxHeight = '100%';
               frameContainer.style.maxWidth = '100%';
-              frameContainer.style.backgroundColor = 'transparent';
+              frameContainer.style.maxHeight = '100%';
               frameContainer.style.border = 'none';
               frameContainer.style.borderRadius = '12px';
-              frameContainer.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04)';
-              
-              iframe.style.borderRadius = '12px';
             } else if (activeMode === 'tablet') {
               btnTablet.style.background = '#eff6ff';
               btnTablet.style.color = '#2563eb';
@@ -238,20 +197,16 @@
               btnTablet.style.fontWeight = '600';
               btnTablet.style.boxShadow = '0 1px 2px rgba(37,99,235,0.08)';
               
-              btnOrientation.style.display = 'flex';
+              btnOrientation.style.display = 'inline-flex';
               notch.style.display = 'none';
               
-              const isP = orientation === 'portrait';
-              frameContainer.style.width = isP ? '768px' : '980px';
-              frameContainer.style.height = isP ? '920px' : '680px';
-              frameContainer.style.maxHeight = 'calc(100vh - 120px)';
-              frameContainer.style.maxWidth = 'calc(100vw - 60px)';
-              frameContainer.style.backgroundColor = '#0f172a';
-              frameContainer.style.border = '14px solid #0f172a';
-              frameContainer.style.borderRadius = '38px';
-              frameContainer.style.boxShadow = '0 25px 50px -12px rgba(15, 23, 42, 0.35)';
-              
-              iframe.style.borderRadius = '24px';
+              const isPortrait = orientation === 'portrait';
+              frameContainer.style.width = isPortrait ? '768px' : '1024px';
+              frameContainer.style.height = isPortrait ? '1024px' : '768px';
+              frameContainer.style.maxWidth = '100%';
+              frameContainer.style.maxHeight = '100%';
+              frameContainer.style.border = '12px solid #0f172a';
+              frameContainer.style.borderRadius = '24px';
             } else if (activeMode === 'mobile') {
               btnMobile.style.background = '#eff6ff';
               btnMobile.style.color = '#2563eb';
@@ -259,21 +214,16 @@
               btnMobile.style.fontWeight = '600';
               btnMobile.style.boxShadow = '0 1px 2px rgba(37,99,235,0.08)';
               
-              btnOrientation.style.display = 'flex';
+              btnOrientation.style.display = 'inline-flex';
+              notch.style.display = 'flex';
               
-              const isP = orientation === 'portrait';
-              notch.style.display = isP ? 'flex' : 'none';
-              
-              frameContainer.style.width = isP ? '390px' : '780px';
-              frameContainer.style.height = isP ? '800px' : '390px';
-              frameContainer.style.maxHeight = 'calc(100vh - 110px)';
-              frameContainer.style.maxWidth = 'calc(100vw - 40px)';
-              frameContainer.style.backgroundColor = '#0f172a';
+              const isPortrait = orientation === 'portrait';
+              frameContainer.style.width = isPortrait ? '375px' : '667px';
+              frameContainer.style.height = isPortrait ? '667px' : '375px';
+              frameContainer.style.maxWidth = '100%';
+              frameContainer.style.maxHeight = '100%';
               frameContainer.style.border = '12px solid #0f172a';
-              frameContainer.style.borderRadius = '48px';
-              frameContainer.style.boxShadow = '0 25px 50px -12px rgba(15, 23, 42, 0.38)';
-              
-              iframe.style.borderRadius = '36px';
+              frameContainer.style.borderRadius = '36px';
             }
           }
           
@@ -283,132 +233,26 @@
           
           btnOrientation.addEventListener('click', () => {
             orientation = orientation === 'portrait' ? 'landscape' : 'portrait';
-            orientationText.innerText = orientation === 'portrait' ? 'Portrait' : 'Landscape';
+            orientationText.textContent = orientation.charAt(0).toUpperCase() + orientation.slice(1);
             updateStyles();
           });
           
           btnRefresh.addEventListener('click', () => {
-            iframe.src = currentUrl.toString();
+            iframe.src = iframe.src;
           });
-          
-          document.documentElement.style.visibility = 'visible';
-        });
-      } else {
-        document.documentElement.style.visibility = 'visible';
+        }
+        
+        if (document.readyState === 'loading') {
+          window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
+        } else {
+          buildPreviewWrapper();
+        }
       }
     })();
   </script>
-
-  <!-- Developer Role Switcher Bar (Persistent Top Bar for Instant Role Exploration) -->
-  <div class="role-switcher-bar">
-    <div class="role-switcher-title">
-      <i class="fas fa-cubes"></i> PulseCare Portal Switcher:
-    </div>
-    <div class="role-pills">
-      <button class="role-pill active" data-role="guest" onclick="PulseCareApp.switchRole('guest')">
-        <i class="fas fa-globe"></i> Public Website
-      </button>
-      <button class="role-pill" data-role="patient" onclick="PulseCareApp.switchRole('patient')">
-        <i class="fas fa-user-injured"></i> Patient Portal
-      </button>
-      <button class="role-pill" data-role="doctor" onclick="PulseCareApp.switchRole('doctor')">
-        <i class="fas fa-user-md"></i> Doctor Portal
-      </button>
-      <button class="role-pill" data-role="admin" onclick="PulseCareApp.switchRole('admin')">
-        <i class="fas fa-shield-alt"></i> Admin SaaS
-      </button>
-    </div>
-  </div>
-
-  <!-- Main Navigation Header -->
-  <header class="main-header">
-    <div class="container nav-container">
-      <a href="#home" class="brand-logo">
-        <div class="brand-icon"><i class="fas fa-heart-pulse"></i></div>
-        <span>Pulse<span style="color:var(--teal-500);">Care</span></span>
-      </a>
-
-      <ul class="nav-menu" id="main-nav-menu">
-        <!-- Dynamically rendered by app.js -->
-      </ul>
-
-      <div class="header-actions">
-        <a href="#emergency" class="btn btn-emergency btn-sm"><i class="fas fa-ambulance"></i> 24/7 Triage</a>
-        <button class="btn btn-primary btn-sm" onclick="PulseCareBookingEngine.openBookingModal('doc-1')">
-          <i class="fas fa-calendar-plus"></i> Book Slot
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Application Viewport (Pages & Dashboards dynamically mounted here) -->
-  <main id="app-viewport">
-    <!-- View content loaded via client router -->
-  </main>
-
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-logo">
-            <i class="fas fa-heart-pulse" style="color:var(--teal-400);"></i> PulseCare Platform
-          </div>
-          <p class="footer-desc">
-            Next-generation healthcare ecosystem unifying patient discovery, real-time slot scheduling, digital health vault, doctor workflows, and hospital SaaS management.
-          </p>
-          <div class="flex gap-3">
-            <a href="#" style="color:var(--gray-400);"><i class="fab fa-twitter"></i></a>
-            <a href="#" style="color:var(--gray-400);"><i class="fab fa-linkedin"></i></a>
-            <a href="#" style="color:var(--gray-400);"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="footer-heading">Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#find-doctor">Find a Doctor</a></li>
-            <li><a href="#specialties">Clinical Specialties</a></li>
-            <li><a href="#health-hub">Health Knowledge Hub</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-heading">Portals</h4>
-          <ul class="footer-links">
-            <li><a href="#patient-dashboard">Patient Health Vault</a></li>
-            <li><a href="#doctor-dashboard">Doctor Agenda & Notes</a></li>
-            <li><a href="#admin-dashboard">Admin SaaS Console</a></li>
-            <li><a href="#emergency">Emergency 24/7</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-heading">24/7 Helpline</h4>
-          <p style="font-size:0.9rem; color:var(--gray-400); margin-bottom:0.8rem;">Emergency: <strong style="color:var(--emergency-red);">108</strong></p>
-          <p style="font-size:0.9rem; color:var(--gray-400); margin-bottom:0.8rem;">Appointments: <strong>+91 1800 200 4000</strong></p>
-          <p style="font-size:0.85rem; color:var(--gray-500);">PulseCare Healthcare Network India</p>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>&copy; 2026 PulseCare Healthcare Platform. All rights reserved.</span>
-        <span>HIPAA Compliant • Encrypted Health Vault</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- App Scripts -->
-  <script src="js/mockData.js"></script>
-  <script src="js/components/searchFilter.js"></script>
-  <script src="js/components/bookingEngine.js"></script>
-  <script src="js/components/healthVault.js"></script>
-  <script src="js/views/publicViews.js"></script>
-  <script src="js/views/patientViews.js"></script>
-  <script src="js/views/doctorViews.js"></script>
-  <script src="js/views/adminViews.js"></script>
-  <script src="js/app.js"></script>
-
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

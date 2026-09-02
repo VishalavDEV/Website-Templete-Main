@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="ApexHealth - Modern Dynamic Medical Platform for Patients, Doctors, and Healthcare Administrators. Real-time slot booking, doctor discovery, and patient portals." />
     <title>ApexHealth — Modern Dynamic Medical Platform</title>
-    <script type="module" crossorigin src="/templates/medical/medical-6/assets/index-Ct2UryFI.js"></script>
-    <link rel="stylesheet" crossorigin href="/templates/medical/medical-6/assets/index-DRQP9yPi.css">
+    
+    <link rel="stylesheet" crossorigin href="./assets/index-DRQP9yPi.css">
   </head>
   <body>
   <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
@@ -18,7 +18,7 @@
       const isIframe = urlParams.get('iframe') === 'true';
       
       if (isTop && !isIframe) {
-        // document.documentElement.style.visibility = 'hidden';
+        document.documentElement.style.visibility = 'hidden';
         
         window.addEventListener('DOMContentLoaded', () => {
           const currentUrl = new URL(window.location.href);
@@ -291,6 +291,7 @@
       }
     })();
   </script>
-    <div id="root"></div>
+    <div id="root"></div>
+    <script type="module" crossorigin src="./assets/index-Ct2UryFI.js"></script>
   </body>
 </html>

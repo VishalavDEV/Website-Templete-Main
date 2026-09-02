@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { AnnouncementBar } from './components/AnnouncementBar';
-import { Navbar } from './components/Navbar';
+import Navbar from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TrustStats } from './components/TrustStats';
 import { CareCategories } from './components/CareCategories';
@@ -21,7 +21,7 @@ import { Resources } from './components/Resources';
 import { FAQ } from './components/FAQ';
 import { AppointmentModal } from './components/AppointmentModal';
 import { EmergencyModal } from './components/EmergencyModal';
-import { Footer } from './components/Footer';
+import Footer from './components/Footer';
 import { ToastContainer, ToastMessage } from './components/UI/Toast';
 
 export default function App() {

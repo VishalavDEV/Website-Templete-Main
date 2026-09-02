@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/templates/medical/medical-1/assets/index-BoUVzn0Q.js"></script>
+    
     <link rel="stylesheet" crossorigin href="/templates/medical/medical-1/assets/index-BQdc5rXF.css">
   </head>
   <body>
@@ -23,7 +23,7 @@
       const isIframe = urlParams.get('iframe') === 'true';
       
       if (isTop && !isIframe) {
-        // document.documentElement.style.visibility = 'hidden';
+        document.documentElement.style.visibility = 'hidden';
         
         window.addEventListener('DOMContentLoaded', () => {
           const currentUrl = new URL(window.location.href);
@@ -296,6 +296,7 @@
       }
     })();
   </script>
-    <div id="root"></div>
+    <div id="root"></div>
+    <script type="module" crossorigin src="/templates/medical/medical-1/assets/index-BoUVzn0Q.js"></script>
   </body>
 </html>
