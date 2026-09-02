@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 650" width="500" height="650">
+  <defs>
+    <linearGradient id="bgViktor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#051525"/>
+      <stop offset="50%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+    <linearGradient id="skinViktor" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8b99b"/>
+      <stop offset="100%" stop-color="#be8f73"/>
+    </linearGradient>
+    <linearGradient id="jerseyTitansV" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0088ff"/>
+      <stop offset="100%" stop-color="#0033aa"/>
+    </linearGradient>
+    <radialGradient id="glowViktor" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0088ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="500" height="650" fill="url(#bgViktor)"/>
+  <circle cx="250" cy="220" r="220" fill="url(#glowViktor)"/>
+
+  <!-- Towering Broad Shoulders -->
+  <path d="M 90 340 L 195 270 L 305 270 L 410 340 L 375 650 L 125 650 Z" fill="url(#jerseyTitansV)"/>
+  <path d="M 195 270 Q 250 310 305 270" fill="none" stroke="#ffffff" stroke-width="8"/>
+  <path d="M 90 340 L 125 500" stroke="#ffffff" stroke-width="6"/>
+  <path d="M 410 340 L 375 500" stroke="#ffffff" stroke-width="6"/>
+
+  <!-- Jersey Number 33 -->
+  <text x="250" y="440" font-family="'Bebas Neue', sans-serif" font-size="100" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="4">33</text>
+  <text x="250" y="335" font-family="'Barlow Condensed', sans-serif" font-size="26" font-weight="800" fill="#ff7518" text-anchor="middle" letter-spacing="3">TITANS</text>
+
+  <!-- Muscular Arms -->
+  <path d="M 90 340 C 50 410, 60 510, 90 570" stroke="url(#skinViktor)" stroke-width="56" stroke-linecap="round" fill="none"/>
+  <path d="M 410 340 C 450 410, 440 510, 410 570" stroke="url(#skinViktor)" stroke-width="56" stroke-linecap="round" fill="none"/>
+
+  <!-- Tall Neck & Chiselled Face -->
+  <rect x="222" y="235" width="56" height="55" rx="10" fill="url(#skinViktor)"/>
+  <path d="M 188 170 C 188 95, 312 95, 312 170 C 312 245, 188 245, 188 170 Z" fill="url(#skinViktor)"/>
+
+  <!-- Blonde/Light Hair Crop -->
+  <path d="M 182 155 C 182 80, 318 80, 318 155 C 295 105, 205 105, 182 155 Z" fill="#d4a359"/>
+  <!-- Short Stubble Jaw -->
+  <path d="M 198 200 C 198 240, 302 240, 302 200 Z" fill="rgba(160, 120, 90, 0.25)"/>
+
+  <!-- Human Facial Details: Blue/Gray Eyes, Brows, Nose, Lips -->
+  <ellipse cx="225" cy="175" rx="7" ry="5" fill="#2c4c64"/>
+  <ellipse cx="275" cy="175" rx="7" ry="5" fill="#2c4c64"/>
+  <path d="M 212 165 Q 225 158 238 165" stroke="#5c4528" stroke-width="4" fill="none"/>
+  <path d="M 262 165 Q 275 158 288 165" stroke="#5c4528" stroke-width="4" fill="none"/>
+  <path d="M 250 175 L 246 198 L 254 198 Z" fill="#a87a5f"/>
+  <path d="M 235 215 Q 250 220 265 215" stroke="#7a523a" stroke-width="4" fill="none"/>
+
+  <!-- Nameplate -->
+  <rect x="0" y="570" width="500" height="80" fill="#050505" opacity="0.95"/>
+  <text x="250" y="612" font-family="'Bebas Neue', sans-serif" font-size="36" font-weight="900" fill="#00e5ff" text-anchor="middle" letter-spacing="3">VIKTOR VOLKOV #33</text>
+  <text x="250" y="638" font-family="'Barlow Condensed', sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="2">CENTER — CITY TITANS</text>
+</svg>

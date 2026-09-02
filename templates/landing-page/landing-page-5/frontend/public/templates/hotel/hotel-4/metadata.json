@@ -1,0 +1,6 @@
+{
+  "name": "Solitude Haven - Luxury Forest Sanctuary",
+  "description": "An elegant, full-featured luxury forest sanctuary and wellness retreat template. Features bento-style accommodation cards, immersive interactive experience sections, smooth custom scroll indicates, play tour animation, and responsive layout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
