@@ -1,0 +1,6 @@
+{
+  "name": "Vitalia - Health & Wellness Platform",
+  "description": "A modern, premium lifestyle wellness platform for daily habit tracking, fitness, nutrition, sleep, mindfulness, and community challenges.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
