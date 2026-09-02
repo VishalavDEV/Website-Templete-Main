@@ -22,7 +22,7 @@
       const isIframe = urlParams.get('iframe') === 'true';
       
       if (isTop && !isIframe) {
-        document.documentElement.style.visibility = 'hidden';
+        // document.documentElement.style.visibility = 'hidden';
         
         window.addEventListener('DOMContentLoaded', () => {
           const currentUrl = new URL(window.location.href);
@@ -41,7 +41,8 @@
           const overrideStyle = document.createElement('style');
           overrideStyle.id = 'technosprint-preview-backdrop-style';
           overrideStyle.textContent = `
-            html, body {
+            /* Allow iframe internal smooth scrolling */
+html, body { overflow-y: auto !important; height: auto !important; min-height: 100vh !important;
               margin: 0 !important;
               padding: 0 !important;
               width: 100vw !important;
@@ -554,7 +555,7 @@
       <div class="bentoGrid">
         <!-- Item 1 (Large) -->
         <div class="gridItem itemLarge">
-          <img src="/hl_gallery_pool.jpg" alt="Sunset Infinity Pool" class="gridImage">
+          <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80" alt="Sunset Infinity Pool" class="gridImage">
           <div class="gridOverlay">
             <svg class="instagramIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             <p class="gridCaption">Sunset over the Cliffside Infinity Pool</p>
@@ -564,7 +565,7 @@
         
         <!-- Item 2 -->
         <div class="gridItem">
-          <img src="/hl_gallery_spa.jpg" alt="Cedar Wellness Tub" class="gridImage">
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80" alt="Cedar Wellness Tub" class="gridImage">
           <div class="gridOverlay">
             <svg class="instagramIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             <p class="gridCaption">Private Cedar Wellness Tub</p>
@@ -574,7 +575,7 @@
         
         <!-- Item 3 (Tall) -->
         <div class="gridItem itemTall">
-          <img src="/hl_gallery_dining.jpg" alt="Michelin Dining" class="gridImage">
+          <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1200&q=80" alt="Michelin Dining" class="gridImage">
           <div class="gridOverlay">
             <svg class="instagramIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             <p class="gridCaption">Wood-fired Coastal Dining at The Hearth</p>
@@ -584,7 +585,7 @@
         
         <!-- Item 4 -->
         <div class="gridItem">
-          <img src="/hl_gallery_suite.jpg" alt="Ocean Terrace Sunrise" class="gridImage">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80" alt="Ocean Terrace Sunrise" class="gridImage">
           <div class="gridOverlay">
             <svg class="instagramIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             <p class="gridCaption">The Champagne Ocean Terrace Sunrise</p>
@@ -594,7 +595,7 @@
         
         <!-- Item 5 (Wide) -->
         <div class="gridItem itemWide">
-          <img src="/hl_gallery_villa.jpg" alt="Lagoon Access Deck" class="gridImage">
+          <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80" alt="Lagoon Access Deck" class="gridImage">
           <div class="gridOverlay">
             <svg class="instagramIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             <p class="gridCaption">Direct Saltwater Cove access deck</p>

@@ -97,6 +97,7 @@ function AppRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+        <Route path="/index.html" element={<PageWrapper><Home /></PageWrapper>} />
         <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
         <Route path="/courses" element={<PageWrapper><Courses /></PageWrapper>} />
         <Route path="/courses/:id" element={<PageWrapper><CourseDetails /></PageWrapper>} />

@@ -28,6 +28,7 @@ function App() {
         <main className="main-content-wrapper" style={{ flexGrow: 1 }}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/index.html" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/admissions" element={<Admissions />} />
