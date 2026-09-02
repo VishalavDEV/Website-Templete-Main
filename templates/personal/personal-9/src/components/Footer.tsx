@@ -129,7 +129,7 @@ export const Footer: React.FC<FooterProps> = ({ darkMode, onOpenResume, onOpenPr
             </button>
 
             <div className="text-left md:text-right text-[11px] text-gray-400">
-              <p>© 2026 Arjun Mehta.</p>
+              <p>© 2026 Gwen.</p>
               <p>All rights reserved.</p>
             </div>
           </div>

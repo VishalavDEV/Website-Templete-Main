@@ -25,7 +25,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, darkM
         {/* Modal Header Bar */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-base">Arjun Mehta — Resume</span>
+            <span className="font-bold text-base">Gwen — Resume</span>
             <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300">
               PDF Preview
             </span>
@@ -61,7 +61,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, darkM
           <div className="border-b border-slate-200 dark:border-slate-800 pb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <h1 className="text-3xl font-extrabold font-heading tracking-tight text-slate-900 dark:text-white">
-                Arjun Mehta
+                Gwen
               </h1>
               <p className="text-base font-semibold text-blue-600 dark:text-blue-400 mt-1">
                 AI Engineer & Full-Stack Developer
@@ -79,7 +79,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, darkM
               </span>
               <span className="flex items-center gap-1.5">
                 <Globe className="w-3.5 h-3.5 text-emerald-500" />
-                arjunmehta.dev
+                gwen.dev
               </span>
             </div>
           </div>

@@ -85,7 +85,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
                 darkMode ? 'text-white' : 'text-gray-900'
               }`}
             >
-              ARJUN MEHTA
+              GWEN
             </span>
             <span className="text-[11px] text-gray-400 font-medium tracking-normal mt-0.5">
               AI Engineer & Developer

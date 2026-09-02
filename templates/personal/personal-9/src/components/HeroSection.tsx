@@ -41,7 +41,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ darkMode, onOpenResume
               id="hero-developer-name"
               className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-[1.08] mb-3"
             >
-              Arjun Mehta
+              Gwen
             </h1>
 
             <h2 className="text-xl sm:text-2xl lg:text-[1.7rem] font-bold text-indigo-600 dark:text-indigo-400 tracking-tight mb-4">
@@ -158,7 +158,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ darkMode, onOpenResume
             <div className="relative w-[300px] sm:w-[380px] lg:w-[420px] aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-gradient-to-b from-indigo-50/50 via-purple-50/30 to-transparent dark:from-indigo-950/30 dark:via-purple-950/20 dark:to-transparent flex items-end justify-center">
               <img
                 src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop"
-                alt="Arjun Mehta"
+                alt="Gwen"
                 className="w-full h-full object-cover object-top scale-105"
                 referrerPolicy="no-referrer"
               />
