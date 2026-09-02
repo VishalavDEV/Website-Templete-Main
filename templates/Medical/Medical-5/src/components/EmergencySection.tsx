@@ -67,7 +67,7 @@ export const EmergencySection: React.FC<{ isFullPage?: boolean }> = ({ isFullPag
               <a
                 id="emergency-call-aura-hotline"
                 href="tel:18002872432"
-                onClick={() => showToast('Calling Aura Health 24/7 Clinical Triage Desk...', 'info')}
+                onClick={() => showToast('Calling BioHealth Health 24/7 Clinical Triage Desk...', 'info')}
                 className="px-6 py-4 bg-white/90 hover:bg-white text-[#3E3445] border border-[#3E3445]/15 font-semibold text-sm rounded-full transition-all text-center flex items-center justify-center gap-2"
               >
                 <Phone className="w-4 h-4 text-[#8B6FAE]" />

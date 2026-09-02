@@ -99,7 +99,7 @@ export const PatientPortal: React.FC = () => {
     if (updated) {
       const allRxs = await mockApi.getPrescriptions();
       setPrescriptions(allRxs);
-      showToast('Refill request sent to Aura Central Pharmacy', 'success');
+      showToast('Refill request sent to BioHealth Central Pharmacy', 'success');
     }
   };
 
@@ -153,7 +153,7 @@ export const PatientPortal: React.FC = () => {
                 Welcome back, {patientProfile?.name || 'Alexander'}
               </h1>
               <p className="text-xs sm:text-sm text-[#756B7C]">
-                Member ID: BCBS-9948201-ALX • Primary Clinic: Aura Central Medical Pavilion
+                Member ID: BCBS-9948201-ALX • Primary Clinic: BioHealth Central Medical Pavilion
               </p>
             </div>
           </div>
@@ -642,7 +642,7 @@ export const PatientPortal: React.FC = () => {
                 Prescriptions & Supplement Protocols
               </h2>
               <p className="text-xs text-[#756B7C]">
-                Active medications issued by your Aura physicians with online pharmacy refill requests.
+                Active medications issued by your BioHealth physicians with online pharmacy refill requests.
               </p>
             </div>
 

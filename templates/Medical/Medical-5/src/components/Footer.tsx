@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
       return;
     }
     setIsSubscribed(true);
-    showToast('Subscribed to Aura Health monthly clinical journal', 'success');
+    showToast('Subscribed to BioHealth Health monthly clinical journal', 'success');
   };
 
   const handleSpecialtyClick = (id: string) => {
@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
           <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B6FAE]/10 text-[#665080] text-xs font-semibold uppercase tracking-wider mb-3">
               <Sparkles className="w-3.5 h-3.5 text-[#8B6FAE]" />
-              <span>Aura Health Dispatch</span>
+              <span>BioHealth Health Dispatch</span>
             </div>
             <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#3E3445] mb-2">
               Stay connected with thoughtful medicine.
@@ -103,7 +103,7 @@ export const Footer: React.FC = () => {
               </div>
               <div>
                 <span className="font-serif text-2xl font-bold tracking-tight text-[#3E3445]">
-                  Aura Health
+                  BioHealth Health
                 </span>
                 <span className="block text-[10px] tracking-[0.2em] font-bold text-[#8B6FAE] uppercase -mt-1">
                   Lilac Frost Medical Center
@@ -337,7 +337,7 @@ export const Footer: React.FC = () => {
             >
               Accessibility
             </button>
-            <span>© 2026 Aura Health</span>
+            <span>© 2026 BioHealth Health</span>
           </div>
         </div>
       </div>

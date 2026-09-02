@@ -412,7 +412,7 @@ export const HealthCheckTool: React.FC<{ isFullPage?: boolean }> = ({ isFullPage
                 {/* Matched Specialist Recommendations */}
                 <div>
                   <h4 className="font-serif text-base font-bold text-[#3E3445] mb-3">
-                    Recommended Aura Physicians for this Profile:
+                    Recommended BioHealth Physicians for this Profile:
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {matchedDoctors.slice(0, 2).map((doc) => (

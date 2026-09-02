@@ -29,12 +29,12 @@ export const ContactView: React.FC<{ isFullPage?: boolean }> = ({ isFullPage = f
 
   const faqs = [
     {
-      q: 'How do 45-minute Aura consultations work?',
+      q: 'How do 45-minute BioHealth consultations work?',
       a: 'Unlike conventional 10-minute checkups, our initial patient consultations provide a dedicated 45 minutes with your board-certified specialist. We examine your medical timeline, review active biomarkers, and design an individualized prevention plan.',
     },
     {
       q: 'Do you accept major private insurance plans?',
-      a: 'Yes, Aura Health works with Blue Cross Blue Shield, Aetna, UnitedHealthcare, Cigna, and Medicare Advantage for diagnostic imaging and eligible specialist visits. Out-of-network concierge options are also supported.',
+      a: 'Yes, BioHealth Health works with Blue Cross Blue Shield, Aetna, UnitedHealthcare, Cigna, and Medicare Advantage for diagnostic imaging and eligible specialist visits. Out-of-network concierge options are also supported.',
     },
     {
       q: 'How fast do laboratory and 3T MRI results synchronize?',
@@ -42,7 +42,7 @@ export const ContactView: React.FC<{ isFullPage?: boolean }> = ({ isFullPage = f
     },
     {
       q: 'Can I consult with specialists virtually via telehealth?',
-      a: 'Yes, all Aura physicians offer encrypted, browser-based video telehealth sessions. You will receive a secure meeting link upon booking—no external downloads or plugins required.',
+      a: 'Yes, all BioHealth physicians offer encrypted, browser-based video telehealth sessions. You will receive a secure meeting link upon booking—no external downloads or plugins required.',
     },
   ];
 
@@ -248,10 +248,10 @@ export const ContactView: React.FC<{ isFullPage?: boolean }> = ({ isFullPage = f
                 <div className="p-3.5 rounded-2xl bg-[#F9F7FB] border border-[#3E3445]/5">
                   <span className="font-bold text-[#3E3445] block">Records & Pathology Desk</span>
                   <a
-                    href="mailto:records@auramedical.internal"
+                    href="mailto:records@biohealthmedical.internal"
                     className="font-mono text-xs font-semibold text-[#8B6FAE] hover:underline"
                   >
-                    records@auramedical.internal
+                    records@biohealthmedical.internal
                   </a>
                   <span className="text-[11px] text-[#756B7C] block mt-0.5">
                     HIPAA compliant digital exchange

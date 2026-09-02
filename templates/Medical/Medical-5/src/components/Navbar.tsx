@@ -81,7 +81,7 @@ export const Navbar: React.FC = () => {
               </div>
               <div>
                 <span className="serif text-2xl font-bold tracking-tight text-[#3E3445] group-hover:text-[#665080] transition-colors">
-                  Aura
+                  BioHealth
                 </span>
                 <span className="block text-[9px] tracking-[0.22em] font-bold text-[#8B6FAE] uppercase -mt-1">
                   Health & Care
@@ -232,7 +232,7 @@ export const Navbar: React.FC = () => {
                   <div className="w-8 h-8 rounded-xl bg-[#8B6FAE] flex items-center justify-center text-white">
                     <HeartPulse className="w-4 h-4" />
                   </div>
-                  <span className="font-serif text-xl font-bold text-[#3E3445]">Aura Health</span>
+                  <span className="font-serif text-xl font-bold text-[#3E3445]">BioHealth Health</span>
                 </div>
                 <button
                   id="mobile-close-drawer-btn"

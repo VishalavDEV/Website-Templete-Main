@@ -42,7 +42,7 @@ export const LocationsView: React.FC<{ isFullPage?: boolean }> = ({ isFullPage =
             Thoughtfully designed medical sanctuaries.
           </h2>
           <p className="text-sm sm:text-base text-[#756B7C] mt-3 leading-relaxed">
-            Every Aura Health facility is acoustically softened, filled with natural light, and
+            Every BioHealth Health facility is acoustically softened, filled with natural light, and
             engineered to deliver unhurried clinical precision.
           </p>
         </div>

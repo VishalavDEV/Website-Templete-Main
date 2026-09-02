@@ -60,7 +60,7 @@ RECOMMENDATIONS:
 ${rep.recommendations.map((r) => `> ${r}`).join('\n')}
 
 =====================================================
-Digital Signature: Dr. Verified Aura Healthcare
+Digital Signature: Dr. Verified BioHealth Healthcare
 =====================================================
     `.trim();
 
@@ -77,7 +77,7 @@ Digital Signature: Dr. Verified Aura Healthcare
   const handleShare = () => {
     if (navigator.clipboard) {
       navigator.clipboard.writeText(
-        `https://auramedical.internal/portal/reports/${rep.id}`
+        `https://biohealthmedical.internal/portal/reports/${rep.id}`
       );
       showToast('Secure report link copied to clipboard', 'info');
     } else {
@@ -264,7 +264,7 @@ Digital Signature: Dr. Verified Aura Healthcare
         {/* Footer Actions */}
         <div className="p-5 border-t border-[#3E3445]/8 bg-[#F9F7FB] flex items-center justify-between">
           <span className="text-xs text-[#756B7C]">
-            Verified Diagnostic Laboratory • Aura Health Central
+            Verified Diagnostic Laboratory • BioHealth Health Central
           </span>
           <div className="flex items-center gap-2">
             <button

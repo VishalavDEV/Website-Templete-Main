@@ -262,11 +262,11 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     const icsContent = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//Aura Health//Lilac Frost Medical//EN',
+      'PRODID:-//BioHealth Health//Lilac Frost Medical//EN',
       'CALSCALE:GREGORIAN',
       'METHOD:PUBLISH',
       'BEGIN:VEVENT',
-      `UID:${apt.id}@auramedical.com`,
+      `UID:${apt.id}@biohealthmedical.com`,
       `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z`,
       `DTSTART:${startDateFormatted}T100000Z`,
       `DTEND:${startDateFormatted}T110000Z`,

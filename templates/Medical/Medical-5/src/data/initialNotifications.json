@@ -2,7 +2,7 @@
   {
     "id": "notif-1",
     "title": "Appointment Reminder",
-    "message": "Upcoming consultation with Dr. Maya Raman on August 28 at 10:30 AM at Aura Medical Pavilion.",
+    "message": "Upcoming consultation with Dr. Maya Raman on August 28 at 10:30 AM at BioHealth Medical Pavilion.",
     "time": "10 minutes ago",
     "read": false,
     "type": "appointment",
@@ -26,7 +26,7 @@
   {
     "id": "notif-3",
     "title": "Prescription Refill Ready",
-    "message": "Vitamin D3 + K2 refill has been authorized at Aura Central Pharmacy.",
+    "message": "Vitamin D3 + K2 refill has been authorized at BioHealth Central Pharmacy.",
     "time": "1 day ago",
     "read": true,
     "type": "prescription",

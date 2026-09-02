@@ -26,13 +26,13 @@ import initialAppointmentsData from '../data/initialAppointments.json';
 import initialNotificationsData from '../data/initialNotifications.json';
 
 const STORAGE_KEYS = {
-  APPOINTMENTS: 'aura_health_appointments_v1',
-  NOTIFICATIONS: 'aura_health_notifications_v1',
-  SAVED_ARTICLES: 'aura_health_saved_articles_v1',
-  PROFILE: 'aura_health_patient_profile_v1',
-  CONTACT_SUBMISSIONS: 'aura_health_contact_submissions_v1',
-  PRESCRIPTIONS: 'aura_health_prescriptions_v1',
-  MESSAGES: 'aura_health_messages_v1',
+  APPOINTMENTS: 'biohealth_appointments_v1',
+  NOTIFICATIONS: 'biohealth_notifications_v1',
+  SAVED_ARTICLES: 'biohealth_saved_articles_v1',
+  PROFILE: 'biohealth_patient_profile_v1',
+  CONTACT_SUBMISSIONS: 'biohealth_contact_submissions_v1',
+  PRESCRIPTIONS: 'biohealth_prescriptions_v1',
+  MESSAGES: 'biohealth_messages_v1',
 };
 
 const delay = (ms = 300) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -214,7 +214,7 @@ export const mockApi = {
       status: 'confirmed',
       meetingLink:
         data.consultationType === 'video'
-          ? `https://telehealth.auramedical.internal/room/apt-${Math.floor(
+          ? `https://telehealth.biohealthmedical.internal/room/apt-${Math.floor(
               10000 + Math.random() * 90000
             )}`
           : undefined,
@@ -326,7 +326,7 @@ export const mockApi = {
         ...list[index],
         status: 'Refill Requested',
         refillsRemaining: list[index].refillsRemaining - 1,
-        pharmacyNote: 'Refill requested — Aura Pharmacy is preparing order #RX-REFILL',
+        pharmacyNote: 'Refill requested — BioHealth Pharmacy is preparing order #RX-REFILL',
       };
     }
 

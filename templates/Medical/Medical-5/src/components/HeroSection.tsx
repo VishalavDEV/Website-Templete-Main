@@ -127,7 +127,7 @@ export const HeroSection: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#3E3445]/50 via-transparent to-transparent" />
 
                 <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <p className="serif text-lg font-bold">Aura Medical Pavilion</p>
+                  <p className="serif text-lg font-bold">BioHealth Medical Pavilion</p>
                   <p className="text-xs text-white/90">
                     Designed for peace, privacy, and clinical precision.
                   </p>

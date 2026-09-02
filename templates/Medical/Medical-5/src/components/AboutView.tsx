@@ -33,7 +33,7 @@ export const AboutView: React.FC<{ isFullPage?: boolean }> = ({ isFullPage = fal
             </h2>
 
             <p className="text-base text-[#756B7C] leading-relaxed">
-              Aura Health was founded on a simple realization: medicine shouldn't feel like a factory.
+              BioHealth Health was founded on a simple realization: medicine shouldn't feel like a factory.
               When care environments are calming, consultations are unrushed, and diagnostic tools are
               state-of-the-art, patients make better decisions and heal faster.
             </p>
@@ -50,7 +50,7 @@ export const AboutView: React.FC<{ isFullPage?: boolean }> = ({ isFullPage = fal
                 onClick={() => openBooking()}
                 className="px-7 py-3.5 bg-[#8B6FAE] hover:bg-[#665080] text-white font-semibold text-xs rounded-full shadow-[0_6px_20px_rgba(139,111,174,0.3)] transition-all"
               >
-                Experience Aura Care
+                Experience BioHealth Care
               </button>
 
               <button
@@ -67,7 +67,7 @@ export const AboutView: React.FC<{ isFullPage?: boolean }> = ({ isFullPage = fal
             <div className="rounded-[2.5rem] overflow-hidden border-2 border-white shadow-2xl bg-white">
               <img
                 src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=800&q=80"
-                alt="Aura Health Medical Pavilion Serene Interior"
+                alt="BioHealth Health Medical Pavilion Serene Interior"
                 className="w-full h-[420px] object-cover"
               />
             </div>
@@ -78,7 +78,7 @@ export const AboutView: React.FC<{ isFullPage?: boolean }> = ({ isFullPage = fal
         <div className="mb-20">
           <div className="text-center max-w-xl mx-auto mb-12">
             <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#3E3445]">
-              The Four Pillars of Aura Medicine
+              The Four Pillars of BioHealth Medicine
             </h3>
             <p className="text-xs sm:text-sm text-[#756B7C] mt-2">
               How our practice architecture transforms patient outcomes

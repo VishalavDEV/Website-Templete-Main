@@ -65,7 +65,7 @@ export const HealthLibraryView: React.FC<{ isFullPage?: boolean }> = ({ isFullPa
               Evidence-based longevity & health science.
             </h2>
             <p className="text-sm sm:text-base text-[#756B7C] mt-3 leading-relaxed">
-              Curated clinical articles and wellness protocols written directly by Aura Health
+              Curated clinical articles and wellness protocols written directly by BioHealth Health
               attending physicians and clinical researchers.
             </p>
           </div>
