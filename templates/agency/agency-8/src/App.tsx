@@ -35,10 +35,15 @@ import { NotFoundPage } from './pages/NotFoundPage';
 import { CursorType } from './types';
 
 export default function App() {
+  const normalizePath = (rawPath: string) => {
+    let p = rawPath.replace('/templates/agency/agency-8', '');
+    if (p === '' || p === '/index.html') return '/';
+    return p;
+  };
+
   const [currentRoute, setCurrentRoute] = useState<string>(() => {
     if (typeof window !== 'undefined') {
-      const path = window.location.pathname;
-      return path;
+      return normalizePath(window.location.pathname);
     }
     return '/';
   });

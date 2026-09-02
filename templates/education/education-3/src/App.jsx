@@ -32,7 +32,7 @@ export default function App() {
   const handleCloseAdmissions = () => setIsAdmissionsOpen(false);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/templates/education/education-3">
       <ScrollToTop />
       
       {/* Desktop Custom Cursor */}
@@ -44,6 +44,7 @@ export default function App() {
       {/* Main Page Routes */}
       <Routes>
         <Route path="/" element={<Home onOpenAdmissions={handleOpenAdmissions} />} />
+        <Route path="/index.html" element={<Home onOpenAdmissions={handleOpenAdmissions} />} />
         <Route path="/programs" element={<Programs onOpenAdmissions={handleOpenAdmissions} />} />
         <Route path="/programs/:id" element={<ProgramDetails onOpenAdmissions={handleOpenAdmissions} />} />
         <Route path="/research" element={<Research />} />

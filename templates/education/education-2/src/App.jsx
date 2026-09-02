@@ -38,7 +38,7 @@ export default function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/templates/education/education-2">
       <div className="flex flex-col min-h-screen font-sans bg-slate-50 text-slate-900 selection:bg-primary-500 selection:text-white">
         {/* Scroll Handler & Sticky Button */}
         <ScrollToTop />
@@ -51,6 +51,16 @@ export default function App() {
           <Routes>
             <Route
               path="/"
+              element={
+                <Home
+                  onEnroll={handleEnroll}
+                  onViewInstructor={handleViewInstructor}
+                  onRegisterEvent={handleRegisterEvent}
+                />
+              }
+            />
+            <Route
+              path="/index.html"
               element={
                 <Home
                   onEnroll={handleEnroll}
