@@ -13,7 +13,7 @@ export const TeamValues: React.FC<TeamValuesProps> = ({ setCursorType }) => {
   return (
     <section className="py-24 sm:py-36 bg-[#080808] border-t border-[#ffffff10] relative overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-[#0066FF]/[0.025] rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-[#6366f1]/[0.025] rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-16">
         {/* Section Header */}
@@ -24,7 +24,7 @@ export const TeamValues: React.FC<TeamValuesProps> = ({ setCursorType }) => {
             viewport={{ once: true }}
             className="flex items-center gap-2"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
             <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#888888]">
               STUDIO PRINCIPLES
             </span>
@@ -37,7 +37,7 @@ export const TeamValues: React.FC<TeamValuesProps> = ({ setCursorType }) => {
             className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.92]"
           >
             WHAT BRINGS <br />
-            <span className="font-editorial italic font-normal text-[#0066FF] tracking-normal lowercase text-[1.05em]">
+            <span className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-[1.05em]">
               us together.
             </span>
           </motion.h2>
@@ -70,7 +70,7 @@ export const TeamValues: React.FC<TeamValuesProps> = ({ setCursorType }) => {
               >
                 {/* Number & Value Name */}
                 <div className="lg:col-span-6 flex items-baseline gap-6 sm:gap-8">
-                  <span className="font-mono text-xs sm:text-sm text-[#0066FF] font-bold tracking-widest">
+                  <span className="font-mono text-xs sm:text-sm text-[#6366f1] font-bold tracking-widest">
                     {val.number}
                   </span>
                   <div>

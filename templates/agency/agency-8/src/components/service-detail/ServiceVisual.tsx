@@ -46,7 +46,7 @@ export const ServiceVisual: React.FC<ServiceVisualProps> = ({
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
 
           {/* Top Left Metadata Badge */}
-          <div className="absolute top-6 left-6 px-3.5 py-1.5 bg-black/70 backdrop-blur-md rounded-full border border-white/15 text-xs font-mono text-[#0066FF] uppercase tracking-widest pointer-events-none font-semibold">
+          <div className="absolute top-6 left-6 px-3.5 py-1.5 bg-black/70 backdrop-blur-md rounded-full border border-white/15 text-xs font-mono text-[#6366f1] uppercase tracking-widest pointer-events-none font-semibold">
             {service.featuredMetadata}
           </div>
 

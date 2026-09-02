@@ -14,7 +14,7 @@ export const ProjectCTA: React.FC<ProjectCTAProps> = ({ onOpenProjectModal, setC
     <section className="py-28 sm:py-40 bg-[#080808] relative overflow-hidden text-center">
       <div className="max-w-4xl mx-auto px-6 sm:px-8 relative z-10 space-y-8">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.03] border border-[#ffffff15]">
-          <Sparkles className="w-3.5 h-3.5 text-[#0066FF]" />
+          <Sparkles className="w-3.5 h-3.5 text-[#6366f1]" />
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
             COLLABORATION
           </span>
@@ -34,7 +34,7 @@ export const ProjectCTA: React.FC<ProjectCTAProps> = ({ onOpenProjectModal, setC
             onClick={onOpenProjectModal}
             onCursorEnter={() => setCursorType('button')}
             onCursorLeave={() => setCursorType('default')}
-            className="group px-10 sm:px-14 py-5 sm:py-6 rounded-full bg-[#0066FF] text-white font-display font-black text-sm sm:text-base uppercase tracking-widest flex items-center gap-3 hover:brightness-110 transition-all duration-300 shadow-2xl shadow-[#0066FF]/40 cursor-pointer"
+            className="group px-10 sm:px-14 py-5 sm:py-6 rounded-full bg-[#6366f1] text-white font-display font-black text-sm sm:text-base uppercase tracking-widest flex items-center gap-3 hover:brightness-110 transition-all duration-300 shadow-2xl shadow-[#6366f1]/40 cursor-pointer"
           >
             <span>START A PROJECT</span>
             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

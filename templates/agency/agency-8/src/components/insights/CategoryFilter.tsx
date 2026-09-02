@@ -40,7 +40,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
                 <span>{category}</span>
                 <span
                   className={`text-[10px] ${
-                    isActive ? 'text-[#0066FF]' : 'text-[#555555]'
+                    isActive ? 'text-[#6366f1]' : 'text-[#555555]'
                   }`}
                 >
                   [{count < 10 ? `0${count}` : count}]
@@ -50,7 +50,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
                 {isActive && (
                   <motion.div
                     layoutId="activeCategoryUnderline"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#0066FF]"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#6366f1]"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -61,7 +61,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
 
         {/* Right Label (Editorial Stamp) */}
         <div className="hidden md:flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-[#666666] shrink-0">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
           <span>FILTERED ARCHIVE</span>
         </div>
       </div>

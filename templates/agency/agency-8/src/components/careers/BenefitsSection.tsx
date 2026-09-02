@@ -10,8 +10,8 @@ export const BenefitsSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-white/10">
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#0066FF] font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#6366f1] font-semibold">
                 06 / WHAT WE OFFER
               </span>
             </div>
@@ -38,14 +38,14 @@ export const BenefitsSection: React.FC = () => {
             >
               {/* Number Index */}
               <div className="md:col-span-2">
-                <span className="font-mono text-xs sm:text-sm text-[#0066FF] font-bold tracking-widest">
+                <span className="font-mono text-xs sm:text-sm text-[#6366f1] font-bold tracking-widest">
                   [ {benefit.number} ]
                 </span>
               </div>
 
               {/* Benefit Title */}
               <div className="md:col-span-4">
-                <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-[#FAF9F6] uppercase tracking-tight group-hover:text-[#0066FF] transition-colors">
+                <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-[#FAF9F6] uppercase tracking-tight group-hover:text-[#6366f1] transition-colors">
                   {benefit.title}
                 </h3>
               </div>

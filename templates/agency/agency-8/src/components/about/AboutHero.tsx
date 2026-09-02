@@ -17,7 +17,7 @@ export const AboutHero: React.FC<AboutHeroProps> = ({ setCursorType }) => {
   return (
     <section className="relative pt-36 pb-20 sm:pt-44 sm:pb-28 overflow-hidden">
       {/* Background Subtle Ambient Glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-[#0066FF]/[0.035] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-[#6366f1]/[0.035] rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Top Metadata Line */}
@@ -28,7 +28,7 @@ export const AboutHero: React.FC<AboutHeroProps> = ({ setCursorType }) => {
             transition={{ duration: 0.5 }}
             className="flex items-center gap-2"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
               ABOUT THE STUDIO
             </span>
@@ -74,7 +74,7 @@ export const AboutHero: React.FC<AboutHeroProps> = ({ setCursorType }) => {
                   initial={{ y: '100%' }}
                   animate={{ y: 0 }}
                   transition={{ duration: 0.65, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
-                  className="block text-[#0066FF]"
+                  className="block text-[#6366f1]"
                 >
                   MATTER.
                 </motion.span>
@@ -124,7 +124,7 @@ export const AboutHero: React.FC<AboutHeroProps> = ({ setCursorType }) => {
 
           <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between pointer-events-none">
             <div className="space-y-1">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-[#0066FF] block font-bold">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[#6366f1] block font-bold">
                 CRAFT OVER CONFORMITY
               </span>
               <p className="text-xs sm:text-sm text-[#FAF9F6] font-medium">

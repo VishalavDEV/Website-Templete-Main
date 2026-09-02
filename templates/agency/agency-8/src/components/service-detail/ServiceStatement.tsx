@@ -28,7 +28,7 @@ export const ServiceStatement: React.FC<ServiceStatementProps> = ({ service }) =
           viewport={{ once: true }}
           className="flex items-center gap-2 mb-12 sm:mb-16"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
             {service.statementLabel}
           </span>
@@ -45,7 +45,7 @@ export const ServiceStatement: React.FC<ServiceStatementProps> = ({ service }) =
               className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.92]"
             >
               {service.statementHeadline.line1} <br />
-              <span className="font-editorial italic font-normal text-[#0066FF] tracking-normal lowercase text-[1.04em]">
+              <span className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-[1.04em]">
                 {service.statementHeadline.line2}
               </span> <br />
               {service.statementHeadline.line3}
@@ -71,7 +71,7 @@ export const ServiceStatement: React.FC<ServiceStatementProps> = ({ service }) =
               className="pt-6 border-t border-white/10 flex items-center justify-between font-mono text-xs text-[#666666] uppercase tracking-wider"
             >
               <span>DISCIPLINE {service.number}</span>
-              <span className="text-[#0066FF]">{service.statementFootnote}</span>
+              <span className="text-[#6366f1]">{service.statementFootnote}</span>
             </motion.div>
           </div>
         </div>

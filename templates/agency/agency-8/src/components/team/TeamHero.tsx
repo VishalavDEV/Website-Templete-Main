@@ -14,7 +14,7 @@ export const TeamHero: React.FC<TeamHeroProps> = ({ setCursorType }) => {
     <section className="relative min-h-[92vh] sm:min-h-screen pt-32 pb-20 flex flex-col justify-between overflow-hidden bg-[#080808]">
       {/* Ambient Radial Glow */}
       <div
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[550px] rounded-full blur-[200px] pointer-events-none opacity-20 bg-[#0066FF]"
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[550px] rounded-full blur-[200px] pointer-events-none opacity-20 bg-[#6366f1]"
       />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10 space-y-12">
@@ -26,7 +26,7 @@ export const TeamHero: React.FC<TeamHeroProps> = ({ setCursorType }) => {
           className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#ffffff15] pb-6"
         >
           <div className="flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-[#0066FF]" />
+            <span className="w-2 h-2 rounded-full bg-[#6366f1]" />
             <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#888888]">
               THE PEOPLE BEHIND THE WORK
             </span>
@@ -78,7 +78,7 @@ export const TeamHero: React.FC<TeamHeroProps> = ({ setCursorType }) => {
 
           <div className="lg:col-span-5 flex flex-col justify-end space-y-2 font-mono text-xs text-[#888888] tracking-wider uppercase">
             <div className="flex items-center gap-2">
-              <Sparkles className="w-3.5 h-3.5 text-[#0066FF]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#6366f1]" />
               <span>COLLECTIVE TALENT // ZERO BUREAUCRACY</span>
             </div>
             <p className="text-[11px] text-[#888888] lowercase font-sans">
@@ -133,7 +133,7 @@ export const TeamHero: React.FC<TeamHeroProps> = ({ setCursorType }) => {
         className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full mt-10 flex items-center justify-between text-xs font-mono text-[#888888] tracking-widest uppercase"
       >
         <div className="flex items-center gap-2">
-          <ArrowDown className="w-3.5 h-3.5 animate-bounce text-[#0066FF]" />
+          <ArrowDown className="w-3.5 h-3.5 animate-bounce text-[#6366f1]" />
           <span>SCROLL TO MEET THE COLLECTIVE</span>
         </div>
         <span className="hidden sm:inline">01 // INTRODUCTION</span>

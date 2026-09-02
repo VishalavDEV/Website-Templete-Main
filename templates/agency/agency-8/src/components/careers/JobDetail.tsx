@@ -51,13 +51,13 @@ export const JobDetail: React.FC<JobDetailProps> = ({
             <span className="text-[#666666] uppercase tracking-widest block mb-1">
               EXPERIENCE
             </span>
-            <span className="text-[#0066FF] font-bold uppercase">{job.experience}</span>
+            <span className="text-[#6366f1] font-bold uppercase">{job.experience}</span>
           </div>
         </div>
 
         {/* About the role */}
         <div className="space-y-4">
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#0066FF] font-semibold block">
+          <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#6366f1] font-semibold block">
             ABOUT THE ROLE
           </span>
           <p className="font-body text-base sm:text-lg text-[#FAF9F6] font-light leading-relaxed">
@@ -76,7 +76,7 @@ export const JobDetail: React.FC<JobDetailProps> = ({
                 key={i}
                 className="flex items-start gap-3 font-body text-sm sm:text-base text-[#A0A0A0] font-light leading-relaxed"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF] mt-2 shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1] mt-2 shrink-0" />
                 <span>{resp}</span>
               </li>
             ))}
@@ -140,7 +140,7 @@ export const JobDetail: React.FC<JobDetailProps> = ({
             }}
             onCursorEnter={() => setCursorType('button', 'APPLY ↗')}
             onCursorLeave={() => setCursorType('default')}
-            className="inline-flex items-center gap-3 px-8 py-4 bg-[#0066FF] hover:brightness-110 text-white font-mono text-xs uppercase tracking-widest font-bold border border-[#0066FF]/50 transition-all duration-300 cursor-pointer shadow-lg shadow-[#0066FF]/20"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-[#6366f1] hover:brightness-110 text-white font-mono text-xs uppercase tracking-widest font-bold border border-[#6366f1]/50 transition-all duration-300 cursor-pointer shadow-lg shadow-[#6366f1]/20"
           >
             <span>APPLY FOR THIS ROLE</span>
             <ArrowUpRight className="w-4 h-4" />

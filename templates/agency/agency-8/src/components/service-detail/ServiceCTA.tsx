@@ -16,7 +16,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
   return (
     <section className="py-32 sm:py-48 bg-[#080808] border-t border-[#ffffff10] px-6 sm:px-8 lg:px-12 relative overflow-hidden text-center">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#0066FF]/[0.04] rounded-full blur-[200px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#6366f1]/[0.04] rounded-full blur-[200px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10 space-y-10">
         {/* Eyebrow */}
@@ -26,7 +26,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
           viewport={{ once: true }}
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
             INITIATE ENGAGEMENT
           </span>
@@ -42,7 +42,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
             className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.9]"
           >
             HAVE A <br />
-            <span className="font-editorial italic font-normal text-[#0066FF] tracking-normal lowercase text-[1.05em]">
+            <span className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-[1.05em]">
               challenge?
             </span> <br />
             LET'S SOLVE IT.
@@ -72,7 +72,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
             onClick={onOpenProjectModal}
             onCursorEnter={() => setCursorType('button')}
             onCursorLeave={() => setCursorType('default')}
-            className="group inline-flex items-center gap-3 px-10 py-5 bg-[#0066FF] hover:bg-[#0055dd] text-white font-bold text-sm uppercase tracking-widest transition-all duration-300 rounded-full shadow-2xl shadow-[#0066FF]/30"
+            className="group inline-flex items-center gap-3 px-10 py-5 bg-[#6366f1] hover:bg-[#0055dd] text-white font-bold text-sm uppercase tracking-widest transition-all duration-300 rounded-full shadow-2xl shadow-[#6366f1]/30"
           >
             <span>START A PROJECT</span>
             <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />

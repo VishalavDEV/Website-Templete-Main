@@ -79,7 +79,7 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({ isOpen
             animate={{ opacity: 1, scale: 1 }}
             className="py-12 text-center space-y-6"
           >
-            <div className="w-16 h-16 rounded-full bg-[#0066FF]/20 border border-[#0066FF]/40 text-[#0066FF] flex items-center justify-center mx-auto">
+            <div className="w-16 h-16 rounded-full bg-[#6366f1]/20 border border-[#6366f1]/40 text-[#6366f1] flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-8 h-8" />
             </div>
             <div className="space-y-2">
@@ -92,7 +92,7 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({ isOpen
             </div>
             <button
               onClick={handleReset}
-              className="px-6 py-3.5 bg-[#0066FF] hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
+              className="px-6 py-3.5 bg-[#6366f1] hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
             >
               Return to Website &nearr;
             </button>
@@ -100,8 +100,8 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({ isOpen
         ) : (
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-[#0066FF] text-xs font-mono uppercase tracking-[0.25em] font-semibold">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+              <div className="flex items-center gap-2 text-[#6366f1] text-xs font-mono uppercase tracking-[0.25em] font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
                 <span>Project Initialization</span>
               </div>
               <h3 className="font-display text-3xl sm:text-4xl font-bold text-[#FAF9F6] tracking-tight uppercase">
@@ -127,7 +127,7 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({ isOpen
                       onClick={() => toggleService(s.name)}
                       className={`px-4 py-2 text-xs font-mono uppercase tracking-wider transition-all cursor-pointer ${
                         isSelected
-                          ? 'bg-[#0066FF] text-white font-bold border border-[#0066FF]'
+                          ? 'bg-[#6366f1] text-white font-bold border border-[#6366f1]'
                           : 'bg-white/[0.03] text-[#888888] hover:text-[#FAF9F6] border border-[#ffffff15] hover:bg-white/[0.08]'
                       }`}
                     >
@@ -196,7 +196,7 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({ isOpen
                   placeholder="e.g. Alex Morgan, CEO"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 bg-white/[0.03] border border-[#ffffff15] text-[#FAF9F6] placeholder-[#555555] text-sm focus:outline-hidden focus:border-[#0066FF] transition-colors font-mono"
+                  className="w-full px-4 py-3 bg-white/[0.03] border border-[#ffffff15] text-[#FAF9F6] placeholder-[#555555] text-sm focus:outline-hidden focus:border-[#6366f1] transition-colors font-mono"
                 />
               </div>
               <div className="space-y-1.5">
@@ -209,7 +209,7 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({ isOpen
                   placeholder="alex@company.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 bg-white/[0.03] border border-[#ffffff15] text-[#FAF9F6] placeholder-[#555555] text-sm focus:outline-hidden focus:border-[#0066FF] transition-colors font-mono"
+                  className="w-full px-4 py-3 bg-white/[0.03] border border-[#ffffff15] text-[#FAF9F6] placeholder-[#555555] text-sm focus:outline-hidden focus:border-[#6366f1] transition-colors font-mono"
                 />
               </div>
             </div>
@@ -224,14 +224,14 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({ isOpen
                 placeholder="Tell us about the product, vision, and core challenges..."
                 value={details}
                 onChange={(e) => setDetails(e.target.value)}
-                className="w-full px-4 py-3 bg-white/[0.03] border border-[#ffffff15] text-[#FAF9F6] placeholder-[#555555] text-sm focus:outline-hidden focus:border-[#0066FF] transition-colors resize-none font-mono"
+                className="w-full px-4 py-3 bg-white/[0.03] border border-[#ffffff15] text-[#FAF9F6] placeholder-[#555555] text-sm focus:outline-hidden focus:border-[#6366f1] transition-colors resize-none font-mono"
               />
             </div>
 
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-4 bg-[#0066FF] hover:brightness-110 text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer"
+              className="w-full py-4 bg-[#6366f1] hover:brightness-110 text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer"
             >
               <span>Transmit Project Brief &nearr;</span>
             </button>

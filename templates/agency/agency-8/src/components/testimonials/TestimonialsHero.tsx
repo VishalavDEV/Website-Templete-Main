@@ -28,7 +28,7 @@ export const TestimonialsHero: React.FC<TestimonialsHeroProps> = ({
   return (
     <section className="relative min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-between pt-36 sm:pt-44 pb-16 px-6 sm:px-8 lg:px-12 overflow-hidden border-b border-[#ffffff10]">
       {/* Ambient background glow & atmospheric texture */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] sm:w-[900px] h-[500px] bg-[#0066FF]/[0.035] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] sm:w-[900px] h-[500px] bg-[#6366f1]/[0.035] rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute top-12 right-12 w-64 h-64 bg-blue-500/[0.015] rounded-full blur-[100px] pointer-events-none" />
 
       {/* Decorative Grid Accent */}
@@ -45,14 +45,14 @@ export const TestimonialsHero: React.FC<TestimonialsHeroProps> = ({
           className="flex flex-wrap items-center justify-between gap-4 mb-10 sm:mb-14"
         >
           <div className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-[#0066FF] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#6366f1] animate-pulse" />
             <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#FAF9F6]">
               CLIENT STORIES
             </span>
           </div>
 
           <div className="hidden sm:flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-[#888888]">
-            <Sparkles className="w-3.5 h-3.5 text-[#0066FF]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#6366f1]" />
             <span>AUTHENTIC PARTNERSHIPS & IMPACT</span>
           </div>
         </motion.div>
@@ -131,7 +131,7 @@ export const TestimonialsHero: React.FC<TestimonialsHeroProps> = ({
       {/* Bottom Scroll / Explore cue */}
       <div className="max-w-7xl mx-auto w-full pt-10 flex justify-between items-center text-xs font-mono text-[#888888]">
         <div className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
           <span>INDEX 01–08</span>
         </div>
 
@@ -143,7 +143,7 @@ export const TestimonialsHero: React.FC<TestimonialsHeroProps> = ({
             className="group inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#888888] hover:text-white transition-colors cursor-pointer"
           >
             <span>EXPLORE STORIES</span>
-            <ArrowDown className="w-3.5 h-3.5 group-hover:translate-y-1 transition-transform text-[#0066FF]" />
+            <ArrowDown className="w-3.5 h-3.5 group-hover:translate-y-1 transition-transform text-[#6366f1]" />
           </button>
         )}
       </div>

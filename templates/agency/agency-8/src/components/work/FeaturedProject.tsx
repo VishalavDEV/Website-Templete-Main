@@ -37,13 +37,13 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
         {/* Section Lead Marker */}
         <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#ffffff10]">
           <div className="flex items-center gap-3 text-xs font-mono tracking-[0.3em] uppercase text-[#888888]">
-            <span className="w-2 h-2 rounded-full bg-[#0066FF]" />
+            <span className="w-2 h-2 rounded-full bg-[#6366f1]" />
             <span className="text-[#FAF9F6] font-semibold">FLAGSHIP EXHIBITION</span>
             <span>//</span>
             <span>01 OF ARCHIVE</span>
           </div>
 
-          <div className="hidden sm:flex items-center gap-2 text-xs font-mono text-[#0066FF] font-bold">
+          <div className="hidden sm:flex items-center gap-2 text-xs font-mono text-[#6366f1] font-bold">
             <Sparkles className="w-3.5 h-3.5" />
             <span>FEATURED SHOWCASE</span>
           </div>
@@ -58,7 +58,7 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
           onClick={handleClick}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="group relative cursor-pointer block rounded-3xl overflow-hidden bg-[#0e0e11] border border-[#ffffff18] hover:border-[#0066FF]/60 transition-all duration-700 shadow-2xl"
+          className="group relative cursor-pointer block rounded-3xl overflow-hidden bg-[#0e0e11] border border-[#ffffff18] hover:border-[#6366f1]/60 transition-all duration-700 shadow-2xl"
         >
           {/* Main Visual Image Viewport */}
           <div className="relative aspect-[16/10] md:aspect-[21/10] w-full overflow-hidden">
@@ -85,7 +85,7 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
               </div>
 
               {project.metrics && (
-                <span className="px-4 py-1.5 bg-[#0066FF] text-xs font-mono tracking-widest text-white uppercase font-bold shadow-lg shadow-[#0066FF]/30">
+                <span className="px-4 py-1.5 bg-[#6366f1] text-xs font-mono tracking-widest text-white uppercase font-bold shadow-lg shadow-[#6366f1]/30">
                   {project.metrics}
                 </span>
               )}
@@ -96,7 +96,7 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
               <div className="space-y-3 max-w-3xl">
                 <div className="flex items-center gap-3">
                   <span className={`text-xs font-mono uppercase tracking-[0.3em] font-bold transition-colors duration-300 ${
-                    isHovered ? 'text-[#0066FF]' : 'text-white/80'
+                    isHovered ? 'text-[#6366f1]' : 'text-white/80'
                   }`}>
                     {project.client}
                   </span>
@@ -121,7 +121,7 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
 
               {/* Action Button Indicator */}
               <div className="flex items-center gap-3 shrink-0">
-                <div className="px-6 py-3.5 rounded-full bg-white text-black font-display font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:bg-[#0066FF] group-hover:text-white transition-all duration-300 shadow-xl">
+                <div className="px-6 py-3.5 rounded-full bg-white text-black font-display font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:bg-[#6366f1] group-hover:text-white transition-all duration-300 shadow-xl">
                   <span>View Case Study</span>
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
@@ -141,7 +141,7 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
             </div>
 
             {project.award && (
-              <div className="flex items-center gap-2 text-[#0066FF] font-medium shrink-0">
+              <div className="flex items-center gap-2 text-[#6366f1] font-medium shrink-0">
                 <Award className="w-3.5 h-3.5" />
                 <span>{project.award}</span>
               </div>

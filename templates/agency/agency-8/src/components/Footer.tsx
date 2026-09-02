@@ -104,7 +104,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProjectModal, setCursorTyp
           {/* Column 1: Studio Info & Live Locations */}
           <div className="md:col-span-5 space-y-8">
             <div className="flex items-center gap-3 text-[#FAF9F6] font-display font-extrabold text-2xl tracking-[0.25em]">
-              <span className="w-2 h-2 rounded-full bg-[#0066FF]" />
+              <span className="w-2 h-2 rounded-full bg-[#6366f1]" />
               <span>STUDIO</span>
             </div>
 
@@ -173,7 +173,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProjectModal, setCursorTyp
                     className="group inline-flex items-center gap-1.5 text-[#888888] hover:text-[#FAF9F6] transition-colors"
                   >
                     <span>{item.name}</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-[#888888] group-hover:text-[#0066FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#888888] group-hover:text-[#6366f1] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </a>
                 </li>
               ))}
@@ -190,7 +190,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProjectModal, setCursorTyp
                 href="mailto:hello@studio.com"
                 onMouseEnter={() => setCursorType('pointer')}
                 onMouseLeave={() => setCursorType('default')}
-                className="block text-sm text-[#FAF9F6] hover:text-[#0066FF] transition-colors font-mono"
+                className="block text-sm text-[#FAF9F6] hover:text-[#6366f1] transition-colors font-mono"
               >
                 hello@studio.com
               </a>
@@ -203,8 +203,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProjectModal, setCursorTyp
               >
                 {copied ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-[#0066FF]" />
-                    <span className="text-[#0066FF]">Copied to clipboard</span>
+                    <Check className="w-3.5 h-3.5 text-[#6366f1]" />
+                    <span className="text-[#6366f1]">Copied to clipboard</span>
                   </>
                 ) : (
                   <>
@@ -219,7 +219,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProjectModal, setCursorTyp
                   onClick={onOpenProjectModal}
                   onMouseEnter={() => setCursorType('pointer')}
                   onMouseLeave={() => setCursorType('default')}
-                  className="px-4 py-2 bg-[#0066FF]/20 hover:bg-[#0066FF]/30 border border-[#0066FF]/40 text-[#0066FF] text-xs font-mono tracking-wider uppercase transition-colors cursor-pointer"
+                  className="px-4 py-2 bg-[#6366f1]/20 hover:bg-[#6366f1]/30 border border-[#6366f1]/40 text-[#6366f1] text-xs font-mono tracking-wider uppercase transition-colors cursor-pointer"
                 >
                   Brief Form &nearr;
                 </button>
@@ -251,7 +251,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProjectModal, setCursorTyp
               className="flex items-center gap-2 hover:text-[#FAF9F6] transition-colors cursor-pointer"
             >
               <span>BACK TO TOP</span>
-              <ArrowUp className="w-3.5 h-3.5 text-[#0066FF]" />
+              <ArrowUp className="w-3.5 h-3.5 text-[#6366f1]" />
             </button>
           </div>
         </div>

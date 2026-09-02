@@ -41,7 +41,7 @@ export const EditorialMarquee: React.FC = () => {
             <span className="font-display font-bold text-sm sm:text-base lg:text-lg tracking-[0.25em] uppercase text-white/40 hover:text-white transition-colors">
               {item}
             </span>
-            <span className="text-[#0066FF] font-mono text-xs">/</span>
+            <span className="text-[#6366f1] font-mono text-xs">/</span>
           </div>
         ))}
       </motion.div>

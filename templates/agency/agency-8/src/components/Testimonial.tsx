@@ -24,13 +24,13 @@ export const Testimonial: React.FC<TestimonialProps> = ({ setCursorType }) => {
   return (
     <section className="py-28 sm:py-36 border-t border-[#ffffff10] bg-[#080808] relative overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#0066FF]/[0.02] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#6366f1]/[0.02] rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Top Indicator / Section tag */}
         <div className="flex items-center justify-between mb-12 sm:mb-16">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
               CLIENT TESTIMONIALS
             </span>
@@ -71,7 +71,7 @@ export const Testimonial: React.FC<TestimonialProps> = ({ setCursorType }) => {
                       {current.author}
                     </h4>
                     <p className="text-xs text-[#888888] font-mono">
-                      {current.role}, <span className="text-[#0066FF]">{current.company}</span>
+                      {current.role}, <span className="text-[#6366f1]">{current.company}</span>
                     </p>
                   </div>
                 </div>

@@ -10,8 +10,8 @@ export const ServicesHero: React.FC<ServicesHeroProps> = ({ setCursorType }) => 
   return (
     <section className="relative min-h-[92vh] flex flex-col justify-between pt-32 sm:pt-40 pb-16 px-6 sm:px-8 lg:px-12 bg-[#080808] overflow-hidden border-b border-[#ffffff10]">
       {/* Ambient background subtle lighting */}
-      <div className="absolute top-1/4 -right-20 w-[600px] h-[600px] bg-[#0066FF]/[0.035] rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-[#0066FF]/[0.02] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/4 -right-20 w-[600px] h-[600px] bg-[#6366f1]/[0.035] rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-[#6366f1]/[0.02] rounded-full blur-[160px] pointer-events-none" />
 
       {/* Top section: Eyebrow + Breadcrumb */}
       <div className="max-w-7xl mx-auto w-full relative z-10">
@@ -22,7 +22,7 @@ export const ServicesHero: React.FC<ServicesHeroProps> = ({ setCursorType }) => 
           className="flex items-center justify-between border-b border-[#ffffff12] pb-6 mb-12 sm:mb-16"
         >
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#0066FF] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#6366f1] animate-pulse" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
               WHAT WE DO
             </span>
@@ -53,7 +53,7 @@ export const ServicesHero: React.FC<ServicesHeroProps> = ({ setCursorType }) => 
               className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[100px] xl:text-[116px] font-black uppercase text-[#FAF9F6] tracking-tight leading-[0.92] flex flex-wrap items-baseline gap-x-4 sm:gap-x-6"
             >
               <span>DESIGN</span>
-              <span className="font-editorial italic font-normal text-[#0066FF] tracking-normal lowercase text-[0.92em]">
+              <span className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-[0.92em]">
                 &amp;
               </span>
             </motion.h1>
@@ -92,7 +92,7 @@ export const ServicesHero: React.FC<ServicesHeroProps> = ({ setCursorType }) => 
             transition={{ duration: 0.7, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
             className="md:col-span-4 lg:col-span-5 flex flex-col md:items-end justify-end space-y-2"
           >
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#0066FF] font-semibold">
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#6366f1] font-semibold">
               CORE PILLARS
             </span>
             <span className="font-mono text-xs sm:text-sm tracking-[0.2em] text-[#888888] uppercase">

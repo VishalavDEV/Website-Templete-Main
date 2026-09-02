@@ -19,13 +19,13 @@ export const ApproachTimeline: React.FC<ApproachTimelineProps> = ({
   return (
     <section className="py-32 sm:py-48 bg-[#080808] border-t border-[#ffffff10] relative overflow-hidden">
       {/* Glow accent */}
-      <div className="absolute top-1/2 left-1/3 w-[600px] h-[600px] bg-[#0066FF]/[0.03] rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/3 w-[600px] h-[600px] bg-[#6366f1]/[0.03] rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Eyebrow */}
         <div className="flex items-center justify-between border-b border-[#ffffff12] pb-6 mb-12 sm:mb-16">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
               OUR METHODOLOGY
             </span>
@@ -45,7 +45,7 @@ export const ApproachTimeline: React.FC<ApproachTimelineProps> = ({
             className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.92]"
           >
             {service.approachHeading.line1} <br />
-            <span className="font-editorial italic font-normal text-[#0066FF] tracking-normal lowercase text-[1.05em]">
+            <span className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-[1.05em]">
               {service.approachHeading.line2}
             </span>
           </motion.h2>
@@ -75,7 +75,7 @@ export const ApproachTimeline: React.FC<ApproachTimelineProps> = ({
                   <div className="flex flex-col gap-1">
                     <span
                       className={`font-mono text-xs font-bold tracking-widest ${
-                        isActive ? 'text-[#0066FF]' : 'text-[#666666]'
+                        isActive ? 'text-[#6366f1]' : 'text-[#666666]'
                       }`}
                     >
                       {step.number} // {step.phase}
@@ -89,7 +89,7 @@ export const ApproachTimeline: React.FC<ApproachTimelineProps> = ({
                   {isActive && (
                     <motion.div
                       layoutId="approachActiveStepBar"
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#0066FF]"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#6366f1]"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -111,7 +111,7 @@ export const ApproachTimeline: React.FC<ApproachTimelineProps> = ({
               <div className="grid grid-cols-12 gap-10 lg:gap-16 items-start">
                 {/* Left (Phase overview) */}
                 <div className="col-span-5 space-y-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/[0.04] border border-white/10 rounded-full font-mono text-xs text-[#0066FF] uppercase tracking-wider">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/[0.04] border border-white/10 rounded-full font-mono text-xs text-[#6366f1] uppercase tracking-wider">
                     <span>{activeStep.detail}</span>
                   </div>
 
@@ -131,7 +131,7 @@ export const ApproachTimeline: React.FC<ApproachTimelineProps> = ({
 
                 {/* Right (Deliverables) */}
                 <div className="col-span-7 space-y-4 border-l border-white/10 pl-10 lg:pl-14">
-                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#0066FF] font-semibold block">
+                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#6366f1] font-semibold block">
                     KEY MILESTONES &amp; DELIVERABLES
                   </span>
 
@@ -139,17 +139,17 @@ export const ApproachTimeline: React.FC<ApproachTimelineProps> = ({
                     {activeStep.deliverables.map((del, idx) => (
                       <div
                         key={del}
-                        className="flex items-center justify-between p-4 bg-white/[0.02] border border-white/[0.08] rounded-lg hover:border-[#0066FF]/30 transition-colors"
+                        className="flex items-center justify-between p-4 bg-white/[0.02] border border-white/[0.08] rounded-lg hover:border-[#6366f1]/30 transition-colors"
                       >
                         <div className="flex items-center gap-3">
-                          <span className="font-mono text-xs text-[#0066FF]">
+                          <span className="font-mono text-xs text-[#6366f1]">
                             0{idx + 1}
                           </span>
                           <span className="font-sans text-sm sm:text-base text-[#FAF9F6] font-medium">
                             {del}
                           </span>
                         </div>
-                        <CheckCircle2 className="w-4 h-4 text-[#0066FF]" />
+                        <CheckCircle2 className="w-4 h-4 text-[#6366f1]" />
                       </div>
                     ))}
                   </div>
@@ -169,10 +169,10 @@ export const ApproachTimeline: React.FC<ApproachTimelineProps> = ({
           {service.approachSteps.map((step) => (
             <div key={step.number} className="relative space-y-3">
               {/* Timeline Bullet */}
-              <div className="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-[#0066FF] border-2 border-black" />
+              <div className="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-[#6366f1] border-2 border-black" />
 
               <div className="flex items-center gap-2">
-                <span className="font-mono text-xs text-[#0066FF] font-bold">
+                <span className="font-mono text-xs text-[#6366f1] font-bold">
                   {step.number} // {step.phase}
                 </span>
                 <span className="text-white/20">•</span>

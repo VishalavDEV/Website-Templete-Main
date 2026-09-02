@@ -34,8 +34,8 @@ export const JobList: React.FC<JobListProps> = ({ onApply, setCursorType }) => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 pb-8 border-b border-white/10">
           <div className="space-y-4 max-w-3xl">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#0066FF] font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#6366f1] font-semibold">
                 05 / OPPORTUNITIES
               </span>
             </div>
@@ -47,7 +47,7 @@ export const JobList: React.FC<JobListProps> = ({ onApply, setCursorType }) => {
           </div>
 
           <div className="flex flex-col items-start md:items-end gap-2 font-mono text-xs text-[#888888]">
-            <span className="text-[#0066FF] font-bold">
+            <span className="text-[#6366f1] font-bold">
               {OPEN_POSITIONS.length} ACTIVE RESIDENCIES
             </span>
             <span>AUTUMN / WINTER 2026</span>
@@ -72,7 +72,7 @@ export const JobList: React.FC<JobListProps> = ({ onApply, setCursorType }) => {
                 onMouseLeave={() => setCursorType('default')}
                 className={`px-4 py-2 font-mono text-xs uppercase tracking-wider transition-all duration-300 border cursor-pointer ${
                   isSelected
-                    ? 'bg-[#0066FF] border-[#0066FF] text-white'
+                    ? 'bg-[#6366f1] border-[#6366f1] text-white'
                     : 'bg-white/[0.02] border-white/10 text-[#888888] hover:border-white/30 hover:text-[#FAF9F6]'
                 }`}
               >

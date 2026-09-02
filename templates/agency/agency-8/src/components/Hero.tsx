@@ -88,7 +88,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal, setCursorType })
       className="relative min-h-screen w-full pt-32 pb-16 md:pt-40 md:pb-24 flex flex-col justify-between overflow-hidden bg-noise"
     >
       {/* Ambient background subtle lighting */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[#0066FF]/[0.05] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[#6366f1]/[0.05] rounded-full blur-[140px] pointer-events-none" />
 
       {/* Grid overlay */}
       <div className="absolute inset-0 bg-grid-subtle pointer-events-none opacity-40" />
@@ -108,8 +108,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal, setCursorType })
               variants={itemVariants}
               className="flex items-center gap-4 flex-wrap"
             >
-              <div className="text-[10px] font-mono font-bold uppercase tracking-[0.4em] text-[#0066FF] flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF] animate-pulse" />
+              <div className="text-[10px] font-mono font-bold uppercase tracking-[0.4em] text-[#6366f1] flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1] animate-pulse" />
                 <span>Creative Agency / 2026</span>
               </div>
 
@@ -152,7 +152,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal, setCursorType })
               variants={itemVariants}
               className="flex gap-6 sm:gap-8 items-start pt-2"
             >
-              <div className="w-px h-14 sm:h-16 bg-[#0066FF] mt-1 shrink-0" />
+              <div className="w-px h-14 sm:h-16 bg-[#6366f1] mt-1 shrink-0" />
               <p className="max-w-md text-base sm:text-lg text-[#888888] leading-relaxed">
                 Strategy, design and technology for ambitious brands looking to redefine their digital presence.
               </p>
@@ -170,7 +170,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal, setCursorType })
                 onClick={handleScrollToWork}
                 onCursorEnter={() => setCursorType('button')}
                 onCursorLeave={() => setCursorType('default')}
-                className="group inline-flex items-center gap-3 px-8 py-4 bg-[#0066FF] text-white text-[11px] uppercase tracking-widest font-bold hover:brightness-110 cursor-pointer transition-all duration-300 shadow-[0_0_24px_rgba(0,102,255,0.35)]"
+                className="group inline-flex items-center gap-3 px-8 py-4 bg-[#6366f1] text-white text-[11px] uppercase tracking-widest font-bold hover:brightness-110 cursor-pointer transition-all duration-300 shadow-[0_0_24px_rgba(0,102,255,0.35)]"
               >
                 <span>Explore Our Work</span>
                 <span className="text-xs transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">&nearr;</span>
@@ -239,8 +239,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal, setCursorType })
           aria-label="Scroll down to work"
         >
           <span className="text-[10px] font-mono uppercase tracking-[0.2em]">View Archive</span>
-          <div className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center group-hover:border-[#0066FF] group-hover:bg-[#0066FF]/10 transition-colors">
-            <ArrowDown className="w-3.5 h-3.5 text-[#888888] group-hover:text-[#0066FF] transition-transform group-hover:translate-y-0.5" />
+          <div className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center group-hover:border-[#6366f1] group-hover:bg-[#6366f1]/10 transition-colors">
+            <ArrowDown className="w-3.5 h-3.5 text-[#888888] group-hover:text-[#6366f1] transition-transform group-hover:translate-y-0.5" />
           </div>
         </a>
       </motion.div>

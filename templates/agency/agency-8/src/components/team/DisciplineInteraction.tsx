@@ -17,7 +17,7 @@ export const DisciplineInteraction: React.FC<DisciplineInteractionProps> = ({ se
   return (
     <section className="py-24 sm:py-36 bg-[#080808] border-t border-[#ffffff10] relative overflow-hidden">
       {/* Radial glow */}
-      <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-[#0066FF]/[0.025] rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-[#6366f1]/[0.025] rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-16">
         {/* Section Header */}
@@ -28,7 +28,7 @@ export const DisciplineInteraction: React.FC<DisciplineInteractionProps> = ({ se
             viewport={{ once: true }}
             className="flex items-center gap-2"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
             <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#888888]">
               PEOPLE + DISCIPLINES // SYNTHESIS
             </span>
@@ -41,7 +41,7 @@ export const DisciplineInteraction: React.FC<DisciplineInteractionProps> = ({ se
             className="font-display text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.92]"
           >
             INTERCONNECTED <br />
-            <span className="font-editorial italic font-normal text-[#0066FF] tracking-normal lowercase text-[1.05em]">
+            <span className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-[1.05em]">
               by design.
             </span>
           </motion.h2>
@@ -69,9 +69,9 @@ export const DisciplineInteraction: React.FC<DisciplineInteractionProps> = ({ se
                     onMouseLeave={() => setCursorType('default')}
                     className={`transition-all duration-300 px-3 py-1.5 rounded-xl cursor-pointer ${
                       isSelected
-                        ? 'bg-[#0066FF] text-white shadow-lg shadow-[#0066FF]/30 scale-105'
+                        ? 'bg-[#6366f1] text-white shadow-lg shadow-[#6366f1]/30 scale-105'
                         : isConnected
-                        ? 'text-white border border-[#0066FF]/50 bg-[#0066FF]/10'
+                        ? 'text-white border border-[#6366f1]/50 bg-[#6366f1]/10'
                         : 'text-[#888888]/60 hover:text-[#FAF9F6]'
                     }`}
                   >
@@ -89,7 +89,7 @@ export const DisciplineInteraction: React.FC<DisciplineInteractionProps> = ({ se
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border-t border-[#ffffff15] pt-10">
             <div className="lg:col-span-8 space-y-6">
               <div className="flex items-center gap-2">
-                <span className="px-3 py-1 rounded-full bg-[#0066FF]/20 text-[#0066FF] border border-[#0066FF]/40 text-[10px] font-mono tracking-widest uppercase">
+                <span className="px-3 py-1 rounded-full bg-[#6366f1]/20 text-[#6366f1] border border-[#6366f1]/40 text-[10px] font-mono tracking-widest uppercase">
                   ACTIVE CATALYST: {selectedDiscipline}
                 </span>
                 <span className="text-xs font-mono text-[#888888] tracking-wider uppercase">
@@ -119,7 +119,7 @@ export const DisciplineInteraction: React.FC<DisciplineInteractionProps> = ({ se
             <div className="lg:col-span-4 bg-white/[0.02] border border-[#ffffff10] rounded-2xl p-6 space-y-4">
               <div className="flex items-center justify-between text-xs font-mono text-[#888888] tracking-widest uppercase">
                 <span>COLLABORATIVE MATRIX</span>
-                <Network className="w-4 h-4 text-[#0066FF]" />
+                <Network className="w-4 h-4 text-[#6366f1]" />
               </div>
 
               <div className="space-y-2">
@@ -129,7 +129,7 @@ export const DisciplineInteraction: React.FC<DisciplineInteractionProps> = ({ se
                     className="flex items-center justify-between py-2 border-b border-white/5 text-xs font-mono"
                   >
                     <span className="text-[#FAF9F6] font-medium">{selectedDiscipline} + {conn}</span>
-                    <span className="text-[#0066FF] text-[10px] uppercase">Active Synergy</span>
+                    <span className="text-[#6366f1] text-[10px] uppercase">Active Synergy</span>
                   </div>
                 ))}
               </div>

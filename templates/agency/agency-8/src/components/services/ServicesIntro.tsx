@@ -23,7 +23,7 @@ export const ServicesIntro: React.FC = () => {
           viewport={{ once: true }}
           className="flex items-center gap-2 mb-12 sm:mb-16"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
             OUR CAPABILITIES
           </span>
@@ -43,7 +43,7 @@ export const ServicesIntro: React.FC = () => {
               className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.94]"
             >
               FROM THE FIRST <br />
-              <span className="font-editorial italic font-normal text-[#0066FF] tracking-normal lowercase text-[1.05em]">
+              <span className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-[1.05em]">
                 idea to the final
               </span> <br />
               EXPERIENCE.
@@ -69,7 +69,7 @@ export const ServicesIntro: React.FC = () => {
               className="pt-4 border-t border-[#ffffff10] flex items-center justify-between font-mono text-xs text-[#666666] uppercase tracking-wider"
             >
               <span>DISCIPLINES: 06</span>
-              <span className="text-[#0066FF]">INTEGRATED END-TO-END</span>
+              <span className="text-[#6366f1]">INTEGRATED END-TO-END</span>
             </motion.div>
           </div>
         </div>

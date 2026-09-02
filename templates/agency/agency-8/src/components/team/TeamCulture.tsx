@@ -11,7 +11,7 @@ export const TeamCulture: React.FC<TeamCultureProps> = ({ setCursorType }) => {
   return (
     <section className="py-24 sm:py-36 bg-[#080808] border-t border-[#ffffff10] relative overflow-hidden">
       {/* Background ambient gradient */}
-      <div className="absolute top-1/3 left-1/3 w-[600px] h-[600px] bg-[#0066FF]/[0.02] rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/3 w-[600px] h-[600px] bg-[#6366f1]/[0.02] rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-16">
         {/* Section Header */}
@@ -22,7 +22,7 @@ export const TeamCulture: React.FC<TeamCultureProps> = ({ setCursorType }) => {
             viewport={{ once: true }}
             className="flex items-center gap-2"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
             <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#888888]">
               STUDIO LIFE & CULTURE
             </span>
@@ -35,7 +35,7 @@ export const TeamCulture: React.FC<TeamCultureProps> = ({ setCursorType }) => {
             className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.92]"
           >
             HOW WE SPEND <br />
-            <span className="font-editorial italic font-normal text-[#0066FF] tracking-normal lowercase text-[1.05em]">
+            <span className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-[1.05em]">
               our days.
             </span>
           </motion.h2>
@@ -77,7 +77,7 @@ export const TeamCulture: React.FC<TeamCultureProps> = ({ setCursorType }) => {
 
                 {/* Content Overlay */}
                 <div className="relative z-10 space-y-2 pointer-events-none mt-40 sm:mt-48">
-                  <span className="px-2.5 py-1 rounded-full text-[10px] font-mono tracking-widest uppercase bg-black/60 backdrop-blur-md text-[#0066FF] border border-white/10 inline-block font-bold">
+                  <span className="px-2.5 py-1 rounded-full text-[10px] font-mono tracking-widest uppercase bg-black/60 backdrop-blur-md text-[#6366f1] border border-white/10 inline-block font-bold">
                     {item.tag}
                   </span>
 

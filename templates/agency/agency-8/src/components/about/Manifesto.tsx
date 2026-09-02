@@ -12,7 +12,7 @@ export const Manifesto: React.FC = () => {
   return (
     <section className="py-36 sm:py-56 border-t border-[#ffffff10] bg-[#080808] relative overflow-hidden">
       {/* Subtle Central Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#0066FF]/[0.035] rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#6366f1]/[0.035] rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 text-center">
         {/* Tag */}
@@ -22,7 +22,7 @@ export const Manifesto: React.FC = () => {
           viewport={{ once: true }}
           className="inline-flex items-center gap-2 mb-12 sm:mb-16"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
           <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#888888]">
             STUDIO MANIFESTO
           </span>
@@ -39,7 +39,7 @@ export const Manifesto: React.FC = () => {
           >
             WE BELIEVE <br />
             DIGITAL SHOULD <br />
-            <span className="font-editorial italic font-normal text-[#0066FF] tracking-normal lowercase text-[1.08em]">
+            <span className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-[1.08em]">
               feel human.
             </span>
           </motion.h2>
@@ -56,11 +56,11 @@ export const Manifesto: React.FC = () => {
               transition={{ duration: 0.65, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center justify-center gap-4 sm:gap-6"
             >
-              <span className="w-1 h-1 rounded-full bg-[#0066FF]" />
+              <span className="w-1 h-1 rounded-full bg-[#6366f1]" />
               <p className="font-editorial italic text-2xl sm:text-3xl md:text-4xl text-[#888888] hover:text-[#FAF9F6] transition-colors duration-300">
                 {stmt}
               </p>
-              <span className="w-1 h-1 rounded-full bg-[#0066FF]" />
+              <span className="w-1 h-1 rounded-full bg-[#6366f1]" />
             </motion.div>
           ))}
         </div>

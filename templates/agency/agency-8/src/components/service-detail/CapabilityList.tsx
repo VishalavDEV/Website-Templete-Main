@@ -47,7 +47,7 @@ export const CapabilityList: React.FC<CapabilityListProps> = ({
         {/* Header Eyebrow */}
         <div className="flex items-center justify-between border-b border-[#ffffff12] pb-6 mb-12 sm:mb-16">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
               {service.capabilitiesHeading}
             </span>
@@ -83,7 +83,7 @@ export const CapabilityList: React.FC<CapabilityListProps> = ({
                     opacity: isSelected ? 1 : 0,
                   }}
                   transition={{ duration: 0.3 }}
-                  className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#0066FF] origin-top"
+                  className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#6366f1] origin-top"
                 />
 
                 <div className="grid grid-cols-12 gap-6 items-center pl-6 lg:pl-10">
@@ -91,7 +91,7 @@ export const CapabilityList: React.FC<CapabilityListProps> = ({
                   <div className="col-span-1">
                     <span
                       className={`font-mono text-base lg:text-lg font-bold tracking-wider transition-colors duration-300 ${
-                        isSelected ? 'text-[#0066FF]' : 'text-[#666666]'
+                        isSelected ? 'text-[#6366f1]' : 'text-[#666666]'
                       }`}
                     >
                       {cap.number}
@@ -137,10 +137,10 @@ export const CapabilityList: React.FC<CapabilityListProps> = ({
                     <motion.div
                       animate={{
                         x: isSelected ? 6 : 0,
-                        backgroundColor: isSelected ? '#0066FF' : 'rgba(255,255,255,0.03)',
+                        backgroundColor: isSelected ? '#6366f1' : 'rgba(255,255,255,0.03)',
                       }}
                       transition={{ duration: 0.3 }}
-                      className="w-12 h-12 rounded-full border border-[#ffffff15] flex items-center justify-center text-[#FAF9F6] transition-colors group-hover:border-[#0066FF]"
+                      className="w-12 h-12 rounded-full border border-[#ffffff15] flex items-center justify-center text-[#FAF9F6] transition-colors group-hover:border-[#6366f1]"
                     >
                       <ArrowRight className="w-5 h-5 text-current transition-transform duration-300" />
                     </motion.div>
@@ -176,7 +176,7 @@ export const CapabilityList: React.FC<CapabilityListProps> = ({
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white font-mono text-[10px]">
-                  <span className="uppercase tracking-widest text-[#0066FF] font-bold">
+                  <span className="uppercase tracking-widest text-[#6366f1] font-bold">
                     {activeCapability.number} / {activeCapability.title}
                   </span>
                   <span className="text-white/60">CAPABILITY SPEC</span>
@@ -199,7 +199,7 @@ export const CapabilityList: React.FC<CapabilityListProps> = ({
                   className="w-full flex items-center justify-between text-left focus:outline-none"
                 >
                   <div className="flex items-center gap-4">
-                    <span className="font-mono text-sm font-bold text-[#0066FF]">
+                    <span className="font-mono text-sm font-bold text-[#6366f1]">
                       {cap.number}
                     </span>
                     <h3 className="font-display text-xl font-bold uppercase text-[#FAF9F6] tracking-tight">
@@ -208,7 +208,7 @@ export const CapabilityList: React.FC<CapabilityListProps> = ({
                   </div>
                   <div className="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center text-white bg-white/5">
                     {isExpanded ? (
-                      <Minus className="w-4 h-4 text-[#0066FF]" />
+                      <Minus className="w-4 h-4 text-[#6366f1]" />
                     ) : (
                       <Plus className="w-4 h-4 text-white" />
                     )}

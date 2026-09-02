@@ -66,7 +66,7 @@ export const ProjectPreview: React.FC<ProjectPreviewProps> = ({
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
               <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
                 INTERACTIVE ARCHIVE
               </span>
@@ -97,7 +97,7 @@ export const ProjectPreview: React.FC<ProjectPreviewProps> = ({
               >
                 {/* Left: Index Number & Title */}
                 <div className="flex items-center gap-6 sm:gap-10">
-                  <span className="font-mono text-xs sm:text-sm text-[#888888] group-hover:text-[#0066FF] transition-colors duration-300 w-8">
+                  <span className="font-mono text-xs sm:text-sm text-[#888888] group-hover:text-[#6366f1] transition-colors duration-300 w-8">
                     0{idx + 1}
                   </span>
 
@@ -109,7 +109,7 @@ export const ProjectPreview: React.FC<ProjectPreviewProps> = ({
                 {/* Center / Right Metadata */}
                 <div className="flex items-center justify-between md:justify-end gap-6 sm:gap-12 pl-14 md:pl-0">
                   <div className="text-left md:text-right space-y-0.5">
-                    <span className="block text-xs sm:text-sm font-mono text-[#FAF9F6] font-medium group-hover:text-[#0066FF] transition-colors">
+                    <span className="block text-xs sm:text-sm font-mono text-[#FAF9F6] font-medium group-hover:text-[#6366f1] transition-colors">
                       {project.categoryDisplay}
                     </span>
                     <span className="block text-[11px] font-mono text-[#888888]">
@@ -117,7 +117,7 @@ export const ProjectPreview: React.FC<ProjectPreviewProps> = ({
                     </span>
                   </div>
 
-                  <div className="w-10 h-10 rounded-full border border-[#ffffff18] flex items-center justify-center group-hover:border-[#0066FF] group-hover:bg-[#0066FF] group-hover:text-white transition-all duration-300">
+                  <div className="w-10 h-10 rounded-full border border-[#ffffff18] flex items-center justify-center group-hover:border-[#6366f1] group-hover:bg-[#6366f1] group-hover:text-white transition-all duration-300">
                     <ArrowUpRight className="w-4 h-4 text-[#888888] group-hover:text-white group-hover:rotate-45 transition-transform" />
                   </div>
                 </div>
@@ -160,7 +160,7 @@ export const ProjectPreview: React.FC<ProjectPreviewProps> = ({
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
           <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono text-white pointer-events-none">
             <span className="font-bold tracking-widest uppercase">{activeProject.title}</span>
-            <span className="text-[#0066FF] font-semibold">{activeProject.categoryDisplay}</span>
+            <span className="text-[#6366f1] font-semibold">{activeProject.categoryDisplay}</span>
           </div>
         </motion.div>
       )}

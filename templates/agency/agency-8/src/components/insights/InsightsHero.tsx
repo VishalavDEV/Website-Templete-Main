@@ -30,7 +30,7 @@ export const InsightsHero: React.FC<InsightsHeroProps> = ({
   return (
     <section className="relative pt-36 sm:pt-44 md:pt-48 pb-20 sm:pb-28 px-6 sm:px-8 lg:px-12 bg-[#080808] border-b border-[#ffffff10] overflow-hidden">
       {/* Ambient background light */}
-      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#0066FF]/[0.035] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#6366f1]/[0.035] rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Top Metadata Strip */}
@@ -41,7 +41,7 @@ export const InsightsHero: React.FC<InsightsHeroProps> = ({
           className="flex flex-wrap items-center justify-between gap-4 mb-12 sm:mb-16 pb-6 border-b border-[#ffffff10]"
         >
           <div className="flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-[#0066FF] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#6366f1] animate-pulse" />
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#888888]">
               INSIGHTS / IDEAS / PERSPECTIVES
             </span>
@@ -49,7 +49,7 @@ export const InsightsHero: React.FC<InsightsHeroProps> = ({
 
           <div className="flex items-center gap-4">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 font-mono text-[11px] uppercase tracking-widest text-[#FAF9F6]">
-              <BookOpen className="w-3 h-3 text-[#0066FF]" />
+              <BookOpen className="w-3 h-3 text-[#6366f1]" />
               24 ARTICLES
             </span>
             <span className="font-mono text-xs text-[#666666] hidden sm:inline">
@@ -72,7 +72,7 @@ export const InsightsHero: React.FC<InsightsHeroProps> = ({
                 >
                   <span>{line}</span>
                   {index === 2 && (
-                    <span className="inline-block w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded-full bg-[#0066FF] translate-y-1 sm:translate-y-2" />
+                    <span className="inline-block w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded-full bg-[#6366f1] translate-y-1 sm:translate-y-2" />
                   )}
                 </motion.div>
               </div>
@@ -96,10 +96,10 @@ export const InsightsHero: React.FC<InsightsHeroProps> = ({
               onClick={onExploreClick}
               onMouseEnter={() => setCursorType('pointer')}
               onMouseLeave={() => setCursorType('default')}
-              className="group inline-flex items-center gap-3 text-xs font-mono uppercase tracking-[0.2em] text-[#FAF9F6] hover:text-[#0066FF] transition-colors cursor-pointer py-2"
+              className="group inline-flex items-center gap-3 text-xs font-mono uppercase tracking-[0.2em] text-[#FAF9F6] hover:text-[#6366f1] transition-colors cursor-pointer py-2"
             >
               <span>EXPLORE ARTICLES</span>
-              <span className="w-8 h-8 rounded-full border border-white/20 group-hover:border-[#0066FF] flex items-center justify-center transition-colors">
+              <span className="w-8 h-8 rounded-full border border-white/20 group-hover:border-[#6366f1] flex items-center justify-center transition-colors">
                 <ArrowDown className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" />
               </span>
             </button>

@@ -37,7 +37,7 @@ export const TopicsSection: React.FC<TopicsSectionProps> = ({
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 sm:mb-20 pb-6 border-b border-[#ffffff10]">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#888888]">
                 03 / INTELLECTUAL AXES
               </span>
@@ -75,7 +75,7 @@ export const TopicsSection: React.FC<TopicsSectionProps> = ({
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                   {/* Left Topic Name with Index */}
                   <div className="flex items-baseline gap-4 sm:gap-6">
-                    <span className="font-mono text-xs sm:text-sm text-[#555555] group-hover:text-[#0066FF] transition-colors">
+                    <span className="font-mono text-xs sm:text-sm text-[#555555] group-hover:text-[#6366f1] transition-colors">
                       /{formattedIndex}
                     </span>
 
@@ -96,12 +96,12 @@ export const TopicsSection: React.FC<TopicsSectionProps> = ({
                       <div className="text-[#FAF9F6]/80 text-xs tracking-wide">
                         {topic.subtitle}
                       </div>
-                      <div className="text-[#0066FF] text-[11px] tracking-widest uppercase mt-0.5">
+                      <div className="text-[#6366f1] text-[11px] tracking-widest uppercase mt-0.5">
                         {topic.articleCount} ESSAYS IN ARCHIVE
                       </div>
                     </div>
 
-                    <div className="w-10 h-10 rounded-full border border-white/10 group-hover:border-[#0066FF] group-hover:bg-[#0066FF] flex items-center justify-center text-white/40 group-hover:text-white transition-all duration-300">
+                    <div className="w-10 h-10 rounded-full border border-white/10 group-hover:border-[#6366f1] group-hover:bg-[#6366f1] flex items-center justify-center text-white/40 group-hover:text-white transition-all duration-300">
                       <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>
                   </div>

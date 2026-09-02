@@ -21,7 +21,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
       className="py-32 sm:py-44 relative bg-[#080808] border-t border-[#ffffff10] overflow-hidden"
     >
       {/* Visual Ambient Aura Highlight */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#0066FF]/[0.05] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#6366f1]/[0.05] rounded-full blur-[160px] pointer-events-none" />
 
       {/* Subtle grid backdrop */}
       <div className="absolute inset-0 bg-grid-subtle opacity-30 pointer-events-none" />
@@ -35,8 +35,8 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
           className="max-w-4xl mx-auto space-y-10"
         >
           {/* Tag */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#0066FF]/10 border border-[#0066FF]/20 text-xs font-mono text-[#0066FF] uppercase tracking-[0.25em] font-semibold">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF] animate-ping" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#6366f1]/10 border border-[#6366f1]/20 text-xs font-mono text-[#6366f1] uppercase tracking-[0.25em] font-semibold">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1] animate-ping" />
             <span>NOW BOOKING FOR Q3 / Q4 2026</span>
           </div>
 
@@ -68,7 +68,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
               }}
               onCursorEnter={() => setCursorType('button')}
               onCursorLeave={() => setCursorType('default')}
-              className="group inline-flex items-center gap-3 px-10 py-5 bg-[#0066FF] hover:brightness-110 text-white font-bold text-xs uppercase tracking-widest border border-[#0066FF]/40 transition-all duration-300 cursor-pointer"
+              className="group inline-flex items-center gap-3 px-10 py-5 bg-[#6366f1] hover:brightness-110 text-white font-bold text-xs uppercase tracking-widest border border-[#6366f1]/40 transition-all duration-300 cursor-pointer"
             >
               <span>Start a Project &nearr;</span>
             </MagneticButton>
@@ -79,7 +79,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({
               onMouseLeave={() => setCursorType('default')}
               className="inline-flex items-center gap-2 px-8 py-5 bg-white/[0.03] hover:bg-white/[0.08] text-[#FAF9F6] font-mono text-xs uppercase tracking-widest border border-[#ffffff15] transition-colors"
             >
-              <Mail className="w-4 h-4 text-[#0066FF]" />
+              <Mail className="w-4 h-4 text-[#6366f1]" />
               <span>hello@studio.com</span>
             </a>
           </div>

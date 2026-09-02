@@ -19,7 +19,7 @@ export const TestimonialMarquee: React.FC = () => {
                 <span className="font-display font-bold text-sm sm:text-base tracking-[0.25em] text-[#888888] hover:text-[#FAF9F6] transition-colors uppercase whitespace-nowrap">
                   {text}
                 </span>
-                <span className="text-[#0066FF] text-xs font-mono">/</span>
+                <span className="text-[#6366f1] text-xs font-mono">/</span>
               </div>
             ))}
           </div>

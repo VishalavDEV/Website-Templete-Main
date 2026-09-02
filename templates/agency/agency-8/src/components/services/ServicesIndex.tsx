@@ -59,7 +59,7 @@ export const ServicesIndex: React.FC<ServicesIndexProps> = ({
         {/* Section Header Metadata */}
         <div className="flex items-center justify-between border-b border-[#ffffff15] pb-6 mb-12 sm:mb-16">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
               INTERACTIVE INDEX
             </span>
@@ -99,7 +99,7 @@ export const ServicesIndex: React.FC<ServicesIndexProps> = ({
                     opacity: isSelected ? 1 : 0,
                   }}
                   transition={{ duration: 0.3 }}
-                  className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#0066FF] origin-top"
+                  className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#6366f1] origin-top"
                 />
 
                 <div className="grid grid-cols-12 gap-6 items-center pl-6 lg:pl-10">
@@ -107,7 +107,7 @@ export const ServicesIndex: React.FC<ServicesIndexProps> = ({
                   <div className="col-span-1">
                     <span
                       className={`font-mono text-base lg:text-lg font-bold tracking-wider transition-colors duration-300 ${
-                        isSelected ? 'text-[#0066FF]' : 'text-[#666666]'
+                        isSelected ? 'text-[#6366f1]' : 'text-[#666666]'
                       }`}
                     >
                       {service.number}
@@ -136,7 +136,7 @@ export const ServicesIndex: React.FC<ServicesIndexProps> = ({
                     >
                       {service.shortDesc}
                     </p>
-                    <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-[#0066FF]/80">
+                    <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-[#6366f1]/80">
                       {service.metadata}
                     </div>
                   </div>
@@ -146,10 +146,10 @@ export const ServicesIndex: React.FC<ServicesIndexProps> = ({
                     <motion.div
                       animate={{
                         x: isSelected ? 8 : 0,
-                        backgroundColor: isSelected ? '#0066FF' : 'rgba(255,255,255,0.05)',
+                        backgroundColor: isSelected ? '#6366f1' : 'rgba(255,255,255,0.05)',
                       }}
                       transition={{ duration: 0.3 }}
-                      className="w-12 h-12 rounded-full border border-[#ffffff15] flex items-center justify-center text-[#FAF9F6] transition-colors group-hover:border-[#0066FF]"
+                      className="w-12 h-12 rounded-full border border-[#ffffff15] flex items-center justify-center text-[#FAF9F6] transition-colors group-hover:border-[#6366f1]"
                     >
                       <ArrowRight className="w-5 h-5 text-current transition-transform duration-300" />
                     </motion.div>
@@ -188,7 +188,7 @@ export const ServicesIndex: React.FC<ServicesIndexProps> = ({
                 {/* Floating Image Label Overlay */}
                 <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
                   <div>
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#0066FF] block font-bold">
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#6366f1] block font-bold">
                       {activeService.number} / SPECIFICATION
                     </span>
                     <span className="font-display font-bold text-base uppercase tracking-tight">
@@ -217,7 +217,7 @@ export const ServicesIndex: React.FC<ServicesIndexProps> = ({
                   className="w-full flex items-center justify-between text-left focus:outline-none"
                 >
                   <div className="flex items-center gap-4">
-                    <span className="font-mono text-sm font-bold text-[#0066FF]">
+                    <span className="font-mono text-sm font-bold text-[#6366f1]">
                       {service.number}
                     </span>
                     <h3 className="font-display text-2xl font-bold uppercase text-[#FAF9F6] tracking-tight">
@@ -226,7 +226,7 @@ export const ServicesIndex: React.FC<ServicesIndexProps> = ({
                   </div>
                   <div className="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center text-white bg-white/5">
                     {isExpanded ? (
-                      <Minus className="w-4 h-4 text-[#0066FF]" />
+                      <Minus className="w-4 h-4 text-[#6366f1]" />
                     ) : (
                       <Plus className="w-4 h-4 text-white" />
                     )}
@@ -275,7 +275,7 @@ export const ServicesIndex: React.FC<ServicesIndexProps> = ({
                           <button
                             type="button"
                             onClick={() => handleItemClick(service)}
-                            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#0066FF] font-bold"
+                            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#6366f1] font-bold"
                           >
                             <span>EXPLORE {service.name}</span>
                             <ArrowUpRight className="w-4 h-4" />

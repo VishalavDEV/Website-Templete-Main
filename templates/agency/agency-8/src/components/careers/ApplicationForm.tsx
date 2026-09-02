@@ -100,7 +100,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="space-y-2">
           <label htmlFor="applicant-name" className="block font-mono text-xs uppercase tracking-widest text-[#888888]">
-            YOUR NAME <span className="text-[#0066FF]">*</span>
+            YOUR NAME <span className="text-[#6366f1]">*</span>
           </label>
           <input
             id="applicant-name"
@@ -112,7 +112,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({
               if (errors.name) setErrors((prev) => ({ ...prev, name: undefined }));
             }}
             className={`w-full px-4 py-3.5 bg-white/[0.03] border ${
-              errors.name ? 'border-red-500/80 focus:border-red-500' : 'border-white/15 focus:border-[#0066FF]'
+              errors.name ? 'border-red-500/80 focus:border-red-500' : 'border-white/15 focus:border-[#6366f1]'
             } text-[#FAF9F6] placeholder-[#555555] font-body text-sm outline-none transition-colors`}
           />
           {errors.name && (
@@ -125,7 +125,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({
 
         <div className="space-y-2">
           <label htmlFor="applicant-email" className="block font-mono text-xs uppercase tracking-widest text-[#888888]">
-            EMAIL ADDRESS <span className="text-[#0066FF]">*</span>
+            EMAIL ADDRESS <span className="text-[#6366f1]">*</span>
           </label>
           <input
             id="applicant-email"
@@ -137,7 +137,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({
               if (errors.email) setErrors((prev) => ({ ...prev, email: undefined }));
             }}
             className={`w-full px-4 py-3.5 bg-white/[0.03] border ${
-              errors.email ? 'border-red-500/80 focus:border-red-500' : 'border-white/15 focus:border-[#0066FF]'
+              errors.email ? 'border-red-500/80 focus:border-red-500' : 'border-white/15 focus:border-[#6366f1]'
             } text-[#FAF9F6] placeholder-[#555555] font-body text-sm outline-none transition-colors`}
           />
           {errors.email && (
@@ -161,7 +161,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({
             placeholder="https://yourwork.design"
             value={formData.portfolio}
             onChange={(e) => setFormData((prev) => ({ ...prev, portfolio: e.target.value }))}
-            className="w-full px-4 py-3.5 bg-white/[0.03] border border-white/15 focus:border-[#0066FF] text-[#FAF9F6] placeholder-[#555555] font-body text-sm outline-none transition-colors"
+            className="w-full px-4 py-3.5 bg-white/[0.03] border border-white/15 focus:border-[#6366f1] text-[#FAF9F6] placeholder-[#555555] font-body text-sm outline-none transition-colors"
           />
         </div>
 
@@ -175,7 +175,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({
             placeholder="e.g. linkedin.com/in/..."
             value={formData.linkedin}
             onChange={(e) => setFormData((prev) => ({ ...prev, linkedin: e.target.value }))}
-            className="w-full px-4 py-3.5 bg-white/[0.03] border border-white/15 focus:border-[#0066FF] text-[#FAF9F6] placeholder-[#555555] font-body text-sm outline-none transition-colors"
+            className="w-full px-4 py-3.5 bg-white/[0.03] border border-white/15 focus:border-[#6366f1] text-[#FAF9F6] placeholder-[#555555] font-body text-sm outline-none transition-colors"
           />
         </div>
       </div>
@@ -183,7 +183,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({
       {/* Introduction */}
       <div className="space-y-2">
         <label htmlFor="applicant-intro" className="block font-mono text-xs uppercase tracking-widest text-[#888888]">
-          SHORT INTRODUCTION & PERSPECTIVE <span className="text-[#0066FF]">*</span>
+          SHORT INTRODUCTION & PERSPECTIVE <span className="text-[#6366f1]">*</span>
         </label>
         <textarea
           id="applicant-intro"
@@ -195,7 +195,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({
             if (errors.introduction) setErrors((prev) => ({ ...prev, introduction: undefined }));
           }}
           className={`w-full p-4 bg-white/[0.03] border ${
-            errors.introduction ? 'border-red-500/80 focus:border-red-500' : 'border-white/15 focus:border-[#0066FF]'
+            errors.introduction ? 'border-red-500/80 focus:border-red-500' : 'border-white/15 focus:border-[#6366f1]'
           } text-[#FAF9F6] placeholder-[#555555] font-body text-sm outline-none transition-colors resize-none`}
         />
         {errors.introduction && (
@@ -221,9 +221,9 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({
         />
 
         {formData.resumeFileName ? (
-          <div className="flex items-center justify-between p-4 bg-[#0066FF]/10 border border-[#0066FF]/40 font-mono text-xs text-[#FAF9F6]">
+          <div className="flex items-center justify-between p-4 bg-[#6366f1]/10 border border-[#6366f1]/40 font-mono text-xs text-[#FAF9F6]">
             <div className="flex items-center gap-2">
-              <FileText className="w-4 h-4 text-[#0066FF]" />
+              <FileText className="w-4 h-4 text-[#6366f1]" />
               <span className="font-semibold">{formData.resumeFileName}</span>
               <span className="text-[#888888]">(Ready for review)</span>
             </div>
@@ -247,13 +247,13 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({
             onClick={() => fileInputRef.current?.click()}
             className={`p-6 border border-dashed text-center cursor-pointer transition-colors ${
               isDragging
-                ? 'border-[#0066FF] bg-[#0066FF]/5'
+                ? 'border-[#6366f1] bg-[#6366f1]/5'
                 : 'border-white/20 bg-white/[0.01] hover:border-white/40 hover:bg-white/[0.02]'
             }`}
           >
             <UploadCloud className="w-6 h-6 text-[#888888] mx-auto mb-2" />
             <p className="font-mono text-xs text-[#FAF9F6] uppercase tracking-wider">
-              DRAG & DROP YOUR RESUME OR <span className="text-[#0066FF] underline">BROWSE</span>
+              DRAG & DROP YOUR RESUME OR <span className="text-[#6366f1] underline">BROWSE</span>
             </p>
             <p className="font-mono text-[10px] text-[#666666] mt-1">
               PDF, DOC, or DOCX up to 10MB (Simulated client-side demo)
@@ -273,7 +273,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({
           disabled={isSubmitting}
           onMouseEnter={() => setCursorType('button')}
           onMouseLeave={() => setCursorType('default')}
-          className="inline-flex items-center gap-2 px-8 py-4 bg-[#0066FF] hover:brightness-110 disabled:opacity-50 text-white font-mono text-xs uppercase tracking-widest font-bold border border-[#0066FF]/50 transition-all cursor-pointer shadow-lg shadow-[#0066FF]/20"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-[#6366f1] hover:brightness-110 disabled:opacity-50 text-white font-mono text-xs uppercase tracking-widest font-bold border border-[#6366f1]/50 transition-all cursor-pointer shadow-lg shadow-[#6366f1]/20"
         >
           <span>{isSubmitting ? 'PROCESSING...' : 'SUBMIT APPLICATION'}</span>
           <ArrowUpRight className="w-4 h-4" />

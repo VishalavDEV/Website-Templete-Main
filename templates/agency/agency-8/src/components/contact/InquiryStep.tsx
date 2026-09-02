@@ -34,7 +34,7 @@ export const InquiryStep: React.FC<InquiryStepProps> = ({
       {/* Step Header */}
       <div className="space-y-3">
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#0066FF]">
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#6366f1]">
             STEP 0{stepNumber} // 0{totalSteps}
           </span>
           <span className="font-mono text-xs text-[#888888]">
@@ -91,7 +91,7 @@ export const InquiryStep: React.FC<InquiryStepProps> = ({
             onCursorLeave={() => setCursorType('default')}
             className={`group inline-flex items-center gap-2.5 px-8 py-4 rounded-full font-mono text-xs uppercase tracking-widest font-bold transition-all duration-300 cursor-pointer ${
               canProceed
-                ? 'bg-white text-black hover:bg-[#0066FF] hover:text-white shadow-xl'
+                ? 'bg-white text-black hover:bg-[#6366f1] hover:text-white shadow-xl'
                 : 'bg-white/10 text-[#888888] cursor-not-allowed opacity-50'
             }`}
           >

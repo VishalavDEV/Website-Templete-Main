@@ -19,8 +19,8 @@ export const DisciplineSection: React.FC<DisciplineSectionProps> = ({ setCursorT
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 pb-8 border-b border-white/10">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#0066FF] font-semibold">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#6366f1] font-semibold">
               07 / DISCIPLINES
             </span>
           </div>
@@ -32,7 +32,7 @@ export const DisciplineSection: React.FC<DisciplineSectionProps> = ({ setCursorT
 
         <h2 className="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#FAF9F6] uppercase tracking-tight leading-[0.92]">
           BRING YOUR <br />
-          <span className="text-[#0066FF]">PERSPECTIVE.</span>
+          <span className="text-[#6366f1]">PERSPECTIVE.</span>
         </h2>
 
         {/* Large Typographic Interactive Composition */}
@@ -51,7 +51,7 @@ export const DisciplineSection: React.FC<DisciplineSectionProps> = ({ setCursorT
                   onMouseLeave={() => setCursorType('default')}
                   className="cursor-pointer group flex items-baseline gap-4 select-none"
                 >
-                  <span className="font-mono text-xs sm:text-sm text-[#666666] group-hover:text-[#0066FF] transition-colors">
+                  <span className="font-mono text-xs sm:text-sm text-[#666666] group-hover:text-[#6366f1] transition-colors">
                     0{idx + 1}
                   </span>
                   <span
@@ -70,10 +70,10 @@ export const DisciplineSection: React.FC<DisciplineSectionProps> = ({ setCursorT
 
           {/* Right Column: Statement Card with Ambient Transition */}
           <div className="lg:col-span-5 p-8 sm:p-12 bg-white/[0.02] border border-white/10 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#0066FF]/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#6366f1]/10 rounded-full blur-2xl pointer-events-none" />
 
             <div className="space-y-6 relative z-10">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#0066FF] font-semibold block">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#6366f1] font-semibold block">
                 DISCIPLINE PROFILE // {activeDiscipline.name}
               </span>
 

@@ -28,7 +28,7 @@ export const NextService: React.FC<NextServiceProps> = ({
         {/* Eyebrow */}
         <div className="flex items-center justify-between border-b border-[#ffffff12] pb-6 mb-12">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
               CONTINUE EXPLORING
             </span>
@@ -63,12 +63,12 @@ export const NextService: React.FC<NextServiceProps> = ({
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center justify-between">
             <div className="lg:col-span-8 space-y-4">
               <div className="flex items-center gap-3">
-                <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#0066FF] font-bold">
+                <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#6366f1] font-bold">
                   NEXT CAPABILITY // {next.number}
                 </span>
               </div>
 
-              <h2 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase text-[#FAF9F6] tracking-tight group-hover:text-[#0066FF] transition-colors duration-300">
+              <h2 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase text-[#FAF9F6] tracking-tight group-hover:text-[#6366f1] transition-colors duration-300">
                 {next.title}
               </h2>
 
@@ -79,7 +79,7 @@ export const NextService: React.FC<NextServiceProps> = ({
 
             {/* Action Bubble */}
             <div className="lg:col-span-4 flex lg:justify-end">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#0066FF] group-hover:bg-[#0052cc] text-white flex items-center justify-center transition-all duration-300 shadow-xl group-hover:scale-110">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#6366f1] group-hover:bg-[#0052cc] text-white flex items-center justify-center transition-all duration-300 shadow-xl group-hover:scale-110">
                 <ArrowUpRight className="w-8 h-8 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
               </div>
             </div>

@@ -26,7 +26,7 @@ export const ServiceCategoryVisual: React.FC<ServiceCategoryVisualProps> = ({
       className="py-32 sm:py-48 bg-[#080808] border-t border-[#ffffff10] relative overflow-hidden"
     >
       {/* Background glow effects */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[#0066FF]/[0.03] rounded-full blur-[200px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[#6366f1]/[0.03] rounded-full blur-[200px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Section Header */}
@@ -37,7 +37,7 @@ export const ServiceCategoryVisual: React.FC<ServiceCategoryVisualProps> = ({
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 mb-6"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
               INTEGRATED DISCIPLINES
             </span>
@@ -52,7 +52,7 @@ export const ServiceCategoryVisual: React.FC<ServiceCategoryVisualProps> = ({
             className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.92]"
           >
             ONE STUDIO. <br />
-            <span className="font-editorial italic font-normal text-[#0066FF] tracking-normal lowercase text-[1.05em]">
+            <span className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-[1.05em]">
               many disciplines.
             </span>
           </motion.h2>
@@ -71,11 +71,11 @@ export const ServiceCategoryVisual: React.FC<ServiceCategoryVisualProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative z-10">
             {/* Discipline 1: Strategy */}
             <div className="space-y-6 border-l border-white/10 pl-6 group">
-              <div className="w-12 h-12 rounded-lg bg-white/[0.03] border border-white/10 flex items-center justify-center text-[#0066FF]">
+              <div className="w-12 h-12 rounded-lg bg-white/[0.03] border border-white/10 flex items-center justify-center text-[#6366f1]">
                 <Compass className="w-6 h-6 group-hover:rotate-45 transition-transform duration-500" />
               </div>
               <div className="space-y-2">
-                <span className="font-mono text-xs text-[#0066FF] uppercase tracking-widest block">
+                <span className="font-mono text-xs text-[#6366f1] uppercase tracking-widest block">
                   01 / FOUNDATION
                 </span>
                 <h3 className="font-display text-2xl sm:text-3xl font-bold uppercase text-[#FAF9F6]">
@@ -93,7 +93,7 @@ export const ServiceCategoryVisual: React.FC<ServiceCategoryVisualProps> = ({
                 <Layers className="w-6 h-6 group-hover:scale-110 transition-transform duration-500" />
               </div>
               <div className="space-y-2">
-                <span className="font-mono text-xs text-[#0066FF] uppercase tracking-widest block">
+                <span className="font-mono text-xs text-[#6366f1] uppercase tracking-widest block">
                   02 / EXPRESSION
                 </span>
                 <h3 className="font-display text-2xl sm:text-3xl font-bold uppercase text-[#FAF9F6]">
@@ -107,11 +107,11 @@ export const ServiceCategoryVisual: React.FC<ServiceCategoryVisualProps> = ({
 
             {/* Discipline 3: Technology */}
             <div className="space-y-6 border-l border-white/10 pl-6 group">
-              <div className="w-12 h-12 rounded-lg bg-white/[0.03] border border-white/10 flex items-center justify-center text-[#0066FF]">
+              <div className="w-12 h-12 rounded-lg bg-white/[0.03] border border-white/10 flex items-center justify-center text-[#6366f1]">
                 <Cpu className="w-6 h-6 group-hover:rotate-90 transition-transform duration-500" />
               </div>
               <div className="space-y-2">
-                <span className="font-mono text-xs text-[#0066FF] uppercase tracking-widest block">
+                <span className="font-mono text-xs text-[#6366f1] uppercase tracking-widest block">
                   03 / EXECUTION
                 </span>
                 <h3 className="font-display text-2xl sm:text-3xl font-bold uppercase text-[#FAF9F6]">
@@ -127,7 +127,7 @@ export const ServiceCategoryVisual: React.FC<ServiceCategoryVisualProps> = ({
           {/* Bottom Center Statement Banner */}
           <div className="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#666666] uppercase tracking-widest">
             <span className="flex items-center gap-2 text-[#FAF9F6]">
-              <span className="w-2 h-2 rounded-full bg-[#0066FF]" />
+              <span className="w-2 h-2 rounded-full bg-[#6366f1]" />
               SYNERGISTIC EXECUTION MODEL
             </span>
             <span>NO SILOS. ZERO HANDOFF FRICTION.</span>

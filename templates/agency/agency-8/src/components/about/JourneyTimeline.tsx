@@ -81,7 +81,7 @@ export const JourneyTimeline: React.FC<JourneyTimelineProps> = ({ setCursorType 
               viewport={{ once: true }}
               className="flex items-center gap-2 mb-4"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
               <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
                 OUR EVOLUTION
               </span>
@@ -123,7 +123,7 @@ export const JourneyTimeline: React.FC<JourneyTimelineProps> = ({ setCursorType 
                     onMouseLeave={() => setCursorType('default')}
                     className={`relative p-4 sm:p-5 rounded-xl transition-all duration-300 cursor-pointer group ${
                       isActive
-                        ? 'bg-white/[0.04] border border-[#0066FF]/40 text-[#FAF9F6]'
+                        ? 'bg-white/[0.04] border border-[#6366f1]/40 text-[#FAF9F6]'
                         : 'hover:bg-white/[0.02] border border-transparent text-[#888888] hover:text-[#FAF9F6]'
                     }`}
                   >
@@ -131,20 +131,20 @@ export const JourneyTimeline: React.FC<JourneyTimelineProps> = ({ setCursorType 
                     {isActive && (
                       <motion.div
                         layoutId="activeTimelinePill"
-                        className="absolute -left-[31px] top-6 w-3 h-3 rounded-full bg-[#0066FF] ring-4 ring-[#0066FF]/20"
+                        className="absolute -left-[31px] top-6 w-3 h-3 rounded-full bg-[#6366f1] ring-4 ring-[#6366f1]/20"
                       />
                     )}
 
                     <div className="flex items-center justify-between">
                       <div className="flex items-baseline gap-4">
-                        <span className={`font-mono text-xl sm:text-2xl font-bold transition-colors ${isActive ? 'text-[#0066FF]' : 'text-[#888888] group-hover:text-[#FAF9F6]'}`}>
+                        <span className={`font-mono text-xl sm:text-2xl font-bold transition-colors ${isActive ? 'text-[#6366f1]' : 'text-[#888888] group-hover:text-[#FAF9F6]'}`}>
                           {item.year}
                         </span>
                         <span className="font-display text-sm sm:text-base font-bold uppercase tracking-tight">
                           {item.title}
                         </span>
                       </div>
-                      <ArrowUpRight className={`w-4 h-4 transition-transform duration-300 ${isActive ? 'text-[#0066FF] rotate-45' : 'text-[#888888] group-hover:text-[#FAF9F6]'}`} />
+                      <ArrowUpRight className={`w-4 h-4 transition-transform duration-300 ${isActive ? 'text-[#6366f1] rotate-45' : 'text-[#888888] group-hover:text-[#FAF9F6]'}`} />
                     </div>
 
                     <p className={`text-xs mt-2 line-clamp-1 font-mono ${isActive ? 'text-[#FAF9F6]/80' : 'text-[#888888]'}`}>
@@ -187,7 +187,7 @@ export const JourneyTimeline: React.FC<JourneyTimelineProps> = ({ setCursorType 
                   </div>
 
                   <div className="absolute bottom-4 right-4">
-                    <span className="px-3 py-1 bg-[#0066FF] text-[10px] font-mono tracking-widest text-white uppercase font-bold shadow-lg">
+                    <span className="px-3 py-1 bg-[#6366f1] text-[10px] font-mono tracking-widest text-white uppercase font-bold shadow-lg">
                       {activeMilestone.metrics}
                     </span>
                   </div>
@@ -196,7 +196,7 @@ export const JourneyTimeline: React.FC<JourneyTimelineProps> = ({ setCursorType 
                 {/* Narrative Details */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#0066FF] font-semibold">
+                    <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#6366f1] font-semibold">
                       PHASE // {activeMilestone.title}
                     </span>
                     <span className="text-white/20">•</span>
@@ -218,7 +218,7 @@ export const JourneyTimeline: React.FC<JourneyTimelineProps> = ({ setCursorType 
                     <span className="text-[#FAF9F6] font-bold block mb-0.5">KEY MILESTONE DELIVERABLE:</span>
                     <span>{activeMilestone.deliverable}</span>
                   </div>
-                  <div className="text-[#0066FF] font-bold tracking-wider uppercase">
+                  <div className="text-[#6366f1] font-bold tracking-wider uppercase">
                     CHAPTER 0{activeIdx + 1} OF 05
                   </div>
                 </div>

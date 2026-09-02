@@ -5,7 +5,7 @@ export const AboutIntro: React.FC = () => {
   return (
     <section className="py-32 sm:py-48 border-t border-[#ffffff10] relative overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#0066FF]/[0.025] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#6366f1]/[0.025] rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Section Tag */}
@@ -16,7 +16,7 @@ export const AboutIntro: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-2 mb-16 sm:mb-24"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
             OUR APPROACH
           </span>
@@ -43,7 +43,7 @@ export const AboutIntro: React.FC = () => {
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full h-px bg-gradient-to-r from-transparent via-[#0066FF]/60 to-transparent origin-left my-16 sm:my-28"
+          className="w-full h-px bg-gradient-to-r from-transparent via-[#6366f1]/60 to-transparent origin-left my-16 sm:my-28"
         />
 
         {/* Statement 2 - More Dramatic Visual Appearance */}
@@ -57,7 +57,7 @@ export const AboutIntro: React.FC = () => {
           >
             <h2 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight text-[#FAF9F6] leading-[0.92]">
               WE MAKE THEM <br />
-              <span className="font-editorial italic font-normal text-[#0066FF] tracking-normal lowercase text-[1.1em]">
+              <span className="font-editorial italic font-normal text-[#6366f1] tracking-normal lowercase text-[1.1em]">
                 mean something.
               </span>
             </h2>

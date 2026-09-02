@@ -14,7 +14,7 @@ export const Availability: React.FC<AvailabilityProps> = ({ setCursorType }) => 
         <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-[#ffffff15] flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div className="space-y-3 max-w-xl">
             <div className="flex items-center gap-2">
-              <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#0066FF]">
+              <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#6366f1]">
                 PROJECT AVAILABILITY
               </span>
             </div>

@@ -41,7 +41,7 @@ export const ServicesPreview: React.FC<ServicesPreviewProps> = ({
       className="py-28 sm:py-36 border-t border-[#ffffff10] relative bg-[#080808] overflow-hidden"
     >
       {/* Background ambient lighting */}
-      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#0066FF]/[0.03] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#6366f1]/[0.03] rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Section Header */}
@@ -53,7 +53,7 @@ export const ServicesPreview: React.FC<ServicesPreviewProps> = ({
               viewport={{ once: true }}
               className="flex items-center gap-2 mb-4"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
               <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888]">
                 WHAT WE DO
               </span>
@@ -109,7 +109,7 @@ export const ServicesPreview: React.FC<ServicesPreviewProps> = ({
                 <div className="flex items-start lg:items-center justify-between gap-8">
                   {/* Left Column: Number and Service Title */}
                   <div className="flex items-baseline gap-8 lg:gap-16">
-                    <span className="font-mono text-xs tracking-widest text-[#888888] group-hover:text-[#0066FF] transition-colors duration-300">
+                    <span className="font-mono text-xs tracking-widest text-[#888888] group-hover:text-[#6366f1] transition-colors duration-300">
                       {service.number}
                     </span>
                     <h3 className="font-display text-3xl lg:text-5xl font-bold text-[#FAF9F6]/80 group-hover:text-white transition-all duration-300 group-hover:translate-x-3 uppercase">
@@ -119,7 +119,7 @@ export const ServicesPreview: React.FC<ServicesPreviewProps> = ({
 
                   {/* Center Column: Description & Tagline */}
                   <div className="max-w-md hidden lg:block">
-                    <p className="text-xs uppercase tracking-widest text-[#0066FF] font-mono mb-1.5 opacity-80 group-hover:opacity-100 transition-opacity">
+                    <p className="text-xs uppercase tracking-widest text-[#6366f1] font-mono mb-1.5 opacity-80 group-hover:opacity-100 transition-opacity">
                       {service.tagline}
                     </p>
                     <p className="text-sm text-[#888888] leading-relaxed group-hover:text-[#FAF9F6] transition-colors">
@@ -128,13 +128,13 @@ export const ServicesPreview: React.FC<ServicesPreviewProps> = ({
                   </div>
 
                   {/* Right Column: Arrow Action */}
-                  <div className="flex items-center justify-center w-14 h-14 rounded-full border border-[#ffffff15] group-hover:border-[#0066FF] group-hover:bg-[#0066FF]/10 transition-all duration-300 shrink-0">
-                    <ArrowUpRight className="w-5 h-5 text-[#888888] group-hover:text-[#0066FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                  <div className="flex items-center justify-center w-14 h-14 rounded-full border border-[#ffffff15] group-hover:border-[#6366f1] group-hover:bg-[#6366f1]/10 transition-all duration-300 shrink-0">
+                    <ArrowUpRight className="w-5 h-5 text-[#888888] group-hover:text-[#6366f1] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
                   </div>
                 </div>
 
                 {/* Subtle Hover Gradient Bar */}
-                <div className="absolute left-0 bottom-0 top-0 w-1 bg-[#0066FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute left-0 bottom-0 top-0 w-1 bg-[#6366f1] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             );
           })}
@@ -152,12 +152,12 @@ export const ServicesPreview: React.FC<ServicesPreviewProps> = ({
                   className="w-full flex items-center justify-between text-left group focus:outline-hidden"
                 >
                   <div className="flex items-center gap-4">
-                    <span className="font-mono text-xs text-[#0066FF]">{service.number}</span>
+                    <span className="font-mono text-xs text-[#6366f1]">{service.number}</span>
                     <span className="font-display text-2xl font-bold text-[#FAF9F6] uppercase">
                       {service.name}
                     </span>
                   </div>
-                  <div className={`p-2 rounded-full bg-white/[0.04] transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[#0066FF]' : 'text-[#888888]'}`}>
+                  <div className={`p-2 rounded-full bg-white/[0.04] transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[#6366f1]' : 'text-[#888888]'}`}>
                     <ChevronDown className="w-4 h-4" />
                   </div>
                 </button>
@@ -179,7 +179,7 @@ export const ServicesPreview: React.FC<ServicesPreviewProps> = ({
                           loading="lazy"
                         />
                       </div>
-                      <p className="text-xs uppercase font-mono tracking-wider text-[#0066FF]">
+                      <p className="text-xs uppercase font-mono tracking-wider text-[#6366f1]">
                         {service.tagline}
                       </p>
                       <p className="text-sm text-[#888888] leading-relaxed">
@@ -195,7 +195,7 @@ export const ServicesPreview: React.FC<ServicesPreviewProps> = ({
                               key={i}
                               className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-xs text-[#FAF9F6] flex items-center gap-1.5"
                             >
-                              <CheckCircle2 className="w-3 h-3 text-[#0066FF]" />
+                              <CheckCircle2 className="w-3 h-3 text-[#6366f1]" />
                               {deliv}
                             </span>
                           ))}
@@ -233,7 +233,7 @@ export const ServicesPreview: React.FC<ServicesPreviewProps> = ({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-4">
               <div>
-                <span className="text-[10px] font-mono text-[#0066FF] uppercase tracking-widest">
+                <span className="text-[10px] font-mono text-[#6366f1] uppercase tracking-widest">
                   {hoveredService.number} // {hoveredService.name}
                 </span>
                 <p className="text-xs text-[#FAF9F6] font-medium">{hoveredService.tagline}</p>
