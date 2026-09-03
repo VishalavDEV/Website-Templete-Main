@@ -1,0 +1,6 @@
+{
+  "name": "Wellify - Health & Wellness Dashboard",
+  "description": "Personalized daily wellness tracker with health scores, activity plans, metrics tracking, and habit challenges.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
