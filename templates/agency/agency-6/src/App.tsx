@@ -86,7 +86,7 @@ function AppContent() {
 
 export default function App() {
   return (
-    <Router basename="/templates/agency/agency-6">
+    <Router basename={window.location.pathname.endsWith('/index.html') ? window.location.pathname.slice(0, -11) : (window.location.pathname.endsWith('/') ? window.location.pathname.slice(0, -1) : window.location.pathname)}>
       <AppContent />
     </Router>
   );

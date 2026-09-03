@@ -17,7 +17,7 @@ import { ContactPage } from './pages/ContactPage';
 
 export const App: React.FC = () => {
   return (
-    <Router basename="/templates/agency/agency-4">
+    <Router basename={window.location.pathname.endsWith('/index.html') ? window.location.pathname.slice(0, -11) : (window.location.pathname.endsWith('/') ? window.location.pathname.slice(0, -1) : window.location.pathname)}>
       <ScrollToTop />
       <div className="min-h-screen bg-[#FAF8F5] text-[#1A1918] flex flex-col font-sans selection:bg-[#D96B43] selection:text-white">
         <ScrollProgress />
