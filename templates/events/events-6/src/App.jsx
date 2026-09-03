@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Global Styles
 import './styles/global.css';
@@ -40,7 +40,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <Router basename="/templates/events/events-6">
+    <Router >
       {loading && <Preloader onComplete={() => setLoading(false)} />}
 
       <div style={{ position: 'relative', minHeight: '100vh', backgroundColor: '#050505', color: '#FFFFFF' }}>

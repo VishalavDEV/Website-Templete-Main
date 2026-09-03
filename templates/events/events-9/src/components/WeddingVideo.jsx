@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { weddingData } from '../data/weddingData';
 
 export default function WeddingVideo() {
-  const bgImagePath = "/images/wedding-bg.png";
+  const bgImagePath = "./images/wedding-bg.png";
 
   return (
     <div className="hero-background-container">

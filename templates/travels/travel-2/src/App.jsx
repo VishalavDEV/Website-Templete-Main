@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 // Component Imports
@@ -49,7 +49,7 @@ export default function App() {
   };
 
   return (
-    <Router basename="/templates/travels/travel-2">
+    <Router >
       <AnimatePresence mode="wait">
         {loading ? (
           <LoadingScreen key="loader" onComplete={() => setLoading(false)} />

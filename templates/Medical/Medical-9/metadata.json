@@ -1,0 +1,6 @@
+{
+  "name": "Gluvia Diabetes Institute",
+  "description": "Better Numbers. Better Living. Premium diabetic hospital and comprehensive diabetes care center template.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

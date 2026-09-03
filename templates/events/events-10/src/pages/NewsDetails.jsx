@@ -42,7 +42,7 @@ export const NewsDetails = () => {
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = '/images/arena-bg.jpg';
+                  e.target.src = './images/arena-bg.jpg';
                 }}
               />
             </div>

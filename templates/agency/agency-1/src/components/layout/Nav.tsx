@@ -19,9 +19,9 @@ function Wordmark({ onClick }: { onClick?: () => void }) {
       to="/"
       onClick={onClick}
       className="text-[1.35rem] font-bold tracking-[-0.03em] text-ink"
-      aria-label="Foldline — home"
+      aria-label="AxiomLab — home"
     >
-      foldline<span aria-hidden="true" className="text-coral">.</span>
+      AxiomLab<span aria-hidden="true" className="text-coral">.</span>
     </Link>
   );
 }

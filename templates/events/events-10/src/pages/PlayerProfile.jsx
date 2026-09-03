@@ -25,7 +25,7 @@ export const PlayerProfile = () => {
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = '/images/jordan-sterling.svg';
+                    e.target.src = './images/jordan-sterling.svg';
                   }}
                 />
                 <div className="player-number-badge" style={{ fontSize: '3rem', top: '20px', right: '20px' }}>

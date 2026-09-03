@@ -3,14 +3,14 @@ import { useLocation, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LayoutGrid, Check, Settings, ArrowRight } from 'lucide-react';
 import { aurelisImages } from '../../data/aurelisImages';
-import { nexoraImages } from '../../data/nexoraImages';
+import { apexventuresImages } from '../../data/apexventuresImages';
 import { vantaImages } from '../../data/vantaImages';
 import { strativaImages } from '../../data/strativaImages';
 import { lumoraImages } from '../../data/lumoraImages';
 
 const options = [
   { id: 'aurelis', name: 'Aurelis', label: 'Enterprise & Business', desc: 'Strategic solutions for ambitious organizations.', route: '/aurelis', image: aurelisImages.hero, color: 'border-amber-500' },
-  { id: 'nexora', name: 'Nexora', label: 'Technology & Digital', desc: 'Futuristic systems for digital operations.', route: '/nexora', image: nexoraImages.hero, color: 'border-cyan-500' },
+  { id: 'apexventures', name: 'ApexVentures', label: 'Technology & Digital', desc: 'Futuristic systems for digital operations.', route: '/apexventures', image: apexventuresImages.hero, color: 'border-cyan-500' },
   { id: 'vanta-studio', name: 'Vanta Studio', label: 'Creative Agency', desc: 'Expressive brand identities that command culture.', route: '/vanta-studio', image: vantaImages.gallery[0], color: 'border-pink-500' },
   { id: 'strativa', name: 'Strativa', label: 'Consulting & Strategy', desc: 'Clarity for complex corporate decisions.', route: '/strativa', image: strativaImages.hero, color: 'border-emerald-500' },
   { id: 'lumora-labs', name: 'Lumora Labs', label: 'Startup & Innovation', desc: 'Building products for what comes next.', route: '/lumora-labs', image: lumoraImages.hero, color: 'border-violet-500' },

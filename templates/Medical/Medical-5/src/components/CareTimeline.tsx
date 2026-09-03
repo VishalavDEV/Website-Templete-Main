@@ -53,7 +53,7 @@ export const CareTimeline: React.FC<CareTimelineProps> = ({
   const [newEventCategory, setNewEventCategory] = useState<'appointment' | 'report' | 'prescription' | 'procedure'>('appointment');
   const [newEventDate, setNewEventDate] = useState(new Date().toISOString().split('T')[0]);
   const [newEventDoctor, setNewEventDoctor] = useState('Dr. Sophia Chen-Vance');
-  const [newEventLocation, setNewEventLocation] = useState('Aura Central Medical Pavilion');
+  const [newEventLocation, setNewEventLocation] = useState('BioHealth Central Medical Pavilion');
   const [newEventDescription, setNewEventDescription] = useState('');
   const [newEventNotes, setNewEventNotes] = useState('');
   const [newEventMetricLabel, setNewEventMetricLabel] = useState('');
@@ -734,7 +734,7 @@ export const CareTimeline: React.FC<CareTimelineProps> = ({
                     type="text"
                     value={newEventLocation}
                     onChange={(e) => setNewEventLocation(e.target.value)}
-                    placeholder="e.g. Aura Medical Pavilion"
+                    placeholder="e.g. BioHealth Medical Pavilion"
                     className="w-full px-3 py-2 bg-[#F9F7FB] border border-[#3E3445]/15 focus:border-[#8B6FAE] rounded-xl text-xs text-[#3E3445] focus:outline-none"
                   />
                 </div>

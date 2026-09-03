@@ -51,7 +51,7 @@ export default function Hero() {
         className="absolute inset-0 z-0 opacity-40 mix-blend-overlay pointer-events-none"
       >
         <img 
-          src="/assets/camping_stars.jpg" 
+          src="./assets/camping_stars.jpg" 
           alt="Adventure Background" 
           className="w-full h-full object-cover scale-110"
         />
@@ -144,7 +144,7 @@ export default function Hero() {
             className="relative h-[250px] md:h-[380px] rounded-3xl overflow-hidden group shadow-xl border border-white/10"
           >
             <img 
-              src="/assets/beach_surfing.jpg" 
+              src="./assets/beach_surfing.jpg" 
               alt="Surfing Adventure" 
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
@@ -183,7 +183,7 @@ export default function Hero() {
               </div>
               <div className="flex justify-between items-center gap-2 mt-2">
                 <div className="w-8 h-8 rounded-lg overflow-hidden flex-shrink-0">
-                  <img src="/assets/mountain_hiking.jpg" className="w-full h-full object-cover" />
+                  <img src="./assets/mountain_hiking.jpg" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-grow space-y-1">
                   <div className="h-2 w-full bg-white/20 rounded-full" />
@@ -206,7 +206,7 @@ export default function Hero() {
             className="relative h-[200px] md:h-[280px] rounded-3xl overflow-hidden group shadow-xl border border-white/10 col-span-2 md:col-span-1"
           >
             <img 
-              src="/assets/mountain_hiking.jpg" 
+              src="./assets/mountain_hiking.jpg" 
               alt="Mountain Trek" 
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
@@ -264,7 +264,7 @@ export default function Hero() {
             className="relative h-[220px] md:h-[300px] rounded-3xl overflow-hidden group shadow-xl border border-white/10 col-span-1 md:col-span-2"
           >
             <img 
-              src="/assets/camping_stars.jpg" 
+              src="./assets/camping_stars.jpg" 
               alt="Night Camping" 
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />

@@ -17,7 +17,7 @@ export default function App() {
   };
 
   return (
-    <Router basename="/templates/cooperate/cooperate-9">
+    <Router basename={window.location.pathname.endsWith('/index.html') ? window.location.pathname.slice(0, -11) : (window.location.pathname.endsWith('/') ? window.location.pathname.slice(0, -1) : window.location.pathname)}>
       <div className="min-h-screen bg-white text-[#191919] flex flex-col font-sans selection:bg-[#191919] selection:text-white">
         {/* Navigation Bar matching Screenshot */}
         <Navbar onGetStarted={handleOpenGetStarted} />

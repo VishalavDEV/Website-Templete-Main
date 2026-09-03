@@ -222,7 +222,11 @@ window.PulseCareApp = {
   }
 };
 
-// Initialize App on DOM Ready
-document.addEventListener('DOMContentLoaded', () => {
+// Initialize App on DOM Ready or immediately if already loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    window.PulseCareApp.init();
+  });
+} else {
   window.PulseCareApp.init();
-});
+}

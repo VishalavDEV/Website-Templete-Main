@@ -13,7 +13,7 @@ export const PlayerCard = ({ player }) => {
           loading="lazy"
           onError={(e) => {
             e.target.onerror = null;
-            e.target.src = '/images/jordan-sterling.svg';
+            e.target.src = './images/jordan-sterling.svg';
           }}
         />
         <div className="player-number-badge">#{player.number}</div>

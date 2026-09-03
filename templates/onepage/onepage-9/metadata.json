@@ -1,0 +1,6 @@
+{
+  "name": "AURA Digital Atelier & Systems",
+  "description": "Next-generation digital agency, product engineering atelier, and intelligent cloud systems platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

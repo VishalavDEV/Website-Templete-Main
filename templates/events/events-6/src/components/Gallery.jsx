@@ -8,12 +8,12 @@ export default function Gallery() {
   const categories = ['ALL', 'LIVE', 'ARTISTS', 'STAGE', 'DJ', 'CROWD', 'BEHIND THE SCENES'];
 
   const galleryItems = [
-    { id: 1, title: 'Lead Singer Under Golden Light', category: 'LIVE', image: '/images/hero_performer.jpg' },
-    { id: 2, title: 'Aurora Main Stage Spectacle', category: 'STAGE', image: '/images/main_stage.jpg' },
-    { id: 3, title: 'DJ Night Frequency Mix', category: 'DJ', image: '/images/dj_performer.jpg' },
-    { id: 4, title: 'Electrifying Festival Crowd', category: 'CROWD', image: '/images/main_stage.jpg' },
-    { id: 5, title: 'Acoustic Soul Performance', category: 'ARTISTS', image: '/images/hero_performer.jpg' },
-    { id: 6, title: 'Backstage Soundcheck & Gear', category: 'BEHIND THE SCENES', image: '/images/dj_performer.jpg' },
+    { id: 1, title: 'Lead Singer Under Golden Light', category: 'LIVE', image: './images/hero_performer.jpg' },
+    { id: 2, title: 'Aurora Main Stage Spectacle', category: 'STAGE', image: './images/main_stage.jpg' },
+    { id: 3, title: 'DJ Night Frequency Mix', category: 'DJ', image: './images/dj_performer.jpg' },
+    { id: 4, title: 'Electrifying Festival Crowd', category: 'CROWD', image: './images/main_stage.jpg' },
+    { id: 5, title: 'Acoustic Soul Performance', category: 'ARTISTS', image: './images/hero_performer.jpg' },
+    { id: 6, title: 'Backstage Soundcheck & Gear', category: 'BEHIND THE SCENES', image: './images/dj_performer.jpg' },
   ];
 
   const filteredItems = activeCategory === 'ALL'

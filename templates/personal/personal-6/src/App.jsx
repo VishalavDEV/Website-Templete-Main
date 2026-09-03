@@ -339,7 +339,6 @@ export default function App() {
           left: cursorPos.x - 12,
           width: '24px',
           height: '24px',
-          borderRadius: '50%',
           backgroundColor: '#bef264',
           mixBlendMode: 'difference',
           pointerEvents: 'none',

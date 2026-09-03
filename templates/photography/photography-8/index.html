@@ -1,6 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
+
+    <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+    <script>
+      (function() {
+        const isTop = window.self === window.top;
+        const urlParams = new URLSearchParams(window.location.search);
+        const isIframe = urlParams.get('iframe') === 'true';
+        
+        if (isTop && !isIframe) {
+          function buildPreviewWrapper() {
+            const body = document.body;
+            if (!body) {
+              setTimeout(buildPreviewWrapper, 10);
+              return;
+            }
+            if (document.getElementById('technosprint-preview-header')) return;
+
+            const currentUrl = new URL(window.location.href);
+            currentUrl.searchParams.set('iframe', 'true');
+            
+            document.documentElement.className = '';
+            document.documentElement.removeAttribute('style');
+            
+            body.className = '';
+            body.innerHTML = '';
+            body.removeAttribute('style');
+            
+            const overrideStyle = document.createElement('style');
+            overrideStyle.id = 'technosprint-preview-backdrop-style';
+            overrideStyle.textContent = 'html, body { margin: 0 !important; padding: 0 !important; width: 100vw !important; height: 100vh !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important; color: #0f172a !important; } #technosprint-preview-header { background-color: #ffffff !important; color: #0f172a !important; }';
+            document.head.appendChild(overrideStyle);
+            
+            body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important;';
+            
+            const topBar = document.createElement('header');
+            topBar.id = 'technosprint-preview-header';
+            topBar.style.height = '64px';
+            topBar.style.minHeight = '64px';
+            topBar.style.background = '#ffffff';
+            topBar.style.borderBottom = '1px solid #e2e8f0';
+            topBar.style.display = 'flex';
+            topBar.style.alignItems = 'center';
+            topBar.style.justifyContent = 'space-between';
+            topBar.style.padding = '0 24px';
+            topBar.style.boxShadow = '0 1px 4px rgba(0, 0, 0, 0.04)';
+            topBar.style.fontFamily = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+            topBar.style.zIndex = '99999';
+            topBar.style.position = 'relative';
+            topBar.style.boxSizing = 'border-box';
+            
+            const logoDiv = document.createElement('div');
+            logoDiv.style.display = 'flex';
+            logoDiv.style.alignItems = 'center';
+            logoDiv.style.gap = '16px';
+            logoDiv.innerHTML = '<a href="/templates" style="display: flex; align-items: center; text-decoration: none;" title="Back to Templates"><img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" onerror="this.style.display=\'none\'" /></a>' +
+              '<a href="/templates" style="display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: #64748b; text-decoration: none; font-weight: 600; padding: 6px 12px; border-radius: 8px; background: #f8fafc; border: 1px solid #e2e8f0;">' +
+              '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Back</a>';
+            topBar.appendChild(logoDiv);
+            
+            const switcherDiv = document.createElement('div');
+            switcherDiv.style.display = 'inline-flex';
+            switcherDiv.style.alignItems = 'center';
+            switcherDiv.style.background = '#ffffff';
+            switcherDiv.style.border = '1px solid #e2e8f0';
+            switcherDiv.style.borderRadius = '12px';
+            switcherDiv.style.padding = '4px';
+            switcherDiv.style.gap = '4px';
+            switcherDiv.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)';
+            
+            switcherDiv.innerHTML = '' +
+              '<button id="view-desktop" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.15s; outline: none; box-sizing: border-box; box-shadow: 0 1px 2px rgba(37,99,235,0.08);">' +
+              '  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>' +
+              '  Desktop' +
+              '</button>' +
+              '<button id="view-tablet" style="background: transparent; color: #64748b; border: 1px solid transparent; padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.15s; outline: none; box-sizing: border-box;">' +
+              '  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>' +
+              '  Tablet' +
+              '</button>' +
+              '<button id="view-mobile" style="background: transparent; color: #64748b; border: 1px solid transparent; padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.15s; outline: none; box-sizing: border-box;">' +
+              '  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>' +
+              '  Mobile' +
+              '</button>';
+            topBar.appendChild(switcherDiv);
+            
+            const rightDiv = document.createElement('div');
+            rightDiv.style.display = 'flex';
+            rightDiv.style.alignItems = 'center';
+            rightDiv.style.gap = '10px';
+            rightDiv.innerHTML = '' +
+              '<button id="toggle-orientation" style="display: none; align-items: center; gap: 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 6px 12px; font-size: 0.82rem; color: #475569; font-weight: 600; cursor: pointer; transition: all 0.15s; outline: none; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">' +
+              '  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>' +
+              '  <span id="orientation-text">Portrait</span>' +
+              '</button>' +
+              '<button id="btn-refresh" style="display: flex; align-items: center; justify-content: center; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; width: 34px; height: 34px; color: #475569; cursor: pointer; transition: all 0.15s; outline: none; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">' +
+              '  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>' +
+              '</button>';
+            topBar.appendChild(rightDiv);
+            body.appendChild(topBar);
+            
+            const canvas = document.createElement('main');
+            canvas.style.cssText = 'flex: 1 !important; display: flex !important; align-items: center !important; justify-content: center !important; padding: 24px !important; overflow: auto !important; box-sizing: border-box !important; position: relative !important; background-color: transparent !important;';
+            
+            const frameContainer = document.createElement('div');
+            frameContainer.id = 'device-frame';
+            frameContainer.style.width = '100%';
+            frameContainer.style.height = '100%';
+            frameContainer.style.maxHeight = '100%';
+            frameContainer.style.maxWidth = '100%';
+            frameContainer.style.backgroundColor = 'transparent';
+            frameContainer.style.border = 'none';
+            frameContainer.style.borderRadius = '12px';
+            frameContainer.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04)';
+            frameContainer.style.position = 'relative';
+            frameContainer.style.display = 'flex';
+            frameContainer.style.flexDirection = 'column';
+            frameContainer.style.overflow = 'hidden';
+            frameContainer.style.boxSizing = 'border-box';
+            frameContainer.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            
+            const notch = document.createElement('div');
+            notch.id = 'phone-notch';
+            notch.style.position = 'absolute';
+            notch.style.top = '8px';
+            notch.style.left = '50%';
+            notch.style.transform = 'translateX(-50%)';
+            notch.style.width = '96px';
+            notch.style.height = '24px';
+            notch.style.backgroundColor = '#0f172a';
+            notch.style.borderRadius = '99px';
+            notch.style.zIndex = '20';
+            notch.style.display = 'none';
+            notch.style.alignItems = 'center';
+            notch.style.justifyContent = 'space-between';
+            notch.style.padding = '0 10px';
+            notch.style.boxSizing = 'border-box';
+            notch.innerHTML = '<div style="width: 8px; height: 8px; border-radius: 50%; background-color: #1e293b;"></div><div style="width: 6px; height: 6px; border-radius: 50%; background-color: #090d16;"></div>';
+            frameContainer.appendChild(notch);
+            
+            const iframe = document.createElement('iframe');
+            iframe.id = 'preview-iframe';
+            iframe.src = currentUrl.toString();
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+            iframe.style.borderRadius = '12px';
+            iframe.style.background = '#ffffff';
+            
+            frameContainer.appendChild(iframe);
+            canvas.appendChild(frameContainer);
+            body.appendChild(canvas);
+            
+            const btnDesktop = body.querySelector('#view-desktop');
+            const btnTablet = body.querySelector('#view-tablet');
+            const btnMobile = body.querySelector('#view-mobile');
+            const btnOrientation = body.querySelector('#toggle-orientation');
+            const orientationText = body.querySelector('#orientation-text');
+            const btnRefresh = body.querySelector('#btn-refresh');
+            
+            let activeMode = 'desktop';
+            let orientation = 'portrait';
+            
+            function updateStyles() {
+              [btnDesktop, btnTablet, btnMobile].forEach(btn => {
+                btn.style.background = 'transparent';
+                btn.style.color = '#64748b';
+                btn.style.border = '1px solid transparent';
+                btn.style.fontWeight = '500';
+                btn.style.boxShadow = 'none';
+              });
+              
+              if (activeMode === 'desktop') {
+                btnDesktop.style.background = '#eff6ff';
+                btnDesktop.style.color = '#2563eb';
+                btnDesktop.style.border = '1px solid #bfdbfe';
+                btnDesktop.style.fontWeight = '600';
+                btnDesktop.style.boxShadow = '0 1px 2px rgba(37,99,235,0.08)';
+                
+                btnOrientation.style.display = 'none';
+                notch.style.display = 'none';
+                
+                frameContainer.style.width = '100%';
+                frameContainer.style.height = '100%';
+                frameContainer.style.maxWidth = '100%';
+                frameContainer.style.maxHeight = '100%';
+                frameContainer.style.backgroundColor = 'transparent';
+                frameContainer.style.border = 'none';
+                frameContainer.style.borderRadius = '12px';
+              } else if (activeMode === 'tablet') {
+                btnTablet.style.background = '#eff6ff';
+                btnTablet.style.color = '#2563eb';
+                btnTablet.style.border = '1px solid #bfdbfe';
+                btnTablet.style.fontWeight = '600';
+                btnTablet.style.boxShadow = '0 1px 2px rgba(37,99,235,0.08)';
+                
+                btnOrientation.style.display = 'inline-flex';
+                notch.style.display = 'none';
+                
+                const isPortrait = orientation === 'portrait';
+                frameContainer.style.width = isPortrait ? '768px' : '1024px';
+                frameContainer.style.height = isPortrait ? '1024px' : '768px';
+                frameContainer.style.maxWidth = '100%';
+                frameContainer.style.maxHeight = '100%';
+                frameContainer.style.border = '12px solid #0f172a';
+                frameContainer.style.borderRadius = '24px';
+              } else if (activeMode === 'mobile') {
+                btnMobile.style.background = '#eff6ff';
+                btnMobile.style.color = '#2563eb';
+                btnMobile.style.border = '1px solid #bfdbfe';
+                btnMobile.style.fontWeight = '600';
+                btnMobile.style.boxShadow = '0 1px 2px rgba(37,99,235,0.08)';
+                
+                btnOrientation.style.display = 'inline-flex';
+                notch.style.display = 'flex';
+                
+                const isPortrait = orientation === 'portrait';
+                frameContainer.style.width = isPortrait ? '375px' : '667px';
+                frameContainer.style.height = isPortrait ? '667px' : '375px';
+                frameContainer.style.maxWidth = '100%';
+                frameContainer.style.maxHeight = '100%';
+                frameContainer.style.border = '12px solid #0f172a';
+                frameContainer.style.borderRadius = '36px';
+              }
+            }
+            
+            btnDesktop.addEventListener('click', () => { activeMode = 'desktop'; updateStyles(); });
+            btnTablet.addEventListener('click', () => { activeMode = 'tablet'; updateStyles(); });
+            btnMobile.addEventListener('click', () => { activeMode = 'mobile'; updateStyles(); });
+            
+            btnOrientation.addEventListener('click', () => {
+              orientation = orientation === 'portrait' ? 'landscape' : 'portrait';
+              orientationText.textContent = orientation.charAt(0).toUpperCase() + orientation.slice(1);
+              updateStyles();
+            });
+            
+            btnRefresh.addEventListener('click', () => {
+              iframe.src = iframe.src;
+            });
+          }
+          
+          if (document.readyState === 'interactive' || document.readyState === 'complete') {
+            buildPreviewWrapper();
+          } else {
+            window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
+            window.addEventListener('load', buildPreviewWrapper);
+          }
+        }
+      })();
+    </script>
+
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sage & Shutter — Fine Art Wedding Photography</title>
@@ -13,7 +264,7 @@
       const urlParams = new URLSearchParams(window.location.search);
       const isIframe = urlParams.get('iframe') === 'true';
       
-      if (isTop && !isIframe) {
+      if (false && isTop && !isIframe) {
         document.documentElement.style.visibility = 'hidden';
         
         window.addEventListener('DOMContentLoaded', () => {

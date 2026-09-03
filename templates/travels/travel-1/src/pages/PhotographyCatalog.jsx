@@ -11,49 +11,49 @@ export default function PhotographyCatalog() {
     {
       slug: 'snapfolio-template',
       name: 'SnapFolio — Dark Minimalist Portfolio',
-      previewImage: '/snapfolio_cover.png',
+      previewImage: './snapfolio_cover.png',
       tags: ['Dark Theme', 'Masonry Gallery', 'Lightbox Modal'],
       description: 'A dark-themed photography portfolio featuring a floating glass sidebar navigation, animated typewriter hero headlines, responsive masonry layouts, next/prev arrow keyboard navigation lightbox, and integrated booking validation feedback.'
     },
     {
       slug: 'photo-template',
       name: 'Photo — Editorial Photography Studio',
-      previewImage: '/photo_cover.png',
+      previewImage: './photo_cover.png',
       tags: ['Editorial Layout', 'Scroll Pinned Canvas', 'Golden Hour Theme'],
       description: 'A high-end, editorial landing page template for creative photography studios. Features Apple-style scroll-linked canvas camera aperture and lens flare animations, split-layout typography, and interactive showcase grids.'
     },
     {
       slug: 'wedding-template',
       name: 'Lumière — High-End Wedding & Event Photography',
-      previewImage: '/wedding_cover.png',
+      previewImage: './wedding_cover.png',
       tags: ['Minimalist Editorial', 'Split Layout Navbar', 'Floating Contact Buttons'],
       description: 'A responsive, high-end wedding and event photography portfolio web template with a warm ivory backdrop, center-split navigation, elegant serif headings, and sticky whatsapp/phone buttons.'
     },
     {
       slug: 'fineart-template',
       name: 'Aura — Premium Fine Art Studio',
-      previewImage: '/fineart_cover.png',
+      previewImage: './fineart_cover.png',
       tags: ['Premium Serif', 'Wipe Reveals', 'Hover Custom Cursor'],
       description: 'A premium, dynamic React portfolio website for a fine art photography studio. Features Ken Burns hero animations, scroll-triggered wipe reveals, and interactive circular gallery navigations.'
     },
     {
       slug: 'cinematic-wedding',
       name: 'Eden Rose — Cinematic Luxury Wedding Portfolio',
-      previewImage: '/cinematic_cover.png',
+      previewImage: './cinematic_cover.png',
       tags: ['Luxury Monocrom', 'Preloader curtain', 'Staggered Grid'],
       description: 'A cinematic wedding photography portfolio template in deep black and luxury gold tones. Features intro curtain loaders, route transition reveals, staggered portfolio grids, and boutique inquiry options.'
     },
     {
       slug: 'kairo-template',
       name: 'Kairo — Modern 3D Photography Portfolio',
-      previewImage: '/kairo_cover.png',
+      previewImage: './kairo_cover.png',
       tags: ['3D Scene', 'Interactive Parallax', 'Luxury Editorial'],
       description: 'A modern photography portfolio featuring interactive 3D camera lens aperture graphics rendered in React Three Fiber, scroll-linked fade animations, split-layout bio sections, and fullscreen responsive image tiles.'
     },
     {
       slug: 'isteady-template',
       name: 'Lume Studio — Fashion & Editorial Portfolio',
-      previewImage: '/lume_cover.png',
+      previewImage: './lume_cover.png',
       tags: ['Editorial Fashion', 'Moody Spotlight', 'Bespoke Lighting'],
       description: 'A premium photography portfolio website. Features full-bleed moody editorial layouts, ambient gold twinkling particle overlays, and fluid smooth scroll interactions.'
     }

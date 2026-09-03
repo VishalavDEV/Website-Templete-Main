@@ -1,7 +1,7 @@
 [
   {
     "id": "loc-central",
-    "name": "Aura Central Medical Pavilion & Diagnostics",
+    "name": "BioHealth Central Medical Pavilion & Diagnostics",
     "city": "Metropolitan Central",
     "address": "450 Lilac Frost Avenue, Suite 100",
     "phone": "+1 (800) 287-2432",
@@ -14,7 +14,7 @@
   },
   {
     "id": "loc-gardens",
-    "name": "Aura Serenity Gardens Wellness Sanctuary",
+    "name": "BioHealth Serenity Gardens Wellness Sanctuary",
     "city": "Eastside Health Park",
     "address": "88 Botanical Way, Building B",
     "phone": "+1 (800) 287-2435",
@@ -27,7 +27,7 @@
   },
   {
     "id": "loc-uptown",
-    "name": "Aura Uptown Specialty & Dermatology Suites",
+    "name": "BioHealth Uptown Specialty & Dermatology Suites",
     "city": "North Uptown District",
     "address": "720 Highland Promenade, Floor 4",
     "phone": "+1 (800) 287-2438",

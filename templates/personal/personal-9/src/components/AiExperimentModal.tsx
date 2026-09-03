@@ -17,7 +17,7 @@ export const AiExperimentModal: React.FC<AiExperimentModalProps> = ({
 
   // State for Chat Assistant
   const [chatMessages, setChatMessages] = useState<Array<{ sender: 'user' | 'ai'; text: string }>>([
-    { sender: 'ai', text: "Hello! I'm Arjun's AI Assistant. How can I help you explore machine learning, full-stack development, or recent research today?" },
+    { sender: 'ai', text: "Hello! I'm Gwen's AI Assistant. How can I help you explore machine learning, full-stack development, or recent research today?" },
   ]);
   const [inputQuery, setInputQuery] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
@@ -46,9 +46,9 @@ export const AiExperimentModal: React.FC<AiExperimentModalProps> = ({
       if (userMsg.toLowerCase().includes('vision') || userMsg.toLowerCase().includes('yolo')) {
         aiReply = "For real-time computer vision, running quantized YOLOv9 ONNX models on edge accelerators allows sub-20ms inference with high mean Average Precision (mAP).";
       } else if (userMsg.toLowerCase().includes('project') || userMsg.toLowerCase().includes('built')) {
-        aiReply = "Arjun has engineered high-impact systems like NeuralDesk (AI doc workspace), VisionGuard (real-time surveillance), and StudyPilot (adaptive tutor). Check out the Projects section!";
+        aiReply = "Gwen has engineered high-impact systems like NeuralDesk (AI doc workspace), VisionGuard (real-time surveillance), and StudyPilot (adaptive tutor). Check out the Projects section!";
       } else if (userMsg.toLowerCase().includes('stack') || userMsg.toLowerCase().includes('skills')) {
-        aiReply = "Arjun specializes in Python, PyTorch, LangChain, FastAPI, TypeScript, React, and PostgreSQL/pgvector.";
+        aiReply = "Gwen specializes in Python, PyTorch, LangChain, FastAPI, TypeScript, React, and PostgreSQL/pgvector.";
       }
       setChatMessages(prev => [...prev, { sender: 'ai', text: aiReply }]);
       setIsGenerating(false);

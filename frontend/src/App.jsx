@@ -425,10 +425,13 @@ function AppRoutes({ user, cart, addToCart, removeFromCart, clearCart, handleLog
   const pathSegments = location.pathname.split('/').filter(Boolean);
   const isTemplateRoute = 
     location.pathname === '/hotel-template' ||
+    location.pathname.startsWith('/templates/photography/') ||
+    location.pathname.startsWith('/templates/portfolio/') ||
     (location.pathname.startsWith('/templates/') && 
      pathSegments.length >= 3 && 
-     location.pathname !== '/templates/photography' &&
-     location.pathname !== '/templates/portfolio');
+     !location.pathname.endsWith('.html') &&
+     !location.pathname.includes('/assets/') &&
+     !location.pathname.includes('.'));
 
   // Full-screen template routes
   if (isTemplateRoute) {

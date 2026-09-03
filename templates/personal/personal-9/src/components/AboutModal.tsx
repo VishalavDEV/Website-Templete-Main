@@ -20,7 +20,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose, darkMod
       >
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-base">About Arjun Mehta</span>
+            <span className="font-bold text-base">About Gwen</span>
           </div>
 
           <button
@@ -35,12 +35,12 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose, darkMod
           <div className="flex items-center gap-4">
             <img
               src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop"
-              alt="Arjun Mehta"
+              alt="Gwen"
               className="w-16 h-16 rounded-2xl object-cover border-2 border-blue-500 shadow-md"
               referrerPolicy="no-referrer"
             />
             <div>
-              <h2 className="text-xl font-bold font-heading">Arjun Mehta</h2>
+              <h2 className="text-xl font-bold font-heading">Gwen</h2>
               <p className="text-xs text-blue-600 dark:text-blue-400 font-semibold">AI Engineer & Full-Stack Developer</p>
               <p className="text-xs text-slate-500">{PERSONAL_INFO.location}</p>
             </div>

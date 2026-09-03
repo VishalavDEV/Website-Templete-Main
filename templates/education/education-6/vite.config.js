@@ -3,6 +3,8 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/templates/education/education-6/",
+  base: './',
+  
+  
   plugins: [react()],
 })

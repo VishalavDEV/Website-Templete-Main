@@ -29,7 +29,7 @@ export default function App() {
   const closeConsultation = () => setIsConsultationOpen(false);
 
   return (
-    <Router basename="/templates/cooperate/cooperate-6">
+    <Router basename={window.location.pathname.endsWith('/index.html') ? window.location.pathname.slice(0, -11) : (window.location.pathname.endsWith('/') ? window.location.pathname.slice(0, -1) : window.location.pathname)}>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-[#FBF9F5] text-[#0E1412] font-sans antialiased selection:bg-[#0F382E] selection:text-[#DFBA58]">
         {/* Global Navigation Bar */}

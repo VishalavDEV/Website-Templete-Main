@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -20,7 +20,7 @@ import './styles/index.css';
  */
 function App() {
   return (
-    <Router basename="/templates/education/education-6">
+    <Router >
       <ScrollToTop />
       <div className="app-wrapper flex-between-column" style={{ minHeight: '100vh' }}>
         <Header />
@@ -28,6 +28,7 @@ function App() {
         <main className="main-content-wrapper" style={{ flexGrow: 1 }}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/index.html" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/admissions" element={<Admissions />} />

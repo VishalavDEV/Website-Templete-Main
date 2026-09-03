@@ -168,7 +168,7 @@ export const DoctorDiscovery: React.FC<{ isFullPage?: boolean }> = ({ isFullPage
                 <option value="all">All Clinic Locations</option>
                 {locationsData.map((loc) => (
                   <option key={loc.id} value={loc.id}>
-                    {loc.name.replace('Aura ', '')}
+                    {loc.name.replace('BioHealth ', '')}
                   </option>
                 ))}
               </select>

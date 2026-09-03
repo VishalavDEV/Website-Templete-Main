@@ -1,3 +1,10 @@
+const getDynamicBasename = () => {
+  let p = window.location.pathname;
+  if (p.endsWith('/index.html')) p = p.slice(0, -11);
+  if (p.endsWith('/')) p = p.slice(0, -1);
+  return p;
+};
+
 import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -32,7 +39,7 @@ export default function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename={getDynamicBasename()}>
       {/* Scroll route watcher */}
       <ScrollToTop />
       

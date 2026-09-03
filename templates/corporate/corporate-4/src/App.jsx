@@ -22,7 +22,7 @@ export default function App() {
   const handleCloseModal = () => setIsModalOpen(false);
 
   return (
-    <Router basename="/templates/cooperate/cooperate-4">
+    <Router basename={window.location.pathname.endsWith('/index.html') ? window.location.pathname.slice(0, -11) : (window.location.pathname.endsWith('/') ? window.location.pathname.slice(0, -1) : window.location.pathname)}>
       <ScrollToTop />
       <div style={{ position: "relative", minHeight: "100vh", display: "flex", flexDirection: "column", backgroundColor: "var(--bg-sand)" }}>
         <WarmNavbar onOpenProjectModal={handleOpenModal} />

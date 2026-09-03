@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elemental — Editorial Command Center</title>
@@ -19,8 +20,8 @@
       const urlParams = new URLSearchParams(window.location.search);
       const isIframe = urlParams.get('iframe') === 'true';
       
-      if (isTop && !isIframe) {
-        // document.documentElement.style.visibility = 'hidden';
+      if (false && isTop && !isIframe) {
+        document.documentElement.style.visibility = 'hidden';
         
         window.addEventListener('DOMContentLoaded', () => {
           const currentUrl = new URL(window.location.href);

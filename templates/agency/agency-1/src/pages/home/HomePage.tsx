@@ -9,7 +9,7 @@ import { CtaSection } from "./sections/CtaSection";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export function HomePage() {
-  useDocumentTitle("Foldline — Design & Technology Studio");
+  useDocumentTitle("AxiomLab — Design & Technology Studio");
   return (
     <Page curtain>
       <HeroSection />

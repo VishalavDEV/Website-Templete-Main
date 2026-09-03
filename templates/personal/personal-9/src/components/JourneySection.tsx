@@ -206,7 +206,7 @@ export const JourneySection: React.FC<JourneySectionProps> = ({ darkMode }) => {
             <div className="relative rounded-xl overflow-hidden aspect-[16/9] mt-2 border border-gray-100 dark:border-gray-800 group">
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop"
-                alt="Arjun Mehta Coding"
+                alt="Gwen Coding"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 referrerPolicy="no-referrer"
               />

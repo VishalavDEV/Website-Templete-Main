@@ -704,15 +704,15 @@ export default function PhotographyPortfolio() {
         <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/index.html" element={<HomePage />} />
             <Route path="index.html" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/resume" element={<ResumePage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/portfolio" element={<PortfolioPage />} />
-            <Route path="/pricing" element={<PricingPage />} />
-            <Route path="/testimonials" element={<TestimonialsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
+            <Route path="about" element={<AboutPage />} />
+            <Route path="resume" element={<ResumePage />} />
+            <Route path="services" element={<ServicesPage />} />
+            <Route path="portfolio" element={<PortfolioPage />} />
+            <Route path="pricing" element={<PricingPage />} />
+            <Route path="testimonials" element={<TestimonialsPage />} />
+            <Route path="contact" element={<ContactPage />} />
+            <Route path="*" element={<HomePage />} />
           </Routes>
         </AnimatePresence>
       </main>

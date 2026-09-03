@@ -34,8 +34,8 @@ export const weddingData = {
     centerCouple: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=85",
     leftBouquet: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=85",
     rightBride: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=85",
-    videoPoster: "/images/wedding-bg.png",
-    cathedralBg: "/images/wedding-bg.png"
+    videoPoster: "./images/wedding-bg.png",
+    cathedralBg: "./images/wedding-bg.png"
   },
   ourStory: {
     subtitle: "Every forever begins somewhere.",

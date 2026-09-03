@@ -1,3 +1,10 @@
+const getDynamicBasename = () => {
+  let p = window.location.pathname;
+  if (p.endsWith('/index.html')) p = p.slice(0, -11);
+  if (p.endsWith('/')) p = p.slice(0, -1);
+  return p;
+};
+
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CursorProvider } from './hooks/useCustomCursor';
@@ -25,7 +32,7 @@ import { NotFound } from './pages/NotFound';
 
 export const App: React.FC = () => {
   return (
-    <BrowserRouter basename="/templates/agency/agency-5">
+    <BrowserRouter basename={getDynamicBasename()}>
       <CursorProvider>
         <ScrollToTop />
         <CustomCursor />

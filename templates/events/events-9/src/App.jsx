@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 // Import Global & Page Styles
 import './styles/global.css';
@@ -52,7 +52,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <Router basename="/templates/events/events-9">
+    <Router >
       <ScrollToTop />
       
       {/* Global Interactive Overlay Components */}

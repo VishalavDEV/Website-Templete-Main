@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Clock, ExternalLink } from 'lucide-react';
 import { aurelisImages } from '../../data/aurelisImages';
-import { nexoraImages } from '../../data/nexoraImages';
+import { apexventuresImages } from '../../data/apexventuresImages';
 import { vantaImages } from '../../data/vantaImages';
 import { strativaImages } from '../../data/strativaImages';
 import { lumoraImages } from '../../data/lumoraImages';
@@ -22,14 +22,14 @@ const templates = [
     statusBg: 'bg-[#ECFDF5] text-[#059669]'
   },
   {
-    id: 'nexora',
-    route: '/nexora',
+    id: 'apexventures',
+    route: '/apexventures',
     tag: 'TECHNOLOGY & DIGITAL',
     status: 'FREE',
-    name: 'Nexora',
+    name: 'ApexVentures',
     tagline: 'Futuristic systems for distributed digital operations.',
     desc: 'A dark-theme cybernetic template featuring modular technology cards, an interactive event products switcher, and live SVG network topology highlights.',
-    image: nexoraImages.hero,
+    image: apexventuresImages.hero,
     tagBg: 'bg-[#EFF6FF] text-[#2563EB]',
     statusBg: 'bg-[#ECFDF5] text-[#059669]'
   },

@@ -3,14 +3,17 @@ import { useLocation, useSearchParams } from 'react-router-dom';
 import { Monitor, Tablet, Smartphone, RotateCcw, RotateCw, ArrowLeft, Download, Pencil } from 'lucide-react';
 
 export default function DevicePreviewWrapper({ children }) {
-  const [searchParams] = useSearchParams();
   const location = useLocation();
   const isIframe = window.self !== window.top;
-  const [viewMode, setViewMode] = useState('desktop'); // default to desktop view
+  const [viewMode, setViewMode] = useState('desktop'); // desktop (laptop), tablet, mobile
   const [orientation, setOrientation] = useState('portrait'); // portrait or landscape
   const iframeRef = useRef(null);
 
-  // If loaded inside the iframe, render the template directly without wrapper
+  const handleRefresh = () => {
+    window.location.reload();
+  };
+
+  // If loaded inside an iframe, render template directly without duplicate toolbar
   if (isIframe) {
     return <>{children}</>;
   }
@@ -34,16 +37,8 @@ export default function DevicePreviewWrapper({ children }) {
     }
   }
 
-  const iframeSrc = `${location.pathname}?iframe=true${location.hash || ''}`;
-
   const toggleOrientation = () => {
     setOrientation(prev => prev === 'portrait' ? 'landscape' : 'portrait');
-  };
-
-  const handleRefresh = () => {
-    if (iframeRef.current) {
-      iframeRef.current.src = iframeSrc;
-    }
   };
 
   return (
@@ -60,7 +55,7 @@ export default function DevicePreviewWrapper({ children }) {
       padding: 0,
       boxSizing: 'border-box'
     }}>
-      {/* 1. Sleek Floating Viewport Header Toolbar */}
+      {/* 1. Device Preview Header Toolbar */}
       <header style={{
         height: '64px',
         minHeight: '64px',
@@ -76,7 +71,7 @@ export default function DevicePreviewWrapper({ children }) {
         position: 'relative',
         boxSizing: 'border-box'
       }}>
-        {/* Left: Brand Logo & Back link */}
+        {/* Left: Brand Logo & Back to Templates link */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <a href="/templates" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }} title="Back to Templates">
             <img src="/logo.jpg" alt="TechnoSprint Logo" style={{ height: '32px', borderRadius: '6px', border: '1px solid #e2e8f0' }} />
@@ -115,7 +110,7 @@ export default function DevicePreviewWrapper({ children }) {
           gap: '4px',
           boxShadow: '0 1px 3px rgba(0,0,0,0.04)'
         }}>
-          {/* Desktop Button */}
+          {/* Laptop / Desktop Button */}
           <button
             onClick={() => setViewMode('desktop')}
             style={{
@@ -136,7 +131,7 @@ export default function DevicePreviewWrapper({ children }) {
             }}
           >
             <Monitor size={15} />
-            Desktop
+            Laptop / Desktop
           </button>
 
           {/* Tablet Button */}
@@ -188,9 +183,8 @@ export default function DevicePreviewWrapper({ children }) {
           </button>
         </div>
 
-        {/* Right: Orientation Toggle, Refresh & Download */}
+        {/* Right: Orientation Toggle & Download */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          {/* Portrait / Landscape Orientation Toggle */}
           {(viewMode === 'mobile' || viewMode === 'tablet') && (
             <button
               onClick={toggleOrientation}
@@ -293,42 +287,26 @@ export default function DevicePreviewWrapper({ children }) {
         </div>
       </header>
 
-      {/* 2. Centered Device Preview Canvas */}
+      {/* 2. Dynamic Resizable Device Canvas */}
       <main style={{
         flex: 1,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '24px',
+        padding: viewMode === 'desktop' ? '0' : '24px',
         overflow: 'auto',
         boxSizing: 'border-box',
         position: 'relative'
       }}>
-        {/* DESKTOP VIEW */}
+        {/* LAPTOP / DESKTOP VIEW */}
         {viewMode === 'desktop' && (
           <div style={{
             width: '100%',
             height: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            overflow: 'auto',
             transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
           }}>
-            <iframe
-              ref={iframeRef}
-              id="preview-iframe"
-              src={iframeSrc}
-              title="Desktop Preview"
-              style={{
-                width: '100%',
-                height: '100%',
-                border: 'none',
-                borderRadius: '12px',
-                boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04)',
-                background: '#ffffff',
-                transition: 'all 0.3s ease'
-              }}
-            />
+            {children}
           </div>
         )}
 
@@ -336,7 +314,7 @@ export default function DevicePreviewWrapper({ children }) {
         {viewMode === 'tablet' && (
           <div style={{
             width: orientation === 'portrait' ? '768px' : '980px',
-            height: orientation === 'portrait' ? '920px' : '680px',
+            height: orientation === 'portrait' ? '960px' : '680px',
             maxHeight: 'calc(100vh - 120px)',
             maxWidth: 'calc(100vw - 60px)',
             backgroundColor: '#0f172a',
@@ -350,7 +328,7 @@ export default function DevicePreviewWrapper({ children }) {
             boxSizing: 'border-box',
             transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
           }}>
-            {/* Tablet Camera sensor */}
+            {/* Tablet Camera dot */}
             <div style={{
               position: 'absolute',
               top: orientation === 'portrait' ? '5px' : '50%',
@@ -362,27 +340,17 @@ export default function DevicePreviewWrapper({ children }) {
               backgroundColor: '#334155',
               zIndex: 20
             }} />
-            <iframe
-              ref={iframeRef}
-              id="preview-iframe"
-              src={iframeSrc}
-              title="Tablet Preview"
-              style={{
-                width: '100%',
-                height: '100%',
-                border: 'none',
-                borderRadius: '24px',
-                background: '#ffffff'
-              }}
-            />
+            <div style={{ width: '100%', height: '100%', overflow: 'auto', borderRadius: '24px', background: '#ffffff' }}>
+              {children}
+            </div>
           </div>
         )}
 
-        {/* MOBILE VIEW (Matching the Reference Screenshot) */}
+        {/* MOBILE VIEW */}
         {viewMode === 'mobile' && (
           <div style={{
             width: orientation === 'portrait' ? '390px' : '780px',
-            height: orientation === 'portrait' ? '800px' : '390px',
+            height: orientation === 'portrait' ? '820px' : '390px',
             maxHeight: 'calc(100vh - 110px)',
             maxWidth: 'calc(100vw - 40px)',
             backgroundColor: '#0f172a',
@@ -396,7 +364,7 @@ export default function DevicePreviewWrapper({ children }) {
             boxSizing: 'border-box',
             transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
           }}>
-            {/* Dynamic Island / Speaker Notch Header */}
+            {/* Dynamic Island / Mobile Notch */}
             {orientation === 'portrait' && (
               <div style={{
                 position: 'absolute',
@@ -414,26 +382,14 @@ export default function DevicePreviewWrapper({ children }) {
                 padding: '0 10px',
                 boxSizing: 'border-box'
               }}>
-                {/* Camera lens */}
                 <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#1e293b' }} />
-                {/* Sensor dot */}
                 <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#090d16' }} />
               </div>
             )}
 
-            <iframe
-              ref={iframeRef}
-              id="preview-iframe"
-              src={iframeSrc}
-              title="Mobile Preview"
-              style={{
-                width: '100%',
-                height: '100%',
-                border: 'none',
-                borderRadius: '36px',
-                background: '#ffffff'
-              }}
-            />
+            <div style={{ width: '100%', height: '100%', overflow: 'auto', borderRadius: '36px', background: '#ffffff' }}>
+              {children}
+            </div>
           </div>
         )}
       </main>

@@ -16,7 +16,7 @@ const ROOMS = [
     id: 1,
     category: 'Signature Suite',
     name: 'Ocean Panorama Suite',
-    image: '/hotel_suite.jpg',
+    image: './hotel_suite.jpg',
     price: 620,
     badges: ['Sea View', 'King Bed'],
     amenities: [
@@ -32,7 +32,7 @@ const ROOMS = [
     id: 2,
     category: 'Pool Villa',
     name: 'Private Infinity Villa',
-    image: '/hotel_pool.jpg',
+    image: './hotel_pool.jpg',
     price: 1200,
     badges: ['Private Pool', 'Garden View'],
     amenities: [
@@ -48,7 +48,7 @@ const ROOMS = [
     id: 3,
     category: 'Deluxe Room',
     name: 'Tropical Garden Room',
-    image: '/hotel_hero.jpg',
+    image: './hotel_hero.jpg',
     price: 340,
     badges: ['Garden View', 'Twin Beds'],
     amenities: [
@@ -76,7 +76,7 @@ const AMENITIES = [
 const OFFERS = [
   {
     id: 1,
-    image: '/hotel_pool.jpg',
+    image: './hotel_pool.jpg',
     discount: '35% OFF',
     title: 'Tropical Honeymoon Escape',
     desc: 'Sunset dinner for two, couples spa ritual & complimentary villa upgrade.',
@@ -86,7 +86,7 @@ const OFFERS = [
   },
   {
     id: 2,
-    image: '/hotel_dining.jpg',
+    image: './hotel_dining.jpg',
     discount: '20% OFF',
     title: 'Culinary Weekend Package',
     desc: 'Michelin tasting menu, cooking masterclass & wine pairing included.',
@@ -95,7 +95,7 @@ const OFFERS = [
   },
   {
     id: 3,
-    image: '/hotel_spa.jpg',
+    image: './hotel_spa.jpg',
     discount: 'Complimentary',
     title: 'Wellness Retreat Offer',
     desc: 'Free spa credit up to $300 with a minimum 3-night stay.',
@@ -105,12 +105,12 @@ const OFFERS = [
 ];
 
 const GALLERY_ITEMS = [
-  { id: 1, src: '/hotel_hero.jpg',   alt: 'Resort Overview',  category: 'Resort', cls: 'ht-g1' },
-  { id: 2, src: '/hotel_suite.jpg',  alt: 'Ocean Suite',      category: 'Rooms',  cls: 'ht-g2' },
-  { id: 3, src: '/hotel_pool.jpg',   alt: 'Pool Villa',       category: 'Pool',   cls: 'ht-g3' },
-  { id: 4, src: '/hotel_spa.jpg',    alt: 'Spa Treatment',    category: 'Spa',    cls: 'ht-g4' },
-  { id: 5, src: '/hotel_dining.jpg', alt: 'Fine Dining',      category: 'Dining', cls: 'ht-g5' },
-  { id: 6, src: '/hotel_suite.jpg',  alt: 'Suite Interior',   category: 'Rooms',  cls: 'ht-g6' },
+  { id: 1, src: './hotel_hero.jpg',   alt: 'Resort Overview',  category: 'Resort', cls: 'ht-g1' },
+  { id: 2, src: './hotel_suite.jpg',  alt: 'Ocean Suite',      category: 'Rooms',  cls: 'ht-g2' },
+  { id: 3, src: './hotel_pool.jpg',   alt: 'Pool Villa',       category: 'Pool',   cls: 'ht-g3' },
+  { id: 4, src: './hotel_spa.jpg',    alt: 'Spa Treatment',    category: 'Spa',    cls: 'ht-g4' },
+  { id: 5, src: './hotel_dining.jpg', alt: 'Fine Dining',      category: 'Dining', cls: 'ht-g5' },
+  { id: 6, src: './hotel_suite.jpg',  alt: 'Suite Interior',   category: 'Rooms',  cls: 'ht-g6' },
 ];
 
 const REVIEWS = [
@@ -857,7 +857,7 @@ function HtSpa() {
 
           <div ref={imgRef} className="ht-reveal" style={{ position: 'relative' }}>
             <img
-              src="/hotel_spa.jpg"
+              src="./hotel_spa.jpg"
               alt="Aura Spa & Wellness"
               style={{ width: '100%', height: '520px', objectFit: 'cover', borderRadius: 16, display: 'block' }}
             />
@@ -1060,7 +1060,7 @@ export default function HotelTemplate() {
           <div className="ht-dining-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
             <div style={{ borderRadius: 16, overflow: 'hidden', position: 'relative' }}>
               <img
-                src="/hotel_dining.jpg"
+                src="./hotel_dining.jpg"
                 alt="Fine Dining at Aura"
                 style={{ width: '100%', height: '520px', objectFit: 'cover', display: 'block', borderRadius: 16 }}
               />

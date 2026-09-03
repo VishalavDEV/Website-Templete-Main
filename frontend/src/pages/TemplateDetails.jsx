@@ -278,7 +278,7 @@ export default function TemplateDetails({ addToCart, cart }) {
             {/* Actions */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 30 }}>
               <a
-                href={template.demoUrl}
+                href={template.demoUrl ? (template.demoUrl.endsWith('/index.html') ? template.demoUrl : (template.demoUrl.endsWith('/') ? `${template.demoUrl}index.html` : `${template.demoUrl}/index.html`)) : `/templates/${(template.category?.slug || 'agency').toLowerCase()}/${template.slug}/index.html`}
                 className="btn btn-primary"
                 style={{ width: '100%', padding: '12px 0', justifyContent: 'center' }}
               >

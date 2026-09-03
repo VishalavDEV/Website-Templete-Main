@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "node:path";
 
 export default defineConfig({
-  base: "/templates/agency/agency-1/",
+  base: './',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

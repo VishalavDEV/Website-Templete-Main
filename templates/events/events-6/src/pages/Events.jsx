@@ -12,7 +12,7 @@ export default function Events() {
       venue: 'Aurora Sound Arena (Main Stage)',
       description: 'The centerpiece festival experience featuring Lyra Voss, The Silver Room, Mira Vale, and 15,000 music lovers under the stars.',
       price: 1499,
-      image: '/images/hero_performer.jpg',
+      image: './images/hero_performer.jpg',
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ export default function Events() {
       venue: 'Afterdark Stage',
       description: 'An immersive dark techno and synth-wave session led by Kael Nova and Nova Kai with synchronized golden laser displays.',
       price: 1499,
-      image: '/images/dj_performer.jpg',
+      image: './images/dj_performer.jpg',
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ export default function Events() {
       venue: 'VIP Lounge Arena',
       description: 'Exclusive late-night DJ sets for VIP & Premium ticket holders with craft cocktails and live ambient beats.',
       price: 2999,
-      image: '/images/dj_performer.jpg',
+      image: './images/dj_performer.jpg',
     },
     {
       id: 4,
@@ -45,7 +45,7 @@ export default function Events() {
       venue: 'Echo Stage',
       description: 'Intimate acoustic sessions from indie singer-songwriters Elio Vane and Aria Noir under warm golden spotlights.',
       price: 1499,
-      image: '/images/hero_performer.jpg',
+      image: './images/hero_performer.jpg',
     },
     {
       id: 5,
@@ -56,7 +56,7 @@ export default function Events() {
       venue: 'Main Stage',
       description: 'High-energy hip-hop fusion and live urban drum jams led by Zen Ray and regional guest vocalists.',
       price: 1499,
-      image: '/images/main_stage.jpg',
+      image: './images/main_stage.jpg',
     },
   ];
 

@@ -360,7 +360,7 @@ export const tournamentData = {
       threePtPct: "43.1%",
       ftPct: "89.2%",
       bio: "Former collegiate All-American known for lightning-fast court vision and lethal pull-up three-pointers in high-pressure situations.",
-      avatar: "/images/marcus-vance.svg",
+      avatar: "./images/marcus-vance.svg",
     },
     {
       id: "devraj-singh",
@@ -381,7 +381,7 @@ export const tournamentData = {
       threePtPct: "37.5%",
       ftPct: "81.0%",
       bio: "Dominant interior threat with explosive vertical leap, ferocious poster dunks, and elite rim protection.",
-      avatar: "/images/devraj-singh.svg",
+      avatar: "./images/devraj-singh.svg",
     },
     {
       id: "jordan-sterling",
@@ -402,7 +402,7 @@ export const tournamentData = {
       threePtPct: "41.2%",
       ftPct: "87.4%",
       bio: "Surgical perimeter scorer capable of catching fire from anywhere on the court. Leader of the City Titans offense.",
-      avatar: "/images/jordan-sterling.svg",
+      avatar: "./images/jordan-sterling.svg",
     },
     {
       id: "viktor-volkov",
@@ -423,7 +423,7 @@ export const tournamentData = {
       threePtPct: "28.0%",
       ftPct: "74.5%",
       bio: "Towering center who locks down the paint, commands defensive glass, and enforces physical presence in the low post.",
-      avatar: "/images/viktor-volkov.svg",
+      avatar: "./images/viktor-volkov.svg",
     },
     {
       id: "kyrie-thorne",
@@ -444,7 +444,7 @@ export const tournamentData = {
       threePtPct: "42.8%",
       ftPct: "91.5%",
       bio: "Unmatched handle and crossover package. Can break down any defense single-handedly and drop pinpoint assists.",
-      avatar: "/images/player-marcus.svg",
+      avatar: "./images/player-marcus.svg",
     },
     {
       id: "rahul-nair",
@@ -465,7 +465,7 @@ export const tournamentData = {
       threePtPct: "39.6%",
       ftPct: "83.0%",
       bio: "Versatile wing player who excels at two-way basketball, defending the opponent's best player while posting high scoring numbers.",
-      avatar: "/images/player-devraj.svg",
+      avatar: "./images/player-devraj.svg",
     },
     {
       id: "liam-oconnor",
@@ -486,7 +486,7 @@ export const tournamentData = {
       threePtPct: "36.0%",
       ftPct: "78.5%",
       bio: "High motor forward relentless on second-chance opportunities and rim protection.",
-      avatar: "/images/player-jordan.svg",
+      avatar: "./images/player-jordan.svg",
     },
     {
       id: "arjun-verma",
@@ -507,7 +507,7 @@ export const tournamentData = {
       threePtPct: "22.0%",
       ftPct: "71.0%",
       bio: "The league's premier shot blocker. Alters game plans with his sheer size and wingspan.",
-      avatar: "/images/player-viktor.svg",
+      avatar: "./images/player-viktor.svg",
     },
   ],
 
@@ -679,31 +679,31 @@ export const tournamentData = {
 
   leaderboards: {
     topScorers: [
-      { rank: "01", player: "Marcus Vance", team: "Vortexa Warriors", stat: "26.4 PPG", image: "/images/player-marcus.svg" },
-      { rank: "02", player: "Kyrie Thorne", team: "Raptor Elite", stat: "25.1 PPG", image: "/images/player-marcus.svg" },
-      { rank: "03", player: "Jordan Sterling", team: "City Titans", stat: "24.9 PPG", image: "/images/player-jordan.svg" },
-      { rank: "04", player: "Devraj Singh", team: "Vortexa Warriors", stat: "22.8 PPG", image: "/images/player-devraj.svg" },
-      { rank: "05", player: "Rahul Nair", team: "Metro Falcons", stat: "20.3 PPG", image: "/images/player-devraj.svg" },
+      { rank: "01", player: "Marcus Vance", team: "Vortexa Warriors", stat: "26.4 PPG", image: "./images/player-marcus.svg" },
+      { rank: "02", player: "Kyrie Thorne", team: "Raptor Elite", stat: "25.1 PPG", image: "./images/player-marcus.svg" },
+      { rank: "03", player: "Jordan Sterling", team: "City Titans", stat: "24.9 PPG", image: "./images/player-jordan.svg" },
+      { rank: "04", player: "Devraj Singh", team: "Vortexa Warriors", stat: "22.8 PPG", image: "./images/player-devraj.svg" },
+      { rank: "05", player: "Rahul Nair", team: "Metro Falcons", stat: "20.3 PPG", image: "./images/player-devraj.svg" },
     ],
     bestDefenders: [
-      { rank: "01", player: "Arjun Verma", team: "Urban Panthers", stat: "3.2 BPG / 1.9 SPG", image: "/images/player-viktor.svg" },
-      { rank: "02", player: "Viktor Volkov", team: "City Titans", stat: "2.8 BPG / 12.6 RPG", image: "/images/player-viktor.svg" },
-      { rank: "03", player: "Kyrie Thorne", team: "Raptor Elite", stat: "2.7 SPG", image: "/images/player-marcus.svg" },
+      { rank: "01", player: "Arjun Verma", team: "Urban Panthers", stat: "3.2 BPG / 1.9 SPG", image: "./images/player-viktor.svg" },
+      { rank: "02", player: "Viktor Volkov", team: "City Titans", stat: "2.8 BPG / 12.6 RPG", image: "./images/player-viktor.svg" },
+      { rank: "03", player: "Kyrie Thorne", team: "Raptor Elite", stat: "2.7 SPG", image: "./images/player-marcus.svg" },
     ],
     mostAssists: [
-      { rank: "01", player: "Kyrie Thorne", team: "Raptor Elite", stat: "9.4 APG", image: "/images/player-marcus.svg" },
-      { rank: "02", player: "Marcus Vance", team: "Vortexa Warriors", stat: "8.8 APG", image: "/images/player-marcus.svg" },
-      { rank: "03", player: "Jordan Sterling", team: "City Titans", stat: "5.6 APG", image: "/images/player-jordan.svg" },
+      { rank: "01", player: "Kyrie Thorne", team: "Raptor Elite", stat: "9.4 APG", image: "./images/player-marcus.svg" },
+      { rank: "02", player: "Marcus Vance", team: "Vortexa Warriors", stat: "8.8 APG", image: "./images/player-marcus.svg" },
+      { rank: "03", player: "Jordan Sterling", team: "City Titans", stat: "5.6 APG", image: "./images/player-jordan.svg" },
     ],
     mostRebounds: [
-      { rank: "01", player: "Viktor Volkov", team: "City Titans", stat: "12.6 RPG", image: "/images/player-viktor.svg" },
-      { rank: "02", player: "Arjun Verma", team: "Urban Panthers", stat: "11.9 RPG", image: "/images/player-viktor.svg" },
-      { rank: "03", player: "Devraj Singh", team: "Vortexa Warriors", stat: "10.4 RPG", image: "/images/player-devraj.svg" },
+      { rank: "01", player: "Viktor Volkov", team: "City Titans", stat: "12.6 RPG", image: "./images/player-viktor.svg" },
+      { rank: "02", player: "Arjun Verma", team: "Urban Panthers", stat: "11.9 RPG", image: "./images/player-viktor.svg" },
+      { rank: "03", player: "Devraj Singh", team: "Vortexa Warriors", stat: "10.4 RPG", image: "./images/player-devraj.svg" },
     ],
     mvpRankings: [
-      { rank: "01", player: "Marcus Vance", team: "Vortexa Warriors", stat: "+32.4 EFF", image: "/images/player-marcus.svg" },
-      { rank: "02", player: "Kyrie Thorne", team: "Raptor Elite", stat: "+30.1 EFF", image: "/images/player-marcus.svg" },
-      { rank: "03", player: "Devraj Singh", team: "Vortexa Warriors", stat: "+28.8 EFF", image: "/images/player-devraj.svg" },
+      { rank: "01", player: "Marcus Vance", team: "Vortexa Warriors", stat: "+32.4 EFF", image: "./images/player-marcus.svg" },
+      { rank: "02", player: "Kyrie Thorne", team: "Raptor Elite", stat: "+30.1 EFF", image: "./images/player-marcus.svg" },
+      { rank: "03", player: "Devraj Singh", team: "Vortexa Warriors", stat: "+28.8 EFF", image: "./images/player-devraj.svg" },
     ],
   },
 
@@ -793,7 +793,7 @@ export const tournamentData = {
       date: "12 AUG 2026",
       title: "THUNDERCOURT CLASH 2026 OFFICIALLY LAUNCHES IN CHENNAI",
       summary: "16 international teams arrive at Vortex Arena as final preparations conclude for the biggest basketball tournament in South Asia.",
-      image: "/images/news-launch.jpg",
+      image: "./images/news-launch.jpg",
       content: "The countdown is over. ThunderCourt Clash 2026 kicks off this Saturday at the state-of-the-art Vortex Arena in Chennai. Featuring 16 top-tier franchises competing across 7 electric days, fans can expect high-octane action, world-class athletic displays, and ₹10 Lakhs in cash prizes.",
     },
     {
@@ -802,7 +802,7 @@ export const tournamentData = {
       date: "14 AUG 2026",
       title: "BLOCKBUSTER OPENER: VORTEXA WARRIORS VS CITY TITANS",
       summary: "Defending champs Warriors face off against rivalry powerhouses Titans in what analysts predict will be a Q4 nail-biter.",
-      image: "/images/news-match.jpg",
+      image: "./images/news-match.jpg",
       content: "All eyes will be on Marcus Vance and Jordan Sterling as the two MVP frontrunners collide on opening night. Both head coaches expressed high confidence in pre-game press conferences.",
     },
     {
@@ -811,7 +811,7 @@ export const tournamentData = {
       date: "13 AUG 2026",
       title: "KYRIE THORNE CLEARED FOR RAPTORS ELITE OPENER",
       summary: "Superstar point guard declares 100% fitness following ankle rehab, ready to unleash new offensive tactics.",
-      image: "/images/news-player.jpg",
+      image: "./images/news-player.jpg",
       content: "Raptor Elite fans can breathe a sigh of relief. Medical staff confirmed today that Kyrie Thorne is fully recovered and eager to lead Raptor Elite's tournament charge.",
     },
   ],

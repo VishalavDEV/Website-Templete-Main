@@ -1,84 +1,125 @@
+export type PageView = 
+  | 'home' 
+  | 'services' 
+  | 'work' 
+  | 'studio-engine' 
+  | 'pricing' 
+  | 'insights' 
+  | 'about' 
+  | 'contact' 
+  | 'portal';
+
 export interface ServiceItem {
   id: string;
-  iconName: string;
+  category: 'ai' | 'design' | 'engineering' | 'cloud' | 'strategy';
   title: string;
-  shortDesc: string;
-  fullDesc: string;
-  features: string[];
+  tagline: string;
+  description: string;
   deliverables: string[];
-  icon: string;
-  businessImpact: string;
-  techDomain: string;
-  roiMetric: string;
+  timeline: string;
+  startingPrice: string;
+  iconName: string;
+  techStack: string[];
+  metrics: { label: string; value: string }[];
 }
 
-export interface CaseStudyItem {
+export interface CaseStudy {
   id: string;
-  code: string;
-  category: string;
   title: string;
-  shortDesc: string;
-  metric: string;
-  metricLabel: string;
-  image: string;
+  client: string;
+  year: string;
+  category: 'AI Systems' | 'FinTech' | 'Luxury & Commerce' | 'Enterprise Cloud' | 'Spatial & Creative';
+  heroImage: string;
+  tagline: string;
+  summary: string;
   challenge: string;
   solution: string;
-  results: string[];
+  impactMetrics: { label: string; value: string; detail: string }[];
   technologies: string[];
-  clientIndustry: string;
-}
-
-export interface TestimonialItem {
-  id: string;
-  quote: string;
-  name: string;
-  title: string;
-  company: string;
-  avatar: string;
-  rating: number;
-  performanceMetric: string;
-}
-
-export interface TeamMemberItem {
-  id: string;
-  number: string;
-  name: string;
-  role: string;
-  bio: string;
-  avatar: string;
-  expertise: string[];
-  experienceYears: string;
-  socials: {
-    linkedin: string;
-    twitter: string;
-    email: string;
+  featured: boolean;
+  liveUrlMock: string;
+  testimonial?: {
+    quote: string;
+    author: string;
+    role: string;
+    avatar: string;
   };
 }
 
-export interface PricingPlanItem {
+export interface Article {
+  id: string;
+  title: string;
+  category: 'Engineering' | 'AI Architecture' | 'Product Design' | 'Executive Strategy';
+  date: string;
+  readTime: string;
+  author: {
+    name: string;
+    role: string;
+    avatar: string;
+  };
+  excerpt: string;
+  content: string[];
+  tags: string[];
+}
+
+export interface PricingTier {
   id: string;
   name: string;
   subtitle: string;
+  priceMonthly: number;
+  priceQuarterly: number;
+  popular?: boolean;
   description: string;
-  price: string;
-  period: string;
-  highlighted?: boolean;
   features: string[];
+  idealFor: string;
+  deliverableSLA: string;
+  teamComposition: string;
   ctaText: string;
-  targetScale: string;
 }
 
-export interface FAQItem {
+export interface StudioConfigOption {
+  projectType: 'mvp' | 'scaleup' | 'enterprise' | 'ai-transformation';
+  speed: 'standard' | 'accelerated' | 'hyper-sprint';
+  designLevel: 'essential' | 'bespoke' | 'luxury-interactive';
+  selectedAddons: string[];
+}
+
+export interface UserSession {
+  isAuthenticated: boolean;
+  user?: {
+    id: string;
+    name: string;
+    email: string;
+    company: string;
+    role: string;
+    avatar: string;
+  };
+}
+
+export interface ProjectMilestone {
   id: string;
-  number: string;
-  question: string;
-  answer: string;
-  category: string;
+  title: string;
+  status: 'completed' | 'in-progress' | 'upcoming';
+  progress: number;
+  date: string;
+  description: string;
 }
 
-export interface ModalData {
-  isOpen: boolean;
-  type: 'service' | 'caseStudy' | 'consultation' | 'about' | 'legal' | null;
-  data?: any;
+export interface ClientProject {
+  id: string;
+  name: string;
+  status: 'In Development' | 'Architecture Review' | 'Production Deploy' | 'Discovery';
+  leadArchitect: string;
+  health: 'Optimal' | 'Ahead of Schedule' | 'Review Needed';
+  progressPercent: number;
+  milestones: ProjectMilestone[];
+  deliverables: { name: string; type: string; size: string; date: string }[];
+  invoices: { id: string; amount: string; date: string; status: 'Paid' | 'Pending' }[];
 }
 
+export interface ToastMessage {
+  id: string;
+  title: string;
+  description?: string;
+  type: 'success' | 'info' | 'warning' | 'error';
+}

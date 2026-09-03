@@ -4,7 +4,9 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.js.org/config/
 export default defineConfig({
-  base: "/templates/education/education-3/",
+  base: './',
+  
+  
   plugins: [
     react(),
     tailwindcss(),

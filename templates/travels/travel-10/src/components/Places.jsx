@@ -6,7 +6,7 @@ const destinations = [
   {
     name: 'Swiss Alps Cabin',
     location: 'Zermatt, Switzerland',
-    image: '/place_alps.jpg',
+    image: './place_alps.jpg',
     rating: '4.9',
     price: '$240',
     type: 'Alpine Adventure',
@@ -14,7 +14,7 @@ const destinations = [
   {
     name: 'Kyoto Temple Pass',
     location: 'Kyoto, Japan',
-    image: '/place_kyoto.jpg',
+    image: './place_kyoto.jpg',
     rating: '4.8',
     price: '$180',
     type: 'Cultural Heritage',
@@ -22,7 +22,7 @@ const destinations = [
   {
     name: 'Amalfi Cliffside',
     location: 'Positano, Italy',
-    image: '/place_amalfi.jpg',
+    image: './place_amalfi.jpg',
     rating: '4.9',
     price: '$320',
     type: 'Coastal Getaway',

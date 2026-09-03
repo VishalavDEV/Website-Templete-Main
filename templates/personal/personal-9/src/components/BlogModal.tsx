@@ -97,7 +97,7 @@ export const BlogModal: React.FC<BlogModalProps> = ({ post, onClose, darkMode, o
             </span>
             <span className="flex items-center gap-1.5">
               <User className="w-3.5 h-3.5 text-indigo-500" />
-              {post.author || 'Arjun Mehta'}
+              {post.author || 'Gwen'}
             </span>
           </div>
 

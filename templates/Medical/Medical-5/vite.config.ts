@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/templates/medical/medical-5/',
+    
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

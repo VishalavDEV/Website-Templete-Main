@@ -33,7 +33,7 @@ export const ArticleModal: React.FC = () => {
   const handleShare = () => {
     if (navigator.clipboard) {
       navigator.clipboard.writeText(
-        `https://auramedical.internal/library/${art.id}`
+        `https://biohealthmedical.internal/library/${art.id}`
       );
       showToast('Article link copied to clipboard', 'info');
     }

@@ -1,3 +1,10 @@
+const getDynamicBasename = () => {
+  let p = window.location.pathname;
+  if (p.endsWith('/index.html')) p = p.slice(0, -11);
+  if (p.endsWith('/')) p = p.slice(0, -1);
+  return p;
+};
+
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/common/Navbar';
@@ -86,7 +93,7 @@ function AppContent() {
 
 export default function App() {
   return (
-    <Router basename="/templates/agency/agency-6">
+    <Router basename={getDynamicBasename()}>
       <AppContent />
     </Router>
   );

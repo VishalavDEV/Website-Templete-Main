@@ -1,429 +1,316 @@
 import React, { useState, useEffect } from 'react';
-import { AnnouncementBar } from './components/AnnouncementBar';
+import { PageView, UserSession, ToastMessage } from './types';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { LogoCloud } from './components/LogoCloud';
-import { About } from './components/About';
-import { Services } from './components/Services';
-import { Process } from './components/Process';
-import { PerformanceDashboard } from './components/PerformanceDashboard';
-import { CaseStudies } from './components/CaseStudies';
-import { Testimonials } from './components/Testimonials';
-import { Team } from './components/Team';
-import { Pricing } from './components/Pricing';
-import { FAQ } from './components/FAQ';
-import { Contact } from './components/Contact';
+import { ServicesSection } from './components/ServicesSection';
+import { PortfolioSection } from './components/PortfolioSection';
+import { StudioEngine } from './components/StudioEngine';
+import { PricingSection } from './components/PricingSection';
+import { InsightsSection } from './components/InsightsSection';
 import { Footer } from './components/Footer';
-import { BackToTop } from './components/BackToTop';
-import { Modal } from './components/Modal';
-import { NotificationToast, ToastMessage } from './components/NotificationToast';
-
-import { ServiceItem, CaseStudyItem, PricingPlanItem } from './types';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { ContactModal } from './components/ContactModal';
+import { AuthModal } from './components/AuthModal';
+import { ClientPortalModal } from './components/ClientPortalModal';
+import { CommandPalette } from './components/CommandPalette';
+import { ToastContainer } from './components/ToastContainer';
+import { Sparkles, ArrowRight, ShieldCheck, Cpu, Layers, Globe } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
-  const [isAnnouncementVisible, setIsAnnouncementVisible] = useState(true);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activePage, setActivePage] = useState<PageView>('home');
+  const [isCommandOpen, setIsCommandOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [isPortalOpen, setIsPortalOpen] = useState(false);
+  const [contactPreselectedScope, setContactPreselectedScope] = useState('');
+  
+  // Bookmarks state (with localStorage persistence)
+  const [bookmarks, setBookmarks] = useState<string[]>(() => {
+    try {
+      const saved = localStorage.getItem('aura_bookmarks');
+      return saved ? JSON.parse(saved) : ['nexus-quantum', 'aethelgard-horology'];
+    } catch {
+      return ['nexus-quantum', 'aethelgard-horology'];
+    }
+  });
+
+  // User session state (with localStorage persistence)
+  const [userSession, setUserSession] = useState<UserSession>(() => {
+    try {
+      const saved = localStorage.getItem('aura_session');
+      return saved
+        ? JSON.parse(saved)
+        : {
+            isAuthenticated: false
+          };
+    } catch {
+      return { isAuthenticated: false };
+    }
+  });
+
+  // Toasts notification system
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
 
-  const [activeModal, setActiveModal] = useState<{
-    type: 'service' | 'caseStudy' | 'plan' | 'about' | 'legal' | 'consultation' | null;
-    data?: any;
-  }>({ type: null });
+  useEffect(() => {
+    try {
+      localStorage.setItem('aura_bookmarks', JSON.stringify(bookmarks));
+    } catch (e) {
+      console.error(e);
+    }
+  }, [bookmarks]);
 
-  const [preselectedContactService, setPreselectedContactService] = useState<string>('Digital Transformation');
+  useEffect(() => {
+    try {
+      localStorage.setItem('aura_session', JSON.stringify(userSession));
+    } catch (e) {
+      console.error(e);
+    }
+  }, [userSession]);
 
-  const addToast = (title: string, message: string, type: 'success' | 'info' | 'warning' = 'info') => {
-    const id = Date.now().toString();
-    setToasts((prev) => [...prev, { id, title, message, type }]);
+  const showToast = (
+    title: string,
+    description?: string,
+    type: 'success' | 'info' | 'warning' | 'error' = 'info'
+  ) => {
+    const id = 'toast_' + Math.random().toString(36).substr(2, 9);
+    setToasts((prev) => [...prev, { id, title, description, type }]);
+
+    setTimeout(() => {
+      setToasts((prev) => prev.filter((t) => t.id !== id));
+    }, 4500);
   };
 
   const dismissToast = (id: string) => {
     setToasts((prev) => prev.filter((t) => t.id !== id));
   };
 
-  const scrollToSection = (sectionId: string) => {
-    setActiveSection(sectionId);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
-  useEffect(() => {
-    const sectionIds = ['home', 'about', 'services', 'strategy', 'performance', 'case-studies', 'testimonials', 'team', 'pricing', 'faq', 'contact'];
-    
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200;
-
-      for (const id of sectionIds) {
-        const element = document.getElementById(id);
-        if (element) {
-          const top = element.offsetTop;
-          const height = element.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(id);
-            break;
-          }
-        }
+  const toggleBookmark = (id: string) => {
+    setBookmarks((prev) => {
+      const isBookmarked = prev.includes(id);
+      if (isBookmarked) {
+        showToast('Removed from Saved', 'Case study removed from bookmarks.', 'info');
+        return prev.filter((item) => item !== id);
+      } else {
+        showToast('Saved to Bookmarks', 'Case study added to your saved collection.', 'success');
+        return [...prev, id];
       }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleOpenServiceModal = (service: ServiceItem) => {
-    setActiveModal({ type: 'service', data: service });
+    });
   };
 
-  const handleOpenCaseStudyModal = (caseStudy: CaseStudyItem) => {
-    setActiveModal({ type: 'caseStudy', data: caseStudy });
+  const handleOpenContact = (scope?: string) => {
+    if (scope) {
+      setContactPreselectedScope(scope);
+    } else {
+      setContactPreselectedScope('');
+    }
+    setIsContactOpen(true);
   };
 
-  const handleOpenPlanModal = (plan: PricingPlanItem) => {
-    setActiveModal({ type: 'plan', data: plan });
+  const handleLoginSuccess = (session: UserSession) => {
+    setUserSession(session);
+    setIsPortalOpen(true);
   };
 
-  const handleOpenAboutModal = () => {
-    setActiveModal({ type: 'about' });
+  const handleLogout = () => {
+    setUserSession({ isAuthenticated: false });
+    showToast('Signed Out', 'Client session securely ended.', 'info');
   };
 
-  const handleOpenConsultationModal = () => {
-    setActiveModal({ type: 'consultation' });
-  };
-
-  const handleOpenLegalModal = (title: string, typeKey: string) => {
-    setActiveModal({ type: 'legal', data: { title, typeKey } });
-  };
-
-  const handleSocialClick = (platform: string, personName?: string) => {
-    addToast(
-      `${platform} Link Triggered`,
-      personName
-        ? `Opening ${personName}'s executive ${platform} profile.`
-        : `Connecting to Vertex Official ${platform} Channel.`,
-      'info'
-    );
-  };
-
-  const handleServiceSelectForContact = (serviceName: string) => {
-    setPreselectedContactService(serviceName);
-    setActiveModal({ type: null });
-    scrollToSection('contact');
+  const handleNavigate = (page: PageView) => {
+    setActivePage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-emerald-200 selection:text-slate-950">
-      
-      {/* Toast Notification Layer */}
-      <NotificationToast toasts={toasts} onDismiss={dismissToast} />
-
-      {/* Top Executive Index Bar */}
-      <AnnouncementBar
-        isVisible={isAnnouncementVisible}
-        onDismiss={() => {
-          setIsAnnouncementVisible(false);
-          addToast('Status Bar Dismissed', 'Re-enable via footer control.');
+    <div className="min-h-screen bg-[#0A0A0B] text-slate-100 flex flex-col selection:bg-indigo-500/30 selection:text-indigo-200">
+      {/* Top Floating Navbar */}
+      <Navbar
+        activePage={activePage}
+        setActivePage={handleNavigate}
+        onOpenCommand={() => setIsCommandOpen(true)}
+        onOpenContact={() => handleOpenContact()}
+        onOpenAuth={() => setIsAuthOpen(true)}
+        onOpenPortal={() => {
+          if (userSession.isAuthenticated) {
+            setIsPortalOpen(true);
+          } else {
+            setIsAuthOpen(true);
+          }
         }}
-        onExplore={() => {
-          handleOpenLegalModal('2026 Enterprise Digital Transformation Benchmark', 'insights');
-        }}
+        userSession={userSession}
       />
 
-      {/* Executive Command Navbar */}
-      <Navbar onNavigate={scrollToSection} activeSection={activeSection} />
+      {/* Main Content Area with Dynamic Page View Switching */}
+      <main className="flex-1">
+        {activePage === 'home' && (
+          <div>
+            {/* 1. Hero Section */}
+            <Hero
+              onOpenContact={() => handleOpenContact()}
+              onNavigate={handleNavigate}
+            />
 
-      {/* Main Executive Command Center Content */}
-      <main>
-        {/* Hero Executive Business Dashboard */}
-        <Hero
-          onNavigate={scrollToSection}
-          onOpenConsultationModal={handleOpenConsultationModal}
-        />
+            {/* 2. Services Section */}
+            <ServicesSection
+              onOpenContact={handleOpenContact}
+              onNavigateToEngine={() => handleNavigate('studio-engine')}
+            />
 
-        {/* Editorial Partner Grid */}
-        <LogoCloud />
+            {/* 3. Portfolio & Case Studies Section */}
+            <PortfolioSection
+              onOpenContact={handleOpenContact}
+              bookmarks={bookmarks}
+              onToggleBookmark={toggleBookmark}
+              onShowToast={showToast}
+            />
 
-        {/* 01 / ABOUT — Executive Operating Framework */}
-        <About
-          onOpenAboutModal={handleOpenAboutModal}
-          onNavigate={scrollToSection}
-        />
+            {/* 4. Interactive Studio Engine Banner / Configurator */}
+            <StudioEngine
+              onOpenContact={handleOpenContact}
+              onShowToast={showToast}
+            />
 
-        {/* 02 / SERVICES — Strategic Capability Matrix */}
-        <Services
-          onSelectService={handleOpenServiceModal}
-          onNavigate={scrollToSection}
-        />
+            {/* 5. Pricing Section */}
+            <PricingSection
+              onOpenContact={handleOpenContact}
+              onNavigateToEngine={() => handleNavigate('studio-engine')}
+            />
 
-        {/* 03 / STRATEGY — The Growth Engine Flow */}
-        <Process />
+            {/* 6. Insights & Articles */}
+            <InsightsSection onShowToast={showToast} />
 
-        {/* 04 / PERFORMANCE — Executive KPI Telemetry */}
-        <PerformanceDashboard />
+            {/* 7. Bottom High-Impact Consultation Banner */}
+            <section className="py-20 relative border-t border-slate-900 bg-gradient-to-b from-[#0A0A0B] to-black overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.08),transparent_70%)] pointer-events-none" />
 
-        {/* 05 / CASE STUDIES — Executive Case Briefs */}
-        <CaseStudies onSelectCaseStudy={handleOpenCaseStudyModal} />
+              <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-mono text-indigo-300 uppercase mb-6">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>Confidential Discovery</span>
+                </div>
 
-        {/* 06 / TESTIMONIALS — Executive Voice & Reviews */}
-        <Testimonials />
+                <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight">
+                  Ready to architect category-defining software?
+                </h2>
 
-        {/* 07 / TEAM — Executive Leadership Board */}
-        <Team onSocialClick={handleSocialClick} />
+                <p className="mt-4 text-sm sm:text-base text-slate-400 max-w-xl mx-auto leading-relaxed">
+                  Join venture-backed founders and enterprise leaders building with AURA. Schedule a direct technical consultation with our Principal Systems Architect.
+                </p>
 
-        {/* 08 / SCALE — Business Scale Model */}
-        <Pricing
-          onSelectPlan={handleOpenPlanModal}
-          onNavigate={scrollToSection}
-        />
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+                  <button
+                    onClick={() => handleOpenContact()}
+                    className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 text-white font-bold text-sm flex items-center gap-2 shadow-xl shadow-indigo-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                  >
+                    <Sparkles className="w-4 h-4 text-white" />
+                    <span>Initiate Discovery Consultation</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
 
-        {/* 09 / FAQ — Executive Knowledge Base */}
-        <FAQ />
+                  <button
+                    onClick={() => handleNavigate('studio-engine')}
+                    className="px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-sm font-semibold text-slate-200 transition-all"
+                  >
+                    Configure Custom Scope
+                  </button>
+                </div>
+              </div>
+            </section>
+          </div>
+        )}
 
-        {/* 10 / INTAKE — Guided Business Intake System */}
-        <Contact
-          onSuccessToast={(title, msg) => addToast(title, msg, 'success')}
-          preselectedService={preselectedContactService}
-        />
+        {activePage === 'services' && (
+          <div className="pt-16">
+            <ServicesSection
+              onOpenContact={handleOpenContact}
+              onNavigateToEngine={() => handleNavigate('studio-engine')}
+            />
+          </div>
+        )}
+
+        {activePage === 'work' && (
+          <div className="pt-16">
+            <PortfolioSection
+              onOpenContact={handleOpenContact}
+              bookmarks={bookmarks}
+              onToggleBookmark={toggleBookmark}
+              onShowToast={showToast}
+            />
+          </div>
+        )}
+
+        {activePage === 'studio-engine' && (
+          <div className="pt-16">
+            <StudioEngine
+              onOpenContact={handleOpenContact}
+              onShowToast={showToast}
+            />
+          </div>
+        )}
+
+        {activePage === 'pricing' && (
+          <div className="pt-16">
+            <PricingSection
+              onOpenContact={handleOpenContact}
+              onNavigateToEngine={() => handleNavigate('studio-engine')}
+            />
+          </div>
+        )}
+
+        {activePage === 'insights' && (
+          <div className="pt-16">
+            <InsightsSection onShowToast={showToast} />
+          </div>
+        )}
       </main>
 
-      {/* Executive Command Footer */}
+      {/* Global Editorial Footer */}
       <Footer
-        onNavigate={scrollToSection}
-        onOpenLegalModal={(title, type) => handleOpenLegalModal(title, type)}
-        onSocialClick={(platform) => handleSocialClick(platform)}
+        onNavigate={handleNavigate}
+        onOpenContact={handleOpenContact}
+        onOpenAuth={() => setIsAuthOpen(true)}
       />
 
-      {/* Floating Back to Top Button */}
-      <BackToTop />
+      {/* Global Interactive Modals */}
+      <ContactModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
+        preselectedScope={contactPreselectedScope}
+        onShowToast={showToast}
+      />
 
-      {/* ================= REUSABLE EXECUTIVE MODALS SYSTEM ================= */}
+      <AuthModal
+        isOpen={isAuthOpen}
+        onClose={() => setIsAuthOpen(false)}
+        onLoginSuccess={handleLoginSuccess}
+        onShowToast={showToast}
+      />
 
-      {/* Service Modal */}
-      {activeModal.type === 'service' && activeModal.data && (
-        <Modal
-          isOpen={true}
-          onClose={() => setActiveModal({ type: null })}
-          title={activeModal.data.title}
-          subtitle={`CAPABILITY CODE: ${activeModal.data.code}`}
-          maxWidth="2xl"
-        >
-          <div className="space-y-6 font-mono text-xs">
-            <p className="font-sans text-sm text-slate-800 leading-relaxed">
-              {activeModal.data.fullDesc}
-            </p>
+      <ClientPortalModal
+        isOpen={isPortalOpen}
+        onClose={() => setIsPortalOpen(false)}
+        userSession={userSession}
+        onLogout={handleLogout}
+        onShowToast={showToast}
+      />
 
-            <div className="space-y-3 pt-4 border-t border-slate-200">
-              <span className="text-slate-500 font-bold uppercase block">TECHNICAL CAPABILITIES:</span>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {activeModal.data.features.map((feat: string, idx: number) => (
-                  <div key={idx} className="p-2.5 bg-[#FAF9F6] border border-slate-300 font-sans text-xs text-slate-900 flex items-start space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>{feat}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+      <CommandPalette
+        isOpen={isCommandOpen}
+        onClose={() => setIsCommandOpen(false)}
+        onNavigate={handleNavigate}
+        onOpenContact={handleOpenContact}
+        onOpenAuth={() => setIsAuthOpen(true)}
+        onOpenPortal={() => {
+          if (userSession.isAuthenticated) {
+            setIsPortalOpen(true);
+          } else {
+            setIsAuthOpen(true);
+          }
+        }}
+      />
 
-            <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
-              <span className="text-slate-500">READY TO INTEGRATE POD?</span>
-              <button
-                onClick={() => handleServiceSelectForContact(activeModal.data.title)}
-                className="px-6 py-3 bg-slate-950 text-white font-bold uppercase hover:bg-slate-800"
-              >
-                REQUEST DISCOVERY INTAKE
-              </button>
-            </div>
-          </div>
-        </Modal>
-      )}
-
-      {/* Case Study Brief Modal */}
-      {activeModal.type === 'caseStudy' && activeModal.data && (
-        <Modal
-          isOpen={true}
-          onClose={() => setActiveModal({ type: null })}
-          title={activeModal.data.title}
-          subtitle={`CASE BRIEF ${activeModal.data.code} — ${activeModal.data.clientIndustry}`}
-          maxWidth="3xl"
-        >
-          <div className="space-y-6 font-mono text-xs">
-            <div className="bg-slate-950 text-white p-6 border border-slate-800 flex items-center justify-between">
-              <div>
-                <span className="text-slate-400 text-[10px] uppercase">IMPACT METRIC VERIFIED</span>
-                <div className="text-3xl font-extrabold text-emerald-400 mt-1">{activeModal.data.metric}</div>
-              </div>
-              <div className="text-right">
-                <span className="text-slate-400 text-[10px] uppercase">BENCHMARK TYPE</span>
-                <div className="text-sm font-bold text-white uppercase mt-1">{activeModal.data.metricLabel}</div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-4 bg-[#FAF9F6] border border-slate-300 space-y-2">
-                <span className="text-rose-700 font-bold uppercase">ARCHITECTURAL CHALLENGE</span>
-                <p className="font-sans text-xs text-slate-800 leading-relaxed">{activeModal.data.challenge}</p>
-              </div>
-
-              <div className="p-4 bg-[#FAF9F6] border border-slate-300 space-y-2">
-                <span className="text-emerald-700 font-bold uppercase">DEPLOYED SOLUTION</span>
-                <p className="font-sans text-xs text-slate-800 leading-relaxed">{activeModal.data.solution}</p>
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <span className="text-slate-500 font-bold uppercase block">VERIFIED QUANTIFIABLE OUTCOMES:</span>
-              <ul className="space-y-2 font-sans text-xs text-slate-800">
-                {activeModal.data.results.map((res: string, idx: number) => (
-                  <li key={idx} className="flex items-start space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>{res}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="pt-4 border-t border-slate-200 flex justify-end">
-              <button
-                onClick={() => handleServiceSelectForContact(activeModal.data.title)}
-                className="px-6 py-3 bg-slate-950 text-white font-bold uppercase hover:bg-slate-800"
-              >
-                REQUEST SIMILAR ARCHITECTURE BRIEF
-              </button>
-            </div>
-          </div>
-        </Modal>
-      )}
-
-      {/* Capacity Model Modal */}
-      {activeModal.type === 'plan' && activeModal.data && (
-        <Modal
-          isOpen={true}
-          onClose={() => setActiveModal({ type: null })}
-          title={`CAPACITY MODEL: ${activeModal.data.name}`}
-          subtitle={`SCALE INVESTMENT: ${activeModal.data.price} ${activeModal.data.period}`}
-          maxWidth="lg"
-        >
-          <div className="space-y-6 font-mono text-xs">
-            <p className="font-sans text-xs text-slate-700 leading-relaxed">
-              Selected pod model: <strong className="text-slate-950 font-bold">{activeModal.data.name}</strong> ({activeModal.data.targetScale}).
-            </p>
-
-            <div className="p-4 bg-[#FAF9F6] border border-slate-300 space-y-2">
-              <span className="text-slate-500 font-bold uppercase block">POD INCLUSIONS:</span>
-              <ul className="space-y-1.5 font-sans text-xs text-slate-800">
-                {activeModal.data.features.map((feat: string, idx: number) => (
-                  <li key={idx} className="flex items-center space-x-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>{feat}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
-              <button
-                onClick={() => setActiveModal({ type: null })}
-                className="text-slate-600 font-bold uppercase"
-              >
-                CANCEL
-              </button>
-              <button
-                onClick={() => handleServiceSelectForContact(`${activeModal.data.name} Engagement`)}
-                className="px-6 py-3 bg-slate-950 text-white font-bold uppercase hover:bg-slate-800"
-              >
-                PROCEED TO INTAKE FORM
-              </button>
-            </div>
-          </div>
-        </Modal>
-      )}
-
-      {/* About Modal */}
-      {activeModal.type === 'about' && (
-        <Modal
-          isOpen={true}
-          onClose={() => setActiveModal({ type: null })}
-          title="VERTEX STRATEGY & ADVISORY OVERVIEW"
-          subtitle="EXECUTIVE FRAMEWORK & INFRASTRUCTURE HERITAGE"
-          maxWidth="2xl"
-        >
-          <div className="space-y-4 font-mono text-xs text-slate-700 leading-relaxed">
-            <p className="font-sans text-sm text-slate-800">
-              Founded in 2016, Vertex Strategy LLC operates as an elite technical advisory and enterprise software pod partner. We serve 150+ multinational clients across fintech, logistics, health, and enterprise SaaS.
-            </p>
-            <div className="grid grid-cols-2 gap-4 p-4 bg-[#FAF9F6] border border-slate-300">
-              <div>
-                <span className="text-slate-950 font-bold uppercase block">HEADQUARTERS</span>
-                <span className="font-sans text-xs">San Francisco, CA (USA)</span>
-              </div>
-              <div>
-                <span className="text-slate-950 font-bold uppercase block">COMPLIANCE</span>
-                <span className="font-sans text-xs">SOC2 Type II, ISO 27001, HIPAA</span>
-              </div>
-            </div>
-          </div>
-        </Modal>
-      )}
-
-      {/* Consultation Modal */}
-      {activeModal.type === 'consultation' && (
-        <Modal
-          isOpen={true}
-          onClose={() => setActiveModal({ type: null })}
-          title="EXECUTIVE ARCHITECTURE DISCOVERY SESSION"
-          subtitle="30-MINUTE DISCOVERY BRIEFING WITH VP OF ENGINEERING"
-          maxWidth="md"
-        >
-          <div className="space-y-4 font-mono text-xs">
-            <p className="font-sans text-xs text-slate-700 leading-relaxed">
-              Schedule an executive discovery call to receive a preliminary cloud architecture evaluation and migration roadmap.
-            </p>
-            <div className="pt-4 flex justify-end">
-              <button
-                onClick={() => handleServiceSelectForContact('Architecture Discovery')}
-                className="px-6 py-3 bg-slate-950 text-white font-bold uppercase"
-              >
-                PROCEED TO DISCOVERY INTAKE
-              </button>
-            </div>
-          </div>
-        </Modal>
-      )}
-
-      {/* Legal Policy Modal */}
-      {activeModal.type === 'legal' && activeModal.data && (
-        <Modal
-          isOpen={true}
-          onClose={() => setActiveModal({ type: null })}
-          title={activeModal.data.title}
-          subtitle="CORPORATE GOVERNANCE & NDA AUDIT"
-          maxWidth="2xl"
-        >
-          <div className="space-y-4 font-mono text-xs text-slate-700 leading-relaxed">
-            <p>
-              Vertex Strategy LLC maintains strict compliance with ISO 27001, SOC2 Type II, and GDPR European Union data residency rules.
-            </p>
-            <div className="p-4 bg-[#FAF9F6] border border-slate-300 space-y-2">
-              <p>1. 100% Client Intellectual Property Ownership upon milestone completion.</p>
-              <p>2. Mutual Non-Disclosure Agreement active on all initial discovery intakes.</p>
-              <p>3. Zero customer code retention for LLM training or third-party models.</p>
-            </div>
-            <div className="pt-4 flex justify-end">
-              <button
-                onClick={() => setActiveModal({ type: null })}
-                className="px-5 py-2.5 bg-slate-950 text-white font-bold uppercase"
-              >
-                ACKNOWLEDGE
-              </button>
-            </div>
-          </div>
-        </Modal>
-      )}
-
+      {/* Real-Time Toast Notifications */}
+      <ToastContainer toasts={toasts} onDismiss={dismissToast} />
     </div>
   );
 }

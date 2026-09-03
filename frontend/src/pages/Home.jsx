@@ -633,7 +633,11 @@ export default function Home({ addToCart, cart }) {
               const rating = getRating(template.id);
               const isSaved = savedSlugs.has(template.slug);
               const categoryName = template.category?.name || 'Template';
-              const demoUrl = template.demoUrl || `/templates/${(template.category?.slug || 'admin').toLowerCase()}/${template.slug}/index.html`;
+              const catSlug = (template.category?.slug || 'agency').toLowerCase();
+              let demoUrl = template.demoUrl || `/templates/${catSlug}/${template.slug}/index.html`;
+              if (!demoUrl.endsWith('/index.html') && !demoUrl.includes('.html')) {
+                demoUrl = demoUrl.endsWith('/') ? `${demoUrl}index.html` : `${demoUrl}/index.html`;
+              }
 
               return (
                 <div

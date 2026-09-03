@@ -543,7 +543,11 @@ export default function Templates() {
                 'RESPONSIVE LAYOUT',
                 'PRODUCTION READY'
               ];
-              const demoUrl = template.demoUrl || `/templates/${(template.category?.slug || 'admin').toLowerCase()}/${template.slug}/index.html`;
+              const catSlug = (template.category?.slug || 'agency').toLowerCase();
+              let demoUrl = template.demoUrl || `/templates/${catSlug}/${template.slug}/index.html`;
+              if (!demoUrl.endsWith('/index.html') && !demoUrl.includes('.html')) {
+                demoUrl = demoUrl.endsWith('/') ? `${demoUrl}index.html` : `${demoUrl}/index.html`;
+              }
 
               return (
                 <div
@@ -783,7 +787,7 @@ export default function Templates() {
 
                     {/* Action Buttons */}
                     <div style={{ marginTop: '10px', display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-                      <a
+                      <a 
                         href={demoUrl}
                         style={{
                           display: 'inline-flex',

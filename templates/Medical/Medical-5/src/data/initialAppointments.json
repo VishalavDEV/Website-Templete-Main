@@ -5,7 +5,7 @@
     "doctorName": "Dr. Maya Raman",
     "doctorSpecialty": "Cardiology",
     "doctorImage": "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=600&q=80",
-    "doctorLocation": "Aura Medical Pavilion, West Wing",
+    "doctorLocation": "BioHealth Medical Pavilion, West Wing",
     "specialtyId": "cardiology",
     "consultationType": "in-person",
     "date": "2026-08-28",
@@ -37,6 +37,6 @@
     "notes": "Encrypted video room link is ready in portal.",
     "status": "confirmed",
     "createdAt": "2026-08-20T09:15:00Z",
-    "meetingLink": "https://telehealth.auramedical.internal/room/apt-73190"
+    "meetingLink": "https://telehealth.biohealthmedical.internal/room/apt-73190"
   }
 ]

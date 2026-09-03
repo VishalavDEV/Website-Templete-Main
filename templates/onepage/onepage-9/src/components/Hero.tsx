@@ -1,293 +1,428 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, TrendingUp, BarChart2, Shield, Activity, ArrowUp, Zap, ChevronRight, Layers } from 'lucide-react';
+import { Sparkles, ArrowRight, ShieldCheck, Terminal, Layers, Cpu, Globe, CheckCircle2, Play } from 'lucide-react';
+import { motion } from 'motion/react';
+import { PageView } from '../types';
 
 interface HeroProps {
-  onNavigate: (sectionId: string) => void;
-  onOpenConsultationModal: () => void;
+  onOpenContact: () => void;
+  onNavigate: (page: PageView) => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenConsultationModal }) => {
-  const [activeQuarter, setActiveQuarter] = useState<'Q1' | 'Q2' | 'Q3' | 'Q4' | 'YTD'>('Q4');
+export const Hero: React.FC<HeroProps> = ({ onOpenContact, onNavigate }) => {
+  const [activeTab, setActiveTab] = useState<'ai' | 'design' | 'cloud'>('ai');
+  const [interactiveInferenceRunning, setInteractiveInferenceRunning] = useState(false);
+  const [simulatedLogs, setSimulatedLogs] = useState<string[]>([
+    'Initializing Qdrant semantic cluster...',
+    'gRPC channel connected: node-us-east4-a [6.4ms]',
+    'Speculative multi-branch token stream ready.'
+  ]);
 
-  // Chart dataset for quarters
-  const chartData = {
-    Q1: { revenue: '+14.2%', efficiency: '+22.0%', retention: '91.8%', roi: '3.2x', trend: '+12.4%', points: [30, 45, 40, 55, 60, 68] },
-    Q2: { revenue: '+19.8%', efficiency: '+29.4%', retention: '92.5%', roi: '3.9x', trend: '+15.1%', points: [45, 52, 58, 64, 72, 78] },
-    Q3: { revenue: '+24.1%', efficiency: '+36.2%', retention: '93.6%', roi: '4.4x', trend: '+16.8%', points: [52, 60, 68, 75, 82, 88] },
-    Q4: { revenue: '+28.4%', efficiency: '+41.8%', retention: '94.2%', roi: '4.8x', trend: '+18.6%', points: [60, 72, 78, 88, 92, 98] },
-    YTD: { revenue: '+32.6%', efficiency: '+46.5%', retention: '96.1%', roi: '5.2x', trend: '+22.4%', points: [25, 42, 60, 78, 88, 98] }
+  const handleRunInference = () => {
+    if (interactiveInferenceRunning) return;
+    setInteractiveInferenceRunning(true);
+    setSimulatedLogs((prev) => [...prev, '› Processing dynamic reasoning batch...']);
+    
+    setTimeout(() => {
+      setSimulatedLogs((prev) => [
+        ...prev,
+        '› Context vector match: 99.4% confidence',
+        '› Latency: 48ms | Tokens: 1,480/sec | Guardrails: Passed (0 violations)'
+      ]);
+      setInteractiveInferenceRunning(false);
+    }, 900);
   };
 
-  const currentMetrics = chartData[activeQuarter];
-
   return (
-    <section id="home" className="relative pt-6 pb-20 md:pt-12 md:pb-28 bg-[#FAF9F6] text-slate-900 overflow-hidden border-b border-slate-200">
+    <section className="relative min-h-screen pt-32 pb-20 overflow-hidden flex flex-col justify-center">
+      {/* Subtle Background Glow Orbs */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-indigo-500/15 via-purple-600/10 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-10 right-10 w-[400px] h-[300px] bg-gradient-to-bl from-indigo-600/10 via-purple-600/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
       
-      {/* Editorial Grid Lines Accent */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30 pointer-events-none" />
+      {/* Background Architectural Grid Accent */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#33415512_1px,transparent_1px),linear-gradient(to_bottom,#33415512_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none -z-10" />
 
-      {/* Signature Business Signal line background accent */}
-      <div className="absolute top-1/4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-300 to-transparent opacity-60 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Top Label & Date Badge */}
-        <div className="flex flex-wrap items-center justify-between gap-4 pb-8 mb-8 border-b border-slate-200 font-mono text-xs">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded bg-slate-900 text-white font-bold tracking-widest uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-            <span>BUSINESS INTELLIGENCE / 2026</span>
-          </div>
-
-          <div className="hidden sm:flex items-center space-x-6 text-slate-500 uppercase tracking-widest text-[11px]">
-            <span>SYSTEM STATUS: <strong className="text-slate-900 font-bold">OPTIMAL</strong></span>
-            <span>•</span>
-            <span>DATA LATENCY: <strong className="text-slate-900 font-bold">&lt; 12ms</strong></span>
-            <span>•</span>
-            <span>RELIABILITY: <strong className="text-slate-900 font-bold">99.999%</strong></span>
-          </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        {/* Top Status Capsule */}
+        <div className="flex justify-center mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-xs text-slate-300 shadow-xl backdrop-blur-md"
+          >
+            <span className="flex h-2 w-2 relative">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="font-mono text-slate-400">STUDIO CADENCE:</span>
+            <span className="font-medium text-slate-200">2 Dedicated Pod Slots Available for Q3/Q4</span>
+            <button
+              onClick={() => onNavigate('pricing')}
+              className="text-indigo-400 hover:text-indigo-300 font-semibold text-[11px] ml-1 transition-colors underline decoration-indigo-400/40 underline-offset-4"
+            >
+              View SLA →
+            </button>
+          </motion.div>
         </div>
 
-        {/* Hero Main Editorial Header */}
-        <div className="max-w-4xl space-y-6">
-          
-          <div className="space-y-4">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-emerald-700 block">
-              01 — EXECUTIVE DECISION ARCHITECTURE
+        {/* Editorial Heading */}
+        <div className="text-center max-w-4xl mx-auto mb-12">
+          <motion.h1
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08]"
+          >
+            We engineer software that feels like{' '}
+            <span className="bg-gradient-to-r from-indigo-200 via-purple-200 to-indigo-400 bg-clip-text text-transparent italic font-serif">
+              the future.
             </span>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-950 uppercase leading-[1.05]">
-              TURN COMPLEX BUSINESS PROBLEMS INTO <span className="bg-slate-900 text-white px-2.5 py-0.5 font-extrabold inline-block mt-1">CLEAR DECISIONS.</span>
-            </h1>
-          </div>
+          </motion.h1>
 
-          <p className="text-lg sm:text-xl text-slate-700 leading-relaxed font-normal max-w-3xl">
-            We partner with executive boards and technology leaders to engineer high-throughput cloud architectures, deploy domain-specific AI models, and optimize enterprise capital allocation.
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-normal leading-relaxed"
+          >
+            A bespoke product engineering atelier uniting autonomous AI orchestration, mathematically precise design systems, and resilient cloud architecture for category-defining leaders.
+          </motion.p>
 
           {/* Action CTAs */}
-          <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-8 flex flex-wrap items-center justify-center gap-4"
+          >
             <button
-              onClick={() => onNavigate('contact')}
-              className="inline-flex items-center justify-center px-8 py-4 text-xs font-mono font-bold tracking-widest uppercase text-white bg-slate-900 hover:bg-slate-800 transition-all duration-200 border border-slate-900 shadow-md group"
+              onClick={onOpenContact}
+              className="group px-7 py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 text-white font-bold text-sm transition-all shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2"
             >
-              <span>01 — START A PROJECT</span>
-              <ArrowUpRight className="w-4 h-4 ml-2 text-emerald-400 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <Sparkles className="w-4 h-4 text-white group-hover:rotate-12 transition-transform" />
+              <span>Initiate Discovery Consultation</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
 
             <button
-              onClick={() => onNavigate('services')}
-              className="inline-flex items-center justify-center px-8 py-4 text-xs font-mono font-bold tracking-widest uppercase text-slate-900 bg-white hover:bg-slate-100 border border-slate-300 transition-colors shadow-2xs"
+              onClick={() => onNavigate('studio-engine')}
+              className="px-6 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 text-sm font-semibold text-slate-200 transition-all flex items-center gap-2 shadow-sm"
             >
-              <span>EXPLORE CAPABILITY MATRIX</span>
+              <span>Interactive Scope &amp; Cost Engine</span>
+              <span className="font-mono text-[10px] px-1.5 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+                LIVE
+              </span>
             </button>
-          </div>
+          </motion.div>
         </div>
 
-        {/* ================= EXECUTIVE BUSINESS PERFORMANCE DASHBOARD ================= */}
-        <div className="mt-16 bg-white border border-slate-300 rounded-none shadow-xl p-6 sm:p-8 space-y-8 relative">
-          
-          {/* Section Header inside Dashboard */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200">
-            <div>
-              <div className="flex items-center space-x-2 text-xs font-mono text-slate-500 uppercase tracking-widest">
-                <Activity className="w-4 h-4 text-emerald-600" />
-                <span>EXECUTIVE COMMAND CENTER — BUSINESS PERFORMANCE</span>
+        {/* Interactive Systems Cockpit Showcase */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="max-w-5xl mx-auto rounded-2xl border border-slate-800 bg-slate-900/70 backdrop-blur-xl shadow-2xl overflow-hidden"
+        >
+          {/* Cockpit Window Header */}
+          <div className="flex flex-wrap items-center justify-between gap-4 px-5 py-3.5 border-b border-slate-800/80 bg-slate-950/70">
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5">
+                <div className="w-3 h-3 rounded-full bg-rose-500/80"></div>
+                <div className="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                <div className="w-3 h-3 rounded-full bg-emerald-500/80"></div>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mt-1 font-sans">
-                Real-Time Operational Telemetry &amp; Growth Benchmarks
-              </h3>
-            </div>
-
-            {/* Quarter Selector Tabs */}
-            <div className="flex items-center space-x-1 bg-slate-100 p-1 border border-slate-200 font-mono text-xs">
-              {(['Q1', 'Q2', 'Q3', 'Q4', 'YTD'] as const).map((q) => (
-                <button
-                  key={q}
-                  onClick={() => setActiveQuarter(q)}
-                  className={`px-3 py-1.5 font-bold transition-all ${
-                    activeQuarter === q
-                      ? 'bg-slate-900 text-emerald-400 shadow-2xs'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-                  }`}
-                >
-                  {q}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* 4 Metric Counter Displays */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            
-            <div className="p-5 bg-[#F8F9FA] border border-slate-200/80 space-y-2">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-500 block">
-                REVENUE GROWTH
+              <span className="font-mono text-xs text-slate-400 ml-3 flex items-center gap-1.5">
+                <Terminal className="w-3.5 h-3.5 text-slate-500" />
+                aura.engine // telemetry-console.live
               </span>
-              <div className="flex items-baseline justify-between">
-                <span className="text-3xl sm:text-4xl font-extrabold font-mono text-slate-950">
-                  {currentMetrics.revenue}
-                </span>
-                <span className="inline-flex items-center text-[10px] font-mono font-bold text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded">
-                  <ArrowUp className="w-3 h-3 mr-0.5" />
-                  Q/Q
-                </span>
-              </div>
-              <p className="text-xs text-slate-500 font-sans">Compounded expansion velocity</p>
             </div>
 
-            <div className="p-5 bg-[#F8F9FA] border border-slate-200/80 space-y-2">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-500 block">
-                EFFICIENCY BOOST
-              </span>
-              <div className="flex items-baseline justify-between">
-                <span className="text-3xl sm:text-4xl font-extrabold font-mono text-slate-950">
-                  {currentMetrics.efficiency}
-                </span>
-                <span className="inline-flex items-center text-[10px] font-mono font-bold text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded">
-                  <ArrowUp className="w-3 h-3 mr-0.5" />
-                  OpEx
-                </span>
-              </div>
-              <p className="text-xs text-slate-500 font-sans">Automated workflow savings</p>
-            </div>
-
-            <div className="p-5 bg-[#F8F9FA] border border-slate-200/80 space-y-2">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-500 block">
-                CLIENT RETENTION
-              </span>
-              <div className="flex items-baseline justify-between">
-                <span className="text-3xl sm:text-4xl font-extrabold font-mono text-slate-950">
-                  {currentMetrics.retention}
-                </span>
-                <span className="inline-flex items-center text-[10px] font-mono font-bold text-blue-700 bg-blue-100 px-1.5 py-0.5 rounded">
-                  SLA 99.9%
-                </span>
-              </div>
-              <p className="text-xs text-slate-500 font-sans">Post-implementation audit score</p>
-            </div>
-
-            <div className="p-5 bg-[#F8F9FA] border border-slate-200/80 space-y-2">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-500 block">
-                AVERAGE ROI
-              </span>
-              <div className="flex items-baseline justify-between">
-                <span className="text-3xl sm:text-4xl font-extrabold font-mono text-emerald-600">
-                  {currentMetrics.roi}
-                </span>
-                <span className="inline-flex items-center text-[10px] font-mono font-bold text-emerald-800 bg-emerald-100 px-1.5 py-0.5 rounded">
-                  3-Yr Benchmark
-                </span>
-              </div>
-              <p className="text-xs text-slate-500 font-sans">Return on capital invested</p>
-            </div>
-
-          </div>
-
-          {/* Interactive SVG Chart Panel */}
-          <div className="bg-slate-950 text-white p-6 border border-slate-800 space-y-4">
-            
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
-              <div className="flex items-center space-x-3">
-                <TrendingUp className="w-5 h-5 text-emerald-400" />
-                <div>
-                  <h4 className="text-sm font-mono font-bold text-white tracking-wider uppercase">
-                    PERFORMANCE TRAJECTORY ({activeQuarter})
-                  </h4>
-                  <p className="text-xs text-slate-400">Quarterly growth velocity vs baseline target</p>
-                </div>
-              </div>
-
-              <div className="inline-flex items-center space-x-2 text-xs font-mono text-emerald-400 bg-emerald-950/80 px-3 py-1.5 border border-emerald-800">
-                <ArrowUp className="w-3.5 h-3.5" />
-                <span>↑ {currentMetrics.trend} vs previous quarter</span>
-              </div>
-            </div>
-
-            {/* SVG Animated Growth Chart Line */}
-            <div className="relative pt-4 pb-2">
-              <svg className="w-full h-36 overflow-visible" viewBox="0 0 500 120" preserveAspectRatio="none">
-                {/* Horizontal Gridlines */}
-                <line x1="0" y1="20" x2="500" y2="20" stroke="#334155" strokeDasharray="4 4" strokeWidth="0.8" />
-                <line x1="0" y1="60" x2="500" y2="60" stroke="#334155" strokeDasharray="4 4" strokeWidth="0.8" />
-                <line x1="0" y1="100" x2="500" y2="100" stroke="#334155" strokeDasharray="4 4" strokeWidth="0.8" />
-
-                {/* Gradient Fill under line */}
-                <defs>
-                  <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
-                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.0" />
-                  </linearGradient>
-                </defs>
-
-                {/* Path Area */}
-                <path
-                  d={`M 0,${120 - currentMetrics.points[0]} 
-                     L 100,${120 - currentMetrics.points[1]} 
-                     L 200,${120 - currentMetrics.points[2]} 
-                     L 300,${120 - currentMetrics.points[3]} 
-                     L 400,${120 - currentMetrics.points[4]} 
-                     L 500,${120 - currentMetrics.points[5]} 
-                     L 500,120 L 0,120 Z`}
-                  fill="url(#chartGradient)"
-                />
-
-                {/* Main Curve Line */}
-                <path
-                  d={`M 0,${120 - currentMetrics.points[0]} 
-                     L 100,${120 - currentMetrics.points[1]} 
-                     L 200,${120 - currentMetrics.points[2]} 
-                     L 300,${120 - currentMetrics.points[3]} 
-                     L 400,${120 - currentMetrics.points[4]} 
-                     L 500,${120 - currentMetrics.points[5]}`}
-                  fill="none"
-                  stroke="#10b981"
-                  strokeWidth="3"
-                />
-
-                {/* Chart Data Points */}
-                {currentMetrics.points.map((pt, idx) => (
-                  <circle
-                    key={idx}
-                    cx={idx * 100}
-                    cy={120 - pt}
-                    r="4"
-                    fill="#10b981"
-                    stroke="#020617"
-                    strokeWidth="2"
-                    className="hover:r-6 transition-all cursor-pointer"
-                  />
-                ))}
-              </svg>
-
-              {/* X Axis Labels */}
-              <div className="flex justify-between font-mono text-[10px] text-slate-400 mt-2">
-                <span>MONTH 01</span>
-                <span>MONTH 02</span>
-                <span>MONTH 03</span>
-                <span>MONTH 04</span>
-                <span>MONTH 05</span>
-                <span className="text-emerald-400 font-bold">CURRENT</span>
-              </div>
-            </div>
-
-            {/* Bottom Telemetry Ticker */}
-            <div className="pt-3 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] text-slate-400">
-              <div className="flex items-center space-x-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                <span>LIVE FEED: Cloud FinOps optimization engine running</span>
-              </div>
+            {/* Interactive Capability Switcher Tabs */}
+            <div className="flex items-center gap-1 bg-slate-900 p-1 rounded-lg border border-slate-800">
               <button
-                onClick={onOpenConsultationModal}
-                className="inline-flex items-center text-emerald-400 hover:text-emerald-300 underline underline-offset-4 uppercase font-bold text-[10px] tracking-wider"
+                onClick={() => setActiveTab('ai')}
+                className={`px-3 py-1 rounded text-xs font-medium transition-all flex items-center gap-1.5 ${
+                  activeTab === 'ai'
+                    ? 'bg-slate-800 text-indigo-300 shadow-sm'
+                    : 'text-slate-400 hover:text-slate-200'
+                }`}
               >
-                <span>Request Custom Architecture Review</span>
-                <ChevronRight className="w-3.5 h-3.5 ml-1" />
+                <Cpu className="w-3.5 h-3.5" />
+                <span>Autonomous AI</span>
+              </button>
+
+              <button
+                onClick={() => setActiveTab('design')}
+                className={`px-3 py-1 rounded text-xs font-medium transition-all flex items-center gap-1.5 ${
+                  activeTab === 'design'
+                    ? 'bg-slate-800 text-indigo-300 shadow-sm'
+                    : 'text-slate-400 hover:text-slate-200'
+                }`}
+              >
+                <Layers className="w-3.5 h-3.5" />
+                <span>Design System</span>
+              </button>
+
+              <button
+                onClick={() => setActiveTab('cloud')}
+                className={`px-3 py-1 rounded text-xs font-medium transition-all flex items-center gap-1.5 ${
+                  activeTab === 'cloud'
+                    ? 'bg-slate-800 text-indigo-300 shadow-sm'
+                    : 'text-slate-400 hover:text-slate-200'
+                }`}
+              >
+                <Globe className="w-3.5 h-3.5" />
+                <span>Edge Cloud</span>
               </button>
             </div>
-
           </div>
 
-        </div>
+          {/* Cockpit Dynamic Stage */}
+          <div className="p-6 sm:p-8">
+            {activeTab === 'ai' && (
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                <div className="lg:col-span-7 flex flex-col gap-4">
+                  <div className="flex items-center gap-2">
+                    <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                      STATUS: HEALTHY
+                    </span>
+                    <span className="text-xs text-slate-400 font-mono">MODEL: GEMINI-2.5-PRO-ORCHESTRATOR</span>
+                  </div>
 
+                  <h3 className="font-display text-2xl font-bold text-white">
+                    Sub-100ms Multimodal Agent Orchestration
+                  </h3>
+
+                  <p className="text-sm text-slate-400 leading-relaxed">
+                    Zero-lag tool calling and vector retrieval pipelines deployed directly into your production infrastructure. Real-time streaming with mathematical context verification.
+                  </p>
+
+                  <div className="bg-slate-950 rounded-xl p-4 border border-slate-800/80 font-mono text-xs text-slate-300 flex flex-col gap-1.5 max-h-36 overflow-y-auto">
+                    {simulatedLogs.map((log, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <span className="text-slate-600 select-none">›</span>
+                        <span className={log.includes('48ms') ? 'text-emerald-400' : 'text-slate-300'}>
+                          {log}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-3 pt-2">
+                    <button
+                      onClick={handleRunInference}
+                      disabled={interactiveInferenceRunning}
+                      className="px-4 py-2 rounded-lg bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-xs font-semibold flex items-center gap-2 transition-all disabled:opacity-50"
+                    >
+                      <Play className="w-3.5 h-3.5 fill-indigo-300" />
+                      <span>{interactiveInferenceRunning ? 'Executing Pipeline...' : 'Test Live Inference Batch'}</span>
+                    </button>
+                    <span className="text-xs text-slate-500 font-mono">Live latency benchmark: 48ms</span>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-5 bg-slate-950/80 rounded-xl p-5 border border-slate-800 flex flex-col gap-4">
+                  <div className="text-xs font-mono text-slate-400 uppercase tracking-wider pb-2 border-b border-slate-800">
+                    Live Telemetry Benchmarks
+                  </div>
+
+                  <div className="space-y-3">
+                    <div>
+                      <div className="flex justify-between text-xs mb-1">
+                        <span className="text-slate-400">Tool Execution Precision</span>
+                        <span className="text-emerald-400 font-mono font-bold">99.4%</span>
+                      </div>
+                      <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div className="h-full bg-emerald-400 rounded-full w-[99.4%] transition-all duration-500"></div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="flex justify-between text-xs mb-1">
+                        <span className="text-slate-400">Context Vector Recall</span>
+                        <span className="text-indigo-400 font-mono font-bold">98.8%</span>
+                      </div>
+                      <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div className="h-full bg-indigo-400 rounded-full w-[98.8%] transition-all duration-500"></div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="flex justify-between text-xs mb-1">
+                        <span className="text-slate-400">Safety Guardrail Intercept Rate</span>
+                        <span className="text-purple-400 font-mono font-bold">100.0%</span>
+                      </div>
+                      <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div className="h-full bg-purple-400 rounded-full w-full transition-all duration-500"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                    <span>REGISTRY: QDRANT DISTRIBUTED</span>
+                    <span className="text-emerald-400">SYNCED</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'design' && (
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                <div className="lg:col-span-7 flex flex-col gap-4">
+                  <div className="flex items-center gap-2">
+                    <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                      DESIGN TOKENS: V3.8
+                    </span>
+                    <span className="text-xs text-slate-400 font-mono">WCAG 2.1 AAA COMPLIANT</span>
+                  </div>
+
+                  <h3 className="font-display text-2xl font-bold text-white">
+                    Mathematical Proportions &amp; Optical Harmony
+                  </h3>
+
+                  <p className="text-sm text-slate-400 leading-relaxed">
+                    Every elevation, corner radius, and typographic interval is generated via mathematical ratios—eliminating visual fatigue and elevating brand prestige.
+                  </p>
+
+                  <div className="grid grid-cols-3 gap-3 pt-2">
+                    <div className="p-3 rounded-lg bg-slate-950 border border-slate-800 text-center">
+                      <div className="text-lg font-bold text-indigo-300 font-mono">1.333</div>
+                      <div className="text-[11px] text-slate-400 mt-1">Perfect Fourth Scale</div>
+                    </div>
+                    <div className="p-3 rounded-lg bg-slate-950 border border-slate-800 text-center">
+                      <div className="text-lg font-bold text-emerald-400 font-mono">60 FPS</div>
+                      <div className="text-[11px] text-slate-400 mt-1">Motion Spring Rate</div>
+                    </div>
+                    <div className="p-3 rounded-lg bg-slate-950 border border-slate-800 text-center">
+                      <div className="text-lg font-bold text-cyan-400 font-mono">AAA</div>
+                      <div className="text-[11px] text-slate-400 mt-1">Contrast Standard</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-5 bg-slate-950 rounded-xl p-5 border border-slate-800 flex flex-col gap-3">
+                  <div className="text-xs font-mono text-slate-400 uppercase tracking-wider pb-2 border-b border-slate-800">
+                    Live Token Inspector
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded bg-indigo-500 shadow-md"></div>
+                    <div className="text-xs font-mono text-slate-300">
+                      <div>--color-indigo-500: #6366F1</div>
+                      <div className="text-slate-500 text-[10px]">Sleek Indigo Primary</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded bg-slate-900 border border-slate-700"></div>
+                    <div className="text-xs font-mono text-slate-300">
+                      <div>--surface-slate-900: #0F172A</div>
+                      <div className="text-slate-500 text-[10px]">Low-fatigue Dark Neutral</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded bg-emerald-500"></div>
+                    <div className="text-xs font-mono text-slate-300">
+                      <div>--feedback-success: #10B981</div>
+                      <div className="text-slate-500 text-[10px]">Emerald Verification</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'cloud' && (
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                <div className="lg:col-span-7 flex flex-col gap-4">
+                  <div className="flex items-center gap-2">
+                    <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                      EDGE REGIONS: 28 GLOBAL
+                    </span>
+                    <span className="text-xs text-slate-400 font-mono">ZERO DOWNTIME CANARY</span>
+                  </div>
+
+                  <h3 className="font-display text-2xl font-bold text-white">
+                    Distributed Cloud Core &amp; High-Throughput APIs
+                  </h3>
+
+                  <p className="text-sm text-slate-400 leading-relaxed">
+                    Edge computing meshes, distributed Postgres with read replicas, and real-time state synchronization engineered for zero single-points-of-failure.
+                  </p>
+
+                  <div className="flex items-center gap-4 pt-2">
+                    <div className="flex items-center gap-2 text-xs text-slate-300">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                      <span>Multi-Region Read Caching</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-slate-300">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                      <span>SOC2 Type II Hardening</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-5 bg-slate-950 rounded-xl p-5 border border-slate-800 flex flex-col gap-3">
+                  <div className="text-xs font-mono text-slate-400 uppercase tracking-wider pb-2 border-b border-slate-800 flex justify-between">
+                    <span>Edge TTFB Matrix</span>
+                    <span className="text-emerald-400 font-mono">GLOBAL AVG: 18ms</span>
+                  </div>
+
+                  <div className="space-y-2 text-xs font-mono">
+                    <div className="flex justify-between py-1 border-b border-slate-900">
+                      <span className="text-slate-400">US East (N. Virginia)</span>
+                      <span className="text-emerald-400">9ms</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-slate-900">
+                      <span className="text-slate-400">EU West (Frankfurt)</span>
+                      <span className="text-emerald-400">14ms</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-slate-900">
+                      <span className="text-slate-400">AP South (Tokyo)</span>
+                      <span className="text-emerald-400">22ms</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </motion.div>
+
+        {/* Global Proof Metric Ticker */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-slate-800/80">
+          <div className="flex flex-col">
+            <span className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
+              $180M+
+            </span>
+            <span className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">
+              Client Venture Value Created
+            </span>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="font-display text-3xl sm:text-4xl font-bold text-indigo-300 tracking-tight">
+              &lt; 95ms
+            </span>
+            <span className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">
+              Inference Latency Standard
+            </span>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
+              42
+            </span>
+            <span className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">
+              International Design Honors
+            </span>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="font-display text-3xl sm:text-4xl font-bold text-emerald-400 tracking-tight">
+              99.99%
+            </span>
+            <span className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">
+              Production SLA Guarantee
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kairo — Modern Photography Portfolio</title>
@@ -9,183 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <script>
-    // Self-executing responsive preview switcher logic
-    (function() {
-      const isPlatform = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      const isTop = window.self === window.top;
-      const urlParams = new URLSearchParams(window.location.search);
-      const isIframe = urlParams.get('iframe') === 'true';
-      
-      if (isPlatform && isTop && !isIframe) {
-        // document.documentElement.style.visibility = 'hidden';
-        
-        window.addEventListener('DOMContentLoaded', () => {
-          const currentUrl = new URL(window.location.href);
-          currentUrl.searchParams.set('iframe', 'true');
-          
-          const body = document.body;
-          body.innerHTML = '';
-          body.style.margin = '0';
-          body.style.padding = '0';
-          body.style.height = '100vh';
-          body.style.width = '100vw';
-          body.style.display = 'flex';
-          body.style.flexDirection = 'column';
-          body.style.overflow = 'hidden';
-          body.style.backgroundColor = '#f1f5f9';
-          
-          const topBar = document.createElement('div');
-          topBar.id = 'technosprint-preview-header';
-          topBar.style.height = '64px';
-          topBar.style.background = '#ffffff';
-          topBar.style.borderBottom = '1px solid #e2e8f0';
-          topBar.style.display = 'flex';
-          topBar.style.alignItems = 'center';
-          topBar.style.justifyContent = 'space-between';
-          topBar.style.padding = '0 24px';
-          topBar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
-          topBar.style.fontFamily = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
-          topBar.style.zIndex = '99999';
-          topBar.style.position = 'relative';
-          topBar.style.boxSizing = 'border-box';
-          
-          const logoDiv = document.createElement('div');
-          logoDiv.innerHTML = `
-            <a href="/templates" style="display: flex; align-items: center; text-decoration: none;">
-              <img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" />
-            </a>
-          `;
-          topBar.appendChild(logoDiv);
-          
-          const centerDiv = document.createElement('div');
-          centerDiv.style.display = 'flex';
-          centerDiv.style.alignItems = 'center';
-          centerDiv.style.gap = '8px';
-          centerDiv.innerHTML = `
-            <button id="view-desktop" style="
-              background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;
-              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
-              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
-              outline: none; box-sizing: border-box;
-            ">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-              Desktop
-            </button>
-            <button id="view-tablet" style="
-              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
-              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
-              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
-              outline: none; box-sizing: border-box;
-            ">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-              Tablet
-            </button>
-            <button id="view-mobile" style="
-              background: #ffffff; color: #475569; border: 1px solid #e2e8f0;
-              padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 500;
-              cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;
-              outline: none; box-sizing: border-box;
-            ">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-              Mobile
-            </button>
-          `;
-          topBar.appendChild(centerDiv);
-          
-          const rightDiv = document.createElement('div');
-          const pathParts = window.location.pathname.split('/');
-          const templateSlug = pathParts[pathParts.length - 2] || 'kairo-template';
-          
-          rightDiv.innerHTML = `
-            <a id="download-btn-header" href="/templates/${templateSlug}?action=download" style="
-              background: #0066ff;
-              color: #ffffff;
-              text-decoration: none;
-              font-size: 0.85rem;
-              font-weight: 600;
-              padding: 10px 20px;
-              border-radius: 99px;
-              box-shadow: 0 4px 12px rgba(0, 102, 255, 0.15);
-              transition: all 0.2s ease-in-out;
-              display: flex;
-              align-items: center;
-              gap: 8px;
-              letter-spacing: 0.5px;
-              box-sizing: border-box;
-            ">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-              Download Template
-            </a>
-          `;
-          topBar.appendChild(rightDiv);
-          topBar.appendChild(rightDiv);
-          body.appendChild(topBar);
-          
-          const iframeContainer = document.createElement('div');
-          iframeContainer.style.flex = '1';
-          iframeContainer.style.display = 'flex';
-          iframeContainer.style.alignItems = 'center';
-          iframeContainer.style.justifyContent = 'center';
-          iframeContainer.style.background = '#f1f5f9';
-          iframeContainer.style.padding = '20px';
-          iframeContainer.style.boxSizing = 'border-box';
-          iframeContainer.style.overflow = 'hidden';
-          
-          const iframe = document.createElement('iframe');
-          iframe.id = 'preview-iframe';
-          iframe.src = currentUrl.toString();
-          iframe.style.width = '100%';
-          iframe.style.height = '100%';
-          iframe.style.border = 'none';
-          iframe.style.borderRadius = '12px';
-          iframe.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
-          iframe.style.background = '#ffffff';
-          iframe.style.transition = 'width 0.3s ease, height 0.3s ease';
-          
-          iframeContainer.appendChild(iframe);
-          body.appendChild(iframeContainer);
-          
-          const btnDesktop = centerDiv.querySelector('#view-desktop');
-          const btnTablet = centerDiv.querySelector('#view-tablet');
-          const btnMobile = centerDiv.querySelector('#view-mobile');
-          
-          const setButtonActive = (activeBtn) => {
-            [btnDesktop, btnTablet, btnMobile].forEach(btn => {
-              btn.style.background = '#ffffff';
-              btn.style.color = '#475569';
-              btn.style.borderColor = '#e2e8f0';
-              btn.style.fontWeight = '500';
-            });
-            activeBtn.style.background = '#eff6ff';
-            activeBtn.style.color = '#1e40af';
-            activeBtn.style.borderColor = '#bfdbfe';
-            activeBtn.style.fontWeight = '600';
-          };
-          
-          btnDesktop.addEventListener('click', () => {
-            iframe.style.width = '100%';
-            iframe.style.height = '100%';
-            setButtonActive(btnDesktop);
-          });
-          btnTablet.addEventListener('click', () => {
-            iframe.style.width = '768px';
-            iframe.style.height = '95%';
-            setButtonActive(btnTablet);
-          });
-          btnMobile.addEventListener('click', () => {
-            iframe.style.width = '375px';
-            iframe.style.height = '90%';
-            setButtonActive(btnMobile);
-          });
-          
-          document.documentElement.style.visibility = 'visible';
-        });
-      }
-    })();
-  </script>
-</head>
-<body>
   <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
   <script>
     (function() {
@@ -193,8 +17,8 @@
       const urlParams = new URLSearchParams(window.location.search);
       const isIframe = urlParams.get('iframe') === 'true';
       
-      if (isTop && !isIframe) {
-        // document.documentElement.style.visibility = 'hidden';
+      if (false && isTop && !isIframe) {
+        document.documentElement.style.visibility = 'hidden';
         
         window.addEventListener('DOMContentLoaded', () => {
           const currentUrl = new URL(window.location.href);
@@ -467,7 +291,8 @@
       }
     })();
   </script>
-
+</head>
+<body>
   <!-- Header / Navigation -->
   <header>
     <div class="nav-container">
