@@ -3,6 +3,10 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   base: './',
-  base: '/templates/construction/construction-7/',
   plugins: [react()],
+  server: {
+    port: 5173,
+    strictPort: true,
+    host: true
+  }
 });

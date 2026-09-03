@@ -29,6 +29,7 @@
             document.documentElement.removeAttribute('style');
             
             const body = document.body;
+            if (!body) return;
             body.className = '';
             body.innerHTML = '';
             body.removeAttribute('style');
@@ -292,7 +293,7 @@
     <section
       class="heroSection"
       id="home"
-      style="background-image: url('assets/images/aurelius-hero.jpg');"
+      style="background-image: url('data:image/jpeg;base64,');"
     >
       <div class="heroOverlay"></div>
 
@@ -311,7 +312,7 @@
             <!-- Haussmannian Palace Facade Visual Thumbnail -->
             <div class="heroFacadeImgWrap">
               <img
-                src="assets/images/aurelius-hero.jpg"
+                src="data:image/jpeg;base64,"
                 alt="Historical French Palace Facade"
                 class="heroFacadeImg"
               />
@@ -391,7 +392,7 @@
       <div class="beforeAfterContainer" id="beforeAfterSlider">
         <!-- Before Image (Unrestored / Aged Sepia) -->
         <img
-          src="assets/images/aurelius-hero.jpg"
+          src="data:image/jpeg;base64,"
           alt="Before Restoration"
           class="beforeImg"
         />
@@ -399,7 +400,7 @@
         <!-- After Image (Restored Gilded Luminescence) -->
         <div class="afterImgWrap" id="afterImgWrap" style="width: 50%;">
           <img
-            src="assets/images/aurelius-hero.jpg"
+            src="data:image/jpeg;base64,"
             alt="After Restoration"
             class="afterImg"
           />
@@ -422,7 +423,7 @@
       <div class="portfolioGrid">
         <div class="portfolioCard">
           <div class="portfolioImgWrap">
-            <img src="assets/images/aurelius-salon.jpg" alt="Hôtel de la Marine Grand Salon" class="portfolioImg" />
+            <img src="data:image/jpeg;base64," alt="Hôtel de la Marine Grand Salon" class="portfolioImg" />
           </div>
           <div class="portfolioBody">
             <div>
@@ -438,7 +439,7 @@
 
         <div class="portfolioCard">
           <div class="portfolioImgWrap">
-            <img src="assets/images/aurelius-hero.jpg" alt="Palais Haussmann Historical Facade" class="portfolioImg" />
+            <img src="data:image/jpeg;base64," alt="Palais Haussmann Historical Facade" class="portfolioImg" />
           </div>
           <div class="portfolioBody">
             <div>
