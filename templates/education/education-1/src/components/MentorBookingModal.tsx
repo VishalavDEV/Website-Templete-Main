@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mentor } from '../types';
 import { X, CheckCircle2, Sparkles } from 'lucide-react';
-import confetti from 'canvas-confetti';
+import { triggerConfetti as confetti } from '../utils/confetti';
 
 interface MentorBookingModalProps {
   mentor: Mentor | null;

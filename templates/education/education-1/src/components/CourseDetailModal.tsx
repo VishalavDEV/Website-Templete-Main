@@ -10,7 +10,6 @@ import {
   Play,
   Sparkles,
 } from 'lucide-react';
-import confetti from 'canvas-confetti';
 
 interface CourseDetailModalProps {
   course: Course | null;
@@ -35,9 +34,11 @@ export const CourseDetailModal: React.FC<CourseDetailModalProps> = ({
     if (onEnrollSuccess) {
       onEnrollSuccess(course.id);
     }
-    try {
-      confetti({ particleCount: 60, spread: 70, origin: { y: 0.6 } });
-    } catch (e) {}
+    if (typeof (window as any).confetti === 'function') {
+      try {
+        (window as any).confetti({ particleCount: 60, spread: 70, origin: { y: 0.6 } });
+      } catch (e) {}
+    }
   };
 
   return (
@@ -80,6 +81,9 @@ export const CourseDetailModal: React.FC<CourseDetailModalProps> = ({
                   src={course.image}
                   alt={course.title}
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80';
+                  }}
                 />
                 <div className="absolute inset-0 bg-slate-950/50 flex flex-col items-center justify-center">
                   <button
@@ -133,6 +137,9 @@ export const CourseDetailModal: React.FC<CourseDetailModalProps> = ({
                 src={course.instructor.avatar}
                 alt={course.instructor.name}
                 className="w-12 h-12 rounded-2xl object-cover border border-slate-200 shadow-xs"
+                onError={(e) => {
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80';
+                }}
               />
               <div>
                 <h4 className="text-sm font-bold text-slate-900">{course.instructor.name}</h4>

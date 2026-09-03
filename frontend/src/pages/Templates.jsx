@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, useSearchParams, Link, useNavigate } from 'react-router-dom';
 import { api } from '../services/api';
-import { Search, SlidersHorizontal, X, RotateCcw, ArrowRight } from 'lucide-react';
+import { Search, SlidersHorizontal, X, RotateCcw, ArrowRight, Pencil } from 'lucide-react';
 
 const CATEGORY_META = {
   admin: {
@@ -140,12 +140,12 @@ export default function Templates() {
   const { categorySlug } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
-  
+
   const [allTemplates, setAllTemplates] = useState([]);
   const [categories, setCategories] = useState([]);
   const [showFilterPanel, setShowFilterPanel] = useState(false);
   const [loading, setLoading] = useState(true);
-  
+
   // URL params state
   const initialSearch = searchParams.get('search') || '';
   const initialCategory = categorySlug || searchParams.get('category') || 'all';
@@ -170,7 +170,7 @@ export default function Templates() {
   useEffect(() => {
     const urlCategory = categorySlug || searchParams.get('category') || 'all';
     const urlSearch = searchParams.get('search') || '';
-    
+
     setSelectedCategory(urlCategory);
     setSearchQuery(urlSearch);
   }, [categorySlug, searchParams]);
@@ -179,7 +179,7 @@ export default function Templates() {
   const handleSearchChange = (e) => {
     const val = e.target.value;
     setSearchQuery(val);
-    
+
     const params = new URLSearchParams(searchParams);
     if (val.trim()) {
       params.set('search', val);
@@ -220,7 +220,7 @@ export default function Templates() {
   const matchesCategory = (template, targetCat) => {
     if (!targetCat || targetCat === 'all') return true;
     if (!template.category) return false;
-    
+
     const tSlug = (template.category.slug || '').toLowerCase().trim();
     const tName = (template.category.name || '').toLowerCase().trim();
     const target = targetCat.toLowerCase().trim();
@@ -253,7 +253,7 @@ export default function Templates() {
           t.bootstrapVersion || '',
           ...(Array.isArray(t.tags) ? t.tags : [])
         ].join(' ').toLowerCase();
-        
+
         return terms.every(term => searchable.includes(term));
       });
     }
@@ -283,13 +283,13 @@ export default function Templates() {
     subtitle: 'Discover modern, production-ready, responsive layouts tailored for modern businesses and creators.'
   };
 
-  const headerBadgeText = selectedCategory === 'all' 
-    ? 'All Categories' 
+  const headerBadgeText = selectedCategory === 'all'
+    ? 'All Categories'
     : `Category: ${matchedCatObj ? matchedCatObj.name : selectedCategory} Templates`;
 
   return (
     <div style={{ animation: 'fadeIn 0.5s ease-out', padding: '30px 0' }}>
-      
+
       {/* Uniform Category Header */}
       <div style={{ marginBottom: 35 }}>
         <div style={{
@@ -333,7 +333,7 @@ export default function Templates() {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 15, flex: '1 1 320px', maxWidth: '480px' }}>
             {/* Filter Toggle Button */}
-            <button 
+            <button
               onClick={() => setShowFilterPanel(!showFilterPanel)}
               style={{
                 display: 'flex',
@@ -576,7 +576,7 @@ export default function Templates() {
                   }}
                 >
                   {/* Left Column: Responsive Multi-Device CSS Mockup */}
-                  <a 
+                  <a
                     href={demoUrl}
                     style={{
                       position: 'relative',
@@ -610,16 +610,16 @@ export default function Templates() {
                       boxSizing: 'border-box'
                     }}>
                       <div style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative' }}>
-                        <img 
-                          src={template.previewImage} 
-                          alt={`${template.name} Desktop Preview`} 
-                          style={{ 
-                            width: '100%', 
-                            height: '112%', 
-                            objectFit: 'cover', 
+                        <img
+                          src={template.previewImage}
+                          alt={`${template.name} Desktop Preview`}
+                          style={{
+                            width: '100%',
+                            height: '112%',
+                            objectFit: 'cover',
                             objectPosition: 'top',
-                            marginTop: '-12%' 
-                          }} 
+                            marginTop: '-12%'
+                          }}
                           onError={(e) => {
                             e.target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80';
                           }}
@@ -664,16 +664,16 @@ export default function Templates() {
                         zIndex: 10
                       }} />
                       <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
-                        <img 
-                          src={template.previewImage} 
-                          alt={`${template.name} Tablet Preview`} 
-                          style={{ 
-                            width: '100%', 
-                            height: '112%', 
-                            objectFit: 'cover', 
+                        <img
+                          src={template.previewImage}
+                          alt={`${template.name} Tablet Preview`}
+                          style={{
+                            width: '100%',
+                            height: '112%',
+                            objectFit: 'cover',
                             objectPosition: 'top',
-                            marginTop: '-12%' 
-                          }} 
+                            marginTop: '-12%'
+                          }}
                           onError={(e) => {
                             e.target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80';
                           }}
@@ -709,16 +709,16 @@ export default function Templates() {
                         zIndex: 10
                       }} />
                       <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
-                        <img 
-                          src={template.previewImage} 
-                          alt={`${template.name} Mobile Preview`} 
-                          style={{ 
-                            width: '100%', 
-                            height: '112%', 
-                            objectFit: 'cover', 
+                        <img
+                          src={template.previewImage}
+                          alt={`${template.name} Mobile Preview`}
+                          style={{
+                            width: '100%',
+                            height: '112%',
+                            objectFit: 'cover',
                             objectPosition: 'top',
-                            marginTop: '-12%' 
-                          }} 
+                            marginTop: '-12%'
+                          }}
                           onError={(e) => {
                             e.target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80';
                           }}
@@ -729,7 +729,7 @@ export default function Templates() {
 
                   {/* Right Column: Title, Metadata, Description & Pill Buttons */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-                    
+
                     {/* Badges / Tags */}
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                       {tags.map((tag, idx) => (
@@ -756,8 +756,8 @@ export default function Templates() {
                         fontFamily: 'var(--font-title)',
                         lineHeight: '1.25'
                       }}>
-                        <a 
-                          href={demoUrl} 
+                        <a
+                          href={demoUrl}
                           style={{ color: '#0f172a', transition: 'color 0.2s', textDecoration: 'none' }}
                           onMouseEnter={(e) => e.currentTarget.style.color = '#0066ff'}
                           onMouseLeave={(e) => e.currentTarget.style.color = '#0f172a'}
@@ -765,7 +765,7 @@ export default function Templates() {
                           {template.name}
                         </a>
                       </h3>
-                      
+
                       {/* Updated metadata */}
                       <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#64748b' }}>
                         <i className="fa-regular fa-clock" style={{ fontSize: '0.85rem' }}></i>
@@ -786,7 +786,7 @@ export default function Templates() {
                     </div>
 
                     {/* Action Buttons */}
-                    <div style={{ marginTop: '10px' }}>
+                    <div style={{ marginTop: '10px', display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
                       <a 
                         href={demoUrl}
                         style={{
@@ -815,6 +815,39 @@ export default function Templates() {
                       >
                         Live Demo <ArrowRight size={14} />
                       </a>
+
+                      <Link
+                        to={`/builder?template=${template.slug}&category=${(template.category?.slug || 'admin').toLowerCase()}&page=index.html`}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          gap: '8px',
+                          padding: '12px 24px',
+                          backgroundColor: '#ffffff',
+                          color: '#0f172a',
+                          borderRadius: '99px',
+                          border: '1px solid #cbd5e1',
+                          fontWeight: '600',
+                          fontSize: '0.85rem',
+                          cursor: 'pointer',
+                          transition: 'all 0.2s',
+                          textDecoration: 'none',
+                          boxShadow: '0 2px 6px rgba(0, 0, 0, 0.04)'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = '#f8fafc';
+                          e.currentTarget.style.borderColor = '#4f46e5';
+                          e.currentTarget.style.color = '#4f46e5';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = '#ffffff';
+                          e.currentTarget.style.borderColor = '#cbd5e1';
+                          e.currentTarget.style.color = '#0f172a';
+                        }}
+                      >
+                        <Pencil size={14} style={{ color: '#4f46e5' }} /> Edit Template
+                      </Link>
                     </div>
 
                   </div>
@@ -878,3 +911,4 @@ export default function Templates() {
     </div>
   );
 }
+

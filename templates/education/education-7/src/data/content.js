@@ -41,17 +41,17 @@ export const navLinks = [
 export const heroSlides = [
   {
     id: 1,
-    image: 'assets/hero-1.webp',
+    image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&q=80',
     alt: 'Students collaborating in a modern university library',
   },
   {
     id: 2,
-    image: 'assets/hero-2.webp',
+    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1600&q=80',
     alt: 'A lecturer presenting to a full lecture hall',
   },
   {
     id: 3,
-    image: 'assets/hero-3.webp',
+    image: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80',
     alt: 'University campus courtyard on a sunny day',
   },
 ];
@@ -125,7 +125,7 @@ export const courses = [
     price: 1200,
     badge: 'Popular',
     description: 'A comprehensive introduction to core business principles, strategy, and organisational behaviour.',
-    image: 'assets/course-business.webp',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'ECO201',
@@ -136,7 +136,7 @@ export const courses = [
     price: 1050,
     badge: 'New',
     description: 'Analyse consumer behaviour, market structures, and price mechanisms with real-world case studies.',
-    image: 'assets/course-economics.webp',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'MTH301',
@@ -147,7 +147,7 @@ export const courses = [
     price: 900,
     badge: null,
     description: 'Rigorous treatment of multivariable calculus, matrix theory, and their applications in science.',
-    image: 'assets/course-math.webp',
+    image: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'SCI110',
@@ -158,7 +158,7 @@ export const courses = [
     price: 980,
     badge: 'Popular',
     description: 'Classical mechanics, thermodynamics, and an introduction to quantum phenomena.',
-    image: 'assets/course-science.webp',
+    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'ENG220',
@@ -169,7 +169,7 @@ export const courses = [
     price: 1350,
     badge: null,
     description: 'Circuit analysis, electromagnetism, and digital systems for aspiring electrical engineers.',
-    image: 'assets/course-engineering.webp',
+    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'ART150',
@@ -180,7 +180,7 @@ export const courses = [
     price: 750,
     badge: 'New',
     description: 'From the Renaissance to contemporary movements — a survey of artistic traditions and cultural contexts.',
-    image: 'assets/course-arts.webp',
+    image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'LAW101',
@@ -191,7 +191,7 @@ export const courses = [
     price: 1100,
     badge: null,
     description: 'Fundamental principles of constitutional governance, rights, and judicial review.',
-    image: 'assets/course-law.webp',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'TEC301',
@@ -202,7 +202,7 @@ export const courses = [
     price: 1800,
     badge: 'Popular',
     description: 'Build modern web applications with React, Node.js, and cloud deployment pipelines.',
-    image: 'assets/course-tech.webp',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80',
   },
 ];
 
@@ -283,12 +283,12 @@ export const enrolledCourses = [
 
 // ─── Products / Shop ─────────────────────────────────────────────────────────
 export const products = [
-  { id: 1, title: 'WRU Crest Hoodie', price: 45.00, badge: 'Bestseller', image: 'assets/shop-hoodie.webp' },
-  { id: 2, title: 'Campus Tote Bag', price: 18.00, badge: null, image: 'assets/shop-tote.webp' },
-  { id: 3, title: 'Academic Planner 2025', price: 12.00, badge: 'New', image: 'assets/shop-planner.webp' },
-  { id: 4, title: 'WRU Branded Mug', price: 14.00, badge: null, image: 'assets/shop-mug.webp' },
-  { id: 5, title: 'University Polo Shirt', price: 35.00, badge: null, image: 'assets/shop-polo.webp' },
-  { id: 6, title: 'Research Compendium Vol. 4', price: 28.00, badge: 'New', image: 'assets/shop-book.webp' },
+  { id: 1, title: 'WRU Crest Hoodie', price: 45.00, badge: 'Bestseller', image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80' },
+  { id: 2, title: 'Campus Tote Bag', price: 18.00, badge: null, image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80' },
+  { id: 3, title: 'Academic Planner 2025', price: 12.00, badge: 'New', image: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=600&q=80' },
+  { id: 4, title: 'WRU Branded Mug', price: 14.00, badge: null, image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80' },
+  { id: 5, title: 'University Polo Shirt', price: 35.00, badge: null, image: 'https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=600&q=80' },
+  { id: 6, title: 'Research Compendium Vol. 4', price: 28.00, badge: 'New', image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80' },
 ];
 
 // ─── Testimonials ────────────────────────────────────────────────────────────

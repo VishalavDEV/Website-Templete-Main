@@ -6,11 +6,11 @@ export const COURSES_DATA: Course[] = [
     title: 'Data Science Essentials',
     category: 'Data & Analytics',
     instructor: {
-      name: 'Instructor Mannage',
+      name: 'Dr. Elena Rostova',
       role: 'Principal Data Scientist',
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+      avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80',
     },
-    rating: 4.0,
+    rating: 4.9,
     reviewsCount: 1420,
     durationMinutes: 33,
     lessonsCount: 12,
@@ -43,11 +43,11 @@ export const COURSES_DATA: Course[] = [
     title: 'Digital Marketing Masterclass',
     category: 'Marketing & Growth',
     instructor: {
-      name: 'Instructor Manage',
+      name: 'David Kim',
       role: 'Growth Marketing Director',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
     },
-    rating: 4.5,
+    rating: 4.8,
     reviewsCount: 3890,
     durationMinutes: 200,
     lessonsCount: 28,
@@ -80,7 +80,7 @@ export const COURSES_DATA: Course[] = [
     title: 'Creative Writing Workshop',
     category: 'Creative Arts & Writing',
     instructor: {
-      name: 'Instructor Manage',
+      name: 'Maya Lin',
       role: 'Acclaimed Author & Essayist',
       avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
     },
@@ -117,7 +117,7 @@ export const COURSES_DATA: Course[] = [
     title: 'Introduction to UX Design',
     category: 'Design & User Experience',
     instructor: {
-      name: 'Instructor Manage',
+      name: 'Alex Vance',
       role: 'Staff Product Designer',
       avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
     },
@@ -280,7 +280,7 @@ export const LEARNING_PATHS_DATA: LearningPath[] = [
     level: 'Intermediate',
     careerRole: 'AI Engineer / Data Scientist',
     averageSalary: '$138,000 / year',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80',
     milestones: [
       {
         phase: 'Weeks 1-5',
@@ -320,7 +320,7 @@ export const LEARNING_PATHS_DATA: LearningPath[] = [
     level: 'Beginner',
     careerRole: 'Product Designer / UX Researcher',
     averageSalary: '$105,000 / year',
-    image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80',
     milestones: [
       {
         phase: 'Weeks 1-4',
@@ -354,7 +354,7 @@ export const LEARNING_PATHS_DATA: LearningPath[] = [
     level: 'Beginner',
     careerRole: 'Growth Marketing Manager',
     averageSalary: '$98,000 / year',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&w=800&q=80',
     milestones: [
       {
         phase: 'Weeks 1-3',

@@ -8,7 +8,7 @@ import {
   Briefcase,
   Sparkles,
 } from 'lucide-react';
-import confetti from 'canvas-confetti';
+import { triggerConfetti as confetti } from '../utils/confetti';
 
 interface LearningPathsPageProps {
   onNavigate: (page: PageId) => void;

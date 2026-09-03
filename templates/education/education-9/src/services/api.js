@@ -81,6 +81,54 @@ const MOCK_COURSES = [
       { studentName: "Li W.", rating: 4.8, comment: "Geometrical visualizations helped me finally grasp eigenvalues!", date: "Jan 28, 2026" }
     ],
     stats: { lecturesCount: "24 Lectures", level: "Beginner", certificateName: "Applied Linear Algebra Specialist", language: "English" }
+  },
+  {
+    id: "course-7", title: "Python for Autonomous Systems & Robotics", instructor: "Prof. Alex Mercer", difficulty: "Intermediate", duration: "8 Weeks",
+    rating: 4.9, studentsEnrolled: 5400, progress: 30, image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80", category: "Programming",
+    description: "Master Python programming for autonomous robots, spatial kinematics, socket telemetry, and sensor filtering.",
+    curriculum: ["Python 3.12 Advanced Syntax", "Object-Oriented Architecture", "Real-Time Sensor Telemetry", "Asynchronous Event Loops with asyncio", "Robot Operating System (ROS2) Integrations"],
+    outcomes: ["Build scalable Python systems", "Control robotic hardware actuators over WebSockets", "Process sensor data streams in real-time"],
+    requirements: ["Basic programming logic"],
+    reviews: [
+      { studentName: "Marcus R.", rating: 5.0, comment: "Hands-on, deep, and beautifully explained with animated diagrams.", date: "Aug 18, 2026" }
+    ],
+    stats: { lecturesCount: "30 Lectures", level: "Intermediate", certificateName: "Certified Autonomous Systems Programmer", language: "English" }
+  },
+  {
+    id: "course-8", title: "Full-Stack Systems with TypeScript & Go", instructor: "Prof. Alex Mercer", difficulty: "Advanced", duration: "10 Weeks",
+    rating: 4.9, studentsEnrolled: 4100, progress: 0, image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80", category: "Programming",
+    description: "Build high-throughput backend microservices in Go paired with type-safe React/TypeScript frontend architectures.",
+    curriculum: ["Go Concurrency & Goroutines", "gRPC & Protocol Buffers", "Distributed Cache Architecture with Redis", "PostgreSQL Connection Pooling", "End-to-End TypeScript Type Safety"],
+    outcomes: ["Deploy low-latency microservices", "Handle 50k+ req/sec concurrent loads", "Architect distributed fault-tolerant backends"],
+    requirements: ["Intermediate programming background"],
+    reviews: [
+      { studentName: "Samantha K.", rating: 4.9, comment: "The concurrency benchmarks and Go runtime insights are world class.", date: "Aug 02, 2026" }
+    ],
+    stats: { lecturesCount: "36 Lectures", level: "Advanced", certificateName: "Full-Stack Systems Architect", language: "English" }
+  },
+  {
+    id: "course-9", title: "Venture Creation & Digital Business Strategy", instructor: "Elena Rostova", difficulty: "Beginner", duration: "6 Weeks",
+    rating: 4.8, studentsEnrolled: 3800, progress: 0, image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80", category: "Business",
+    description: "Learn venture building methodologies, unit economics, fundraising strategies, and product-led growth flywheels.",
+    curriculum: ["Market Opportunity Sizing", "Unit Economics & CAC/LTV Equations", "Pitch Deck Design & Narrative", "Product-Led Onboarding Funnels", "Cap Table Management"],
+    outcomes: ["Evaluate business venture viability", "Calculate financial forecasting metrics", "Design investor-ready pitch decks"],
+    requirements: ["No business background required"],
+    reviews: [
+      { studentName: "Daniel P.", rating: 4.8, comment: "Helped me secure angel funding for my AI startup!", date: "Jul 22, 2026" }
+    ],
+    stats: { lecturesCount: "22 Lectures", level: "Beginner", certificateName: "Digital Business Strategist", language: "English" }
+  },
+  {
+    id: "course-10", title: "Computational Linguistics & Natural Language", instructor: "Dr. Sarah Jenkins", difficulty: "Intermediate", duration: "7 Weeks",
+    rating: 4.7, studentsEnrolled: 2900, progress: 0, image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80", category: "Languages",
+    description: "Explore human language syntax, phonetic parsing, transformer attention mechanisms, and multilingual tokenization.",
+    curriculum: ["Morphological Analysis & Grammars", "Vector Semantics & Word2Vec", "Self-Attention Mechanics", "Cross-Lingual Transfer Learning", "Building Speech-to-Text Pipelines"],
+    outcomes: ["Build tokenizer algorithms", "Implement attention matrices in PyTorch", "Fine-tune multilingual translation models"],
+    requirements: ["Introductory Python and Linear Algebra"],
+    reviews: [
+      { studentName: "Chloe T.", rating: 4.9, comment: "Fascinating blend of linguistics and modern neural NLP.", date: "Aug 10, 2026" }
+    ],
+    stats: { lecturesCount: "28 Lectures", level: "Intermediate", certificateName: "Computational Linguist Specialist", language: "English" }
   }
 ];
 

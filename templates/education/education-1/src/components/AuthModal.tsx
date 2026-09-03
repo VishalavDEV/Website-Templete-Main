@@ -14,7 +14,7 @@ import {
   IdCard,
   Zap,
 } from 'lucide-react';
-import confetti from 'canvas-confetti';
+import { triggerConfetti as confetti } from '../utils/confetti';
 import { SAMPLE_STUDENTS } from '../data/edupathData';
 import { StudentProfile } from '../types';
 

@@ -167,6 +167,9 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
                     alt={course.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80';
+                    }}
                   />
                   <div className="absolute top-2.5 right-2.5">
                     <span className="px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-xs text-white text-[10px] font-bold uppercase tracking-wider font-mono">

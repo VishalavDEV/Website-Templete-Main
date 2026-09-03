@@ -66,7 +66,7 @@ export const edtechData = {
       students: 9800,
       price: 120,
       progress: 42,
-      thumbnail: "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80",
+      thumbnail: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
       featured: true
     },
     {

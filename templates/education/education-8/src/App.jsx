@@ -613,6 +613,9 @@ function FeaturedCoursesSection({ onEnroll }) {
                         src={course.thumbnail} 
                         alt={course.title} 
                         className="w-full h-full object-cover scale-100 hover:scale-105 transition-transform duration-700"
+                        onError={(e) => {
+                          e.currentTarget.src = 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80';
+                        }}
                       />
                       <span className="absolute top-3 left-3 bg-[#FFF4B8] border border-[#202020] text-[#202020] text-[8px] font-black uppercase tracking-widest px-2.5 py-1 rounded">
                         {course.category}
@@ -624,7 +627,14 @@ function FeaturedCoursesSection({ onEnroll }) {
                       <div>
                         {/* Instructor Details */}
                         <div className="flex items-center gap-2.5 mb-4">
-                          <img src={course.instructorImage} alt={course.instructor} className="w-6 h-6 rounded-full border border-[#202020]" />
+                          <img 
+                            src={course.instructorImage} 
+                            alt={course.instructor} 
+                            className="w-6 h-6 rounded-full border border-[#202020]" 
+                            onError={(e) => {
+                              e.currentTarget.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80';
+                            }}
+                          />
                           <span className="text-[10px] text-[#666666] font-bold">{course.instructor}</span>
                         </div>
 
@@ -759,7 +769,14 @@ function InstructorsSection() {
                 }`}
               >
                 <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-[#202020] mb-5 shadow-[4px_4px_0px_#202020]">
-                  <img src={inst.image} alt={inst.name} className="w-full h-full object-cover" />
+                  <img 
+                    src={inst.image} 
+                    alt={inst.name} 
+                    className="w-full h-full object-cover" 
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80';
+                    }}
+                  />
                 </div>
                 <h3 className="text-base font-black text-[#202020] mb-1">{inst.name}</h3>
                 <span className="text-[9px] tracking-widest font-black text-[#FFB703] uppercase mb-4 block leading-none">{inst.role}</span>
@@ -822,7 +839,14 @@ function TestimonialsSection() {
                 </div>
 
                 <div className="flex items-center gap-3 border-t border-[#FFF4B8] pt-4">
-                  <img src={test.image} alt={test.name} className="w-8 h-8 rounded-full border border-[#202020]" />
+                  <img 
+                    src={test.image} 
+                    alt={test.name} 
+                    className="w-8 h-8 rounded-full border border-[#202020]" 
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80';
+                    }}
+                  />
                   <div>
                     <span className="text-xs font-black text-[#202020] block">{test.name}</span>
                     <span className="text-[9px] text-[#666666] font-bold uppercase">{test.course}</span>

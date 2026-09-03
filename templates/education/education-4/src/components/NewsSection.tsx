@@ -38,6 +38,9 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ onReadArticle }) => {
                     alt={story.title}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80';
+                    }}
                   />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-[#132238]/90 text-white text-xs font-semibold">
                     {story.category}
