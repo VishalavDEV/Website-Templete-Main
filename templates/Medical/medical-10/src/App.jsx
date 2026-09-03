@@ -1,3 +1,10 @@
+const getDynamicBasename = () => {
+  let p = window.location.pathname;
+  if (p.endsWith('/index.html')) p = p.slice(0, -11);
+  if (p.endsWith('/')) p = p.slice(0, -1);
+  return p;
+};
+
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -47,7 +54,7 @@ export default function App() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={getDynamicBasename()}>
       <ScrollToTop />
 
       <AppointmentModal
