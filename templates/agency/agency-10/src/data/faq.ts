@@ -4,7 +4,7 @@ export const FAQ_DATA: FAQItem[] = [
   {
     id: 'faq-1',
     category: 'Pricing & Scoping',
-    question: 'How does Axiom structure project pricing and engagements?',
+    question: 'How does KRAFT structure project pricing and engagements?',
     answer: 'We offer two primary engagement models: Fixed-Scope Milestones (ideal for well-defined MVPs, architecture blueprints, and bounded product releases) and Dedicated Product Pods (monthly dedicated senior engineering squads for ongoing feature evolution, scaling, and MLOps). Project sizes typically range from $35k for targeted AI feasibility sprints to $150k+ for comprehensive enterprise platforms.'
   },
   {

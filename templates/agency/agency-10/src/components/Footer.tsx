@@ -73,7 +73,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenInquiry }) => 
                 <div className="w-2.5 h-2.5 bg-white rotate-45"></div>
               </div>
               <span className="font-black text-white tracking-tighter text-xl font-display uppercase">
-                Axiom<span className="text-blue-500 font-normal">Lab</span>
+                KRAFT<span className="text-blue-500 font-normal">Lab</span>
               </span>
             </div>
             <p className="text-xs text-slate-400 mt-3 leading-relaxed">
@@ -96,7 +96,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenInquiry }) => 
                   onClick={() => onNavigate('about')}
                   className="hover:text-white transition-colors cursor-pointer"
                 >
-                  About Axiom
+                  About KRAFT
                 </button>
               </li>
               <li>
@@ -272,7 +272,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenInquiry }) => 
         {/* Bottom Metadata & Legal */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div className="flex items-center gap-6">
-            <span>&copy; 2026 Axiom AI &amp; Software Engineering. All rights reserved.</span>
+            <span>&copy; 2026 KRAFT AI &amp; Software Engineering. All rights reserved.</span>
             <span className="hidden md:inline text-slate-700">|</span>
             <span className="hidden md:inline">ISO 27001 Aligned &bull; SOC 2 Ready</span>
           </div>

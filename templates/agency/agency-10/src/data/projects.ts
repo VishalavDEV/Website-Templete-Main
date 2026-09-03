@@ -35,7 +35,7 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
       { value: '3.2s', label: 'Scan Ingestion & Inference', impact: 'Real-time volumetric 3D analysis' }
     ],
     testimonial: {
-      quote: 'The Axiom engineering team delivered a platform that truly respects clinical nuance. It has become an indispensable copilot that our attending physicians trust every shift.',
+      quote: 'The KRAFT engineering team delivered a platform that truly respects clinical nuance. It has become an indispensable copilot that our attending physicians trust every shift.',
       author: 'Dr. Elena Rostova',
       role: 'Chief of Diagnostic Radiology',
       company: 'SynapseHealth Systems',
@@ -76,7 +76,7 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
       { value: '$18M+', label: 'Mitigated Drawdown Risk', impact: 'Identified counterparty vulnerability during early trial' }
     ],
     testimonial: {
-      quote: 'Axiom transformed our entire risk posture. Going from overnight reports to sub-second streaming stress tests completely changed how our portfolio managers allocate capital.',
+      quote: 'KRAFT transformed our entire risk posture. Going from overnight reports to sub-second streaming stress tests completely changed how our portfolio managers allocate capital.',
       author: 'Marcus Vance',
       role: 'Head of Quantitative Technology',
       company: 'Aurora Capital',
@@ -117,7 +117,7 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
       { value: '99.1%', label: 'On-Time Delivery SLA', impact: 'Up from 87.4% baseline prior to implementation' }
     ],
     testimonial: {
-      quote: 'Axiom did not just build software; they modernized our operational core. Our dispatch team now manages four times the freight volume with significantly less stress.',
+      quote: 'KRAFT did not just build software; they modernized our operational core. Our dispatch team now manages four times the freight volume with significantly less stress.',
       author: 'David Tan',
       role: 'VP of Global Logistics Operations',
       company: 'Nexus Supply Chain',
@@ -158,7 +158,7 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
       { value: '100%', label: 'Uptime During Flash Drops', impact: 'Zero downtime during 25x traffic spikes' }
     ],
     testimonial: {
-      quote: 'Axiom delivered our dream storefront. It feels like an art gallery and operates like a Formula 1 car. Our conversion rates have reached all-time records.',
+      quote: 'KRAFT delivered our dream storefront. It feels like an art gallery and operates like a Formula 1 car. Our conversion rates have reached all-time records.',
       author: 'Sophia Rossi',
       role: 'Chief Digital Officer',
       company: 'Veridian Luxury',
@@ -240,7 +240,7 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
       { value: '$4.1M', label: 'Annual Equipment Downtime Avoided', impact: 'Early detection of micro-fractures' }
     ],
     testimonial: {
-      quote: 'Our technicians in the field love the app. It works flawlessly 300 feet in the air inside a turbine nacelle with zero cell reception. Axiom hit every single mark.',
+      quote: 'Our technicians in the field love the app. It works flawlessly 300 feet in the air inside a turbine nacelle with zero cell reception. KRAFT hit every single mark.',
       author: 'Sarah Jenkins',
       role: 'Director of Asset Reliability',
       company: 'Lumina Energy',

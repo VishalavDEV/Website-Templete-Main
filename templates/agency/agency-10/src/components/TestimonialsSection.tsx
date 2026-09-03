@@ -26,7 +26,7 @@ export const TestimonialsSection: React.FC = () => {
             Direct Feedback from Enterprise Leadership.
           </h2>
           <p className="mt-3 text-base text-slate-600 leading-relaxed">
-            What chief technology officers, engineering directors, and product vice presidents say about partnering with Axiom.
+            What chief technology officers, engineering directors, and product vice presidents say about partnering with KRAFT.
           </p>
         </div>
 

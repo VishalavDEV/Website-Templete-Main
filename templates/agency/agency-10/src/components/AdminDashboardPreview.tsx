@@ -167,9 +167,9 @@ export const AdminDashboardPreview: React.FC = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold font-display text-white">
-                Axiom Operating Engine &mdash; CMS Console
+                KRAFT Operating Engine &mdash; CMS Console
               </h1>
-              <p className="text-xs text-slate-400 font-mono">Environment: axiom-prod-control-us-west-2</p>
+              <p className="text-xs text-slate-400 font-mono">Environment: kraft-prod-control-us-west-2</p>
             </div>
           </div>
 

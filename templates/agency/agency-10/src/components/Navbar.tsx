@@ -74,7 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               </div>
               <div className="flex items-baseline gap-1.5">
                 <span className="text-xl sm:text-2xl font-black tracking-tighter uppercase font-display text-slate-900">
-                  Axiom<span className="text-blue-600 font-normal">Lab</span>
+                  KRAFT<span className="text-blue-600 font-normal">Lab</span>
                 </span>
               </div>
             </button>
@@ -361,7 +361,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   { label: 'Target Sectors', route: 'solutions' as PageRoute },
                   { label: 'Case Studies', route: 'work' as PageRoute },
                   { label: 'Methodology', route: 'process' as PageRoute },
-                  { label: 'About AxiomLab', route: 'about' as PageRoute },
+                  { label: 'About KRAFT', route: 'about' as PageRoute },
                   { label: 'Insights & Research', route: 'insights' as PageRoute },
                   { label: 'Careers (Hiring)', route: 'careers' as PageRoute },
                   { label: 'FAQ', route: 'faq' as PageRoute },

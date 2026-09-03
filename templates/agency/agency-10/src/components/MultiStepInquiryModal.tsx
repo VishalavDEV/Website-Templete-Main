@@ -167,7 +167,7 @@ export const MultiStepInquiryModal: React.FC<MultiStepInquiryModalProps> = ({ is
                   onClick={resetModal}
                   className="px-6 py-2.5 rounded-xl bg-slate-900 text-white font-semibold text-xs cursor-pointer hover:bg-slate-800"
                 >
-                  Return to Axiom Studio
+                  Return to KRAFT Studio
                 </button>
               </div>
             </div>

@@ -14,13 +14,13 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenInquiry }) => {
       <div className="bg-slate-950 text-white pt-14 pb-20 relative overflow-hidden border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 font-mono text-xs border border-blue-500/30">
-            About Axiom
+            About KRAFT
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight font-display text-white mt-4 max-w-4xl leading-tight">
             We Are Systems Engineers, Applied Scientists &amp; Product Builders.
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
-            Founded by former principal researchers and infrastructure architects, Axiom bridges the gap between state-of-the-art computational AI research and enterprise production engineering.
+            Founded by former principal researchers and infrastructure architects, KRAFT bridges the gap between state-of-the-art computational AI research and enterprise production engineering.
           </p>
 
           {/* Agency Statistics Ribbon */}
@@ -52,7 +52,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenInquiry }) => {
               In 2021, as generative models emerged, we witnessed hundreds of generic prototypes that fell apart when exposed to real-world latency, security requirements, and data governance standards.
             </p>
             <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-              Axiom was created to establish a higher bar: building AI systems with mathematical grounding, strict evaluation harnesses, zero data leakage, and resilient distributed backends. We do not build throwaway toys; we engineer revenue-critical digital products.
+              KRAFT was created to establish a higher bar: building AI systems with mathematical grounding, strict evaluation harnesses, zero data leakage, and resilient distributed backends. We do not build throwaway toys; we engineer revenue-critical digital products.
             </p>
 
             <div className="mt-6 p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-700 space-y-2">

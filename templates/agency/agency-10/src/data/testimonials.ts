@@ -7,7 +7,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     role: 'Chief of Diagnostic Radiology',
     company: 'SynapseHealth Systems',
     avatar: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80',
-    testimonial: 'The Axiom engineering team delivered a platform that truly respects clinical nuance. It has become an indispensable copilot that our attending physicians trust every shift, cutting turnaround times by 42%.',
+    testimonial: 'The KRAFT engineering team delivered a platform that truly respects clinical nuance. It has become an indispensable copilot that our attending physicians trust every shift, cutting turnaround times by 42%.',
     rating: 5,
     projectType: 'Healthcare AI & Computer Vision',
     metricHighlight: '42% Turnaround Time Reduction'
@@ -18,7 +18,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     role: 'Head of Quantitative Technology',
     company: 'Aurora Capital Partners',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80',
-    testimonial: 'Axiom transformed our entire risk posture. Going from overnight batch reports to sub-second streaming stress tests completely changed how our portfolio managers allocate capital and manage volatility.',
+    testimonial: 'KRAFT transformed our entire risk posture. Going from overnight batch reports to sub-second streaming stress tests completely changed how our portfolio managers allocate capital and manage volatility.',
     rating: 5,
     projectType: 'High-Throughput FinTech Risk Engine',
     metricHighlight: '140,000 events/sec throughput'
@@ -29,7 +29,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     role: 'VP of Global Logistics Operations',
     company: 'Nexus Supply Chain Global',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80',
-    testimonial: 'Axiom did not just build software; they modernized our operational core. Our dispatch team now manages four times the freight volume with significantly less stress and 23% fewer empty miles.',
+    testimonial: 'KRAFT did not just build software; they modernized our operational core. Our dispatch team now manages four times the freight volume with significantly less stress and 23% fewer empty miles.',
     rating: 5,
     projectType: 'Autonomous Fleet Dispatch & Routing',
     metricHighlight: '23% Fuel & Empty Miles Saved'
@@ -40,7 +40,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     role: 'Chief Digital Officer',
     company: 'Veridian Luxury Brands',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
-    testimonial: 'Axiom delivered our dream storefront. It feels like an art gallery and operates like a Formula 1 car. Mobile conversion increased by 48% within 60 days of launch.',
+    testimonial: 'KRAFT delivered our dream storefront. It feels like an art gallery and operates like a Formula 1 car. Mobile conversion increased by 48% within 60 days of launch.',
     rating: 5,
     projectType: 'Headless Global Commerce & 3D Web',
     metricHighlight: '+48% Mobile Conversion Lift'

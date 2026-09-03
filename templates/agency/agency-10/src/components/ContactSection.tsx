@@ -271,20 +271,20 @@ export const ContactSection: React.FC = () => {
               <div className="space-y-2 text-xs">
                 <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50">
                   <span className="font-medium text-slate-700">General &amp; Eng Inquiries:</span>
-                  <a href="mailto:hello@axiom.dev" className="text-blue-600 font-mono hover:underline">
-                    hello@axiom.dev
+                  <a href="mailto:hello@kraft.dev" className="text-blue-600 font-mono hover:underline">
+                    hello@kraft.dev
                   </a>
                 </div>
                 <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50">
                   <span className="font-medium text-slate-700">Security / Audits:</span>
-                  <a href="mailto:security@axiom.dev" className="text-blue-600 font-mono hover:underline">
-                    security@axiom.dev
+                  <a href="mailto:security@kraft.dev" className="text-blue-600 font-mono hover:underline">
+                    security@kraft.dev
                   </a>
                 </div>
                 <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50">
                   <span className="font-medium text-slate-700">Media &amp; Press:</span>
-                  <a href="mailto:press@axiom.dev" className="text-blue-600 font-mono hover:underline">
-                    press@axiom.dev
+                  <a href="mailto:press@kraft.dev" className="text-blue-600 font-mono hover:underline">
+                    press@kraft.dev
                   </a>
                 </div>
               </div>
