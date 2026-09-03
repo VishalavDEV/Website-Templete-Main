@@ -21,7 +21,7 @@ export const Process = () => {
       textureStyle: {
         backgroundColor: '#2e2b29',
         backgroundImage: `radial-gradient(circle at 40% 40%, rgba(201, 193, 181, 0.25) 0%, transparent 60%),
-                          url('/images/hero.jpg')`,
+                          url('./images/hero.jpg')`,
         backgroundBlendMode: 'luminosity, normal',
         filter: 'contrast(1.15) brightness(0.85)',
       },
@@ -39,7 +39,7 @@ export const Process = () => {
         backgroundColor: '#522b22',
         backgroundImage: `radial-gradient(circle at 50% 50%, rgba(169, 103, 80, 0.4) 0%, transparent 70%),
                           linear-gradient(45deg, rgba(135, 76, 60, 0.3) 0%, rgba(48, 40, 37, 0.8) 100%),
-                          url('/images/house_of_silence_interior.jpg')`,
+                          url('./images/house_of_silence_interior.jpg')`,
         backgroundBlendMode: 'overlay, multiply, normal',
         filter: 'sepia(0.35) contrast(1.2) brightness(0.9)',
       },
@@ -56,7 +56,7 @@ export const Process = () => {
       textureStyle: {
         backgroundColor: '#1f1a18',
         backgroundImage: `repeating-linear-gradient(90deg, rgba(48, 40, 37, 0.9) 0px, rgba(48, 40, 37, 0.9) 3px, rgba(82, 43, 34, 0.6) 4px, rgba(30, 26, 24, 0.9) 8px),
-                          url('/images/house_of_silence.jpg')`,
+                          url('./images/house_of_silence.jpg')`,
         backgroundBlendMode: 'multiply, luminosity',
         filter: 'contrast(1.3) brightness(0.75)',
       },
@@ -73,7 +73,7 @@ export const Process = () => {
       textureStyle: {
         backgroundColor: '#1c1b1a',
         backgroundImage: `radial-gradient(circle at 60% 30%, rgba(207, 199, 188, 0.25) 0%, transparent 50%),
-                          url('/images/hero.jpg')`,
+                          url('./images/hero.jpg')`,
         backgroundBlendMode: 'hard-light, normal',
         filter: 'grayscale(0.8) contrast(1.3) brightness(0.8)',
       },
@@ -90,7 +90,7 @@ export const Process = () => {
       textureStyle: {
         backgroundColor: '#23282b',
         backgroundImage: `repeating-linear-gradient(90deg, rgba(238, 233, 225, 0.15) 0px, rgba(238, 233, 225, 0.15) 6px, transparent 6px, transparent 18px),
-                          url('/images/house_of_silence.jpg')`,
+                          url('./images/house_of_silence.jpg')`,
         backgroundBlendMode: 'screen, overlay, luminosity',
         filter: 'contrast(1.2) brightness(0.95)',
       },
@@ -107,7 +107,7 @@ export const Process = () => {
       textureStyle: {
         backgroundColor: '#181716',
         backgroundImage: `linear-gradient(120deg, rgba(135, 76, 60, 0.25) 0%, rgba(30, 26, 24, 0.9) 60%),
-                          url('/images/hero.jpg')`,
+                          url('./images/hero.jpg')`,
         backgroundBlendMode: 'color-dodge, multiply, normal',
         filter: 'contrast(1.4) brightness(0.7)',
       },

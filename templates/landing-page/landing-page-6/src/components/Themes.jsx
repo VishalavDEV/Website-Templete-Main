@@ -30,8 +30,64 @@ export default function Themes() {
               <div 
                 key={theme.number}
                 className={`theme-card reveal-on-scroll delay-${idx + 1}`}
+                style={{ overflow: 'hidden' }}
               >
                 <div>
+                  {/* Theme Motif Image Banner */}
+                  {theme.image && (
+                    <div 
+                      style={{
+                        position: 'relative',
+                        width: '100%',
+                        height: '160px',
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                        marginBottom: '18px',
+                        border: '1px solid rgba(255, 255, 255, 0.08)'
+                      }}
+                    >
+                      <img 
+                        src={theme.image} 
+                        alt={theme.title}
+                        loading="lazy"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          transition: 'transform 0.6s ease'
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.08)'}
+                        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                      />
+                      <div 
+                        style={{
+                          position: 'absolute',
+                          inset: 0,
+                          background: 'linear-gradient(to top, rgba(13, 15, 22, 0.95) 0%, rgba(13, 15, 22, 0.2) 60%, transparent 100%)',
+                          pointerEvents: 'none'
+                        }} 
+                      />
+                      <span 
+                        style={{
+                          position: 'absolute',
+                          top: '10px',
+                          left: '10px',
+                          padding: '3px 9px',
+                          borderRadius: '6px',
+                          background: 'rgba(0, 0, 0, 0.65)',
+                          backdropFilter: 'blur(6px)',
+                          border: '1px solid rgba(255, 255, 255, 0.15)',
+                          color: '#e2e8f0',
+                          fontSize: '11px',
+                          fontFamily: 'monospace',
+                          fontWeight: '600'
+                        }}
+                      >
+                        MOTIF {theme.number}
+                      </span>
+                    </div>
+                  )}
+
                   <div className="theme-card-top">
                     <span className="theme-number">{theme.number}</span>
                     <div className="theme-icon-box">

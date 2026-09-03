@@ -9,7 +9,7 @@ export default function SelectedWork() {
       title: 'AURA',
       category: 'Luxury skincare rebrand',
       tags: ['Brand Strategy', 'Digital'],
-      image: '/aura.jpg',
+      image: './aura.jpg',
       layout: 'wide'
     },
     {
@@ -18,7 +18,7 @@ export default function SelectedWork() {
       title: 'NOVA',
       category: 'Next-generation mobility platform',
       tags: ['Brand Identity', 'Product Design'],
-      image: '/nova.jpg',
+      image: './nova.jpg',
       layout: 'vertical-right'
     },
     {
@@ -27,7 +27,7 @@ export default function SelectedWork() {
       title: 'SOLACE',
       category: 'Modern wellness experience',
       tags: ['Strategy', 'Web Design'],
-      image: '/solace.jpg',
+      image: './solace.jpg',
       layout: 'vertical-left'
     }
   ];

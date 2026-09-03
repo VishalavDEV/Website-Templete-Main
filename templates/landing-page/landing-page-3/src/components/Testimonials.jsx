@@ -25,9 +25,9 @@ const TESTIMONIALS = [
     role: 'Chief AI Architect',
     company: 'Hyperion Cognition',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=160&auto=format&fit=crop&q=80',
-    content: 'The pooled NVLink memory architecture solved our multi-agent KV-cache sync problem completely. We now orchestrate over 500,000 parallel agents with zero cold starts.',
+    content: 'The pooled NVLink memory architecture solved our multi-agent KV-cache sync problem completely, cutting over ₹38,50,000 annually in redundant cloud GPU instances. We now orchestrate over 500,000 parallel agents with zero cold starts.',
     rating: 5,
-    metric: '4x Lower GPU Overhead',
+    metric: '₹38.5L Annual Savings',
   },
   {
     id: 3,
@@ -35,9 +35,9 @@ const TESTIMONIALS = [
     role: 'Head of Infrastructure',
     company: 'OmniSpatial Labs',
     avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=160&auto=format&fit=crop&q=80',
-    content: 'Synapse eliminated our reliance on 4 separate AWS GPU instances and complex Redis cache clusters. The developer experience, telemetry, and uptime reliability have blown us away.',
+    content: 'Synapse eliminated our reliance on 4 separate AWS GPU clusters, reducing monthly infrastructure expenditure by ₹12,80,000 while maintaining 99.999% verified uptime.',
     rating: 5,
-    metric: '99.999% Verified Uptime',
+    metric: '₹12.8L/mo Cost Cut',
   },
   {
     id: 4,

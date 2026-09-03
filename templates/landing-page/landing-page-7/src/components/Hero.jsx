@@ -105,8 +105,8 @@ export const Hero = () => {
         <div ref={visualRef} className="hero-visual-layer">
           <div className="hero-visual-frame">
             <img
-              src="/images/hero.jpg"
-              alt="Monolithic brutalist concrete cantilever pavilion in warm desert stone landscape with solitary human figure"
+              src="./images/hero.jpg"
+              alt="Monolithic Architectural Geometry" concrete cantilever pavilion in warm desert stone landscape with solitary human figure"
               className="hero-image"
               loading="eager"
             />

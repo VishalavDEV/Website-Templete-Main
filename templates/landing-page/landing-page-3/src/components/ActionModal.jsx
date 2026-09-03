@@ -103,7 +103,7 @@ export default function ActionModal({ isOpen, onClose, title = 'Launch Neural Cl
           </div>
 
           <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-            Your ephemeral developer cluster has been reserved with <strong>$250 in free compute credits</strong>. Initialize your session using the CLI or SDK below.
+            Your ephemeral developer cluster has been reserved with <strong>₹25,000 in free compute credits</strong>. Initialize your session using the CLI or SDK below.
           </p>
 
           {/* Simulated API Key Box */}

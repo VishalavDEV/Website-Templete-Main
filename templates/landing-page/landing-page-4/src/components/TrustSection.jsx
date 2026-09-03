@@ -29,7 +29,8 @@ export default function TrustSection() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="trust" ref={ref} className="py-20 md:py-28 relative border-t border-white/[0.06] bg-[#070709]">
+    <section id="about" ref={ref} className="py-20 md:py-28 relative border-t border-white/[0.06] bg-[#070709]">
+      <div id="trust" className="absolute -top-20" />
       
       {/* Background soft glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-64 bg-amber-500/5 blur-[120px] pointer-events-none"></div>

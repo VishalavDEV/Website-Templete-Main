@@ -18,7 +18,7 @@ export default function BookingModal({ isOpen, onClose, selectedVehicle }) {
     name: 'BMW M2 CS Shadowline',
     category: 'Track Coupe',
     dailyRate: 480,
-    imageUrl: '/images/hero_car.jpg'
+    imageUrl: './images/hero_car.jpg'
   };
 
   const dailyTotal = vehicle.dailyRate;

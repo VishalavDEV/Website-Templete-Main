@@ -12,12 +12,29 @@ export default function Navbar({ onOpenBooking, onReplayIntro }) {
     { label: 'Security', href: '#security' },
   ];
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    if (href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <header className="w-full bg-[#070709] py-3.5 px-6 lg:px-16 border-b border-transparent z-40 relative">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* Brand Logo: ExquDrive. */}
-        <a href="#" className="flex items-center group">
+        <a 
+          href="#" 
+          onClick={(e) => handleNavClick(e, '#')} 
+          className="flex items-center group cursor-pointer"
+        >
           <span className="font-display font-medium text-xl sm:text-[22px] tracking-normal text-white">
             ExquDrive<span className="text-[#F2994A]">.</span>
           </span>
@@ -29,7 +46,8 @@ export default function Navbar({ onOpenBooking, onReplayIntro }) {
             <a
               key={idx}
               href={link.href}
-              className="text-xs lg:text-[13px] font-normal text-[#C4C4C8] hover:text-white transition-colors"
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="text-xs lg:text-[13px] font-normal text-[#C4C4C8] hover:text-white transition-colors cursor-pointer"
             >
               {link.label}
             </a>
@@ -77,8 +95,8 @@ export default function Navbar({ onOpenBooking, onReplayIntro }) {
             <a
               key={idx}
               href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-sm font-medium text-white/80 hover:text-white py-1"
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="text-sm font-medium text-white/80 hover:text-white py-1 cursor-pointer"
             >
               {link.label}
             </a>

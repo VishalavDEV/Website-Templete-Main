@@ -122,25 +122,29 @@ export const bookDetailsData = {
       number: "01",
       iconName: "Brain",
       title: "Memory & Identity",
-      desc: "How much of our true identity is forged by what we choose to remember—and what we desperately try to forget?"
+      desc: "How much of our true identity is forged by what we choose to remember—and what we desperately try to forget?",
+      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
     },
     {
       number: "02",
       iconName: "Hourglass",
       title: "Time & Consequence",
-      desc: "Can altering a single forgotten moment reshape an entire civilization's future trajectory?"
+      desc: "Can altering a single forgotten moment reshape an entire civilization's future trajectory?",
+      image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
     },
     {
       number: "03",
       iconName: "UserCheck",
       title: "Identity & Humanity",
-      desc: "Who are we when our artificial memory archives fail and only raw emotion remains?"
+      desc: "Who are we when our artificial memory archives fail and only raw emotion remains?",
+      image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80"
     },
     {
       number: "04",
       iconName: "Compass",
       title: "Choice & Destiny",
-      desc: "Every quiet decision creates another possible tomorrow. Which future will you awaken?"
+      desc: "Every quiet decision creates another possible tomorrow. Which future will you awaken?",
+      image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80"
     }
   ],
 
@@ -318,7 +322,7 @@ A new day was breaking over the horizon. For the first time in a hundred years, 
     {
       id: "digital",
       name: "Digital Edition",
-      price: "$9.99",
+      price: "₹799",
       formatLabel: "Instant Download",
       isRecommended: false,
       badge: "E-BOOK & AUDIO",
@@ -333,7 +337,7 @@ A new day was breaking over the horizon. For the first time in a hundred years, 
     {
       id: "paperback",
       name: "Paperback Edition",
-      price: "$18.99",
+      price: "₹1,499",
       formatLabel: "Softcover Print",
       isRecommended: false,
       badge: "STANDARD PRINT",
@@ -341,14 +345,14 @@ A new day was breaking over the horizon. For the first time in a hundred years, 
         "384 Premium Cream Paper Pages",
         "Matte Soft-Touch Cover Finish",
         "Custom Illustrated Chapter Map",
-        "Worldwide Free Shipping on Orders $25+"
+        "Worldwide Free Shipping on Orders ₹1,999+"
       ],
       ctaText: "Buy Paperback Edition"
     },
     {
       id: "collector",
       name: "Collector's Hardcover",
-      price: "$34.99",
+      price: "₹2,799",
       formatLabel: "Signed Deluxe Print",
       isRecommended: true,
       badge: "RECOMMENDED EDITION",
@@ -377,12 +381,12 @@ A new day was breaking over the horizon. For the first time in a hundred years, 
     {
       id: "faq3",
       question: "What physical formats are available?",
-      answer: "We offer both a softcover Paperback ($18.99) and a Collector's Hardcover Edition ($34.99) with gold foil embossing, hand-signed bookplate, and custom edge design."
+      answer: "We offer both a softcover Paperback (₹1,499) and a Collector's Hardcover Edition (₹2,799) with gold foil embossing, hand-signed bookplate, and custom edge design."
     },
     {
       id: "faq4",
       question: "Is international shipping available for physical books?",
-      answer: "Yes, Lunara Press ships worldwide. Tracked shipping is calculated at checkout, with free standard shipping available on orders above $25 in select regions."
+      answer: "Yes, Lunara Press ships worldwide. Tracked shipping is calculated at checkout, with free standard shipping available on orders above ₹1,999 in select regions."
     },
     {
       id: "faq5",

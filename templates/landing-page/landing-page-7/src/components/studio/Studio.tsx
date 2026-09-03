@@ -94,7 +94,7 @@ export const Studio: React.FC = () => {
         <div className="studio-visual-col">
           <div className="studio-layered-visual">
             <img
-              src="/images/house_of_silence_interior.jpg"
+              src="./images/house_of_silence_interior.jpg"
               alt="Architectural studio workshop with models, plans and material samples"
               className="studio-base-image"
               loading="lazy"

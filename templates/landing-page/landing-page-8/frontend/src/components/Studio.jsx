@@ -129,7 +129,7 @@ export default function Studio() {
               }}
             >
               <img 
-                src="/studio.jpg" 
+                src="./studio.jpg" 
                 alt="Vanta Studio Workspace" 
                 style={{
                   width: '100%',

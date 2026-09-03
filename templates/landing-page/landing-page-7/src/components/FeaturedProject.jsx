@@ -48,7 +48,7 @@ export const FeaturedProject = () => {
         {/* Large Full-Width Architectural Image Canvas */}
         <div className="featured-canvas-wrapper">
           <img 
-            src="/images/house_of_silence.jpg" 
+            src="./images/house_of_silence.jpg" 
             alt="House of Silence — coastal brutalist residential sanctuary in Chennai India"
             className="featured-image-plate"
             style={{

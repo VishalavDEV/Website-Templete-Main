@@ -122,7 +122,7 @@ export const Studio = () => {
         <div className="studio-visual-col">
           <div className="studio-layered-visual">
             <img 
-              src="/images/house_of_silence_interior.jpg" 
+              src="./images/house_of_silence_interior.jpg" 
               alt="Architectural studio workshop with raw concrete models, timber workbench, and material samples" 
               className="studio-base-image"
             />

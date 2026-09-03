@@ -36,7 +36,7 @@ const COMPARISON_DATA = [
   { metric: 'Global First Token Latency (TTFT)', legacy: '120ms - 350ms', synapse: '< 18ms', win: true },
   { metric: 'Cold Start Latency', legacy: '45s - 180s', synapse: '0.00ms (Pre-warmed)', win: true },
   { metric: 'Inter-Node Bandwidth', legacy: '100 Gbps Ethernet', synapse: '900 GB/s Pooled NVLink', win: true },
-  { metric: 'Hardware Enclave Isolation', legacy: 'Optional Addon ($$$)', synapse: 'Standard by Default', win: true },
+  { metric: 'Hardware Enclave Isolation', legacy: 'Optional Addon (₹₹₹)', synapse: 'Standard by Default', win: true },
   { metric: 'Autonomous Swarm Sync', legacy: 'Custom Redis Glue Code', synapse: 'Native Zero-Copy Mesh', win: true },
 ];
 

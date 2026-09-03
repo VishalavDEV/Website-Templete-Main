@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import PinnacleSection from './components/PinnacleSection';
 import StepCards from './components/StepCards';
+import SupportSection from './components/SupportSection';
+import SecuritySection from './components/SecuritySection';
 import BookingModal from './components/BookingModal';
 import Footer from './components/Footer';
 
@@ -23,7 +25,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#070709] text-white flex flex-col selection:bg-[#F2994A] selection:text-black">
+    <div className="min-h-screen bg-[#070709] text-white flex flex-col selection:bg-[#F2994A] selection:text-black scroll-smooth">
       
       {/* 1. Cinematic Automotive Intro Sequence */}
       {showIntro && (
@@ -44,10 +46,18 @@ export default function App() {
         <HeroSection onOpenBooking={() => handleOpenBooking()} />
 
         {/* 5. Secondary Features (Pinnacle mountain drive & Step Cards from reference image) */}
-        <div id="details">
+        <div id="about">
           <PinnacleSection onOpenBooking={() => handleOpenBooking()} />
+        </div>
+        <div id="services">
           <StepCards onOpenBooking={() => handleOpenBooking()} />
         </div>
+
+        {/* 6. Dedicated Support Section */}
+        <SupportSection />
+
+        {/* 7. Dedicated Security Section */}
+        <SecuritySection onOpenBooking={() => handleOpenBooking()} />
       </main>
 
       {/* 6. Luxury Footer */}

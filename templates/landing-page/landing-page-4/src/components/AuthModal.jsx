@@ -137,8 +137,8 @@ export default function AuthModal() {
               </label>
               <div className="grid grid-cols-3 gap-2">
                 {[
-                  { id: 'starter', name: 'Starter', price: '$19/mo' },
-                  { id: 'growth', name: 'Growth', price: '$49/mo (Popular)' },
+                  { id: 'starter', name: 'Starter', price: '₹1,499/mo' },
+                  { id: 'growth', name: 'Growth', price: '₹3,999/mo (Popular)' },
                   { id: 'scale', name: 'Scale', price: 'Custom SLA' }
                 ].map((plan) => (
                   <button

@@ -101,7 +101,7 @@ export const Hero: React.FC = () => {
         <div className="hero-visual-col" style={imageParallaxStyle}>
           <div className="hero-visual-frame">
             <img
-              src="/images/hero.jpg"
+              src="./images/hero.jpg"
               alt="Monumental brutalist raw concrete architecture framing geometric shadows"
               className="hero-image"
               loading="eager"

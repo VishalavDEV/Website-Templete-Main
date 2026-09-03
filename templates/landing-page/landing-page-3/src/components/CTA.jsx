@@ -96,7 +96,7 @@ export default function CTA({ onOpenModal, onShowToast }) {
                 marginBottom: '38px',
               }}
             >
-              Claim $250 in free inference credits today. No credit card required. Deploy your first model cluster to 250+ global edge nodes in seconds.
+              Claim ₹25,000 in free inference credits today. No credit card required. Deploy your first model cluster to 250+ global edge nodes in seconds.
             </p>
 
             {/* Email Quick Action Form */}
@@ -137,7 +137,7 @@ export default function CTA({ onOpenModal, onShowToast }) {
                   className="btn-primary"
                   style={{ padding: '16px 30px', fontSize: '1rem', borderRadius: '14px' }}
                 >
-                  <span>Claim $250 Free</span>
+                  <span>Claim ₹25,000 Free</span>
                   <ArrowRight size={18} />
                 </button>
               </form>

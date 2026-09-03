@@ -25,7 +25,7 @@ const SERVICES = [
     ],
     accent: '#00E5FF',
     glow: 'rgba(0, 229, 255, 0.38)',
-    pricing: 'Starts at $0.02 / 1M tokens'
+    pricing: 'Starts at ₹1.60 / 1M tokens'
   },
   {
     id: 'srv-spatial',
@@ -41,7 +41,7 @@ const SERVICES = [
     ],
     accent: '#8A2BE2',
     glow: 'rgba(138, 43, 226, 0.38)',
-    pricing: 'Starts at $49 / month per stream'
+    pricing: 'Starts at ₹3,999 / month per stream'
   },
   {
     id: 'srv-agents',
@@ -57,7 +57,7 @@ const SERVICES = [
     ],
     accent: '#00FFA3',
     glow: 'rgba(0, 255, 163, 0.38)',
-    pricing: 'Starts at $99 / month cluster tier'
+    pricing: 'Starts at ₹7,999 / month cluster tier'
   },
   {
     id: 'srv-compiler',

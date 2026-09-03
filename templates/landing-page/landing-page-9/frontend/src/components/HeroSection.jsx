@@ -209,7 +209,7 @@ export default function HeroSection({ onOpenBooking }) {
           >
             {/* Main Front-View Car Base */}
             <img
-              src="/images/hero_car.jpg"
+              src="./images/hero_car.jpg"
               alt="ExquDrive Luxury Black Flagship Car"
               className="w-full max-h-[50vh] sm:max-h-[54vh] object-contain rounded-2xl select-none pointer-events-none drop-shadow-[0_20px_50px_rgba(0,0,0,0.95)]"
               loading="eager"

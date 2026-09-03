@@ -22,6 +22,7 @@ import { useModal } from '../context/ModalContext';
 
 export default function DashboardMockup() {
   const [activeTab, setActiveTab] = useState('overview');
+  const [activeWorkspace, setActiveWorkspace] = useState('auto-flows');
   const [simulating, setSimulating] = useState(false);
   const [activeStepIndex, setActiveStepIndex] = useState(1);
   const [completedTasks, setCompletedTasks] = useState([true, true, false, false]);
@@ -70,7 +71,7 @@ export default function DashboardMockup() {
           </div>
           <div className="hidden sm:flex items-center gap-2 px-3 py-1 rounded-lg bg-white/[0.04] border border-white/[0.06] text-xs text-zinc-400 font-mono">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            api.flowzen.internal/v2/pipeline
+            api.flowzen.internal/v2/{activeWorkspace}
           </div>
         </div>
 
@@ -103,29 +104,57 @@ export default function DashboardMockup() {
         <div className="hidden lg:flex lg:col-span-2 flex-col gap-1 p-2 rounded-xl bg-white/[0.02] border border-white/[0.05]">
           <div className="text-[10px] uppercase font-bold tracking-wider text-zinc-500 px-3 py-1">Workspace</div>
           <button 
-            onClick={() => showToast('📂 Auto-Flows workspace active')}
-            className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-semibold text-amber-400 bg-amber-500/10 border border-amber-500/20 text-left cursor-pointer"
+            onClick={() => {
+              setActiveWorkspace('auto-flows');
+              showToast('📂 Switched to Auto-Flows workspace');
+            }}
+            className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-semibold text-left cursor-pointer transition-all ${
+              activeWorkspace === 'auto-flows'
+                ? 'text-amber-400 bg-amber-500/10 border border-amber-500/20 shadow-sm shadow-amber-500/10'
+                : 'text-zinc-400 hover:text-white hover:bg-white/[0.04] border border-transparent'
+            }`}
           >
             <Zap size={14} />
             Auto-Flows
           </button>
           <button 
-            onClick={() => showToast('⚙️ Switched to Pipelines view')}
-            className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-zinc-400 hover:text-white hover:bg-white/[0.04] text-left cursor-pointer"
+            onClick={() => {
+              setActiveWorkspace('pipelines');
+              showToast('⚙️ Switched to Pipelines view');
+            }}
+            className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-left cursor-pointer transition-all ${
+              activeWorkspace === 'pipelines'
+                ? 'text-amber-400 bg-amber-500/10 border border-amber-500/20 shadow-sm shadow-amber-500/10 font-semibold'
+                : 'text-zinc-400 hover:text-white hover:bg-white/[0.04] border border-transparent'
+            }`}
           >
             <Layers size={14} />
             Pipelines
           </button>
           <button 
-            onClick={() => showToast('📊 Live Telemetry stream connected')}
-            className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-zinc-400 hover:text-white hover:bg-white/[0.04] text-left cursor-pointer"
+            onClick={() => {
+              setActiveWorkspace('telemetry');
+              showToast('📊 Live Telemetry stream connected');
+            }}
+            className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-left cursor-pointer transition-all ${
+              activeWorkspace === 'telemetry'
+                ? 'text-amber-400 bg-amber-500/10 border border-amber-500/20 shadow-sm shadow-amber-500/10 font-semibold'
+                : 'text-zinc-400 hover:text-white hover:bg-white/[0.04] border border-transparent'
+            }`}
           >
             <Activity size={14} />
             Telemetry
           </button>
           <button 
-            onClick={() => showToast('🔒 SOC2 Security audit stream 100% healthy')}
-            className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-zinc-400 hover:text-white hover:bg-white/[0.04] text-left cursor-pointer"
+            onClick={() => {
+              setActiveWorkspace('security');
+              showToast('🔒 SOC2 Security audit stream 100% healthy');
+            }}
+            className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-left cursor-pointer transition-all ${
+              activeWorkspace === 'security'
+                ? 'text-amber-400 bg-amber-500/10 border border-amber-500/20 shadow-sm shadow-amber-500/10 font-semibold'
+                : 'text-zinc-400 hover:text-white hover:bg-white/[0.04] border border-transparent'
+            }`}
           >
             <ShieldCheck size={14} />
             Security Log
@@ -184,176 +213,296 @@ export default function DashboardMockup() {
               </div>
             </div>
           </div>
-
-          {/* Workflow Interactive Node Chain */}
-          <div className="p-4 rounded-xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/[0.08] relative">
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2">
-                <Sparkles size={15} className="text-amber-400" />
-                <span className="text-xs font-semibold text-zinc-200">Active Workflow: Smart Deployment & Notification</span>
-              </div>
-              <span className="text-[11px] px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono">
-                RUNNING
-              </span>
-            </div>
-
-            {/* Nodes Chain */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 relative">
-              
-              {/* Node 1 */}
-              <div className={`p-3 rounded-xl border transition-all ${
-                activeStepIndex === 0 
-                  ? 'bg-amber-500/15 border-amber-500 shadow-lg shadow-amber-500/20' 
-                  : 'bg-white/[0.02] border-white/10'
-              }`}>
-                <div className="flex items-center justify-between text-zinc-400 mb-1">
-                  <span className="text-[10px] font-mono text-amber-400">01 TRIGGER</span>
-                  <GitBranch size={13} className="text-zinc-400" />
+          
+          {/* Active Workspace Dynamic Content Switching */}
+          {activeWorkspace === 'auto-flows' && (
+            <>
+              {/* Workflow Interactive Node Chain */}
+              <div className="p-4 rounded-xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/[0.08] relative">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <Sparkles size={15} className="text-amber-400" />
+                    <span className="text-xs font-semibold text-zinc-200">Active Workflow: Smart Deployment & Notification</span>
+                  </div>
+                  <span className="text-[11px] px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono">
+                    RUNNING
+                  </span>
                 </div>
-                <div className="text-xs font-bold text-white">GitHub PR Merged</div>
-                <div className="text-[10px] text-zinc-400 mt-1">main branch #1402</div>
-              </div>
 
-              {/* Node 2 */}
-              <div className={`p-3 rounded-xl border transition-all ${
-                activeStepIndex === 1 
-                  ? 'bg-amber-500/15 border-amber-500 shadow-lg shadow-amber-500/20' 
-                  : 'bg-white/[0.02] border-white/10'
-              }`}>
-                <div className="flex items-center justify-between text-zinc-400 mb-1">
-                  <span className="text-[10px] font-mono text-amber-400">02 VALIDATE</span>
-                  <Cpu size={13} className="text-zinc-400" />
-                </div>
-                <div className="text-xs font-bold text-white">AI Security Audit</div>
-                <div className="text-[10px] text-emerald-400 mt-1 font-semibold">0 Vulnerabilities</div>
-              </div>
-
-              {/* Node 3 */}
-              <div className={`p-3 rounded-xl border transition-all ${
-                activeStepIndex === 2 
-                  ? 'bg-amber-500/15 border-amber-500 shadow-lg shadow-amber-500/20' 
-                  : 'bg-white/[0.02] border-white/10'
-              }`}>
-                <div className="flex items-center justify-between text-zinc-400 mb-1">
-                  <span className="text-[10px] font-mono text-amber-400">03 DEPLOY</span>
-                  <Zap size={13} className="text-zinc-400" />
-                </div>
-                <div className="text-xs font-bold text-white">Edge Rollout (Global)</div>
-                <div className="text-[10px] text-zinc-400 mt-1">8 Regions active</div>
-              </div>
-
-              {/* Node 4 */}
-              <div className={`p-3 rounded-xl border transition-all ${
-                activeStepIndex === 3 
-                  ? 'bg-amber-500/15 border-amber-500 shadow-lg shadow-amber-500/20' 
-                  : 'bg-white/[0.02] border-white/10'
-              }`}>
-                <div className="flex items-center justify-between text-zinc-400 mb-1">
-                  <span className="text-[10px] font-mono text-amber-400">04 NOTIFY</span>
-                  <Bell size={13} className="text-zinc-400" />
-                </div>
-                <div className="text-xs font-bold text-white">Broadcast Slack & Jira</div>
-                <div className="text-[10px] text-zinc-400 mt-1">Sprint updated</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Split: SVG Chart & Task Queue */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            
-            {/* Real-time Velocity Chart */}
-            <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06] flex flex-col justify-between">
-              <div className="flex items-center justify-between mb-2">
-                <div className="text-xs font-semibold text-zinc-300 flex items-center gap-1.5">
-                  <TrendingUp size={14} className="text-amber-400" />
-                  Team Execution Velocity
-                </div>
-                <span className="text-[10px] text-zinc-400 font-mono">Last 7 days</span>
-              </div>
-
-              {/* Vector SVG Line Chart */}
-              <div className="relative h-28 w-full mt-1">
-                <svg viewBox="0 0 300 100" className="w-full h-full overflow-visible">
-                  <defs>
-                    <linearGradient id="chartGlow" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#F5A900" stopOpacity="0.35" />
-                      <stop offset="100%" stopColor="#F5A900" stopOpacity="0.0" />
-                    </linearGradient>
-                  </defs>
+                {/* Nodes Chain */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 relative">
                   
-                  {/* Fill path */}
-                  <path
-                    d="M 0,85 Q 40,70 70,55 T 140,40 T 210,25 T 300,10 L 300,100 L 0,100 Z"
-                    fill="url(#chartGlow)"
-                  />
-
-                  {/* Stroke path */}
-                  <path
-                    d="M 0,85 Q 40,70 70,55 T 140,40 T 210,25 T 300,10"
-                    fill="none"
-                    stroke="#F5A900"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-
-                  {/* Pulsing point */}
-                  <circle cx="300" cy="10" r="5" fill="#F5A900" className="animate-pulse" />
-                  <circle cx="300" cy="10" r="9" fill="none" stroke="#F5A900" strokeWidth="1.5" opacity="0.6" />
-                </svg>
-              </div>
-
-              <div className="flex items-center justify-between text-[10px] text-zinc-500 font-mono pt-2 border-t border-white/[0.04]">
-                <span>Mon</span>
-                <span>Tue</span>
-                <span>Wed</span>
-                <span>Thu</span>
-                <span>Fri</span>
-                <span>Sat</span>
-                <span className="text-amber-400 font-bold">Today (+3.4x)</span>
-              </div>
-            </div>
-
-            {/* Interactive Task Checklist */}
-            <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06] flex flex-col justify-between">
-              <div className="flex items-center justify-between mb-2">
-                <div className="text-xs font-semibold text-zinc-300 flex items-center gap-1.5">
-                  <CheckCircle2 size={14} className="text-amber-400" />
-                  Automated Task Backlog
-                </div>
-                <span className="text-[10px] text-zinc-400">Click to toggle</span>
-              </div>
-
-              <div className="space-y-2 mt-1">
-                {[
-                  { title: 'Auto-sync Linear sprint to Notion roadmap', time: '1m ago' },
-                  { title: 'Trigger Docker multi-arch release image', time: '4m ago' },
-                  { title: 'Generate AI weekly executive brief', time: '12m ago' },
-                  { title: 'Archive stale pull requests & notify owners', time: '25m ago' }
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    onClick={() => toggleTask(idx, item.title)}
-                    className="flex items-center justify-between p-2 rounded-lg bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.04] cursor-pointer transition-colors"
-                  >
-                    <div className="flex items-center gap-2">
-                      <div className={`w-4 h-4 rounded flex items-center justify-center text-[10px] ${
-                        completedTasks[idx] 
-                          ? 'bg-amber-500 text-black font-bold' 
-                          : 'border border-zinc-600'
-                      }`}>
-                        {completedTasks[idx] && '✓'}
-                      </div>
-                      <span className={`text-xs ${completedTasks[idx] ? 'text-zinc-400 line-through' : 'text-zinc-200'}`}>
-                        {item.title}
-                      </span>
+                  {/* Node 1 */}
+                  <div className={`p-3 rounded-xl border transition-all ${
+                    activeStepIndex === 0 
+                      ? 'bg-amber-500/15 border-amber-500 shadow-lg shadow-amber-500/20' 
+                      : 'bg-white/[0.02] border-white/10'
+                  }`}>
+                    <div className="flex items-center justify-between text-zinc-400 mb-1">
+                      <span className="text-[10px] font-mono text-amber-400">01 TRIGGER</span>
+                      <GitBranch size={13} className="text-zinc-400" />
                     </div>
-                    <span className="text-[10px] text-zinc-500 font-mono">{item.time}</span>
+                    <div className="text-xs font-bold text-white">GitHub PR Merged</div>
+                    <div className="text-[10px] text-zinc-400 mt-1">main branch #1402</div>
+                  </div>
+
+                  {/* Node 2 */}
+                  <div className={`p-3 rounded-xl border transition-all ${
+                    activeStepIndex === 1 
+                      ? 'bg-amber-500/15 border-amber-500 shadow-lg shadow-amber-500/20' 
+                      : 'bg-white/[0.02] border-white/10'
+                  }`}>
+                    <div className="flex items-center justify-between text-zinc-400 mb-1">
+                      <span className="text-[10px] font-mono text-amber-400">02 COMPILE</span>
+                      <Cpu size={13} className="text-zinc-400" />
+                    </div>
+                    <div className="text-xs font-bold text-white">AI Test Suite</div>
+                    <div className="text-[10px] text-zinc-400 mt-1">1,420 unit tests OK</div>
+                  </div>
+
+                  {/* Node 3 */}
+                  <div className={`p-3 rounded-xl border transition-all ${
+                    activeStepIndex === 2 
+                      ? 'bg-amber-500/15 border-amber-500 shadow-lg shadow-amber-500/20' 
+                      : 'bg-white/[0.02] border-white/10'
+                  }`}>
+                    <div className="flex items-center justify-between text-zinc-400 mb-1">
+                      <span className="text-[10px] font-mono text-amber-400">03 DEPLOY</span>
+                      <Zap size={13} className="text-zinc-400" />
+                    </div>
+                    <div className="text-xs font-bold text-white">Deploy 8 Regions</div>
+                    <div className="text-[10px] text-zinc-400 mt-1">Edge replication</div>
+                  </div>
+
+                  {/* Node 4 */}
+                  <div className={`p-3 rounded-xl border transition-all ${
+                    activeStepIndex === 3 
+                      ? 'bg-amber-500/15 border-amber-500 shadow-lg shadow-amber-500/20' 
+                      : 'bg-white/[0.02] border-white/10'
+                  }`}>
+                    <div className="flex items-center justify-between text-zinc-400 mb-1">
+                      <span className="text-[10px] font-mono text-amber-400">04 NOTIFY</span>
+                      <Bell size={13} className="text-zinc-400" />
+                    </div>
+                    <div className="text-xs font-bold text-white">Broadcast Slack & Jira</div>
+                    <div className="text-[10px] text-zinc-400 mt-1">Sprint updated</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Split: SVG Chart & Task Queue */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                
+                {/* Real-time Velocity Chart */}
+                <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06] flex flex-col justify-between">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="text-xs font-semibold text-zinc-300 flex items-center gap-1.5">
+                      <TrendingUp size={14} className="text-amber-400" />
+                      Team Execution Velocity
+                    </div>
+                    <span className="text-[10px] text-zinc-400 font-mono">Last 7 days</span>
+                  </div>
+
+                  {/* Vector SVG Line Chart */}
+                  <div className="relative h-28 w-full mt-1">
+                    <svg viewBox="0 0 300 100" className="w-full h-full overflow-visible">
+                      <defs>
+                        <linearGradient id="chartGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stopColor="#F5A900" stopOpacity="0.35" />
+                          <stop offset="100%" stopColor="#F5A900" stopOpacity="0.0" />
+                        </linearGradient>
+                      </defs>
+                      
+                      {/* Fill path */}
+                      <path
+                        d="M 0,85 Q 40,70 70,55 T 140,40 T 210,25 T 300,10 L 300,100 L 0,100 Z"
+                        fill="url(#chartGlow)"
+                      />
+
+                      {/* Stroke path */}
+                      <path
+                        d="M 0,85 Q 40,70 70,55 T 140,40 T 210,25 T 300,10"
+                        fill="none"
+                        stroke="#F5A900"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                      />
+
+                      {/* Pulsing point */}
+                      <circle cx="300" cy="10" r="5" fill="#F5A900" className="animate-pulse" />
+                      <circle cx="300" cy="9" r="9" fill="none" stroke="#F5A900" strokeWidth="1.5" opacity="0.6" />
+                    </svg>
+                  </div>
+
+                  <div className="flex items-center justify-between text-[10px] text-zinc-500 font-mono pt-2 border-t border-white/[0.04]">
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+                    <span className="text-amber-400 font-bold">Today (+3.4x)</span>
+                  </div>
+                </div>
+
+                {/* Interactive Task Checklist */}
+                <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06] flex flex-col justify-between">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="text-xs font-semibold text-zinc-300 flex items-center gap-1.5">
+                      <CheckCircle2 size={14} className="text-amber-400" />
+                      Automated Task Backlog
+                    </div>
+                    <span className="text-[10px] text-zinc-400">Click to toggle</span>
+                  </div>
+
+                  <div className="space-y-2 mt-1">
+                    {[
+                      { title: 'Auto-sync Linear sprint to Notion roadmap', time: '1m ago' },
+                      { title: 'Trigger Docker multi-arch release image', time: '4m ago' },
+                      { title: 'Generate AI weekly executive brief', time: '12m ago' },
+                      { title: 'Archive stale pull requests & notify owners', time: '25m ago' }
+                    ].map((item, idx) => (
+                      <div
+                        key={idx}
+                        onClick={() => toggleTask(idx, item.title)}
+                        className="flex items-center justify-between p-2 rounded-lg bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.04] cursor-pointer transition-colors"
+                      >
+                        <div className="flex items-center gap-2">
+                          <div className={`w-4 h-4 rounded flex items-center justify-center text-[10px] ${
+                            completedTasks[idx] 
+                              ? 'bg-amber-500 text-black font-bold' 
+                              : 'border border-zinc-600'
+                          }`}>
+                            {completedTasks[idx] && '✓'}
+                          </div>
+                          <span className={`text-xs ${completedTasks[idx] ? 'text-zinc-400 line-through' : 'text-zinc-200'}`}>
+                            {item.title}
+                          </span>
+                        </div>
+                        <span className="text-[10px] text-zinc-500 font-mono">{item.time}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+            </>
+          )}
+
+          {activeWorkspace === 'pipelines' && (
+            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.08] flex flex-col gap-3">
+              <div className="flex items-center justify-between pb-3 border-b border-white/[0.06]">
+                <div className="flex items-center gap-2">
+                  <Layers size={16} className="text-amber-400" />
+                  <span className="text-xs font-semibold text-white">Active CI/CD Pipelines & Cloud Builds</span>
+                </div>
+                <span className="text-[10px] font-mono text-emerald-400 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                  3 ACTIVE
+                </span>
+              </div>
+              <div className="space-y-2.5">
+                {[
+                  { name: 'deploy/edge-mesh-v2', branch: 'main', hash: 'c94f1a0', status: 'Deployed', duration: '24s', env: 'Production Global' },
+                  { name: 'test/vector-index-sync', branch: 'feat/kv-cache', hash: '8e210b3', status: 'Running', duration: '1m 12s', env: 'Staging US-East' },
+                  { name: 'build/docker-multiarch', branch: 'hotfix/patch-2', hash: 'a1b72dc', status: 'Completed', duration: '45s', env: 'Container Registry' }
+                ].map((pipe, i) => (
+                  <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-white/[0.02] border border-white/[0.05] hover:border-white/10 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-2 h-2 rounded-full ${pipe.status === 'Running' ? 'bg-amber-400 animate-pulse' : 'bg-emerald-400'}`} />
+                      <div>
+                        <div className="text-xs font-semibold text-white flex items-center gap-2 font-mono">
+                          {pipe.name}
+                          <span className="text-[10px] text-zinc-500 bg-white/[0.04] px-1.5 py-0.5 rounded">{pipe.hash}</span>
+                        </div>
+                        <div className="text-[10px] text-zinc-400 mt-0.5">{pipe.env} • branch: {pipe.branch}</div>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <span className={`text-[10px] font-mono font-semibold px-2 py-0.5 rounded ${pipe.status === 'Running' ? 'text-amber-400 bg-amber-400/10' : 'text-emerald-400 bg-emerald-400/10'}`}>
+                        {pipe.status}
+                      </span>
+                      <div className="text-[10px] text-zinc-500 font-mono mt-1">{pipe.duration}</div>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
+          )}
 
-          </div>
+          {activeWorkspace === 'telemetry' && (
+            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.08] flex flex-col gap-4">
+              <div className="flex items-center justify-between pb-3 border-b border-white/[0.06]">
+                <div className="flex items-center gap-2">
+                  <Activity size={16} className="text-amber-400" />
+                  <span className="text-xs font-semibold text-white">Live Telemetry & Global Node Health</span>
+                </div>
+                <span className="text-[10px] font-mono text-emerald-400 px-2 py-0.5 rounded bg-emerald-500/10">
+                  ALL 8 REGIONS ONLINE
+                </span>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                <div className="p-3 rounded-lg bg-white/[0.02] border border-white/[0.05]">
+                  <div className="text-[10px] text-zinc-400">US-East (N. Virginia)</div>
+                  <div className="text-sm font-bold text-white mt-1">9.2 ms</div>
+                  <div className="text-[10px] text-emerald-400">0.00% packet loss</div>
+                </div>
+                <div className="p-3 rounded-lg bg-white/[0.02] border border-white/[0.05]">
+                  <div className="text-[10px] text-zinc-400">EU-West (Frankfurt)</div>
+                  <div className="text-sm font-bold text-white mt-1">14.1 ms</div>
+                  <div className="text-[10px] text-emerald-400">0.00% packet loss</div>
+                </div>
+                <div className="p-3 rounded-lg bg-white/[0.02] border border-white/[0.05]">
+                  <div className="text-[10px] text-zinc-400">AP-South (Mumbai)</div>
+                  <div className="text-sm font-bold text-white mt-1">11.8 ms</div>
+                  <div className="text-[10px] text-emerald-400">0.00% packet loss</div>
+                </div>
+                <div className="p-3 rounded-lg bg-white/[0.02] border border-white/[0.05]">
+                  <div className="text-[10px] text-zinc-400">AP-East (Tokyo)</div>
+                  <div className="text-sm font-bold text-white mt-1">16.4 ms</div>
+                  <div className="text-[10px] text-emerald-400">0.00% packet loss</div>
+                </div>
+              </div>
+              <div className="p-3 rounded-lg bg-white/[0.02] border border-white/[0.05] flex items-center justify-between text-xs font-mono text-zinc-300">
+                <span>Cluster Throughput: <strong className="text-amber-400">48,290 req/s</strong></span>
+                <span>Active Parallel Workers: <strong className="text-emerald-400">1,024</strong></span>
+              </div>
+            </div>
+          )}
+
+          {activeWorkspace === 'security' && (
+            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.08] flex flex-col gap-3">
+              <div className="flex items-center justify-between pb-3 border-b border-white/[0.06]">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck size={16} className="text-emerald-400" />
+                  <span className="text-xs font-semibold text-white">SOC2 Type II Security & Audit Trail</span>
+                </div>
+                <span className="text-[10px] font-mono text-emerald-400 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                  PASSED 100%
+                </span>
+              </div>
+              <div className="space-y-2">
+                {[
+                  { event: 'TLS 1.3 cryptographic handshake validated', role: 'Security Agent', time: 'Just now', status: 'VERIFIED' },
+                  { event: 'Ephemeral developer cluster token rotated', role: 'RBAC Policy Engine', time: '3m ago', status: 'VERIFIED' },
+                  { event: 'S3 cold backup integrity check completed', role: 'Compliance Daemon', time: '8m ago', status: 'VERIFIED' },
+                  { event: 'Zero-trust biometric session authorized', role: 'IAM Gateway', time: '14m ago', status: 'VERIFIED' }
+                ].map((sec, idx) => (
+                  <div key={idx} className="flex items-center justify-between p-2.5 rounded-lg bg-white/[0.02] border border-white/[0.04]">
+                    <div className="flex items-center gap-2.5">
+                      <ShieldCheck size={14} className="text-emerald-400" />
+                      <div>
+                        <div className="text-xs text-white font-mono">{sec.event}</div>
+                        <div className="text-[10px] text-zinc-500">{sec.role} • {sec.time}</div>
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">
+                      {sec.status}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
         </div>
 

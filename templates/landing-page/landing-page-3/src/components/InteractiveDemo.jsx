@@ -32,7 +32,7 @@ export default function InteractiveDemo({ onShowToast }) {
     latency: selectedModel.baseLatency,
     tflops: selectedModel.baseTflops,
     tokensPerSec: 142000,
-    costPerMillion: '$0.04',
+    costPerMillion: '₹3.20',
   });
 
   const runSimulation = () => {
@@ -48,7 +48,7 @@ export default function InteractiveDemo({ onShowToast }) {
       latency: latencyCalc,
       tflops: tflopsCalc,
       tokensPerSec: tokensSecCalc,
-      costPerMillion: `$${(0.04 * (batchSize / 16)).toFixed(3)}`,
+      costPerMillion: `₹${(3.20 * (batchSize / 16)).toFixed(2)}`,
     });
 
     const fullResponse = `[SYNAPSE-KERNEL // STREAM INITIALIZED]

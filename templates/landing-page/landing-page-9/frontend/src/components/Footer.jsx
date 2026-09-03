@@ -2,6 +2,15 @@ import React from 'react';
 import { ArrowUpRight, Instagram, Twitter, Youtube, Linkedin, Shield } from 'lucide-react';
 
 export default function Footer({ onOpenBooking }) {
+  const handleScrollTo = (e, id) => {
+    e.preventDefault();
+    if (id === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const el = document.querySelector(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
   return (
     <footer className="relative w-full bg-[#050507] border-t border-white/[0.08] pt-16 pb-12 overflow-hidden text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
@@ -89,8 +98,8 @@ export default function Footer({ onOpenBooking }) {
               Compliance
             </h4>
             <ul className="space-y-2.5 text-xs text-[#8E8E99]">
-              <li><a href="#security" className="hover:text-white transition-colors">Security Charter</a></li>
-              <li><a href="#support" className="hover:text-white transition-colors">Direct Support 24/7</a></li>
+              <li><a href="#security" onClick={(e) => handleScrollTo(e, '#security')} className="hover:text-white transition-colors cursor-pointer">Security Charter</a></li>
+              <li><a href="#support" onClick={(e) => handleScrollTo(e, '#support')} className="hover:text-white transition-colors cursor-pointer">Direct Support 24/7</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
             </ul>

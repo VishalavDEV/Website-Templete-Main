@@ -51,7 +51,7 @@ export default function PinnacleSection({ onOpenBooking }) {
         >
           {/* Background image with hover zoom */}
           <img
-            src="/images/pinnacle_mountain.jpg"
+            src="./images/pinnacle_mountain.jpg"
             alt="Mountain Pass Luxury Driving Experience"
             className="w-full h-full object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-105"
           />

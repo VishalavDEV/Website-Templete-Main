@@ -45,7 +45,7 @@ export const fetchVehicles = async (category = '') => {
         acceleration: 3.9,
         topSpeed: 177,
         dailyRate: 480,
-        imageUrl: '/images/hero_car.jpg',
+        imageUrl: './images/hero_car.jpg',
         transmission: '8-Speed M Steptronic',
         seats: 4,
         featured: true
@@ -59,7 +59,7 @@ export const fetchVehicles = async (category = '') => {
         acceleration: 3.0,
         topSpeed: 184,
         dailyRate: 850,
-        imageUrl: '/images/fleet_porsche.jpg',
+        imageUrl: './images/fleet_porsche.jpg',
         transmission: '7-Speed PDK',
         seats: 2,
         featured: true
@@ -73,7 +73,7 @@ export const fetchVehicles = async (category = '') => {
         acceleration: 4.2,
         topSpeed: 155,
         dailyRate: 1450,
-        imageUrl: '/images/fleet_rolls_royce.jpg',
+        imageUrl: './images/fleet_rolls_royce.jpg',
         transmission: '8-Speed Satellite Auto',
         seats: 5,
         featured: true
@@ -87,7 +87,7 @@ export const fetchVehicles = async (category = '') => {
         acceleration: 4.3,
         topSpeed: 162,
         dailyRate: 650,
-        imageUrl: '/images/pinnacle_mountain.jpg',
+        imageUrl: './images/pinnacle_mountain.jpg',
         transmission: '8-Speed Automatic AWD',
         seats: 5,
         featured: false

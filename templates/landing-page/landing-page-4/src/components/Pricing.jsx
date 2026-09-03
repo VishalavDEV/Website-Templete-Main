@@ -119,9 +119,9 @@ export default function Pricing() {
                     <div className="flex items-baseline gap-1">
                       {typeof price === 'number' ? (
                         <>
-                          <span className="text-2xl font-bold text-zinc-400">$</span>
+                          <span className="text-2xl font-bold text-zinc-400">₹</span>
                           <span className="text-4xl sm:text-5xl font-extrabold text-white font-heading tracking-tight">
-                            {price}
+                            {price.toLocaleString('en-IN')}
                           </span>
                           <span className="text-xs text-zinc-400 font-medium ml-1">/ user / mo</span>
                         </>
@@ -133,7 +133,7 @@ export default function Pricing() {
                     </div>
                     {typeof price === 'number' && (
                       <div className="text-[11px] text-zinc-500 mt-1">
-                        {isAnnual ? 'Billed annually ($' + (price * 12) + '/yr)' : 'Billed monthly'}
+                        {isAnnual ? 'Billed annually (₹' + (price * 12).toLocaleString('en-IN') + '/yr)' : 'Billed monthly'}
                       </div>
                     )}
                   </div>

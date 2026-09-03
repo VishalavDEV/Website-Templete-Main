@@ -22,6 +22,20 @@ export default function Navbar() {
   const dropdownRef = useRef(null);
   const { openAuthModal } = useModal();
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    setActiveDropdown(null);
+    if (!href || href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   // Handle scroll state for navbar glassmorphism
   useEffect(() => {
     const handleScroll = () => {
@@ -89,6 +103,7 @@ export default function Navbar() {
         {/* Brand Logo */}
         <a 
           href="#hero" 
+          onClick={(e) => handleNavClick(e, '#hero')}
           className="brand-logo flex items-center gap-2.5 group cursor-pointer focus:outline-none"
           aria-label="Flowzen Home"
         >
@@ -141,8 +156,8 @@ export default function Navbar() {
                           <a
                             key={subItem.label}
                             href={subItem.href}
-                            onClick={() => setActiveDropdown(null)}
-                            className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.06] transition-colors group"
+                            onClick={(e) => handleNavClick(e, subItem.href)}
+                            className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.06] transition-colors group cursor-pointer"
                           >
                             <div className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 group-hover:bg-amber-500 group-hover:text-black transition-colors">
                               {getDropdownIcon(subItem.label)}
@@ -168,7 +183,8 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/[0.04] transition-colors"
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/[0.04] transition-colors cursor-pointer"
               >
                 {link.label}
               </a>
@@ -213,8 +229,8 @@ export default function Navbar() {
                 <div key={link.label}>
                   <a
                     href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center justify-between py-3 px-4 rounded-xl text-base font-medium text-zinc-200 hover:text-amber-400 hover:bg-white/[0.04] transition-colors"
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className="flex items-center justify-between py-3 px-4 rounded-xl text-base font-medium text-zinc-200 hover:text-amber-400 hover:bg-white/[0.04] transition-colors cursor-pointer"
                   >
                     {link.label}
                     {link.hasDropdown && <ChevronDown size={16} className="text-zinc-500" />}
@@ -225,8 +241,8 @@ export default function Navbar() {
                         <a
                           key={sub.label}
                           href={sub.href}
-                          onClick={() => setMobileMenuOpen(false)}
-                          className="flex items-center gap-2 py-2 px-3 text-sm text-zinc-400 hover:text-amber-400 transition-colors"
+                          onClick={(e) => handleNavClick(e, sub.href)}
+                          className="flex items-center gap-2 py-2 px-3 text-sm text-zinc-400 hover:text-amber-400 transition-colors cursor-pointer"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-amber-400/60"></span>
                           {sub.label}

@@ -10,7 +10,7 @@ export const ProjectOverlay = ({ isOpen, onClose, projectData }) => {
     CONCEPT: {
       headline: 'A Monolithic Coastal Sanctuary',
       paragraph: 'Located outside Chennai, House of Silence explores the poetic weight of cast concrete. The architecture withdraws from the chaos of the city to frame quiet horizons, shifting breezes, and an intimate interior courtyard garden.',
-      image: '/images/house_of_silence.jpg',
+      image: './images/house_of_silence.jpg',
       meta: [
         { label: 'Typology', val: 'Private Residential Monograph' },
         { label: 'Site Footprint', val: '420 m² on 1,800 m² coastal plot' },
@@ -20,7 +20,7 @@ export const ProjectOverlay = ({ isOpen, onClose, projectData }) => {
     MATERIAL: {
       headline: 'Board-Formed Concrete & Terracotta',
       paragraph: 'Local river sand and granite aggregates were combined into board-formed concrete slabs that will weather naturally in the coastal marine salt air. Hand-pressed terracotta tiles line the inner courtyards to absorb and release heat gradually.',
-      image: '/images/hero.jpg',
+      image: './images/hero.jpg',
       meta: [
         { label: 'Concrete Mix', val: 'Slag cement + coastal granite aggregate' },
         { label: 'Surface Finish', val: 'Rough timber board-marked texture' },
@@ -30,7 +30,7 @@ export const ProjectOverlay = ({ isOpen, onClose, projectData }) => {
     LIGHT: {
       headline: 'Carving Shadows & Water Reflections',
       paragraph: 'Daylight does not enter directly; it is captured by recessed clerestory cuts and reflected over shallow water channels. The interior shifts from cool dawn shadows into deep amber luminescence by twilight.',
-      image: '/images/house_of_silence_interior.jpg',
+      image: './images/house_of_silence_interior.jpg',
       meta: [
         { label: 'Natural Glazing', val: 'Deep overhangs eliminating solar glare' },
         { label: 'Reflecting Pool', val: 'Basalt-lined passive cooling channel' },
@@ -40,7 +40,7 @@ export const ProjectOverlay = ({ isOpen, onClose, projectData }) => {
     STRUCTURE: {
       headline: 'Massive Cantilevers & Pure Gravity',
       paragraph: 'A structural feat of post-tensioned concrete cantilevers spanning up to 7.8 meters without visible columns. The living pavilion floats above the reflection pools, creating a spatial sensation of weightless mass.',
-      image: '/images/house_of_silence.jpg',
+      image: './images/house_of_silence.jpg',
       meta: [
         { label: 'Span Length', val: '7.8m post-tensioned cantilever slab' },
         { label: 'Structural Core', val: 'Monolithic shear walls' },
