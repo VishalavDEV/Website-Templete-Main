@@ -19,6 +19,12 @@
             if (document.getElementById('technosprint-preview-header')) return;
 
             const currentUrl = new URL(window.location.href);
+            if (!currentUrl.pathname.endsWith('.html')) {
+              if (!currentUrl.pathname.endsWith('/')) {
+                currentUrl.pathname += '/';
+              }
+              currentUrl.pathname += 'index.html';
+            }
             currentUrl.searchParams.set('iframe', 'true');
             
             document.documentElement.className = '';
