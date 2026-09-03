@@ -1,92 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&display=swap');
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --font-display: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-serif: 'Instrument Serif', Georgia, serif;
-  }
-
-  body {
-    font-family: var(--font-sans);
-    background-color: #080808;
-    color: #FAF9F6;
-  }
-
-  h1, h2, h3, .font-display {
-    font-family: var(--font-display);
-  }
-
-  .font-editorial {
-    font-family: var(--font-serif);
-  }
+:root {
+  --bg-dark: #05070f;
+  --bg-card: rgba(13, 17, 33, 0.7);
+  --bg-card-border: rgba(255, 255, 255, 0.08);
+  --accent-blue: #3b82f6;
+  --accent-cyan: #06b6d4;
+  --accent-purple: #8b5cf6;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* Immersive UI Text Stroke */
-.text-stroke-immersive {
-  -webkit-text-stroke: 1px #FAF9F6;
-  color: transparent;
+h1, h2, h3, h4, .font-syne {
+  font-family: 'Syne', sans-serif;
 }
 
-.text-stroke-subtle {
-  -webkit-text-stroke: 1px rgba(250, 249, 246, 0.4);
-  color: transparent;
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  selection-background-color: #3b82f6;
+  selection-color: #ffffff;
 }
 
-/* Vertical text rail helper */
-.vertical-rl {
-  writing-mode: vertical-rl;
-}
-
-/* Custom subtle noise & grid */
-.bg-noise {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 0);
-  background-size: 28px 28px;
-}
-
-.bg-grid-subtle {
-  background-size: 64px 64px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-}
-
-/* Smooth custom scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #080808;
+  background: #05070f;
 }
 ::-webkit-scrollbar-thumb {
-  background: #222226;
-  border-radius: 9999px;
+  background: #1e293b;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ffffff;
+  background: #3b82f6;
 }
 
-/* Hide cursor when custom cursor is active on non-touch */
-@media (hover: hover) and (pointer: fine) {
-  .custom-cursor-active,
-  .custom-cursor-active * {
-    cursor: none !important;
-  }
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(13, 18, 36, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 10px 40px -10px rgba(59, 130, 246, 0.3);
+  transform: translateY(-4px);
+}
+
+/* Glow Utilities */
+.glow-blue {
+  box-shadow: 0 0 50px -10px rgba(59, 130, 246, 0.4);
+}
+.glow-cyan {
+  box-shadow: 0 0 50px -10px rgba(6, 182, 212, 0.4);
+}
+.glow-purple {
+  box-shadow: 0 0 50px -10px rgba(139, 92, 246, 0.4);
+}
+
+/* Animated Gradients */
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #64748b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-electric {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 40%, #8b5cf6 70%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-radial-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.08) 40%, transparent 70%);
+}
+
+/* Marquee keyframe animation */
 @keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 35s linear infinite;
+  animation: marquee 25s linear infinite;
 }
 
 .animate-marquee:hover {
@@ -94,70 +111,10 @@
 }
 
 @keyframes pulse-slow {
-  0%, 100% { opacity: 0.15; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(1.08); }
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.08); }
 }
 
 .animate-pulse-slow {
   animation: pulse-slow 8s ease-in-out infinite;
-}
-
-/* Custom Background Color Overrides for Royal Blue theme */
-body {
-  background-color: #2563eb !important;
-  color: #ffffff !important;
-}
-
-[class*="bg-[#080808]"],
-[class*="bg-[#0e0e12]"],
-[class*="bg-[#050507]"],
-[class*="bg-[#0c0c10]"],
-[class*="bg-[#111116]"],
-[class*="bg-[#060608]"],
-[class*="bg-[#0B0B0F]"],
-[class*="bg-[#0A0A0E]"],
-[class*="bg-[#0C0C10]"],
-[class*="bg-[#0E0E12]"],
-[class*="bg-[#111115]"],
-[class*="bg-[#0B0D13]"],
-[class*="bg-[#0A0C10]"],
-[class*="bg-[#0e0e0e]"],
-[class*="bg-[#0d0d0d]"],
-[class*="bg-[#0F0F12]"],
-[class*="bg-[#111113]"],
-[class*="bg-[#0c0c0f]"],
-[class*="bg-[#0e0e11]"],
-[class*="bg-[#09090c]"],
-[class*="bg-[#0d0d10]"],
-[class*="bg-[#16161a]"],
-[class*="bg-[#0a0a0d]"],
-[class*="bg-[#141418]"],
-[class*="bg-[#111114]"] {
-  background-color: #2563eb !important;
-}
-
-[class*="bg-[#111111]"],
-[class*="bg-[#0A0A0A]"],
-[class*="bg-[#0a0a0a]"],
-[class*="bg-[#1a1a1f]"] {
-  background-color: #1d4ed8 !important;
-}
-
-/* High Contrast Font Typography Rule */
-body, p, span, a, h1, h2, h3, h4, h5, h6, div, li, td, button {
-  color: #ffffff;
-}
-
-p, [class*="text-[#888888]"], [class*="text-[#999999]"], [class*="text-slate-"] {
-  color: #f8fafc !important;
-  opacity: 1 !important;
-}
-
-/* Micro-tags, badges, mono labels, and metadata highlight color */
-[class*="font-mono"][class*="text-xs"],
-[class*="font-mono"][class*="text-[10px]"],
-[class*="tracking-widest"][class*="text-xs"],
-[class*="tracking-[0.25em]"] {
-  color: #fde047 !important;
-  font-weight: 700 !important;
 }
