@@ -4,13 +4,13 @@ export const citymoveImages = {
   hero: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=1200&q=80",
   vehicles: {
     car: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=80",
-    scooter: "https://images.unsplash.com/photo-1605336040854-bd619280cd39?auto=format&fit=crop&w=600&q=80",
+    scooter: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=600&q=80",
     bike: "https://images.unsplash.com/photo-1529422643029-d4585747aaf2?auto=format&fit=crop&w=600&q=80",
-    bus: "https://images.unsplash.com/photo-1494515013700-69824f488651?auto=format&fit=crop&w=600&q=80"
+    bus: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80"
   },
   services: {
     app: "https://images.unsplash.com/photo-1522125670776-3c7abb882bc2?auto=format&fit=crop&w=600&q=80",
-    unlock: "https://images.unsplash.com/photo-1596706500742-0ef3d21b4725?auto=format&fit=crop&w=600&q=80"
+    unlock: "https://images.unsplash.com/photo-1556742049-0a67daf40955?auto=format&fit=crop&w=600&q=80"
   },
   gallery: {
     city1: "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=600&q=80",
