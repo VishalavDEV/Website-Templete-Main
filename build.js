@@ -20,7 +20,30 @@ try {
             stdio: 'inherit'
           });
         } catch (err) {
-          console.warn(`Failed to build ${templateDirName}, proceeding...`);
+          console.warn(`Failed to build Medical ${templateDirName}, proceeding...`);
+        }
+      }
+    }
+  }
+
+  // 2. Build all Hotel templates
+  const hotelDir = path.resolve('templates/hotel');
+  if (fs.existsSync(hotelDir)) {
+    const templates = fs.readdirSync(hotelDir).filter(t => 
+      fs.statSync(path.join(hotelDir, t)).isDirectory()
+    );
+    for (const templateDirName of templates) {
+      const templatePath = path.join(hotelDir, templateDirName);
+      if (fs.existsSync(path.join(templatePath, 'package.json'))) {
+        console.log(`Building Hotel template: ${templateDirName}...`);
+        const targetName = templateDirName.toLowerCase();
+        try {
+          execSync(`npx vite build --outDir ${path.resolve('frontend/public/templates/hotel', targetName)}`, {
+            cwd: templatePath,
+            stdio: 'inherit'
+          });
+        } catch (err) {
+          console.warn(`Failed to build Hotel ${templateDirName}, proceeding...`);
         }
       }
     }

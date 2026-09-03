@@ -459,13 +459,15 @@
   right: 0;
   bottom: 0;
   width: 320px;
+  max-width: 85vw;
   background-color: #0F1115;
   border-left: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 40px;
+  padding: 40px 24px;
   display: flex;
   flex-direction: column;
   transform: translate3d(100%, 0, 0);
   transition: transform 0.4s var(--transition-luxury);
+  overflow-y: auto;
 }
 
 .mobileDrawerOverlayActive .mobileDrawer {

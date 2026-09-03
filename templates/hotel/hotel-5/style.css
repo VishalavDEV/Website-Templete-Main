@@ -620,3 +620,34 @@ h1, h2, h3, h4, h5, .font-serif, .editorial-heading {
     grid-template-columns: 1fr !important;
   }
 }
+
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+  .su-modal-box {
+    max-height: 95vh;
+    border-radius: 16px;
+  }
+  .su-modal-header {
+    padding: 1rem 1.2rem;
+  }
+  .su-modal-body {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1, h2, .editorial-heading {
+    font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+  }
+  .su-booking-bar {
+    padding: 1rem;
+  }
+  .su-toast {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    max-width: none;
+  }
+}

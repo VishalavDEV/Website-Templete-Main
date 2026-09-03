@@ -226,11 +226,24 @@ function renderExperiences() {
         <p>${exp.desc}</p>
         <div class="exp-card-foot">
           <span>${exp.price}</span>
-          <button class="btn-inquire" onclick="openBookingModal()">Inquire <i class="bi bi-arrow-right"></i></button>
+          <button class="btn-inquire" onclick="openInquireModal('${exp.title}')">Inquire <i class="bi bi-arrow-right"></i></button>
         </div>
       </div>
     </div>
   `).join('');
+}
+
+// Inquire Modal / Concierge Action
+function openInquireModal(title) {
+  const contactSec = document.getElementById('contact');
+  if (contactSec) {
+    contactSec.scrollIntoView({ behavior: 'smooth' });
+    const emailInput = document.getElementById('priveEmail');
+    if (emailInput) {
+      emailInput.placeholder = `Inquire about ${title || 'Experience'}...`;
+      emailInput.focus();
+    }
+  }
 }
 
 // Modals
@@ -291,8 +304,16 @@ function closeRoomModal() {
 function handleHeroSearch(e) {
   e.preventDefault();
   const cat = document.getElementById('searchCategory').value;
-  const matched = roomsData.find(r => r.category.toLowerCase() === cat.toLowerCase());
-  openBookingModal(matched ? matched.id : 1);
+  renderRooms(cat);
+  const tabs = document.querySelectorAll('.tab-btn');
+  tabs.forEach(tab => {
+    if (tab.getAttribute('data-category').toLowerCase() === cat.toLowerCase()) {
+      tab.classList.add('active');
+    } else {
+      tab.classList.remove('active');
+    }
+  });
+  scrollToSection('gallery');
 }
 
 // Submit Booking

@@ -797,7 +797,19 @@ body {
     display: block;
   }
   .ao-hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+  }
+  .ao-bento-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .ao-booking-form {
+    grid-template-columns: 1fr !important;
+  }
+  .ao-booking-action {
+    grid-column: span 1 !important;
+  }
+  .col-8, .col-4 {
+    grid-column: span 1 !important;
   }
   .ao-footer-container {
     grid-template-columns: 1fr;
@@ -805,5 +817,18 @@ body {
   }
   .ao-footer-links {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .ao-bento-card {
+    height: auto !important;
+    min-height: 400px;
+  }
+  .ao-drawer {
+    width: 100% !important;
+  }
+  .ao-review-card {
+    width: 280px !important;
   }
 }
