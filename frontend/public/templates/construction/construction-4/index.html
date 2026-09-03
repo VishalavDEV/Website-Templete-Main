@@ -2,33 +2,29 @@
 <html lang="en">
   <head>
     <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4a359'><path d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/></svg>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>knack | DESIGN + BUILD — Elevated Living, Masterfully Built</title>
-    <meta name="description" content="knack | DESIGN + BUILD crafts bespoke luxury architectural residences, minimalist modernist villas, and turnkey custom living spaces with uncompromising precision." />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-      <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+    <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
     <script>
       (function() {
         const isTop = window.self === window.top;
         const urlParams = new URLSearchParams(window.location.search);
         const isIframe = urlParams.get('iframe') === 'true';
         
-        if (false && isTop && !isIframe) {
+        if (isTop && !isIframe) {
           function buildPreviewWrapper() {
+            const body = document.body;
+            if (!body) {
+              setTimeout(buildPreviewWrapper, 10);
+              return;
+            }
+            if (document.getElementById('technosprint-preview-header')) return;
+
             const currentUrl = new URL(window.location.href);
             currentUrl.searchParams.set('iframe', 'true');
             
             document.documentElement.className = '';
             document.documentElement.removeAttribute('style');
             
-            const body = document.body;
-            if (!body) return;
             body.className = '';
             body.innerHTML = '';
             body.removeAttribute('style');
@@ -38,7 +34,7 @@
             overrideStyle.textContent = 'html, body { margin: 0 !important; padding: 0 !important; width: 100vw !important; height: 100vh !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important; color: #0f172a !important; } #technosprint-preview-header { background-color: #ffffff !important; color: #0f172a !important; }';
             document.head.appendChild(overrideStyle);
             
-            body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important;';
+            body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important;';
             
             const topBar = document.createElement('header');
             topBar.id = 'technosprint-preview-header';
@@ -190,6 +186,7 @@
                 frameContainer.style.height = '100%';
                 frameContainer.style.maxWidth = '100%';
                 frameContainer.style.maxHeight = '100%';
+                frameContainer.style.backgroundColor = 'transparent';
                 frameContainer.style.border = 'none';
                 frameContainer.style.borderRadius = '12px';
               } else if (activeMode === 'tablet') {
@@ -244,14 +241,17 @@
             });
           }
           
-          if (document.readyState === 'loading') {
-            window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
-          } else {
+          if (document.readyState === 'interactive' || document.readyState === 'complete') {
             buildPreviewWrapper();
+          } else {
+            window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
+            window.addEventListener('load', buildPreviewWrapper);
           }
         }
       })();
     </script>
+
+    
     
     <link rel="stylesheet" crossorigin href="./assets/index-_Rih2yHd.css">
   </head>

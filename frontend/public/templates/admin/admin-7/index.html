@@ -2,67 +2,29 @@
 <html lang="en">
   <head>
     <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SprintAdmin</title>
-    <meta name="description" content="SprintAdmin - High performance operations, project, and analytics dashboard." />
-    <meta property="og:title" content="SprintAdmin" />
-    <meta property="og:description" content="SprintAdmin - High performance operations, project, and analytics dashboard." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <script>
-      (function() {
-        try {
-          var savedSettings = localStorage.getItem('sprintadmin_settings') || localStorage.getItem('nexus_settings');
-          var theme = 'system';
-          if (savedSettings) {
-            var parsed = JSON.parse(savedSettings);
-            if (parsed && parsed.theme) {
-              theme = parsed.theme;
-            }
-          }
-          // Also check explicit standalone sprintadmin-theme key if exists
-          var explicitTheme = localStorage.getItem('sprintadmin-theme') || localStorage.getItem('nexus-theme');
-          if (explicitTheme) {
-            theme = explicitTheme;
-          } else {
-            localStorage.setItem('sprintadmin-theme', theme);
-          }
-          
-          var isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-          if (isDark) {
-            document.documentElement.classList.add('dark');
-            document.documentElement.setAttribute('data-theme', 'dark');
-            document.documentElement.style.colorScheme = 'dark';
-          } else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.setAttribute('data-theme', 'light');
-            document.documentElement.style.colorScheme = 'light';
-          }
-        } catch (e) {
-          console.warn("Theme preloader exception:", e);
-        }
-      })();
-    </script>
-    <script type="module" crossorigin src="/templates/admin/admin-7/assets/index-DAYKh4Xt.js"></script>
-    <link rel="stylesheet" crossorigin href="/templates/admin/admin-7/assets/index-LbF0Bzy1.css">
-      
-      <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+
+    <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
     <script>
       (function() {
         const isTop = window.self === window.top;
         const urlParams = new URLSearchParams(window.location.search);
         const isIframe = urlParams.get('iframe') === 'true';
         
-        if (false && isTop && !isIframe) {
+        if (isTop && !isIframe) {
           function buildPreviewWrapper() {
+            const body = document.body;
+            if (!body) {
+              setTimeout(buildPreviewWrapper, 10);
+              return;
+            }
+            if (document.getElementById('technosprint-preview-header')) return;
+
             const currentUrl = new URL(window.location.href);
             currentUrl.searchParams.set('iframe', 'true');
             
             document.documentElement.className = '';
             document.documentElement.removeAttribute('style');
             
-            const body = document.body;
             body.className = '';
             body.innerHTML = '';
             body.removeAttribute('style');
@@ -72,7 +34,7 @@
             overrideStyle.textContent = 'html, body { margin: 0 !important; padding: 0 !important; width: 100vw !important; height: 100vh !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important; color: #0f172a !important; } #technosprint-preview-header { background-color: #ffffff !important; color: #0f172a !important; }';
             document.head.appendChild(overrideStyle);
             
-            body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important;';
+            body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important;';
             
             const topBar = document.createElement('header');
             topBar.id = 'technosprint-preview-header';
@@ -224,6 +186,7 @@
                 frameContainer.style.height = '100%';
                 frameContainer.style.maxWidth = '100%';
                 frameContainer.style.maxHeight = '100%';
+                frameContainer.style.backgroundColor = 'transparent';
                 frameContainer.style.border = 'none';
                 frameContainer.style.borderRadius = '12px';
               } else if (activeMode === 'tablet') {
@@ -278,14 +241,17 @@
             });
           }
           
-          if (document.readyState === 'loading') {
-            window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
-          } else {
+          if (document.readyState === 'interactive' || document.readyState === 'complete') {
             buildPreviewWrapper();
+          } else {
+            window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
+            window.addEventListener('load', buildPreviewWrapper);
           }
         }
       })();
     </script>
+
+    
   </head>
   <body>
   

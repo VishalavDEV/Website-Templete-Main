@@ -2,32 +2,29 @@
 <html lang="en">
   <head>
     <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f43f5e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='12 2 2 7 12 12 22 7 12 2'/><polyline points='2 17 12 22 22 17'/><polyline points='2 12 12 17 22 12'/></svg>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VANTA STUDIO — Strategic Business Consultancy</title>
-    <meta name="description" content="Vanta Studio is an independent creative collective. We build digital-first identities that capture attention, inspire engagement, and reshape industries." />
-    <!-- Google Fonts: Inter, Space Grotesk, Syne -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
-      <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+
+    <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
     <script>
       (function() {
         const isTop = window.self === window.top;
         const urlParams = new URLSearchParams(window.location.search);
         const isIframe = urlParams.get('iframe') === 'true';
         
-        if (false && isTop && !isIframe) {
+        if (isTop && !isIframe) {
           function buildPreviewWrapper() {
+            const body = document.body;
+            if (!body) {
+              setTimeout(buildPreviewWrapper, 10);
+              return;
+            }
+            if (document.getElementById('technosprint-preview-header')) return;
+
             const currentUrl = new URL(window.location.href);
             currentUrl.searchParams.set('iframe', 'true');
             
             document.documentElement.className = '';
             document.documentElement.removeAttribute('style');
             
-            const body = document.body;
-            if (!body) return;
             body.className = '';
             body.innerHTML = '';
             body.removeAttribute('style');
@@ -189,6 +186,7 @@
                 frameContainer.style.height = '100%';
                 frameContainer.style.maxWidth = '100%';
                 frameContainer.style.maxHeight = '100%';
+                frameContainer.style.backgroundColor = 'transparent';
                 frameContainer.style.border = 'none';
                 frameContainer.style.borderRadius = '12px';
               } else if (activeMode === 'tablet') {
@@ -243,14 +241,17 @@
             });
           }
           
-          if (document.readyState === 'loading') {
-            window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
-          } else {
+          if (document.readyState === 'interactive' || document.readyState === 'complete') {
             buildPreviewWrapper();
+          } else {
+            window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
+            window.addEventListener('load', buildPreviewWrapper);
           }
         }
       })();
     </script>
+
+    
   </head>
   <body>
   

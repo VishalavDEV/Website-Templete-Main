@@ -2,55 +2,29 @@
 <html lang="en">
   <head>
     <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary Meta Tags -->
-    <title>Nexus Digital — Global Business Consultancy</title>
-    <meta name="title" content="NeXus Digital — Enterprise Technology Solutions" />
-    <meta name="description" content="NeXus Digital is a global technology company building enterprise software, mobile apps, and cloud infrastructure that powers ambitious businesses to scale without limits." />
-    <meta name="keywords" content="software development, mobile apps, cloud infrastructure, digital transformation, enterprise technology, React, Java, Spring Boot" />
-    <meta name="author" content="NeXus Digital" />
-    <meta name="robots" content="index, follow" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://nexusdigital.io/" />
-    <meta property="og:title" content="NeXus Digital — Enterprise Technology Solutions" />
-    <meta property="og:description" content="We build enterprise-grade software, mobile apps, and cloud infrastructure that powers ambitious businesses to scale without limits." />
-    <meta property="og:image" content="/og-image.jpg" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://nexusdigital.io/" />
-    <meta property="twitter:title" content="NeXus Digital — Enterprise Technology Solutions" />
-    <meta property="twitter:description" content="We build enterprise-grade software, mobile apps, and cloud infrastructure." />
-
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet" />
-
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#080c1a" />
-      <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+    <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
     <script>
       (function() {
         const isTop = window.self === window.top;
         const urlParams = new URLSearchParams(window.location.search);
         const isIframe = urlParams.get('iframe') === 'true';
         
-        if (false && isTop && !isIframe) {
+        if (isTop && !isIframe) {
           function buildPreviewWrapper() {
+            const body = document.body;
+            if (!body) {
+              setTimeout(buildPreviewWrapper, 10);
+              return;
+            }
+            if (document.getElementById('technosprint-preview-header')) return;
+
             const currentUrl = new URL(window.location.href);
             currentUrl.searchParams.set('iframe', 'true');
             
             document.documentElement.className = '';
             document.documentElement.removeAttribute('style');
             
-            const body = document.body;
-            if (!body) return;
             body.className = '';
             body.innerHTML = '';
             body.removeAttribute('style');
@@ -212,6 +186,7 @@
                 frameContainer.style.height = '100%';
                 frameContainer.style.maxWidth = '100%';
                 frameContainer.style.maxHeight = '100%';
+                frameContainer.style.backgroundColor = 'transparent';
                 frameContainer.style.border = 'none';
                 frameContainer.style.borderRadius = '12px';
               } else if (activeMode === 'tablet') {
@@ -266,14 +241,17 @@
             });
           }
           
-          if (document.readyState === 'loading') {
-            window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
-          } else {
+          if (document.readyState === 'interactive' || document.readyState === 'complete') {
             buildPreviewWrapper();
+          } else {
+            window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
+            window.addEventListener('load', buildPreviewWrapper);
           }
         }
       })();
     </script>
+
+    
   </head>
   <body>
     <div id="root"></div>
