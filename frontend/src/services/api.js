@@ -3568,7 +3568,7 @@ downloadsCount: 1390,
     bootstrapVersion: 'React / Vite / Tailwind',
     version: '1.0.0',
         demoUrl: '/templates/agency/agency-10/index.html',
-  }
+  },
   {
     id: 20271,
     name: 'Voltway — Smart EV Transit & Logistics',
