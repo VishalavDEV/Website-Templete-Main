@@ -3538,8 +3538,6 @@ downloadsCount: 1390,
     bootstrapVersion: 'React / Vite / Tailwind CSS',
     version: '1.0.0',
     demoUrl: '/templates/agency/agency-8/index.html',
-  },
-  {
     id: 20224,
     name: 'OFFGRID — We Make Brands Impossible To Ignore',
     slug: 'agency-9',
@@ -3567,13 +3565,9 @@ downloadsCount: 1390,
     description: 'A high-impact brand architecture and digital agency template with 3D interactive elements, spatial layout grids, and case study detail drawers.',
     bootstrapVersion: 'React / Vite / Tailwind',
     version: '1.0.0',
-    demoUrl: '/templates/agency/agency-10/index.html',
-    bootstrapVersion: 'React / Vite / Tailwind CSS / Motion',
-    version: '1.0.0',
-    demoUrl: '/templates/agency/agency-8/index.html',
+        demoUrl: '/templates/agency/agency-10/index.html',
   }
 ];
-
 
 const getHeaders = () => {
   const headers = {
