@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/templates/onepage/onepage-2/",
+  base: './',
+  
   plugins: [react()],
 })

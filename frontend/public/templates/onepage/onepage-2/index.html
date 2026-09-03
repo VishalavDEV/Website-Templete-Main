@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/templates/onepage/onepage-2/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asme — Innovation, Research & Design Studio</title>
     <meta name="description" content="Pioneering ideas for minds that create, build, and inspire. At the intersection of disciplined strategy and remarkable creative vision." />
@@ -12,9 +12,6 @@
     <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script type="module" crossorigin src="/templates/onepage/onepage-2/assets/index-40-fkY1j.js"></script>
-    <link rel="stylesheet" crossorigin href="/templates/onepage/onepage-2/assets/index-DC82_iz-.css">
-      
       <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
     <script>
       (function() {
@@ -31,6 +28,7 @@
             document.documentElement.removeAttribute('style');
             
             const body = document.body;
+            if (!body) return;
             body.className = '';
             body.innerHTML = '';
             body.removeAttribute('style');
@@ -40,7 +38,7 @@
             overrideStyle.textContent = 'html, body { margin: 0 !important; padding: 0 !important; width: 100vw !important; height: 100vh !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important; color: #0f172a !important; } #technosprint-preview-header { background-color: #ffffff !important; color: #0f172a !important; }';
             document.head.appendChild(overrideStyle);
             
-            body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important;';
+            body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important;';
             
             const topBar = document.createElement('header');
             topBar.id = 'technosprint-preview-header';
@@ -254,9 +252,12 @@
         }
       })();
     </script>
+    
+    <link rel="stylesheet" crossorigin href="./assets/index-CdcorlS7.css">
   </head>
   <body>
   
-    <div id="root"></div>
+    <div id="root"></div>
+    <script type="module" crossorigin src="./assets/index-B79AtgC6.js"></script>
   </body>
 </html>

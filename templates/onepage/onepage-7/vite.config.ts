@@ -5,7 +5,8 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: "/templates/onepage/onepage-7/",
+    base: './',
+    
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

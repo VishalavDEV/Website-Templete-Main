@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fonix — Spatial Sound Synthesis & 3D Web Experience PRD</title>
+    <title>Fonix — Spatial Sound Synthesis & 3D Web Experience</title>
     <meta name="description" content="Official Product Requirements Document (PRD) and live interactive 3D WebGL showcase for Fonix." />
     <meta property="og:title" content="Fonix — Spatial Sound Synthesis & 3D Web Experience PRD" />
     <meta property="og:description" content="Official Product Requirements Document (PRD) and live interactive 3D WebGL showcase for Fonix." />
@@ -12,9 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <script type="module" crossorigin src="/templates/onepage/onepage-7/assets/index-Dwpa50V2.js"></script>
-    <link rel="stylesheet" crossorigin href="/templates/onepage/onepage-7/assets/index-Bt8P95_r.css">
-      
       <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
     <script>
       (function() {
@@ -31,6 +28,7 @@
             document.documentElement.removeAttribute('style');
             
             const body = document.body;
+            if (!body) return;
             body.className = '';
             body.innerHTML = '';
             body.removeAttribute('style');
@@ -40,7 +38,7 @@
             overrideStyle.textContent = 'html, body { margin: 0 !important; padding: 0 !important; width: 100vw !important; height: 100vh !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important; color: #0f172a !important; } #technosprint-preview-header { background-color: #ffffff !important; color: #0f172a !important; }';
             document.head.appendChild(overrideStyle);
             
-            body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important;';
+            body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important;';
             
             const topBar = document.createElement('header');
             topBar.id = 'technosprint-preview-header';
@@ -254,10 +252,13 @@
         }
       })();
     </script>
+    
+    <link rel="stylesheet" crossorigin href="./assets/index-CKvV6N-r.css">
   </head>
   <body>
   
-    <div id="root"></div>
+    <div id="root"></div>
+    <script type="module" crossorigin src="./assets/index-BkbV9TAp.js"></script>
   </body>
 </html>
 

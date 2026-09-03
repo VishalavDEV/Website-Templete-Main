@@ -12,9 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/templates/onepage/onepage-8/assets/index-pM3pBhM9.js"></script>
-    <link rel="stylesheet" crossorigin href="/templates/onepage/onepage-8/assets/index-CYxOk5xu.css">
-      
       <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
     <script>
       (function() {
@@ -31,6 +28,7 @@
             document.documentElement.removeAttribute('style');
             
             const body = document.body;
+            if (!body) return;
             body.className = '';
             body.innerHTML = '';
             body.removeAttribute('style');
@@ -40,7 +38,7 @@
             overrideStyle.textContent = 'html, body { margin: 0 !important; padding: 0 !important; width: 100vw !important; height: 100vh !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important; color: #0f172a !important; } #technosprint-preview-header { background-color: #ffffff !important; color: #0f172a !important; }';
             document.head.appendChild(overrideStyle);
             
-            body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important;';
+            body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important;';
             
             const topBar = document.createElement('header');
             topBar.id = 'technosprint-preview-header';
@@ -254,10 +252,13 @@
         }
       })();
     </script>
+    
+    <link rel="stylesheet" crossorigin href="./assets/index-CgwlPVTf.css">
   </head>
   <body class="bg-[#050608] text-[#e2e8f0] font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden antialiased">
   
-    <div id="root"></div>
+    <div id="root"></div>
+    <script type="module" crossorigin src="./assets/index-DGwGQPrH.js"></script>
   </body>
 </html>
 
