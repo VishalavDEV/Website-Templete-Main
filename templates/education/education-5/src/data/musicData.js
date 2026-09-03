@@ -1,7 +1,7 @@
 export const musicData = {
   brand: {
-    name: "CADENZA",
-    logoText: "Cadenza Academy",
+    name: "HARMONYFLOW",
+    logoText: "HarmonyFlow Academy",
     tagline: "Inspiring Creative Excellence"
   },
   
