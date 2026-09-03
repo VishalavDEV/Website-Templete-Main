@@ -1,10 +1,3 @@
-const getDynamicBasename = () => {
-  let p = window.location.pathname;
-  if (p.endsWith('/index.html')) p = p.slice(0, -11);
-  if (p.endsWith('/')) p = p.slice(0, -1);
-  return p;
-};
-
 import { useState } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
@@ -45,7 +38,7 @@ function App() {
   const openCompanyModal = (company) => setActiveCompany(company);
 
   return (
-    <Router basename={getDynamicBasename()}>
+    <Router>
       <div className="aura-bg app-container flex flex-col" style={{ minHeight: '100vh', position: 'relative' }}>
         <AuraBackground />
         
