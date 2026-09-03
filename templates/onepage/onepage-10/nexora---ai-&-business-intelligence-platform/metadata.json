@@ -1,0 +1,6 @@
+{
+  "name": "NEXORA - AI & Business Intelligence Platform",
+  "description": "Next-generation 2026 SaaS, AI consulting, and real-time business intelligence platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
