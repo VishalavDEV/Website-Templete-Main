@@ -5,36 +5,36 @@ import ScrollReveal from './components/ScrollReveal';
 
 export const menuData = {
   starters: [
-    { id: 'f1', name: 'Angara Paneer Tikka', price: 290, desc: 'Fresh cottage cheese cubes marinated in spiced yogurt, smoked mustard oil, cooked in traditional clay ovens.', veg: true, tags: ['Gluten-free'], spice: 2, allergens: 'Dairy', image: 'images/restaurants/aangan-ember/menu/angara-paneer-tikka.webp' },
-    { id: 'f2', name: 'Murgh Malai Kebab', price: 340, desc: 'Tender chicken breast chunks marinated in rich cream, cheese, cardamom, and white pepper, charred in tandoor.', veg: false, tags: ['Gluten-free'], spice: 1, allergens: 'Dairy', image: 'images/restaurants/aangan-ember/menu/murgh-malai-kebab.webp' }
+    { id: 'f1', name: 'Angara Paneer Tikka', price: 290, desc: 'Fresh cottage cheese cubes marinated in spiced yogurt, smoked mustard oil, cooked in traditional clay ovens.', veg: true, tags: ['Gluten-free'], spice: 2, allergens: 'Dairy', image: './images/restaurants/aangan-ember/menu/angara-paneer-tikka.webp' },
+    { id: 'f2', name: 'Murgh Malai Kebab', price: 340, desc: 'Tender chicken breast chunks marinated in rich cream, cheese, cardamom, and white pepper, charred in tandoor.', veg: false, tags: ['Gluten-free'], spice: 1, allergens: 'Dairy', image: './images/restaurants/aangan-ember/menu/murgh-malai-kebab.webp' }
   ],
   soups: [
-    { id: 'f3', name: 'Shahi Tamatar Shorba', price: 140, desc: 'A rich spiced tomato soup flavored with roasted cumin, fresh cream and crunchy herb croutons.', veg: true, tags: ['Jain-friendly'], spice: 1, allergens: 'Dairy', image: 'images/restaurants/aangan-ember/menu/shahi-tamatar-shorba.webp' },
-    { id: 'f4', name: 'Mughlai Murgh Shorba', price: 190, desc: 'Classic double-strength chicken broth cooked slow with whole cardamoms, almonds and saffron strands.', veg: false, tags: ['Gluten-free'], spice: 1, allergens: 'Nuts', image: 'images/restaurants/aangan-ember/menu/mughlai-murgh-shorba.png' }
+    { id: 'f3', name: 'Shahi Tamatar Shorba', price: 140, desc: 'A rich spiced tomato soup flavored with roasted cumin, fresh cream and crunchy herb croutons.', veg: true, tags: ['Jain-friendly'], spice: 1, allergens: 'Dairy', image: './images/restaurants/aangan-ember/menu/shahi-tamatar-shorba.webp' },
+    { id: 'f4', name: 'Mughlai Murgh Shorba', price: 190, desc: 'Classic double-strength chicken broth cooked slow with whole cardamoms, almonds and saffron strands.', veg: false, tags: ['Gluten-free'], spice: 1, allergens: 'Nuts', image: './images/restaurants/aangan-ember/menu/mughlai-murgh-shorba.png' }
   ],
   'main-course': [
-    { id: 'f5', name: 'Royal Butter Chicken (Murgh Makhani)', price: 460, desc: 'Tandoori chicken pieces simmered in a velvety, rich tomato gravy loaded with fresh butter and dried fenugreek leaves.', veg: false, tags: ['Gluten-free'], spice: 2, allergens: 'Dairy, Nuts', image: 'images/restaurants/aangan-ember/menu/royal-butter-chicken.webp' },
-    { id: 'f6', name: 'Kashmiri Mutton Rogan Josh', price: 540, desc: 'Slow-cooked baby lamb leg portions in an authentic aromatic red gravy flavored with Kashmiri maval petals and ginger.', veg: false, tags: ['Gluten-free'], spice: 2, allergens: 'None', image: 'images/restaurants/aangan-ember/menu/kashmiri-mutton-rogan-josh.png' }
+    { id: 'f5', name: 'Royal Butter Chicken (Murgh Makhani)', price: 460, desc: 'Tandoori chicken pieces simmered in a velvety, rich tomato gravy loaded with fresh butter and dried fenugreek leaves.', veg: false, tags: ['Gluten-free'], spice: 2, allergens: 'Dairy, Nuts', image: './images/restaurants/aangan-ember/menu/royal-butter-chicken.webp' },
+    { id: 'f6', name: 'Kashmiri Mutton Rogan Josh', price: 540, desc: 'Slow-cooked baby lamb leg portions in an authentic aromatic red gravy flavored with Kashmiri maval petals and ginger.', veg: false, tags: ['Gluten-free'], spice: 2, allergens: 'None', image: './images/restaurants/aangan-ember/menu/kashmiri-mutton-rogan-josh.png' }
   ],
   biryanis: [
-    { id: 'f7', name: 'Deccani Murgh Dum Biryani', price: 420, desc: 'Basmati rice cooked in layers with marinated spiced chicken, whole spices, saffron, and fresh mint on low heat.', veg: false, tags: ['Gluten-free'], spice: 2, allergens: 'Dairy', image: 'images/restaurants/aangan-ember/menu/deccani-murgh-dum-biryani.webp' },
-    { id: 'f8', name: 'Shahi Subz Biryani', price: 360, desc: 'Fragrant long-grain rice layered with seasonal cauliflower, green peas, carrots, saffron and caramelized onions.', veg: true, tags: ['Jain-friendly', 'Gluten-free'], spice: 2, allergens: 'Dairy', image: 'images/restaurants/aangan-ember/menu/shahi-subz-biryani.png' }
+    { id: 'f7', name: 'Deccani Murgh Dum Biryani', price: 420, desc: 'Basmati rice cooked in layers with marinated spiced chicken, whole spices, saffron, and fresh mint on low heat.', veg: false, tags: ['Gluten-free'], spice: 2, allergens: 'Dairy', image: './images/restaurants/aangan-ember/menu/deccani-murgh-dum-biryani.webp' },
+    { id: 'f8', name: 'Shahi Subz Biryani', price: 360, desc: 'Fragrant long-grain rice layered with seasonal cauliflower, green peas, carrots, saffron and caramelized onions.', veg: true, tags: ['Jain-friendly', 'Gluten-free'], spice: 2, allergens: 'Dairy', image: './images/restaurants/aangan-ember/menu/shahi-subz-biryani.png' }
   ],
   vegetarian: [
-    { id: 'f9', name: 'Dal Makhani (Lalla Mussa)', price: 320, desc: 'Black lentils slow-cooked overnight on charcoal embers with butter, fresh cream, tomato puree, and fenugreek.', veg: true, tags: ['Gluten-free'], spice: 1, allergens: 'Dairy', image: 'images/restaurants/aangan-ember/menu/dal-makhani.png' },
-    { id: 'f10', name: 'Shahi Kadhai Paneer', price: 380, desc: 'Cottage cheese chunks tossed in spicy dry coriander seed and red pepper gravy cooked in heavy iron kadhai.', veg: true, tags: ['Gluten-free'], spice: 2, allergens: 'Dairy', image: 'images/restaurants/aangan-ember/menu/shahi-kadhai-paneer.webp' }
+    { id: 'f9', name: 'Dal Makhani (Lalla Mussa)', price: 320, desc: 'Black lentils slow-cooked overnight on charcoal embers with butter, fresh cream, tomato puree, and fenugreek.', veg: true, tags: ['Gluten-free'], spice: 1, allergens: 'Dairy', image: './images/restaurants/aangan-ember/menu/dal-makhani.png' },
+    { id: 'f10', name: 'Shahi Kadhai Paneer', price: 380, desc: 'Cottage cheese chunks tossed in spicy dry coriander seed and red pepper gravy cooked in heavy iron kadhai.', veg: true, tags: ['Gluten-free'], spice: 2, allergens: 'Dairy', image: './images/restaurants/aangan-ember/menu/shahi-kadhai-paneer.webp' }
   ],
   'non-vegetarian': [
-    { id: 'f11', name: 'Tandoori Murgh (Half)', price: 350, desc: 'Classic bone-in spring chicken marinated in yogurt spice blends, roasted on iron skewers inside charcoal clay oven.', veg: false, tags: ['Gluten-free'], spice: 3, allergens: 'Dairy', image: 'images/restaurants/aangan-ember/menu/tandoori-murgh.png' },
-    { id: 'f12', name: 'Awadhi Seekh Kebab (Mutton)', price: 440, desc: 'Mincemeat spiced with cardamoms, ginger, garlic, skewered and charred to melting tenderness.', veg: false, tags: ['Gluten-free'], spice: 2, allergens: 'None', image: 'images/restaurants/aangan-ember/menu/awadhi-seekh-kebab.png' }
+    { id: 'f11', name: 'Tandoori Murgh (Half)', price: 350, desc: 'Classic bone-in spring chicken marinated in yogurt spice blends, roasted on iron skewers inside charcoal clay oven.', veg: false, tags: ['Gluten-free'], spice: 3, allergens: 'Dairy', image: './images/restaurants/aangan-ember/menu/tandoori-murgh.png' },
+    { id: 'f12', name: 'Awadhi Seekh Kebab (Mutton)', price: 440, desc: 'Mincemeat spiced with cardamoms, ginger, garlic, skewered and charred to melting tenderness.', veg: false, tags: ['Gluten-free'], spice: 2, allergens: 'None', image: './images/restaurants/aangan-ember/menu/awadhi-seekh-kebab.png' }
   ],
   desserts: [
-    { id: 'f13', name: 'Kesari Gulab Jamun (2 Pcs)', price: 130, desc: 'Warm golden milk solids dumplings stuffed with cardamom and saffron, soaked in sweet rosewater syrup.', veg: true, tags: ['Jain-friendly'], spice: 0, allergens: 'Dairy, Gluten', image: 'images/restaurants/aangan-ember/menu/kesari-gulab-jamun.png' },
-    { id: 'f14', name: 'Royal Kesar Rasmalai', price: 160, desc: 'Chilled cottage cheese discs soaked in saffron-infused sweetened thickened milk, topped with pistachios.', veg: true, tags: ['Gluten-free', 'Jain-friendly'], spice: 0, allergens: 'Dairy, Nuts', image: 'images/restaurants/aangan-ember/menu/royal-kesar-rasmalai.png' }
+    { id: 'f13', name: 'Kesari Gulab Jamun (2 Pcs)', price: 130, desc: 'Warm golden milk solids dumplings stuffed with cardamom and saffron, soaked in sweet rosewater syrup.', veg: true, tags: ['Jain-friendly'], spice: 0, allergens: 'Dairy, Gluten', image: './images/restaurants/aangan-ember/menu/kesari-gulab-jamun.png' },
+    { id: 'f14', name: 'Royal Kesar Rasmalai', price: 160, desc: 'Chilled cottage cheese discs soaked in saffron-infused sweetened thickened milk, topped with pistachios.', veg: true, tags: ['Gluten-free', 'Jain-friendly'], spice: 0, allergens: 'Dairy, Nuts', image: './images/restaurants/aangan-ember/menu/royal-kesar-rasmalai.png' }
   ],
   beverages: [
-    { id: 'f15', name: 'Peshawari Sweet Lassi', price: 120, desc: 'Thick, creamy churned yogurt drink sweetened with sugar, topped with thick milk malai and almond slivers.', veg: true, tags: ['Gluten-free', 'Jain-friendly'], spice: 0, allergens: 'Dairy, Nuts', image: 'images/restaurants/aangan-ember/menu/peshawari-sweet-lassi.png' },
-    { id: 'f16', name: 'Masala Shahi Chaas', price: 90, desc: 'Chilled salted buttermilk spiced with roasted cumin, green chillies, mint and fresh ginger juice.', veg: true, tags: ['Gluten-free', 'Jain-friendly'], spice: 1, allergens: 'Dairy', image: 'images/restaurants/aangan-ember/menu/masala-shahi-chaas.png' }
+    { id: 'f15', name: 'Peshawari Sweet Lassi', price: 120, desc: 'Thick, creamy churned yogurt drink sweetened with sugar, topped with thick milk malai and almond slivers.', veg: true, tags: ['Gluten-free', 'Jain-friendly'], spice: 0, allergens: 'Dairy, Nuts', image: './images/restaurants/aangan-ember/menu/peshawari-sweet-lassi.png' },
+    { id: 'f16', name: 'Masala Shahi Chaas', price: 90, desc: 'Chilled salted buttermilk spiced with roasted cumin, green chillies, mint and fresh ginger juice.', veg: true, tags: ['Gluten-free', 'Jain-friendly'], spice: 1, allergens: 'Dairy', image: './images/restaurants/aangan-ember/menu/masala-shahi-chaas.png' }
   ]
 };
 
@@ -150,9 +150,9 @@ export default function App() {
           <ScrollReveal animation="fade-in-left" delay={300}>
             <div style={{ position: 'relative' }}>
               <img
-                src="https://images.unsplash.com/photo-1585938338392-50a59970d2ee?auto=format&fit=crop&w=500&q=80"
+                src="./images/restaurants/aangan-ember/menu/tandoori-murgh.png"
                 alt="Tandoori chicken setup"
-                style={{ width: '100%', borderRadius: '4px', border: '1.5px solid #d4af37', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}
+                style={{ width: '100%', height: '380px', objectFit: 'cover', borderRadius: '8px', border: '1.5px solid #d4af37', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}
               />
             </div>
           </ScrollReveal>
@@ -210,7 +210,7 @@ export default function App() {
                   className="fastfood-card-img" 
                   onError={(e) => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = "images/restaurants/fallback-food.webp";
+                    e.currentTarget.src = "./images/restaurants/fallback-food.webp";
                   }}
                 />
                 <div className="fastfood-card-body">
@@ -274,7 +274,7 @@ export default function App() {
                     className="fastfood-card-img" 
                     onError={(e) => {
                       e.currentTarget.onerror = null;
-                      e.currentTarget.src = "images/restaurants/fallback-food.webp";
+                      e.currentTarget.src = "./images/restaurants/fallback-food.webp";
                     }}
                   />
                   <div className="fastfood-card-body">
@@ -405,7 +405,7 @@ export default function App() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px', maxWidth: '1000px', margin: '0 auto' }}>
           <ScrollReveal animation="zoom-in" delay={100}>
             <div style={{ textAlign: 'center' }}>
-              <img src="images/restaurants/aangan-ember/chef-arjun.png" alt="Chef Arjun Mehta" style={{ width: '100%', height: '340px', objectFit: 'cover', border: '1.5px solid #d4af37', marginBottom: '15px' }} />
+              <img src="./images/restaurants/aangan-ember/chef-arjun.png" alt="Chef Arjun Mehta" style={{ width: '100%', height: '340px', objectFit: 'cover', border: '1.5px solid #d4af37', marginBottom: '15px' }} />
               <h3 className="fastfood-font-impact" style={{ fontSize: '1.25rem', color: '#221511' }}>Chef Arjun Mehta</h3>
               <span style={{ fontSize: '0.8rem', color: '#d4af37', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px' }}>Executive Chef & Tandoor Master</span>
             </div>
@@ -413,7 +413,7 @@ export default function App() {
 
           <ScrollReveal animation="zoom-in" delay={250}>
             <div style={{ textAlign: 'center' }}>
-              <img src="images/restaurants/aangan-ember/chef-elena.png" alt="Chef Elena Dev" style={{ width: '100%', height: '340px', objectFit: 'cover', border: '1.5px solid #d4af37', marginBottom: '15px' }} />
+              <img src="./images/restaurants/aangan-ember/chef-elena.png" alt="Chef Elena Dev" style={{ width: '100%', height: '340px', objectFit: 'cover', border: '1.5px solid #d4af37', marginBottom: '15px' }} />
               <h3 className="fastfood-font-impact" style={{ fontSize: '1.25rem', color: '#221511' }}>Chef Elena Dev</h3>
               <span style={{ fontSize: '0.8rem', color: '#d4af37', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px' }}>Pastry Creator</span>
             </div>
