@@ -5,7 +5,11 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    
+    base: './',
+    build: {
+      outDir: path.resolve(__dirname, '../../frontend/public/templates/medical/medical-9'),
+      emptyOutDir: true,
+    },
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

@@ -492,7 +492,16 @@
   .hero-grid { grid-template-columns: 1fr; }
   .search-form-grid { grid-template-columns: 1fr 1fr; }
   .discovery-layout { grid-template-columns: 1fr; }
+  .filter-sidebar { position: static; top: auto; margin-bottom: 2rem; }
   .doctor-profile-hero { grid-template-columns: 1fr; text-align: center; }
   .doctor-profile-img { margin: 0 auto; }
   .emergency-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .search-form-grid { grid-template-columns: 1fr; }
+  .doctor-card { flex-direction: column; text-align: center; align-items: center; }
+  .doctor-header-row { flex-direction: column; align-items: center; gap: 0.5rem; }
+  .doctor-meta-list { flex-wrap: wrap; justify-content: center; }
+  .hero-title { font-size: 2.2rem; }
 }

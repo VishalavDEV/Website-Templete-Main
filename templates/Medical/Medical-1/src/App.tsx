@@ -154,7 +154,7 @@ export function App() {
     currentView === 'admin-dashboard';
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-teal-500 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-teal-500 selection:text-white overflow-x-hidden max-w-full">
       {/* Global Navigation Header */}
       <Navbar
         currentView={currentView}

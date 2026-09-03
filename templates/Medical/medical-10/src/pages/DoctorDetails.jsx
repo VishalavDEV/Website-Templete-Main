@@ -51,6 +51,9 @@ export default function DoctorDetails() {
                   src={doctor.image}
                   alt={doctor.name}
                   className="w-full h-80 lg:h-96 object-cover rounded-2xl object-top"
+                  onError={(e) => {
+                    e.target.src = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80";
+                  }}
                 />
               </div>
             </div>

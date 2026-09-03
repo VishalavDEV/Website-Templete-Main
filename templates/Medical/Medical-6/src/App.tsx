@@ -47,7 +47,7 @@ export function App() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#f8fafc' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#f8fafc', overflowX: 'hidden', maxWidth: '100vw' }}>
       {/* 1. Interactive Role Switcher Banner */}
       <RoleSwitcherBanner currentRole={currentRole} onRoleChange={handleRoleChange} />
 
