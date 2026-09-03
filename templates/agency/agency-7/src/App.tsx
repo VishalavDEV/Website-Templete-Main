@@ -1,3 +1,10 @@
+const getDynamicBasename = () => {
+  let p = window.location.pathname;
+  if (p.endsWith('/index.html')) p = p.slice(0, -11);
+  if (p.endsWith('/')) p = p.slice(0, -1);
+  return p;
+};
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
@@ -28,7 +35,7 @@ export const App: React.FC = () => {
     <ThemeProvider>
       <IntroProvider>
         <LightboxProvider>
-          <Router>
+          <Router basename={getDynamicBasename()}>
             <div className="min-h-screen bg-[#FBF9F5] dark:bg-[#0D0E12] text-neutral-900 dark:text-neutral-100 font-sans selection:bg-blue-600 selection:text-white transition-colors duration-300">
               {/* 3D Cinematic Entrance Animation */}
               <IntroAnimation />
