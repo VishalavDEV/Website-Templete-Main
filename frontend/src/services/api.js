@@ -3199,7 +3199,7 @@ category: { id: 20153, name: 'Business', slug: 'business' },
     previewImage: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
     price: 0,
-    category: { id: 20254, name: 'education', slug: 'education' },
+    category: { id: 20254, name: 'Education', slug: 'education' },
     pagesCount: 1,
     downloadsCount: 1620,
     description: 'A modern online education academy website featuring interactive course cards, filterable catalogs, and student portals.',
@@ -3628,8 +3628,12 @@ export const api = {
   },
 
   async getTemplatesByCategory(category) {
-    const res = MOCK_TEMPLATES.filter(t => t.category && (t.category.slug === category || t.category.name.toLowerCase() === category.toLowerCase()));
-    return Promise.resolve(res.length > 0 ? res : MOCK_TEMPLATES);
+    const target = (category || '').toLowerCase().trim();
+    const res = MOCK_TEMPLATES.filter(t => t.category && (
+      (t.category.slug || '').toLowerCase().trim() === target ||
+      (t.category.name || '').toLowerCase().trim() === target
+    ));
+    return Promise.resolve(res);
   },
 
   async getTemplateById(id) {
