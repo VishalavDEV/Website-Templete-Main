@@ -1,17 +1,17 @@
-import { nexoraImages } from './nexoraImages';
+import { apexventuresImages } from './apexventuresImages';
 
-export const nexoraData = {
+export const apexventuresData = {
   hero: {
     headline: 'Technology That Moves Business Forward.',
     paragraph: 'We design and construct digital products, high-throughput APIs, cloud infrastructure, and AI engines that power modern digital economies.',
     ctaPrimary: 'GET STARTED',
     ctaSecondary: 'DOCUMENTATION',
-    image: nexoraImages.hero,
+    image: apexventuresImages.hero,
     floatingWidget1: { title: 'Uptime SLA', value: '99.99%' },
     floatingWidget2: { title: 'Avg Latency', value: '12ms' }
   },
   platform: {
-    title: 'Nexora Platform Core',
+    title: 'ApexVentures Platform Core',
     desc: 'Our engine is built on modern distributed ledger models, multi-region database clusters, and sub-millisecond network routers.'
   },
   features: [
@@ -43,14 +43,14 @@ export const nexoraData = {
     { value: '50M+', label: 'Concurrent Users' }
   ],
   products: [
-    { name: 'Nexora Core DB', desc: 'Distributed SQL sharded dynamically for high-scale enterprise operations.', image: nexoraImages.projects[0] },
-    { name: 'Vector AI Engine', desc: 'Fast, secure nearest-neighbor search models matching dataset items.', image: nexoraImages.projects[1] },
-    { name: 'Shield Gateway', desc: 'Automated DDoS protection, credentials caching, and edge rate limiting.', image: nexoraImages.projects[2] }
+    { name: 'ApexVentures Core DB', desc: 'Distributed SQL sharded dynamically for high-scale enterprise operations.', image: apexventuresImages.projects[0] },
+    { name: 'Vector AI Engine', desc: 'Fast, secure nearest-neighbor search models matching dataset items.', image: apexventuresImages.projects[1] },
+    { name: 'Shield Gateway', desc: 'Automated DDoS protection, credentials caching, and edge rate limiting.', image: apexventuresImages.projects[2] }
   ],
   techStack: ['React', 'Node.js', 'Go', 'Kubernetes', 'Docker', 'AWS', 'Terraform', 'PostgreSQL', 'Redis'],
   stories: [
     {
-      quote: "Nexora reorganized our cloud setup in under three weeks. Our API latencies dropped by 65%, and hosting costs were cut in half.",
+      quote: "ApexVentures reorganized our cloud setup in under three weeks. Our API latencies dropped by 65%, and hosting costs were cut in half.",
       author: "Aris Thorne",
       role: "VP of Engineering",
       company: "SentryData Inc"

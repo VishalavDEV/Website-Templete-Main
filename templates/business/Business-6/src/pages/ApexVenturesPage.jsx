@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Server, Shield, Cpu, Terminal, Layers, Activity, Menu, X, ArrowRight } from 'lucide-react';
-import { nexoraData } from '../data/nexoraData';
+import { apexventuresData } from '../data/apexventuresData';
 
-export default function NexoraPage() {
+export default function ApexVenturesPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeProductIdx, setActiveProductIdx] = useState(0);
   const [hoveredArchStep, setHoveredArchStep] = useState(null);
 
-  const { hero, platform, features, architecture, stats, products, techStack, stories } = nexoraData;
+  const { hero, platform, features, architecture, stats, products, techStack, stories } = apexventuresData;
 
   const handleAnchorClick = (e, id) => {
     e.preventDefault();
@@ -38,7 +38,7 @@ export default function NexoraPage() {
             <div className="p-2 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-lg text-slate-950">
               <Cpu size={16} />
             </div>
-            <span className="font-mono tracking-widest text-slate-100">NEXORA</span>
+            <span className="font-mono tracking-widest text-slate-100">APEXVENTURES</span>
           </a>
 
           {/* Links */}
@@ -456,13 +456,13 @@ export default function NexoraPage() {
             ESTABLISH LINK
           </span>
           <h2 className="text-3xl md:text-5xl font-black mb-6">
-            Deploy Your Solution Stack with Nexora.
+            Deploy Your Solution Stack with ApexVentures.
           </h2>
           <p className="text-xs md:text-sm text-slate-400 leading-relaxed max-w-xl mx-auto mb-10">
             Submit a connection brief to coordinate edge integrations or database sharding options with our engineers.
           </p>
           <a
-            href="mailto:dev@nexora.io"
+            href="mailto:dev@apexventures.io"
             className="px-10 py-3.5 bg-cyan-500 text-slate-950 font-mono font-bold text-xs tracking-widest hover:bg-white transition-colors uppercase inline-block rounded-lg shadow-lg shadow-cyan-500/10"
           >
             Open Connection Node
@@ -475,9 +475,9 @@ export default function NexoraPage() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
             <Cpu size={14} className="text-cyan-400" />
-            <span className="text-white font-bold uppercase tracking-wider">NEXORA DEPLOYMENTS</span>
+            <span className="text-white font-bold uppercase tracking-wider">APEXVENTURES DEPLOYMENTS</span>
           </div>
-          <p className="text-[10px]">&copy; 2026 Nexora Distributed Systems. All rights reserved.</p>
+          <p className="text-[10px]">&copy; 2026 ApexVentures Distributed Systems. All rights reserved.</p>
         </div>
       </footer>
     </div>

@@ -1,4 +1,4 @@
-export const nexoraImages = {
+export const apexventuresImages = {
   hero: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80', // Digital Circuit/Datacenter lines
   platform: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80', // Server racks/cloud infrastructure
   developers: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80', // Code on terminal screens
