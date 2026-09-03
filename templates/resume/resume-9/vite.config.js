@@ -4,7 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/templates/resume/resume-9/",
+  base: './',
+  
   plugins: [
     react(),
     tailwindcss(),

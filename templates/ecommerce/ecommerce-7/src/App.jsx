@@ -1,3 +1,10 @@
+const getDynamicBasename = () => {
+  let p = window.location.pathname;
+  if (p.endsWith('/index.html')) p = p.slice(0, -11);
+  if (p.endsWith('/')) p = p.slice(0, -1);
+  return p;
+};
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -40,7 +47,7 @@ const ProtectedRoute = ({ children, roleRequired }) => {
 
 function App() {
   return (
-    <Router basename="/templates/ecommerce/ecommerce-7">
+    <Router basename={getDynamicBasename()}>
       <AuthProvider>
         <CartProvider>
           <div className="min-h-screen bg-pink-50 relative flex flex-col justify-between">

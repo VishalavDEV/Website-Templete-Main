@@ -1,3 +1,10 @@
+const getDynamicBasename = () => {
+  let p = window.location.pathname;
+  if (p.endsWith('/index.html')) p = p.slice(0, -11);
+  if (p.endsWith('/')) p = p.slice(0, -1);
+  return p;
+};
+
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
@@ -8,7 +15,7 @@ import { AppRoutes } from './routes';
 
 export function App() {
   return (
-    <BrowserRouter basename="/templates/admin/admin-6">
+    <BrowserRouter basename={getDynamicBasename()} basename="/templates/admin/admin-6">
       <ThemeProvider>
         <AuthProvider>
           <ToastProvider>

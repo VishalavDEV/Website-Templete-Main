@@ -1,3 +1,10 @@
+const getDynamicBasename = () => {
+  let p = window.location.pathname;
+  if (p.endsWith('/index.html')) p = p.slice(0, -11);
+  if (p.endsWith('/')) p = p.slice(0, -1);
+  return p;
+};
+
 import React, { Suspense } from 'react';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { Providers } from './providers';
@@ -22,7 +29,7 @@ export default function App() {
     <ErrorBoundary>
       <Providers>
         <Suspense fallback={<AppLoading />}>
-          <RouterProvider router={router} />
+          <Router basename={getDynamicBasename()}Provider router={router} />
         </Suspense>
       </Providers>
     </ErrorBoundary>

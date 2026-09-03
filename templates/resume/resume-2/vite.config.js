@@ -4,7 +4,8 @@ import { defineConfig } from 'vite'
 // Template 3 — Dr. Maya Ellison | Consultant Cardiologist
 // Self-contained Vite config. Do NOT share or merge with other template configs.
 export default defineConfig({
-  base: "/templates/resume/resume-2/",
+  base: './',
+  
   plugins: [react()],
   // Scoped build output keeps dist isolated from other templates
   build: {
