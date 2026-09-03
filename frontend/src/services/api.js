@@ -287,7 +287,7 @@ const MOCK_TEMPLATES = [
   },
   {
     id: 20037,
-    name: 'Ember House Noire — Contemporary Garden Restaurant',
+    name: 'CHENNAI RESTAURANT — Contemporary Garden Restaurant',
     slug: 'ember-house-noire',
     previewImage: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',

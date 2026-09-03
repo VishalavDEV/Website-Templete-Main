@@ -1,21 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LUMIÈRE — Coastal Cuisine · Modern Table | Chennai, India</title>
-  <meta name="description" content="A contemporary Mediterranean restaurant in Chennai inspired by the sea, sunlight, architecture, fresh ingredients and relaxed fine dining.">
-  <meta property="og:title" content="LUMIÈRE — Coastal Cuisine · Modern Table">
-  <meta property="og:description" content="Relaxed fine dining inspired by Mediterranean waters and coastal harvests. Located in Chennai, India.">
-  <meta property="og:type" content="website">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/templates/restaurant/restaurant-3/assets/main-DibN1ccu.js"></script>
-  <link rel="stylesheet" crossorigin href="/templates/restaurant/restaurant-3/assets/main-DsbYZcSk.css">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumière — Modern Culinary Concept Store</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN (scoped with preflight disabled) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: {
+          preflight: false,
+        },
+        theme: {
+          extend: {
+            colors: {
+              warmIvory: '#ECEBE6',
+              charcoal: '#1F1F1F',
+              mutedSlate: '#666666',
+              accentGreen: '#25D366',
+              brand: '#6366f1',
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              serif: ['"Cormorant Garamond"', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
       <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
     <script>
       (function() {
@@ -32,6 +51,7 @@
             document.documentElement.removeAttribute('style');
             
             const body = document.body;
+            if (!body) return;
             body.className = '';
             body.innerHTML = '';
             body.removeAttribute('style');
@@ -255,10 +275,13 @@
         }
       })();
     </script>
+    
+    <link rel="stylesheet" crossorigin href="./assets/index-BirGXibf.css">
   </head>
-<body>
+  <body>
   
-
-  <div id="root"></div>
-</body>
+    <div id="root"></div>
+    <script type="module" crossorigin src="./assets/index-B2bEL7Ru.js"></script>
+  </body>
 </html>
+

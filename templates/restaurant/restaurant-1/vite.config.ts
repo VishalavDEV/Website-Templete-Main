@@ -5,8 +5,9 @@ import { defineConfig } from 'vite';
 
 export default defineConfig(() => {
   return {
+    base: './',
     plugins: [react(), tailwindcss()],
-    base: '/templates/restaurant/restaurant-1/',
+    
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
