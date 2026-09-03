@@ -56,7 +56,7 @@ const Navbar = () => {
             A
           </div>
           <span className="font-extrabold text-xl tracking-tight text-primaryText">
-            Aura<span className="text-primaryAccent">Digital</span>
+            Nexus<span className="text-primaryAccent">Biz</span>
           </span>
         </Link>
 

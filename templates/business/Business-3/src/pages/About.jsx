@@ -20,7 +20,7 @@ const About = () => {
   ];
 
   const timeline = [
-    { year: '2016', title: 'AuraDigital Founded', desc: 'Launched as a three-person startup in Silicon Valley, focused on creative UI designs.' },
+    { year: '2016', title: 'NexusBiz Founded', desc: 'Launched as a three-person startup in Silicon Valley, focused on creative UI designs.' },
     { year: '2019', title: 'Expansion & Full Stack', desc: 'Integrated backend engineering capabilities, launching our first Spring Boot + React SaaS integrations.' },
     { year: '2022', title: 'Global Operations', desc: 'Expanded operations to serve clients across Europe and Asia, growing our core team to 30 experts.' },
     { year: '2026', title: 'AI Automation Integration', desc: 'Seeded next-generation automated analytics workflows and AI assistant plugins for Enterprise brands.' }
@@ -39,7 +39,7 @@ const About = () => {
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-xs font-semibold text-primaryAccent"
           >
             <Star size={12} className="fill-primaryAccent" />
-            <span>Meet AuraDigital</span>
+            <span>Meet NexusBiz</span>
           </motion.div>
           
           <motion.h1 
@@ -66,7 +66,7 @@ const About = () => {
           <div className="flex flex-col gap-6">
             <h2 className="text-3xl font-extrabold text-primaryText">Creative Vision. Engineered Execution.</h2>
             <p className="text-secondaryText text-sm sm:text-base leading-relaxed">
-              We started AuraDigital with a conviction: software should not just be functional; it should be beautiful, fast, and secure.
+              We started NexusBiz with a conviction: software should not just be functional; it should be beautiful, fast, and secure.
             </p>
             <p className="text-secondaryText text-sm sm:text-base leading-relaxed">
               We focus on building long-term digital strategies, combining the modern flexibility of React, Vite, and Tailwind with the robust, secure scaling of Java and Spring Boot.

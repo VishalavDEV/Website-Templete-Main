@@ -13,7 +13,7 @@ const Footer = () => {
               A
             </div>
             <span className="font-extrabold text-xl tracking-tight text-primaryText">
-              Aura<span className="text-primaryAccent">Digital</span>
+              Nexus<span className="text-primaryAccent">Biz</span>
             </span>
           </Link>
           <p className="text-secondaryText text-sm leading-relaxed max-w-xs">
@@ -77,7 +77,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-3">
             <Mail size={18} className="text-primaryAccent shrink-0" />
-            <a href="mailto:hello@auradigital.com" className="hover:text-primaryText transition-colors">hello@auradigital.com</a>
+            <a href="mailto:hello@nexusbiz.com" className="hover:text-primaryText transition-colors">hello@nexusbiz.com</a>
           </div>
           <div className="flex items-center gap-3">
             <Phone size={18} className="text-primaryAccent shrink-0" />
@@ -87,7 +87,7 @@ const Footer = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-customBorder flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-secondaryText">
-        <span>© {new Date().getFullYear()} AuraDigital Inc. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} NexusBiz Inc. All rights reserved.</span>
         <div className="flex gap-6">
           <a href="#" className="hover:text-primaryText transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-primaryText transition-colors">Terms of Service</a>
