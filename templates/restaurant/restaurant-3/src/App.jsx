@@ -5,36 +5,36 @@ import ScrollReveal from './components/ScrollReveal';
 
 export const menuData = {
   starters: [
-    { id: 'ca1', name: 'Karimeen Fish Fry', price: 290, desc: 'Pearl spot fish marinated in fiery ginger, garlic, red chillies, and lemon juice, pan-fried to crisp perfection.', veg: false, tags: ['Gluten-free'], spice: 3, allergens: 'Fish', image: '/images/restaurants/samudra-spices/menu/karimeen-fish-fry.png' },
-    { id: 'ca2', name: 'Konkan Rava Prawns', price: 320, desc: 'Plump tiger prawns coated in spiced semolina, shallow-fried with curry leaves and green chillies.', veg: false, tags: ['None'], spice: 2, allergens: 'Shellfish, Gluten', image: '/images/restaurants/samudra-spices/menu/konkan-rava-prawns.png' }
+    { id: 'ca1', name: 'Karimeen Fish Fry', price: 290, desc: 'Pearl spot fish marinated in fiery ginger, garlic, red chillies, and lemon juice, pan-fried to crisp perfection.', veg: false, tags: ['Gluten-free'], spice: 3, allergens: 'Fish', image: './images/restaurants/samudra-spices/menu/karimeen-fish-fry.png' },
+    { id: 'ca2', name: 'Konkan Rava Prawns', price: 320, desc: 'Plump tiger prawns coated in spiced semolina, shallow-fried with curry leaves and green chillies.', veg: false, tags: ['None'], spice: 2, allergens: 'Shellfish, Gluten', image: './images/restaurants/samudra-spices/menu/konkan-rava-prawns.png' }
   ],
   soups: [
-    { id: 'ca3', name: 'Malabar Crab Soup', price: 190, desc: 'Chowder style crab soup cooked with fresh coconut milk, black pepper, and curry leaves.', veg: false, tags: ['Gluten-free'], spice: 2, allergens: 'Shellfish, Dairy', image: '/images/restaurants/samudra-spices/menu/malabar-crab-soup.png' },
-    { id: 'ca4', name: 'Tangy Kokum Broth', price: 110, desc: 'Warm clear broth of kokum berries, green chillies, ginger, and fresh coriander.', veg: true, tags: ['Vegan', 'Jain-friendly', 'Gluten-free'], spice: 2, allergens: 'None', image: '/images/restaurants/samudra-spices/menu/tangy-kokum-broth.png' }
+    { id: 'ca3', name: 'Malabar Crab Soup', price: 190, desc: 'Chowder style crab soup cooked with fresh coconut milk, black pepper, and curry leaves.', veg: false, tags: ['Gluten-free'], spice: 2, allergens: 'Shellfish, Dairy', image: './images/restaurants/samudra-spices/menu/malabar-crab-soup.png' },
+    { id: 'ca4', name: 'Tangy Kokum Broth', price: 110, desc: 'Warm clear broth of kokum berries, green chillies, ginger, and fresh coriander.', veg: true, tags: ['Vegan', 'Jain-friendly', 'Gluten-free'], spice: 2, allergens: 'None', image: './images/restaurants/samudra-spices/menu/tangy-kokum-broth.png' }
   ],
   'main-course': [
-    { id: 'ca5', name: 'Kerala Fish Curry', price: 440, desc: 'Kingfish steaks simmered in a red-hot coconut gravy flavored with kudampuli (gamboge) and curry leaves.', veg: false, tags: ['Gluten-free'], spice: 3, allergens: 'Fish', image: '/images/restaurants/samudra-spices/menu/kerala-fish-curry.png' },
-    { id: 'ca6', name: 'Coastal Prawn Masala', price: 460, desc: 'Juicy prawns sautéed in dry toasted coconut, small onions, garlic, and fresh green chillies.', veg: false, tags: ['Gluten-free'], spice: 2, allergens: 'Shellfish', image: '/images/restaurants/samudra-spices/menu/coastal-prawn-masala.png' }
+    { id: 'ca5', name: 'Kerala Fish Curry', price: 440, desc: 'Kingfish steaks simmered in a red-hot coconut gravy flavored with kudampuli (gamboge) and curry leaves.', veg: false, tags: ['Gluten-free'], spice: 3, allergens: 'Fish', image: './images/restaurants/samudra-spices/menu/kerala-fish-curry.png' },
+    { id: 'ca6', name: 'Coastal Prawn Masala', price: 460, desc: 'Juicy prawns sautéed in dry toasted coconut, small onions, garlic, and fresh green chillies.', veg: false, tags: ['Gluten-free'], spice: 2, allergens: 'Shellfish', image: './images/restaurants/samudra-spices/menu/coastal-prawn-masala.png' }
   ],
   biryanis: [
-    { id: 'ca7', name: 'Malabar Prawn Biryani', price: 480, desc: 'Fragrant short-grain Khaima rice layered with spiced prawns, ghee, saffron, fried onions, and mint.', veg: false, tags: ['Gluten-free'], spice: 2, allergens: 'Dairy, Shellfish', image: '/images/restaurants/samudra-spices/menu/malabar-prawn-biryani.png' },
-    { id: 'ca8', name: 'Kochi Seafood Biryani', price: 520, desc: 'Steamed rice cooked with fish chunks, calamari, prawns, and unique coastal ground dry spices.', veg: false, tags: ['Gluten-free'], spice: 3, allergens: 'Fish, Shellfish, Dairy', image: '/images/restaurants/samudra-spices/menu/kochi-seafood-biryani.png' }
+    { id: 'ca7', name: 'Malabar Prawn Biryani', price: 480, desc: 'Fragrant short-grain Khaima rice layered with spiced prawns, ghee, saffron, fried onions, and mint.', veg: false, tags: ['Gluten-free'], spice: 2, allergens: 'Dairy, Shellfish', image: './images/restaurants/samudra-spices/menu/malabar-prawn-biryani.png' },
+    { id: 'ca8', name: 'Kochi Seafood Biryani', price: 520, desc: 'Steamed rice cooked with fish chunks, calamari, prawns, and unique coastal ground dry spices.', veg: false, tags: ['Gluten-free'], spice: 3, allergens: 'Fish, Shellfish, Dairy', image: './images/restaurants/samudra-spices/menu/kochi-seafood-biryani.png' }
   ],
   vegetarian: [
-    { id: 'ca9', name: 'Malabar Vegetable Korma', price: 290, desc: 'Fresh garden peas, carrots, and potatoes simmered in a mildly spiced, cashew-coconut milk gravy.', veg: true, tags: ['Vegan', 'Gluten-free', 'Jain-friendly'], spice: 1, allergens: 'Nuts', image: '/images/restaurants/samudra-spices/menu/malabar-vegetable-korma.png' },
-    { id: 'ca10', name: 'Avial Kerala Style', price: 280, desc: 'Thick mixture of coastal vegetables, curd, and grated coconut seasoned with pure coconut oil.', veg: true, tags: ['Gluten-free'], spice: 1, allergens: 'Dairy', image: '/images/restaurants/samudra-spices/menu/avial-kerala-style.png' }
+    { id: 'ca9', name: 'Malabar Vegetable Korma', price: 290, desc: 'Fresh garden peas, carrots, and potatoes simmered in a mildly spiced, cashew-coconut milk gravy.', veg: true, tags: ['Vegan', 'Gluten-free', 'Jain-friendly'], spice: 1, allergens: 'Nuts', image: './images/restaurants/samudra-spices/menu/malabar-vegetable-korma.png' },
+    { id: 'ca10', name: 'Avial Kerala Style', price: 280, desc: 'Thick mixture of coastal vegetables, curd, and grated coconut seasoned with pure coconut oil.', veg: true, tags: ['Gluten-free'], spice: 1, allergens: 'Dairy', image: './images/restaurants/samudra-spices/menu/avial-kerala-style.png' }
   ],
   'non-vegetarian': [
-    { id: 'ca11', name: 'Mangalorean Chicken Sukka', price: 380, desc: 'Dry chicken dish cooked with dry roasted spices, grated coconut, garlic, and fresh curry leaves.', veg: false, tags: ['Gluten-free'], spice: 3, allergens: 'None', image: '/images/restaurants/samudra-spices/menu/mangalorean-chicken-sukka.png' },
-    { id: 'ca12', name: 'Kochi Duck Roast (Mapas)', price: 420, desc: 'Tender duck portions slow-cooked in thick second-press coconut milk with cardamoms and green chillies.', veg: false, tags: ['Gluten-free'], spice: 2, allergens: 'None', image: '/images/restaurants/samudra-spices/menu/kochi-duck-roast.png' }
+    { id: 'ca11', name: 'Mangalorean Chicken Sukka', price: 380, desc: 'Dry chicken dish cooked with dry roasted spices, grated coconut, garlic, and fresh curry leaves.', veg: false, tags: ['Gluten-free'], spice: 3, allergens: 'None', image: './images/restaurants/samudra-spices/menu/mangalorean-chicken-sukka.png' },
+    { id: 'ca12', name: 'Kochi Duck Roast (Mapas)', price: 420, desc: 'Tender duck portions slow-cooked in thick second-press coconut milk with cardamoms and green chillies.', veg: false, tags: ['Gluten-free'], spice: 2, allergens: 'None', image: './images/restaurants/samudra-spices/menu/kochi-duck-roast.png' }
   ],
   desserts: [
-    { id: 'ca13', name: 'Ada Pradhaman (Payasam)', price: 140, desc: 'Traditional Kerala sweet pudding made of flat rice flakes, dark jaggery, coconut milk, and ghee.', veg: true, tags: ['Gluten-free', 'Jain-friendly'], spice: 0, allergens: 'Dairy', image: '/images/restaurants/samudra-spices/menu/ada-pradhaman.png' },
-    { id: 'ca14', name: 'Tender Coconut Jelly (China Grass)', price: 120, desc: 'Chilled agar-agar pudding set with fresh tender coconut water and coconut pulp chunks.', veg: true, tags: ['Vegan', 'Gluten-free', 'Jain-friendly'], spice: 0, allergens: 'None', image: '/images/restaurants/samudra-spices/menu/tender-coconut-jelly.png' }
+    { id: 'ca13', name: 'Ada Pradhaman (Payasam)', price: 140, desc: 'Traditional Kerala sweet pudding made of flat rice flakes, dark jaggery, coconut milk, and ghee.', veg: true, tags: ['Gluten-free', 'Jain-friendly'], spice: 0, allergens: 'Dairy', image: './images/restaurants/samudra-spices/menu/ada-pradhaman.png' },
+    { id: 'ca14', name: 'Tender Coconut Jelly (China Grass)', price: 120, desc: 'Chilled agar-agar pudding set with fresh tender coconut water and coconut pulp chunks.', veg: true, tags: ['Vegan', 'Gluten-free', 'Jain-friendly'], spice: 0, allergens: 'None', image: './images/restaurants/samudra-spices/menu/tender-coconut-jelly.png' }
   ],
   beverages: [
-    { id: 'ca15', name: 'Fresh Tender Coconut Water', price: 80, desc: 'Sweet, chilled coconut water tapped straight from organic Kerala coconuts.', veg: true, tags: ['Vegan', 'Gluten-free', 'Jain-friendly'], spice: 0, allergens: 'None', image: '/images/restaurants/samudra-spices/menu/fresh-tender-coconut-water.png' },
-    { id: 'ca16', name: 'Spiced Ginger Mint Limeade', price: 90, desc: 'Pressed lime juice blended with fresh ginger extract, garden mint leaves, and sugar syrup.', veg: true, tags: ['Vegan', 'Gluten-free', 'Jain-friendly'], spice: 1, allergens: 'None', image: '/images/restaurants/samudra-spices/menu/spiced-ginger-mint-limeade.png' }
+    { id: 'ca15', name: 'Fresh Tender Coconut Water', price: 80, desc: 'Sweet, chilled coconut water tapped straight from organic Kerala coconuts.', veg: true, tags: ['Vegan', 'Gluten-free', 'Jain-friendly'], spice: 0, allergens: 'None', image: './images/restaurants/samudra-spices/menu/fresh-tender-coconut-water.png' },
+    { id: 'ca16', name: 'Spiced Ginger Mint Limeade', price: 90, desc: 'Pressed lime juice blended with fresh ginger extract, garden mint leaves, and sugar syrup.', veg: true, tags: ['Vegan', 'Gluten-free', 'Jain-friendly'], spice: 1, allergens: 'None', image: './images/restaurants/samudra-spices/menu/spiced-ginger-mint-limeade.png' }
   ]
 };
 
@@ -210,7 +210,7 @@ export default function App() {
                   className="cafe-board-img" 
                   onError={(e) => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = "/images/restaurants/fallback-food.webp";
+                    e.currentTarget.src = "./images/restaurants/fallback-food.webp";
                   }}
                 />
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
@@ -272,7 +272,7 @@ export default function App() {
                     className="cafe-board-img" 
                     onError={(e) => {
                       e.currentTarget.onerror = null;
-                      e.currentTarget.src = "/images/restaurants/fallback-food.webp";
+                      e.currentTarget.src = "./images/restaurants/fallback-food.webp";
                     }}
                   />
                   <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
@@ -397,7 +397,7 @@ export default function App() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px', maxWidth: '1000px', margin: '0 auto' }}>
           <ScrollReveal animation="zoom-in" delay={100}>
             <div style={{ textAlign: 'center' }}>
-              <img src="/images/restaurants/samudra-spices/chef-kuriakose.png" alt="Chef Kuriakose Joseph" style={{ width: '100%', height: '340px', objectFit: 'cover', borderRadius: '8px', border: '1px solid rgba(17,94,89,0.2)', marginBottom: '15px' }} />
+              <img src="./images/restaurants/samudra-spices/chef-kuriakose.png" alt="Chef Kuriakose Joseph" style={{ width: '100%', height: '340px', objectFit: 'cover', borderRadius: '8px', border: '1px solid rgba(17,94,89,0.2)', marginBottom: '15px' }} />
               <h3 className="cafe-font-fancy" style={{ fontSize: '1.25rem', color: '#115e59' }}>Chef Kuriakose Joseph</h3>
               <span style={{ fontSize: '0.8rem', color: '#115e59', fontWeight: 700, textTransform: 'uppercase' }}>Executive Chef & Founder</span>
             </div>
@@ -405,7 +405,7 @@ export default function App() {
 
           <ScrollReveal animation="zoom-in" delay={250}>
             <div style={{ textAlign: 'center' }}>
-              <img src="/images/restaurants/samudra-spices/chef-elena.png" alt="Chef Elena Nair" style={{ width: '100%', height: '340px', objectFit: 'cover', borderRadius: '8px', border: '1px solid rgba(17,94,89,0.2)', marginBottom: '15px' }} />
+              <img src="./images/restaurants/samudra-spices/chef-elena.png" alt="Chef Elena Nair" style={{ width: '100%', height: '340px', objectFit: 'cover', borderRadius: '8px', border: '1px solid rgba(17,94,89,0.2)', marginBottom: '15px' }} />
               <h3 className="cafe-font-fancy" style={{ fontSize: '1.25rem', color: '#115e59' }}>Chef Elena Nair</h3>
               <span style={{ fontSize: '0.8rem', color: '#115e59', fontWeight: 700, textTransform: 'uppercase' }}>Pastry & Drink Sommelier</span>
             </div>
