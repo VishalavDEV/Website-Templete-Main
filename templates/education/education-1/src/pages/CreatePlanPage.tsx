@@ -7,7 +7,7 @@ import {
   CheckCircle2,
   Download,
 } from 'lucide-react';
-import confetti from 'canvas-confetti';
+import { triggerConfetti as confetti } from '../utils/confetti';
 
 interface CreatePlanPageProps {
   onNavigate: (page: PageId) => void;

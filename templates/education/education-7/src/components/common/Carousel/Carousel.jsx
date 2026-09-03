@@ -56,7 +56,15 @@ const Carousel = ({ slides, autoplay = true, interval = 5000 }) => {
             aria-label={`Slide ${idx + 1} of ${slides.length}`}
             aria-hidden={idx !== current}
           >
-            <img src={slide.image} alt={slide.alt} className={styles.img} loading={idx === 0 ? 'eager' : 'lazy'} />
+            <img
+              src={slide.image}
+              alt={slide.alt}
+              className={styles.img}
+              loading={idx === 0 ? 'eager' : 'lazy'}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&q=80';
+              }}
+            />
           </div>
         ))}
       </div>

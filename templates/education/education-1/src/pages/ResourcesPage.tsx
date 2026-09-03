@@ -9,7 +9,7 @@ import {
   Star,
   CheckCircle2,
 } from 'lucide-react';
-import confetti from 'canvas-confetti';
+import { triggerConfetti as confetti } from '../utils/confetti';
 
 interface ResourcesPageProps {
   onNavigate: (page: PageId) => void;

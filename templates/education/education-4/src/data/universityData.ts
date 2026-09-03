@@ -647,7 +647,7 @@ export const NEWS_STORIES: NewsItem[] = [
     readTime: '4 min read',
     summary: 'A multidisciplinary team in the Materials Science department has synthesized a flexible, recyclable photovoltaic polymer that achieves 24.8% efficiency.',
     author: 'Office of Communications',
-    image: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80',
     commentsCount: 14
   },
   {

@@ -21,6 +21,9 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({ article, isOpen, onC
             alt={article.title}
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover"
+            onError={(e) => {
+              e.currentTarget.src = 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80';
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
           

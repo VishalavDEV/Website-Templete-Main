@@ -39,7 +39,9 @@ export default function Courses() {
 
   // Filter courses based on category selection and search keyword
   const filteredCourses = courses.filter(course => {
-    const matchesCategory = selectedCategory === 'All' || course.category === selectedCategory;
+    const matchesCategory = selectedCategory === 'All' || 
+      course.category === selectedCategory ||
+      (selectedCategory === 'Programming' && (course.category === 'Programming' || course.category === 'Web Development'));
     const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           course.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           course.instructor.toLowerCase().includes(searchQuery.toLowerCase());
@@ -136,6 +138,9 @@ export default function Courses() {
                       src={course.image}
                       alt={course.title}
                       className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+                      onError={(e) => {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80';
+                      }}
                     />
                     <span className="absolute top-4 left-4 px-2.5 py-1 rounded-lg bg-white/95 text-[10px] font-bold text-sky-600 uppercase tracking-wide shadow-sm font-outfit border border-sky-50">
                       {course.category}

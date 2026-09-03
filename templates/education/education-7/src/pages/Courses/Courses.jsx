@@ -42,8 +42,76 @@ const Courses = () => {
   const handleCatChange = (id) => { setSelectedCat(id); setPage(1); };
   const handleQueryChange = (e) => { setSearchQuery(e.target.value); setPage(1); };
 
+  const [enrolledCourse, setEnrolledCourse] = useState(null);
+  const [enrollSuccess, setEnrollSuccess] = useState(false);
+
   return (
     <main id="main-content" className={styles.page}>
+      {/* Interactive Enrollment Dialog */}
+      {enrolledCourse && (
+        <div style={{
+          position: 'fixed',
+          inset: 0,
+          backgroundColor: 'rgba(19, 34, 56, 0.75)',
+          backdropFilter: 'blur(4px)',
+          zIndex: 9999,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '1rem',
+        }}>
+          <div style={{
+            background: '#ffffff',
+            borderRadius: '1.25rem',
+            maxWidth: '480px',
+            width: '100%',
+            padding: '2rem',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+            border: '1px solid #e2e8f0',
+            textAlign: 'left',
+          }}>
+            {!enrollSuccess ? (
+              <>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#1a2e5a', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  Course Admission
+                </span>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: '#0f172a', margin: '0.5rem 0 0.75rem' }}>
+                  Enrol in {enrolledCourse.title}
+                </h3>
+                <p style={{ fontSize: '0.875rem', color: '#64748b', lineHeight: 1.5, marginBottom: '1.25rem' }}>
+                  {enrolledCourse.description}
+                </p>
+                <div style={{ background: '#f8fafc', padding: '1rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', marginBottom: '1.5rem', fontSize: '0.8rem', color: '#334155' }}>
+                  <p><strong>Code:</strong> {enrolledCourse.id} | <strong>Instructor:</strong> {enrolledCourse.instructor}</p>
+                  <p><strong>Duration:</strong> {enrolledCourse.duration} | <strong>Tuition:</strong> ${enrolledCourse.price.toLocaleString()}</p>
+                </div>
+                <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'flex-end' }}>
+                  <Button variant="outline" size="sm" onClick={() => setEnrolledCourse(null)}>
+                    Cancel
+                  </Button>
+                  <Button variant="primary" size="sm" onClick={() => setEnrollSuccess(true)}>
+                    Confirm Enrollment
+                  </Button>
+                </div>
+              </>
+            ) : (
+              <div style={{ textAlign: 'center', padding: '1rem 0' }}>
+                <div style={{ width: '48px', height: '48px', background: '#dcfce7', color: '#16a34a', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem', fontSize: '1.5rem', fontWeight: 'bold' }}>
+                  ✓
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a' }}>Enrollment Confirmed!</h3>
+                <p style={{ fontSize: '0.875rem', color: '#64748b', marginTop: '0.5rem', marginBottom: '1.5rem' }}>
+                  Welcome to <strong>{enrolledCourse.title}</strong>. An onboarding email and course portal login details have been sent.
+                </p>
+                <Button variant="primary" size="sm" onClick={() => { setEnrolledCourse(null); setEnrollSuccess(false); }}>
+                  Go to Dashboard
+                </Button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       <div className="container">
         {/* Page header */}
         <div className={styles.pageHeader}>
@@ -118,7 +186,14 @@ const Courses = () => {
                   <li key={course.id}>
                     <Card hover className={styles.courseCard}>
                       <div className={styles.courseImg}>
-                        <img src={course.image} alt={course.title} loading="lazy" />
+                        <img
+                          src={course.image}
+                          alt={course.title}
+                          loading="lazy"
+                          onError={(e) => {
+                            e.currentTarget.src = 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80';
+                          }}
+                        />
                         {course.badge && (
                           <span className={styles.badgeWrap}>
                             <Badge label={course.badge} variant={badgeVariant(course.badge)} />
@@ -134,7 +209,14 @@ const Courses = () => {
                           <li><Clock size={13} aria-hidden="true" />{course.duration}</li>
                           <li><DollarSign size={13} aria-hidden="true" />${course.price.toLocaleString()}</li>
                         </ul>
-                        <Button variant="primary" size="sm" className={styles.enrollBtn}>Enrol Now</Button>
+                        <Button
+                          variant="primary"
+                          size="sm"
+                          className={styles.enrollBtn}
+                          onClick={() => setEnrolledCourse(course)}
+                        >
+                          Enrol Now
+                        </Button>
                       </div>
                     </Card>
                   </li>

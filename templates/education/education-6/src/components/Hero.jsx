@@ -36,75 +36,88 @@ export default function Hero({ heading, subtext, ctaPrimary, ctaSecondary }) {
           </div>
         </div>
 
-        {/* Graduation celebration themed inline SVG Illustration */}
-        <div className="hero-media flex-center fade-in">
-          <svg 
-            viewBox="0 0 500 450" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg" 
-            className="hero-illustration"
-            aria-label="Illustration of students celebrating graduation"
-          >
-            {/* Background elements */}
-            <circle cx="250" cy="225" r="180" fill="url(#circleGrad)" opacity="0.15" />
-            <circle cx="120" cy="120" r="40" fill="url(#dotGrad)" opacity="0.2" />
-            <rect x="380" y="320" width="30" height="30" rx="6" transform="rotate(45 380 320)" fill="url(#dotGrad)" opacity="0.25" />
-            
-            {/* Abstract stack of books / foundation */}
-            <path d="M120 340 L380 340 L350 380 L150 380 Z" fill="#1e3a8a" opacity="0.7" />
-            <path d="M100 360 L400 360 L380 395 L120 395 Z" fill="#0f172a" />
-            
-            {/* Scroll/Diploma scroll representation */}
-            <rect x="230" y="270" width="40" height="90" rx="4" transform="rotate(-70 230 270)" fill="#f1f5f9" stroke="#94a3b8" strokeWidth="2" />
-            <path d="M150 285 L230 258" stroke="#f59e0b" strokeWidth="6" strokeLinecap="round" />
-            
-            {/* Graduation Cap floating in center */}
-            <g transform="translate(140, 90)">
-              {/* Cap base */}
-              <path d="M75 110 C75 110 75 130 110 130 C145 130 145 110 145 110 L75 110 Z" fill="#1e293b" stroke="#334155" strokeWidth="2" />
-              <path d="M78 110 L78 120 C78 120 110 132 142 120 L142 110 Z" fill="#0f172a" />
-              
-              {/* Cap rhombus top */}
-              <polygon points="110,60 210,95 110,130 10,95" fill="#1e40af" stroke="#3b82f6" strokeWidth="3" />
-              <polygon points="110,68 190,95 110,122 30,95" fill="#0f172a" />
-              
-              {/* Button & Tassel */}
-              <circle cx="110" cy="95" r="5" fill="#f59e0b" />
-              <path d="M110 95 C130 105 155 125 155 140" stroke="#f59e0b" strokeWidth="3" fill="none" />
-              <polygon points="151,138 159,138 155,148" fill="#d97706" />
-            </g>
+        {/* Business College Executive Showcase */}
+        <div className="hero-media flex-center fade-in" style={{ position: 'relative' }}>
+          <div style={{
+            position: 'relative',
+            width: '100%',
+            maxWidth: '460px',
+            borderRadius: '1.5rem',
+            overflow: 'hidden',
+            boxShadow: '0 25px 50px -12px rgba(15, 23, 42, 0.35)',
+            border: '3px solid rgba(245, 158, 11, 0.4)',
+          }}>
+            <img
+              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=85"
+              alt="Business College Students in Executive Seminar"
+              style={{
+                width: '100%',
+                height: '380px',
+                objectFit: 'cover',
+                display: 'block',
+              }}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1000&q=80';
+              }}
+            />
+            <div style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(to top, rgba(15, 23, 42, 0.8) 0%, transparent 60%)',
+            }} />
 
-            {/* Flying Mini Caps */}
-            <g transform="translate(300, 60) scale(0.5)">
-              <polygon points="110,60 210,95 110,130 10,95" fill="#3b82f6" />
-              <path d="M75 110 C75 110 75 130 110 130 C145 130 145 110 145 110" fill="#1e293b" />
-              <path d="M110 95 C130 105 155 125 155 140" stroke="#f59e0b" strokeWidth="2" fill="none" />
-            </g>
-            <g transform="translate(60, 180) scale(0.4) rotate(-20)">
-              <polygon points="110,60 210,95 110,130 10,95" fill="#f59e0b" />
-              <path d="M75 110 C75 110 75 130 110 130 C145 130 145 110 145 110" fill="#d97706" />
-              <path d="M110 95 C130 105 155 125 155 140" stroke="#1e293b" strokeWidth="2" fill="none" />
-            </g>
+            {/* Floating Top Badge */}
+            <div style={{
+              position: 'absolute',
+              top: '1rem',
+              left: '1rem',
+              background: 'rgba(255, 255, 255, 0.95)',
+              backdropFilter: 'blur(8px)',
+              padding: '0.4rem 0.85rem',
+              borderRadius: '9999px',
+              fontSize: '0.75rem',
+              fontWeight: 800,
+              color: '#0f172a',
+              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+            }}>
+              <span style={{ color: '#f59e0b' }}>★</span> AACSB Accredited Business School
+            </div>
 
-            {/* Dynamic Celebration Rays/Stars */}
-            <g stroke="#f59e0b" strokeWidth="2" strokeLinecap="round">
-              <line x1="250" y1="50" x2="250" y2="35" />
-              <line x1="280" y1="180" x2="295" y2="185" />
-              <line x1="80" y1="80" x2="90" y2="90" />
-            </g>
-
-            {/* Definitions for Gradients */}
-            <defs>
-              <linearGradient id="circleGrad" x1="70" y1="45" x2="430" y2="405" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#3b82f6" />
-                <stop offset="1" stopColor="#1e3a8a" />
-              </linearGradient>
-              <linearGradient id="dotGrad" x1="0" y1="0" x2="1" y2="1">
-                <stop stopColor="#f59e0b" />
-                <stop offset="1" stopColor="#3b82f6" />
-              </linearGradient>
-            </defs>
-          </svg>
+            {/* Floating Bottom Metrics Card */}
+            <div style={{
+              position: 'absolute',
+              bottom: '1rem',
+              left: '1rem',
+              right: '1rem',
+              background: 'rgba(15, 23, 42, 0.85)',
+              backdropFilter: 'blur(12px)',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+              borderRadius: '1rem',
+              padding: '0.85rem 1.25rem',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              color: '#ffffff',
+            }}>
+              <div>
+                <p style={{ fontSize: '1.25rem', fontWeight: 900, color: '#f59e0b', margin: 0 }}>94%</p>
+                <p style={{ fontSize: '0.7rem', color: '#94a3b8', margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Placement Rate</p>
+              </div>
+              <div style={{ width: '1px', height: '28px', background: 'rgba(255, 255, 255, 0.15)' }} />
+              <div>
+                <p style={{ fontSize: '1.25rem', fontWeight: 900, color: '#38bdf8', margin: 0 }}>$145k</p>
+                <p style={{ fontSize: '0.7rem', color: '#94a3b8', margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Avg Starting Base</p>
+              </div>
+              <div style={{ width: '1px', height: '28px', background: 'rgba(255, 255, 255, 0.15)' }} />
+              <div>
+                <p style={{ fontSize: '1.25rem', fontWeight: 900, color: '#4ade80', margin: 0 }}>50+</p>
+                <p style={{ fontSize: '0.7rem', color: '#94a3b8', margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Corporate Partners</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

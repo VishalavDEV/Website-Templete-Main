@@ -48,7 +48,15 @@ const Shop = () => {
             <li key={product.id}>
               <Card hover className={styles.productCard}>
                 <div className={styles.imgWrap}>
-                  <img src={product.image} alt={product.title} loading="lazy" className={styles.productImg} />
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    loading="lazy"
+                    className={styles.productImg}
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80';
+                    }}
+                  />
                   {product.badge && (
                     <span className={styles.badgePos}>
                       <Badge label={product.badge} variant={product.badge === 'New' ? 'success' : 'accent'} />

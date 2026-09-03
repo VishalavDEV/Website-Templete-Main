@@ -49,6 +49,9 @@ export const FeaturedCourses: React.FC<FeaturedCoursesProps> = ({
                   src={course.image}
                   alt={course.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80';
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <span className="w-10 h-10 rounded-full bg-[#FF7657] text-white flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
