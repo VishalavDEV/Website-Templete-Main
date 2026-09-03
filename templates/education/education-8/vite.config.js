@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   base: './',
-  base: "/templates/education/education-8/",
+  
+  
   plugins: [react(), tailwindcss()],
 });
