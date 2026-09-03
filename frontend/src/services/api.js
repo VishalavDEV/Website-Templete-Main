@@ -2821,7 +2821,7 @@ category: { id: 20153, name: 'Business', slug: 'business' },
   },
   {
     id: 20216,
-    name: 'Foldline — Design & Technology Studio',
+    name: 'AxiomLab — Design & Technology Studio',
     slug: 'agency-1',
     previewImage: 'https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80',
     templateType: 'FREE',
