@@ -69,7 +69,7 @@ export default function HomePage() {
             {/* Right Large Image extending vertically */}
             <div style={{ position: 'relative' }}>
               <img
-                src="/images/hero_architecture.jpg"
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85"
                 alt="Architectural Systems Engineering"
                 className="asym-hero-large-img"
               />

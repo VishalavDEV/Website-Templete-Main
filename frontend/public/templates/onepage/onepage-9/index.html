@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ORBITAL — Cloud Infrastructure & Scale Platform</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-              mono: ['"Fira Code"', 'monospace'],
-            }
-          }
-        }
-      }
-    </script>
-    
-    <link rel="stylesheet" crossorigin href="./assets/index-Btfj2k_8.css">
-      <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+
+    <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
     <script>
       (function() {
         const isTop = window.self === window.top;
@@ -32,14 +11,19 @@
         
         if (isTop && !isIframe) {
           function buildPreviewWrapper() {
+            const body = document.body;
+            if (!body) {
+              setTimeout(buildPreviewWrapper, 10);
+              return;
+            }
+            if (document.getElementById('technosprint-preview-header')) return;
+
             const currentUrl = new URL(window.location.href);
             currentUrl.searchParams.set('iframe', 'true');
             
             document.documentElement.className = '';
             document.documentElement.removeAttribute('style');
             
-            const body = document.body;
-            if (!body) return;
             body.className = '';
             body.innerHTML = '';
             body.removeAttribute('style');
@@ -255,17 +239,35 @@
             });
           }
           
-          if (document.readyState === 'loading') {
-            window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
-          } else {
+          if (document.readyState === 'interactive' || document.readyState === 'complete') {
             buildPreviewWrapper();
+          } else {
+            window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
+            window.addEventListener('load', buildPreviewWrapper);
           }
         }
       })();
     </script>
+
+
+    
+
+    <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AURA — Digital Atelier &amp; Systems</title>
+    <meta name="description" content="Next-generation digital agency, product engineering atelier, and intelligent cloud systems platform." />
+    <meta property="og:title" content="AURA — Digital Atelier &amp; Systems" />
+    <meta property="og:description" content="Next-generation digital agency, product engineering atelier, and intelligent cloud systems platform." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="./assets/index-DR93ZIW3.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DBL3XSRC.css">
   </head>
-  <body style="margin:0; background:#060a12; color:#f8fafc; font-family:'Plus Jakarta Sans', sans-serif;">
+  <body class="bg-[#0A0A0B] text-slate-100 selection:bg-indigo-500/30 selection:text-indigo-200 antialiased font-sans">
     <div id="root"></div>
-    <script type="module" crossorigin src="./assets/index-Ccs9IBeU.js"></script>
   </body>
 </html>

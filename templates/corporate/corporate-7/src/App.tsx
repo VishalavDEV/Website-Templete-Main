@@ -39,7 +39,7 @@ import { NotFoundPage } from './pages/Utility/NotFoundPage';
 
 export default function App() {
   return (
-    <BrowserRouter basename="/templates/cooperate/cooperate-7">
+    <BrowserRouter basename={window.location.pathname.endsWith('/index.html') ? window.location.pathname.slice(0, -11) : (window.location.pathname.endsWith('/') ? window.location.pathname.slice(0, -1) : window.location.pathname)}>
       <Routes>
         {/* Main Website Flow */}
         <Route element={<MainLayout />}>

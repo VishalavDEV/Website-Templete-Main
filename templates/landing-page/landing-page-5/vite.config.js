@@ -5,7 +5,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: './',
   plugins: [react()],
-  optimizeDeps: {
-    entries: ['index.html', 'src/**/*.{js,jsx,ts,tsx}']
+  css: {
+    postcss: {
+      plugins: []
+    }
+  },
+  server: {
+    port: 5178,
+    host: '0.0.0.0'
   }
 })

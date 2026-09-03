@@ -1,18 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fonix — Spatial Sound Synthesis & 3D Web Experience</title>
-    <meta name="description" content="Official Product Requirements Document (PRD) and live interactive 3D WebGL showcase for Fonix." />
-    <meta property="og:title" content="Fonix — Spatial Sound Synthesis & 3D Web Experience PRD" />
-    <meta property="og:description" content="Official Product Requirements Document (PRD) and live interactive 3D WebGL showcase for Fonix." />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-      <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+
+    <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
     <script>
       (function() {
         const isTop = window.self === window.top;
@@ -21,14 +11,19 @@
         
         if (isTop && !isIframe) {
           function buildPreviewWrapper() {
+            const body = document.body;
+            if (!body) {
+              setTimeout(buildPreviewWrapper, 10);
+              return;
+            }
+            if (document.getElementById('technosprint-preview-header')) return;
+
             const currentUrl = new URL(window.location.href);
             currentUrl.searchParams.set('iframe', 'true');
             
             document.documentElement.className = '';
             document.documentElement.removeAttribute('style');
             
-            const body = document.body;
-            if (!body) return;
             body.className = '';
             body.innerHTML = '';
             body.removeAttribute('style');
@@ -60,8 +55,8 @@
             logoDiv.style.display = 'flex';
             logoDiv.style.alignItems = 'center';
             logoDiv.style.gap = '16px';
-            logoDiv.innerHTML = '<a href="./templates" style="display: flex; align-items: center; text-decoration: none;" title="Back to Templates"><img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" onerror="this.style.display=\'none\'" /></a>' +
-              '<a href="./templates" style="display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: #64748b; text-decoration: none; font-weight: 600; padding: 6px 12px; border-radius: 8px; background: #f8fafc; border: 1px solid #e2e8f0;">' +
+            logoDiv.innerHTML = '<a href="/templates" style="display: flex; align-items: center; text-decoration: none;" title="Back to Templates"><img src="/logo.jpg" alt="TechnoSprint Logo" style="height: 32px; border-radius: 6px; border: 1px solid #e2e8f0;" onerror="this.style.display=\'none\'" /></a>' +
+              '<a href="/templates" style="display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: #64748b; text-decoration: none; font-weight: 600; padding: 6px 12px; border-radius: 8px; background: #f8fafc; border: 1px solid #e2e8f0;">' +
               '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Back</a>';
             topBar.appendChild(logoDiv);
             
@@ -244,14 +239,29 @@
             });
           }
           
-          if (document.readyState === 'loading') {
-            window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
-          } else {
+          if (document.readyState === 'interactive' || document.readyState === 'complete') {
             buildPreviewWrapper();
+          } else {
+            window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
+            window.addEventListener('load', buildPreviewWrapper);
           }
         }
       })();
     </script>
+
+    <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fonix — Spatial Sound Synthesis & 3D Web Experience</title>
+    <meta name="description" content="Official Product Requirements Document (PRD) and live interactive 3D WebGL showcase for Fonix." />
+    <meta property="og:title" content="Fonix — Spatial Sound Synthesis & 3D Web Experience PRD" />
+    <meta property="og:description" content="Official Product Requirements Document (PRD) and live interactive 3D WebGL showcase for Fonix." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+      
     
     <link rel="stylesheet" crossorigin href="./assets/index-CKvV6N-r.css">
   </head>

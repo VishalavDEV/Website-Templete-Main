@@ -35,7 +35,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/templates/cooperate/cooperate-3">
+    <BrowserRouter basename={window.location.pathname.endsWith('/index.html') ? window.location.pathname.slice(0, -11) : (window.location.pathname.endsWith('/') ? window.location.pathname.slice(0, -1) : window.location.pathname)}>
       <ScrollToTop />
       <div className="app-layout">
         <Navbar />

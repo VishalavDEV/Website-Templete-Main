@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
   <head>
+    <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +18,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const isIframe = urlParams.get('iframe') === 'true';
         
-        if (isTop && !isIframe) {
+        if (false && isTop && !isIframe) {
           function buildPreviewWrapper() {
             const currentUrl = new URL(window.location.href);
             currentUrl.searchParams.set('iframe', 'true');

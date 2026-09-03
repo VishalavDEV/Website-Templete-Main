@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-warm-paper: #F3EEE6;
+  --color-soft-cream: #FAF7F1;
+  --color-burnt-orange: #D65F3F;
+  --color-vermilion: #B94732;
+  --color-dusty-lilac: #B8A8BD;
+  --color-deep-plum: #332832;
+  --color-charcoal: #2B2727;
+  --color-muted-grey: #77716D;
+  --color-border: #CFC7BE;
+
+  --font-primary: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-condensed: 'Oswald', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-primary);
+  background-color: var(--color-warm-paper);
+  color: var(--color-charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom Typography Helpers */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-serif-editorial {
+  font-family: var(--font-serif);
+}
+
+.font-condensed {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Raw Digital Grain Texture */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-warm-paper);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-burnt-orange);
+}
+
+/* Custom Focus Ring for Accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-burnt-orange);
+  outline-offset: 4px;
+}
+
+/* Utility Borders */
+.border-agency {
+  border-color: var(--color-border);
+}
+
+/* Motion and Interaction Utilities */
+.magnetic-btn {
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.clip-reveal {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transition: clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Grid scanning effect fallback */
+@keyframes gridScan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.grid-scanner {
+  animation: gridScan 6s linear infinite;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-burnt-orange);
+  color: var(--color-soft-cream);
+}

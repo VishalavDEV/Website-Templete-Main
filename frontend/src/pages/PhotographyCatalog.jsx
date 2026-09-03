@@ -602,7 +602,7 @@ export default function PhotographyCatalog() {
                 marginTop: '10px'
               }}>
                 <a 
-                  href={tpl.demoUrl || `/templates/photography/${tpl.slug}`} 
+                  href={(tpl.demoUrl || `/templates/photography/${tpl.slug}/index.html`).endsWith('/index.html') ? (tpl.demoUrl || `/templates/photography/${tpl.slug}/index.html`) : `${tpl.demoUrl || `/templates/photography/${tpl.slug}`}/index.html`}
                   style={{
                     display: 'flex',
                     alignItems: 'center',

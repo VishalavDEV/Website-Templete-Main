@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237cff4f'><path d='M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z'/></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +20,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const isIframe = urlParams.get('iframe') === 'true';
         
-        if (isTop && !isIframe) {
+        if (false && isTop && !isIframe) {
           function buildPreviewWrapper() {
             const currentUrl = new URL(window.location.href);
             currentUrl.searchParams.set('iframe', 'true');

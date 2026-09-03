@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
+    <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23D96B43'/><path d='M35 65 L50 30 L65 65 Z' fill='%23FAF8F5'/></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +19,7 @@
       const urlParams = new URLSearchParams(window.location.search);
       const isIframe = urlParams.get('iframe') === 'true';
       
-      if (isTop && !isIframe) {
+      if (false && isTop && !isIframe) {
         document.documentElement.style.visibility = 'hidden';
         
         window.addEventListener('DOMContentLoaded', () => {

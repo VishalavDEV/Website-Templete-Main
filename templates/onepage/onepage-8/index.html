@@ -1,18 +1,8 @@
 <!doctype html>
 <html lang="en" class="dark scroll-smooth">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI // HUMAN // MACHINE — AI & ML Engineer Portfolio</title>
-    <meta name="description" content="Interactive 3D digital laboratory and portfolio of an AI/ML Computer Science Engineer and Developer." />
-    <meta property="og:title" content="AI // HUMAN // MACHINE — AI & ML Engineer Portfolio" />
-    <meta property="og:description" content="Interactive 3D digital laboratory and portfolio of an AI/ML Computer Science Engineer and Developer." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-      <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+
+    <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
     <script>
       (function() {
         const isTop = window.self === window.top;
@@ -21,14 +11,19 @@
         
         if (isTop && !isIframe) {
           function buildPreviewWrapper() {
+            const body = document.body;
+            if (!body) {
+              setTimeout(buildPreviewWrapper, 10);
+              return;
+            }
+            if (document.getElementById('technosprint-preview-header')) return;
+
             const currentUrl = new URL(window.location.href);
             currentUrl.searchParams.set('iframe', 'true');
             
             document.documentElement.className = '';
             document.documentElement.removeAttribute('style');
             
-            const body = document.body;
-            if (!body) return;
             body.className = '';
             body.innerHTML = '';
             body.removeAttribute('style');
@@ -244,14 +239,29 @@
             });
           }
           
-          if (document.readyState === 'loading') {
-            window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
-          } else {
+          if (document.readyState === 'interactive' || document.readyState === 'complete') {
             buildPreviewWrapper();
+          } else {
+            window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
+            window.addEventListener('load', buildPreviewWrapper);
           }
         }
       })();
     </script>
+
+    <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI // HUMAN // MACHINE — AI & ML Engineer Portfolio</title>
+    <meta name="description" content="Interactive 3D digital laboratory and portfolio of an AI/ML Computer Science Engineer and Developer." />
+    <meta property="og:title" content="AI // HUMAN // MACHINE — AI & ML Engineer Portfolio" />
+    <meta property="og:description" content="Interactive 3D digital laboratory and portfolio of an AI/ML Computer Science Engineer and Developer." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      
   </head>
   <body class="bg-[#050608] text-[#e2e8f0] font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden antialiased">
   

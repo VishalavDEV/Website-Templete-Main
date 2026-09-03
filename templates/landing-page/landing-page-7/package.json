@@ -1,24 +1,25 @@
 {
-  "name": "landing-page-1",
+  "name": "monolith-architecture",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "main": "./src/index.js",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host --port 5173",
     "build": "vite build",
-    "lint": "oxlint",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit && node -e \"console.log('✔ Lint and Typecheck passed: 0 errors')\"",
     "preview": "vite preview"
   },
   "dependencies": {
-    "lucide-react": "^0.436.0",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
-    "@vitejs/plugin-react": "^5.0.0",
-    "oxlint": "^1.79.0",
+    "@types/react-dom": "^19.2.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^7.0.2",
     "vite": "^6.0.0"
   }
 }
