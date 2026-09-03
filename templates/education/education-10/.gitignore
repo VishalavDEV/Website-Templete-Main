@@ -1,13 +1,3 @@
-# Dependencies
-node_modules/
-.pnpm-store/
-
-# Production & Build outputs
-dist/
-dist-ssr/
-*.local
-target/
-
 # Logs
 logs
 *.log
@@ -17,16 +7,18 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Editor & System files
-.vscode/
-.idea/
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-.DS_Store
-Thumbs.db
-
-# OS generated
-[Dd]esktop.ini

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import CustomCursor from './components/CustomCursor';
 import FloatingNavbar from './components/FloatingNavbar';
 import AdmissionModal from './components/AdmissionModal';
@@ -32,7 +32,7 @@ export default function App() {
   const handleCloseAdmissions = () => setIsAdmissionsOpen(false);
 
   return (
-    <BrowserRouter basename="/templates/education/education-3">
+    <HashRouter basename="/templates/education/education-3">
       <ScrollToTop />
       
       {/* Desktop Custom Cursor */}
@@ -61,6 +61,6 @@ export default function App() {
 
       {/* Multi-step Admissions Modal Application Wizard */}
       <AdmissionModal isOpen={isAdmissionsOpen} onClose={handleCloseAdmissions} />
-    </BrowserRouter>
+    </HashRouter>
   );
 }

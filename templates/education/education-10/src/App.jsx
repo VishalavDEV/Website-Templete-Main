@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -116,7 +116,7 @@ function AppRoutes() {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/templates/education/education-10">
+    <HashRouter basename="/templates/education/education-10">
       <ScrollToTop />
       <Navbar />
       <Suspense fallback={<PageLoader />}>
@@ -124,6 +124,6 @@ export default function App() {
       </Suspense>
       <Footer />
       <ScrollTopButton />
-    </BrowserRouter>
+    </HashRouter>
   );
 }

@@ -2,7 +2,7 @@
  * App.jsx — Root component. Sets up React Router with layout wrapper.
  * All pages share the TopBar, Navbar, and Footer.
  */
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import TopBar from './components/layout/TopBar/TopBar';
 import Navbar from './components/layout/Navbar/Navbar';
 import Footer from './components/layout/Footer/Footer';
@@ -32,7 +32,7 @@ const Layout = ({ children }) => (
 );
 
 const App = () => (
-  <BrowserRouter basename="/templates/education/education-7">
+  <HashRouter basename="/templates/education/education-7">
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -52,7 +52,7 @@ const App = () => (
         } />
       </Routes>
     </Layout>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 export default App;
