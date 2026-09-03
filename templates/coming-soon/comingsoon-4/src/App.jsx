@@ -5,28 +5,28 @@ const BOTANICAL_PLATES = {
     title: 'Plate IV: Rosa Canina (Wild Dog Rose)',
     subtitle: 'Specimen collected in Berkshire Foothills, 1884',
     desc: 'Renowned for its delicate five-petaled blush corolla, curative rosehips high in botanical oils, and serrated oval leaflets. Hand-engraved copper plate with original watercolor wash.',
-    image: '/rosa-canina.jpg',
+    image: './rosa-canina.jpg',
     filename: 'Plate_IV_Rosa_Canina_Botanical_Studies_1884.jpg'
   },
   lavandula: {
     title: 'Plate VII: Lavandula Angustifolia (English Lavender)',
     subtitle: 'Specimen from Royal Botanical Greenhouse, 1891',
     desc: 'Features slender whorled purple inflorescence spikelets and aromatic linear leaves. Coveted by Victorian herbalists for essential oil distillation and calmative tisanes.',
-    image: '/lavandula.jpg',
+    image: './lavandula.jpg',
     filename: 'Plate_VII_Lavandula_Angustifolia_Botanical_Studies_1891.jpg'
   },
   fagus: {
     title: 'Plate V: Fagus Sylvatica (European Beech Folio)',
     subtitle: 'Arboreal Collection, Black Forest Expedition, 1887',
     desc: 'Depicting autumnal golden venation and pressed foliage specimens. Demonstrates cellular leaf architecture and ancient preservation drying methods.',
-    image: '/fagus-sylvatica.jpg',
+    image: './fagus-sylvatica.jpg',
     filename: 'Plate_V_Fagus_Sylvatica_Botanical_Studies_1887.jpg'
   },
   cover: {
     title: 'Hand-Tooled Calfskin Heritage Binding',
     subtitle: 'Guild of London Bookbinders, Master Exemplar',
     desc: 'Full grain Moroccan leather with 24-karat gold leaf foil stamping, raised spine bands, hand-marbled Italian endpapers, and hand-gilded page deckles.',
-    image: '/book.jpg',
+    image: './book.jpg',
     filename: 'Botanical_Studies_Heritage_Binding_Cover.jpg'
   }
 };
@@ -276,7 +276,7 @@ export default function App() {
       <div id="video-background-container" className="fixed inset-0 w-full h-full z-0 pointer-events-none overflow-hidden">
         <img
           id="bg-video"
-          src="/bg-book.gif"
+          src="./bg-book.gif"
           alt="Botanical Studies Video Background"
           className="w-full h-full object-cover object-center opacity-80 filter contrast-[1.18] brightness-[0.88] saturate-[1.25] scale-105 transition-opacity duration-1000"
         />
@@ -411,7 +411,7 @@ export default function App() {
             <div className="lg:col-span-5 flex flex-col items-center justify-center">
               <div className="book-3d-wrapper" onClick={() => openPlateModal('cover')}>
                 <div className="book-3d-card border-2 border-amber-600/40 relative overflow-hidden rounded-r-xl shadow-2xl">
-                  <img src="/book-cover.jpg" alt="Botanical Studies Heritage Folio" className="w-full h-full object-cover rounded-r-xl" />
+                  <img src="./book-cover.jpg" alt="Botanical Studies Heritage Folio" className="w-full h-full object-cover rounded-r-xl" />
                   <div className="book-spine-effect"></div>
                   <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-amber-400/15 pointer-events-none"></div>
                   <div className="absolute bottom-4 left-4 right-4 p-3 bg-white/95 backdrop-blur-md rounded-lg border border-amber-600/30 text-center shadow-md">
@@ -490,7 +490,7 @@ export default function App() {
               className="glass-panel p-6 cursor-pointer group bg-white/95 hover:bg-white shadow-md hover:shadow-xl border border-amber-600/25 transition-all"
             >
               <div className="h-56 rounded-lg bg-stone-100 border border-amber-600/30 overflow-hidden relative mb-5 group-hover:border-amber-600 transition-all shadow-inner">
-                <img src="/rosa-canina.jpg" alt="Plate IV: Rosa Canina" className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
+                <img src="./rosa-canina.jpg" alt="Plate IV: Rosa Canina" className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                 <div className="absolute bottom-2.5 right-2.5 bg-white/95 backdrop-blur-sm border border-amber-600/40 px-2.5 py-1 rounded text-[10px] font-mono text-amber-900 font-semibold shadow-sm">
                   Plate IV • 1884
@@ -513,7 +513,7 @@ export default function App() {
               className="glass-panel p-6 cursor-pointer group bg-white/95 hover:bg-white shadow-md hover:shadow-xl border border-amber-600/25 transition-all"
             >
               <div className="h-56 rounded-lg bg-stone-100 border border-amber-600/30 overflow-hidden relative mb-5 group-hover:border-amber-600 transition-all shadow-inner">
-                <img src="/lavandula.jpg" alt="Plate VII: Lavandula Angustifolia" className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
+                <img src="./lavandula.jpg" alt="Plate VII: Lavandula Angustifolia" className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                 <div className="absolute bottom-2.5 right-2.5 bg-white/95 backdrop-blur-sm border border-purple-400 px-2.5 py-1 rounded text-[10px] font-mono text-purple-900 font-semibold shadow-sm">
                   Plate VII • 1891
@@ -536,7 +536,7 @@ export default function App() {
               className="glass-panel p-6 cursor-pointer group bg-white/95 hover:bg-white shadow-md hover:shadow-xl border border-amber-600/25 transition-all"
             >
               <div className="h-56 rounded-lg bg-stone-100 border border-amber-600/30 overflow-hidden relative mb-5 group-hover:border-amber-600 transition-all shadow-inner">
-                <img src="/fagus-sylvatica.jpg" alt="Plate V: Fagus Sylvatica" className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
+                <img src="./fagus-sylvatica.jpg" alt="Plate V: Fagus Sylvatica" className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                 <div className="absolute bottom-2.5 right-2.5 bg-white/95 backdrop-blur-sm border border-amber-600/40 px-2.5 py-1 rounded text-[10px] font-mono text-amber-900 font-semibold shadow-sm">
                   Plate V • 1887
@@ -561,7 +561,7 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-4 flex flex-col items-center text-center">
                 <div className="w-52 h-52 rounded-full border-2 border-amber-600/60 p-1.5 shadow-[0_4px_24px_rgba(184,136,34,0.25)] relative mb-4 overflow-hidden group">
-                  <img src="/author.jpg" alt="Prof. Clara Vance-Montgomery" className="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-700" />
+                  <img src="./author.jpg" alt="Prof. Clara Vance-Montgomery" className="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute bottom-2 right-4 bg-amber-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shadow-md border border-amber-200">
                     <i className="fas fa-feather-pointed text-xs"></i>
                   </div>
@@ -660,7 +660,7 @@ export default function App() {
               <span><i className="fas fa-shield-alt text-emerald-700"></i> No Spam Guarantee</span>
               <span>•</span>
               <a
-                href="/rosa-canina.jpg"
+                href="./rosa-canina.jpg"
                 download="Botanical_Studies_Heritage_Sampler.jpg"
                 className="text-amber-800 hover:text-amber-950 font-semibold underline decoration-amber-600/50 cursor-pointer flex items-center gap-1.5"
               >

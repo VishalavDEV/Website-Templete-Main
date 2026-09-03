@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 const GALLERY_ITEMS = [
-  { img: '/buliding-jpg/ezgif-frame-005.jpg', title: 'Lobby Entrance' },
-  { img: '/buliding-jpg/ezgif-frame-010.jpg', title: 'Tower Exterior Detail' },
-  { img: '/buliding-jpg/ezgif-frame-020.jpg', title: 'Penthouse Apartment Living Room' },
-  { img: '/buliding-jpg/ezgif-frame-030.jpg', title: 'Rooftop Glass Balcony' },
-  { img: '/buliding-jpg/ezgif-frame-040.jpg', title: 'Infinity Swimming Pool' },
-  { img: '/buliding-jpg/ezgif-frame-050.jpg', title: 'Panoramic Sky Lounge' }
+  { img: './buliding-jpg/ezgif-frame-005.jpg', title: 'Lobby Entrance' },
+  { img: './buliding-jpg/ezgif-frame-010.jpg', title: 'Tower Exterior Detail' },
+  { img: './buliding-jpg/ezgif-frame-020.jpg', title: 'Penthouse Apartment Living Room' },
+  { img: './buliding-jpg/ezgif-frame-030.jpg', title: 'Rooftop Glass Balcony' },
+  { img: './buliding-jpg/ezgif-frame-040.jpg', title: 'Infinity Swimming Pool' },
+  { img: './buliding-jpg/ezgif-frame-050.jpg', title: 'Panoramic Sky Lounge' }
 ];
 
 export default function App() {
@@ -266,7 +266,7 @@ export default function App() {
         {/* Background Cinematic Video Loop GIF */}
         <img
           id="bg-video"
-          src="/bg-building.gif"
+          src="./bg-building.gif"
           alt="Aura Sky Residences Video Background"
           className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-100 transition-opacity duration-1000"
         />
@@ -390,7 +390,7 @@ export default function App() {
           <div className="relative group overflow-hidden rounded-lg border border-white/10 shadow-2xl">
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
             <img
-              src="/buliding-jpg/ezgif-frame-001.jpg"
+              src="./buliding-jpg/ezgif-frame-001.jpg"
               alt="Aura Sky Residences Rendering"
               className="w-full h-auto object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700"
             />

@@ -425,7 +425,7 @@ export default function App() {
       {/* Cinematic Background Car GIF (when 360 mode is off) */}
       <img
         id="bg-gif"
-        src="/bg-car.gif"
+        src="./bg-car.gif"
         alt="NOVA X1 Cinematic Background"
         className={`fixed inset-0 w-full h-full object-cover z-0 pointer-events-none transition-opacity duration-1000 ${
           isLoaded && !is360Mode ? 'opacity-100' : 'opacity-0'

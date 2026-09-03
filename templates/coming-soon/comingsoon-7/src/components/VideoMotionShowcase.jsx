@@ -45,7 +45,7 @@ export const VideoMotionShowcase = ({
     const normalized = ((deg % 360) + 360) % 360;
     if (normalized >= 0 && normalized < 90) {
       return {
-        image: '/assets/images/shoe-360-front.jpg',
+        image: './assets/images/shoe-360-front.jpg',
         name: 'Front 3/4 Perspective',
         phase: 'PHASE 01 • TOE-BOX & SPEEDLOCK FIT',
         title: 'AEROKNIT™ 360 TOE-BOX',
@@ -65,7 +65,7 @@ export const VideoMotionShowcase = ({
       };
     } else if (normalized >= 180 && normalized < 270) {
       return {
-        image: '/assets/images/shoe-heel-detail.jpg',
+        image: './assets/images/shoe-heel-detail.jpg',
         name: 'Rear Heel & Aerodynamic Spoiler',
         phase: 'PHASE 03 • HEEL STRIKE & DAMPENING',
         title: 'NITRO-INFUSED HEEL DAMPER',
@@ -75,7 +75,7 @@ export const VideoMotionShowcase = ({
       };
     } else {
       return {
-        image: '/assets/images/shoe-outsole.jpg',
+        image: './assets/images/shoe-outsole.jpg',
         name: 'Traction Outsole & Carbon Grid',
         phase: 'PHASE 04 • ROAD GRIP & PROPULSION',
         title: 'LIQUIDTACK™ WET-ROAD COMPOUND',

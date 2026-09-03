@@ -151,7 +151,7 @@ export default function LaptopRealShowcase({ onSelectFeature, playClick }) {
           >
             {/* Real Studio Image */}
             <img
-              src="/laptop_hero.jpg"
+              src="./laptop_hero.jpg"
               alt="TENFIVE LAPTOP Gaming Flagship"
               className={`w-full h-auto object-contain max-h-[460px] rounded-2xl drop-shadow-[0_25px_60px_rgba(255,0,60,0.4)] transition-all duration-500 ${
                 activeMode === 'xray' ? 'filter invert hue-rotate-140 brightness-125 contrast-125 opacity-85' : ''
