@@ -32,7 +32,7 @@ const Layout = ({ children }) => (
 );
 
 const App = () => (
-  <HashRouter basename="/templates/education/education-7">
+  <HashRouter >
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />

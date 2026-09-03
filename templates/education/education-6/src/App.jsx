@@ -20,7 +20,7 @@ import './styles/index.css';
  */
 function App() {
   return (
-    <Router basename="/templates/education/education-6">
+    <Router >
       <ScrollToTop />
       <div className="app-wrapper flex-between-column" style={{ minHeight: '100vh' }}>
         <Header />

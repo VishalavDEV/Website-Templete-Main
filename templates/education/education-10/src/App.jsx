@@ -116,7 +116,7 @@ function AppRoutes() {
 
 export default function App() {
   return (
-    <HashRouter basename="/templates/education/education-10">
+    <HashRouter >
       <ScrollToTop />
       <Navbar />
       <Suspense fallback={<PageLoader />}>

@@ -32,7 +32,7 @@ export default function App() {
   const handleCloseAdmissions = () => setIsAdmissionsOpen(false);
 
   return (
-    <HashRouter basename="/templates/education/education-3">
+    <HashRouter >
       <ScrollToTop />
       
       {/* Desktop Custom Cursor */}

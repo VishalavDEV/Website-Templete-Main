@@ -38,7 +38,7 @@ export default function App() {
   };
 
   return (
-    <Router basename="/templates/education/education-2">
+    <Router >
       <div className="flex flex-col min-h-screen font-sans bg-slate-50 text-slate-900 selection:bg-primary-500 selection:text-white">
         {/* Scroll Handler & Sticky Button */}
         <ScrollToTop />
