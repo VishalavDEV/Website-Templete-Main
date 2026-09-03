@@ -13,7 +13,7 @@ export default function Stages() {
       artists: ['Lyra Voss', 'The Silver Room', 'Mira Vale', 'Zen Ray'],
       schedule: '6:00 PM - 12:00 AM',
       specs: '120,000 Watt L-Acoustics Sound System, 4K LED Curved Backdrop, Golden Laser Array',
-      image: '/images/main_stage.jpg',
+      image: './images/main_stage.jpg',
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ export default function Stages() {
       artists: ['Elio Vane', 'Aria Noir', 'Acoustic Collective'],
       schedule: '5:30 PM - 11:00 PM',
       specs: 'Warm Acoustic Array, Natural Golden Spotlights, Surround Sound Canopy',
-      image: '/images/hero_performer.jpg',
+      image: './images/hero_performer.jpg',
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ export default function Stages() {
       artists: ['Kael Nova', 'Nova Kai', 'Midnight Frequency DJs'],
       schedule: '11:00 PM - 2:00 AM',
       specs: 'Sub-bass Earthquake Subs, Hologram Projection Ring, Smoke Beams',
-      image: '/images/dj_performer.jpg',
+      image: './images/dj_performer.jpg',
     },
   ];
 

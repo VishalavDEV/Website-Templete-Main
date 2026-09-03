@@ -9,14 +9,14 @@ export default function Artists() {
   const [activeFilter, setActiveFilter] = useState('ALL');
 
   const artistsList = [
-    { id: 1, name: 'LYRA VOSS', genre: 'Indie Pop', time: '10:00 PM', stage: 'Main Stage', bio: 'Haunting vocals and soaring indie pop anthems that electrify stadium crowds with high energy choruses and golden spotlight aesthetics.', image: '/images/hero_performer.jpg' },
-    { id: 2, name: 'KAEL NOVA', genre: 'Electronic', time: '12:00 AM', stage: 'Afterdark Stage', bio: 'Hypnotic synthesizer rhythms and heavy bass dropping live soundscapes that keep the crowd dancing until 2 AM.', image: '/images/dj_performer.jpg' },
-    { id: 3, name: 'MIRA VALE', genre: 'Alternative Soul', time: '8:00 PM', stage: 'Main Stage', bio: 'Raw emotional depth blending soulful brass sections with ambient live beats and passionate vocal delivery.', image: '/images/hero_performer.jpg' },
-    { id: 4, name: 'ZEN RAY', genre: 'Hip-Hop Fusion', time: '9:00 PM', stage: 'Main Stage', bio: 'High-octane rhyming over live drum breaks, electric basslines, and brass hooks.', image: '/images/hero_performer.jpg' },
-    { id: 5, name: 'ARIA NOIR', genre: 'Dream Pop', time: '7:00 PM', stage: 'Echo Stage', bio: 'Ethereal soundscapes, lush reverbs, and angelic vocals that transport listeners into a dreamlike trance.', image: '/images/hero_performer.jpg' },
-    { id: 6, name: 'THE SILVER ROOM', genre: 'Alternative Rock', time: '11:00 PM', stage: 'Main Stage', bio: 'Explosive guitar riffs, heavy drumming, and roaring anthemic energy that commands the arena.', image: '/images/hero_performer.jpg' },
-    { id: 7, name: 'NOVA KAI', genre: 'Electronic Live', time: '1:00 AM', stage: 'Afterdark Stage', bio: 'Modular synth wizardry combined with live drum pad performances and interactive light beams.', image: '/images/dj_performer.jpg' },
-    { id: 8, name: 'ELIO VANE', genre: 'Acoustic / Indie', time: '6:00 PM', stage: 'Echo Stage', bio: 'Intimate acoustic guitar melodies and heartfelt storytelling at golden hour.', image: '/images/hero_performer.jpg' },
+    { id: 1, name: 'LYRA VOSS', genre: 'Indie Pop', time: '10:00 PM', stage: 'Main Stage', bio: 'Haunting vocals and soaring indie pop anthems that electrify stadium crowds with high energy choruses and golden spotlight aesthetics.', image: './images/hero_performer.jpg' },
+    { id: 2, name: 'KAEL NOVA', genre: 'Electronic', time: '12:00 AM', stage: 'Afterdark Stage', bio: 'Hypnotic synthesizer rhythms and heavy bass dropping live soundscapes that keep the crowd dancing until 2 AM.', image: './images/dj_performer.jpg' },
+    { id: 3, name: 'MIRA VALE', genre: 'Alternative Soul', time: '8:00 PM', stage: 'Main Stage', bio: 'Raw emotional depth blending soulful brass sections with ambient live beats and passionate vocal delivery.', image: './images/hero_performer.jpg' },
+    { id: 4, name: 'ZEN RAY', genre: 'Hip-Hop Fusion', time: '9:00 PM', stage: 'Main Stage', bio: 'High-octane rhyming over live drum breaks, electric basslines, and brass hooks.', image: './images/hero_performer.jpg' },
+    { id: 5, name: 'ARIA NOIR', genre: 'Dream Pop', time: '7:00 PM', stage: 'Echo Stage', bio: 'Ethereal soundscapes, lush reverbs, and angelic vocals that transport listeners into a dreamlike trance.', image: './images/hero_performer.jpg' },
+    { id: 6, name: 'THE SILVER ROOM', genre: 'Alternative Rock', time: '11:00 PM', stage: 'Main Stage', bio: 'Explosive guitar riffs, heavy drumming, and roaring anthemic energy that commands the arena.', image: './images/hero_performer.jpg' },
+    { id: 7, name: 'NOVA KAI', genre: 'Electronic Live', time: '1:00 AM', stage: 'Afterdark Stage', bio: 'Modular synth wizardry combined with live drum pad performances and interactive light beams.', image: './images/dj_performer.jpg' },
+    { id: 8, name: 'ELIO VANE', genre: 'Acoustic / Indie', time: '6:00 PM', stage: 'Echo Stage', bio: 'Intimate acoustic guitar melodies and heartfelt storytelling at golden hour.', image: './images/hero_performer.jpg' },
   ];
 
   const genres = ['ALL', 'Indie Pop', 'Electronic', 'Alternative Soul', 'Hip-Hop Fusion', 'Dream Pop', 'Alternative Rock', 'Acoustic / Indie'];

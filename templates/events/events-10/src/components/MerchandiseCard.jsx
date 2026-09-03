@@ -18,7 +18,7 @@ export const MerchandiseCard = ({ item }) => {
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           onError={(e) => {
             e.target.onerror = null;
-            e.target.src = '/images/arena-bg.jpg';
+            e.target.src = './images/arena-bg.jpg';
           }}
         />
         <span className="badge-live" style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(5,5,5,0.85)' }}>

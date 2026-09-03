@@ -18,14 +18,14 @@ export default function Home() {
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
 
   const featuredArtists = [
-    { id: 1, name: 'LYRA VOSS', genre: 'Indie Pop', time: '10:00 PM', stage: 'Main Stage', bio: 'Haunting vocals and soaring indie pop anthems that electrify stadium crowds.', image: '/images/hero_performer.jpg' },
-    { id: 2, name: 'KAEL NOVA', genre: 'Electronic', time: '12:00 AM', stage: 'Afterdark Stage', bio: 'Hypnotic synthesizer rhythms and heavy bass dropping live soundscapes.', image: '/images/dj_performer.jpg' },
-    { id: 3, name: 'MIRA VALE', genre: 'Alternative Soul', time: '8:00 PM', stage: 'Main Stage', bio: 'Raw emotional depth blending soulful brass sections with ambient live beats.', image: '/images/hero_performer.jpg' },
+    { id: 1, name: 'LYRA VOSS', genre: 'Indie Pop', time: '10:00 PM', stage: 'Main Stage', bio: 'Haunting vocals and soaring indie pop anthems that electrify stadium crowds.', image: './images/hero_performer.jpg' },
+    { id: 2, name: 'KAEL NOVA', genre: 'Electronic', time: '12:00 AM', stage: 'Afterdark Stage', bio: 'Hypnotic synthesizer rhythms and heavy bass dropping live soundscapes.', image: './images/dj_performer.jpg' },
+    { id: 3, name: 'MIRA VALE', genre: 'Alternative Soul', time: '8:00 PM', stage: 'Main Stage', bio: 'Raw emotional depth blending soulful brass sections with ambient live beats.', image: './images/hero_performer.jpg' },
   ];
 
   const eventsPreview = [
-    { id: 1, title: 'MIDNIGHT ECHO', genre: 'MAIN CONCERT FESTIVAL', date: '24 Oct 2026', time: '6:00 PM - 2:00 AM', venue: 'Aurora Main Stage', description: 'The centerpiece live festival experience featuring pop, indie, and rock headliners.', price: 1499, image: '/images/hero_performer.jpg' },
-    { id: 2, title: 'GOLDEN FREQUENCY', genre: 'ELECTRONIC & SYNTH', date: '24 Oct 2026', time: '11:00 PM - 2:00 AM', venue: 'Afterdark Stage', description: 'Immersive dark techno and synth-wave session with golden laser displays.', price: 1499, image: '/images/dj_performer.jpg' },
+    { id: 1, title: 'MIDNIGHT ECHO', genre: 'MAIN CONCERT FESTIVAL', date: '24 Oct 2026', time: '6:00 PM - 2:00 AM', venue: 'Aurora Main Stage', description: 'The centerpiece live festival experience featuring pop, indie, and rock headliners.', price: 1499, image: './images/hero_performer.jpg' },
+    { id: 2, title: 'GOLDEN FREQUENCY', genre: 'ELECTRONIC & SYNTH', date: '24 Oct 2026', time: '11:00 PM - 2:00 AM', venue: 'Afterdark Stage', description: 'Immersive dark techno and synth-wave session with golden laser displays.', price: 1499, image: './images/dj_performer.jpg' },
   ];
 
   const schedulePreview = [

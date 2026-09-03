@@ -67,7 +67,7 @@ export default function Hero() {
             style={{ cursor: 'pointer', title: 'Click to view singer photo' }}
           >
             <img
-              src="/images/hero_performer.jpg"
+              src="./images/hero_performer.jpg"
               alt="Velora Live Lead Performer"
               className="hero-performer-img"
             />
@@ -119,7 +119,7 @@ export default function Hero() {
 
             <div style={{ borderRadius: '12px', overflow: 'hidden', border: 'var(--border-gold-bright)', maxHeight: '55vh', margin: '0 auto 20px', boxShadow: '0 0 40px rgba(0,0,0,0.9)' }}>
               <img
-                src="/images/hero_performer.jpg"
+                src="./images/hero_performer.jpg"
                 alt="Singer Live Performance"
                 style={{ width: '100%', maxHeight: '55vh', objectFit: 'cover', display: 'block' }}
               />

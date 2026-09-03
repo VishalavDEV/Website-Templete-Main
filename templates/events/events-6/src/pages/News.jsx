@@ -12,7 +12,7 @@ export default function News() {
       subtitle: 'Meet the first wave of artists joining Midnight Echo 2026.',
       category: 'ANNOUNCEMENT',
       date: '15 AUGUST 2026',
-      image: '/images/hero_performer.jpg',
+      image: './images/hero_performer.jpg',
       fullText: 'Velora Live is thrilled to announce the official first phase lineup for Midnight Echo 2026! Headlined by indie pop icon Lyra Voss and electronic producer Kael Nova, this year features 30+ artists performing across three custom sound arenas in Chennai.',
     },
     {
@@ -21,7 +21,7 @@ export default function News() {
       subtitle: 'Discover the exclusive world of the Velora VIP zone.',
       category: 'VIP INSIDER',
       date: '10 AUGUST 2026',
-      image: '/images/main_stage.jpg',
+      image: './images/main_stage.jpg',
       fullText: 'Step into unprecedented festival luxury. The Velora VIP Pass unlocks dedicated front-stage viewing decks, air-conditioned lounges, complimentary artisanal catering, and backstage meet & greet sessions with headline performers.',
     },
     {
@@ -30,7 +30,7 @@ export default function News() {
       subtitle: 'Step inside Aurora Sound Arena, Chennai.',
       category: 'VENUE GUIDE',
       date: '02 AUGUST 2026',
-      image: '/images/main_stage.jpg',
+      image: './images/main_stage.jpg',
       fullText: 'Designed specifically for high-fidelity live music acoustic performance, Aurora Sound Arena features 360-degree acoustic baffle architecture, multi-tiered viewing platforms, and 4,000+ parking spaces.',
     },
     {
@@ -39,7 +39,7 @@ export default function News() {
       subtitle: 'Everything you need to know before the night begins.',
       category: 'FESTIVAL GUIDE',
       date: '28 JULY 2026',
-      image: '/images/dj_performer.jpg',
+      image: './images/dj_performer.jpg',
       fullText: 'From gate entry protocols and e-ticket scanning to food village vendors, transportation options, and camera rules, here is your essential guide to navigating Midnight Echo 2026.',
     },
   ];

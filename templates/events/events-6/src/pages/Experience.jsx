@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 export default function Experience() {
   const experiencesList = [
-    { title: 'LIVE MUSIC', desc: 'Prerequisites: 3 stages, 30+ artists, 10 hours of non-stop live performances spanning pop, soul, electronic, and rock.', icon: <Music size={32} />, image: '/images/hero_performer.jpg' },
-    { title: 'LIGHT SHOW', desc: 'Synchronized golden spotlight arrays, high-power laser beam cannons, and volumetric fog curtains.', icon: <Zap size={32} />, image: '/images/main_stage.jpg' },
-    { title: 'DJ ZONE', desc: 'After-hours synth sanctuary featuring modular synthesizer DJ sets and deep electronic grooves until dawn.', icon: <Disc size={32} />, image: '/images/dj_performer.jpg' },
-    { title: 'FOOD VILLAGE', desc: 'Curated gourmet street food trucks, artisan woodfired pizzas, vegan specialties, and craft mocktails.', icon: <Utensils size={32} />, image: '/images/main_stage.jpg' },
-    { title: 'ART INSTALLATIONS', desc: 'Interactive audio-reactive light sculptures and oversized glowing neon acoustic installations.', icon: <Palette size={32} />, image: '/images/hero_performer.jpg' },
-    { title: 'MERCHANDISE', desc: 'Limited edition Velora Live hoodies, vintage concert poster prints, vinyl records, and golden wristbands.', icon: <ShoppingBag size={32} />, image: '/images/dj_performer.jpg' },
-    { title: 'PHOTO ZONE', desc: 'Golden glowing stage backdrop photo booths designed for unforgettable memory capturing.', icon: <Camera size={32} />, image: '/images/main_stage.jpg' },
-    { title: 'VIP LOUNGE', desc: 'Air-conditioned luxury lounge, private bar, front-stage viewing deck, and exclusive artist meet & greets.', icon: <Crown size={32} />, image: '/images/hero_performer.jpg' },
+    { title: 'LIVE MUSIC', desc: 'Prerequisites: 3 stages, 30+ artists, 10 hours of non-stop live performances spanning pop, soul, electronic, and rock.', icon: <Music size={32} />, image: './images/hero_performer.jpg' },
+    { title: 'LIGHT SHOW', desc: 'Synchronized golden spotlight arrays, high-power laser beam cannons, and volumetric fog curtains.', icon: <Zap size={32} />, image: './images/main_stage.jpg' },
+    { title: 'DJ ZONE', desc: 'After-hours synth sanctuary featuring modular synthesizer DJ sets and deep electronic grooves until dawn.', icon: <Disc size={32} />, image: './images/dj_performer.jpg' },
+    { title: 'FOOD VILLAGE', desc: 'Curated gourmet street food trucks, artisan woodfired pizzas, vegan specialties, and craft mocktails.', icon: <Utensils size={32} />, image: './images/main_stage.jpg' },
+    { title: 'ART INSTALLATIONS', desc: 'Interactive audio-reactive light sculptures and oversized glowing neon acoustic installations.', icon: <Palette size={32} />, image: './images/hero_performer.jpg' },
+    { title: 'MERCHANDISE', desc: 'Limited edition Velora Live hoodies, vintage concert poster prints, vinyl records, and golden wristbands.', icon: <ShoppingBag size={32} />, image: './images/dj_performer.jpg' },
+    { title: 'PHOTO ZONE', desc: 'Golden glowing stage backdrop photo booths designed for unforgettable memory capturing.', icon: <Camera size={32} />, image: './images/main_stage.jpg' },
+    { title: 'VIP LOUNGE', desc: 'Air-conditioned luxury lounge, private bar, front-stage viewing deck, and exclusive artist meet & greets.', icon: <Crown size={32} />, image: './images/hero_performer.jpg' },
   ];
 
   return (

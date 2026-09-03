@@ -10,37 +10,37 @@ export const Gallery = () => {
       id: 1,
       title: 'Poster Dunk Action',
       category: 'MATCHES',
-      url: '/images/gallery-dunk-real.jpg',
+      url: './images/gallery-dunk-real.jpg',
     },
     {
       id: 2,
       title: 'Group Standings & Points Table',
       category: 'STANDINGS',
-      url: '/images/gallery-standings.svg',
+      url: './images/gallery-standings.svg',
     },
     {
       id: 3,
       title: 'Championship Trophy',
       category: 'CELEBRATIONS',
-      url: '/images/gallery-trophy-real.jpg',
+      url: './images/gallery-trophy-real.jpg',
     },
     {
       id: 4,
       title: 'Vortex Arena Crowd',
       category: 'FANS',
-      url: '/images/arena-bg.jpg',
+      url: './images/arena-bg.jpg',
     },
     {
       id: 5,
       title: 'Marcus Vance 3-Pointer',
       category: 'PLAYERS',
-      url: '/images/marcus-3pointer-real.jpg',
+      url: './images/marcus-3pointer-real.jpg',
     },
     {
       id: 6,
       title: 'Team Huddle & Strategy',
       category: 'TEAMS',
-      url: '/images/gallery-huddle-real.jpg',
+      url: './images/gallery-huddle-real.jpg',
     },
   ];
 
@@ -84,7 +84,7 @@ export const Gallery = () => {
               style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }}
               onError={(e) => {
                 e.target.onerror = null;
-                e.target.src = '/images/gallery-standings.svg';
+                e.target.src = './images/gallery-standings.svg';
               }}
             />
             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(0deg, rgba(5,5,5,0.9) 0%, transparent 60%)', opacity: 1, display: 'flex', alignItems: 'flex-end', padding: '20px' }} className="gallery-hover-overlay">
@@ -110,7 +110,7 @@ export const Gallery = () => {
               style={{ width: '100%', maxHeight: '80vh', objectFit: 'contain', borderRadius: '8px', border: '2px solid var(--orange)' }}
               onError={(e) => {
                 e.target.onerror = null;
-                e.target.src = '/images/gallery-standings.svg';
+                e.target.src = './images/gallery-standings.svg';
               }}
             />
             <div style={{ textCenter: 'center', marginTop: '14px', fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: '#ff7518', textAlign: 'center' }}>
