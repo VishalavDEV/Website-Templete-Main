@@ -609,7 +609,7 @@ export default function Laptop3DViewer({ onSelectFeature }) {
         ) : (
           <div className="relative w-full h-[400px] sm:h-[480px] md:h-[520px] rounded-2xl overflow-hidden flex items-center justify-center bg-obsidian-950 p-4">
             <img
-              src="/laptop_hero.jpg"
+              src="./laptop_hero.jpg"
               alt="AURA PRO X1 8K Octane Render"
               className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,240,255,0.4)] rounded-xl animate-fade-in"
             />

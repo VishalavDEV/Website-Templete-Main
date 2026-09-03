@@ -36,19 +36,19 @@ const MACRO_ITEMS = {
     title: 'Fluted 18K Gold Crown & Triple-Gasket Bezel',
     subtitle: '18K Solid Gold Knurled Profile',
     desc: 'Micro-lathed fluted grip ridges with double internal O-ring pressure seals and solid gold crown flank protection.',
-    src: '/watch-crown.jpg'
+    src: './watch-crown.jpg'
   },
   dial: {
     title: 'Sunburst Rose-Engine Guilloché Dial',
     subtitle: 'Hand-Turned Rose Engine Engraving',
     desc: 'Hand-turned geometric guilloché engraving radiating from center with diamond-faceted solid gold dauphine hands and double AR sapphire glass.',
-    src: '/watch-dial.jpg'
+    src: './watch-dial.jpg'
   },
   caseback: {
     title: 'Calibre TS-9080 Exhibition Sapphire Caseback',
     subtitle: 'Swiss Automatic High-Beat Calibre',
     desc: 'High-beat Swiss automatic movement showcasing 18K gold oscillating weight, Côte de Genève perlage finishing, and 26 synthetic rubies.',
-    src: '/watch-caseback.jpg'
+    src: './watch-caseback.jpg'
   }
 };
 
@@ -618,7 +618,7 @@ export default function App() {
                   {/* Floating Watch Visual Actor */}
                   <div className="watch-floating-actor">
                     <img
-                      src="/watch-hero.jpg"
+                      src="./watch-hero.jpg"
                       alt="Aurelia Chronos 18K Solid Gold Floating Watch"
                       className="watch-hero-render"
                       style={{

@@ -97,7 +97,7 @@ export function buildMotorcycle(colorway = COLORWAYS[0]) {
 
   // Load KTM texture for decals / panels
   const textureLoader = new THREE.TextureLoader();
-  const ktmImageTex = textureLoader.load('/ktm-390-duke-bike.jpg');
+  const ktmImageTex = textureLoader.load('./ktm-390-duke-bike.jpg');
 
   // Materials
   const bodyPaintMaterial = new THREE.MeshPhysicalMaterial({

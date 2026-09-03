@@ -27,12 +27,12 @@ export const PRODUCT_DATA = {
       accentGlow: "rgba(204, 255, 0, 0.4)",
       badge: "Flagship Edition",
       story: "Engineered for high-visibility twilight road racing. High-contrast neon matrix weave inspired by supersonic aerodynamics.",
-      heroImage: "/assets/images/shoe-cyber-volt.jpg",
+      heroImage: "./assets/images/shoe-cyber-volt.jpg",
       angles: [
-        { id: "lateral", name: "Lateral Profile", image: "/assets/images/shoe-cyber-volt.jpg", description: "Aerodynamic silhouette showing carbon speed plate curvature" },
-        { id: "motion", name: "Kinetic In-Motion", image: "/assets/images/running-stride-motion.jpg", description: "Real-world heel strike deformation and rapid spring recoil" },
-        { id: "outsole", name: "Traction Outsole", image: "/assets/images/shoe-outsole.jpg", description: "Engineered micro-lug grip matrix with exposed carbon rigidity bridges" },
-        { id: "heel", name: "Rear Heel Counter", image: "/assets/images/shoe-heel-detail.jpg", description: "3D molded heel spoiler & energy lockdown collar" }
+        { id: "lateral", name: "Lateral Profile", image: "./assets/images/shoe-cyber-volt.jpg", description: "Aerodynamic silhouette showing carbon speed plate curvature" },
+        { id: "motion", name: "Kinetic In-Motion", image: "./assets/images/running-stride-motion.jpg", description: "Real-world heel strike deformation and rapid spring recoil" },
+        { id: "outsole", name: "Traction Outsole", image: "./assets/images/shoe-outsole.jpg", description: "Engineered micro-lug grip matrix with exposed carbon rigidity bridges" },
+        { id: "heel", name: "Rear Heel Counter", image: "./assets/images/shoe-heel-detail.jpg", description: "3D molded heel spoiler & energy lockdown collar" }
       ],
       stockWarning: "Only 14 pairs left in batch 01"
     },
@@ -44,12 +44,12 @@ export const PRODUCT_DATA = {
       accentGlow: "rgba(0, 240, 255, 0.4)",
       badge: "Night Runner Limited",
       story: "Crafted for nocturnal speed sessions. Photo-luminescent yarn integration creates an ethereal glow under urban streetlights.",
-      heroImage: "/assets/images/shoe-obsidian-cyan.jpg",
+      heroImage: "./assets/images/shoe-obsidian-cyan.jpg",
       angles: [
-        { id: "lateral", name: "Lateral Profile", image: "/assets/images/shoe-obsidian-cyan.jpg", description: "Nocturnal cyan light-piping and sculpted aerostride chassis" },
-        { id: "motion", name: "Kinetic In-Motion", image: "/assets/images/running-stride-motion.jpg", description: "Dynamic stride capture during sub-4:00/km midnight tempo" },
-        { id: "outsole", name: "Traction Outsole", image: "/assets/images/shoe-outsole.jpg", description: "Wet-asphalt ultra-tack compound formulation" },
-        { id: "heel", name: "Rear Heel Counter", image: "/assets/images/shoe-heel-detail.jpg", description: "Anatomical heel cup stabilizing lateral foot roll" }
+        { id: "lateral", name: "Lateral Profile", image: "./assets/images/shoe-obsidian-cyan.jpg", description: "Nocturnal cyan light-piping and sculpted aerostride chassis" },
+        { id: "motion", name: "Kinetic In-Motion", image: "./assets/images/running-stride-motion.jpg", description: "Dynamic stride capture during sub-4:00/km midnight tempo" },
+        { id: "outsole", name: "Traction Outsole", image: "./assets/images/shoe-outsole.jpg", description: "Wet-asphalt ultra-tack compound formulation" },
+        { id: "heel", name: "Rear Heel Counter", image: "./assets/images/shoe-heel-detail.jpg", description: "Anatomical heel cup stabilizing lateral foot roll" }
       ],
       stockWarning: "Selling fast • 82% reserved"
     },
@@ -61,12 +61,12 @@ export const PRODUCT_DATA = {
       accentGlow: "rgba(255, 62, 29, 0.4)",
       badge: "Heatwave Special",
       story: "Ignite race day intensity with thermal-reactive pigment accents and high-airflow thermoregulating matrix channels.",
-      heroImage: "/assets/images/shoe-hyper-crimson.jpg",
+      heroImage: "./assets/images/shoe-hyper-crimson.jpg",
       angles: [
-        { id: "lateral", name: "Lateral Profile", image: "/assets/images/shoe-hyper-crimson.jpg", description: "Aggressive flame-gradient rocker geometry for rapid roll-through" },
-        { id: "motion", name: "Kinetic In-Motion", image: "/assets/images/running-stride-motion.jpg", description: "Explosive toe-off energy vector demonstration" },
-        { id: "outsole", name: "Traction Outsole", image: "/assets/images/shoe-outsole.jpg", description: "Multi-directional heat-dispersal siping grooves" },
-        { id: "heel", name: "Rear Heel Counter", image: "/assets/images/shoe-heel-detail.jpg", description: "High-density medial bumper preventing over-pronation" }
+        { id: "lateral", name: "Lateral Profile", image: "./assets/images/shoe-hyper-crimson.jpg", description: "Aggressive flame-gradient rocker geometry for rapid roll-through" },
+        { id: "motion", name: "Kinetic In-Motion", image: "./assets/images/running-stride-motion.jpg", description: "Explosive toe-off energy vector demonstration" },
+        { id: "outsole", name: "Traction Outsole", image: "./assets/images/shoe-outsole.jpg", description: "Multi-directional heat-dispersal siping grooves" },
+        { id: "heel", name: "Rear Heel Counter", image: "./assets/images/shoe-heel-detail.jpg", description: "High-density medial bumper preventing over-pronation" }
       ],
       stockWarning: "New release • Ships in 24 hours"
     }
@@ -111,7 +111,7 @@ export const PRODUCT_DATA = {
         description: "Supercritical nitrogen foam compresses 28% on impact, absorbing 94% of ground reaction force before knee transfer.",
         metric: "-42% Joint Impact",
         diagramIcon: "ShieldAlert",
-        detailImage: "/assets/images/shoe-heel-detail.jpg"
+        detailImage: "./assets/images/shoe-heel-detail.jpg"
       }
     },
     {
@@ -125,7 +125,7 @@ export const PRODUCT_DATA = {
         description: "Bespoke variable-stiffness carbon weave flexes longitudinally while resisting torsional twist, locking the ankle axis.",
         metric: "3.2x Torsional Rigidity",
         diagramIcon: "Layers",
-        detailImage: "/assets/images/shoe-outsole.jpg"
+        detailImage: "./assets/images/shoe-outsole.jpg"
       }
     },
     {
@@ -139,7 +139,7 @@ export const PRODUCT_DATA = {
         description: "Aggressive 12° forefoot toe-spring snaps forward instantly at peak extension, shaving 4.5 seconds per kilometer.",
         metric: "+8.6% Propulsion Boost",
         diagramIcon: "Zap",
-        detailImage: "/assets/images/shoe-cyber-volt.jpg"
+        detailImage: "./assets/images/shoe-cyber-volt.jpg"
       }
     },
     {
@@ -153,7 +153,7 @@ export const PRODUCT_DATA = {
         description: "Direct airflow channels wick moisture within 1.2s, maintaining optimal in-shoe temperature across 42.2 kilometers.",
         metric: "185g Featherweight",
         diagramIcon: "Wind",
-        detailImage: "/assets/images/gear-singlet.jpg"
+        detailImage: "./assets/images/gear-singlet.jpg"
       }
     }
   ],
@@ -170,7 +170,7 @@ export const PRODUCT_DATA = {
       comment: "Ran 32km tempo in the rain with the Cyber Volt. The wet traction from the LiquidTack outsole is unbelievable. Energy rebound in the final 5km kept my turnover effortlessly under 3:15/km.",
       fitRating: "True to Size (10/10)",
       cushionRating: "5/5 Ultra-Responsive",
-      userPhoto: "/assets/images/review-marathon-track.jpg"
+      userPhoto: "./assets/images/review-marathon-track.jpg"
     },
     {
       id: 2,
@@ -183,7 +183,7 @@ export const PRODUCT_DATA = {
       comment: "The asymmetrical lacing and heel collar lock your foot like a custom cast. The Midnight Obsidian colorway turns heads at dawn track sessions.",
       fitRating: "Perfect Lock (10/10)",
       cushionRating: "5/5 Plush & Fast",
-      userPhoto: "/assets/images/review-night-street.jpg"
+      userPhoto: "./assets/images/review-night-street.jpg"
     },
     {
       id: 3,
@@ -196,7 +196,7 @@ export const PRODUCT_DATA = {
       comment: "My calves normally scream after 25k on concrete. The dual nitrogen foam dampens the vibration remarkably without feeling mushy.",
       fitRating: "True to Size",
       cushionRating: "5/5 Protective",
-      userPhoto: "/assets/images/review-road-tempo.jpg"
+      userPhoto: "./assets/images/review-road-tempo.jpg"
     }
   ],
 
@@ -207,7 +207,7 @@ export const PRODUCT_DATA = {
       price: 68.00,
       rating: 4.9,
       category: "Apparel",
-      image: "/assets/images/gear-singlet.jpg",
+      image: "./assets/images/gear-singlet.jpg",
       tag: "Race Day Ready"
     },
     {
@@ -216,7 +216,7 @@ export const PRODUCT_DATA = {
       price: 24.00,
       rating: 4.8,
       category: "Gear",
-      image: "/assets/images/gear-nano-socks.jpg",
+      image: "./assets/images/gear-nano-socks.jpg",
       tag: "Anti-Blister"
     },
     {
@@ -225,7 +225,7 @@ export const PRODUCT_DATA = {
       price: 195.00,
       rating: 4.9,
       category: "Footwear",
-      image: "/assets/images/gear-tempo-shoe.jpg",
+      image: "./assets/images/gear-tempo-shoe.jpg",
       tag: "Training Series"
     }
   ]

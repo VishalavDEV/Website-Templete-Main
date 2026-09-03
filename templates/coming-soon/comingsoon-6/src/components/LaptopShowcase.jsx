@@ -114,7 +114,7 @@ export default function LaptopShowcase({ onSelectHotspot }) {
           {/* Real Laptop Image with Ambient Filter & Glow */}
           <div className="relative max-w-xl sm:max-w-2xl w-full flex justify-center group">
             <img
-              src="/laptop.jpg"
+              src="./laptop.jpg"
               alt="AURA PRO X1 Flagship Laptop"
               className="w-full h-auto object-contain max-h-[460px] drop-shadow-[0_20px_50px_rgba(0,240,255,0.35)] rounded-2xl relative z-10 transition-all duration-500"
             />

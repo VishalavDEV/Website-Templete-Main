@@ -118,7 +118,7 @@ export const SpecsBreakdown = ({ product, activeColorway }) => {
                 <span className="badge-pill-outline">39.5mm Legal Stack</span>
               </div>
               <img 
-                src="/assets/images/shoe-outsole.jpg" 
+                src="./assets/images/shoe-outsole.jpg" 
                 alt="Shoe Outsole and Midsole Architecture"
                 className="anatomy-img"
               />
