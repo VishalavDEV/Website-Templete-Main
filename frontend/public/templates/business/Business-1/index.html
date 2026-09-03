@@ -2,12 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/templates/buisness/Business-1/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ABC Business | Premium Business Ecosystem Solutions</title>
-    <script type="module" crossorigin src="/templates/buisness/Business-1/assets/index-DDEZHEct.js"></script>
-    <link rel="stylesheet" crossorigin href="/templates/buisness/Business-1/assets/index-na6yZCx8.css">
-      
       <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
     <script>
       (function() {
@@ -24,6 +21,7 @@
             document.documentElement.removeAttribute('style');
             
             const body = document.body;
+            if (!body) return;
             body.className = '';
             body.innerHTML = '';
             body.removeAttribute('style');
@@ -33,7 +31,7 @@
             overrideStyle.textContent = 'html, body { margin: 0 !important; padding: 0 !important; width: 100vw !important; height: 100vh !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important; color: #0f172a !important; } #technosprint-preview-header { background-color: #ffffff !important; color: #0f172a !important; }';
             document.head.appendChild(overrideStyle);
             
-            body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important;';
+            body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important;';
             
             const topBar = document.createElement('header');
             topBar.id = 'technosprint-preview-header';
@@ -247,9 +245,11 @@
         }
       })();
     </script>
+    
+    <link rel="stylesheet" crossorigin href="./assets/index-na6yZCx8.css">
   </head>
   <body>
-  
-    <div id="root"></div>
+    <div id="root"></div>
+    <script type="module" crossorigin src="./assets/index-BbhNS9GI.js"></script>
   </body>
 </html>
