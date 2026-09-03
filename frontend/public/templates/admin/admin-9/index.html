@@ -73,7 +73,7 @@
             
             switcherDiv.innerHTML = '' +
               '<button id="view-desktop" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.15s; outline: none; box-sizing: border-box; box-shadow: 0 1px 2px rgba(37,99,235,0.08);">' +
-              '  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>' +
+              '  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12.01" y2="21"></line></svg>' +
               '  Desktop' +
               '</button>' +
               '<button id="view-tablet" style="background: transparent; color: #64748b; border: 1px solid transparent; padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.15s; outline: none; box-sizing: border-box;">' +
@@ -218,7 +218,7 @@
                 
                 const isPortrait = orientation === 'portrait';
                 frameContainer.style.width = isPortrait ? '375px' : '667px';
-                frameContainer.style.height = isPortrait ? '667px' : '375px';
+                frameContainer.style.height = isPortrait ? '375px' : '667px';
                 frameContainer.style.maxWidth = '100%';
                 frameContainer.style.maxHeight = '100%';
                 frameContainer.style.border = '12px solid #0f172a';
@@ -251,12 +251,9 @@
       })();
     </script>
 
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TIS Admin — Premium Admin & Dashboard Hub</title>
-    <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
-  
+    
+
+    
     <script type="module" crossorigin src="./assets/index-5F3NPfLi.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-BUPFuvT7.css">
   </head>

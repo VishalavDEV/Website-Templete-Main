@@ -15,7 +15,7 @@ import { AppRoutes } from './routes';
 
 export function App() {
   return (
-    <BrowserRouter basename={getDynamicBasename()} basename="/templates/admin/admin-6">
+    <BrowserRouter basename={getDynamicBasename()}>
       <ThemeProvider>
         <AuthProvider>
           <ToastProvider>

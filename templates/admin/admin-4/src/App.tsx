@@ -35,7 +35,7 @@ import { ClientDetailsPage } from './pages/Clients/ClientsPage';
 export function App() {
   return (
     <AppProvider>
-      <BrowserRouter basename={getDynamicBasename()} basename="/templates/admin/admin-4">
+      <BrowserRouter basename={getDynamicBasename()}>
         <Routes>
           {/* Auth Routes */}
           <Route path="/login" element={<LoginPage />} />
