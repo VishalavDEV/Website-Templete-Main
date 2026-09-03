@@ -1,3 +1,10 @@
+const getDynamicBasename = () => {
+  let p = window.location.pathname;
+  if (p.endsWith('/index.html')) p = p.slice(0, -11);
+  if (p.endsWith('/')) p = p.slice(0, -1);
+  return p;
+};
+
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import TemplateSelector from './components/TemplateSelector';
@@ -14,7 +21,7 @@ import Oceanlink from './templates/Oceanlink';
 
 function App() {
   return (
-    <BrowserRouter basename="/templates/transportation/transportation-1">
+    <BrowserRouter basename={getDynamicBasename()}>
       <Routes>
         {/* Default route redirects to selector */}
         <Route path="/" element={<Voltway />} />

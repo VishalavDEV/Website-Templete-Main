@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/templates/transportation/transportation-10/",
+  base: './',
+  
   plugins: [react(), tailwindcss()],
 })
