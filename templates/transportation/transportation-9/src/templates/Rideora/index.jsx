@@ -80,6 +80,15 @@ export default function Rideora() {
     { q: "How are driver safety records audited?", a: "All drivers go through mandatory background verifications, document checks, and defensive driving audits prior to activation." }
   ];
 
+  const handleBackToTemplates = (e) => {
+    if (e) e.preventDefault();
+    if (window.top && window.top !== window) {
+      window.top.location.href = '/templates';
+    } else {
+      window.location.href = '/templates';
+    }
+  };
+
   return (
     <div className="min-h-screen bg-neutral-900 text-slate-100 font-sans flex flex-col justify-between selection:bg-yellow-400 selection:text-black">
       
@@ -93,9 +102,13 @@ export default function Rideora() {
         </div>
 
         <div className="flex items-center gap-4">
-          <Link to="/transportation" className="flex items-center gap-1 px-3 py-1.5 rounded border border-neutral-800 bg-neutral-900 text-xs font-bold text-slate-300 hover:text-white transition-all">
+          <button 
+            type="button"
+            onClick={handleBackToTemplates}
+            className="flex items-center gap-1 px-3 py-1.5 rounded border border-neutral-800 bg-neutral-900 text-xs font-bold text-slate-300 hover:text-white transition-all cursor-pointer"
+          >
             <ArrowLeft size={12} /> Templates
-          </Link>
+          </button>
         </div>
       </header>
 

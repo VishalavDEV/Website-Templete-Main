@@ -43,7 +43,7 @@ export default function BookVisual({ onOpenBook }) {
             <div className="book-spine-side" />
             <div className="book-spine-glow" />
             <img 
-              src="/assets/images/book_cover.jpg" 
+              src="./assets/images/book_cover.jpg" 
               alt="The Echoes of Tomorrow Book Cover by Mira Rowan" 
               className="book-cover-img"
             />

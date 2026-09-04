@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import './FinalCTA.css';
 
-export default function FinalCTA() {
+export default function FinalCTA({ onOpenAuth }) {
   return (
     <section className="cta-section">
       <div className="glow-blur cta-glow"></div>
@@ -18,10 +18,10 @@ export default function FinalCTA() {
           </p>
 
           <div className="cta-buttons">
-            <button className="btn btn-primary">
+            <button className="btn btn-primary" onClick={() => onOpenAuth && onOpenAuth('signup')}>
               Start for free <ArrowRight size={16} />
             </button>
-            <button className="btn btn-secondary">
+            <button className="btn btn-secondary" onClick={() => onOpenAuth && onOpenAuth('signup')}>
               Request enterprise demo
             </button>
           </div>

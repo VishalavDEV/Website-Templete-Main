@@ -319,4 +319,39 @@ a {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+
+  html, body {
+    overflow-x: hidden !important;
+  }
+
+  .container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  .section-padding {
+    padding: clamp(3.5rem, 8vw, 5rem) 0 !important;
+  }
+
+  /* Featured study grid collapse */
+  .featured-study-grid {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+  }
+
+  .featured-study-left {
+    padding: 2rem 1.25rem !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-color) !important;
+  }
+
+  .featured-study-right {
+    min-height: 320px !important;
+  }
+
+  .insight-row {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+    padding: 1.5rem 0 !important;
+  }
 }

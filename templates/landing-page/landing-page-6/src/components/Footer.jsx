@@ -7,9 +7,9 @@ export default function Footer() {
         <div className="footer-grid">
           {/* Brand Column */}
           <div>
-            <h3 className="footer-brand-title">Lunara Press</h3>
+            <h3 className="footer-brand-title">The Echoes of Tomorrow</h3>
             <p className="footer-brand-desc">
-              Dedicated to publishing visionary speculative fiction and transformative literary voices that redefine the boundaries of human imagination.
+              A bestselling novel by Mira Rowan. Enter a world where memories shape destiny and forgotten choices redefine human reality.
             </p>
           </div>
 
@@ -41,7 +41,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="footer-column-title">Follow Lunara</h4>
+            <h4 className="footer-column-title">Follow The Novel</h4>
             <ul className="footer-links-list">
               <li><a href="#hero" className="footer-link">Instagram</a></li>
               <li><a href="#hero" className="footer-link">Twitter / X</a></li>
@@ -53,7 +53,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <div>© 2026 Lunara Press. All rights reserved. Designed for 'The Echoes of Tomorrow'.</div>
+          <div>© 2026 The Echoes of Tomorrow. All rights reserved. Novel by Mira Rowan.</div>
           <div>Designed with Editorial Excellence & Precision.</div>
         </div>
       </div>

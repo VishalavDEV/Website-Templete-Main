@@ -109,12 +109,12 @@ export default function Navbar({ onOpenContact, onOpenVideo }) {
           </nav>
 
           {/* Action CTAs & Theme Switcher */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <AccentPicker />
 
             <button
               onClick={onOpenContact}
-              className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl btn-primary text-xs font-semibold shadow-lg transition-all"
+              className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl btn-primary text-[11px] sm:text-xs font-semibold shadow-lg transition-all"
             >
               <span>Get Started</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -123,7 +123,7 @@ export default function Navbar({ onOpenContact, onOpenVideo }) {
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl glass-panel-subtle text-slate-300 hover:text-white"
+              className="lg:hidden p-1.5 sm:p-2 rounded-xl glass-panel-subtle text-slate-300 hover:text-white"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -168,7 +168,7 @@ export default function Navbar({ onOpenContact, onOpenVideo }) {
                 }}
                 className="w-full py-3 rounded-xl btn-primary text-sm font-semibold flex items-center justify-center gap-2"
               >
-                <span>Launch Enclave App</span>
+                <span>Get Started</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

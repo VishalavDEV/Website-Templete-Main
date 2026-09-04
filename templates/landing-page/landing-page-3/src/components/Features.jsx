@@ -115,9 +115,10 @@ export default function Features({ onOpenModal }) {
 
         {/* Bento Grid */}
         <div
+          className="features-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
             gap: '26px',
           }}
         >

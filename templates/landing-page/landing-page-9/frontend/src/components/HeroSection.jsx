@@ -265,7 +265,7 @@ export default function HeroSection({ onOpenBooking }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
             onClick={() => {
-              const el = document.getElementById('details');
+              const el = document.getElementById('fleet') || document.getElementById('about');
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
             className="absolute bottom-2 sm:bottom-4 z-20 flex flex-col items-center gap-2 cursor-pointer group"

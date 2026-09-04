@@ -11,6 +11,7 @@ import Studio from './components/Studio';
 import Results from './components/Results';
 import Testimonials from './components/Testimonials';
 import Recognition from './components/Recognition';
+import Insights from './components/Insights';
 import ContactCTA from './components/ContactCTA';
 import Footer from './components/Footer';
 
@@ -67,6 +68,7 @@ export default function App() {
         <TypographyStrip />
         <Testimonials />
         <Recognition />
+        <Insights />
         <ContactCTA />
       </main>
 

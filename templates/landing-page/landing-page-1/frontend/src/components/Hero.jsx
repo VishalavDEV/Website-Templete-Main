@@ -3,7 +3,7 @@ import { Play, ArrowRight } from 'lucide-react';
 import HeroVisual from './HeroVisual';
 import './Hero.css';
 
-export default function Hero() {
+export default function Hero({ onOpenAuth }) {
   return (
     <section className="hero-section" id="product">
       {/* Background glow filters */}
@@ -25,10 +25,10 @@ export default function Hero() {
             Flowly AI brings your tasks, meetings, notes, and workflows into one intelligent workspace, helping teams focus on what actually matters.
           </p>
           <div className="hero-actions">
-            <button className="btn btn-primary">
+            <button className="btn btn-primary" onClick={() => onOpenAuth && onOpenAuth('signup')}>
               Start for free <ArrowRight size={16} />
             </button>
-            <button className="btn btn-secondary">
+            <button className="btn btn-secondary" onClick={() => onOpenAuth && onOpenAuth('signin')}>
               <Play size={16} fill="currentColor" /> Watch demo
             </button>
           </div>
