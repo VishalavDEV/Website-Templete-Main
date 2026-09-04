@@ -37,7 +37,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section
       id="hero"
-      className="relative w-full min-h-screen flex flex-col justify-between items-center px-4 sm:px-6 lg:px-8 pt-32 sm:pt-36 pb-12 overflow-hidden select-none"
+      className="relative w-full min-h-screen flex flex-col justify-between items-center px-4 sm:px-6 lg:px-8 pt-28 sm:pt-36 pb-12 overflow-hidden select-none"
     >
       {/* 3D Immersive Procedural WebGL Canvas Background */}
       <HeroScene
@@ -51,25 +51,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="absolute inset-0 bg-radial from-transparent via-[#040507]/40 to-[#040507]/90 pointer-events-none" />
 
       {/* Top Telemetry Header Tag */}
-      <div className="relative z-10 flex items-center space-x-3 px-4 py-1.5 rounded-full bg-[#0a0f18]/80 backdrop-blur-md border border-cyan-500/20 text-xs font-mono text-cyan-300 pointer-events-auto">
+      <div className="relative z-10 flex items-center space-x-2 sm:space-x-3 px-3 sm:px-4 py-1.5 rounded-full bg-[#0a0f18]/80 backdrop-blur-md border border-cyan-500/20 text-[10px] sm:text-xs font-mono text-cyan-300 pointer-events-auto">
         <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
         <span className="tracking-widest">AI // HUMAN // MACHINE</span>
-        <span className="text-slate-600">|</span>
+        <span className="text-slate-600 hidden sm:inline">|</span>
         <span className="text-slate-400 hidden sm:inline">AUTONOMOUS RESEARCH MATRIX</span>
       </div>
 
       {/* Center Cinematic Hero Typography */}
-      <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto my-auto pointer-events-auto px-4">
+      <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto my-auto pointer-events-auto px-2 sm:px-4">
         {/* Sub-header badge */}
-        <div className="flex items-center space-x-2 text-xs sm:text-sm font-mono tracking-widest text-cyan-400/90 uppercase mb-3">
-          <Terminal className="w-4 h-4 text-cyan-400" />
+        <div className="flex items-center space-x-2 text-[10px] sm:text-xs md:text-sm font-mono tracking-widest text-cyan-400/90 uppercase mb-3">
+          <Terminal className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400" />
           <span>AI / ML ENGINEER • DEVELOPER • CREATOR</span>
         </div>
 
         {/* AI & ML Engineer Profile Avatar Frame */}
         <div className="relative mb-5 group cursor-pointer" id="hero-profile-picture-container">
           <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500 via-sky-400 to-indigo-500 opacity-70 blur-md group-hover:opacity-100 transition duration-500 animate-pulse" />
-          <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden border-2 border-cyan-400/80 p-1 bg-[#0a0f18] shadow-[0_0_30px_rgba(6,182,212,0.4)]">
+          <div className="relative w-24 h-24 sm:w-36 sm:h-36 rounded-full overflow-hidden border-2 border-cyan-400/80 p-1 bg-[#0a0f18] shadow-[0_0_30px_rgba(6,182,212,0.4)]">
             <img
               id="hero-profile-img"
               src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop"
@@ -80,11 +80,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               }}
             />
           </div>
-          <div className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-400 border-2 border-[#040507] shadow-[0_0_8px_rgba(52,211,153,0.8)]" title="AI Systems Online" />
+          <div className="absolute bottom-1 right-1 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-emerald-400 border-2 border-[#040507] shadow-[0_0_8px_rgba(52,211,153,0.8)]" title="AI Systems Online" />
         </div>
 
         {/* Main Grand Display Headline */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black tracking-tight text-slate-100 uppercase leading-[1.05] drop-shadow-2xl">
+        <h1 className="text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black tracking-tight text-slate-100 uppercase leading-[1.05] drop-shadow-2xl">
           BUILDING <br />
           <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent text-glow-cyan">
             INTELLIGENCE.

@@ -59,7 +59,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Left Interactive 3D Data Crystals */}
-        <div className="lg:col-span-5 relative rounded-2xl glass-panel-glow border border-cyan-500/20 overflow-hidden h-[380px] lg:h-[480px] flex items-center justify-center">
+        <div className="lg:col-span-5 relative rounded-2xl glass-panel-glow border border-cyan-500/20 overflow-hidden h-[320px] sm:h-[380px] lg:h-[480px] flex items-center justify-center">
           <AboutScene />
           <div className="absolute top-4 left-4 font-mono text-[10px] text-cyan-400">
             // 3D HOLOGRAPHIC TIMELINE
@@ -102,7 +102,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 onMouseLeave={() => setCursorState({ variant: 'default', text: '' })}
                 className={`p-5 sm:p-6 rounded-2xl transition-all duration-300 border cursor-pointer ${
                   isActive
-                    ? 'glass-panel-glow border-cyan-400/60 shadow-[0_0_20px_rgba(6,182,212,0.15)] translate-x-2'
+                    ? 'glass-panel-glow border-cyan-400/60 shadow-[0_0_20px_rgba(6,182,212,0.15)] sm:translate-x-2'
                     : 'glass-panel border-slate-800/80 hover:border-slate-700'
                 }`}
               >

@@ -59,10 +59,10 @@ export const Navbar: React.FC<NavbarProps> = ({
               setCursorState({ variant: 'hover', text: 'HOME' });
             }}
             onMouseLeave={() => setCursorState({ variant: 'default', text: '' })}
-            className="flex items-center space-x-2 px-3.5 py-2 rounded-lg bg-[#0a0f18]/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 transition-all group"
+            className="flex items-center space-x-2 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg bg-[#0a0f18]/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/60 transition-all group"
           >
             <div className="w-2.5 h-2.5 rounded-sm bg-cyan-400 rotate-45 group-hover:scale-125 transition-transform" />
-            <span className="font-mono text-xs font-bold tracking-widest text-slate-100 group-hover:text-cyan-300">
+            <span className="font-mono text-[11px] sm:text-xs font-bold tracking-widest text-slate-100 group-hover:text-cyan-300">
               [ JM // AI ]
             </span>
           </button>
@@ -120,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             }}
             onMouseLeave={() => setCursorState({ variant: 'default', text: '' })}
             title={isMuted ? 'Enable sound synthesis' : 'Mute sound synthesis'}
-            className={`p-2.5 rounded-lg backdrop-blur-md border transition-all flex items-center space-x-1.5 text-xs font-mono ${
+            className={`p-2 sm:p-2.5 rounded-lg backdrop-blur-md border transition-all flex items-center space-x-1.5 text-xs font-mono ${
               !isMuted
                 ? 'bg-cyan-500/20 border-cyan-400/60 text-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.2)]'
                 : 'bg-[#0a0f18]/80 border-slate-800 text-slate-400 hover:text-slate-200'
@@ -147,7 +147,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               setMobileMenuOpen(!mobileMenuOpen);
             }}
             aria-label="Toggle menu"
-            className="md:hidden p-2.5 rounded-lg bg-[#0a0f18]/90 backdrop-blur-md border border-slate-800 text-slate-300 hover:text-white"
+            className="md:hidden p-2 sm:p-2.5 rounded-lg bg-[#0a0f18]/90 backdrop-blur-md border border-slate-800 text-slate-300 hover:text-white"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -158,15 +158,15 @@ export const Navbar: React.FC<NavbarProps> = ({
       {mobileMenuOpen && (
         <div
           id="mobile-nav-drawer"
-          className="fixed inset-0 z-40 bg-[#04060a]/95 backdrop-blur-2xl flex flex-col justify-center px-8 sm:px-12 md:hidden"
+          className="fixed inset-0 z-40 bg-[#04060a]/95 backdrop-blur-2xl flex flex-col justify-between px-6 sm:px-12 pt-24 pb-8 overflow-y-auto md:hidden"
         >
           <div className="absolute top-6 left-6 font-mono text-xs text-cyan-400 flex items-center space-x-2">
             <Terminal className="w-4 h-4" />
             <span>NAVIGATION_INDEX // V4.2</span>
           </div>
 
-          <div className="space-y-4 my-auto">
-            {navLinks.map((link, idx) => (
+          <div className="space-y-3 my-auto pt-6 pb-4">
+            {navLinks.map((link) => (
               <button
                 key={link.target}
                 onClick={() => scrollToSection(link.target)}
@@ -175,7 +175,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span className="font-mono text-xs text-cyan-500/70 group-hover:text-cyan-400">
                   {link.label.split('_')[0]}
                 </span>
-                <span className="font-display text-2xl font-bold tracking-tight text-slate-200 group-hover:text-cyan-300 transition-colors">
+                <span className="font-display text-xl sm:text-2xl font-bold tracking-tight text-slate-200 group-hover:text-cyan-300 transition-colors">
                   {link.title}
                 </span>
                 <span className="text-slate-600 group-hover:text-cyan-400 transition-colors">→</span>
@@ -183,7 +183,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             ))}
           </div>
 
-          <div className="mt-auto pb-8 pt-4 flex items-center justify-between font-mono text-xs text-slate-500">
+          <div className="mt-auto pb-4 pt-4 flex items-center justify-between font-mono text-[11px] text-slate-500 border-t border-slate-800/40">
             <span>AI // HUMAN // MACHINE</span>
             <span>2026 EDITION</span>
           </div>
