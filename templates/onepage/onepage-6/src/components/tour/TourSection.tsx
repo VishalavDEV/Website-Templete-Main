@@ -51,6 +51,7 @@ export const TourSection: React.FC = () => {
               <div
                 key={event.id}
                 onClick={() => !isSoldOut && setSelectedEvent(event)}
+                className="tour-event-card"
                 style={{
                   display: 'flex',
                   flexWrap: 'wrap',
@@ -67,8 +68,14 @@ export const TourSection: React.FC = () => {
                 }}
                 data-cursor={isSoldOut ? 'SOLD OUT' : 'BOOK TICKET'}
               >
+                <style>{`
+                  @media (max-width: 640px) {
+                    .tour-event-card { padding: 16px 18px !important; }
+                    .tour-event-info { gap: 14px !important; }
+                  }
+                `}</style>
                 {/* Date & Location */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
+                <div className="tour-event-info" style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
                   <span
                     style={{
                       fontFamily: 'var(--font-condensed)',

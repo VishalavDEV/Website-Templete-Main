@@ -43,12 +43,20 @@ export const ArtistTimeline: React.FC = () => {
           <span style={{ fontStyle: 'italic', color: 'var(--accent-warm)' }}>SHAPED BY SILENCE.</span>
         </h2>
 
+        <style>{`
+          @media (max-width: 640px) {
+            .timeline-year-btn {
+              padding: 8px 14px !important;
+              font-size: 1.1rem !important;
+            }
+          }
+        `}</style>
         {/* Year Selector Navigation Bar */}
         <div
           style={{
             display: 'flex',
             flexWrap: 'wrap',
-            gap: '16px',
+            gap: '12px',
             borderBottom: '1px solid var(--border-dark)',
             paddingBottom: '24px',
             marginBottom: '3rem'
@@ -60,6 +68,7 @@ export const ArtistTimeline: React.FC = () => {
               <button
                 key={entry.year}
                 onClick={() => setSelectedYearIndex(idx)}
+                className="timeline-year-btn"
                 style={{
                   padding: '12px 24px',
                   borderRadius: '4px',

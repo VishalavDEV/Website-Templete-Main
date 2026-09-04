@@ -139,6 +139,7 @@ export const ContactForm: React.FC = () => {
 
           {/* Right Column: Contact Form */}
           <div
+            className="contact-form-card"
             style={{
               backgroundColor: 'rgba(242, 238, 232, 0.7)',
               border: '1px solid var(--border-light)',
@@ -147,6 +148,11 @@ export const ContactForm: React.FC = () => {
               boxShadow: 'var(--shadow-subtle)'
             }}
           >
+            <style>{`
+              @media (max-width: 640px) {
+                .contact-form-card { padding: 20px 16px !important; }
+              }
+            `}</style>
             {isSubmitted ? (
               <div style={{ textAlign: 'center', padding: '40px 20px', animation: 'fadeIn 0.3s ease-out' }}>
                 <CheckCircle2 size={54} style={{ color: 'var(--accent-warm)', margin: '0 auto 16px auto' }} />

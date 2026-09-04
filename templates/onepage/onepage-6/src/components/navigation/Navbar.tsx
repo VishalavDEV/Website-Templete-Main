@@ -153,7 +153,7 @@ export const Navbar: React.FC = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            top: '64px',
+            top: '60px',
             backgroundColor: 'var(--bg-dark)',
             color: 'var(--text-on-dark)',
             zIndex: 999,
@@ -172,7 +172,7 @@ export const Navbar: React.FC = () => {
               onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
               style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: '1.75rem',
+                fontSize: '1.5rem',
                 color: 'var(--bg-light)',
                 textDecoration: 'none'
               }}
@@ -185,12 +185,12 @@ export const Navbar: React.FC = () => {
               onClick={() => { togglePlay(); setMobileMenuOpen(false); }}
               style={{
                 width: '100%',
-                padding: '16px',
+                padding: '14px',
                 backgroundColor: 'var(--accent-warm)',
                 color: '#FFF',
                 fontFamily: 'var(--font-grotesk)',
                 fontWeight: 700,
-                fontSize: '1rem',
+                fontSize: '0.9rem',
                 letterSpacing: '0.1em',
                 display: 'flex',
                 alignItems: 'center',
@@ -206,7 +206,7 @@ export const Navbar: React.FC = () => {
       )}
 
       <style>{`
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
           .desktop-nav { display: none !important; }
           .mobile-toggle { display: block !important; }
         }

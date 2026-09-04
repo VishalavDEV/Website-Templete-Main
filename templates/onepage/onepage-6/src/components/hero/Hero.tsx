@@ -99,16 +99,16 @@ export const Hero: React.FC = () => {
         </div>
 
         <h1 style={{ lineHeight: 0.95, marginBottom: '2rem' }}>
-          <div style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(3rem, 9vw, 7.5rem)', color: 'var(--text-main)' }}>
+          <div style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.4rem, 9vw, 7.5rem)', color: 'var(--text-main)' }}>
             SOUND
           </div>
-          <div style={{ fontFamily: 'var(--font-grotesk)', fontSize: 'clamp(3rem, 9vw, 7.5rem)', fontWeight: 700, color: 'var(--accent-warm)', marginLeft: '3vw' }}>
+          <div style={{ fontFamily: 'var(--font-grotesk)', fontSize: 'clamp(2.4rem, 9vw, 7.5rem)', fontWeight: 700, color: 'var(--accent-warm)' }}>
             LIVES
           </div>
-          <div style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontSize: 'clamp(3rem, 9vw, 7.5rem)', color: 'var(--wine)' }}>
+          <div style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontSize: 'clamp(2.4rem, 9vw, 7.5rem)', color: 'var(--wine)' }}>
             BETWEEN
           </div>
-          <div style={{ fontFamily: 'var(--font-condensed)', fontSize: 'clamp(3.5rem, 10vw, 8.5rem)', letterSpacing: '0.04em' }}>
+          <div style={{ fontFamily: 'var(--font-condensed)', fontSize: 'clamp(2.8rem, 10vw, 8.5rem)', letterSpacing: '0.04em', wordBreak: 'break-word' }}>
             MOMENTS.
           </div>
         </h1>

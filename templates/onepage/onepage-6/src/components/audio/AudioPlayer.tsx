@@ -33,6 +33,7 @@ export const AudioPlayer: React.FC = () => {
   return (
     <aside
       aria-label="Global Audio Player"
+      className="audio-player-aside"
       style={{
         position: 'fixed',
         bottom: '24px',
@@ -52,6 +53,17 @@ export const AudioPlayer: React.FC = () => {
       }}
       data-cursor="AUDIO PLAYER"
     >
+      <style>{`
+        @media (max-width: 640px) {
+          .audio-player-aside {
+            bottom: 12px !important;
+            left: 12px !important;
+            width: calc(100vw - 24px) !important;
+            padding: 10px 14px !important;
+            gap: 10px !important;
+          }
+        }
+      `}</style>
       {/* Play/Pause Button */}
       <button
         onClick={togglePlay}

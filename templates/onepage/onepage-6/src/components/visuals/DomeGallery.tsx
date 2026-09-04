@@ -25,8 +25,16 @@ export const DomeGallery: React.FC<DomeGalleryProps> = ({ onSelect }) => {
         marginTop: '2rem'
       }}
     >
+      <style>{`
+        @media (max-width: 640px) {
+          .dome-ring-wrapper {
+            transform: scale(0.62) rotateY(${rotation}deg) !important;
+          }
+        }
+      `}</style>
       {/* 3D Curved Cylinder Ring */}
       <div
+        className="dome-ring-wrapper"
         style={{
           width: '280px',
           height: '320px',
