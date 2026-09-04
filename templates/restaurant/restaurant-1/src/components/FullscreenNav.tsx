@@ -113,14 +113,14 @@ export const FullscreenNav: React.FC<FullscreenNavProps> = ({ isOpen, onClose })
   const handleLinkClick = (e: React.MouseEvent, item: NavItem) => {
     e.preventDefault();
     onClose();
-    if (location.pathname === '/' && item.hash) {
+    if (location.pathname === item.path && item.hash) {
       const target = document.querySelector(item.hash);
       if (target) {
         target.scrollIntoView({ behavior: 'smooth' });
         return;
       }
     }
-    navigate(item.path + (item.hash && item.path === '/' ? item.hash : ''));
+    navigate(item.path);
   };
 
   return (
