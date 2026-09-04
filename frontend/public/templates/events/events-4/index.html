@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vortex Forge Fitness Arena — Iron Ascent 2026</title>
     <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
 
     <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
@@ -160,7 +163,8 @@
             const orientationText = body.querySelector('#orientation-text');
             const btnRefresh = body.querySelector('#btn-refresh');
             
-            let activeMode = 'desktop';
+            const initialMode = urlParams.get('mode');
+            let activeMode = ['desktop', 'tablet', 'mobile'].includes(initialMode) ? initialMode : 'desktop';
             let orientation = 'portrait';
             
             function updateStyles() {
@@ -239,6 +243,8 @@
             btnRefresh.addEventListener('click', () => {
               iframe.src = iframe.src;
             });
+
+            updateStyles();
           }
           
           if (document.readyState === 'interactive' || document.readyState === 'complete') {
@@ -252,12 +258,11 @@
     </script>
 
     
-    
-    <link rel="stylesheet" crossorigin href="./assets/index-wN8C0Lzr.css">
+    <script type="module" crossorigin src="./assets/index-Bu-eIZGp.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BWBzS3Sm.css">
   </head>
 <body>
   
   <div id="root"></div>
-    <script type="module" crossorigin src="./assets/index-BaBFX_ql.js"></script>
 </body>
 </html>

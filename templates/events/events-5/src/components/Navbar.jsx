@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { 
   ChevronDown, 
   Menu, 
@@ -38,11 +38,7 @@ export const Navbar = () => {
   // Scroll listener for sticky background glass transformation and scroll spy
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 40);
 
       // Scroll Spy logic for Home Page sections
       if (location.pathname === '/') {
@@ -71,8 +67,8 @@ export const Navbar = () => {
 
   // Smooth scroll handler for home section or navigation
   const handleNavClick = (e, item) => {
+    e.preventDefault();
     if (location.pathname === '/') {
-      e.preventDefault();
       const el = document.getElementById(item.id);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
@@ -99,6 +95,8 @@ export const Navbar = () => {
       top: 0,
       left: 0,
       right: 0,
+      width: '100%',
+      maxWidth: '100%',
       zIndex: 1000,
       transition: 'all 0.35s ease',
       background: scrolled ? 'rgba(7, 9, 11, 0.94)' : 'rgba(7, 9, 11, 0.55)',
@@ -114,7 +112,7 @@ export const Navbar = () => {
         height: '80px'
       }}>
         {/* Brand Logo */}
-        <Link to="/" onClick={(e) => handleNavClick(e, { id: 'home', path: '/' })} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <Link to="/" onClick={(e) => handleNavClick(e, { id: 'home', path: '/' })} style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
           <div style={{
             width: '42px',
             height: '42px',
@@ -165,13 +163,13 @@ export const Navbar = () => {
                   onMouseEnter={() => setActiveDropdown(item.dropdownType)}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <a
-                    href={item.path}
+                  <Link
+                    to={item.path}
                     onClick={(e) => handleNavClick(e, item)}
                     className={`nav-item ${active ? 'active' : ''}`}
                   >
                     {item.label} <ChevronDown size={14} style={{ transition: 'transform 0.2s', transform: activeDropdown === item.dropdownType ? 'rotate(180deg)' : 'none' }} />
-                  </a>
+                  </Link>
 
                   {activeDropdown === item.dropdownType && item.dropdownType === 'services' && (
                     <div className="dropdown-menu">
@@ -211,14 +209,14 @@ export const Navbar = () => {
             }
 
             return (
-              <a
+              <Link
                 key={item.id}
-                href={item.path}
+                to={item.path}
                 onClick={(e) => handleNavClick(e, item)}
                 className={`nav-item ${active ? 'active' : ''}`}
               >
                 {item.label}
-              </a>
+              </Link>
             );
           })}
         </div>
@@ -261,9 +259,9 @@ export const Navbar = () => {
           {menuItems.map((item) => {
             const active = isItemActive(item);
             return (
-              <a
+              <Link
                 key={item.id}
-                href={item.path}
+                to={item.path}
                 onClick={(e) => {
                   handleNavClick(e, item);
                   setMobileMenuOpen(false);
@@ -271,7 +269,7 @@ export const Navbar = () => {
                 className={`mobile-nav-item ${active ? 'active' : ''}`}
               >
                 {item.label}
-              </a>
+              </Link>
             );
           })}
           <Link to="/booking" className="btn-primary" style={{ textAlign: 'center', justifyContent: 'center', marginTop: '12px' }}>
@@ -341,6 +339,7 @@ export const Navbar = () => {
           gap: 10px;
           border-radius: 6px;
           transition: all 0.2s ease;
+          text-decoration: none;
         }
 
         .dropdown-item:hover {

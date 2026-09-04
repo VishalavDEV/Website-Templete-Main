@@ -58,10 +58,11 @@ const Countdown = () => {
         <div
           style={{
             fontFamily: 'var(--font-heading)',
-            fontSize: '2.5rem',
+            fontSize: 'clamp(1.5rem, 5vw, 2.5rem)',
             color: '#00ff66',
             textShadow: '0 0 20px #00ff66',
-            letterSpacing: '3px'
+            letterSpacing: '3px',
+            textAlign: 'center'
           }}
           className="glitch-effect"
         >
@@ -69,11 +70,15 @@ const Countdown = () => {
         </div>
       ) : (
         <div
+          className="countdown-grid"
           style={{
             display: 'flex',
-            gap: '1rem',
+            gap: '0.85rem',
             justifyContent: 'center',
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
+            width: '100%',
+            maxWidth: '520px',
+            margin: '0 auto'
           }}
         >
           {[
@@ -89,12 +94,15 @@ const Countdown = () => {
                 backgroundColor: 'rgba(10, 16, 12, 0.85)',
                 border: '1px solid rgba(0, 255, 102, 0.3)',
                 borderRadius: '8px',
-                padding: '1rem 1.5rem',
-                minWidth: '100px',
+                padding: '0.85rem 1.25rem',
+                flex: '1 1 calc(25% - 0.85rem)',
+                minWidth: '75px',
+                maxWidth: '120px',
                 textAlign: 'center',
                 boxShadow: '0 0 15px rgba(0, 255, 102, 0.15)',
                 backdropFilter: 'blur(8px)',
-                position: 'relative'
+                position: 'relative',
+                boxSizing: 'border-box'
               }}
             >
               <div className="cyber-corner-tl" />
@@ -104,10 +112,11 @@ const Countdown = () => {
                 className="countdown-num"
                 style={{
                   fontFamily: 'var(--font-heading)',
-                  fontSize: '2.4rem',
+                  fontSize: 'clamp(1.5rem, 4vw, 2.2rem)',
                   fontWeight: '800',
                   color: '#ffffff',
-                  textShadow: '0 0 10px rgba(0, 255, 102, 0.5)'
+                  textShadow: '0 0 10px rgba(0, 255, 102, 0.5)',
+                  lineHeight: '1.1'
                 }}
               >
                 {String(item.value).padStart(2, '0')}
@@ -115,7 +124,7 @@ const Countdown = () => {
               <div
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.75rem',
+                  fontSize: '0.72rem',
                   color: '#00ff66',
                   marginTop: '0.25rem',
                   letterSpacing: '1px'

@@ -104,22 +104,23 @@ const FAQAccordion = () => {
                 onClick={() => setOpenIdx(isOpen ? null : idx)}
                 style={{
                   width: '100%',
-                  padding: '1.25rem 1.5rem',
+                  padding: '1rem 1.25rem',
+                  minHeight: '48px',
                   background: 'none',
                   border: 'none',
                   color: '#ffffff',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  gap: '1rem',
+                  gap: '0.75rem',
                   cursor: 'pointer',
                   textAlign: 'left',
                   fontFamily: 'var(--font-heading)',
-                  fontSize: '1rem'
+                  fontSize: '0.95rem'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                  <HelpCircle size={18} color="#00ff66" />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                  <HelpCircle size={18} color="#00ff66" style={{ flexShrink: 0 }} />
                   <span>{faq.q}</span>
                 </div>
                 <ChevronDown
@@ -127,7 +128,8 @@ const FAQAccordion = () => {
                   color="#00ff66"
                   style={{
                     transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                    transition: 'transform 0.25s ease'
+                    transition: 'transform 0.25s ease',
+                    flexShrink: 0
                   }}
                 />
               </button>
@@ -135,12 +137,12 @@ const FAQAccordion = () => {
               {isOpen && (
                 <div
                   style={{
-                    padding: '0 1.5rem 1.25rem 3.25rem',
+                    padding: '0 1.25rem 1.25rem 1.25rem',
                     color: '#94a3b8',
-                    fontSize: '0.95rem',
+                    fontSize: '0.92rem',
                     lineHeight: '1.7',
                     borderTop: '1px solid rgba(255, 255, 255, 0.05)',
-                    paddingTop: '1rem'
+                    paddingTop: '0.85rem'
                   }}
                 >
                   {faq.a}

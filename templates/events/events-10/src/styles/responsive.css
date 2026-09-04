@@ -1,4 +1,10 @@
-/* Responsive Layout Adjustments */
+/* Responsive Layout Adjustments & Mobile Overhaul */
+html, body, .page-wrapper, .main-content {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 @media (max-width: 1024px) {
   .navbar-links {
     display: none;
@@ -32,18 +38,45 @@
 
 @media (max-width: 768px) {
   .section-padding {
-    padding: 60px 0;
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 6vw, 3rem);
   }
 
   .hero-event-name {
-    font-size: 3.5rem;
+    font-size: clamp(2.8rem, 8vw, 4.2rem);
   }
 
   .hero-tagline {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
+  .hero-meta-strip {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-meta-item {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Force single-column flows across sports grids on mobile */
   .stats-banner-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .matches-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teams-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .players-grid {
     grid-template-columns: 1fr;
   }
 
@@ -51,8 +84,26 @@
     padding: 20px 16px;
   }
 
+  .scoreboard-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .team-score-box {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .team-score-box.left,
+  .team-score-box.right {
+    text-align: center;
+    justify-content: center;
+  }
+
   .score-digit {
-    font-size: 3.2rem;
+    font-size: clamp(2.8rem, 6vw, 4rem);
     padding: 8px 16px;
   }
 
@@ -64,35 +115,70 @@
   .hero-actions .btn-primary,
   .hero-actions .btn-secondary {
     width: 100%;
+    text-align: center;
+    justify-content: center;
   }
 
   .countdown-grid {
-    gap: 10px;
+    gap: 8px;
   }
 
   .countdown-unit {
-    min-width: 55px;
+    min-width: 50px;
   }
 
   .countdown-number {
+    font-size: 1.6rem;
+  }
+
+  .countdown-colon {
     font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .brand-title {
-    font-size: 1.3rem;
+    margin-top: -8px;
   }
 
-  .brand-subtitle {
-    font-size: 0.7rem;
+  .quarter-breakdown th,
+  .quarter-breakdown td {
+    padding: 8px 6px;
+    font-size: 0.9rem;
+  }
+
+  .commentary-feed {
+    max-height: 280px;
+  }
+
+  .stat-card {
+    padding: 20px 15px;
   }
 
   .stat-number {
     font-size: 2.8rem;
   }
 
-  .container {
-    padding: 0 14px;
+  .nav-register-btn {
+    padding: 8px 14px;
+    font-size: 0.95rem;
   }
 }
+
+@media (max-width: 480px) {
+  .brand-title {
+    font-size: 1.25rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.68rem;
+  }
+
+  .stat-number {
+    font-size: 2.4rem;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .hero-content {
+    padding: 0 10px;
+  }
+}
+

@@ -159,6 +159,73 @@
   margin-left: 10px;
 }
 
+.nav-right-cluster {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tablet-subnav {
+  display: none;
+}
+
+/* Tablet view (768px - 1023px): Reposition links underneath Register Now */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navbar {
+    height: auto;
+    min-height: 84px;
+    padding: 8px 0;
+  }
+
+  .navbar-container {
+    align-items: center;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .nav-right-cluster {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+
+  .tablet-subnav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-top: 2px;
+  }
+
+  .tablet-nav-link {
+    font-family: var(--font-sports);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.85);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 2px 4px;
+    transition: var(--transition-fast);
+  }
+
+  .tablet-nav-link:hover,
+  .tablet-nav-link.active {
+    color: var(--orange);
+  }
+}
+
 /* Mobile Hamburger Button */
 .mobile-hamburger {
   display: none;
@@ -240,3 +307,4 @@
 .mobile-link:hover {
   color: var(--orange);
 }
+

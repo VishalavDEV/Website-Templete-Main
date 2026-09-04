@@ -154,7 +154,7 @@ const Registration = () => {
                   1. CAPTAIN & PERSONAL INFORMATION
                 </h3>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '1.25rem' }}>
+                <div className="form-grid-2" style={{ marginBottom: '1.25rem' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '0.82rem', color: '#94a3b8', fontFamily: 'var(--font-mono)', marginBottom: '0.4rem' }}>
                       FULL NAME *
@@ -185,7 +185,7 @@ const Registration = () => {
                   </div>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '1.75rem' }}>
+                <div className="form-grid-2" style={{ marginBottom: '1.75rem' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '0.82rem', color: '#94a3b8', fontFamily: 'var(--font-mono)', marginBottom: '0.4rem' }}>
                       PHONE NUMBER *
@@ -236,7 +236,7 @@ const Registration = () => {
                   />
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '1.75rem' }}>
+                <div className="form-grid-2" style={{ marginBottom: '1.75rem' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '0.82rem', color: '#94a3b8', fontFamily: 'var(--font-mono)', marginBottom: '0.4rem' }}>
                       COURSE / DEGREE *
@@ -270,7 +270,7 @@ const Registration = () => {
                   3. TEAM & TECHNICAL DETAILS
                 </h3>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '1.25rem' }}>
+                <div className="form-grid-2" style={{ marginBottom: '1.25rem' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '0.82rem', color: '#94a3b8', fontFamily: 'var(--font-mono)', marginBottom: '0.4rem' }}>
                       TEAM NAME *
@@ -312,7 +312,7 @@ const Registration = () => {
                   />
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '1.25rem' }}>
+                <div className="form-grid-2" style={{ marginBottom: '1.25rem' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '0.82rem', color: '#94a3b8', fontFamily: 'var(--font-mono)', marginBottom: '0.4rem' }}>
                       GITHUB PROFILE LINK *
@@ -342,7 +342,7 @@ const Registration = () => {
                   </div>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '1.75rem' }}>
+                <div className="form-grid-2" style={{ marginBottom: '1.75rem' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '0.82rem', color: '#94a3b8', fontFamily: 'var(--font-mono)', marginBottom: '0.4rem' }}>
                       PROJECT TRACK INTEREST *

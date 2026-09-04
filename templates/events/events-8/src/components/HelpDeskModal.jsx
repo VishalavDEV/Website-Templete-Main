@@ -52,7 +52,7 @@ const HelpDeskModal = () => {
           boxShadow: '0 0 20px rgba(0, 255, 102, 0.5)',
           zIndex: 998
         }}
-        className="interactive"
+        className="floating-help-desk-btn interactive"
       >
         <LifeBuoy size={18} />
         <span>HELP DESK</span>
@@ -61,6 +61,7 @@ const HelpDeskModal = () => {
       {/* Modal Popup */}
       {isOpen && (
         <div
+          className="modal-overlay"
           style={{
             position: 'fixed',
             top: 0,
@@ -73,10 +74,12 @@ const HelpDeskModal = () => {
             justifyContent: 'center',
             zIndex: 10001,
             padding: '1rem',
-            backdropFilter: 'blur(8px)'
+            backdropFilter: 'blur(8px)',
+            boxSizing: 'border-box'
           }}
         >
           <div
+            className="modal-content-box"
             style={{
               width: '100%',
               maxWidth: '650px',
@@ -85,7 +88,8 @@ const HelpDeskModal = () => {
               borderRadius: '12px',
               padding: '2rem',
               position: 'relative',
-              boxShadow: '0 0 40px rgba(0, 255, 102, 0.3)'
+              boxShadow: '0 0 40px rgba(0, 255, 102, 0.3)',
+              boxSizing: 'border-box'
             }}
           >
             <button

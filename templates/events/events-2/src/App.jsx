@@ -22,7 +22,7 @@ export function App() {
   const [activePage, setActivePage] = useState('home');
   const [isCompletedMode, setIsCompletedMode] = useState(false);
   const [selectedTicket, setSelectedTicket] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Auto ScrollSpy Listener for updating active Navbar link on scroll
   useEffect(() => {

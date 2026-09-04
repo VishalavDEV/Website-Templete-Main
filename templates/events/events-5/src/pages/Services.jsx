@@ -78,10 +78,15 @@ export const Services = () => {
                 }}
               >
                 {/* Image Side */}
-                <div style={{ position: 'relative', height: '340px', borderRadius: '16px', overflow: 'hidden' }}>
+                <div style={{ position: 'relative', height: '320px', width: '100%', borderRadius: '16px', overflow: 'hidden', background: '#1a1f24' }}>
                   <img
                     src={service.image}
                     alt={service.name}
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=800&q=80";
+                    }}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                   <div style={{

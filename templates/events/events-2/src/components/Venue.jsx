@@ -16,7 +16,7 @@ export const Venue = () => {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'center' }}>
+        <div className="venue-content-grid">
           {/* Styled Map Placeholder Card */}
           <div style={{ position: 'relative' }}>
             <div

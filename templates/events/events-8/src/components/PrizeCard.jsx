@@ -48,9 +48,10 @@ const PrizeCard = () => {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '2rem',
-          marginBottom: '5rem'
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+          gap: '1.75rem',
+          marginBottom: '4rem',
+          width: '100%'
         }}
       >
         {mainPrizes.map((prize, idx) => {
@@ -65,7 +66,8 @@ const PrizeCard = () => {
                 boxShadow: prize.highlight ? `0 0 30px rgba(0, 255, 102, 0.25)` : 'none',
                 textAlign: 'center',
                 padding: '2.5rem 1.5rem',
-                transform: prize.highlight ? 'scale(1.04)' : 'none'
+                width: '100%',
+                boxSizing: 'border-box'
               }}
             >
               <div className="cyber-corner-tl" />
@@ -131,8 +133,9 @@ const PrizeCard = () => {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-          gap: '1.25rem'
+          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+          gap: '1.25rem',
+          width: '100%'
         }}
       >
         {specialAwards.map((award, idx) => {

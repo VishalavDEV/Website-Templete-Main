@@ -6,6 +6,7 @@ export const ChallengeModal = ({ challenge, onClose }) => {
 
   return (
     <div
+      className="modal-overlay"
       style={{
         position: 'fixed',
         top: 0,
@@ -18,10 +19,12 @@ export const ChallengeModal = ({ challenge, onClose }) => {
         justifyContent: 'center',
         zIndex: 10002,
         padding: '1rem',
-        backdropFilter: 'blur(10px)'
+        backdropFilter: 'blur(10px)',
+        boxSizing: 'border-box'
       }}
     >
       <div
+        className="modal-content-box"
         style={{
           width: '100%',
           maxWidth: '700px',
@@ -32,7 +35,8 @@ export const ChallengeModal = ({ challenge, onClose }) => {
           borderRadius: '12px',
           padding: '2.5rem',
           position: 'relative',
-          boxShadow: '0 0 50px rgba(0, 255, 102, 0.3)'
+          boxShadow: '0 0 50px rgba(0, 255, 102, 0.3)',
+          boxSizing: 'border-box'
         }}
       >
         <button

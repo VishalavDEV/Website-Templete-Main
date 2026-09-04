@@ -2,83 +2,221 @@
    NEXORA AFTERDARK — RESPONSIVE DESIGN BREAKPOINTS
    ========================================================================== */
 
+/* Large Tablets & Small Laptops (<= 1024px) */
 @media (max-width: 1024px) {
-  .section-title {
-    font-size: 2.1rem;
+  .section-padding {
+    padding: 4.5rem 0;
   }
-  .hero-title {
-    font-size: 3rem !important;
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 
+/* Tablets & Mobile (<= 768px) */
 @media (max-width: 768px) {
   :root {
     --nav-height: 70px;
   }
 
-  .container {
-    padding: 0 1rem;
+  /* Section Spacing & Containers */
+  .section-padding {
+    padding: 3.25rem 0;
   }
 
-  .section-padding {
-    padding: 3.5rem 0;
+  .container {
+    padding: 0 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .title-container {
+    margin-bottom: 2.25rem !important;
+  }
+
+  /* Fluid Responsive Typography */
+  .hero-title {
+    font-size: clamp(2rem, 7vw, 3rem) !important;
   }
 
   .section-title {
-    font-size: 1.75rem;
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
   }
 
   .section-subtitle {
-    font-size: 0.95rem;
-    margin-bottom: 2.5rem;
+    font-size: 0.92rem !important;
+    margin-bottom: 2rem !important;
   }
 
-  .hero-title {
-    font-size: 2.2rem !important;
+  /* Full Width Stacked Action Buttons */
+  .hero-buttons,
+  .btn-group-responsive {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.85rem !important;
   }
 
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
+  .hero-buttons .btn,
+  .btn-group-responsive .btn,
+  .btn-mobile-full {
+    width: 100% !important;
+    min-height: 48px !important;
+    justify-content: center !important;
   }
 
-  .hero-buttons .btn {
-    width: 100%;
-  }
-
-  /* Responsive Grids */
-  .grid-2, .grid-3, .grid-4 {
+  /* Responsive Grids & Form Layouts */
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .form-grid-2,
+  .responsive-grid-2,
+  .responsive-grid-3,
+  .responsive-grid-4 {
     grid-template-columns: 1fr !important;
     gap: 1.25rem !important;
   }
 
   .stats-container {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1rem !important;
+    gap: 0.85rem !important;
+    margin: 1.5rem 0 !important;
+  }
+
+  /* Event Info Bar on Hero */
+  .event-info-bar {
+    padding: 0.75rem 1rem !important;
+    gap: 0.85rem !important;
+    font-size: 0.8rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Cards Mobile Padding */
+  .cyber-card {
+    padding: 1.25rem !important;
+  }
+
+  /* Timeline adjustment for mobile */
+  .timeline-container {
+    padding-left: 1.25rem !important;
+  }
+
+  .timeline-line {
+    left: 7px !important;
+  }
+
+  .timeline-item {
+    padding-left: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .timeline-marker {
+    left: -1.25rem !important;
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* Modal Popup Containers */
+  .modal-overlay {
+    padding: 0.75rem !important;
+  }
+
+  .modal-content-box {
+    max-width: 100% !important;
+    width: 100% !important;
+    max-height: 92vh !important;
+    padding: 1.25rem !important;
+  }
+
+  /* Floating Widgets Positioning (Prevent Overlapping) */
+  .floating-terminal-btn {
+    bottom: 1rem !important;
+    left: 1rem !important;
+    padding: 0.5rem 0.85rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  .floating-terminal-window {
+    left: 1rem !important;
+    right: 1rem !important;
+    bottom: 1rem !important;
+    width: calc(100vw - 2rem) !important;
+    max-width: calc(100vw - 2rem) !important;
+  }
+
+  .floating-help-desk-btn {
+    bottom: 1rem !important;
+    right: 1rem !important;
+    padding: 0.6rem 0.95rem !important;
+    font-size: 0.78rem !important;
+  }
+
+  .scroll-to-top-btn {
+    bottom: 4.25rem !important;
+    right: 1rem !important;
   }
 
   /* Hide custom cursor on touch devices */
-  .custom-cursor, .cursor-dot {
+  .custom-cursor,
+  .cursor-dot {
     display: none !important;
+  }
+
+  /* Horizontal Scrolling Wrappers for Tables */
+  .table-scroll-container {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 }
 
+/* Small Mobile Screens (<= 480px) */
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 1.8rem !important;
+    font-size: 1.85rem !important;
+    letter-spacing: 2px !important;
   }
 
   .stats-container {
     grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  .countdown-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
   }
 
   .countdown-box {
-    min-width: 65px !important;
-    padding: 0.5rem !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    padding: 0.75rem 0.5rem !important;
+    box-sizing: border-box !important;
   }
 
   .countdown-num {
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
+  }
+
+  .event-info-bar {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* Footer Bottom Bar */
+  .footer-bottom-bar {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 0.5rem !important;
   }
 }
 
@@ -91,3 +229,4 @@
     scroll-behavior: auto !important;
   }
 }
+

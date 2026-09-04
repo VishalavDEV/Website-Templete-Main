@@ -7,17 +7,17 @@ export const LoadingScreen = ({ onFinished }) => {
   useEffect(() => {
     const timer1 = setTimeout(() => {
       setFade(true);
-    }, 700);
+    }, 600);
 
     const timer2 = setTimeout(() => {
       if (onFinished) onFinished();
-    }, 1000);
+    }, 850);
 
     return () => {
       clearTimeout(timer1);
       clearTimeout(timer2);
     };
-  }, [onFinished]);
+  }, []);
 
   return (
     <div

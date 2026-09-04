@@ -93,8 +93,8 @@ const Teams = () => {
           {activeTab === 'FIND_TEAM' && (
             <div>
               {/* Search & Skill Filter Bar */}
-              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
-                <div style={{ position: 'relative', flex: 1, minWidth: '250px' }}>
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', marginBottom: '2.5rem', width: '100%' }}>
+                <div style={{ position: 'relative', flex: '1 1 240px', minWidth: '0', width: '100%' }}>
                   <Search size={18} color="#00ff66" style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)' }} />
                   <input
                     type="text"
@@ -129,7 +129,7 @@ const Teams = () => {
               </div>
 
               {/* List of Available Teams */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', width: '100%' }}>
                 {filteredTeams.map((team) => (
                   <div key={team.id} className="cyber-card" style={{ padding: '1.75rem', backgroundColor: 'rgba(10, 16, 12, 0.85)' }}>
                     <div className="cyber-corner-tl" />
@@ -169,7 +169,7 @@ const Teams = () => {
 
           {/* TAB 2: CREATE A TEAM FORM */}
           {activeTab === 'CREATE_TEAM' && (
-            <div style={{ maxWidth: '650px', margin: '0 auto' }}>
+            <div style={{ maxWidth: '650px', margin: '0 auto', width: '100%' }}>
               <div className="cyber-card" style={{ padding: '2.5rem', backgroundColor: 'rgba(10, 16, 12, 0.9)' }}>
                 <h2 style={{ fontSize: '1.8rem', color: '#fff', marginBottom: '0.5rem', textAlign: 'center' }}>CREATE YOUR TEAM</h2>
                 <p style={{ color: '#94a3b8', fontSize: '0.9rem', textAlign: 'center', fontFamily: 'var(--font-mono)', marginBottom: '2rem' }}>
@@ -200,7 +200,7 @@ const Teams = () => {
                       />
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.25rem' }}>
+                    <div className="form-grid-2" style={{ marginBottom: '1.25rem' }}>
                       <div>
                         <label style={{ display: 'block', fontSize: '0.82rem', color: '#94a3b8', fontFamily: 'var(--font-mono)', marginBottom: '0.4rem' }}>
                           CAPTAIN NAME:
@@ -229,7 +229,7 @@ const Teams = () => {
                       </div>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.25rem' }}>
+                    <div className="form-grid-2" style={{ marginBottom: '1.25rem' }}>
                       <div>
                         <label style={{ display: 'block', fontSize: '0.82rem', color: '#94a3b8', fontFamily: 'var(--font-mono)', marginBottom: '0.4rem' }}>
                           COLLEGE / INSTITUTION:

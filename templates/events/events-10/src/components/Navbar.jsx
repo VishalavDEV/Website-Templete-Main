@@ -179,18 +179,36 @@ export const Navbar = () => {
             </li>
           </ul>
 
-          <div className="nav-actions">
-            <Link to="/registration" className="btn-primary nav-register-btn">
-              REGISTER NOW
-            </Link>
+          <div className="nav-right-cluster">
+            <div className="nav-actions">
+              <Link to="/registration" className="btn-primary nav-register-btn">
+                REGISTER NOW
+              </Link>
 
-            <button
-              className="mobile-hamburger"
-              onClick={() => setMobileMenuOpen(true)}
-              aria-label="Open Navigation Menu"
-            >
-              <Menu size={28} />
-            </button>
+              <button
+                className="mobile-hamburger"
+                onClick={() => setMobileMenuOpen(true)}
+                aria-label="Open Navigation Menu"
+              >
+                <Menu size={28} />
+              </button>
+            </div>
+
+            {/* Tablet-specific sub-nav bar aligned directly underneath Register Now */}
+            <div className="tablet-subnav">
+              <button onClick={() => handleNavClick('hero', '/')} className={`tablet-nav-link ${location.pathname === '/' && activeSection === 'hero' ? 'active' : ''}`}>
+                HOME
+              </button>
+              <button onClick={() => handleNavClick('matches', '/matches')} className={`tablet-nav-link ${(location.pathname === '/' && activeSection === 'matches') || location.pathname === '/matches' ? 'active' : ''}`}>
+                MATCHES
+              </button>
+              <button onClick={() => handleNavClick('teams', '/teams')} className={`tablet-nav-link ${(location.pathname === '/' && activeSection === 'teams') || location.pathname === '/teams' ? 'active' : ''}`}>
+                TEAMS
+              </button>
+              <button onClick={() => handleNavClick('standings', '/standings')} className={`tablet-nav-link ${(location.pathname === '/' && activeSection === 'standings') || location.pathname === '/standings' ? 'active' : ''}`}>
+                STANDINGS
+              </button>
+            </div>
           </div>
         </div>
       </nav>

@@ -71,6 +71,7 @@ const ScheduleTimeline = ({ limit }) => {
 
       {/* Timeline Vertical Container */}
       <div
+        className="timeline-container"
         style={{
           position: 'relative',
           maxWidth: '850px',
@@ -80,6 +81,7 @@ const ScheduleTimeline = ({ limit }) => {
       >
         {/* Central Vertical Glowing Line */}
         <div
+          className="timeline-line"
           style={{
             position: 'absolute',
             top: 0,
@@ -94,6 +96,7 @@ const ScheduleTimeline = ({ limit }) => {
         {displayedEvents.map((item, idx) => (
           <div
             key={idx}
+            className="timeline-item"
             style={{
               position: 'relative',
               marginBottom: '2rem',
@@ -102,6 +105,7 @@ const ScheduleTimeline = ({ limit }) => {
           >
             {/* Glowing Timeline Dot Marker */}
             <div
+              className="timeline-marker"
               style={{
                 position: 'absolute',
                 top: '6px',

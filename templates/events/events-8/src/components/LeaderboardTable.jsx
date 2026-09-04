@@ -38,10 +38,11 @@ const LeaderboardTable = () => {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-          gap: '1.5rem',
-          marginBottom: '3.5rem',
-          alignItems: 'flex-end'
+          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+          gap: '1.25rem',
+          marginBottom: '3rem',
+          alignItems: 'stretch',
+          width: '100%'
         }}
       >
         {/* Rank 2 */}
@@ -51,7 +52,7 @@ const LeaderboardTable = () => {
             textAlign: 'center',
             backgroundColor: 'rgba(0, 240, 255, 0.05)',
             border: '1px solid #00f0ff',
-            padding: '2rem 1rem'
+            padding: '1.75rem 1rem'
           }}
         >
           <div
@@ -85,16 +86,15 @@ const LeaderboardTable = () => {
             textAlign: 'center',
             backgroundColor: 'rgba(0, 255, 102, 0.1)',
             border: '2px solid #00ff66',
-            padding: '2.5rem 1rem',
-            transform: 'translateY(-15px)'
+            padding: '2rem 1rem'
           }}
         >
           <div className="cyber-corner-tl" />
           <div className="cyber-corner-br" />
           <div
             style={{
-              width: '65px',
-              height: '65px',
+              width: '60px',
+              height: '60px',
               borderRadius: '50%',
               backgroundColor: 'rgba(0, 255, 102, 0.25)',
               border: '2px solid #00ff66',
@@ -106,17 +106,17 @@ const LeaderboardTable = () => {
               boxShadow: '0 0 25px rgba(0, 255, 102, 0.5)'
             }}
           >
-            <Trophy size={36} />
+            <Trophy size={32} />
           </div>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: '#00ff66', letterSpacing: '2px' }}>
             GRAND CHAMPION
           </div>
-          <h3 style={{ fontSize: '1.6rem', color: '#fff', margin: '0.25rem 0' }}>{leaderboardData[0].team}</h3>
+          <h3 style={{ fontSize: '1.5rem', color: '#fff', margin: '0.25rem 0' }}>{leaderboardData[0].team}</h3>
           <div style={{ fontSize: '0.85rem', color: '#94a3b8' }}>{leaderboardData[0].college}</div>
           <div
             style={{
               fontFamily: 'var(--font-heading)',
-              fontSize: '2rem',
+              fontSize: '1.9rem',
               fontWeight: '900',
               color: '#00ff66',
               marginTop: '0.75rem',
@@ -134,7 +134,7 @@ const LeaderboardTable = () => {
             textAlign: 'center',
             backgroundColor: 'rgba(255, 183, 0, 0.05)',
             border: '1px solid #ffb700',
-            padding: '2rem 1rem'
+            padding: '1.75rem 1rem'
           }}
         >
           <div
@@ -170,10 +170,11 @@ const LeaderboardTable = () => {
           alignItems: 'center',
           gap: '1rem',
           flexWrap: 'wrap',
-          marginBottom: '2rem'
+          marginBottom: '2rem',
+          width: '100%'
         }}
       >
-        <div style={{ position: 'relative', flex: 1, minWidth: '240px' }}>
+        <div style={{ position: 'relative', flex: '1 1 220px', minWidth: '0', width: '100%' }}>
           <Search size={18} color="#00ff66" style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)' }} />
           <input
             type="text"
@@ -185,13 +186,13 @@ const LeaderboardTable = () => {
           />
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flex: '1 1 200px', width: '100%' }}>
           <Filter size={16} color="#00ff66" />
           <select
             value={filterCollege}
             onChange={(e) => setFilterCollege(e.target.value)}
             className="cyber-input"
-            style={{ minWidth: '180px', cursor: 'pointer' }}
+            style={{ minWidth: '0', width: '100%', cursor: 'pointer' }}
           >
             {colleges.map((col, idx) => (
               <option key={idx} value={col} style={{ backgroundColor: '#050505', color: '#fff' }}>
@@ -203,7 +204,7 @@ const LeaderboardTable = () => {
       </div>
 
       {/* Leaderboard Data Table */}
-      <div style={{ overflowX: 'auto', borderRadius: '8px', border: '1px solid rgba(0, 255, 102, 0.2)' }}>
+      <div className="table-scroll-container" style={{ borderRadius: '8px', border: '1px solid rgba(0, 255, 102, 0.2)' }}>
         <table
           style={{
             width: '100%',

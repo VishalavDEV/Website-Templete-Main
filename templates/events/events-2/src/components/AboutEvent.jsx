@@ -16,7 +16,7 @@ export const AboutEvent = () => {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }}>
+        <div className="about-event-grid">
           {/* Left Column: Image with floating stats */}
           <div style={{ position: 'relative' }}>
             <div
@@ -30,26 +30,12 @@ export const AboutEvent = () => {
               <img
                 src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1000&q=80"
                 alt="About CYBERNEXUS Stage"
-                style={{ width: '100%', height: '420px', objectFit: 'cover' }}
+                style={{ width: '100%', height: '400px', objectFit: 'cover' }}
               />
             </div>
 
             {/* Floating Highlight Badge */}
-            <div
-              style={{
-                position: 'absolute',
-                bottom: '-20px',
-                left: '-20px',
-                background: '#ffffff',
-                border: '1px solid var(--border-light)',
-                borderRadius: 'var(--radius-lg)',
-                padding: '20px 24px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '16px',
-                boxShadow: 'var(--shadow-lg)'
-              }}
-            >
+            <div className="about-floating-badge">
               <div
                 style={{
                   width: '48px',
@@ -59,7 +45,8 @@ export const AboutEvent = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: '#fff'
+                  color: '#fff',
+                  flexShrink: 0
                 }}
               >
                 <Sparkles size={24} />

@@ -184,22 +184,26 @@ const Home = () => {
               display: 'flex',
               gap: '1.25rem',
               justifyContent: 'center',
-              marginBottom: '3rem'
+              marginBottom: '3rem',
+              width: '100%',
+              maxWidth: '550px',
+              margin: '0 auto 3rem auto'
             }}
           >
-            <Link to="/register" className="btn btn-primary interactive pulse-glow" style={{ padding: '1rem 2.2rem', fontSize: '1rem' }}>
+            <Link to="/register" className="btn btn-primary interactive pulse-glow" style={{ padding: '0.85rem 2rem', fontSize: '0.95rem' }}>
               <Zap size={18} /> REGISTER YOUR TEAM
             </Link>
-            <Link to="/about" className="btn btn-outline interactive" style={{ padding: '1rem 2.2rem', fontSize: '1rem' }}>
+            <Link to="/about" className="btn btn-outline interactive" style={{ padding: '0.85rem 2rem', fontSize: '0.95rem' }}>
               EXPLORE HACKATHON <ArrowRight size={18} />
             </Link>
           </div>
 
           {/* Event Info Bar */}
           <div
+            className="event-info-bar"
             style={{
               display: 'inline-flex',
-              gap: '2rem',
+              gap: '1.75rem',
               flexWrap: 'wrap',
               justifyContent: 'center',
               backgroundColor: 'rgba(10, 16, 12, 0.85)',
@@ -209,7 +213,8 @@ const Home = () => {
               boxShadow: '0 0 20px rgba(0, 255, 102, 0.2)',
               fontFamily: 'var(--font-mono)',
               fontSize: '0.88rem',
-              color: '#ffffff'
+              color: '#ffffff',
+              maxWidth: '100%'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -249,13 +254,13 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
+          <div className="grid-2" style={{ alignItems: 'center' }}>
             <div className="cyber-card" style={{ padding: '2.5rem' }}>
-              <h3 style={{ fontSize: '1.6rem', color: '#fff', marginBottom: '1rem' }}>INTENSE OVERNIGHT CODING ATMOSPHERE</h3>
+              <h3 style={{ fontSize: '1.4rem', color: '#fff', marginBottom: '1rem' }}>INTENSE OVERNIGHT CODING ATMOSPHERE</h3>
               <p style={{ color: '#cbd5e1', lineHeight: '1.7', marginBottom: '1.5rem' }}>
                 Picture 500+ students inside a crowded high-tech computer laboratory at midnight. Glowing monitors, mechanical keyboards clicking, mentors guiding teams, unlimited hot espresso, and retro synthwave music playing in the background.
               </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontFamily: 'var(--font-mono)', fontSize: '0.9rem', color: '#00ff66' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontFamily: 'var(--font-mono)', fontSize: '0.88rem', color: '#00ff66' }}>
                 <div>✔ 24 Hours of Non-stop Rapid Prototyping</div>
                 <div>✔ 1-on-1 Guidance from 30+ Industry Tech Leaders</div>
                 <div>✔ Free Gourmet Food, Midnight Pizza & Coffee Station</div>
@@ -263,7 +268,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+            <div className="grid-2" style={{ gap: '1.25rem' }}>
               {[
                 { title: 'BUILD', desc: 'Transform raw ideas into working software & hardware prototypes.', icon: Code },
                 { title: 'LEARN', desc: 'Master AI fine-tuning, Rust, cloud deployment & security.', icon: Cpu },
@@ -497,7 +502,7 @@ const Home = () => {
             Assemble your team of 2-4 hackers, grab your laptops, and prepare for 24 hours of pure creation at Nexora Innovation Lab.
           </p>
 
-          <Link to="/register" className="btn btn-primary interactive pulse-glow" style={{ padding: '1.1rem 2.8rem', fontSize: '1.1rem' }}>
+          <Link to="/register" className="btn btn-primary interactive pulse-glow btn-mobile-full" style={{ padding: '0.95rem 2.5rem', fontSize: '1rem', maxWidth: '400px' }}>
             <Zap size={20} /> REGISTER YOUR TEAM NOW
           </Link>
         </div>
