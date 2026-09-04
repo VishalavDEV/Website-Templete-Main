@@ -16,7 +16,7 @@ export const HomeOverview = () => {
   }, []);
 
   const chartOptions = {
-    chart: { type: 'area', toolbar: { show: false }, background: 'transparent' },
+    chart: { id: 'revenue-growth-chart', type: 'area', toolbar: { show: false }, background: 'transparent' },
     theme: { mode: theme },
     stroke: { curve: 'smooth', width: 3 },
     colors: ['#6366f1', '#10b981'],
@@ -44,7 +44,7 @@ export const HomeOverview = () => {
   ];
 
   const donutOptions = {
-    chart: { type: 'donut', background: 'transparent' },
+    chart: { id: 'revenue-channel-distribution-chart', type: 'donut', background: 'transparent' },
     theme: { mode: theme },
     colors: ['#6366f1', '#06b6d4', '#f59e0b', '#10b981'],
     labels: ['Enterprise SaaS (45%)', 'Cloud Hosting (25%)', 'Developer APIs (18%)', 'Support SLAs (12%)'],

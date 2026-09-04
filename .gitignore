@@ -6,6 +6,7 @@ frontend/build/
 build/
 dist/
 coverage/
+scratch/
 
 # Databases and large assets
 db-data/
