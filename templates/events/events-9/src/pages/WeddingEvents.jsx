@@ -8,7 +8,7 @@ export default function WeddingEvents() {
     <div className="section-padding" style={{ paddingTop: '8rem' }}>
       <div className="container">
         {/* PAGE HEADER */}
-        <div className="text-center" style={{ marginBottom: '5rem' }}>
+        <div className="text-center" style={{ marginBottom: '4rem' }}>
           <span className="section-label">SIX UNFORGETTABLE MOMENTS</span>
           <h1 className="serif-title">WEDDING EVENTS</h1>
           <p style={{ color: 'var(--muted)', fontSize: '1.1rem', maxWidth: '650px', margin: '0.8rem auto 0' }}>
@@ -17,21 +17,21 @@ export default function WeddingEvents() {
         </div>
 
         {/* EVENT SECTIONS */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
           {weddingData.events.map((event, idx) => {
             const isEven = idx % 2 === 0;
 
             return (
               <div key={event.id} className="split-story-grid" style={{ alignItems: 'center' }}>
                 {/* IMAGE */}
-                <div className="story-image-wrap" style={{ order: isEven ? 1 : 2 }}>
-                  <img src={event.image} alt={event.name} style={{ height: '440px' }} />
+                <div className="story-image-wrap" style={{ order: isEven ? 1 : 2, width: '100%', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
+                  <img src={event.image} alt={event.name} style={{ width: '100%', height: '360px', objectFit: 'cover' }} />
                 </div>
 
                 {/* DETAILS */}
                 <div style={{ order: isEven ? 2 : 1 }}>
                   <span className="section-label">{event.tagline}</span>
-                  <h2 className="serif-title" style={{ marginBottom: '1.2rem', fontSize: '2.5rem' }}>
+                  <h2 className="serif-title" style={{ marginBottom: '1.2rem', fontSize: 'clamp(1.8rem, 4vw, 2.4rem)' }}>
                     {event.name}
                   </h2>
 
@@ -58,7 +58,7 @@ export default function WeddingEvents() {
                     {event.description}
                   </p>
 
-                  <Link to="/rsvp" className="btn-primary">
+                  <Link to="/rsvp" className="btn-primary" style={{ display: 'inline-flex' }}>
                     RSVP FOR THIS EVENT
                   </Link>
                 </div>

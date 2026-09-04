@@ -1,3 +1,9 @@
+html, body, #root, .app-root {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 @media (max-width: 1200px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -19,13 +25,24 @@
   }
 }
 
-@media (max-width: 992px) {
-  .navbar-links, .navbar-actions .btn-outline {
-    display: none;
+/* Tablet Viewport (768px - 1100px) */
+@media (max-width: 1100px) {
+  .navbar-links {
+    display: none !important;
+  }
+
+  .nav-desktop-buttons {
+    display: none !important;
+  }
+
+  .nav-mobile-cta {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .hamburger-btn {
-    display: block;
+    display: flex !important;
   }
 
   .grid-3 {
@@ -41,9 +58,49 @@
   }
 }
 
+/* Mobile Viewport (< 768px) */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 0 !important;
+  }
+
+  .navbar.scrolled {
+    padding: 0.6rem 0 !important;
+  }
+
+  .navbar-container {
+    padding: 0 1rem !important;
+    gap: 0.5rem !important;
+  }
+
+  .navbar-logo-icon {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 1.05rem !important;
+  }
+
+  .navbar-logo-text {
+    font-size: 1.1rem !important;
+  }
+
+  .navbar-logo-text span {
+    font-size: 0.62rem !important;
+    letter-spacing: 1.5px !important;
+  }
+
+  .nav-mobile-cta {
+    display: none !important;
+  }
+
+  .hamburger-btn {
+    display: flex !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    padding: 8px !important;
+  }
+
   .heading-huge {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
 
   .heading-section {
@@ -65,27 +122,80 @@
   .trans-img-comparison {
     height: 200px;
   }
+
+  /* Hero Section & "Register Now" Button Display on Mobile */
+  .hero-section {
+    padding-top: 5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 380px !important;
+    margin: 0 auto !important;
+    gap: 0.85rem !important;
+  }
+
+  .hero-cta-group .btn {
+    width: 100% !important;
+    min-height: 48px !important;
+    padding: 0.85rem 1.5rem !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .event-cta-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    gap: 0.85rem !important;
+  }
+
+  .event-cta-buttons .btn {
+    width: 100% !important;
+    min-height: 48px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  .custom-cursor {
+    display: none !important;
+  }
 }
 
+/* Small Mobile Viewport (< 480px) */
 @media (max-width: 480px) {
+  .navbar-logo-text span {
+    display: none;
+  }
+
   .countdown-box-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .hero-athlete-img-container {
-    height: 380px;
+    height: 320px;
   }
 
-  .hero-cta-group {
-    flex-direction: column;
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 11vw, 3.5rem);
+  }
+
+  .event-floating-card {
     width: 100%;
-  }
-
-  .hero-cta-group .btn {
-    width: 100%;
-  }
-
-  .custom-cursor {
-    display: none !important;
+    box-sizing: border-box;
+    justify-content: center;
   }
 }

@@ -50,9 +50,10 @@ const Footer = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '3rem',
-            marginBottom: '4rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '2.5rem',
+            marginBottom: '3.5rem',
+            width: '100%'
           }}
         >
           {/* Col 1: Brand & Tagline */}
@@ -123,7 +124,8 @@ const Footer = () => {
                     textDecoration: 'none',
                     fontFamily: 'var(--font-mono)',
                     fontSize: '0.85rem',
-                    transition: 'color 0.2s'
+                    transition: 'color 0.2s',
+                    padding: '0.2rem 0'
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#00ff66')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = '#94a3b8')}
@@ -170,17 +172,17 @@ const Footer = () => {
                 <CheckCircle size={18} /> SUBSCRIBED TO NIGHT LOGS!
               </div>
             ) : (
-              <form onSubmit={handleSubscribe} style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem' }}>
+              <form onSubmit={handleSubscribe} style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem', width: '100%', flexWrap: 'wrap' }}>
                 <input
                   type="email"
                   placeholder="hacker@college.edu"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="cyber-input"
-                  style={{ flex: 1, padding: '0.65rem 0.85rem', fontSize: '0.85rem' }}
+                  style={{ flex: '1 1 180px', minHeight: '44px', padding: '0.65rem 0.85rem', fontSize: '0.85rem' }}
                   required
                 />
-                <button type="submit" className="btn btn-primary" style={{ padding: '0.65rem 1rem' }}>
+                <button type="submit" className="btn btn-primary" style={{ minHeight: '44px', padding: '0.65rem 1.25rem' }}>
                   <Send size={16} />
                 </button>
               </form>
@@ -189,7 +191,7 @@ const Footer = () => {
             <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#64748b', marginBottom: '0.75rem' }}>
               CONNECT WITH US:
             </h4>
-            <div style={{ display: 'flex', gap: '0.75rem' }}>
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
               {[
                 { icon: Github, link: 'https://github.com' },
                 { icon: Linkedin, link: 'https://linkedin.com' },
@@ -205,8 +207,8 @@ const Footer = () => {
                     target="_blank"
                     rel="noreferrer"
                     style={{
-                      width: '36px',
-                      height: '36px',
+                      width: '40px',
+                      height: '40px',
                       borderRadius: '4px',
                       backgroundColor: 'rgba(255, 255, 255, 0.05)',
                       border: '1px solid rgba(0, 255, 102, 0.2)',
@@ -236,6 +238,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div
+          className="footer-bottom-bar"
           style={{
             borderTop: '1px solid rgba(255, 255, 255, 0.08)',
             paddingTop: '2rem',
@@ -246,7 +249,8 @@ const Footer = () => {
             gap: '1rem',
             fontFamily: 'var(--font-mono)',
             fontSize: '0.8rem',
-            color: '#64748b'
+            color: '#64748b',
+            width: '100%'
           }}
         >
           <div>© 2026 NEXORA AFTERDARK. ALL RIGHTS RESERVED.</div>

@@ -36,12 +36,23 @@ html {
   background-color: var(--bg-midnight);
   color: var(--warm-white);
   font-family: var(--font-body);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
   line-height: 1.6;
   background: var(--bg-midnight);
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* Custom Scrollbar */
@@ -247,6 +258,44 @@ body {
   animation: bounceSlow 2s infinite ease-in-out;
 }
 
+/* Responsive Navbar & Layout Utilities */
+@media (max-width: 767px) {
+  .desktop-nav, nav.desktop-nav, header nav {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mobile-toggle {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .mobile-toggle {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-video-container {
+    min-height: auto !important;
+    padding: 60px 16px 50px !important;
+  }
+  .hero-audio-toggle {
+    display: none !important;
+  }
+}
+
+.hero-audio-toggle {
+  display: flex;
+}
+
+/* Safe area padding utilities */
+.pt-safe {
+  padding-top: max(32px, env(safe-area-inset-top, 32px));
+}
+
 /* Media Accessibility - Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
@@ -256,3 +305,5 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+

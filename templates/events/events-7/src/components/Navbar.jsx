@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown, Flame, Trophy, Calendar, MapPin, Users, HelpCircle, Activity, Award, Compass, ShieldAlert } from 'lucide-react';
+import { Menu, X, ChevronDown, Flame, HelpCircle, Activity, Award, Compass, ShieldAlert, Volume2, VolumeX } from 'lucide-react';
+import { audioManager } from '../utils/audioManager';
 
 // Menu items aligned in EXACT top-to-bottom page order of sections on the Home page, with Contact directly next to Gallery
 const MENU_SECTIONS = [
@@ -19,27 +20,63 @@ const MENU_SECTIONS = [
 ];
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [activeSection, setActiveSection] = useState('hero');
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  const [headerBottom, setHeaderBottom] = useState(104);
+  const headerRef = useRef(null);
 
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Audio manager subscription
+  useEffect(() => {
+    return audioManager.subscribe(setIsPlayingAudio);
+  }, []);
+
+  // Close desktop dropdown if screen is mobile
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setActiveDropdown(null);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Track exact header bottom position for overlay
+  useEffect(() => {
+    const updatePosition = () => {
+      if (headerRef.current) {
+        setHeaderBottom(Math.round(headerRef.current.getBoundingClientRect().bottom));
+      }
+    };
+    updatePosition();
+    window.addEventListener('scroll', updatePosition, { passive: true });
+    window.addEventListener('resize', updatePosition);
+    return () => {
+      window.removeEventListener('scroll', updatePosition);
+      window.removeEventListener('resize', updatePosition);
+    };
+  }, [mobileMenuOpen]);
+
+  // Audio manager subscription
+  useEffect(() => {
+    return audioManager.subscribe(setIsPlayingAudio);
+  }, []);
+
   // ScrollSpy listener to dynamically track active section in exact page order
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
-
-      // ScrollSpy active section detection on Home page
       if (location.pathname === '/') {
         const sections = MENU_SECTIONS.map(item => document.getElementById(item.id)).filter(Boolean);
         const scrollPosition = window.scrollY + 180;
 
         for (let i = sections.length - 1; i >= 0; i--) {
           const section = sections[i];
-          if (section.offsetTop <= scrollPosition) {
+          if (section && section.offsetTop <= scrollPosition) {
             setActiveSection(section.id);
             break;
           }
@@ -48,23 +85,30 @@ export default function Navbar() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname]);
 
-  // Close mobile drawer on route change
+  // Handle body scroll lock when mobile menu opens/closes
   useEffect(() => {
-    setMobileMenuOpen(false);
-    setActiveDropdown(null);
-  }, [location]);
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
 
   // Smooth scroll to section if on Home page, or navigate to route if on another page
   const handleNavClick = (e, item) => {
+    setMobileMenuOpen(false);
     if (location.pathname === '/') {
       const targetElement = document.getElementById(item.id);
       if (targetElement) {
         e.preventDefault();
-        const navHeight = 70;
+        const navHeight = 60;
         const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
         window.scrollTo({ top: targetTop, behavior: 'smooth' });
         setActiveSection(item.id);
@@ -82,229 +126,180 @@ export default function Navbar() {
   };
 
   return (
-    <header 
-      style={{
-        position: 'sticky',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 1000,
-        transition: 'all 0.35s ease',
-        background: isScrolled 
-          ? 'rgba(9, 10, 13, 0.95)' 
-          : 'linear-gradient(180deg, rgba(9, 10, 13, 0.9) 0%, rgba(9, 10, 13, 0) 100%)',
-        backdropFilter: 'blur(16px)',
-        WebkitBackdropFilter: 'blur(16px)',
-        borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid transparent',
-        boxShadow: isScrolled ? '0 10px 30px rgba(0, 0, 0, 0.6)' : 'none'
-      }}
-    >
-      <div style={{
-        maxWidth: 'var(--max-width)',
-        margin: '0 auto',
-        padding: '0 16px',
-        height: 'var(--navbar-height)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-      }}>
-        
-        {/* Brand Logo with Marathon Crest */}
-        <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div style={{
-            width: '38px',
-            height: '38px',
-            borderRadius: '8px',
-            background: 'linear-gradient(135deg, var(--marathon-red), var(--bright-orange))',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 0 15px var(--glow-red)'
-          }}>
-            <Flame size={20} color="#FFFFFF" />
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span className="font-display" style={{ fontSize: '1.5rem', color: '#FFFFFF', lineHeight: 0.9, letterSpacing: '1.5px' }}>
-              VAYORA
-            </span>
-            <span style={{ fontSize: '0.6rem', fontWeight: 800, color: 'var(--bright-orange)', letterSpacing: '2px' }}>
-              RUNFEST 2026
-            </span>
-          </div>
-        </Link>
+    <>
+      <header 
+        ref={headerRef}
+        className="h-14 md:h-16 px-3 md:px-6 flex items-center justify-between w-full bg-black/90 backdrop-blur-md relative z-50 border-b border-white/[0.08]"
+        style={{ boxSizing: 'border-box' }}
+      >
+        <div className="w-full max-w-7xl mx-auto flex items-center justify-between">
+          
+          {/* Brand Logo with Marathon Crest (Scaled to h-7 w-auto on mobile) */}
+          <Link to="/" className="flex items-center gap-2 no-underline shrink-0">
+            <div className="h-7 w-7 rounded bg-gradient-to-br from-[#E92B2B] to-[#FF6B2C] flex items-center justify-center shadow-sm shrink-0">
+              <Flame size={15} color="#FFFFFF" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-display text-base md:text-lg text-white leading-none tracking-wider">
+                VAYORA
+              </span>
+              <span className="text-[7px] md:text-[8px] font-extrabold text-[#FF6B2C] tracking-wider leading-none">
+                RUNFEST 2026
+              </span>
+            </div>
+          </Link>
 
-        {/* Dynamic Desktop ScrollSpy Menu Bars (Contact placed directly next to Gallery) */}
-        <nav className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          {MENU_SECTIONS.map(item => {
-            const active = isLinkActive(item);
+          {/* Desktop Navigation Links (Only visible on lg+ screens: hidden lg:flex) */}
+          <nav className="desktop-nav hidden lg:flex items-center gap-1">
+            {MENU_SECTIONS.map(item => {
+              const active = isLinkActive(item);
 
-            return (
-              <Link 
-                key={item.id}
-                to={item.path}
-                onClick={(e) => handleNavClick(e, item)}
-                style={{
-                  color: active ? 'var(--bright-orange)' : 'var(--warm-white)',
-                  textDecoration: 'none',
-                  fontWeight: active ? 800 : 600,
-                  fontSize: '0.8rem',
-                  position: 'relative',
-                  padding: '6px 8px',
-                  borderRadius: '6px',
-                  background: active ? 'rgba(255, 107, 44, 0.15)' : 'transparent',
-                  transition: 'all 0.25s ease',
-                  whiteSpace: 'nowrap'
-                }}
-              >
-                {item.label}
+              return (
+                <Link 
+                  key={item.id}
+                  to={item.path}
+                  onClick={(e) => handleNavClick(e, item)}
+                  className={`text-[0.78rem] font-semibold px-2 py-1.5 rounded transition-colors no-underline whitespace-nowrap ${
+                    active ? 'text-[#FF6B2C] font-bold bg-[#FF6B2C]/10' : 'text-neutral-300 hover:text-white'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
 
-                {/* Active Indicator Underline */}
-                {active && (
-                  <div style={{
-                    position: 'absolute',
-                    bottom: '-2px',
-                    left: '6px',
-                    right: '6px',
-                    height: '2px',
-                    background: 'linear-gradient(90deg, var(--marathon-red), var(--bright-orange))',
-                    borderRadius: '2px',
-                    boxShadow: '0 0 8px var(--glow-orange)'
-                  }} />
-                )}
-              </Link>
-            );
-          })}
-
-          {/* Extra Pages Dropdown */}
-          <div 
-            style={{ position: 'relative' }}
-            onMouseEnter={() => setActiveDropdown('more')}
-            onMouseLeave={() => setActiveDropdown(null)}
-          >
-            <button 
-              style={{
-                background: 'none',
-                border: 'none',
-                color: ['/expo', '/training', '/volunteers', '/results', '/faq'].includes(location.pathname) ? 'var(--bright-orange)' : 'var(--warm-white)',
-                fontWeight: 600,
-                fontSize: '0.8rem',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '2px',
-                padding: '6px 6px'
-              }}
+            {/* Extra Pages Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('more')}
+              onMouseLeave={() => setActiveDropdown(null)}
             >
-              More <ChevronDown size={12} />
+              <button 
+                type="button"
+                className="bg-transparent border-none text-neutral-300 hover:text-white font-semibold text-[0.78rem] cursor-pointer flex items-center gap-1 px-2 py-1.5"
+              >
+                More <ChevronDown size={12} />
+              </button>
+
+              {activeDropdown === 'more' && (
+                <div className="glass-panel absolute top-full right-0 w-52 p-2.5 flex flex-col gap-1 shadow-2xl z-50 bg-[#15171B] border border-white/10 rounded-lg">
+                  <Link to="/results" className="text-neutral-200 hover:text-white hover:bg-white/5 no-underline p-2 rounded text-xs flex items-center gap-2">
+                    <Activity size={14} className="text-[#FF6B2C]" /> Live Leaderboard
+                  </Link>
+                  <Link to="/expo" className="text-neutral-200 hover:text-white hover:bg-white/5 no-underline p-2 rounded text-xs flex items-center gap-2">
+                    <Award size={14} className="text-[#FF6B2C]" /> Race Expo
+                  </Link>
+                  <Link to="/training" className="text-neutral-200 hover:text-white hover:bg-white/5 no-underline p-2 rounded text-xs flex items-center gap-2">
+                    <Compass size={14} className="text-[#FF6B2C]" /> Training Plans
+                  </Link>
+                  <Link to="/volunteers" className="text-neutral-200 hover:text-white hover:bg-white/5 no-underline p-2 rounded text-xs flex items-center gap-2">
+                    <ShieldAlert size={14} className="text-[#FF6B2C]" /> Volunteer Program
+                  </Link>
+                  <Link to="/faq" className="text-neutral-200 hover:text-white hover:bg-white/5 no-underline p-2 rounded text-xs flex items-center gap-2">
+                    <HelpCircle size={14} className="text-[#FF6B2C]" /> FAQs
+                  </Link>
+                </div>
+              )}
+            </div>
+          </nav>
+
+          {/* Right Action Bar (Audio + REGISTER NOW CTA + Hamburger Menu) */}
+          <div className="flex items-center gap-2 shrink-0">
+            {/* Audio Playback Button */}
+            <button
+              onClick={() => audioManager.toggle()}
+              className="w-8 h-8 rounded-full flex items-center justify-center cursor-pointer transition-colors bg-white/10 border border-white/15 text-white hover:border-[#FF6B2C] hover:text-[#FF6B2C] shrink-0"
+              title={isPlayingAudio ? "Mute race sound" : "Play marathon race audio"}
+              aria-label="Toggle race audio"
+            >
+              {isPlayingAudio ? <Volume2 size={15} className="text-[#FF6B2C]" /> : <VolumeX size={15} />}
             </button>
 
-            {activeDropdown === 'more' && (
-              <div className="glass-panel" style={{
-                position: 'absolute',
-                top: '100%',
-                right: 0,
-                width: '210px',
-                padding: '10px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '4px',
-                boxShadow: '0 20px 40px rgba(0,0,0,0.8)',
-                zIndex: 100
-              }}>
-                <Link to="/results" style={{ color: 'var(--warm-white)', textDecoration: 'none', padding: '8px 12px', borderRadius: '6px', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Activity size={14} color="var(--bright-orange)" /> Live Leaderboard
-                </Link>
-                <Link to="/expo" style={{ color: 'var(--warm-white)', textDecoration: 'none', padding: '8px 12px', borderRadius: '6px', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Award size={14} color="var(--bright-orange)" /> Race Expo
-                </Link>
-                <Link to="/training" style={{ color: 'var(--warm-white)', textDecoration: 'none', padding: '8px 12px', borderRadius: '6px', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Compass size={14} color="var(--bright-orange)" /> Training Plans
-                </Link>
-                <Link to="/volunteers" style={{ color: 'var(--warm-white)', textDecoration: 'none', padding: '8px 12px', borderRadius: '6px', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <ShieldAlert size={14} color="var(--bright-orange)" /> Volunteer Program
-                </Link>
-                <Link to="/faq" style={{ color: 'var(--warm-white)', textDecoration: 'none', padding: '8px 12px', borderRadius: '6px', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <HelpCircle size={14} color="var(--bright-orange)" /> FAQs
-                </Link>
-              </div>
-            )}
-          </div>
-        </nav>
+            {/* REGISTER NOW CTA Button (Scaled strictly to text-[11px] px-3 py-1.5 h-8 font-semibold) */}
+            <Link 
+              to="/register" 
+              className="text-[11px] px-3 py-1.5 h-8 font-semibold rounded bg-gradient-to-r from-[#E92B2B] to-[#FF6B2C] text-white uppercase flex items-center justify-center whitespace-nowrap no-underline shadow-md active:scale-95 transition-transform shrink-0"
+            >
+              REGISTER NOW
+            </Link>
 
-        {/* Right Primary Action */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <Link to="/register" className="btn-primary" style={{ padding: '8px 18px', fontSize: '0.8rem' }}>
+            {/* Mobile Menu Toggle Icon */}
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="w-8 h-8 rounded-lg flex items-center justify-center bg-white/10 border border-white/15 text-white lg:hidden cursor-pointer shrink-0"
+              aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X size={18} className="text-[#FF6B2C]" /> : <Menu size={18} />}
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Menu Drawer: Fixed overlay directly below header */}
+      {mobileMenuOpen && (
+        <div 
+          className="fixed inset-x-0 top-[header-height] bg-black/95 z-40 p-4 border-b border-neutral-800 shadow-2xl overflow-y-auto backdrop-blur-xl lg:hidden"
+          style={{
+            top: `${headerBottom}px`,
+            maxHeight: `calc(100vh - ${headerBottom}px)`,
+            boxSizing: 'border-box'
+          }}
+        >
+          {/* Main sections */}
+          <div className="flex flex-col gap-1 mb-3">
+            {MENU_SECTIONS.map(item => (
+              <Link 
+                key={item.id}
+                to={item.path} 
+                onClick={(e) => handleNavClick(e, item)}
+                className={`py-2 px-3 rounded-md text-sm font-semibold no-underline flex items-center justify-between transition-colors ${
+                  isLinkActive(item) ? 'text-[#FF6B2C] bg-[#FF6B2C]/15 font-bold' : 'text-neutral-200 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                <span>{item.label}</span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="h-px bg-neutral-800 my-2" />
+
+          {/* Quick Register CTA in Drawer */}
+          <Link 
+            to="/register" 
+            onClick={() => setMobileMenuOpen(false)}
+            className="w-full py-2.5 text-center text-xs font-bold uppercase rounded bg-gradient-to-r from-[#E92B2B] to-[#FF6B2C] text-white no-underline block shadow-lg active:scale-95 transition-transform my-2"
+          >
             REGISTER NOW
           </Link>
 
-          {/* Mobile Drawer Toggle */}
-          <button 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="mobile-toggle"
-            style={{
-              background: 'none',
-              border: 'none',
-              color: '#FFFFFF',
-              cursor: 'pointer',
-              display: 'none'
-            }}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Slide-Out Drawer */}
-      {mobileMenuOpen && (
-        <div className="glass-panel" style={{
-          position: 'fixed',
-          top: 'var(--navbar-height)',
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'rgba(9, 10, 13, 0.98)',
-          backdropFilter: 'blur(20px)',
-          padding: '24px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '14px',
-          overflowY: 'auto',
-          zIndex: 999
-        }}>
-          {MENU_SECTIONS.map(item => (
-            <Link 
-              key={item.id}
-              to={item.path} 
-              onClick={(e) => {
-                setMobileMenuOpen(false);
-                handleNavClick(e, item);
-              }}
-              style={{
-                color: isLinkActive(item) ? 'var(--bright-orange)' : 'var(--warm-white)',
-                textDecoration: 'none',
-                fontSize: '1.15rem',
-                fontWeight: 700
-              }}
-            >
-              {item.label}
+          {/* Extra Links Grid */}
+          <div className="grid grid-cols-2 gap-2 mt-2 pt-1">
+            <Link to="/results" onClick={() => setMobileMenuOpen(false)} className="text-neutral-300 hover:text-white text-xs font-medium py-2 px-2.5 rounded bg-white/5 no-underline flex items-center gap-1.5">
+              <Activity size={13} className="text-[#FF6B2C]" /> Live Results
             </Link>
-          ))}
-          <Link to="/register" style={{ color: 'var(--bright-orange)', textDecoration: 'none', fontSize: '1.2rem', fontWeight: 800 }}>Register Now</Link>
-          <Link to="/results" style={{ color: 'var(--warm-white)', textDecoration: 'none', fontSize: '1.2rem', fontWeight: 700 }}>Live Results</Link>
-          <Link to="/expo" style={{ color: 'var(--warm-white)', textDecoration: 'none', fontSize: '1.2rem', fontWeight: 700 }}>Race Expo</Link>
-          <Link to="/training" style={{ color: 'var(--warm-white)', textDecoration: 'none', fontSize: '1.2rem', fontWeight: 700 }}>Training Plans</Link>
-          <Link to="/volunteers" style={{ color: 'var(--warm-white)', textDecoration: 'none', fontSize: '1.2rem', fontWeight: 700 }}>Volunteers</Link>
-          <Link to="/faq" style={{ color: 'var(--warm-white)', textDecoration: 'none', fontSize: '1.2rem', fontWeight: 700 }}>FAQs</Link>
+            <Link to="/expo" onClick={() => setMobileMenuOpen(false)} className="text-neutral-300 hover:text-white text-xs font-medium py-2 px-2.5 rounded bg-white/5 no-underline flex items-center gap-1.5">
+              <Award size={13} className="text-[#FF6B2C]" /> Race Expo
+            </Link>
+            <Link to="/training" onClick={() => setMobileMenuOpen(false)} className="text-neutral-300 hover:text-white text-xs font-medium py-2 px-2.5 rounded bg-white/5 no-underline flex items-center gap-1.5">
+              <Compass size={13} className="text-[#FF6B2C]" /> Training
+            </Link>
+            <Link to="/volunteers" onClick={() => setMobileMenuOpen(false)} className="text-neutral-300 hover:text-white text-xs font-medium py-2 px-2.5 rounded bg-white/5 no-underline flex items-center gap-1.5">
+              <ShieldAlert size={13} className="text-[#FF6B2C]" /> Volunteers
+            </Link>
+            <Link to="/faq" onClick={() => setMobileMenuOpen(false)} className="text-neutral-300 hover:text-white text-xs font-medium py-2 px-2.5 rounded bg-white/5 no-underline flex items-center gap-1.5 col-span-2">
+              <HelpCircle size={13} className="text-[#FF6B2C]" /> FAQs
+            </Link>
+          </div>
         </div>
       )}
 
       <style>{`
-        @media (max-width: 1180px) {
+        @media (max-width: 767px) {
           .desktop-nav { display: none !important; }
-          .mobile-toggle { display: block !important; }
         }
       `}</style>
-    </header>
+    </>
   );
 }
+

@@ -165,7 +165,7 @@ const Challenges = () => {
           </div>
 
           {/* Grid of Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.75rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', width: '100%' }}>
             {filteredChallenges.map((challenge) => (
               <ChallengeCard key={challenge.id} challenge={challenge} />
             ))}

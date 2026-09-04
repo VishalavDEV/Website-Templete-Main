@@ -75,20 +75,23 @@ const Rules = () => {
                 gap: '0.75rem',
                 cursor: 'pointer',
                 fontFamily: 'var(--font-mono)',
-                fontSize: '0.95rem',
+                fontSize: '0.88rem',
                 color: agreed ? '#00ff66' : '#ffffff',
                 backgroundColor: 'rgba(0, 255, 102, 0.08)',
-                padding: '0.85rem 1.5rem',
+                padding: '0.85rem 1.25rem',
                 borderRadius: '6px',
                 border: `1px solid ${agreed ? '#00ff66' : 'rgba(255, 255, 255, 0.15)'}`,
-                marginBottom: '1.75rem'
+                marginBottom: '1.75rem',
+                maxWidth: '100%',
+                boxSizing: 'border-box',
+                textAlign: 'left'
               }}
             >
               <input
                 type="checkbox"
                 checked={agreed}
                 onChange={(e) => setAgreed(e.target.checked)}
-                style={{ width: '18px', height: '18px', accentColor: '#00ff66', cursor: 'pointer' }}
+                style={{ width: '18px', height: '18px', accentColor: '#00ff66', cursor: 'pointer', flexShrink: 0 }}
               />
               <span>I HAVE READ & AGREE TO ALL HACKATHON RULES</span>
             </label>
@@ -97,12 +100,13 @@ const Rules = () => {
               <button
                 onClick={handleProceed}
                 disabled={!agreed}
-                className="btn btn-primary"
+                className="btn btn-primary btn-mobile-full"
                 style={{
-                  padding: '1rem 2.5rem',
-                  fontSize: '1rem',
+                  padding: '0.9rem 2.2rem',
+                  fontSize: '0.95rem',
                   opacity: agreed ? 1 : 0.4,
-                  cursor: agreed ? 'pointer' : 'not-allowed'
+                  cursor: agreed ? 'pointer' : 'not-allowed',
+                  maxWidth: '400px'
                 }}
               >
                 PROCEED TO TEAM REGISTRATION <Zap size={18} />

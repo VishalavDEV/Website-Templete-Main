@@ -52,21 +52,15 @@ export default function Countdown() {
               <span className="countdown-label">DAYS</span>
             </div>
 
-            <span className="countdown-divider">:</span>
-
             <div className="countdown-box">
               <span className="countdown-number">{String(timeLeft.hours).padStart(2, '0')}</span>
               <span className="countdown-label">HOURS</span>
             </div>
 
-            <span className="countdown-divider">:</span>
-
             <div className="countdown-box">
               <span className="countdown-number">{String(timeLeft.minutes).padStart(2, '0')}</span>
               <span className="countdown-label">MINUTES</span>
             </div>
-
-            <span className="countdown-divider">:</span>
 
             <div className="countdown-box">
               <span className="countdown-number">{String(timeLeft.seconds).padStart(2, '0')}</span>

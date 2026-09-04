@@ -99,17 +99,20 @@ export const ContactForm = () => {
 
         {/* Interactive Map Visual Mockup */}
         <div style={{
-          height: '240px',
+          width: '100%',
+          maxWidth: '100%',
+          height: '280px',
           borderRadius: '16px',
           overflow: 'hidden',
           position: 'relative',
-          border: '1px solid rgba(124, 255, 79, 0.3)'
+          border: '1px solid rgba(124, 255, 79, 0.3)',
+          boxSizing: 'border-box'
         }}>
           <iframe
             title="Aquavexa Location Map"
             width="100%"
             height="100%"
-            style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(1.2)' }}
+            style={{ border: 0, width: '100%', height: '100%', filter: 'invert(90%) hue-rotate(180deg) contrast(1.2)', display: 'block' }}
             loading="lazy"
             allowFullScreen
             src="https://maps.google.com/maps?q=Aurora%20Industrial%20District&t=&z=13&ie=UTF8&iwloc=&output=embed"

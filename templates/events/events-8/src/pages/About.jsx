@@ -46,10 +46,10 @@ const About = () => {
       {/* What is Nexora Afterdark */}
       <section className="section-padding">
         <div className="container">
-          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
+          <div className="grid-2" style={{ alignItems: 'center' }}>
             <div>
               <div className="badge-tag">● THE VISION</div>
-              <h2 style={{ fontSize: '2.2rem', color: '#fff', marginBottom: '1rem' }}>WHAT IS NEXORA AFTERDARK?</h2>
+              <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.2rem)', color: '#fff', marginBottom: '1rem' }}>WHAT IS NEXORA AFTERDARK?</h2>
               <p style={{ color: '#cbd5e1', lineHeight: '1.8', marginBottom: '1.25rem' }}>
                 NEXORA AFTERDARK is a premier 24-hour overnight student hackathon designed to bring developers, designers, engineers, and problem-solvers under one roof to build transformative digital solutions.
               </p>
@@ -61,7 +61,7 @@ const About = () => {
             <div className="cyber-card" style={{ padding: '2.5rem', backgroundColor: 'rgba(10, 16, 12, 0.9)' }}>
               <div className="cyber-corner-tl" />
               <div className="cyber-corner-br" />
-              <h3 style={{ fontSize: '1.4rem', color: '#00ff66', marginBottom: '1rem', fontFamily: 'var(--font-mono)' }}>
+              <h3 style={{ fontSize: '1.3rem', color: '#00ff66', marginBottom: '1rem', fontFamily: 'var(--font-mono)' }}>
                 THE CORE PHILOSOPHY
               </h3>
               <p style={{ color: '#cbd5e1', lineHeight: '1.7', marginBottom: '1rem' }}>
@@ -87,7 +87,7 @@ const About = () => {
             <p className="section-subtitle">Empowering student developers through every hour of the night.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', width: '100%' }}>
             {objectives.map((obj, idx) => {
               const IconComp = obj.icon;
               return (
@@ -103,13 +103,14 @@ const About = () => {
                       alignItems: 'center',
                       justifyContent: 'center',
                       color: '#00ff66',
-                      marginBottom: '1rem'
+                      marginBottom: '1rem',
+                      boxShadow: '0 0 15px rgba(0, 255, 102, 0.3)'
                     }}
                   >
                     <IconComp size={24} />
                   </div>
-                  <h3 style={{ fontSize: '1.3rem', color: '#fff', marginBottom: '0.5rem' }}>{obj.title}</h3>
-                  <p style={{ color: '#94a3b8', fontSize: '0.92rem', lineHeight: '1.6' }}>{obj.desc}</p>
+                  <h3 style={{ fontSize: '1.25rem', color: '#fff', marginBottom: '0.5rem' }}>{obj.title}</h3>
+                  <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: '1.6' }}>{obj.desc}</p>
                 </div>
               );
             })}
@@ -117,43 +118,63 @@ const About = () => {
         </div>
       </section>
 
-      {/* Who Can Participate */}
+      {/* Who Can Participate & Why Join */}
       <section className="section-padding">
         <div className="container">
-          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
-            <div className="cyber-card" style={{ padding: '2.5rem' }}>
-              <div className="badge-tag">● ELIGIBILITY</div>
-              <h2 style={{ fontSize: '2rem', color: '#fff', marginBottom: '1rem' }}>WHO CAN PARTICIPATE?</h2>
+          <div className="grid-2">
+            {/* Who can participate */}
+            <div className="cyber-card" style={{ padding: '2.5rem', backgroundColor: 'rgba(10, 16, 12, 0.9)' }}>
+              <div className="cyber-corner-tl" />
+              <div className="cyber-corner-br" />
+              <div className="badge-tag" style={{ marginBottom: '0.75rem' }}>● ELIGIBILITY</div>
+              <h3 style={{ fontSize: '1.4rem', color: '#fff', marginBottom: '1rem' }}>WHO CAN PARTICIPATE?</h3>
               <p style={{ color: '#cbd5e1', lineHeight: '1.7', marginBottom: '1.5rem' }}>
-                We welcome undergraduate, postgraduate, and diploma students from all technology disciplines. Whether you are a seasoned competitive programmer or building your first web app, NEXORA AFTERDARK provides the platform to level up your skills.
+                Open to all undergraduate, postgraduate, and diploma students across universities and colleges. Hackers can participate in teams of 2 to 4 members.
               </p>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem' }}>
-                {eligibleDisciplines.map((disc, idx) => (
-                  <div key={idx} style={{ color: '#00ff66', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>
-                    ✔ {disc}
-                  </div>
+
+              <h4 style={{ color: '#00ff66', fontFamily: 'var(--font-mono)', fontSize: '0.88rem', marginBottom: '0.75rem' }}>
+                OPEN TO STUDENTS ACROSS DISCIPLINES:
+              </h4>
+              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                {eligibleDisciplines.map((item, idx) => (
+                  <span
+                    key={idx}
+                    style={{
+                      backgroundColor: 'rgba(0, 255, 102, 0.08)',
+                      border: '1px solid rgba(0, 255, 102, 0.25)',
+                      color: '#00ff66',
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.78rem',
+                      padding: '0.3rem 0.65rem',
+                      borderRadius: '4px'
+                    }}
+                  >
+                    {item}
+                  </span>
                 ))}
               </div>
             </div>
 
-            {/* Why Join */}
-            <div>
-              <div className="badge-tag">● BENEFITS</div>
-              <h2 style={{ fontSize: '2rem', color: '#fff', marginBottom: '1rem' }}>WHY JOIN NEXORA AFTERDARK?</h2>
+            {/* Why Join Perks */}
+            <div className="cyber-card" style={{ padding: '2.5rem', backgroundColor: 'rgba(10, 16, 12, 0.9)' }}>
+              <div className="cyber-corner-tl" />
+              <div className="cyber-corner-br" />
+              <div className="badge-tag" style={{ marginBottom: '0.75rem' }}>● ADVANTAGES</div>
+              <h3 style={{ fontSize: '1.4rem', color: '#fff', marginBottom: '1rem' }}>WHY PARTICIPATE?</h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                 {whyJoinPerks.map((perk, idx) => (
-                  <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', backgroundColor: 'rgba(10, 16, 12, 0.7)', border: '1px solid rgba(0, 255, 102, 0.2)', padding: '0.75rem 1rem', borderRadius: '6px' }}>
-                    <CheckCircle2 size={18} color="#00ff66" />
-                    <span style={{ color: '#ffffff', fontSize: '0.95rem' }}>{perk}</span>
+                  <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#cbd5e1', fontSize: '0.92rem' }}>
+                    <CheckCircle2 size={18} color="#00ff66" style={{ flexShrink: 0 }} />
+                    <span>{perk}</span>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-            <Link to="/register" className="btn btn-primary interactive pulse-glow" style={{ padding: '1rem 2.5rem' }}>
-              <Zap size={18} /> REGISTER YOUR TEAM TODAY
+          <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
+            <Link to="/register" className="btn btn-primary interactive pulse-glow btn-mobile-full" style={{ padding: '0.95rem 2.5rem', fontSize: '1rem' }}>
+              <Zap size={18} /> REGISTER YOUR TEAM NOW
             </Link>
           </div>
         </div>

@@ -1,6 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vayora Runfest 2026 — Official City Marathon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: {
+          preflight: false,
+        }
+      }
+    </script>
     <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
 
     <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
@@ -160,7 +171,7 @@
             const orientationText = body.querySelector('#orientation-text');
             const btnRefresh = body.querySelector('#btn-refresh');
             
-            let activeMode = 'desktop';
+            let activeMode = urlParams.get('mode') || 'desktop';
             let orientation = 'portrait';
             
             function updateStyles() {
@@ -226,6 +237,8 @@
               }
             }
             
+            updateStyles();
+
             btnDesktop.addEventListener('click', () => { activeMode = 'desktop'; updateStyles(); });
             btnTablet.addEventListener('click', () => { activeMode = 'tablet'; updateStyles(); });
             btnMobile.addEventListener('click', () => { activeMode = 'mobile'; updateStyles(); });

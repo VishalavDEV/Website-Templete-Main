@@ -1,4 +1,15 @@
 /* AVELUNE VOWS - RESPONSIVE STYLES */
+html, body, #root, .app-root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.transport-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
 
 /* TABLET BREAKPOINT (max-width: 992px) */
 @media (max-width: 992px) {
@@ -23,13 +34,19 @@
     height: 380px;
   }
 
+  .collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .split-story-grid, .venue-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
   .story-image-wrap img {
-    height: 400px;
+    height: 360px;
   }
 
   .welcome-details-grid {
@@ -70,15 +87,23 @@
   }
 
   .countdown-grid {
-    gap: 0.8rem;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0.6rem !important;
   }
 
   .countdown-box {
-    min-width: 65px;
+    min-width: 55px;
+    padding: 1rem 0.5rem;
   }
 
   .countdown-number {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
+  }
+
+  .transport-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
   }
 
   .schedule-row {
@@ -111,6 +136,12 @@
     right: 1.2rem;
     width: 40px;
     height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 

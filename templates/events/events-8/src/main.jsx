@@ -8,10 +8,15 @@ import './styles/global.css'
 import './styles/animations.css'
 import './styles/responsive.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <HashRouter >
-      <App />
-    </HashRouter>
-  </React.StrictMode>,
-)
+
+const container = document.getElementById('root')
+if (container) {
+  ReactDOM.createRoot(container).render(
+    <React.StrictMode>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </React.StrictMode>,
+  )
+}
+

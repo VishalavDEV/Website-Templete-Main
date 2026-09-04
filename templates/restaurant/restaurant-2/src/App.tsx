@@ -12,6 +12,7 @@ import { Menu } from './pages/Menu';
 import { Events } from './pages/Events';
 import { Gallery } from './pages/Gallery';
 import { Contact } from './pages/Contact';
+import { Legal } from './pages/Legal';
 
 const MainLayout: React.FC = () => {
   useTemplateEffects();
@@ -35,6 +36,10 @@ const MainLayout: React.FC = () => {
           <Route path="/gallery.html" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/contact.html" element={<Contact />} />
+          <Route path="/legal" element={<Legal />} />
+          <Route path="/legal.html" element={<Legal />} />
+          <Route path="/license" element={<Legal />} />
+          <Route path="/license.html" element={<Legal />} />
         </Routes>
       </main>
       <Footer />

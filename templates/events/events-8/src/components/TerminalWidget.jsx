@@ -89,7 +89,7 @@ const TerminalWidget = () => {
             boxShadow: '0 0 20px rgba(0, 255, 102, 0.25)',
             zIndex: 999
           }}
-          className="interactive pulse-glow"
+          className="floating-terminal-btn interactive pulse-glow"
         >
           <Terminal size={18} />
           <span>TERMINAL.SH</span>
@@ -100,12 +100,13 @@ const TerminalWidget = () => {
       {/* Terminal Window Box */}
       {isOpen && (
         <div
+          className="floating-terminal-window"
           style={{
             position: 'fixed',
             bottom: '2rem',
             left: '2rem',
             width: isMinimized ? '320px' : '420px',
-            maxWidth: 'calc(100vw - 4rem)',
+            maxWidth: 'calc(100vw - 2rem)',
             height: isMinimized ? '46px' : '300px',
             backgroundColor: 'rgba(5, 8, 6, 0.95)',
             border: '1px solid #00ff66',
@@ -116,7 +117,8 @@ const TerminalWidget = () => {
             flexDirection: 'column',
             overflow: 'hidden',
             backdropFilter: 'blur(10px)',
-            transition: 'height 0.3s ease, width 0.3s ease'
+            transition: 'height 0.3s ease, width 0.3s ease',
+            boxSizing: 'border-box'
           }}
         >
           {/* Header Bar */}
