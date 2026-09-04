@@ -1,0 +1,11 @@
+{
+  "name": "Aetheria Haven Resorts — Weightless Luxury, Timeless Solitude",
+  "slug": "aetheria-haven-resorts",
+  "category": "hotel",
+  "description": "A luxury boutique sanctuary resort landing page. Features a floating booking widget, interactive guest popup, suite class selector, responsive editorial slideshows, and immersive accommodation galleries.",
+  "techStack": {
+    "frontend": "HTML5 / CSS3 / Vanilla JavaScript",
+    "backend": "Java 21 + Spring Boot 3"
+  },
+  "demoUrl": "/templates/hotel/hotel-10/index.html"
+}

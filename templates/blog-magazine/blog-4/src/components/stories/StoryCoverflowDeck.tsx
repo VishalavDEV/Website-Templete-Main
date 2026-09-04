@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
   ChevronLeft, 
   ChevronRight, 
@@ -26,6 +26,7 @@ export const StoryCoverflowDeck: React.FC<StoryCoverflowDeckProps> = ({
   subtitle = 'In-depth investigative reporting and visual narratives across our editorial desks.',
   autoPlayInterval = 4500
 }) => {
+  const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
@@ -213,7 +214,11 @@ export const StoryCoverflowDeck: React.FC<StoryCoverflowDeckProps> = ({
             <div
               key={article.id}
               onClick={() => {
-                if (!isActive) goToSlide(idx);
+                if (!isActive) {
+                  goToSlide(idx);
+                } else {
+                  navigate(`/story/${article.slug}`);
+                }
               }}
               style={{
                 transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,

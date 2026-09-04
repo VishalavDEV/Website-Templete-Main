@@ -221,7 +221,7 @@ export const MOCK_POSTS: Post[] = [
     author: MOCK_AUTHORS[1],
     category: MOCK_CATEGORIES[1],
     tags: ['Technology', 'AI', 'Art', 'Philosophy'],
-    imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1200&q=80',
     publishedDate: 'July 29, 2026',
     readTime: '8 min read',
     views: 6150,

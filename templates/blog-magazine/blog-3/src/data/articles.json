@@ -114,7 +114,7 @@
     "authorId": "auth-003",
     "date": "2024-10-08",
     "readingTime": "9 min read",
-    "image": "https://images.unsplash.com/photo-1549317661-bd32c8ce0ffe?q=80&w=800&auto=format&fit=crop",
+    "image": "./images/level-4-autonomy.jpg",
     "isFeatured": false,
     "isLead": false
   },

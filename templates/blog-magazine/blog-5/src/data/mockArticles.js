@@ -257,7 +257,7 @@ export const mockArticles = [
     authorAvatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=300&auto=format&fit=crop',
     readTime: '8 MIN READ',
     date: 'JUNE 2026',
-    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1200&auto=format&fit=crop',
+    image: './images/gallery-as-sanctuary.jpg',
     excerpt: 'Exhibition curators in Mitte are constructing light tunnels that recalibrate the visitor’s ocular focus before presenting single tactile canvases.',
     tags: ['Exhibitions', 'Spatial Art', 'Berlin'],
     accentColor: '#7000FF',
