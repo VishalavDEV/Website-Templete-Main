@@ -20,6 +20,21 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('all');
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    const target = document.querySelector(href);
+    if (target) {
+      const navHeight = 80;
+      const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = Math.max(0, elementPosition - navHeight);
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const projects = [
     { title: 'Aether OS — Spatial Computing Interface', category: '3D & WebGL', image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80', tag: 'Featured' },
     { title: 'Luminary — High-Frequency Fintech Platform', category: 'Product Engineering', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80', tag: 'Case Study' },
@@ -37,9 +52,9 @@ export default function App() {
       </div>
 
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 backdrop-blur-xl bg-[#090d16]/80 border-b border-slate-800/80">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+      <nav className="sticky top-0 z-50 backdrop-blur-xl bg-[#090d16]/90 border-b border-slate-800/80">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative">
+          <a href="#" onClick={(e) => handleNavClick(e, '#')} className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-cyan-400 p-[1px] flex items-center justify-center shadow-lg shadow-indigo-500/20">
               <div className="w-full h-full bg-[#090d16] rounded-[11px] flex items-center justify-center">
                 <Sparkles className="w-5 h-5 text-indigo-400" />
@@ -48,18 +63,19 @@ export default function App() {
             <span className="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400">
               NEXUS
             </span>
-          </div>
+          </a>
 
           <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
-            <a href="#services" className="hover:text-indigo-400 transition-colors">Services</a>
-            <a href="#work" className="hover:text-indigo-400 transition-colors">Work</a>
-            <a href="#metrics" className="hover:text-indigo-400 transition-colors">Impact</a>
-            <a href="#about" className="hover:text-indigo-400 transition-colors">About</a>
+            <a href="#services" onClick={(e) => handleNavClick(e, '#services')} className="hover:text-indigo-400 transition-colors">Services</a>
+            <a href="#work" onClick={(e) => handleNavClick(e, '#work')} className="hover:text-indigo-400 transition-colors">Work</a>
+            <a href="#metrics" onClick={(e) => handleNavClick(e, '#metrics')} className="hover:text-indigo-400 transition-colors">Impact</a>
+            <a href="#about" onClick={(e) => handleNavClick(e, '#about')} className="hover:text-indigo-400 transition-colors">About</a>
           </div>
 
           <div className="hidden lg:flex items-center gap-4">
             <a 
               href="#contact" 
+              onClick={(e) => handleNavClick(e, '#contact')}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium text-sm shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
             >
               Start Project
@@ -74,49 +90,49 @@ export default function App() {
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
-        </div>
 
-        {/* Mobile Navigation Drawer */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-20 bg-[#090d16]/98 border-b border-slate-800 z-50 p-6 space-y-4 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto backdrop-blur-2xl">
-            <a 
-              href="#services" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-slate-300 hover:text-indigo-400 py-2.5 border-b border-slate-800/60 font-medium"
-            >
-              Services
-            </a>
-            <a 
-              href="#work" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-slate-300 hover:text-indigo-400 py-2.5 border-b border-slate-800/60 font-medium"
-            >
-              Work
-            </a>
-            <a 
-              href="#metrics" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-slate-300 hover:text-indigo-400 py-2.5 border-b border-slate-800/60 font-medium"
-            >
-              Impact
-            </a>
-            <a 
-              href="#about" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-slate-300 hover:text-indigo-400 py-2.5 border-b border-slate-800/60 font-medium"
-            >
-              About
-            </a>
-            <a 
-              href="#contact" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold text-sm shadow-lg shadow-indigo-500/25 mt-2"
-            >
-              Start Project
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
-          </div>
-        )}
+          {/* Mobile Navigation Drawer */}
+          {mobileMenuOpen && (
+            <div className="lg:hidden absolute top-full left-0 right-0 bg-[#090d16]/98 border-b border-slate-800 z-50 p-6 space-y-4 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto backdrop-blur-2xl">
+              <a 
+                href="#services" 
+                onClick={(e) => handleNavClick(e, '#services')}
+                className="block text-slate-300 hover:text-indigo-400 py-2.5 border-b border-slate-800/60 font-medium"
+              >
+                Services
+              </a>
+              <a 
+                href="#work" 
+                onClick={(e) => handleNavClick(e, '#work')}
+                className="block text-slate-300 hover:text-indigo-400 py-2.5 border-b border-slate-800/60 font-medium"
+              >
+                Work
+              </a>
+              <a 
+                href="#metrics" 
+                onClick={(e) => handleNavClick(e, '#metrics')}
+                className="block text-slate-300 hover:text-indigo-400 py-2.5 border-b border-slate-800/60 font-medium"
+              >
+                Impact
+              </a>
+              <a 
+                href="#about" 
+                onClick={(e) => handleNavClick(e, '#about')}
+                className="block text-slate-300 hover:text-indigo-400 py-2.5 border-b border-slate-800/60 font-medium"
+              >
+                About
+              </a>
+              <a 
+                href="#contact" 
+                onClick={(e) => handleNavClick(e, '#contact')}
+                className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold text-sm shadow-lg shadow-indigo-500/25 mt-2"
+              >
+                Start Project
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
+            </div>
+          )}
+        </div>
       </nav>
 
       {/* Hero Section */}
@@ -195,7 +211,7 @@ export default function App() {
       </section>
 
       {/* Services Grid */}
-      <section id="services" className="relative z-10 py-24 px-6 bg-slate-900/40 border-y border-slate-800/80">
+      <section id="services" className="relative z-10 py-24 px-6 bg-slate-900/40 border-y border-slate-800/80 scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-xs font-bold uppercase tracking-widest text-indigo-400">Core Capabilities</h2>
@@ -222,7 +238,7 @@ export default function App() {
       </section>
 
       {/* Featured Projects */}
-      <section id="work" className="relative z-10 py-24 px-6 max-w-7xl mx-auto">
+      <section id="work" className="relative z-10 py-24 px-6 max-w-7xl mx-auto scroll-mt-20">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <h2 className="text-xs font-bold uppercase tracking-widest text-indigo-400">Selected Work</h2>
@@ -256,7 +272,7 @@ export default function App() {
       </section>
 
       {/* Impact / Metrics Section */}
-      <section id="metrics" className="relative z-10 py-24 px-6 bg-slate-900/60 border-y border-slate-800/80">
+      <section id="metrics" className="relative z-10 py-24 px-6 bg-slate-900/60 border-y border-slate-800/80 scroll-mt-20">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-xs font-bold uppercase tracking-widest text-indigo-400 mb-2">Quantifiable Impact</h2>
           <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-12">Engineered For Exponential Growth</h3>
@@ -287,7 +303,7 @@ export default function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="relative z-10 py-24 px-6 max-w-7xl mx-auto">
+      <section id="about" className="relative z-10 py-24 px-6 max-w-7xl mx-auto scroll-mt-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h2 className="text-xs font-bold uppercase tracking-widest text-indigo-400">About NEXUS Studio</h2>
@@ -324,7 +340,7 @@ export default function App() {
       </section>
 
       {/* Contact & Start Project Section */}
-      <section id="contact" className="relative z-10 py-24 px-6 bg-slate-900/50 border-t border-slate-800">
+      <section id="contact" className="relative z-10 py-24 px-6 bg-slate-900/50 border-t border-slate-800 scroll-mt-20">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <span className="px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-bold uppercase tracking-wider">
             Initiate Project
