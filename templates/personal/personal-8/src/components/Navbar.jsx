@@ -64,18 +64,18 @@ export default function Navbar({ theme, onToggleTheme }) {
           }}>
             MS
           </div>
-          <div>
-            <span style={{ fontSize: '18px', fontWeight: 900, color: 'var(--text-main)', letterSpacing: '-0.3px' }}>
+          <div className="nav-brand-text">
+            <span style={{ fontSize: '18px', fontWeight: 900, color: 'var(--text-main)', letterSpacing: '-0.3px' }} className="brand-name">
               MARCUS STERLING
             </span>
-            <span style={{ display: 'block', fontSize: '10px', fontWeight: 700, color: 'var(--bright-orange)', letterSpacing: '1px' }}>
+            <span style={{ display: 'block', fontSize: '10px', fontWeight: 700, color: 'var(--bright-orange)', letterSpacing: '1px' }} className="brand-subtitle">
               FULL STACK & AI
             </span>
           </div>
         </a>
 
         {/* Desktop Nav Links */}
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '28px' }} className="desktop-nav">
+        <nav style={{ alignItems: 'center', gap: '28px' }} className="desktop-nav">
           {navLinks.map(link => (
             <a
               key={link.name}
@@ -118,7 +118,7 @@ export default function Navbar({ theme, onToggleTheme }) {
             {theme === 'light' ? <Moon size={18} color="#2563EB" /> : <Sun size={18} color="#F97316" />}
           </button>
 
-          <a href="#contact" className="btn-primary" style={{ padding: '8px 18px', fontSize: '13px' }}>
+          <a href="#contact" className="btn-primary desktop-connect-btn" style={{ padding: '8px 18px', fontSize: '13px' }}>
             <Send size={14} /> Let's Connect
           </a>
 
@@ -133,7 +133,6 @@ export default function Navbar({ theme, onToggleTheme }) {
               backgroundColor: 'var(--bg-surface)',
               color: 'var(--text-main)',
               cursor: 'pointer',
-              display: 'none',
               alignItems: 'center',
               justifyContent: 'center'
             }}
@@ -176,6 +175,22 @@ export default function Navbar({ theme, onToggleTheme }) {
                 {link.name}
               </a>
             ))}
+            <a
+              href="#contact"
+              className="btn-primary"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                padding: '12px',
+                fontSize: '14px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                marginTop: '8px'
+              }}
+            >
+              <Send size={16} /> Let's Connect
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

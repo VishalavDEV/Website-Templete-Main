@@ -52,7 +52,7 @@ export default function MagazineCover({ onOpen }) {
     >
       <div className="magazine-border">
         {/* Header Metadata */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(13, 44, 30, 0.1)', paddingBottom: '1rem', fontStyle: 'italic' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(13, 44, 30, 0.1)', paddingBottom: '1rem', fontStyle: 'italic' }} className="magazine-cover-header-meta">
           <span>THE INKWELL PUBLISHING</span>
           <span>SPECIAL ISSUE</span>
           <span>N° 42</span>
@@ -64,9 +64,8 @@ export default function MagazineCover({ onOpen }) {
           {/* Abstract Animated Visual Background */}
           <div
             ref={visualRef}
+            className="magazine-cover-visual"
             style={{
-              width: '320px',
-              height: '320px',
               borderRadius: '50%',
               background: 'radial-gradient(circle, var(--color-forest) 0%, rgba(13, 44, 30, 0.2) 70%, transparent 100%)',
               position: 'absolute',
@@ -139,7 +138,7 @@ export default function MagazineCover({ onOpen }) {
             OPEN STORY →
           </button>
           
-          <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', borderTop: '1px solid rgba(13, 44, 30, 0.1)', paddingTop: '1rem', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', borderTop: '1px solid rgba(13, 44, 30, 0.1)', paddingTop: '1rem', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em' }} className="magazine-cover-footer-meta">
             <span>PERSONAL EDITION · 2026</span>
             <span>DEVELOPMENT / DESIGN / AI</span>
             <span>VOL. I</span>

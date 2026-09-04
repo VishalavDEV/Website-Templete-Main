@@ -45,7 +45,7 @@ export default function Hero({ profileData }) {
       }} />
 
       <div className="section-container" style={{ width: '100%' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gap: '48px', alignItems: 'center' }} className="hero-grid-layout">
           
           {/* Left Text Column */}
           <motion.div
@@ -71,7 +71,7 @@ export default function Hero({ profileData }) {
               {profile.status}
             </div>
 
-            <h1 style={{ fontSize: '48px', fontWeight: 900, lineHeight: '1.1', color: 'var(--text-main)', letterSpacing: '-1px', marginBottom: '16px' }}>
+            <h1 className="hero-headline" style={{ fontWeight: 900, lineHeight: '1.1', color: 'var(--text-main)', letterSpacing: '-1px', marginBottom: '16px' }}>
               Building Modern <span style={{ color: 'var(--royal-blue)' }}>Web Systems</span> & <span style={{ color: 'var(--bright-orange)' }}>AI Microservices</span>
             </h1>
 
@@ -131,7 +131,7 @@ export default function Hero({ profileData }) {
 
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', lineHeight: '1.8', color: 'var(--text-main)' }}>
               <p><span style={{ color: 'var(--royal-blue)' }}>const</span> <span style={{ color: 'var(--bright-orange)' }}>developer</span> = &#123;</p>
-              <p style={{ paddingLeft: '16px' }}>name: <span style={{ color: '#10B981' }}>"{profile.name}"</span>,</p>
+              <p style={{ paddingLeft: '16px' }}>alias: <span style={{ color: '#10B981' }}>"msterling.dev"</span>,</p>
               <p style={{ paddingLeft: '16px' }}>role: <span style={{ color: '#10B981' }}>"Full Stack & AI Engineer"</span>,</p>
               <p style={{ paddingLeft: '16px' }}>frontend: [<span style={{ color: '#10B981' }}>"React.js"</span>, <span style={{ color: '#10B981' }}>"Framer Motion"</span>, <span style={{ color: '#10B981' }}>"GSAP"</span>],</p>
               <p style={{ paddingLeft: '16px' }}>backend: [<span style={{ color: '#10B981' }}>"Java 21"</span>, <span style={{ color: '#10B981' }}>"Spring Boot 3.3"</span>, <span style={{ color: '#10B981' }}>"REST API"</span>],</p>

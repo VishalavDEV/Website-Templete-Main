@@ -363,12 +363,54 @@ export default function App() {
         @keyframes orbit_8 { 0% { transform: rotate(320deg) translate(220px) rotate(-320deg); } 100% { transform: rotate(680deg) translate(220px) rotate(-680deg); } }
 
         /* Responsive menu rules */
-        @media (max-width: 968px) {
+        @media (min-width: 641px) and (max-width: 1080px) {
+          .universe-orbit-wrapper {
+            display: none !important;
+          }
+          .mobile-list-wrapper {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            max-width: 720px !important;
+            width: 92% !important;
+            gap: 14px !important;
+          }
+        }
+        @media (max-width: 640px) {
           .universe-orbit-wrapper {
             display: none !important;
           }
           .mobile-list-wrapper {
             display: flex !important;
+            flex-direction: column !important;
+            max-width: 360px !important;
+            width: 100% !important;
+            gap: 12px !important;
+          }
+        }
+
+        .module-overlay-header {
+          position: sticky;
+          top: 0;
+          background: rgba(3, 7, 18, 0.95);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          padding: 14px 24px;
+          margin: -80px -24px 28px -24px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          z-index: 950;
+          border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+        }
+        @media (max-width: 600px) {
+          .module-overlay-header {
+            margin: -80px -24px 20px -24px;
+            padding: 12px 16px;
+            gap: 10px;
+          }
+          .module-overlay-title {
+            font-size: 0.72rem !important;
+            letter-spacing: 1px !important;
           }
         }
       `;
@@ -645,21 +687,12 @@ export default function App() {
             }}
           >
             {/* Overlay Navigation Header */}
-            <div style={{
-              position: 'absolute',
-              top: '20px',
-              left: '24px',
-              right: '24px',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              zIndex: 950
-            }}>
+            <div className="module-overlay-header">
               <button
                 onClick={() => setActiveModule(null)}
                 style={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
                   color: '#ffffff',
                   padding: '8px 18px',
                   borderRadius: '99px',
@@ -674,8 +707,8 @@ export default function App() {
                 ← Back to Universe
               </button>
 
-              <h2 style={{ fontSize: '0.9rem', fontWeight: 800, color: '#06b6d4', letterSpacing: '2px', textTransform: 'uppercase' }}>
-                EXPANDED MODULE // {activeModule}
+              <h2 className="module-overlay-title" style={{ fontSize: '0.85rem', fontWeight: 800, color: '#06b6d4', letterSpacing: '2px', textTransform: 'uppercase', margin: 0 }}>
+                EXPANDED // {activeModule}
               </h2>
             </div>
 
