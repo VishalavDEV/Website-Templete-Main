@@ -25,6 +25,26 @@ export default function Navbar() {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
+  }, [isOpen]);
+
   const toggleTheme = () => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
   };
@@ -70,11 +90,22 @@ export default function Navbar() {
           <Link to="/contact" className="btn btn-primary nav-cta">
             Get Started
           </Link>
-          <button className="mobile-toggle" onClick={() => setIsOpen(!isOpen)}>
+          <button 
+            className="mobile-toggle" 
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+          >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
+
+      {/* Backdrop overlay for mobile menu */}
+      <div 
+        className={`mobile-overlay ${isOpen ? 'open' : ''}`} 
+        onClick={() => setIsOpen(false)} 
+        aria-hidden="true"
+      />
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
