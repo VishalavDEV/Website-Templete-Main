@@ -80,15 +80,6 @@ export default function Rideora() {
     { q: "How are driver safety records audited?", a: "All drivers go through mandatory background verifications, document checks, and defensive driving audits prior to activation." }
   ];
 
-  const handleBackToTemplates = (e) => {
-    if (e) e.preventDefault();
-    if (window.top && window.top !== window) {
-      window.top.location.href = '/templates';
-    } else {
-      window.location.href = '/templates';
-    }
-  };
-
   return (
     <div className="min-h-screen bg-neutral-900 text-slate-100 font-sans flex flex-col justify-between selection:bg-yellow-400 selection:text-black">
       
@@ -101,26 +92,23 @@ export default function Rideora() {
           <span className="font-outfit font-black tracking-widest text-lg text-white">RIDEORA</span>
         </div>
 
-        <div className="flex items-center gap-4">
-          <button 
-            type="button"
-            onClick={handleBackToTemplates}
-            className="flex items-center gap-1 px-3 py-1.5 rounded border border-neutral-800 bg-neutral-900 text-xs font-bold text-slate-300 hover:text-white transition-all cursor-pointer"
-          >
-            <ArrowLeft size={12} /> Templates
-          </button>
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 text-xxs font-mono text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 px-3 py-1.5 rounded-full">
+            <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
+            <span className="hidden sm:inline">24/7 ACTIVE NETWORK</span>
+            <span className="sm:hidden">ACTIVE</span>
+          </div>
         </div>
       </header>
 
       {/* Main Grid Wrapper with Mobile Simulator layout */}
-      <main className="flex-1 flex flex-col items-center gap-12 p-6">
+      <main className="flex-1 flex flex-col items-center gap-8 sm:gap-12 p-4 sm:p-6 w-full">
         
         {/* Smartphone Wrapper Shell Frame */}
-        <div className="w-full max-w-md bg-neutral-950 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col h-[700px] relative">
+        <div className="w-full max-w-md bg-neutral-950 border border-neutral-800 rounded-3xl shadow-2xl flex flex-col relative overflow-hidden">
           <div className="absolute top-2 left-1/2 -translate-x-1/2 h-4 w-32 bg-black rounded-full z-50 pointer-events-none" />
 
-          <div className="flex-1 overflow-y-auto no-scrollbar pt-6 flex flex-col justify-between pb-6">
-            <div className="px-6 flex flex-col gap-6">
+          <div className="pt-8 pb-6 px-4 sm:px-6 flex flex-col gap-6">
               
               <div className="text-center mt-6">
                 <span className="text-yellow-400 text-[10px] font-bold tracking-widest uppercase block mb-1">RIDE HAILING SERVICE</span>
@@ -170,7 +158,7 @@ export default function Rideora() {
                       <span>DURATION: {estTime}</span>
                     </div>
 
-                    <div className="flex flex-col gap-2 overflow-y-auto max-h-[180px] pr-1 no-scrollbar">
+                    <div className="flex flex-col gap-2.5">
                       {rideCategories.map((cat) => {
                         const isSelected = selectedCategory.id === cat.id;
                         const price = cat.baseFare + (estDist * cat.ratePerKm);
@@ -221,7 +209,6 @@ export default function Rideora() {
               </AnimatePresence>
             </div>
           </div>
-        </div>
 
         {/* FAQs Panel for corporate passenger audit */}
         <section className="w-full max-w-lg bg-neutral-950 p-6 rounded-2xl border border-neutral-800">
@@ -261,7 +248,7 @@ export default function Rideora() {
           </h3>
           
           <form onSubmit={handleContactSubmit} className="flex flex-col gap-4 text-xs">
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label className="text-[10px] text-neutral-500 uppercase block mb-1">Name *</label>
                 <input 

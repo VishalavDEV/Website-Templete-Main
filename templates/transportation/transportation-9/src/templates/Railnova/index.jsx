@@ -32,15 +32,6 @@ export default function Railnova() {
   // FAQ state
   const [expandedFaq, setExpandedFaq] = useState(null);
 
-  const handleBackToTemplates = (e) => {
-    if (e) e.preventDefault();
-    if (window.top && window.top !== window) {
-      window.top.location.href = '/templates';
-    } else {
-      window.location.href = '/templates';
-    }
-  };
-
   const handleSearch = (e) => {
     e.preventDefault();
     if (fromSt === toSt) {
@@ -146,13 +137,6 @@ export default function Railnova() {
           <div className="flex items-center gap-3">
             <button 
               type="button"
-              onClick={handleBackToTemplates}
-              className="flex items-center gap-1.5 px-3 sm:px-4 py-2 border border-stone-850 rounded bg-stone-900 text-xs font-bold text-stone-300 hover:border-rose-900/50 hover:text-white transition-all cursor-pointer"
-            >
-              <ArrowLeft size={12} /> Templates
-            </button>
-            <button 
-              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden p-2 rounded border border-rose-900/50 text-rose-400 hover:bg-stone-900 cursor-pointer"
               aria-label="Toggle Menu"
@@ -192,13 +176,7 @@ export default function Railnova() {
               >
                 Contact
               </a>
-              <button 
-                type="button"
-                onClick={(e) => { setMobileMenuOpen(false); handleBackToTemplates(e); }}
-                className="py-2 text-left text-rose-500 flex items-center gap-1 font-bold border-t border-stone-850 mt-1 pt-2 cursor-pointer"
-              >
-                <ArrowLeft size={12} /> Back to Templates
-              </button>
+              
             </motion.div>
           )}
         </AnimatePresence>
