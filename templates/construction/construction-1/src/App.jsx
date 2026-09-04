@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import TopUtilityBar from './components/TopUtilityBar';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -8,7 +7,7 @@ import Portfolio from './components/Portfolio';
 import CostEstimator from './components/CostEstimator';
 import Footer from './components/Footer';
 
-function TemplateView() {
+export default function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
@@ -36,12 +35,3 @@ function TemplateView() {
   );
 }
 
-export default function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="*" element={<TemplateView />} />
-      </Routes>
-    </Router>
-  );
-}

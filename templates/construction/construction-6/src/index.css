@@ -204,15 +204,42 @@ body {
   color: white;
 }
 
-.sep {
-  color: rgba(255, 255, 255, 0.2);
-  margin: 0 8px;
-}
-
 .top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: var(--color-gold);
   font-weight: 600;
   letter-spacing: 0.1em;
+}
+
+.arcstone-badges-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.arcstone-badge-pill {
+  background: rgba(107, 124, 94, 0.22);
+  border: 1px solid var(--color-sage-border);
+  color: var(--color-sage-light);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 99px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+body.light-mode .arcstone-badge-pill {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #334155;
+}
+
+.mobile-theme-btn {
+  display: none;
 }
 
 /* Main Header */
@@ -1039,18 +1066,127 @@ body {
 
 @media (max-width: 1024px) {
   .projects-grid,
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .stat-item { border-right: none; }
   .about-grid,
-  .estimator-box { grid-template-columns: 1fr; }
+  .estimator-box { grid-template-columns: 1fr; gap: 32px; }
+}
+
+@media (max-width: 992px) {
+  .nav-menu { display: none !important; }
+  .arcstone-mobile-toggle { 
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 768px) {
-  .nav-menu { display: none; }
+  .container { padding: 0 16px !important; }
+  .arcstone-top-bar { display: none !important; }
+  .nav-inner { height: 56px; }
+  .arcstone-logo { gap: 8px; }
+  .logo-symbol svg { width: 22px; height: 22px; }
+  .logo-text { font-size: 1.05rem; letter-spacing: 0.1em; }
+  .header-cta { display: none !important; }
+  .nav-actions { gap: 8px; }
+  .mobile-theme-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    border-radius: 99px;
+  }
+  .arcstone-hero {
+    padding: 24px 0 40px 0;
+    min-height: auto;
+    overflow: visible;
+  }
+  .hero-container {
+    padding: 0 16px !important;
+    overflow: visible;
+  }
+  .hero-tagline {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+  .hero-heading {
+    font-size: clamp(2rem, 7.8vw, 2.7rem);
+    line-height: 1.12;
+    margin-bottom: 14px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .hero-description {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 22px;
+    max-width: 100%;
+  }
+  .hero-btn-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
   .hero-slider-pagination { display: none; }
-  .stats-grid { grid-template-columns: 1fr; }
+  .hero-scroll-indicator { display: none; }
+  .arcstone-stats-bar { padding: 36px 0; }
+  .stats-grid { 
+    grid-template-columns: 1fr; 
+    gap: 16px; 
+  }
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 0;
+  }
+  .arcstone-section { padding: 48px 0; }
+  .about-grid { 
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .about-image-col {
+    width: 100%;
+  }
+  .about-img-frame {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    height: auto;
+  }
   .projects-grid,
-  .services-grid { grid-template-columns: 1fr; }
-  .footer-inner { grid-template-columns: 1fr; gap: 30px; }
+  .services-grid { 
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+  }
+  .estimator-box { 
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px 16px;
+  }
+  .estimator-left,
+  .estimator-right {
+    width: 100%;
+  }
+  .footer-inner { 
+    grid-template-columns: 1fr; 
+    gap: 28px; 
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
 }

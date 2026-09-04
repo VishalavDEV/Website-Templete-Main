@@ -109,7 +109,7 @@ export default function Header({ currentTheme, onToggleTheme, onOpenRfq }) {
           {/* Contact Button */}
           <button
             onClick={onOpenRfq}
-            className="btn btn-primary"
+            className="btn btn-primary header-cta-btn"
             style={{ padding: '8px 18px', fontSize: '0.86rem' }}
           >
             Contact Studio <ArrowRight size={14} />
@@ -120,25 +120,104 @@ export default function Header({ currentTheme, onToggleTheme, onOpenRfq }) {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             style={{
               display: 'none',
-              background: 'none',
-              border: 'none',
+              background: 'transparent',
+              border: '1px solid var(--border-subtle)',
+              borderRadius: '6px',
+              width: '38px',
+              height: '38px',
+              alignItems: 'center',
+              justifyContent: 'center',
               color: 'var(--text-main)',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              zIndex: 1001
             }}
             className="mobile-toggle"
+            aria-label="Toggle Navigation Menu"
           >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileMenuOpen ? <X size={22} color="currentColor" /> : <Menu size={22} color="currentColor" />}
           </button>
         </div>
 
       </div>
 
+      {/* Mobile / Tablet Navigation Drawer */}
+      {mobileMenuOpen && (
+        <div
+          className="mobile-drawer"
+          style={{
+            position: 'absolute',
+            top: '100%',
+            left: 0,
+            right: 0,
+            background: 'var(--bg-main)',
+            borderBottom: '2px solid var(--accent-primary)',
+            padding: '24px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '16px',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
+            zIndex: 999
+          }}
+        >
+          <a
+            href="#hero"
+            onClick={() => setMobileMenuOpen(false)}
+            style={{ color: 'var(--text-main)', textDecoration: 'none', fontSize: '1rem', fontWeight: '600', padding: '8px 0', borderBottom: '1px solid var(--border-subtle)' }}
+          >
+            Overview
+          </a>
+          <a
+            href="#projects"
+            onClick={() => setMobileMenuOpen(false)}
+            style={{ color: 'var(--text-main)', textDecoration: 'none', fontSize: '1rem', fontWeight: '600', padding: '8px 0', borderBottom: '1px solid var(--border-subtle)' }}
+          >
+            Projects
+          </a>
+          <a
+            href="#wind-tunnel"
+            onClick={() => setMobileMenuOpen(false)}
+            style={{ color: 'var(--text-main)', textDecoration: 'none', fontSize: '1rem', fontWeight: '600', padding: '8px 0', borderBottom: '1px solid var(--border-subtle)' }}
+          >
+            Aerodynamics & Wind Tunnel
+          </a>
+          <a
+            href="#kinetic-facade"
+            onClick={() => setMobileMenuOpen(false)}
+            style={{ color: 'var(--text-main)', textDecoration: 'none', fontSize: '1rem', fontWeight: '600', padding: '8px 0', borderBottom: '1px solid var(--border-subtle)' }}
+          >
+            Kinetic Facade
+          </a>
+          <a
+            href="#estimator"
+            onClick={() => setMobileMenuOpen(false)}
+            style={{ color: 'var(--text-main)', textDecoration: 'none', fontSize: '1rem', fontWeight: '600', padding: '8px 0', borderBottom: '1px solid var(--border-subtle)' }}
+          >
+            Parametric Estimator
+          </a>
+          <button
+            onClick={() => {
+              setMobileMenuOpen(false);
+              onOpenRfq();
+            }}
+            className="btn btn-primary"
+            style={{ width: '100%', justifyContent: 'center', marginTop: '8px', padding: '12px' }}
+          >
+            Contact Studio <ArrowRight size={14} />
+          </button>
+        </div>
+      )}
+
       <style>{`
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
           .desktop-nav { display: none !important; }
-          .mobile-toggle { display: block !important; }
+          .mobile-toggle { display: flex !important; }
+        }
+        @media (max-width: 640px) {
+          .container { padding: 12px 16px !important; }
+          .header-cta-btn { display: none !important; }
         }
       `}</style>
     </header>
   );
 }
+

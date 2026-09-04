@@ -66,10 +66,10 @@ export default function CostEstimator() {
       <div className="container">
         <div className="estimator-wrapper">
           <div className="estimator-header">
-            <div className="section-badge">SPRING BOOT POWERED BUDGET ENGINE</div>
+            <div className="section-badge">PRECISION ESTIMATION ENGINE</div>
             <h2 className="section-title">PARAMETRIC CONSTRUCTION COST CALCULATOR</h2>
             <p className="section-subtitle">
-              Configure project parameters to generate a live tender estimate backed by our Java Spring Boot API engine.
+              Configure project parameters to generate a live tender estimate backed by our parametric civil engineering model.
             </p>
           </div>
 
@@ -183,7 +183,7 @@ export default function CostEstimator() {
 
             <div className="estimator-output-card">
               <div className="output-card-header">
-                <span className="live-pill">● JAVA SPRING BOOT API LIVE</span>
+                <span className="live-pill">● ESTIMATION ENGINE ACTIVE</span>
                 <h3>ESTIMATED CONTRACT VALUE</h3>
               </div>
 
