@@ -151,8 +151,8 @@ function App() {
         </header>
 
         {/* Hero Content */}
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-12 text-center -translate-y-[6%] md:-translate-y-[10%]">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-white tracking-tight whitespace-nowrap font-serif mb-10">
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 pt-8 pb-12 text-center translate-y-0 md:-translate-y-[10%]">
+          <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl text-white tracking-tight whitespace-normal sm:whitespace-nowrap max-w-full font-serif mb-10">
             Know it then <em className="italic">all</em>.
           </h1>
           
