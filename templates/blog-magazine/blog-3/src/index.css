@@ -454,16 +454,34 @@ input::placeholder {
   .mobile-only { display: none !important; }
 }
 @media (max-width: 768px) {
-  .text-7xl { font-size: 2.75rem; }
-  .text-6xl { font-size: 2.25rem; }
-  .text-5xl { font-size: 1.85rem; }
-  .text-4xl { font-size: 1.5rem; }
-  .text-3xl { font-size: 1.35rem; }
-  .container { padding: 0 1.25rem; }
+  :root {
+    --container-width: 100%;
+    --reading-width: 100%;
+  }
+  .text-7xl { font-size: 2.1rem; }
+  .text-6xl { font-size: 1.75rem; }
+  .text-5xl { font-size: 1.5rem; }
+  .text-4xl { font-size: 1.3rem; }
+  .text-3xl { font-size: 1.15rem; }
+  .text-2xl { font-size: 1.05rem; }
+  .text-xl { font-size: 0.95rem; }
+  h1 { font-size: clamp(1.6rem, 5.5vw, 2.25rem) !important; }
+  h2 { font-size: clamp(1.35rem, 4.5vw, 1.85rem) !important; }
+  .container { padding: 0 1rem !important; }
+  .reading-container { padding: 0 0.85rem !important; }
+  .card { padding: 1.15rem !important; border-radius: 10px; }
+  .section-header { margin-bottom: 1.5rem !important; padding-bottom: 0.85rem !important; }
+  .btn-cyan { padding: 0.65rem 1.35rem !important; font-size: 0.8rem !important; }
+  .btn-outline { padding: 0.45rem 0.85rem !important; font-size: 0.75rem !important; }
+  section { margin-bottom: 3.25rem !important; }
   .desktop-only { display: none !important; }
   .mobile-only { display: flex !important; }
   .mobile-col { flex-direction: column; }
   .mobile-full { width: 100%; }
+  .aura-layer-1 { filter: blur(90px); }
+  .aura-layer-2 { filter: blur(80px); }
+  .aura-layer-3 { filter: blur(65px); }
+  .aura-layer-4 { filter: blur(50px); }
 }
 
 @media (prefers-reduced-motion: reduce) {

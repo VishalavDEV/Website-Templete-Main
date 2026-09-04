@@ -297,6 +297,9 @@ export const DoctorsSection: React.FC<DoctorsSectionProps> = ({
                         alt={doctor.name}
                         referrerPolicy="no-referrer"
                         className="w-16 h-16 rounded-xl object-cover border border-slate-200 shadow-sm"
+                        onError={(e) => {
+                          e.currentTarget.src = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80";
+                        }}
                       />
                       {doctor.isAvailableToday && (
                         <span
@@ -386,6 +389,9 @@ export const DoctorsSection: React.FC<DoctorsSectionProps> = ({
                     alt={doctor.name}
                     referrerPolicy="no-referrer"
                     className="w-16 h-16 rounded-xl object-cover border border-slate-200 shrink-0"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80";
+                    }}
                   />
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 flex-wrap">

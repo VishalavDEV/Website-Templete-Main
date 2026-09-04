@@ -55,7 +55,14 @@ export default function FineDining() {
               Step under the intricate sandstone archways and sandstone lattice screens (jalis). The Jharokha restaurant features dark wood tables, silk-patterned cushions, and a warm ambient glow from multi-tiered brass chandeliers. Enjoy a culinary journey featuring traditional Indian meals, served gracefully on hand-hammered heavy brass platters.
             </p>
 
-            <button className="btn-gold" style={{ padding: '1rem 2.5rem' }}>
+            <button 
+              className="btn-gold" 
+              style={{ padding: '1rem 2.5rem', cursor: 'pointer' }}
+              onClick={() => {
+                const el = document.getElementById('culinary-menu-cards');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               EXPLORE OUR MENU
             </button>
           </div>
@@ -93,7 +100,7 @@ export default function FineDining() {
         </div>
 
         {/* Experience Cards Grid */}
-        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+        <div id="culinary-menu-cards" style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <span style={{ 
             fontFamily: 'var(--font-serif-sc)', 
             color: 'var(--color-brass)', 

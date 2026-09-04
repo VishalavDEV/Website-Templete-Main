@@ -35,17 +35,48 @@ document.addEventListener('DOMContentLoaded', () => {
     else navbar.classList.remove('scrolled');
   });
 
-  // Smooth Scroll for Nav Links
+  // Smooth Scroll for Nav Links & Buttons
   document.querySelectorAll('.ht-nav-link, .ht-drawer-link').forEach(link => {
     link.addEventListener('click', (e) => {
       document.querySelectorAll('.ht-nav-link').forEach(l => l.classList.remove('active'));
       if(e.target.classList.contains('ht-nav-link')) e.target.classList.add('active');
       const text = e.target.textContent.trim().toLowerCase();
-      const section = document.getElementById(`ht-${text}`);
+      let targetId = 'ht-home';
+      if (text.includes('room')) targetId = 'ht-rooms';
+      else if (text.includes('amenit')) targetId = 'ht-amenities';
+      else if (text.includes('din')) targetId = 'ht-dining';
+      else if (text.includes('offer')) targetId = 'ht-offers';
+      else if (text.includes('contact')) targetId = 'ht-contact';
+      else if (text.includes('book') || text.includes('reserve')) targetId = 'ht-booking';
+      const section = document.getElementById(targetId);
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
         closeDrawer();
       }
+    });
+  });
+
+  // Explicit Button Listeners
+  const bindClickToSection = (btnId, targetSectionId) => {
+    const btn = document.getElementById(btnId);
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const sec = document.getElementById(targetSectionId);
+        if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  };
+
+  bindClickToSection('ht-nav-book-btn', 'ht-booking');
+  bindClickToSection('ht-hero-book-btn', 'ht-booking');
+  bindClickToSection('ht-hero-explore-btn', 'ht-rooms');
+  bindClickToSection('ht-check-availability-btn', 'ht-rooms');
+  bindClickToSection('ht-view-all-rooms', 'ht-rooms');
+
+  document.querySelectorAll('.ht-room-quick-book, [id^="ht-room-book"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sec = document.getElementById('ht-booking');
+      if (sec) sec.scrollIntoView({ behavior: 'smooth' });
     });
   });
 

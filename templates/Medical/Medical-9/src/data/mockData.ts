@@ -134,7 +134,7 @@ export const DOCTORS: Doctor[] = [
     languages: ['English', 'Tamil', 'Kannada'],
     education: 'Stanford University School of Medicine | Certified Diabetes Educator',
     bio: 'Dr. Maya Iyer translates complex nutritional biochemistry into practical, culturally resonant meal plans that empower patients without restrictive diet shaming.',
-    image: '/images/dr-maya-iyer.png',
+    image: 'https://images.unsplash.com/photo-1594824813566-88855ce75c61?auto=format&fit=crop&q=80&w=800',
     availability: 'Mon - Thu (8:30 AM - 2:00 PM)',
     specializations: ['Glycemic Index Meal Engineering', 'Weight & Insulin Resistance', 'Plant-Based Diabetes Care']
   },

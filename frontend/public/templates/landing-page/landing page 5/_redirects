@@ -1,0 +1,5 @@
+# Direct static template routing
+/templates/*  /templates/:splat  200
+
+# SPA fallback routing
+/*  /index.html  200

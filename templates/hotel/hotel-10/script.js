@@ -249,8 +249,13 @@ function setupCurrencyListeners() {
 function toggleMobileMenu(open) {
   const overlay = document.getElementById('drawerOverlay');
   if (overlay) {
-    if (open) overlay.classList.add('mobileDrawerOverlayActive');
-    else overlay.classList.remove('mobileDrawerOverlayActive');
+    if (open) {
+      overlay.classList.add('mobileDrawerOverlayActive');
+      document.body.style.overflow = 'hidden';
+    } else {
+      overlay.classList.remove('mobileDrawerOverlayActive');
+      document.body.style.overflow = '';
+    }
   }
 }
 

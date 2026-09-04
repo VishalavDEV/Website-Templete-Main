@@ -18,6 +18,12 @@
             if (document.getElementById('technosprint-preview-header')) return;
 
             const currentUrl = new URL(window.location.href);
+            if (!currentUrl.pathname.endsWith('.html')) {
+              if (!currentUrl.pathname.endsWith('/')) {
+                currentUrl.pathname += '/';
+              }
+              currentUrl.pathname += 'index.html';
+            }
             currentUrl.searchParams.set('iframe', 'true');
             
             document.documentElement.className = '';
@@ -264,8 +270,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./assets/index-5r_Dj79j.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-xNJZiDeV.css">
+    <script type="module" crossorigin src="./assets/index-Di4STbem.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-3dLiUj_t.css">
   </head>
   <body class="bg-obsidian-950 text-slate-100 antialiased selection:bg-cyber-cyan selection:text-obsidian-950 overflow-x-hidden">
   

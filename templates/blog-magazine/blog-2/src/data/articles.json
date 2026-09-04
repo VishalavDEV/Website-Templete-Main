@@ -26,7 +26,7 @@
       {
         "heading": "Measuring the Invisible Void",
         "body": "For forty-eight hours, MacIntyre abandoned the dye synthesis entirely. He rebuilt the apparatus with a calibrated mercury thermometer salvaged from the university observatory. What he observed went directly against the prevailing caloric dogma of the Scottish academy, which taught that heat was an indestructible substance that flowed like water through porous matter.\n\nBy pumping the ether vapor through a closed loop of lead coils and allowing it to re-expand in an insulated brine bath, MacIntyre could repeatedly drop water temperatures from 60°F to solid ice in under eight minutes. He had accidentally engineered a closed-cycle vapor-compression loop without knowing Sadi Carnot's mathematical theorems on heat engines.",
-        "image": "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1000&q=80",
         "imageCaption": "Engraving of the closed vapor-compression cycle apparatus exhibited at the 1862 London International Exhibition."
       },
       {
@@ -101,7 +101,7 @@
     "readingTime": "8 min read",
     "featured": true,
     "lead": false,
-    "heroImage": "https://images.unsplash.com/photo-1517976487502-4630a91176b6?auto=format&fit=crop&w=1400&q=85",
+    "heroImage": "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1400&q=85",
     "heroAlt": "Vintage glass vacuum tube glowing with soft green luminescence in dark laboratory",
     "heroCaption": "High-vacuum Crookes-Hittorf tube from 1895 with platinum cathode target.",
     "excerpt": "On Friday night, November 8, 1895, Wilhelm Röntgen was working alone in his dark laboratory in Würzburg. His vacuum tube was wrapped in thick black cardboard. Yet across the room, a small paper screen coated with barium platinocyanide was glowing like an ethereal firefly.",
@@ -1102,7 +1102,7 @@
     "readingTime": "10 min read",
     "featured": false,
     "lead": false,
-    "heroImage": "https://images.unsplash.com/photo-1517976487502-4630a91176b6?auto=format&fit=crop&w=1400&q=85",
+    "heroImage": "https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=1400&q=85",
     "heroAlt": "Translucent cylinder of Antarctic ice core held against warm backlighting showing air bubble inclusions",
     "heroCaption": "Ice core section from the EPICA Dome C drilling project in Antarctica, spanning 800,000 years.",
     "excerpt": "At Vostok Station in East Antarctica, winter temperatures drop to minus 128 degrees Fahrenheit. In the 1980s, Russian and French glaciologists operated a mechanical drill inside a wooden hut, bringing up three-meter cylinders of crystal-clear ice compressed under the weight of three thousand winters.",

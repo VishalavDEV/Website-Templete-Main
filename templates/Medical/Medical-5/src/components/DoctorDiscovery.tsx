@@ -286,6 +286,9 @@ export const DoctorDiscovery: React.FC<{ isFullPage?: boolean }> = ({ isFullPage
                     src={doc.image}
                     alt={doc.name}
                     className="w-full h-56 object-cover object-top group-hover:scale-103 transition-transform duration-500"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80";
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-black/20" />
 

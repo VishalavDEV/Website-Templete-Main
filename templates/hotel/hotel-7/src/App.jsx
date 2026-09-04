@@ -39,7 +39,7 @@ export default function App() {
   }, []);
 
   return (
-    <Router basename={getDynamicBasename()}>
+    <Router>
       {/* Scroll route watcher */}
       <ScrollToTop />
       

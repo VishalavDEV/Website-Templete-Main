@@ -460,7 +460,7 @@ If the discovery engine of society is optimized for the most probable answer, wh
     featured: false,
     isLeadHero: false,
     trendingRank: 8,
-    coverImage: 'https://images.unsplash.com/photo-1477959858617-67f30bc75b82?q=80&w=1200&auto=format&fit=crop',
+    coverImage: './images/decentralized-metropolis.jpg',
     coverCaption: 'Aerial perspective of a multi-tiered pedestrian viaduct and green corridor network.',
     author: {
       id: 'julian-mercier',

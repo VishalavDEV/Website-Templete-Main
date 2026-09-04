@@ -410,8 +410,10 @@ function RedirectToStaticTemplate() {
     if (parts.length >= 3) {
       const category = parts[1];
       const template = parts[2];
-      const targetUrl = `/templates/${category}/${template}/index.html`;
-      if (window.location.pathname !== targetUrl) {
+      const search = location.search || '';
+      const hash = location.hash || '';
+      const targetUrl = `/templates/${category}/${template}/index.html${search}${hash}`;
+      if (!window.location.pathname.endsWith('/index.html')) {
         window.location.replace(targetUrl);
       }
     }

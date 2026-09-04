@@ -24,11 +24,6 @@ const CATEGORY_META = {
     title: 'Coming Soon Templates',
     subtitle: 'Explore sleek countdown timers, product launch teasers, newsletter capture, and animated coming soon pages.'
   },
-  'coming-soon': {
-    icon: '⏳',
-    title: 'Coming Soon Templates',
-    subtitle: 'Explore sleek countdown timers, product launch teasers, newsletter capture, and animated coming soon pages.'
-  },
   travels: {
     icon: '✈️',
     title: 'Travel & Tourism Templates',
@@ -68,11 +63,6 @@ const CATEGORY_META = {
     icon: '🛍️',
     title: 'Ecommerce & Retail Templates',
     subtitle: 'Explore modern online storefronts, retail catalogs, checkout flows, and product showcase templates.'
-  },
-  business: {
-    icon: '💼',
-    title: 'Business & Corporate Templates',
-    subtitle: 'Explore corporate enterprise, financial advisory, consulting, and business landing pages.'
   },
   business: {
     icon: '💼',

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Clock, Eye, Bookmark, ArrowUpRight } from 'lucide-react';
 import { Article } from '../../types';
 import { articleService } from '../../services/articleService';
@@ -24,12 +24,24 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
   className = '',
   enable3DTilt = true
 }) => {
+  const navigate = useNavigate();
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageSrc, setImageSrc] = useState(article.image || FALLBACK_IMAGE);
   const author = articleService.getAuthorByIdSync(article.authorId);
   const category = articleService.getCategoryBySlugSync(article.category);
   const { isBookmarked, toggleBookmark } = useBookmarks();
   const bookmarked = isBookmarked(article.id);
+
+  const handleCardClick = () => {
+    navigate(`/story/${article.slug}`);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      navigate(`/story/${article.slug}`);
+    }
+  };
 
   const handleBookmarkClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -47,7 +59,11 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
     return (
       <Card3D disabled={!enable3DTilt} maxTilt={5} glareEffect={false} className="h-full">
         <article
-          className={`group bg-white dark:bg-[#1E1B18] rounded-2xl border border-[#E8E2D5] dark:border-[#3A342E] p-4 hover:border-[#C85A32]/70 dark:hover:border-[#E27453]/60 transition-all duration-300 hover:shadow-md flex flex-col justify-between h-full ${className}`}
+          onClick={handleCardClick}
+          onKeyDown={handleKeyDown}
+          role="button"
+          tabIndex={0}
+          className={`group bg-white dark:bg-[#1E1B18] rounded-2xl border border-[#E8E2D5] dark:border-[#3A342E] p-4 hover:border-[#C85A32]/70 dark:hover:border-[#E27453]/60 transition-all duration-300 hover:shadow-md flex flex-col justify-between h-full cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-[#C85A32] ${className}`}
         >
           <div>
             <div className="relative aspect-16/10 w-full rounded-xl overflow-hidden bg-[#E8E2D5] dark:bg-[#282420] mb-3">
@@ -76,7 +92,13 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             </div>
 
             <div className="flex items-center space-x-2 text-[11px] text-[#78716C] dark:text-[#A39C90] font-medium mb-1.5">
-              <span className="text-[#C85A32] dark:text-[#E27453] font-bold">
+              <span 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigate(`/category/${article.category}`);
+                }}
+                className="text-[#C85A32] dark:text-[#E27453] font-bold hover:underline cursor-pointer"
+              >
                 {category?.name || article.category}
               </span>
               <span>•</span>
@@ -87,7 +109,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             </div>
 
             <h4 className="font-display font-bold text-sm text-[#1C1917] dark:text-[#F7F4EE] line-clamp-2 group-hover:text-[#C85A32] dark:group-hover:text-[#E27453] transition-colors leading-snug">
-              <Link to={`/story/${article.slug}`}>{article.title}</Link>
+              <Link to={`/story/${article.slug}`} onClick={(e) => e.stopPropagation()}>{article.title}</Link>
             </h4>
           </div>
 
@@ -108,7 +130,13 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
   // Minimal variant for sidebar lists
   if (variant === 'minimal') {
     return (
-      <div className={`group flex items-start space-x-4 py-3 border-b border-[#E8E2D5] dark:border-[#3A342E] last:border-0 ${className}`}>
+      <div 
+        onClick={handleCardClick}
+        onKeyDown={handleKeyDown}
+        role="button"
+        tabIndex={0}
+        className={`group flex items-start space-x-4 py-3 border-b border-[#E8E2D5] dark:border-[#3A342E] last:border-0 cursor-pointer select-none focus:outline-none focus:ring-1 focus:ring-[#C85A32] ${className}`}
+      >
         <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0 relative bg-[#E8E2D5] dark:bg-[#1E1B18]">
           {!imageLoaded && (
             <div className="absolute inset-0 bg-[#E8E2D5] dark:bg-[#1E1B18] animate-pulse" />
@@ -127,12 +155,13 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         <div className="flex-1 min-w-0">
           <Link
             to={`/category/${article.category}`}
+            onClick={(e) => e.stopPropagation()}
             className="text-xs font-bold uppercase tracking-wider text-[#C85A32] dark:text-[#E27453] hover:underline"
           >
             {category?.name || article.category}
           </Link>
           <h4 className="font-display font-bold text-sm text-[#1C1917] dark:text-[#F7F4EE] line-clamp-2 mt-1 group-hover:text-[#C85A32] dark:group-hover:text-[#E27453] transition-colors">
-            <Link to={`/story/${article.slug}`}>{article.title}</Link>
+            <Link to={`/story/${article.slug}`} onClick={(e) => e.stopPropagation()}>{article.title}</Link>
           </h4>
           <span className="text-xs text-[#78716C] dark:text-[#A39C90] mt-1 block">
             {article.readingTime}
@@ -147,7 +176,11 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
     return (
       <Card3D disabled={!enable3DTilt} maxTilt={4} glareEffect={true} className="h-full">
         <article
-          className={`group bg-white dark:bg-[#1E1B18] rounded-2xl border border-[#E8E2D5] dark:border-[#3A342E] p-5 hover:border-[#C85A32]/70 dark:hover:border-[#E27453]/60 transition-all duration-300 hover:shadow-lg flex flex-col md:flex-row gap-6 ${className}`}
+          onClick={handleCardClick}
+          onKeyDown={handleKeyDown}
+          role="button"
+          tabIndex={0}
+          className={`group bg-white dark:bg-[#1E1B18] rounded-2xl border border-[#E8E2D5] dark:border-[#3A342E] p-5 hover:border-[#C85A32]/70 dark:hover:border-[#E27453]/60 transition-all duration-300 hover:shadow-lg flex flex-col md:flex-row gap-6 cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-[#C85A32] ${className}`}
         >
           <div className="w-full md:w-56 h-48 md:h-auto rounded-xl overflow-hidden shrink-0 relative bg-[#E8E2D5] dark:bg-[#1E1B18] min-h-[160px]">
             {!imageLoaded && (
@@ -177,6 +210,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
               <div className="flex items-center space-x-3 mb-2.5">
                 <Link
                   to={`/category/${article.category}`}
+                  onClick={(e) => e.stopPropagation()}
                   className="px-2.5 py-0.5 rounded-full text-xs font-bold tracking-wide bg-[#C85A32]/10 text-[#C85A32] dark:bg-[#C85A32]/25 dark:text-[#E27453] hover:bg-[#C85A32]/20 transition-colors"
                 >
                   {category?.name || article.category}
@@ -188,7 +222,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
               </div>
 
               <h3 className="font-display font-bold text-lg md:text-xl text-[#1C1917] dark:text-[#F7F4EE] group-hover:text-[#C85A32] dark:group-hover:text-[#E27453] transition-colors leading-snug">
-                <Link to={`/story/${article.slug}`}>{article.title}</Link>
+                <Link to={`/story/${article.slug}`} onClick={(e) => e.stopPropagation()}>{article.title}</Link>
               </h3>
 
               {showExcerpt && (
@@ -202,6 +236,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
               {author && (
                 <Link
                   to={`/author/${author.slug}`}
+                  onClick={(e) => e.stopPropagation()}
                   className="flex items-center space-x-2.5 hover:opacity-85 transition-opacity"
                 >
                   <img
@@ -237,7 +272,11 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
     return (
       <Card3D disabled={!enable3DTilt} maxTilt={5} scale={1.01} glareEffect={true} className="h-full">
         <article
-          className={`group relative bg-white dark:bg-[#1E1B18] rounded-3xl border border-[#E8E2D5] dark:border-[#3A342E] overflow-hidden hover:border-[#C85A32]/70 dark:hover:border-[#E27453]/60 transition-all duration-300 hover:shadow-xl flex flex-col h-full ${className}`}
+          onClick={handleCardClick}
+          onKeyDown={handleKeyDown}
+          role="button"
+          tabIndex={0}
+          className={`group relative bg-white dark:bg-[#1E1B18] rounded-3xl border border-[#E8E2D5] dark:border-[#3A342E] overflow-hidden hover:border-[#C85A32]/70 dark:hover:border-[#E27453]/60 transition-all duration-300 hover:shadow-xl flex flex-col h-full cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-[#C85A32] ${className}`}
         >
           <div className="relative aspect-16/10 md:aspect-16/9 w-full overflow-hidden bg-[#E8E2D5] dark:bg-[#1E1B18]">
             {!imageLoaded && (
@@ -257,6 +296,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
               <Link
                 to={`/category/${article.category}`}
+                onClick={(e) => e.stopPropagation()}
                 className="px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-[#1C1917]/80 backdrop-blur-md text-white border border-white/20 hover:bg-[#C85A32] transition-colors shadow-xs"
               >
                 {category?.name || article.category}
@@ -280,7 +320,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
                 </span>
               </div>
               <h3 className="font-display font-bold text-xl md:text-3xl text-white group-hover:text-neutral-100 transition-colors leading-tight">
-                <Link to={`/story/${article.slug}`}>{article.title}</Link>
+                <Link to={`/story/${article.slug}`} onClick={(e) => e.stopPropagation()}>{article.title}</Link>
               </h3>
             </div>
           </div>
@@ -294,6 +334,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
               {author && (
                 <Link
                   to={`/author/${author.slug}`}
+                  onClick={(e) => e.stopPropagation()}
                   className="flex items-center space-x-3 group/auth"
                 >
                   <img
@@ -315,13 +356,12 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
                 </Link>
               )}
 
-              <Link
-                to={`/story/${article.slug}`}
+              <div
                 className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#1C1917] dark:bg-[#C85A32] text-white group-hover:bg-[#C85A32] dark:group-hover:bg-white dark:group-hover:text-[#1C1917] transition-all transform group-hover:scale-105 cursor-pointer shadow-xs"
                 aria-label={`Read ${article.title}`}
               >
                 <ArrowUpRight className="w-5 h-5" />
-              </Link>
+              </div>
             </div>
           </div>
         </article>
@@ -333,7 +373,11 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
   return (
     <Card3D disabled={!enable3DTilt} maxTilt={6} scale={1.02} glareEffect={true} className="h-full">
       <article
-        className={`group bg-white dark:bg-[#1E1B18] rounded-2xl border border-[#E8E2D5] dark:border-[#3A342E] overflow-hidden hover:border-[#C85A32]/70 dark:hover:border-[#E27453]/60 transition-all duration-300 hover:shadow-lg flex flex-col h-full ${className}`}
+        onClick={handleCardClick}
+        onKeyDown={handleKeyDown}
+        role="button"
+        tabIndex={0}
+        className={`group bg-white dark:bg-[#1E1B18] rounded-2xl border border-[#E8E2D5] dark:border-[#3A342E] overflow-hidden hover:border-[#C85A32]/70 dark:hover:border-[#E27453]/60 transition-all duration-300 hover:shadow-lg flex flex-col h-full cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-[#C85A32] ${className}`}
       >
         <div className="relative aspect-16/10 w-full overflow-hidden bg-[#E8E2D5] dark:bg-[#1E1B18]">
           {!imageLoaded && (
@@ -352,6 +396,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
             <Link
               to={`/category/${article.category}`}
+              onClick={(e) => e.stopPropagation()}
               className="px-2.5 py-0.5 rounded-full text-xs font-bold tracking-wide bg-[#1C1917]/80 backdrop-blur-md text-white border border-white/10 hover:bg-[#C85A32] transition-colors shadow-xs"
             >
               {category?.name || article.category}
@@ -378,7 +423,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             </div>
 
             <h3 className="font-display font-bold text-lg text-[#1C1917] dark:text-[#F7F4EE] group-hover:text-[#C85A32] dark:group-hover:text-[#E27453] transition-colors line-clamp-2 leading-snug">
-              <Link to={`/story/${article.slug}`}>{article.title}</Link>
+              <Link to={`/story/${article.slug}`} onClick={(e) => e.stopPropagation()}>{article.title}</Link>
             </h3>
 
             {showExcerpt && (
@@ -392,6 +437,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             {author && (
               <Link
                 to={`/author/${author.slug}`}
+                onClick={(e) => e.stopPropagation()}
                 className="flex items-center space-x-2.5 hover:opacity-85 transition-opacity"
               >
                 <img

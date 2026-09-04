@@ -61,7 +61,7 @@ export default function Home({ onOpenSubscribe, onOpenTool, onOpenModel, onOpenC
               </Link>
             </div>
             <Link to={`/article/${leadArticle.slug}`} className="group" style={{
-              display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'center',
+              display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2rem', alignItems: 'center',
             }}>
               <div style={{ borderRadius: '12px', overflow: 'hidden', aspectRatio: '16/10' }}>
                 <img src={leadArticle.image} alt={leadArticle.title} style={{
@@ -97,7 +97,7 @@ export default function Home({ onOpenSubscribe, onOpenTool, onOpenModel, onOpenC
               Browse Archive <ArrowRight size={14} />
             </Link>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '1.75rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))', gap: '1.5rem' }}>
             {featuredArticles.map((article, i) => (
               <Link to={`/article/${article.slug}`} key={article.id} className="card group" style={{
                 padding: 0, display: 'flex', flexDirection: 'column',
@@ -161,7 +161,7 @@ export default function Home({ onOpenSubscribe, onOpenTool, onOpenModel, onOpenC
         </section>
 
         {/* ─── TOOLS + MODELS TWO-COLUMN WITH INTERACTIVE INSPECTION ─── */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '4rem', marginBottom: '6rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '3rem', marginBottom: '6rem' }}>
           {/* Tools */}
           <section>
             <div className="section-header">
