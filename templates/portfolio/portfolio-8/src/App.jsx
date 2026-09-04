@@ -40,7 +40,7 @@ function ScrollToTopButton() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-6 right-6 z-40 w-10 h-10 rounded-full bg-black hover:bg-zinc-800 text-white flex items-center justify-center shadow-lg transition-colors border border-white/5 cursor-pointer focus:outline-none"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-10 h-10 rounded-full bg-black hover:bg-zinc-800 text-white flex items-center justify-center shadow-2xl transition-colors border border-white/10 cursor-pointer focus:outline-none"
     >
       <ArrowUp size={16} />
     </button>
@@ -54,7 +54,7 @@ function SectionHeading({ eyebrow, title, accent }) {
       <span className="text-[10px] tracking-[0.25em] text-[#1a1a1a]/55 uppercase font-bold block mb-3">
         {eyebrow}
       </span>
-      <h2 className="text-3xl md:text-5xl font-serif-normal font-black text-black tracking-tight leading-tight uppercase">
+      <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif-normal font-black text-black tracking-tight leading-tight uppercase break-words">
         {title}
       </h2>
       {accent && <p className="mt-4 text-xs md:text-sm text-zinc-500 leading-relaxed max-w-xl">{accent}</p>}
@@ -192,7 +192,7 @@ export default function App() {
 
           {/* Portrait rounded card */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-[300px] h-[400px] md:w-[340px] md:h-[450px] overflow-hidden rounded-3xl shadow-2xl border border-zinc-200/50">
+            <div className="relative w-[260px] h-[350px] sm:w-[300px] sm:h-[400px] md:w-[340px] md:h-[450px] overflow-hidden rounded-3xl shadow-2xl border border-zinc-200/50">
               <img 
                 src={editorialData.hero.photo} 
                 alt="Evelyn support photo" 
@@ -272,7 +272,7 @@ export default function App() {
           
           {/* Portrait Photo */}
           <div className="col-span-12 lg:col-span-5 flex justify-center lg:justify-start">
-            <div className="w-[300px] h-[380px] md:w-[340px] md:h-[420px] overflow-hidden rounded-2xl border border-zinc-200/50 shadow-xl">
+            <div className="w-[260px] h-[340px] sm:w-[300px] sm:h-[380px] md:w-[340px] md:h-[420px] overflow-hidden rounded-2xl border border-zinc-200/50 shadow-xl">
               <img 
                 src={editorialData.about.photo} 
                 alt="Executive desk" 
@@ -286,7 +286,7 @@ export default function App() {
             <span className="text-[10px] tracking-[0.25em] text-[#1a1a1a]/55 uppercase font-bold block mb-3">
               {editorialData.about.eyebrow}
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif-normal font-black text-black tracking-tight leading-tight uppercase mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif-normal font-black text-black tracking-tight leading-tight uppercase mb-6 break-words">
               {editorialData.about.heading}
             </h2>
             <p className="text-xs md:text-sm text-zinc-500 font-sans leading-relaxed text-justify mb-10">

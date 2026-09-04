@@ -6,6 +6,7 @@ export default function Navbar({ onOpenBooking, onReplayIntro }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
+    { label: 'Fleet', href: '#fleet' },
     { label: 'About Us', href: '#about' },
     { label: 'Services', href: '#services' },
     { label: 'Support', href: '#support' },

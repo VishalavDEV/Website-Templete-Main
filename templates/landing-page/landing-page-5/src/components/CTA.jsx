@@ -4,7 +4,15 @@ import { ArrowRight, Sparkles, Zap, ShieldCheck } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function CTA() {
-  const handleLaunch = () => {
+  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [message, setMessage] = React.useState('');
+  const [submitted, setSubmitted] = React.useState(false);
+
+  const handleLaunch = (e) => {
+    if (e) e.preventDefault();
+    if (!email) return;
+    setSubmitted(true);
     try {
       confetti({
         particleCount: 100,
@@ -18,7 +26,7 @@ export default function CTA() {
   };
 
   return (
-    <section className="section" style={{ position: 'relative', overflow: 'hidden' }}>
+    <section id="contact" className="section" style={{ position: 'relative', overflow: 'hidden' }}>
       {/* Radiant Pulsing Background Rose Orbs */}
       <div
         className="ambient-glow ambient-rose animate-pulse-glow"
@@ -35,11 +43,11 @@ export default function CTA() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="glass-panel"
+          className="glass-panel cta-glass-panel"
           style={{
-            padding: '5.5rem 3rem',
+            padding: '5rem 2.5rem',
             textAlign: 'center',
-            borderRadius: '3rem',
+            borderRadius: '2.5rem',
             border: '1.5px solid rgba(255, 255, 255, 0.95)',
             background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(250, 244, 238, 0.88) 100%)',
             boxShadow: '0 40px 100px -20px rgba(200, 120, 115, 0.25), 0 0 50px rgba(252, 219, 216, 0.45)',
@@ -57,7 +65,7 @@ export default function CTA() {
           {/* Headline */}
           <h2
             style={{
-              fontSize: 'clamp(2.4rem, 5vw, 4.2rem)',
+              fontSize: 'clamp(2.2rem, 5vw, 4.2rem)',
               fontWeight: 900,
               lineHeight: 1.1,
               marginBottom: '1.5rem',
@@ -71,33 +79,119 @@ export default function CTA() {
 
           <p
             style={{
-              fontSize: 'clamp(1.1rem, 1.5vw, 1.35rem)',
+              fontSize: 'clamp(1.05rem, 1.5vw, 1.3rem)',
               color: 'var(--text-muted)',
               maxWidth: 620,
-              margin: '0 auto 3rem auto',
+              margin: '0 auto 2.5rem auto',
               lineHeight: 1.7,
             }}
           >
             Let's turn your ideas into an unforgettable digital experience. Join thousands of high-velocity engineering and design teams who build with AuraFlow.
           </p>
 
-          {/* Action CTA Button */}
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
-            <motion.button
-              onClick={handleLaunch}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="btn-primary"
+          {/* Interactive Contact / Get Started Form */}
+          {submitted ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
               style={{
-                padding: '1.1rem 2.85rem',
-                fontSize: '1.1rem',
-                boxShadow: '0 10px 35px rgba(200, 120, 115, 0.35)',
+                background: 'rgba(16, 185, 129, 0.08)',
+                border: '1px solid rgba(16, 185, 129, 0.3)',
+                borderRadius: '1.5rem',
+                padding: '2rem',
+                maxWidth: '540px',
+                margin: '0 auto 2.5rem auto',
+                color: '#065f46',
               }}
             >
-              <span>Start Your Journey</span>
-              <ArrowRight size={18} />
-            </motion.button>
-          </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', fontWeight: 700, fontSize: '1.2rem', marginBottom: '0.5rem' }}>
+                <ShieldCheck size={24} color="#10b981" />
+                <span>Thank you! Your request is received.</span>
+              </div>
+              <p style={{ fontSize: '0.95rem', margin: 0, color: '#047857' }}>
+                Our team will reach out to <strong>{email}</strong> within 2 business hours with your personalized onboarding token.
+              </p>
+            </motion.div>
+          ) : (
+            <form
+              onSubmit={handleLaunch}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                maxWidth: '560px',
+                margin: '0 auto 2.5rem auto',
+              }}
+            >
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  style={{
+                    flex: '1 1 220px',
+                    padding: '0.95rem 1.25rem',
+                    borderRadius: '1rem',
+                    border: '1px solid rgba(200, 120, 115, 0.3)',
+                    background: 'rgba(255, 255, 255, 0.9)',
+                    fontSize: '1rem',
+                    outline: 'none',
+                    color: '#1e1b18',
+                  }}
+                />
+                <input
+                  type="email"
+                  required
+                  placeholder="Your Email Address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  style={{
+                    flex: '1 1 220px',
+                    padding: '0.95rem 1.25rem',
+                    borderRadius: '1rem',
+                    border: '1px solid rgba(200, 120, 115, 0.3)',
+                    background: 'rgba(255, 255, 255, 0.9)',
+                    fontSize: '1rem',
+                    outline: 'none',
+                    color: '#1e1b18',
+                  }}
+                />
+              </div>
+              <input
+                type="text"
+                placeholder="Project requirements or message (optional)"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '0.95rem 1.25rem',
+                  borderRadius: '1rem',
+                  border: '1px solid rgba(200, 120, 115, 0.3)',
+                  background: 'rgba(255, 255, 255, 0.9)',
+                  fontSize: '1rem',
+                  outline: 'none',
+                  color: '#1e1b18',
+                }}
+              />
+              <motion.button
+                type="submit"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="btn-primary"
+                style={{
+                  padding: '1.05rem 2.5rem',
+                  fontSize: '1.05rem',
+                  width: '100%',
+                  boxShadow: '0 10px 35px rgba(200, 120, 115, 0.35)',
+                  cursor: 'pointer',
+                }}
+              >
+                <span>Submit Inquiry & Start Journey</span>
+                <ArrowRight size={18} />
+              </motion.button>
+            </form>
+          )}
 
           {/* Micro Assurances */}
           <div
@@ -105,9 +199,9 @@ export default function CTA() {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              gap: '2.5rem',
+              gap: '2rem',
               flexWrap: 'wrap',
-              fontSize: '0.9rem',
+              fontSize: '0.88rem',
               color: 'var(--text-dim)',
             }}
           >
@@ -126,6 +220,15 @@ export default function CTA() {
           </div>
         </motion.div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .cta-glass-panel {
+            padding: 3rem 1.25rem !important;
+            border-radius: 1.75rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

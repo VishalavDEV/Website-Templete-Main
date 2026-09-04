@@ -93,7 +93,7 @@ export default function Footer({ addToast }) {
 
         <div className="footer-bottom-row">
           <span>&copy; 2026 BuildHub Constructions Inc. All Rights Reserved.</span>
-          <span>Full Stack: React 18 + Java 21 Spring Boot 3 & Three.js 3D BIM.</span>
+          <span>Enterprise Grade EPC & Architectural Engineering Excellence.</span>
         </div>
       </div>
     </footer>

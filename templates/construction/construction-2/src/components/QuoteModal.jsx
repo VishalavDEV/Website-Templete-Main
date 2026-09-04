@@ -50,7 +50,7 @@ export default function QuoteModal({ isOpen, onClose, addToast }) {
         <button className="modal-close-btn" onClick={onClose}>✕</button>
         <div className="section-tag">COMPLIMENTARY FEASIBILITY</div>
         <h3 className="modal-title">REQUEST CONSTRUCTION QUOTE</h3>
-        <p className="modal-subtitle">Fill in your specifications to receive a detailed cost analysis & schedule breakdown from our Spring Boot engineering engine.</p>
+        <p className="modal-subtitle">Fill in your specifications to receive a detailed cost analysis & schedule breakdown from our engineering team.</p>
 
         <form onSubmit={handleSubmit}>
           <div className="form-grid-2">

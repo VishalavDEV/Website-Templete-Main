@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Car, Bike, Info, ArrowLeft, ArrowRight, Check, Zap, Smartphone, Sparkles, Star, ChevronRight } from 'lucide-react';
+import { Car, Bike, Info, ArrowLeft, ArrowRight, Check, Zap, Smartphone, Sparkles, Star, ChevronRight, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { citymoveVehicles, citymoveStats } from '../../data/citymoveData';
 import { citymoveImages } from '../../data/citymoveImages';
@@ -9,6 +9,7 @@ export default function Citymove() {
   const [selectedCategory, setSelectedCategory] = useState('Car');
   const [estDistance, setEstDistance] = useState(5); // km
   const [estCost, setEstCost] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Search/Find transport state (NEW integration)
   const [pickupCity, setPickupCity] = useState('Koramangala, Bengaluru');
@@ -32,6 +33,15 @@ export default function Citymove() {
     const cost = activeVehicle.baseFare + (estDistance * activeVehicle.perKmRate);
     setEstCost(cost);
   }, [estDistance, selectedCategory]);
+
+  const handleBackToTemplates = (e) => {
+    if (e) e.preventDefault();
+    if (window.top && window.top !== window) {
+      window.top.location.href = '/templates';
+    } else {
+      window.location.href = '/templates';
+    }
+  };
 
   const handleFindTransport = (e) => {
     e.preventDefault();
@@ -78,24 +88,86 @@ export default function Citymove() {
     <div className="min-h-screen bg-white text-slate-900 font-sans overflow-x-hidden selection:bg-orange-500 selection:text-white">
       
       {/* Dynamic Urban Navbar */}
-      <nav className="sticky top-0 z-50 bg-white border-b-2 border-slate-950 px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="h-8 w-8 bg-orange-600 border-2 border-slate-950 rounded flex items-center justify-center font-black text-white text-lg">C</div>
-          <span className="font-outfit font-black tracking-tighter text-xl text-slate-950 uppercase">CITYMOVE</span>
+      <nav className="sticky top-0 z-50 bg-white border-b-2 border-slate-950 px-4 sm:px-6 py-3.5 sm:py-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-8 bg-orange-600 border-2 border-slate-950 rounded flex items-center justify-center font-black text-white text-lg">C</div>
+            <span className="font-outfit font-black tracking-tighter text-xl text-slate-950 uppercase">CITYMOVE</span>
+          </div>
+
+          <div className="hidden md:flex items-center gap-8 text-xs font-black uppercase tracking-wider text-slate-900">
+            <a href="#hero" className="hover:text-orange-600 transition-colors">Shared Fleets</a>
+            <a href="#estimator" className="hover:text-orange-600 transition-colors">Fare Estimator</a>
+            <a href="#faq" className="hover:text-orange-600 transition-colors">FAQs</a>
+            <a href="#contact" className="hover:text-orange-600 transition-colors">Contact</a>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <button 
+              type="button"
+              onClick={handleBackToTemplates}
+              className="flex items-center gap-1.5 px-3 sm:px-4 py-2 border-2 border-slate-950 rounded bg-white text-xs font-bold text-slate-950 hover:bg-slate-100 transition-all cursor-pointer shadow-[2px_2px_0px_#000]"
+            >
+              <ArrowLeft size={12} /> Templates
+            </button>
+            <button 
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded border-2 border-slate-950 text-slate-950 hover:bg-slate-100 cursor-pointer"
+              aria-label="Toggle Menu"
+            >
+              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </div>
 
-        <div className="hidden md:flex items-center gap-8 text-xs font-black uppercase tracking-wider text-slate-900">
-          <a href="#hero" className="hover:text-orange-600 transition-colors">Shared Fleets</a>
-          <a href="#estimator" className="hover:text-orange-600 transition-colors">Fare Estimator</a>
-          <a href="#faq" className="hover:text-orange-600 transition-colors">FAQs</a>
-          <a href="#contact" className="hover:text-orange-600 transition-colors">Contact</a>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <Link to="/transportation" className="flex items-center gap-1.5 px-4 py-2 border-2 border-slate-950 rounded bg-white text-xs font-bold text-slate-950 hover:bg-slate-100 transition-all">
-            <ArrowLeft size={12} /> Templates
-          </Link>
-        </div>
+        {/* Mobile Navigation Drawer */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden mt-3 pt-3 border-t-2 border-slate-950 flex flex-col gap-3 text-xs uppercase font-black tracking-wider text-slate-950 bg-white"
+            >
+              <a 
+                href="#hero" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-orange-600 transition-colors"
+              >
+                Shared Fleets
+              </a>
+              <a 
+                href="#estimator" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-orange-600 transition-colors"
+              >
+                Fare Estimator
+              </a>
+              <a 
+                href="#faq" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-orange-600 transition-colors"
+              >
+                FAQs
+              </a>
+              <a 
+                href="#contact" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-orange-600 transition-colors"
+              >
+                Contact
+              </a>
+              <button 
+                type="button"
+                onClick={(e) => { setMobileMenuOpen(false); handleBackToTemplates(e); }}
+                className="py-2 text-left text-orange-600 flex items-center gap-1 font-black border-t border-slate-200 mt-1 pt-2 cursor-pointer"
+              >
+                <ArrowLeft size={12} /> Back to Templates
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* Hero Section with Split Image + Mobility Finder */}

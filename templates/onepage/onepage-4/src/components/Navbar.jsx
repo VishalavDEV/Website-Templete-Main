@@ -147,9 +147,11 @@ export default function Navbar() {
           className="mobile-toggle"
           aria-label="Toggle Navigation Menu"
           style={{
-            display: 'none',
             padding: '0.5rem',
-            color: 'var(--text-main)'
+            color: 'var(--text-main)',
+            background: 'transparent',
+            border: 'none',
+            cursor: 'pointer'
           }}
         >
           {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}

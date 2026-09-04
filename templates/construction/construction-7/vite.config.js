@@ -3,6 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   base: './',
-  base: '/templates/construction/construction-7/',
   plugins: [react()],
 });

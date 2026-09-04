@@ -37,6 +37,7 @@ export default function BentoFeatures() {
 
         {/* Bento Grid Container */}
         <div
+          className="bento-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
@@ -151,9 +152,14 @@ export default function BentoFeatures() {
       </div>
 
       <style>{`
-        @media (max-width: 992px) {
+        @media (max-width: 900px) {
+          .bento-grid {
+            grid-template-columns: 1fr !important;
+            gap: 1.25rem !important;
+          }
           #features .glass-panel {
-            grid-column: span 12 !important;
+            grid-column: 1 / -1 !important;
+            padding: 1.75rem 1.25rem !important;
             min-height: auto !important;
           }
         }

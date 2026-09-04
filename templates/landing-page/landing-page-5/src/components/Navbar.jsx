@@ -8,6 +8,18 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState(null);
 
+  const handleScrollTo = (e, targetId) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    const id = targetId.startsWith('#') ? targetId.slice(1) : targetId;
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.hash = targetId;
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30);
@@ -93,6 +105,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => handleScrollTo(e, link.href)}
                 onMouseEnter={() => setHoveredIdx(idx)}
                 onMouseLeave={() => setHoveredIdx(null)}
                 style={{
@@ -128,6 +141,7 @@ export default function Navbar() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <motion.a
               href="#contact"
+              onClick={(e) => handleScrollTo(e, '#contact')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               className="btn-primary"
@@ -190,7 +204,7 @@ export default function Navbar() {
                 <motion.a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => handleScrollTo(e, link.href)}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + idx * 0.06 }}
@@ -208,7 +222,7 @@ export default function Navbar() {
 
               <motion.a
                 href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleScrollTo(e, '#contact')}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}

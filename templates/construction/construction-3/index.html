@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
 
     <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
     <script>
@@ -21,6 +20,9 @@
 
             const currentUrl = new URL(window.location.href);
             currentUrl.searchParams.set('iframe', 'true');
+            if (!currentUrl.pathname.endsWith('.html')) {
+              currentUrl.pathname = currentUrl.pathname.replace(/\/+$/, '') + '/index.html';
+            }
             
             document.documentElement.className = '';
             document.documentElement.removeAttribute('style');

@@ -1,79 +1,30 @@
 import React from 'react';
 import EventCard from '../components/EventCard';
+import { concertExperiences } from '../data/festivalData';
 
 export default function Events() {
-  const experiences = [
-    {
-      id: 1,
-      title: 'MIDNIGHT ECHO',
-      genre: 'MAIN CONCERT FESTIVAL',
-      date: '24 October 2026',
-      time: '6:00 PM - 2:00 AM',
-      venue: 'Aurora Sound Arena (Main Stage)',
-      description: 'The centerpiece festival experience featuring Lyra Voss, The Silver Room, Mira Vale, and 15,000 music lovers under the stars.',
-      price: 1499,
-      image: './images/hero_performer.jpg',
-    },
-    {
-      id: 2,
-      title: 'GOLDEN FREQUENCY',
-      genre: 'ELECTRONIC & SYNTH',
-      date: '24 October 2026',
-      time: '11:00 PM - 2:00 AM',
-      venue: 'Afterdark Stage',
-      description: 'An immersive dark techno and synth-wave session led by Kael Nova and Nova Kai with synchronized golden laser displays.',
-      price: 1499,
-      image: './images/dj_performer.jpg',
-    },
-    {
-      id: 3,
-      title: 'AFTERGLOW DJ SESSION',
-      genre: 'LATE-NIGHT CLUBBING',
-      date: '25 October 2026',
-      time: '12:00 AM - 3:00 AM',
-      venue: 'VIP Lounge Arena',
-      description: 'Exclusive late-night DJ sets for VIP & Premium ticket holders with craft cocktails and live ambient beats.',
-      price: 2999,
-      image: './images/dj_performer.jpg',
-    },
-    {
-      id: 4,
-      title: 'UNPLUGGED SOUL',
-      genre: 'ACOUSTIC & INDIE',
-      date: '24 October 2026',
-      time: '5:30 PM - 8:00 PM',
-      venue: 'Echo Stage',
-      description: 'Intimate acoustic sessions from indie singer-songwriters Elio Vane and Aria Noir under warm golden spotlights.',
-      price: 1499,
-      image: './images/hero_performer.jpg',
-    },
-    {
-      id: 5,
-      title: 'CITY RHYTHMS',
-      genre: 'URBAN & HIP-HOP FUSION',
-      date: '24 October 2026',
-      time: '9:00 PM - 10:30 PM',
-      venue: 'Main Stage',
-      description: 'High-energy hip-hop fusion and live urban drum jams led by Zen Ray and regional guest vocalists.',
-      price: 1499,
-      image: './images/main_stage.jpg',
-    },
-  ];
-
   return (
-    <div style={{ paddingTop: '120px', position: 'relative', zIndex: 10 }}>
-      <section className="section-padding" style={{ textAlign: 'center', background: 'radial-gradient(circle at top, #191404 0%, #050505 80%)' }}>
-        <div className="container">
-          <span className="section-subtitle">CURATED MUSIC EXPERIENCES</span>
-          <h1 className="section-title">CONCERT EXPERIENCES</h1>
-          <p className="section-desc">Discover the 5 unique sound atmospheres comprising Midnight Echo 2026.</p>
+    <div className="w-full max-w-full overflow-x-hidden pt-24 sm:pt-28 md:pt-32 relative z-10 min-h-screen">
+      {/* Header Banner */}
+      <section className="py-12 sm:py-16 md:py-20 text-center relative bg-[radial-gradient(ellipse_at_top,_#261c04_0%,_#050505_75%)] border-b border-white/5">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <span className="section-subtitle inline-block text-xs sm:text-sm font-extrabold tracking-[4px] text-[#F5B900] uppercase mb-3">
+            CURATED MUSIC EXPERIENCES
+          </span>
+          <h1 className="font-['Syne',sans-serif] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase text-white tracking-tight mb-4">
+            CONCERT EXPERIENCES
+          </h1>
+          <p className="max-w-2xl mx-auto text-neutral-400 text-sm sm:text-base md:text-lg leading-relaxed">
+            Discover the 5 unique sound atmospheres comprising Midnight Echo 2026 across 3 stages.
+          </p>
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>
-            {experiences.map(exp => (
+      {/* Events Grid */}
+      <section className="py-12 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {concertExperiences.map(exp => (
               <EventCard key={exp.id} event={exp} />
             ))}
           </div>

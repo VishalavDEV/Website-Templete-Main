@@ -10,6 +10,9 @@ export default function AboutSection({ onOpenQuote, onOpenVideo }) {
               src="./assets/images/commercial.jpg" 
               alt="BuildHub Engineering Headquarters" 
               className="about-main-img" 
+              onError={(e) => {
+                e.target.src = 'https://images.unsplash.com/photo-1541888946425-d0fbb180c5f5?auto=format&fit=crop&w=800&q=80';
+              }}
             />
             <div className="about-floating-badge">
               <div className="about-badge-icon">🏆</div>

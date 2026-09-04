@@ -155,14 +155,16 @@ export const portfolioData = {
       title: "The Power of Red in High-Contrast UI",
       date: "August 12, 2026",
       excerpt: "Why vibrant coral-red accents demand user focus and command visual layouts when layered against charcoal blocks.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80",
+      content: "High-contrast user interfaces rely heavily on focal points to guide navigation. Utilizing bold red accents against deep charcoal or stark white blocks establishes an immediate visual hierarchy. In this article, we explore color theory, human perception under dark mode, and how strategic accent placement improves conversion rates and user interaction flow."
     },
     {
       id: "blog-2",
       title: "Geometric Grid Assemblies",
       date: "July 28, 2026",
       excerpt: "Stripping away organic shapes to design structures based on pure outlines, squares, and asymmetric columns.",
-      image: "https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=400&q=80",
+      content: "Modern editorial and visual layout design often suffers from redundant visual elements. By adhering to rigid geometric grid structures, designers can present content with clarity and architectural precision. We discuss asymmetric column balance, baseline alignment, and grid systems for responsive web design."
     }
   ],
   

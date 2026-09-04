@@ -29,13 +29,13 @@ export default function Newsletter() {
           </h2>
 
           <p className="newsletter-desc">
-            Receive release updates, exclusive excerpts, author notes, and special offers directly from Lunara Press.
+            Receive release updates, exclusive excerpts, author notes, and special offers directly for 'The Echoes of Tomorrow'.
           </p>
 
           {isSubmitted ? (
             <div className="newsletter-success">
               <CheckCircle size={22} />
-              <span>Welcome to the Lunara Press reader list! Check your inbox for your free prologue PDF.</span>
+              <span>Welcome to The Echoes of Tomorrow readers circle! Check your inbox for your free prologue PDF.</span>
             </div>
           ) : (
             <form className="newsletter-form" onSubmit={handleSubmit} noValidate>

@@ -47,7 +47,7 @@ export default function ProjectsSection({ projects }) {
         <div className="section-header-center">
           <span className="section-subtitle">CURATED PORTFOLIO</span>
           <h2 className="section-title">Iconic Landmark Projects</h2>
-          <p className="section-desc-center">Explore our recent architectural residences and bespoke commercial structures, served live from Spring Boot.</p>
+          <p className="section-desc-center">Explore our recent architectural residences and bespoke commercial structures.</p>
           
           {/* Category Filter Pills */}
           <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '24px', flexWrap: 'wrap' }}>

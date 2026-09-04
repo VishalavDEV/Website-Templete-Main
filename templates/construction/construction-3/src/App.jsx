@@ -59,7 +59,11 @@ export default function App() {
     <div className="futurix-app-root">
       <TopBar isLightMode={isLightMode} onToggleTheme={handleToggleTheme} />
       <SocialSidebar />
-      <Navbar onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
+      <Navbar 
+        onOpenQuoteModal={() => setIsQuoteModalOpen(true)} 
+        isLightMode={isLightMode} 
+        onToggleTheme={handleToggleTheme} 
+      />
       <HeroSection 
         onOpenVideoModal={() => setIsVideoModalOpen(true)} 
         stats={stats}

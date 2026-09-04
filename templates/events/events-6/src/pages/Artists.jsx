@@ -1,44 +1,45 @@
 import React, { useState } from 'react';
 import ArtistCard from '../components/ArtistCard';
 import Modal from '../components/Modal';
-import { Clock, MapPin, Ticket, Sparkles } from 'lucide-react';
+import { Clock, MapPin, Ticket, Sparkles, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { artistsList } from '../data/festivalData';
 
 export default function Artists() {
   const [selectedArtist, setSelectedArtist] = useState(null);
   const [activeFilter, setActiveFilter] = useState('ALL');
 
-  const artistsList = [
-    { id: 1, name: 'LYRA VOSS', genre: 'Indie Pop', time: '10:00 PM', stage: 'Main Stage', bio: 'Haunting vocals and soaring indie pop anthems that electrify stadium crowds with high energy choruses and golden spotlight aesthetics.', image: './images/hero_performer.jpg' },
-    { id: 2, name: 'KAEL NOVA', genre: 'Electronic', time: '12:00 AM', stage: 'Afterdark Stage', bio: 'Hypnotic synthesizer rhythms and heavy bass dropping live soundscapes that keep the crowd dancing until 2 AM.', image: './images/dj_performer.jpg' },
-    { id: 3, name: 'MIRA VALE', genre: 'Alternative Soul', time: '8:00 PM', stage: 'Main Stage', bio: 'Raw emotional depth blending soulful brass sections with ambient live beats and passionate vocal delivery.', image: './images/hero_performer.jpg' },
-    { id: 4, name: 'ZEN RAY', genre: 'Hip-Hop Fusion', time: '9:00 PM', stage: 'Main Stage', bio: 'High-octane rhyming over live drum breaks, electric basslines, and brass hooks.', image: './images/hero_performer.jpg' },
-    { id: 5, name: 'ARIA NOIR', genre: 'Dream Pop', time: '7:00 PM', stage: 'Echo Stage', bio: 'Ethereal soundscapes, lush reverbs, and angelic vocals that transport listeners into a dreamlike trance.', image: './images/hero_performer.jpg' },
-    { id: 6, name: 'THE SILVER ROOM', genre: 'Alternative Rock', time: '11:00 PM', stage: 'Main Stage', bio: 'Explosive guitar riffs, heavy drumming, and roaring anthemic energy that commands the arena.', image: './images/hero_performer.jpg' },
-    { id: 7, name: 'NOVA KAI', genre: 'Electronic Live', time: '1:00 AM', stage: 'Afterdark Stage', bio: 'Modular synth wizardry combined with live drum pad performances and interactive light beams.', image: './images/dj_performer.jpg' },
-    { id: 8, name: 'ELIO VANE', genre: 'Acoustic / Indie', time: '6:00 PM', stage: 'Echo Stage', bio: 'Intimate acoustic guitar melodies and heartfelt storytelling at golden hour.', image: './images/hero_performer.jpg' },
-  ];
-
-  const genres = ['ALL', 'Indie Pop', 'Electronic', 'Alternative Soul', 'Hip-Hop Fusion', 'Dream Pop', 'Alternative Rock', 'Acoustic / Indie'];
+  const genres = ['ALL', 'Indie Pop', 'Electronic', 'Alternative Soul', 'Hip-Hop Fusion', 'Dream Pop', 'Alternative Rock', 'Electronic Live', 'Acoustic / Indie'];
 
   const filteredArtists = activeFilter === 'ALL'
     ? artistsList
     : artistsList.filter(a => a.genre === activeFilter);
 
   return (
-    <div style={{ paddingTop: '120px', position: 'relative', zIndex: 10 }}>
-      <section className="section-padding" style={{ textAlign: 'center', background: 'radial-gradient(circle at top, #1E1705 0%, #050505 80%)' }}>
-        <div className="container">
-          <span className="section-subtitle">MIDNIGHT ECHO 2026 LINEUP</span>
-          <h1 className="section-title">THE ARTISTS</h1>
-          <p className="section-desc">8 World-Class Acts. 3 Stages. 1 Unforgettable Night of Live Music.</p>
+    <div className="w-full max-w-full overflow-x-hidden pt-24 sm:pt-28 md:pt-32 relative z-10 min-h-screen">
+      {/* Page Header */}
+      <section className="py-12 sm:py-16 md:py-20 text-center relative bg-[radial-gradient(ellipse_at_top,_#261c04_0%,_#050505_75%)] border-b border-white/5">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <span className="section-subtitle inline-block text-xs sm:text-sm font-extrabold tracking-[4px] text-[#F5B900] uppercase mb-3">
+            MIDNIGHT ECHO 2026 LINEUP
+          </span>
+          <h1 className="font-['Syne',sans-serif] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase text-white tracking-tight mb-4">
+            THE ARTISTS
+          </h1>
+          <p className="max-w-2xl mx-auto text-neutral-400 text-sm sm:text-base md:text-lg leading-relaxed">
+            8 World-Class Acts. 3 Stages. 1 Unforgettable Night of Live Music, Energy, and Golden Lights.
+          </p>
 
-          {/* Filter Bar */}
-          <div className="gallery-filter-bar" style={{ marginTop: '40px' }}>
-            {genres.map(g => (
+          {/* Genre Filter Bar */}
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-8 sm:mt-10">
+            {genres.map((g) => (
               <button
                 key={g}
-                className={`filter-btn ${activeFilter === g ? 'active' : ''}`}
+                className={`filter-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
+                  activeFilter === g
+                    ? 'bg-[#F5B900] text-black shadow-[0_0_15px_rgba(245,185,0,0.5)] border border-[#FFC928]'
+                    : 'bg-black/60 text-neutral-400 border border-neutral-800 hover:border-[#F5B900]/50 hover:text-white'
+                }`}
                 onClick={() => setActiveFilter(g)}
               >
                 {g}
@@ -48,10 +49,11 @@ export default function Artists() {
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '30px' }}>
-            {filteredArtists.map(artist => (
+      {/* Artists Grid */}
+      <section className="py-12 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+            {filteredArtists.map((artist) => (
               <ArtistCard key={artist.id} artist={artist} onSelect={setSelectedArtist} />
             ))}
           </div>
@@ -61,23 +63,53 @@ export default function Artists() {
       {/* Artist Detail Modal */}
       {selectedArtist && (
         <Modal onClose={() => setSelectedArtist(null)}>
-          <span className="artist-genre-tag" style={{ marginBottom: '12px' }}>{selectedArtist.genre}</span>
-          <h2 style={{ fontFamily: 'var(--font-display)', color: '#FFF', fontSize: '2.2rem', uppercase: 'true', marginBottom: '8px' }}>
-            {selectedArtist.name}
-          </h2>
+          <div className="flex flex-col items-center text-center">
+            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-[#FFC928] shadow-[0_0_20px_rgba(255,201,40,0.4)] mb-4">
+              <img
+                src={selectedArtist.imageUrl || selectedArtist.image}
+                alt={selectedArtist.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', color: 'var(--gold-bright)', fontSize: '0.9rem', marginBottom: '20px' }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><Clock size={16} /> {selectedArtist.time}</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><MapPin size={16} /> {selectedArtist.stage}</span>
+            <span className="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#F5B900]/20 text-[#FFC928] border border-[#F5B900]/40 mb-2">
+              {selectedArtist.genre}
+            </span>
+
+            <h2 className="font-['Syne',sans-serif] text-2xl sm:text-3xl font-extrabold uppercase text-white tracking-wide mb-3">
+              {selectedArtist.name}
+            </h2>
+
+            <div className="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm text-[#FFC928] mb-6">
+              <span className="flex items-center gap-1.5">
+                <Clock size={16} /> {selectedArtist.time}
+              </span>
+              <span className="text-neutral-600">•</span>
+              <span className="flex items-center gap-1.5">
+                <MapPin size={16} /> {selectedArtist.stage}
+              </span>
+            </div>
+
+            <p className="text-neutral-300 text-sm sm:text-base leading-relaxed mb-6 max-w-lg">
+              {selectedArtist.bio}
+            </p>
+
+            {selectedArtist.socials && (
+              <div className="flex items-center gap-4 text-xs text-neutral-400 mb-8">
+                <span>Spotify: <strong className="text-white">{selectedArtist.socials.spotify}</strong></span>
+                <span>•</span>
+                <span>Instagram: <strong className="text-[#FFC928]">{selectedArtist.socials.instagram}</strong></span>
+              </div>
+            )}
+
+            <Link
+              to="/tickets"
+              className="btn-primary w-full py-3.5 px-6 rounded-full font-bold uppercase tracking-wider text-black bg-gradient-to-r from-[#FFC928] via-[#F5B900] to-[#D99800] hover:shadow-[0_0_25px_rgba(255,201,40,0.6)] flex items-center justify-center gap-2"
+              onClick={() => setSelectedArtist(null)}
+            >
+              <Ticket size={18} /> GET PASS FOR THIS PERFORMANCE
+            </Link>
           </div>
-
-          <p style={{ color: 'var(--text-light)', fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '28px' }}>
-            {selectedArtist.bio}
-          </p>
-
-          <Link to="/tickets" className="btn-primary" style={{ width: '100%' }}>
-            <Ticket size={18} /> GET PASS FOR THIS PERFORMANCE
-          </Link>
         </Modal>
       )}
     </div>

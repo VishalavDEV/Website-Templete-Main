@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Compass, Search, Calendar, MapPin, Star, Shield, ArrowRight, ArrowLeft, Check, Ticket, Award, Info, HelpCircle, ChevronRight } from 'lucide-react';
+import { Compass, Search, Calendar, MapPin, Star, Shield, ArrowRight, ArrowLeft, Check, Ticket, Award, Info, HelpCircle, ChevronRight, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { roadlineRoutes, mockBuses, boardingPoints, droppingPoints } from '../../data/roadlineData';
 import { roadlineImages } from '../../data/roadlineImages';
 
 export default function Roadline() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   // Quote form state
   const [quoteFrom, setQuoteFrom] = useState('Bengaluru');
   const [quoteTo, setQuoteTo] = useState('Chennai');
@@ -113,11 +114,20 @@ export default function Roadline() {
     { q: "Do you offer climate-controlled vehicles?", a: "Yes, we have a specialized fleet of refrigerated containers and luxury Volvo coaches designed for sensitive cargo and passenger comfort." }
   ];
 
+  const handleBackToTemplates = (e) => {
+    if (e) e.preventDefault();
+    if (window.top && window.top !== window) {
+      window.top.location.href = '/templates';
+    } else {
+      window.location.href = '/templates';
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-orange-600 selection:text-white">
       
       {/* Dynamic Navbar */}
-      <nav className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm px-6 py-4 flex items-center justify-between">
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Compass className="text-orange-500 animate-spin-slow" size={26} />
           <span className="font-outfit font-black tracking-wider text-xl text-slate-900">ROADLINE</span>
@@ -130,12 +140,50 @@ export default function Roadline() {
           <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
         </div>
 
-        <div className="flex items-center gap-4">
-          <Link to="/transportation" className="flex items-center gap-1.5 px-4 py-2 rounded-full border border-slate-200 bg-white text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-all">
+        <div className="flex items-center gap-3">
+          <a 
+            href="/templates" 
+            onClick={handleBackToTemplates}
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-slate-200 bg-white text-xs font-semibold text-slate-700 hover:border-orange-500 hover:text-orange-500 hover:bg-slate-50 transition-all cursor-pointer"
+            title="Back to Templates"
+          >
             <ArrowLeft size={12} /> Templates
-          </Link>
+          </a>
+
+          <button 
+            type="button"
+            aria-label="Toggle Navigation Menu"
+            className="md:hidden p-1.5 rounded-lg border border-slate-200 bg-white text-slate-600 hover:text-orange-500 transition-colors cursor-pointer" 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
       </nav>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-x-4 top-20 z-50 p-6 rounded-2xl border border-slate-200 bg-white/95 backdrop-blur-xl flex flex-col gap-3 text-center md:hidden shadow-2xl text-xs font-bold uppercase tracking-wider"
+          >
+            <a href="#hero" onClick={() => setMobileMenuOpen(false)} className="py-2.5 hover:text-orange-500 border-b border-slate-100 text-slate-700 transition-colors">Freight Quote</a>
+            <a href="#tickets" onClick={() => setMobileMenuOpen(false)} className="py-2.5 hover:text-orange-500 border-b border-slate-100 text-slate-700 transition-colors">Book Buses</a>
+            <a href="#services" onClick={() => setMobileMenuOpen(false)} className="py-2.5 hover:text-orange-500 border-b border-slate-100 text-slate-700 transition-colors">Services</a>
+            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="py-2.5 hover:text-orange-500 border-b border-slate-100 text-slate-700 transition-colors">Contact</a>
+            <a 
+              href="/templates" 
+              onClick={(e) => { setMobileMenuOpen(false); handleBackToTemplates(e); }}
+              className="mt-2 py-2.5 text-orange-600 flex items-center justify-center gap-1.5 bg-orange-50 rounded-lg cursor-pointer"
+            >
+              <ArrowLeft size={14} /> Back to Templates
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Hero Section with Truck on Highway Background */}
       <section id="hero" className="relative bg-gradient-to-r from-slate-950 to-slate-900 text-white py-24 px-6 overflow-hidden min-h-[90vh] flex items-center">

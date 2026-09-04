@@ -114,9 +114,10 @@ export default function About() {
 
         {/* Split Interactive Showcase */}
         <div
+          className="about-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
             gap: '36px',
             alignItems: 'stretch',
           }}

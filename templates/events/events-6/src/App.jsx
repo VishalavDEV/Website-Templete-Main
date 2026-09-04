@@ -43,13 +43,13 @@ export default function App() {
     <Router >
       {loading && <Preloader onComplete={() => setLoading(false)} />}
 
-      <div style={{ position: 'relative', minHeight: '100vh', backgroundColor: '#050505', color: '#FFFFFF' }}>
+      <div className="w-full max-w-full overflow-x-hidden min-h-screen relative bg-[#050505] text-white flex flex-col">
         <CustomCursor />
         <AnimatedBackground />
         <MusicParticles />
         <Navbar />
 
-        <main>
+        <main className="w-full max-w-full overflow-x-hidden flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

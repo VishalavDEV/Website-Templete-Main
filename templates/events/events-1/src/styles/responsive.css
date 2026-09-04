@@ -31,7 +31,7 @@
   }
 }
 
-
+@media (max-width: 768px) {
   .schedule-item {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -93,3 +93,4 @@
     grid-template-columns: 1fr;
   }
 }
+

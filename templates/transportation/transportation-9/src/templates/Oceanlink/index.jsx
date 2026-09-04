@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Ship, Search, Calculator, Shield, HelpCircle, ArrowLeft, ArrowRight, Check, Info, Anchor, Compass, ChevronRight } from 'lucide-react';
+import { Ship, Search, Calculator, Shield, HelpCircle, ArrowLeft, ArrowRight, Check, Info, Anchor, Compass, ChevronRight, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { marinePorts, mockContainers, marineRates } from '../../data/oceanlinkData';
 import { oceanlinkImages } from '../../data/oceanlinkImages';
@@ -10,6 +10,7 @@ export default function Oceanlink() {
   const [destPort, setDestPort] = useState('Port of Singapore (SIN)');
   const [containerType, setContainerType] = useState('Standard 20ft');
   const [cargoWeightVal, setCargoWeightVal] = useState(15000); // kg
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   // Rate Quote state
   const [quoteCost, setQuoteCost] = useState(null);
@@ -27,6 +28,15 @@ export default function Oceanlink() {
 
   // FAQ state
   const [expandedFaq, setExpandedFaq] = useState(null);
+
+  const handleBackToTemplates = (e) => {
+    if (e) e.preventDefault();
+    if (window.top && window.top !== window) {
+      window.top.location.href = '/templates';
+    } else {
+      window.location.href = '/templates';
+    }
+  };
 
   const handleCalculateQuote = (e) => {
     e.preventDefault();
@@ -82,24 +92,86 @@ export default function Oceanlink() {
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans overflow-x-hidden selection:bg-blue-600 selection:text-white">
       
       {/* Premium Maritime Navigation */}
-      <nav className="sticky top-0 z-50 bg-slate-950/90 border-b border-blue-900/40 px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Anchor className="text-blue-500" size={26} />
-          <span className="font-outfit font-black tracking-widest text-xl text-white">OCEANLINK</span>
+      <nav className="sticky top-0 z-50 bg-slate-950/90 border-b border-blue-900/40 px-4 sm:px-6 py-3.5 sm:py-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Anchor className="text-blue-500" size={26} />
+            <span className="font-outfit font-black tracking-widest text-xl text-white">OCEANLINK</span>
+          </div>
+
+          <div className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-400">
+            <a href="#booking" className="hover:text-blue-400 transition-colors">Shipping Quote</a>
+            <a href="#tracking" className="hover:text-blue-400 transition-colors">Fleet Tracking</a>
+            <a href="#faq" className="hover:text-blue-400 transition-colors">FAQs</a>
+            <a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <button 
+              type="button"
+              onClick={handleBackToTemplates}
+              className="flex items-center gap-1.5 px-3 sm:px-4 py-2 border border-slate-800 rounded bg-slate-900 text-xs font-bold text-slate-350 hover:border-blue-900/50 hover:text-white transition-all cursor-pointer"
+            >
+              <ArrowLeft size={12} /> Templates
+            </button>
+            <button 
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded border border-blue-900/50 text-blue-400 hover:bg-slate-900 cursor-pointer"
+              aria-label="Toggle Menu"
+            >
+              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </div>
 
-        <div className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-400">
-          <a href="#booking" className="hover:text-blue-400 transition-colors">Shipping Quote</a>
-          <a href="#tracking" className="hover:text-blue-400 transition-colors">Fleet Tracking</a>
-          <a href="#faq" className="hover:text-blue-400 transition-colors">FAQs</a>
-          <a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <Link to="/transportation" className="flex items-center gap-1.5 px-4 py-2 border border-slate-905 bg-slate-900 text-xs font-bold text-slate-350 hover:border-blue-900/50 hover:text-white transition-all">
-            <ArrowLeft size={12} /> Templates
-          </Link>
-        </div>
+        {/* Mobile Navigation Drawer */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden mt-3 pt-3 border-t border-blue-900/30 flex flex-col gap-3 text-xs uppercase font-semibold tracking-wider text-slate-300 bg-slate-950"
+            >
+              <a 
+                href="#booking" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-blue-400 transition-colors"
+              >
+                Shipping Quote
+              </a>
+              <a 
+                href="#tracking" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-blue-400 transition-colors"
+              >
+                Fleet Tracking
+              </a>
+              <a 
+                href="#faq" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-blue-400 transition-colors"
+              >
+                FAQs
+              </a>
+              <a 
+                href="#contact" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-blue-400 transition-colors"
+              >
+                Contact
+              </a>
+              <button 
+                type="button"
+                onClick={(e) => { setMobileMenuOpen(false); handleBackToTemplates(e); }}
+                className="py-2 text-left text-blue-400 flex items-center gap-1 font-bold border-t border-slate-800 mt-1 pt-2 cursor-pointer"
+              >
+                <ArrowLeft size={12} /> Back to Templates
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* Hero Section */}

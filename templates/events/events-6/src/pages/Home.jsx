@@ -10,6 +10,7 @@ import Gallery from '../components/Gallery';
 import Newsletter from '../components/Newsletter';
 import Modal from '../components/Modal';
 import { Sparkles, ArrowRight, Music, Users, Clock, Layers, Star, Ticket, CheckCircle2 } from 'lucide-react';
+import { artistsList, concertExperiences } from '../data/festivalData';
 
 export default function Home() {
   const [selectedPass, setSelectedPass] = useState(null);
@@ -17,16 +18,9 @@ export default function Home() {
   const [quantity, setQuantity] = useState(1);
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
 
-  const featuredArtists = [
-    { id: 1, name: 'LYRA VOSS', genre: 'Indie Pop', time: '10:00 PM', stage: 'Main Stage', bio: 'Haunting vocals and soaring indie pop anthems that electrify stadium crowds.', image: './images/hero_performer.jpg' },
-    { id: 2, name: 'KAEL NOVA', genre: 'Electronic', time: '12:00 AM', stage: 'Afterdark Stage', bio: 'Hypnotic synthesizer rhythms and heavy bass dropping live soundscapes.', image: './images/dj_performer.jpg' },
-    { id: 3, name: 'MIRA VALE', genre: 'Alternative Soul', time: '8:00 PM', stage: 'Main Stage', bio: 'Raw emotional depth blending soulful brass sections with ambient live beats.', image: './images/hero_performer.jpg' },
-  ];
+  const featuredArtists = artistsList.slice(0, 4);
+  const eventsPreview = concertExperiences.slice(0, 3);
 
-  const eventsPreview = [
-    { id: 1, title: 'MIDNIGHT ECHO', genre: 'MAIN CONCERT FESTIVAL', date: '24 Oct 2026', time: '6:00 PM - 2:00 AM', venue: 'Aurora Main Stage', description: 'The centerpiece live festival experience featuring pop, indie, and rock headliners.', price: 1499, image: './images/hero_performer.jpg' },
-    { id: 2, title: 'GOLDEN FREQUENCY', genre: 'ELECTRONIC & SYNTH', date: '24 Oct 2026', time: '11:00 PM - 2:00 AM', venue: 'Afterdark Stage', description: 'Immersive dark techno and synth-wave session with golden laser displays.', price: 1499, image: './images/dj_performer.jpg' },
-  ];
 
   const schedulePreview = [
     { time: '6:00 PM', title: 'Acoustic Sunset Warm-Up', artist: 'Elio Vane', stage: 'Echo Stage' },
@@ -165,7 +159,7 @@ export default function Home() {
             <p className="section-desc">Experience electrifying performances from world-class indie, electronic, pop, and rock talents.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginBottom: '50px' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {featuredArtists.map((artist) => (
               <ArtistCard key={artist.id} artist={artist} onSelect={setSelectedArtist} />
             ))}
@@ -187,11 +181,12 @@ export default function Home() {
             <h2 className="section-title">CONCERT EVENTS</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginBottom: '40px' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             {eventsPreview.map((evt) => (
               <EventCard key={evt.id} event={evt} />
             ))}
           </div>
+
 
           <div style={{ textAlign: 'center' }}>
             <Link to="/events" className="btn-secondary">

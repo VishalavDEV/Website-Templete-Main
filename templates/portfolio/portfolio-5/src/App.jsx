@@ -39,11 +39,11 @@ function PageWrapper({ children }) {
 // Reusable Section Heading
 function SectionHeading({ eyebrow, title }) {
   return (
-    <div className="mb-16 text-left">
+    <div className="mb-12 sm:mb-16 text-left max-w-full">
       <span className="text-[10px] font-sans tracking-[0.25em] text-[#e8583f] uppercase font-black block mb-3">
         {eyebrow}
       </span>
-      <h2 className="text-3xl md:text-5xl font-serif text-white tracking-tight leading-tight">
+      <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif text-white tracking-tight leading-tight break-words max-w-full">
         {title}
       </h2>
       <div className="w-12 h-1 bg-[#e8583f] mt-4" />
@@ -141,13 +141,13 @@ function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           {/* Circular photo with red border ring */}
           <div className="col-span-12 lg:col-span-5 flex justify-center relative">
-            <div className="relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-full p-2.5 bg-gradient-to-tr from-[#e8583f] to-zinc-900 shadow-xl">
+            <div className="relative w-[230px] h-[230px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] rounded-full p-2.5 bg-gradient-to-tr from-[#e8583f] to-zinc-900 shadow-xl mx-auto">
               <img 
                 src={portfolioData.hero.avatar} 
                 alt="Evelyn Vance portrait" 
                 className="w-full h-full object-cover rounded-full border border-black"
               />
-              <span className="absolute bottom-6 right-6 w-5 h-5 rounded-full bg-emerald-400 border-4 border-black" />
+              <span className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 w-5 h-5 rounded-full bg-emerald-400 border-4 border-black" />
             </div>
           </div>
 
@@ -582,7 +582,7 @@ function ContactPage() {
         </div>
 
         {/* Right Form Card */}
-        <div className="col-span-12 lg:col-span-7 bg-[#141414] border border-zinc-900 p-8 relative">
+        <div className="col-span-12 lg:col-span-7 bg-[#141414] border border-zinc-900 p-5 md:p-8 relative w-full max-w-full box-border">
           <div className="absolute top-0 left-0 w-full h-[3px] bg-[#e8583f]" />
           
           <form onSubmit={handleFormSubmit} className="flex flex-col gap-6 font-sans">

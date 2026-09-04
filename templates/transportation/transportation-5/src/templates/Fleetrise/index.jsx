@@ -42,6 +42,15 @@ export default function Fleetrise() {
     { q: "Can I remotely lock/disable a vehicle in an alert state?", a: "Yes, our Level-4 security modules support remote engine immobilizers, triggerable only by verified administrators." }
   ];
 
+  const handleBackToTemplates = (e) => {
+    if (e) e.preventDefault();
+    if (window.top && window.top !== window) {
+      window.top.location.href = '/templates';
+    } else {
+      window.location.href = '/templates';
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 font-sans selection:bg-cyan-500 selection:text-slate-900">
       
@@ -58,9 +67,13 @@ export default function Fleetrise() {
         </div>
 
         <div className="flex items-center gap-4">
-          <Link to="/transportation" className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-slate-800 bg-slate-900 text-xs font-semibold text-slate-350 hover:text-white transition-all">
+          <button 
+            type="button"
+            onClick={handleBackToTemplates}
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-slate-800 bg-slate-900 text-xs font-semibold text-slate-350 hover:text-white transition-all cursor-pointer"
+          >
             <ArrowLeft size={12} /> Templates
-          </Link>
+          </button>
         </div>
       </header>
 

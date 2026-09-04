@@ -7,8 +7,8 @@ export default function ProjectCard({ project, onImageClick }) {
     <div className="group flex flex-col md:grid md:grid-cols-12 gap-8 md:gap-12 py-12 border-b border-navy/5 items-center">
       {/* Blueprint / Sketch Side */}
       <motion.div 
-        initial={{ opacity: 0, x: -35 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="col-span-12 md:col-span-5 w-full aspect-[4/3] bg-white blueprint-bg border border-[#1a2b4a]/10 p-6 flex flex-col justify-between relative overflow-hidden"
@@ -37,8 +37,8 @@ export default function ProjectCard({ project, onImageClick }) {
 
       {/* Photography Side */}
       <motion.div 
-        initial={{ opacity: 0, x: 35 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="col-span-12 md:col-span-7 w-full flex flex-col gap-4"

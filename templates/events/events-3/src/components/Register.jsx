@@ -99,50 +99,40 @@ export default function Register() {
         </p>
       </div>
 
-      {/* Ticket Tier Cards */}
-      <div className="grid-3" style={{ marginBottom: '80px', gap: '30px' }}>
+      {/* Ticket Tier Cards Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
         {tiers.map((tier) => {
           const isSelected = selectedTier === tier.name;
           return (
             <div
               key={tier.name}
-              className="glass-card"
+              className="glass-card glass-card-overflow flex flex-col justify-between cursor-pointer rounded-2xl sm:rounded-3xl transition-all duration-300 relative"
               onClick={() => setSelectedTier(tier.name)}
               style={{
-                padding: '36px',
-                borderRadius: '24px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                cursor: 'pointer',
+                padding: '36px 28px',
+                paddingTop: tier.popular ? '42px' : '36px',
                 border: tier.popular ? '2px solid var(--accent-cyan)' : isSelected ? '2px solid var(--accent-violet)' : '1px solid var(--glass-border)',
-                boxShadow: tier.popular ? '0 0 35px rgba(0, 240, 255, 0.25)' : 'var(--shadow-glass)',
-                position: 'relative'
+                boxShadow: tier.popular ? '0 0 35px rgba(0, 240, 255, 0.28)' : 'var(--shadow-glass)',
+                overflow: 'visible'
               }}
             >
+              {/* Best Value / Most Popular Floating Badge */}
               {tier.popular && (
                 <div
+                  className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 inline-flex items-center gap-1.5 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-black shadow-lg"
                   style={{
-                    position: 'absolute',
-                    top: '-14px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
                     background: 'var(--gradient-main)',
-                    color: '#000',
-                    fontWeight: 800,
-                    fontSize: '0.75rem',
-                    padding: '4px 16px',
-                    borderRadius: '9999px',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em'
+                    boxShadow: '0 0 16px rgba(0, 240, 255, 0.5)',
+                    whiteSpace: 'nowrap'
                   }}
                 >
-                  Most Popular Pass
+                  <Sparkles size={13} className="text-black" />
+                  Most Popular • Best Value
                 </div>
               )}
 
               <div>
-                <div className="badge badge-cyan" style={{ marginBottom: '16px', alignSelf: 'flex-start' }}>
+                <div className="badge badge-cyan inline-flex mb-4" style={{ alignSelf: 'flex-start' }}>
                   {tier.badge}
                 </div>
 
@@ -154,7 +144,7 @@ export default function Register() {
                 <div
                   style={{
                     fontFamily: 'var(--font-heading)',
-                    fontSize: '3rem',
+                    fontSize: 'clamp(2.4rem, 5vw, 3rem)',
                     fontWeight: 800,
                     color: tier.popular ? 'var(--accent-cyan)' : 'var(--text-primary)',
                     lineHeight: 1,
@@ -176,7 +166,7 @@ export default function Register() {
 
               <button
                 className={tier.popular ? 'btn-primary' : 'btn-secondary'}
-                style={{ width: '100%', justifyContent: 'center' }}
+                style={{ width: '100%', justifyContent: 'center', minHeight: '44px' }}
                 onClick={(e) => { e.stopPropagation(); setSelectedTier(tier.name); }}
               >
                 {isSelected ? 'Selected Tier' : `Select ${tier.name}`}
@@ -188,23 +178,20 @@ export default function Register() {
 
       {/* Registration Form Block */}
       <div
-        className="glass-card"
+        className="glass-card max-w-4xl mx-auto rounded-2xl sm:rounded-3xl"
         style={{
-          maxWidth: '840px',
-          margin: '0 auto',
-          padding: '44px',
-          borderRadius: '28px',
+          padding: 'clamp(20px, 4vw, 44px)',
           border: '1px solid rgba(0, 240, 255, 0.3)'
         }}
       >
-        <h3 style={{ fontSize: '1.8rem', color: 'var(--text-primary)', marginBottom: '8px', textAlign: 'center' }}>
+        <h3 style={{ fontSize: 'clamp(1.4rem, 3vw, 1.8rem)', color: 'var(--text-primary)', marginBottom: '8px', textAlign: 'center' }}>
           Complete Summit Registration
         </h3>
         <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: '32px', textAlign: 'center' }}>
           Selected Tier: <strong style={{ color: 'var(--accent-cyan)' }}>{selectedTier}</strong>
         </p>
 
-        <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           <div>
             <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>
               Full Name *
@@ -216,15 +203,12 @@ export default function Register() {
               placeholder="Dr. Alexander Wright"
               value={formData.fullName}
               onChange={handleInputChange}
+              className="w-full min-h-[44px] px-4 py-3 rounded-xl outline-none transition-colors"
               style={{
-                width: '100%',
-                padding: '12px 16px',
-                borderRadius: '12px',
                 background: 'var(--bg-secondary)',
                 border: '1px solid var(--glass-border)',
                 color: 'var(--text-primary)',
-                fontSize: '0.95rem',
-                outline: 'none'
+                fontSize: '0.95rem'
               }}
             />
           </div>
@@ -240,15 +224,12 @@ export default function Register() {
               placeholder="alexander@quantum-lab.io"
               value={formData.email}
               onChange={handleInputChange}
+              className="w-full min-h-[44px] px-4 py-3 rounded-xl outline-none transition-colors"
               style={{
-                width: '100%',
-                padding: '12px 16px',
-                borderRadius: '12px',
                 background: 'var(--bg-secondary)',
                 border: '1px solid var(--glass-border)',
                 color: 'var(--text-primary)',
-                fontSize: '0.95rem',
-                outline: 'none'
+                fontSize: '0.95rem'
               }}
             />
           </div>
@@ -264,15 +245,12 @@ export default function Register() {
               placeholder="MIT Robotics & AI Lab"
               value={formData.organization}
               onChange={handleInputChange}
+              className="w-full min-h-[44px] px-4 py-3 rounded-xl outline-none transition-colors"
               style={{
-                width: '100%',
-                padding: '12px 16px',
-                borderRadius: '12px',
                 background: 'var(--bg-secondary)',
                 border: '1px solid var(--glass-border)',
                 color: 'var(--text-primary)',
-                fontSize: '0.95rem',
-                outline: 'none'
+                fontSize: '0.95rem'
               }}
             />
           </div>
@@ -285,15 +263,12 @@ export default function Register() {
               name="trackInterest"
               value={formData.trackInterest}
               onChange={handleInputChange}
+              className="w-full min-h-[44px] px-4 py-3 rounded-xl outline-none transition-colors"
               style={{
-                width: '100%',
-                padding: '12px 16px',
-                borderRadius: '12px',
                 background: 'var(--bg-secondary)',
                 border: '1px solid var(--glass-border)',
                 color: 'var(--text-primary)',
-                fontSize: '0.95rem',
-                outline: 'none'
+                fontSize: '0.95rem'
               }}
             >
               <option value="Autonomous Robotics">Autonomous Robotics</option>
@@ -303,12 +278,11 @@ export default function Register() {
             </select>
           </div>
 
-          <div style={{ gridColumn: '1 / -1' }}>
+          <div className="sm:col-span-2 pt-2">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="btn-primary"
-              style={{ width: '100%', justifyContent: 'center', padding: '16px', fontSize: '1.05rem', marginTop: '10px' }}
+              className="btn-primary w-full min-h-[48px] justify-center text-sm sm:text-base font-bold"
             >
               {isSubmitting ? 'Generating Digital Badge...' : `Confirm Registration for ${selectedTier}`} <Send size={18} />
             </button>
@@ -319,40 +293,27 @@ export default function Register() {
       {/* Confirmation Digital Pass Modal Popup */}
       {submitted && (
         <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
           style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: 'rgba(8, 11, 18, 0.92)',
-            backdropFilter: 'blur(20px)',
-            zIndex: 3500,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '20px'
+            background: 'rgba(3, 7, 18, 0.9)',
+            backdropFilter: 'blur(20px)'
           }}
         >
           <div
-            className="glass-card"
+            className="glass-card max-w-lg w-full rounded-2xl sm:rounded-3xl relative text-center"
             style={{
-              maxWidth: '520px',
-              width: '100%',
-              padding: '36px',
-              borderRadius: '24px',
-              textAlign: 'center',
+              padding: 'clamp(20px, 4vw, 36px)',
               border: '2px solid var(--accent-cyan)',
-              boxShadow: '0 0 50px rgba(0, 240, 255, 0.4)',
-              position: 'relative'
+              boxShadow: '0 0 50px rgba(0, 240, 255, 0.4)'
             }}
           >
             <button
               onClick={() => setSubmitted(false)}
+              aria-label="Close modal"
               style={{
                 position: 'absolute',
-                top: '20px',
-                right: '20px',
+                top: '16px',
+                right: '16px',
                 background: 'rgba(255,255,255,0.1)',
                 border: 'none',
                 borderRadius: '50%',
@@ -369,8 +330,8 @@ export default function Register() {
 
             <div
               style={{
-                width: '60px',
-                height: '60px',
+                width: '56px',
+                height: '56px',
                 borderRadius: '50%',
                 background: 'rgba(0, 240, 255, 0.2)',
                 border: '2px solid var(--accent-cyan)',
@@ -380,38 +341,38 @@ export default function Register() {
                 margin: '0 auto 16px auto'
               }}
             >
-              <Sparkles size={30} color="#00f0ff" />
+              <Sparkles size={28} color="#00f0ff" />
             </div>
 
-            <h3 style={{ fontSize: '1.8rem', color: '#fff', marginBottom: '4px' }}>Registration Confirmed!</h3>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '1.6rem', color: '#fff', marginBottom: '4px' }}>Registration Confirmed!</h3>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '20px' }}>
               Your official digital summit pass has been generated. Confirmation sent to <strong>{formData.email || 'your email'}</strong>.
             </p>
 
             {/* Simulated Digital Ticket Badge */}
             <div
               style={{
-                padding: '20px',
+                padding: '18px',
                 background: 'linear-gradient(135deg, #0e1320 0%, #161b26 100%)',
                 borderRadius: '16px',
                 border: '1px solid rgba(0, 240, 255, 0.3)',
-                marginBottom: '24px',
+                marginBottom: '20px',
                 textAlign: 'left'
               }}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
                 <span style={{ fontWeight: 800, color: 'var(--accent-cyan)', fontFamily: 'var(--font-heading)' }}>VERTEX 2026</span>
                 <span className="badge badge-cyan">{selectedTier}</span>
               </div>
-              <div style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '2px' }}>
+              <div style={{ fontSize: '1.15rem', fontWeight: 700, color: '#fff', marginBottom: '2px' }}>
                 {formData.fullName || 'Registered Attendee'}
               </div>
-              <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '14px' }}>
+              <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
                 {formData.organization || 'DeepTech Partner'} • {formData.trackInterest}
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px' }}>
-                <QrCode size={40} color="#00f0ff" />
+                <QrCode size={36} color="#00f0ff" />
                 <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textAlign: 'right' }}>
                   ID: VTX-2026-99482<br />
                   Nov 12-14 • SF
@@ -422,7 +383,7 @@ export default function Register() {
             <button
               onClick={() => setSubmitted(false)}
               className="btn-primary"
-              style={{ width: '100%', justifyContent: 'center' }}
+              style={{ width: '100%', justifyContent: 'center', minHeight: '44px' }}
             >
               Download Pass Wallet File <Download size={16} />
             </button>

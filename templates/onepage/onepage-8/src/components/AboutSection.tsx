@@ -59,16 +59,26 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Left Interactive 3D Data Crystals */}
-        <div className="lg:col-span-5 relative rounded-2xl glass-panel-glow border border-cyan-500/20 overflow-hidden h-[380px] lg:h-[480px] flex items-center justify-center">
+        <div className="lg:col-span-5 relative rounded-2xl glass-panel-glow border border-cyan-500/20 overflow-hidden h-[320px] sm:h-[380px] lg:h-[480px] flex items-center justify-center">
           <AboutScene />
           <div className="absolute top-4 left-4 font-mono text-[10px] text-cyan-400">
             // 3D HOLOGRAPHIC TIMELINE
           </div>
-          <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#060a12]/80 backdrop-blur-md border border-slate-800 font-mono text-xs">
-            <span className="text-slate-400">CORE PRINCIPLE:</span>
-            <p className="text-slate-200 mt-1 font-sans text-xs leading-relaxed">
-              "Code is the medium; intelligence is the artifact."
-            </p>
+          <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-xl bg-[#060a12]/85 backdrop-blur-md border border-slate-800 font-mono text-xs flex items-center space-x-3">
+            <img
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop"
+              alt="AI Engineer"
+              className="w-10 h-10 rounded-full border border-cyan-400/60 object-cover flex-shrink-0"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop';
+              }}
+            />
+            <div>
+              <span className="text-slate-400 block text-[10px] uppercase tracking-wider">CORE PRINCIPLE</span>
+              <p className="text-slate-200 mt-0.5 font-sans text-xs leading-relaxed">
+                "Code is the medium; intelligence is the artifact."
+              </p>
+            </div>
           </div>
         </div>
 
@@ -92,7 +102,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 onMouseLeave={() => setCursorState({ variant: 'default', text: '' })}
                 className={`p-5 sm:p-6 rounded-2xl transition-all duration-300 border cursor-pointer ${
                   isActive
-                    ? 'glass-panel-glow border-cyan-400/60 shadow-[0_0_20px_rgba(6,182,212,0.15)] translate-x-2'
+                    ? 'glass-panel-glow border-cyan-400/60 shadow-[0_0_20px_rgba(6,182,212,0.15)] sm:translate-x-2'
                     : 'glass-panel border-slate-800/80 hover:border-slate-700'
                 }`}
               >

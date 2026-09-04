@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShieldCheck, Search, Calculator, Shield, HelpCircle, ArrowLeft, ArrowRight, Check, AlertCircle, Package, ChevronRight } from 'lucide-react';
+import { ShieldCheck, Search, Calculator, Shield, HelpCircle, ArrowLeft, ArrowRight, Check, AlertCircle, Package, ChevronRight, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { mockShipments, freightRates } from '../../data/cargomaxData';
 import { cargomaxImages } from '../../data/cargomaxImages';
@@ -8,6 +8,7 @@ import { cargomaxImages } from '../../data/cargomaxImages';
 export default function Cargomax() {
   const [trackId, setTrackId] = useState('CMX-2026-10482');
   const [activeShipment, setActiveShipment] = useState(mockShipments['CMX-2026-10482']);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   // Freight Calculator state
   const [weightKg, setWeightKg] = useState(500);
@@ -23,6 +24,15 @@ export default function Cargomax() {
 
   // FAQ state
   const [expandedFaq, setExpandedFaq] = useState(null);
+
+  const handleBackToTemplates = (e) => {
+    if (e) e.preventDefault();
+    if (window.top && window.top !== window) {
+      window.top.location.href = '/templates';
+    } else {
+      window.location.href = '/templates';
+    }
+  };
 
   const handleTrack = (e) => {
     e.preventDefault();
@@ -72,25 +82,87 @@ export default function Cargomax() {
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans overflow-x-hidden selection:bg-orange-500 selection:text-black">
       
       {/* Industrial Corporate Navbar */}
-      <nav className="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800 px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Package className="text-orange-500" size={24} />
-          <span className="font-outfit font-black tracking-wider text-lg text-white">CARGOMAX</span>
-          <span className="hidden sm:inline-block bg-orange-500 text-black font-bold font-mono px-2 py-0.5 rounded text-[9px] uppercase tracking-wider">Logistics</span>
+      <nav className="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800 px-4 sm:px-6 py-3.5 sm:py-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Package className="text-orange-500" size={24} />
+            <span className="font-outfit font-black tracking-wider text-lg text-white">CARGOMAX</span>
+            <span className="hidden sm:inline-block bg-orange-500 text-black font-bold font-mono px-2 py-0.5 rounded text-[9px] uppercase tracking-wider">Logistics</span>
+          </div>
+
+          <div className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-zinc-400">
+            <a href="#tracking" className="hover:text-orange-500 transition-colors">Track Cargo</a>
+            <a href="#calculator" className="hover:text-orange-500 transition-colors">Freight Calc</a>
+            <a href="#faq" className="hover:text-orange-500 transition-colors">FAQs</a>
+            <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <button 
+              type="button"
+              onClick={handleBackToTemplates}
+              className="flex items-center gap-1.5 px-3 sm:px-4 py-2 border border-zinc-850 rounded bg-zinc-900 text-xs font-bold text-zinc-300 hover:border-zinc-700 transition-all cursor-pointer"
+            >
+              <ArrowLeft size={12} /> Templates
+            </button>
+            <button 
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded border border-zinc-800 text-zinc-300 hover:bg-zinc-900 cursor-pointer"
+              aria-label="Toggle Menu"
+            >
+              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </div>
 
-        <div className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-zinc-400">
-          <a href="#tracking" className="hover:text-orange-500 transition-colors">Track Cargo</a>
-          <a href="#calculator" className="hover:text-orange-500 transition-colors">Freight Calc</a>
-          <a href="#faq" className="hover:text-orange-500 transition-colors">FAQs</a>
-          <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <Link to="/transportation" className="flex items-center gap-1.5 px-4 py-2 border border-zinc-850 rounded bg-zinc-900 text-xs font-bold text-zinc-300 hover:border-zinc-700 transition-all">
-            <ArrowLeft size={12} /> Templates
-          </Link>
-        </div>
+        {/* Mobile Navigation Drawer */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden mt-3 pt-3 border-t border-zinc-800 flex flex-col gap-3 text-xs uppercase font-bold tracking-wider text-zinc-300 bg-zinc-950"
+            >
+              <a 
+                href="#tracking" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-orange-500 transition-colors"
+              >
+                Track Cargo
+              </a>
+              <a 
+                href="#calculator" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-orange-500 transition-colors"
+              >
+                Freight Calc
+              </a>
+              <a 
+                href="#faq" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-orange-500 transition-colors"
+              >
+                FAQs
+              </a>
+              <a 
+                href="#contact" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-orange-500 transition-colors"
+              >
+                Contact
+              </a>
+              <button 
+                type="button"
+                onClick={(e) => { setMobileMenuOpen(false); handleBackToTemplates(e); }}
+                className="py-2 text-left text-orange-500 flex items-center gap-1 font-bold border-t border-zinc-800 mt-1 pt-2 cursor-pointer"
+              >
+                <ArrowLeft size={12} /> Back to Templates
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* Hero Section */}
@@ -220,7 +292,7 @@ export default function Cargomax() {
       <section id="calculator" className="py-24 border-t border-zinc-900 bg-zinc-950/40">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
-          <div className="lg:col-span-6">
+          <div className="w-full">
             <span className="text-orange-500 text-xs font-semibold uppercase tracking-wider block mb-2">FREIGHT QUOTE</span>
             <h2 className="text-3xl font-outfit font-black tracking-tight text-white uppercase mb-6">CARGO ESTIMATOR</h2>
 
@@ -268,10 +340,10 @@ export default function Cargomax() {
             </form>
           </div>
 
-          <div className="lg:col-span-6 p-8 rounded-2xl border border-zinc-800 bg-zinc-905 text-center shadow-lg">
-            <span className="text-[10px] text-zinc-500 uppercase block mb-2">Freight Rate Quote</span>
+          <div className="w-full max-w-full overflow-hidden mx-auto p-6 sm:p-8 rounded-2xl border border-zinc-800 bg-zinc-900/60 text-center shadow-lg">
+            <span className="text-[10px] text-zinc-500 uppercase block mb-2 font-bold tracking-wider">Freight Rate Quote</span>
             {calcCost ? (
-              <div className="text-6xl font-mono font-black text-orange-500 my-4 tracking-tighter">
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-mono font-black text-orange-500 my-4 tracking-tighter break-all sm:break-normal">
                 ₹{calcCost.toLocaleString('en-IN')}
               </div>
             ) : (

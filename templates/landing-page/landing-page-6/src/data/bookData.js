@@ -3,7 +3,7 @@ export const bookDetailsData = {
   subtitle: "A Novel of Memory & Time",
   author: "Mira Rowan",
   category: "SPECULATIVE FICTION",
-  publisher: "Lunara Press",
+  publisher: "The Echoes of Tomorrow Publishing",
   releaseDate: "October 2026",
   tagline: "A story where forgotten memories shape the future.",
   headline: "When Tomorrow Remembers Yesterday",
@@ -28,7 +28,7 @@ export const bookDetailsData = {
           { num: "IV", name: "The Final Decision", page: "07" }
         ],
         quote: "The vault did not just store past moments—it weighed them against human souls.",
-        bookMeta: "Lunara Press First Edition • Published 2026"
+        bookMeta: "The Echoes of Tomorrow First Edition • Published 2026"
       },
       rightPage: {
         pageNumber: 1,
@@ -111,7 +111,7 @@ export const bookDetailsData = {
     { label: "Genre", value: "Speculative Fiction / Temporal Drama" },
     { label: "Pages", value: "384 Hardcover Pages" },
     { label: "Language", value: "English (Worldwide Release)" },
-    { label: "Publisher", value: "Lunara Press Editorial House" },
+    { label: "Publisher", value: "The Echoes of Tomorrow Publishing House" },
     { label: "Release Date", value: "October 14, 2026" },
     { label: "ISBN-13", value: "978-1-95482-901-4" },
     { label: "Available Formats", value: "Hardcover / Paperback / Digital (EPUB & PDF)" }
@@ -153,7 +153,7 @@ export const bookDetailsData = {
       id: "ch1",
       chapterLabel: "Chapter One",
       title: "The Memory Vault",
-      image: "/assets/images/chapter1.jpg",
+      image: "./assets/images/chapter1.jpg",
       desc: "Deep within the subterranean archives of Lumina City, archivist Lyra Vance discovers a encrypted memory crystal labeled with a name that shouldn't exist: her own.",
       quote: "The vault did not just store past moments—it weighed them against human souls."
     },
@@ -161,7 +161,7 @@ export const bookDetailsData = {
       id: "ch2",
       chapterLabel: "Chapter Two",
       title: "A Message From Tomorrow",
-      image: "/assets/images/chapter2.jpg",
+      image: "./assets/images/chapter2.jpg",
       desc: "As the crystal decrypts, a temporal frequency emerges—a recorded signal sent not from the past, but from a dystopian timeline forty years in the future.",
       quote: "Listen carefully. The future you are building today is built on a lie we haven't told yet."
     },
@@ -169,7 +169,7 @@ export const bookDetailsData = {
       id: "ch3",
       chapterLabel: "Chapter Three",
       title: "The Last Decision",
-      image: "/assets/images/chapter3.jpg",
+      image: "./assets/images/chapter3.jpg",
       desc: "With the corporate Memory Syndicate closing in, Lyra must choose between erasing her painful history or releasing a truth that could fracture reality itself.",
       quote: "Some memories hurt because they are broken. Others hurt because they are true."
     }
@@ -371,7 +371,7 @@ A new day was breaking over the horizon. For the first time in a hundred years, 
     {
       id: "faq1",
       question: "Where can I purchase 'The Echoes of Tomorrow'?",
-      answer: "You can purchase directly from Lunara Press through this site for exclusive bonuses, or find us at major bookstores worldwide including Amazon, Barnes & Noble, Waterstones, and independent booksellers."
+      answer: "You can purchase directly from this official site for exclusive bonuses, or find us at major bookstores worldwide including Amazon, Barnes & Noble, Waterstones, and independent booksellers."
     },
     {
       id: "faq2",
@@ -386,7 +386,7 @@ A new day was breaking over the horizon. For the first time in a hundred years, 
     {
       id: "faq4",
       question: "Is international shipping available for physical books?",
-      answer: "Yes, Lunara Press ships worldwide. Tracked shipping is calculated at checkout, with free standard shipping available on orders above ₹1,999 in select regions."
+      answer: "Yes, worldwide shipping is available. Tracked shipping is calculated at checkout, with free standard shipping available on orders above ₹1,999 in select regions."
     },
     {
       id: "faq5",
@@ -396,7 +396,7 @@ A new day was breaking over the horizon. For the first time in a hundred years, 
     {
       id: "faq6",
       question: "Can I purchase the book as a gift for someone else?",
-      answer: "Absolute gift options are available! At checkout, simply check 'Send as a Gift' to include a customized personal message and custom Lunara Press gift wrap."
+      answer: "Absolute gift options are available! At checkout, simply check 'Send as a Gift' to include a customized personal message and custom gift wrap."
     }
   ]
 };

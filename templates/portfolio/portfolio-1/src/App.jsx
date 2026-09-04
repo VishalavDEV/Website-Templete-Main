@@ -50,14 +50,14 @@ export default function App() {
     <div className="min-h-screen bg-[#faf9f6] text-[#1a2b4a] selection:bg-[#1a2b4a] selection:text-[#faf9f6]">
       
       {/* 1. HERO / COVER SECTION */}
-      <section id="design" className="relative w-full min-h-screen flex flex-col justify-between p-6 md:p-12 overflow-hidden">
+      <section id="design" className="relative w-full min-h-screen flex flex-col justify-between p-4 sm:p-6 md:p-12 overflow-hidden">
         {/* Top Header Row */}
-        <div className="flex justify-between items-start w-full z-10 border-b border-[#1a2b4a]/10 pb-6">
+        <div className="flex justify-between items-start w-full z-10 border-b border-[#1a2b4a]/10 pb-6 gap-2">
           <div className="flex flex-col">
             <span className="text-[10px] font-sans tracking-widest text-[#1a2b4a]/50 uppercase font-bold">
               {portfolioData.brand.subtitle}
             </span>
-            <h1 className="text-xl tracking-tight text-[#1a2b4a] font-light mt-1">
+            <h1 className="text-lg sm:text-xl tracking-tight text-[#1a2b4a] font-light mt-1">
               {portfolioData.brand.title}
             </h1>
           </div>
@@ -67,11 +67,11 @@ export default function App() {
         </div>
 
         {/* Big Title Row */}
-        <div className="my-8 md:my-12 z-10">
+        <div className="my-8 md:my-12 z-10 w-full max-w-full">
           <span className="text-xs font-sans tracking-[0.25em] text-[#1a2b4a]/60 uppercase font-semibold block mb-2">
             {portfolioData.hero.label}
           </span>
-          <h2 className="text-5xl md:text-8xl lg:text-[7.5rem] font-extrabold tracking-tighter text-[#1a2b4a] leading-[0.9] uppercase">
+          <h2 className="text-3xl sm:text-5xl md:text-8xl lg:text-[7.5rem] font-extrabold tracking-tighter text-[#1a2b4a] leading-tight sm:leading-[0.9] uppercase break-words max-w-full">
             {portfolioData.hero.title}
           </h2>
         </div>
@@ -115,20 +115,20 @@ export default function App() {
       </section>
 
       {/* 2. TABLE OF CONTENTS SECTION */}
-      <section className="bg-white py-16 px-6 md:px-12 border-y border-[#1a2b4a]/5">
+      <section className="bg-white py-12 sm:py-16 px-4 sm:px-6 md:px-12 border-y border-[#1a2b4a]/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-[10px] font-sans tracking-widest text-[#1a2b4a]/40 font-bold uppercase mb-8">
             INDEX // ARCHITECTURAL TAXONOMY
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-6">
             {portfolioData.tableOfContents.map((item, idx) => (
               <a 
                 key={idx} 
                 href={item.href}
-                className="group flex flex-col gap-4 p-4 hover:bg-[#faf9f6] border border-transparent hover:border-[#1a2b4a]/5 transition-all duration-300"
+                className="group flex flex-col gap-3 p-2.5 sm:p-4 hover:bg-[#faf9f6] border border-transparent hover:border-[#1a2b4a]/5 transition-all duration-300"
               >
-                <span className="text-3xl font-light text-[#1a2b4a]/20 group-hover:text-[#1a2b4a] transition-colors tracking-tight font-serif">
+                <span className="text-2xl sm:text-3xl font-light text-[#1a2b4a]/20 group-hover:text-[#1a2b4a] transition-colors tracking-tight font-serif">
                   {item.index}
                 </span>
                 <div className="aspect-[4/3] w-full overflow-hidden bg-zinc-50 border border-[#1a2b4a]/5">
@@ -139,7 +139,7 @@ export default function App() {
                   />
                 </div>
                 <div>
-                  <h4 className="text-xs font-sans tracking-widest uppercase font-bold text-[#1a2b4a]/85 group-hover:text-[#1a2b4a]">
+                  <h4 className="text-[11px] sm:text-xs font-sans tracking-widest uppercase font-bold text-[#1a2b4a]/85 group-hover:text-[#1a2b4a] break-words">
                     {item.label}
                   </h4>
                   <span className="text-[9px] font-sans tracking-wider text-[#1a2b4a]/40 uppercase mt-0.5 block">
@@ -159,7 +159,7 @@ export default function App() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           
           {/* Left Architect Portrait */}
-          <div className="col-span-12 lg:col-span-5 flex flex-col gap-4">
+          <div className="col-span-12 lg:col-span-5 flex flex-col gap-4 w-full max-w-md mx-auto lg:max-w-none">
             <motion.div 
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -327,7 +327,7 @@ export default function App() {
           <div className="flex flex-col gap-8">
             <div 
               onClick={() => openLightbox([portfolioData.urbanPark.image], 0)}
-              className="relative w-full aspect-[21/9] bg-zinc-100 overflow-hidden cursor-pointer group"
+              className="relative w-full aspect-[16/9] sm:aspect-[21/9] bg-zinc-100 overflow-hidden cursor-pointer group"
             >
               <img 
                 src={portfolioData.urbanPark.image} 

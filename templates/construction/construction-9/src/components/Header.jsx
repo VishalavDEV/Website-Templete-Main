@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function Header({
   isDarkMode,
@@ -9,6 +10,7 @@ export default function Header({
   setStormActive
 }) {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +39,7 @@ export default function Header({
         height: '84px'
       }}>
         {/* Brand Logo */}
-        <a href="#hero" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+        <a href="#hero" style={{ display: 'flex', alignItems: 'center', gap: '14px', textDecoration: 'none' }}>
           <div style={{
             width: '42px',
             height: '42px',
@@ -57,17 +59,18 @@ export default function Header({
           <div>
             <div style={{
               fontFamily: 'var(--font-display)',
-              fontSize: '1.4rem',
+              fontSize: '1.3rem',
               fontWeight: 900,
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              lineHeight: 1
+              lineHeight: 1,
+              color: 'var(--text-main)'
             }}>
               CHRONOS
             </div>
             <div style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '0.68rem',
+              fontSize: '0.65rem',
               letterSpacing: '0.22em',
               color: 'var(--accent-orange)',
               textTransform: 'uppercase',
@@ -78,173 +81,159 @@ export default function Header({
           </div>
         </a>
 
-        {/* Navigation Links */}
+        {/* Desktop Navigation Links */}
         <nav style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '32px'
+          gap: '24px'
         }} className="desktop-nav">
           <a href="#philosophy" style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '0.82rem',
+            fontSize: '0.8rem',
             fontWeight: 700,
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
             color: 'var(--text-muted)',
-            transition: 'color 0.2s ease'
-          }} onMouseEnter={e => e.target.style.color = 'var(--accent-orange)'}
-             onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}>
+            textDecoration: 'none'
+          }}>
             // 01. MATERIALITY
           </a>
           <a href="#projects" style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '0.82rem',
+            fontSize: '0.8rem',
             fontWeight: 700,
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
             color: 'var(--text-muted)',
-            transition: 'color 0.2s ease'
-          }} onMouseEnter={e => e.target.style.color = 'var(--accent-orange)'}
-             onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}>
+            textDecoration: 'none'
+          }}>
             // 02. MONOLITHS
           </a>
           <a href="#telemetry" style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '0.82rem',
+            fontSize: '0.8rem',
             fontWeight: 700,
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
             color: 'var(--text-muted)',
-            transition: 'color 0.2s ease'
-          }} onMouseEnter={e => e.target.style.color = 'var(--accent-orange)'}
-             onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}>
+            textDecoration: 'none'
+          }}>
             // 03. TELEMETRY
           </a>
           <a href="#estimator" style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '0.82rem',
+            fontSize: '0.8rem',
             fontWeight: 700,
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
             color: 'var(--text-muted)',
-            transition: 'color 0.2s ease'
-          }} onMouseEnter={e => e.target.style.color = 'var(--accent-orange)'}
-             onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}>
+            textDecoration: 'none'
+          }}>
             // 04. ESTIMATOR
-          </a>
-          <a href="#rfq" style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.82rem',
-            fontWeight: 700,
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            color: 'var(--text-muted)',
-            transition: 'color 0.2s ease'
-          }} onMouseEnter={e => e.target.style.color = 'var(--accent-orange)'}
-             onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}>
-            // 05. COMMISSION RFQ
           </a>
         </nav>
 
         {/* Right Tools & Theme Toggle */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          {/* Storm Rain & Lightning Toggle */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          {/* Storm Rain Toggle */}
           <button
             onClick={() => setStormActive(!stormActive)}
+            className="storm-toggle-btn"
             style={{
-              padding: '7px 12px',
+              padding: '6px 10px',
               background: stormActive ? 'rgba(0, 229, 255, 0.15)' : 'var(--bg-surface-elevated)',
               border: '1px solid',
               borderColor: stormActive ? 'var(--accent-cyan)' : 'var(--border-strong)',
               color: stormActive ? 'var(--accent-cyan)' : 'var(--text-muted)',
               fontFamily: 'var(--font-mono)',
-              fontSize: '0.72rem',
+              fontSize: '0.7rem',
               fontWeight: 800,
-              letterSpacing: '0.08em',
               display: 'flex',
               alignItems: 'center',
-              gap: '6px',
-              cursor: 'pointer',
-              boxShadow: stormActive ? '0 0 12px rgba(0, 229, 255, 0.35)' : 'none'
+              gap: '4px',
+              cursor: 'pointer'
             }}
-            title="Toggle Atmospheric Rain & Lightning Storm"
+            title="Toggle Atmospheric Storm"
           >
-            ⛈ {stormActive ? 'STORM ON' : 'STORM OFF'}
+            ⛈ {stormActive ? 'STORM' : 'OFF'}
           </button>
-
-          {/* Replay Intro Button */}
-          {onReplayIntro && (
-            <button
-              onClick={onReplayIntro}
-              style={{
-                padding: '7px 12px',
-                background: 'rgba(255, 93, 0, 0.1)',
-                border: '1px solid var(--accent-orange)',
-                color: 'var(--accent-orange)',
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.72rem',
-                fontWeight: 800,
-                letterSpacing: '0.1em',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                cursor: 'pointer'
-              }}
-              title="Replay Monolith Intro Scene"
-            >
-              ▶ INTRO
-            </button>
-          )}
-
-          {/* Backend Status Pill */}
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '6px 10px',
-            background: 'var(--bg-surface-elevated)',
-            border: '1px solid var(--border-subtle)',
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.72rem'
-          }}>
-            <span style={{
-              width: '8px',
-              height: '8px',
-              borderRadius: '50%',
-              background: backendStatus === 'UP' ? '#10b981' : '#f59e0b',
-              boxShadow: backendStatus === 'UP' ? '0 0 8px #10b981' : '0 0 8px #f59e0b'
-            }} />
-            <span style={{ color: 'var(--text-dim)' }}>API:</span>
-            <span style={{ fontWeight: 700 }}>{backendStatus === 'UP' ? '8080' : 'ACTIVE'}</span>
-          </div>
 
           {/* Theme Toggle Button */}
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
             style={{
-              padding: '8px 12px',
+              padding: '6px 10px',
               background: 'var(--bg-surface-elevated)',
               border: '1px solid var(--border-strong)',
               color: 'var(--text-main)',
               fontFamily: 'var(--font-mono)',
               fontSize: '0.75rem',
               fontWeight: 700,
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
               cursor: 'pointer'
             }}
-            title="Toggle Brutalist Theme"
+            title="Toggle Theme"
           >
             {isDarkMode ? '☀' : '☾'}
           </button>
 
           {/* Primary CTA */}
-          <a href="#rfq" className="btn-primary" style={{ padding: '9px 18px', fontSize: '0.78rem' }}>
-            TENDER RFQ
+          <a href="#rfq" className="btn-primary tender-cta-btn" style={{ padding: '8px 14px', fontSize: '0.75rem' }}>
+            RFQ
           </a>
+
+          {/* Hamburger Mobile/Tablet Button */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="chronos-mobile-toggle"
+            aria-label="Toggle Navigation"
+            style={{
+              display: 'none',
+              background: 'var(--bg-surface-elevated)',
+              border: '1px solid var(--border-strong)',
+              color: 'var(--text-main)',
+              padding: '6px',
+              cursor: 'pointer'
+            }}
+          >
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Drawer */}
+      {mobileOpen && (
+        <div style={{
+          position: 'absolute',
+          top: '100%',
+          left: 0,
+          right: 0,
+          background: 'var(--bg-base)',
+          borderBottom: '2px solid var(--accent-orange)',
+          padding: '24px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '14px',
+          zIndex: 9999,
+          boxShadow: '0 20px 40px rgba(0,0,0,0.8)'
+        }}>
+          <a href="#philosophy" onClick={() => setMobileOpen(false)} style={{ color: 'var(--text-main)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '0.9rem', fontWeight: 700 }}>// 01. MATERIALITY</a>
+          <a href="#projects" onClick={() => setMobileOpen(false)} style={{ color: 'var(--text-main)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '0.9rem', fontWeight: 700 }}>// 02. MONOLITHS</a>
+          <a href="#telemetry" onClick={() => setMobileOpen(false)} style={{ color: 'var(--text-main)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '0.9rem', fontWeight: 700 }}>// 03. TELEMETRY</a>
+          <a href="#estimator" onClick={() => setMobileOpen(false)} style={{ color: 'var(--text-main)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '0.9rem', fontWeight: 700 }}>// 04. ESTIMATOR</a>
+          <a href="#rfq" onClick={() => setMobileOpen(false)} className="btn-primary" style={{ textAlign: 'center', marginTop: '10px' }}>TENDER RFQ →</a>
+        </div>
+      )}
+
+      <style>{`
+        @media (max-width: 1024px) {
+          .desktop-nav { display: none !important; }
+          .chronos-mobile-toggle { display: block !important; }
+        }
+        @media (max-width: 600px) {
+          .storm-toggle-btn { display: none !important; }
+        }
+      `}</style>
     </header>
   );
 }
+

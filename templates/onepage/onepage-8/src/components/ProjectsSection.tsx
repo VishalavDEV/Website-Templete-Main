@@ -141,34 +141,34 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
       {selectedProject && (
         <div
           id="project-detail-modal"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 bg-[#030407]/90 backdrop-blur-xl animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-10 bg-[#030407]/90 backdrop-blur-xl animate-in fade-in duration-200"
         >
-          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl glass-panel-glow border border-cyan-500/40 p-6 sm:p-8 md:p-10 text-slate-200 shadow-2xl">
+          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl glass-panel-glow border border-cyan-500/40 p-4 sm:p-8 md:p-10 text-slate-200 shadow-2xl">
             {/* Close Button */}
             <button
               onClick={() => setSelectedProject(null)}
               onMouseEnter={onHoverSound}
-              className="absolute top-6 right-6 p-2 rounded-lg bg-slate-900 border border-slate-700 text-slate-400 hover:text-white hover:border-cyan-400 transition-colors"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 rounded-lg bg-slate-900 border border-slate-700 text-slate-400 hover:text-white hover:border-cyan-400 transition-colors z-10"
             >
               <X className="w-5 h-5" />
             </button>
 
             {/* Modal Header */}
-            <div className="font-mono text-xs text-cyan-400 mb-2">
+            <div className="font-mono text-xs text-cyan-400 mb-2 pr-8">
               PROJECT_0{selectedProject.number} // {selectedProject.category}
             </div>
-            <h3 className="font-display text-3xl sm:text-4xl font-extrabold text-slate-100">
+            <h3 className="font-display text-2xl sm:text-4xl font-extrabold text-slate-100 pr-8">
               {selectedProject.title}
             </h3>
-            <p className="text-slate-400 font-body text-base mt-2">
+            <p className="text-slate-400 font-body text-sm sm:text-base mt-2">
               {selectedProject.tagline}
             </p>
 
             {/* Metrics Showcase */}
-            <div className="grid grid-cols-3 gap-3 my-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 my-6">
               {selectedProject.metrics.map((m) => (
-                <div key={m.label} className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
-                  <div className="font-display text-2xl font-bold text-cyan-300">{m.value}</div>
+                <div key={m.label} className="p-3.5 sm:p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+                  <div className="font-display text-xl sm:text-2xl font-bold text-cyan-300">{m.value}</div>
                   <div className="font-mono text-[11px] text-slate-400 mt-1">{m.label}</div>
                 </div>
               ))}

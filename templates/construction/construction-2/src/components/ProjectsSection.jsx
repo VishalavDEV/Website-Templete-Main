@@ -84,14 +84,14 @@ export default function ProjectsSection({ onOpenProjectModal, onOpenVideo, addTo
         ? '/api/projects' 
         : `/api/projects?category=${encodeURIComponent(category)}`;
       const res = await fetch(url);
-      if (res.ok) {
+      const isJson = res.headers.get('content-type')?.includes('application/json');
+      if (res.ok && isJson) {
         const data = await res.json();
-        setProjects(data && data.length > 0 ? data : fallbackProjects);
+        setProjects(data && Array.isArray(data) && data.length > 0 ? data : (category === 'all' ? fallbackProjects : fallbackProjects.filter(p => p.category === category)));
       } else {
         setProjects(category === 'all' ? fallbackProjects : fallbackProjects.filter(p => p.category === category));
       }
-    } catch (e) {
-      console.warn('Backend API connection offline, using fallback client data', e);
+    } catch {
       setProjects(category === 'all' ? fallbackProjects : fallbackProjects.filter(p => p.category === category));
     } finally {
       setLoading(false);

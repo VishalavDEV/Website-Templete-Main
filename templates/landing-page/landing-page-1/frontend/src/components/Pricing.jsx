@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Check } from 'lucide-react';
 import './Pricing.css';
 
-export default function Pricing() {
+export default function Pricing({ onOpenAuth }) {
   const [billingCycle, setBillingCycle] = useState('monthly'); // 'monthly' or 'yearly'
 
   const toggleBilling = () => {
@@ -121,7 +121,10 @@ export default function Pricing() {
                   </ul>
                 </div>
 
-                <button className={`btn plan-button ${plan.recommended ? 'btn-primary' : 'btn-secondary'}`}>
+                <button 
+                  onClick={() => onOpenAuth && onOpenAuth('signup')}
+                  className={`btn plan-button ${plan.recommended ? 'btn-primary' : 'btn-secondary'}`}
+                >
                   {plan.cta}
                 </button>
               </div>

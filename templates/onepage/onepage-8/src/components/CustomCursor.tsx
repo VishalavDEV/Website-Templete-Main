@@ -11,8 +11,8 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({ cursorState }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Check if device is touch-primary
-    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    // Check if device is touch-primary or mobile/tablet screen
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || window.innerWidth < 1024;
     setIsTouchDevice(isTouch);
 
     if (isTouch) return;
@@ -39,7 +39,7 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({ cursorState }) => {
     };
   }, [isVisible]);
 
-  if (isTouchDevice || !isVisible) return null;
+  if (isTouchDevice || !isVisible || pos.x <= 0 || pos.y <= 0) return null;
 
   const isExpanded = cursorState.variant !== 'default';
   const hasText = Boolean(cursorState.text);
@@ -47,7 +47,7 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({ cursorState }) => {
   return (
     <div
       id="custom-cursor-root"
-      className="pointer-events-none fixed top-0 left-0 z-9999 will-change-transform"
+      className="hidden lg:block pointer-events-none fixed top-0 left-0 z-9999 will-change-transform"
       style={{
         transform: `translate3d(${pos.x}px, ${pos.y}px, 0)`,
         transition: 'transform 0.08s ease-out',

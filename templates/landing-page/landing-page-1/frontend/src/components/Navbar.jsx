@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import './Navbar.css';
 
-export default function Navbar() {
+export default function Navbar({ onOpenAuth }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -24,6 +24,16 @@ export default function Navbar() {
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
+  };
+
+  const handleSignIn = () => {
+    closeMobileMenu();
+    if (onOpenAuth) onOpenAuth('signin');
+  };
+
+  const handleSignUp = () => {
+    closeMobileMenu();
+    if (onOpenAuth) onOpenAuth('signup');
   };
 
   return (
@@ -57,8 +67,8 @@ export default function Navbar() {
 
           {/* Desktop CTAs */}
           <div className="navbar-actions">
-            <button className="btn btn-secondary btn-sm">Sign In</button>
-            <button className="btn btn-primary btn-sm">Get Started</button>
+            <button className="btn btn-secondary btn-sm" onClick={handleSignIn}>Sign In</button>
+            <button className="btn btn-primary btn-sm" onClick={handleSignUp}>Get Started</button>
           </div>
 
           {/* Mobile Menu Toggle Button */}
@@ -78,8 +88,8 @@ export default function Navbar() {
           <li><a href="#resources" className="navbar-mobile-link" onClick={closeMobileMenu}>Resources</a></li>
         </ul>
         <div className="navbar-mobile-actions">
-          <button className="btn btn-secondary" onClick={closeMobileMenu}>Sign In</button>
-          <button className="btn btn-primary" onClick={closeMobileMenu}>
+          <button className="btn btn-secondary" onClick={handleSignIn}>Sign In</button>
+          <button className="btn btn-primary" onClick={handleSignUp}>
             Get Started <ChevronRight size={16} />
           </button>
         </div>

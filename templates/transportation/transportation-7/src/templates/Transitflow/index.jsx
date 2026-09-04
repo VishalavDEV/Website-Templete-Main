@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Info, Search, Map, Clock, HelpCircle, ArrowLeft, ArrowRight, Check, Shield, AlertTriangle, ChevronRight } from 'lucide-react';
+import { Info, Search, Map, Clock, HelpCircle, ArrowLeft, ArrowRight, Check, Shield, AlertTriangle, ChevronRight, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { transitStations, transitRoutes, transitSchedule } from '../../data/transitflowData';
 import { transitflowImages } from '../../data/transitflowImages';
@@ -8,6 +8,7 @@ import { transitflowImages } from '../../data/transitflowImages';
 export default function Transitflow() {
   const [fromStationId, setFromStationId] = useState('s1'); // Majestic
   const [toStationId, setToStationId] = useState('s2'); // Indiranagar
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   // Route planner outputs
   const [plannerSearched, setPlannerSearched] = useState(false);
@@ -32,6 +33,15 @@ export default function Transitflow() {
 
   const activeRoute = transitRoutes.find(r => r.id === activeRouteId) || transitRoutes[0];
   const stationTimetable = transitSchedule[activeStationId] || [];
+
+  const handleBackToTemplates = (e) => {
+    if (e) e.preventDefault();
+    if (window.top && window.top !== window) {
+      window.top.location.href = '/templates';
+    } else {
+      window.location.href = '/templates';
+    }
+  };
 
   const handlePlanRoute = (e) => {
     e.preventDefault();
@@ -90,25 +100,87 @@ export default function Transitflow() {
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans overflow-x-hidden selection:bg-teal-500 selection:text-white">
       
       {/* Information-Focused Navbar */}
-      <nav className="sticky top-0 z-50 bg-slate-900 text-white px-6 py-4 flex items-center justify-between shadow-md">
-        <div className="flex items-center gap-2">
-          <Map className="text-teal-400" size={24} />
-          <span className="font-outfit font-black tracking-widest text-lg">TRANSITFLOW</span>
-          <span className="hidden sm:inline-block px-2.5 py-0.5 rounded bg-teal-400/10 text-teal-400 text-xxs font-mono uppercase tracking-wider border border-teal-400/20">Bengaluru Transit Authority</span>
+      <nav className="sticky top-0 z-50 bg-slate-900 text-white px-4 sm:px-6 py-3.5 sm:py-4 shadow-md">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Map className="text-teal-400" size={24} />
+            <span className="font-outfit font-black tracking-widest text-lg">TRANSITFLOW</span>
+            <span className="hidden sm:inline-block px-2.5 py-0.5 rounded bg-teal-400/10 text-teal-400 text-xxs font-mono uppercase tracking-wider border border-teal-400/20">Bengaluru Transit Authority</span>
+          </div>
+
+          <div className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-300">
+            <a href="#planner" className="hover:text-teal-400 transition-colors">Route Planner</a>
+            <a href="#timetables" className="hover:text-teal-400 transition-colors">Timetables</a>
+            <a href="#faq" className="hover:text-teal-400 transition-colors">FAQs</a>
+            <a href="#contact" className="hover:text-teal-400 transition-colors">Contact</a>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <button 
+              type="button"
+              onClick={handleBackToTemplates}
+              className="flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded border border-slate-700 bg-slate-800 text-xs font-semibold text-slate-350 hover:text-white transition-all cursor-pointer"
+            >
+              <ArrowLeft size={12} /> Templates
+            </button>
+            <button 
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded border border-slate-700 text-slate-300 hover:bg-slate-800 cursor-pointer"
+              aria-label="Toggle Menu"
+            >
+              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </div>
 
-        <div className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-300">
-          <a href="#planner" className="hover:text-teal-400 transition-colors">Route Planner</a>
-          <a href="#timetables" className="hover:text-teal-400 transition-colors">Timetables</a>
-          <a href="#faq" className="hover:text-teal-400 transition-colors">FAQs</a>
-          <a href="#contact" className="hover:text-teal-400 transition-colors">Contact</a>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <Link to="/transportation" className="flex items-center gap-1.5 px-4 py-2 rounded border border-slate-700 bg-slate-800 text-xs font-semibold text-slate-350 hover:text-white transition-all">
-            <ArrowLeft size={12} /> Templates
-          </Link>
-        </div>
+        {/* Mobile Navigation Drawer */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden mt-3 pt-3 border-t border-slate-800 flex flex-col gap-3 text-xs uppercase font-semibold tracking-wider text-slate-200 bg-slate-900"
+            >
+              <a 
+                href="#planner" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-teal-400 transition-colors"
+              >
+                Route Planner
+              </a>
+              <a 
+                href="#timetables" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-teal-400 transition-colors"
+              >
+                Timetables
+              </a>
+              <a 
+                href="#faq" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-teal-400 transition-colors"
+              >
+                FAQs
+              </a>
+              <a 
+                href="#contact" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-teal-400 transition-colors"
+              >
+                Contact
+              </a>
+              <button 
+                type="button"
+                onClick={(e) => { setMobileMenuOpen(false); handleBackToTemplates(e); }}
+                className="py-2 text-left text-teal-400 flex items-center gap-1 font-bold border-t border-slate-800 mt-1 pt-2 cursor-pointer"
+              >
+                <ArrowLeft size={12} /> Back to Templates
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* Hero Section */}

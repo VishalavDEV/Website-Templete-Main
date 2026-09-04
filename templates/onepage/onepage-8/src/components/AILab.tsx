@@ -225,14 +225,14 @@ export const AILab: React.FC<AILabProps> = ({
       />
 
       {/* Experiment Selector Tabs */}
-      <div className="flex flex-wrap items-center gap-2 mb-8 p-1.5 rounded-xl bg-slate-900/80 border border-slate-800 w-fit">
+      <div className="flex items-center gap-2 mb-8 p-1.5 rounded-xl bg-slate-900/80 border border-slate-800 w-fit max-w-full overflow-x-auto">
         <button
           onClick={() => {
             onClickSound();
             setActiveTab('classifier');
           }}
           onMouseEnter={onHoverSound}
-          className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-mono text-xs font-semibold transition-all ${
+          className={`flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-lg font-mono text-xs font-semibold whitespace-nowrap transition-all ${
             activeTab === 'classifier'
               ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 shadow-[0_0_15px_rgba(6,182,212,0.2)]'
               : 'text-slate-400 hover:text-slate-200'
@@ -248,7 +248,7 @@ export const AILab: React.FC<AILabProps> = ({
             setActiveTab('neural');
           }}
           onMouseEnter={onHoverSound}
-          className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-mono text-xs font-semibold transition-all ${
+          className={`flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-lg font-mono text-xs font-semibold whitespace-nowrap transition-all ${
             activeTab === 'neural'
               ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 shadow-[0_0_15px_rgba(6,182,212,0.2)]'
               : 'text-slate-400 hover:text-slate-200'
@@ -264,7 +264,7 @@ export const AILab: React.FC<AILabProps> = ({
             setActiveTab('kernel');
           }}
           onMouseEnter={onHoverSound}
-          className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-mono text-xs font-semibold transition-all ${
+          className={`flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-lg font-mono text-xs font-semibold whitespace-nowrap transition-all ${
             activeTab === 'kernel'
               ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 shadow-[0_0_15px_rgba(6,182,212,0.2)]'
               : 'text-slate-400 hover:text-slate-200'
@@ -558,12 +558,12 @@ export const AILab: React.FC<AILabProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center pt-4">
             <div className="flex flex-col items-center">
               <span className="text-slate-400 mb-4">// 3x3 KERNEL WEIGHTS (W)</span>
-              <div className="grid grid-cols-3 gap-3 p-4 rounded-xl bg-[#060910] border border-cyan-500/30">
+              <div className="grid grid-cols-3 gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-[#060910] border border-cyan-500/30">
                 {kernels[selectedKernel].map((row, rIdx) =>
                   row.map((val, cIdx) => (
                     <div
                       key={`${rIdx}-${cIdx}`}
-                      className="w-16 h-16 rounded-lg bg-slate-900/80 border border-slate-700 flex items-center justify-center text-sm font-bold text-cyan-300"
+                      className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg bg-slate-900/80 border border-slate-700 flex items-center justify-center text-xs sm:text-sm font-bold text-cyan-300"
                     >
                       {typeof val === 'number' && val % 1 !== 0 ? val.toFixed(2) : val}
                     </div>

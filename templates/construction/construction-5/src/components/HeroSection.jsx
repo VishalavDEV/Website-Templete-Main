@@ -84,7 +84,6 @@ export default function HeroSection({ isDarkMode, toggleTheme }) {
       time += 0.025;
       ctx.clearRect(0, 0, width, height);
 
-      // SVG displacement filter modulation
       if (turbulenceRef.current) {
         const baseFreqX = 0.012 + Math.sin(time * 0.9) * 0.003;
         const baseFreqY = 0.038 + Math.cos(time * 0.7) * 0.007;
@@ -96,7 +95,7 @@ export default function HeroSection({ isDarkMode, toggleTheme }) {
         displacementRef.current.setAttribute('scale', currentDispScale.toFixed(1));
       }
 
-      // 1. Flowing streams
+      // Flowing streams
       flowStreams.forEach((stream) => {
         stream.normY += stream.speed;
         if (stream.normY > 1.0) {
@@ -134,7 +133,7 @@ export default function HeroSection({ isDarkMode, toggleTheme }) {
         ctx.restore();
       });
 
-      // 2. Continuous Layered Water Waves
+      // Layered Water Waves
       waveLayers.forEach((layer) => {
         const baseY = height * layer.yRatio;
         const normalizedY = layer.yRatio;
@@ -161,7 +160,7 @@ export default function HeroSection({ isDarkMode, toggleTheme }) {
         ctx.restore();
       });
 
-      // 3. Shimmering Water Sparkles
+      // Shimmering Water Sparkles
       sparkles.forEach((sp) => {
         const y = sp.normY * height;
         const normalizedY = sp.normY;
@@ -181,7 +180,7 @@ export default function HeroSection({ isDarkMode, toggleTheme }) {
         ctx.restore();
       });
 
-      // 4. Front Cascade Overflow Lip
+      // Front Cascade Lip
       const lipY = height * 0.98;
       ctx.save();
       ctx.beginPath();
@@ -194,7 +193,7 @@ export default function HeroSection({ isDarkMode, toggleTheme }) {
       ctx.stroke();
       ctx.restore();
 
-      // 5. Expanding Mouse Ripples
+      // Mouse Ripples
       for (let i = ripples.length - 1; i >= 0; i--) {
         const rip = ripples[i];
         rip.r += rip.speed;
@@ -234,9 +233,9 @@ export default function HeroSection({ isDarkMode, toggleTheme }) {
   }, []);
 
   return (
-    <section className="hero-section" id="hero">
+    <section className="hero-section relative w-full min-h-[100dvh] flex flex-col justify-between overflow-hidden bg-[#080808] px-4 sm:px-6 md:px-12 pb-6 sm:pb-8" id="hero">
       {/* SVG Liquid Water Wave & Optical Refraction Filter */}
-      <svg className="water-svg-filter" aria-hidden="true">
+      <svg className="water-svg-filter absolute w-0 h-0 pointer-events-none" aria-hidden="true">
         <filter id="liquidWaterFilter" x="0%" y="0%" width="100%" height="100%">
           <feTurbulence
             ref={turbulenceRef}
@@ -258,46 +257,48 @@ export default function HeroSection({ isDarkMode, toggleTheme }) {
         </filter>
       </svg>
 
-      {/* Background Hero Image */}
-      <div className="hero-image-wrapper">
-        <img
-          src="./assets/images/hero-villa.jpg"
-          alt="New House Luxury Villa"
-          className="hero-img"
-          id="heroImg"
-        />
-
-        {/* Authentic Liquid Water Wave Flow Layer */}
-        <div className="pool-liquid-layer" id="poolLiquidLayer">
-          <img
-            src="./assets/images/hero-villa.jpg"
-            alt="Liquid Water Reflection"
-            className="liquid-water-img"
-          />
-          <div className="water-caustic-stream"></div>
-          <div className="water-surface-flow"></div>
-        </div>
-
-        <div className="hero-vignette"></div>
-      </div>
-
-      {/* Interactive Water Ripple Canvas over Reflection Pool */}
-      <canvas ref={canvasRef} id="reflectionCanvas" className="reflection-canvas"></canvas>
-
       {/* Top Minimalist Brand Header */}
       <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
 
+      {/* Central Architectural Card & Pool Physics (Mobile-contained, Desktop full) */}
+      <div className="hero-center-container relative flex-1 my-4 w-full flex items-center justify-center">
+        <div className="hero-image-wrapper relative w-full h-full min-h-[280px] sm:min-h-[420px] md:min-h-[500px] rounded-2xl overflow-hidden shadow-2xl border border-neutral-800/80">
+          <img
+            src="./assets/images/hero-villa.jpg"
+            alt="New House Luxury Villa"
+            className="hero-img w-full h-full object-cover object-bottom"
+            id="heroImg"
+          />
+
+          {/* Liquid Water Layer over Reflection Pool */}
+          <div className="pool-liquid-layer absolute bottom-0 left-[19%] w-[62%] h-[42%] overflow-hidden pointer-events-none" id="poolLiquidLayer">
+            <img
+              src="./assets/images/hero-villa.jpg"
+              alt="Liquid Water Reflection"
+              className="liquid-water-img w-[161%] h-[238%] object-cover object-bottom absolute bottom-0 left-[-30.6%]"
+            />
+            <div className="water-caustic-stream absolute inset-0"></div>
+            <div className="water-surface-flow absolute inset-0"></div>
+          </div>
+
+          {/* Interactive Ripple Canvas */}
+          <canvas ref={canvasRef} id="reflectionCanvas" className="reflection-canvas absolute bottom-0 left-[19%] w-[62%] h-[42%] z-10 pointer-events-auto cursor-crosshair"></canvas>
+
+          <div className="hero-vignette absolute inset-0 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-black/30"></div>
+        </div>
+      </div>
+
       {/* Hero Bottom Signature Text Overlay */}
-      <div className="hero-bottom-overlay">
-        <div className="container-fluid">
-          <div className="company-developer-block">
-            <div className="accent-bar-wrap">
-              <span className="copper-vertical-line"></span>
-              <div className="company-dev-text">
-                <h2 className="company-dev-title">Company developer</h2>
-                <span className="company-dev-sub">Web Site Concept</span>
-              </div>
-            </div>
+      <div className="hero-bottom-overlay relative z-20 pt-2 sm:pt-4 w-full max-w-7xl mx-auto">
+        <div className="company-developer-block flex items-center gap-3 sm:gap-4">
+          <span className="copper-vertical-line w-1 h-9 sm:h-12 bg-[#c88a58] rounded-full shadow-[0_0_12px_rgba(200,138,88,0.6)] flex-shrink-0"></span>
+          <div className="company-dev-text flex flex-col">
+            <h2 className="company-dev-title font-serif text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
+              Company developer
+            </h2>
+            <span className="company-dev-sub text-[10px] sm:text-xs font-mono text-[#c88a58] tracking-widest uppercase mt-0.5">
+              Web Site Concept
+            </span>
           </div>
         </div>
       </div>

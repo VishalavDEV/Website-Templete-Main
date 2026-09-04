@@ -100,6 +100,15 @@ export default function Voltway() {
     { q: "Do you supply home and warehouse charging integrations?", a: "Yes, our Voltway Infra division provides site planning, grid balancing setups, and smart AC chargers (22kW) for commercial warehouse loading zones." }
   ];
 
+  const handleBackToTemplates = (e) => {
+    if (e) e.preventDefault();
+    if (window.top && window.top !== window) {
+      window.top.location.href = '/templates';
+    } else {
+      window.location.href = '/templates';
+    }
+  };
+
   return (
     <div className="min-h-screen bg-neutral-950 text-white font-sans overflow-x-hidden selection:bg-emerald-400 selection:text-black">
       
@@ -122,15 +131,25 @@ export default function Voltway() {
           <a href="#contact" className="hover:text-emerald-400 transition-colors">Contact</a>
         </div>
 
-        <div className="hidden md:flex items-center gap-4">
-          <Link to="/transportation" className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-neutral-800 bg-neutral-900 text-xs font-semibold hover:border-emerald-400 hover:text-emerald-400 transition-all duration-300">
+        <div className="flex items-center gap-3">
+          <a 
+            href="/templates" 
+            onClick={handleBackToTemplates}
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-neutral-800 bg-neutral-900 text-xs font-semibold text-neutral-300 hover:border-emerald-400 hover:text-emerald-400 transition-all duration-300 cursor-pointer"
+            title="Back to Templates"
+          >
             <ArrowLeft size={12} /> Templates
-          </Link>
-        </div>
+          </a>
 
-        <button className="md:hidden text-neutral-400 hover:text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <button 
+            type="button"
+            aria-label="Toggle Navigation Menu"
+            className="md:hidden p-1.5 rounded-lg border border-neutral-800 bg-neutral-900 text-neutral-400 hover:text-white transition-colors" 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </motion.nav>
 
       {/* Mobile Menu */}
@@ -140,16 +159,20 @@ export default function Voltway() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-x-4 top-20 z-40 p-6 rounded-2xl border border-neutral-800 bg-neutral-950 flex flex-col gap-4 text-center md:hidden"
+            className="fixed inset-x-4 top-20 z-50 p-6 rounded-2xl border border-neutral-800 bg-neutral-950/95 backdrop-blur-xl flex flex-col gap-4 text-center md:hidden shadow-2xl shadow-black"
           >
-            <a href="#hero" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-emerald-400 border-b border-neutral-900">Home</a>
-            <a href="#showcase" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-emerald-400 border-b border-neutral-900">Fleet</a>
-            <a href="#finder" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-emerald-400 border-b border-neutral-900">Stations</a>
-            <a href="#calculator" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-emerald-400 border-b border-neutral-900">Range Calc</a>
-            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-emerald-400 border-b border-neutral-900">Contact</a>
-            <Link to="/transportation" className="mt-2 py-2 text-emerald-400 flex items-center justify-center gap-1.5 bg-neutral-900 rounded-lg">
+            <a href="#hero" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-emerald-400 border-b border-neutral-900 transition-colors">Home</a>
+            <a href="#showcase" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-emerald-400 border-b border-neutral-900 transition-colors">Fleet</a>
+            <a href="#finder" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-emerald-400 border-b border-neutral-900 transition-colors">Stations</a>
+            <a href="#calculator" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-emerald-400 border-b border-neutral-900 transition-colors">Range Calc</a>
+            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-emerald-400 border-b border-neutral-900 transition-colors">Contact</a>
+            <a 
+              href="/templates" 
+              onClick={(e) => { setMobileMenuOpen(false); handleBackToTemplates(e); }}
+              className="mt-2 py-2 text-emerald-400 flex items-center justify-center gap-1.5 bg-neutral-900 rounded-lg cursor-pointer font-semibold"
+            >
               <ArrowLeft size={14} /> Back to Templates
-            </Link>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
