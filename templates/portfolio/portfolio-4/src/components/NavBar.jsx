@@ -58,7 +58,7 @@ export default function NavBar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-[#fafafc] flex flex-col justify-between p-8 md:p-16"
+            className="fixed inset-0 z-50 bg-[#fafafc] flex flex-col justify-between p-6 sm:p-8 md:p-16"
           >
             {/* Header in Overlay */}
             <div className="flex justify-between items-center w-full">
@@ -74,7 +74,7 @@ export default function NavBar() {
             </div>
 
             {/* Middle Nav Links */}
-            <nav className="flex flex-col gap-6 md:gap-8 my-auto pl-4 md:pl-10">
+            <nav className="flex flex-col gap-6 md:gap-8 my-auto pl-2 sm:pl-4 md:pl-10">
               {portfolioData.navigation.map((item, idx) => {
                 const sectionId = item.href.substring(1);
                 const isActive = activeSection === sectionId;
@@ -86,7 +86,7 @@ export default function NavBar() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.08 }}
-                    className="text-4xl md:text-6xl font-serif tracking-tight text-left block text-[#262626] hover:opacity-60 transition-opacity"
+                    className="text-2xl sm:text-4xl md:text-6xl font-serif tracking-tight text-left block text-[#262626] hover:opacity-60 transition-opacity"
                   >
                     {item.label}
                     {isActive && <span className="inline-block w-2.5 h-2.5 bg-[#262626] rounded-full ml-4" />}

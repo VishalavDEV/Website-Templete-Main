@@ -189,14 +189,14 @@ export default function App() {
           </div>
 
           {/* Hero Right: Portrait with Overlapping Geometric Shapes */}
-          <div className="col-span-12 lg:col-span-5 flex justify-center relative">
-            <div className="relative w-[260px] h-[330px] sm:w-[320px] sm:h-[410px] md:w-[350px] md:h-[450px] max-w-[calc(100vw-4rem)]">
+          <div className="col-span-12 lg:col-span-5 flex justify-center relative overflow-hidden sm:overflow-visible">
+            <div className="relative w-[250px] h-[320px] sm:w-[320px] sm:h-[410px] md:w-[350px] md:h-[450px] max-w-[calc(100vw-3.5rem)]">
               
               {/* Back outlined geometric square */}
-              <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-24 sm:w-32 h-24 sm:h-32 border-2 sm:border-4 border-white/10 pointer-events-none" />
+              <div className="absolute -top-3 -left-3 sm:-top-6 sm:-left-6 w-20 sm:w-32 h-20 sm:h-32 border-2 sm:border-4 border-white/10 pointer-events-none" />
               
               {/* Solid Accent Red Square (offset) */}
-              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 w-28 sm:w-36 h-28 sm:h-36 bg-[#e74c3c] pointer-events-none z-0" />
+              <div className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 w-24 sm:w-36 h-24 sm:h-36 bg-[#e74c3c] pointer-events-none z-0" />
               
               {/* Image Frame */}
               <div className="w-full h-full relative z-10 overflow-hidden bg-zinc-800 border-2 sm:border-4 border-[#2b2b2b]">
@@ -226,7 +226,7 @@ export default function App() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
           {/* Double Offset Photos with Outline behind */}
-          <div className="col-span-12 lg:col-span-6 flex justify-center items-center relative h-[280px] xs:h-[320px] sm:h-[360px] md:h-[450px] w-full max-w-[320px] sm:max-w-md mx-auto">
+          <div className="col-span-12 lg:col-span-6 flex justify-center items-center relative h-[260px] xs:h-[320px] sm:h-[360px] md:h-[450px] w-full max-w-[270px] xs:max-w-[320px] sm:max-w-md mx-auto">
             
             {/* Outline Behind */}
             <div className="absolute left-2 sm:left-6 top-4 sm:top-6 w-[120px] sm:w-[200px] h-[180px] sm:h-[280px] border-2 sm:border-4 border-[#e74c3c]/15 pointer-events-none" />

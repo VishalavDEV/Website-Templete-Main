@@ -444,7 +444,7 @@ export default function App() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 20, opacity: 0 }}
-              className="relative bg-white border border-zinc-200 w-full max-w-md z-10 p-8 flex flex-col text-black font-sans shadow-2xl"
+              className="relative bg-white border border-zinc-200 w-full max-w-md z-10 p-5 sm:p-8 flex flex-col text-black font-sans shadow-2xl"
             >
               <button
                 onClick={() => setShowBookingModal(false)}
