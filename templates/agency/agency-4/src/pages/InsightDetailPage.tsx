@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Share2, Globe, MessageCircle } from 'lucide-react';
 import { INSIGHTS } from '../data/insights';
 import { ArticleCard } from '../components/ui/ArticleCard';
+import { getAssetUrl } from '../utils/assets';
 
 export const InsightDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -48,7 +49,7 @@ export const InsightDetailPage: React.FC = () => {
           <div className="pt-4 flex items-center justify-between border-t border-b border-[#EAE6DF] py-4">
             <div className="flex items-center space-x-3">
               <img
-                src={article.author.avatar}
+                src={getAssetUrl(article.author.avatar)}
                 alt={article.author.name}
                 className="w-10 h-10 rounded-full object-cover border border-[#EAE6DF]"
               />
@@ -76,7 +77,7 @@ export const InsightDetailPage: React.FC = () => {
         {/* Featured Image */}
         <div className="rounded-3xl overflow-hidden shadow-xl aspect-[16/9] mb-12 bg-[#EAE6DF]">
           <img
-            src={article.image}
+            src={getAssetUrl(article.image)}
             alt={article.title}
             className="w-full h-full object-cover"
           />

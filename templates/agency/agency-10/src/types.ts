@@ -98,6 +98,7 @@ export interface IndustryItem {
   name: string;
   tagline: string;
   description: string;
+  complianceRequirements?: string[];
   challenges: string[];
   digitalOpportunities: string[];
   solutions: string[];
@@ -106,6 +107,7 @@ export interface IndustryItem {
     title: string;
     description: string;
     expectedROI: string;
+    impact?: string;
   }[];
   relatedCaseStudySlugs: string[];
 }
@@ -120,19 +122,23 @@ export interface BlogPost {
     name: string;
     role: string;
     avatar: string;
-  };
+  } | string;
+  authorAvatar?: string;
+  authorRole?: string;
   publishedDate: string;
-  readingTime: string;
+  readingTime?: string;
+  readTime?: string;
   tags: string[];
   coverImage: string;
   featured?: boolean;
-  tableOfContents: { id: string; title: string }[];
-  contentSections: {
+  tableOfContents?: { id: string; title: string }[];
+  contentSections?: {
     heading: string;
     id: string;
     body: string[];
     callout?: string;
   }[];
+  content?: string;
 }
 
 export interface CareerPosition {

@@ -7,6 +7,7 @@ import { FinalCTA } from '../components/sections/FinalCTA';
 import { Search, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useCustomCursor } from '../hooks/useCustomCursor';
 import { ImageWithFallback } from '../components/ui/ImageWithFallback';
+import { getAssetUrl } from '../utils/assets';
 
 const categories = ['All', 'Design', 'Technology', 'Strategy', 'AI', 'Business', 'Culture'];
 const POSTS_PER_PAGE = 6;
@@ -57,7 +58,7 @@ export const Blog: React.FC = () => {
         {!searchQuery && activeCategory === 'All' && currentPage === 1 && (
           <Link
             to={`/blog/${featuredPost.slug}`}
-            onMouseEnter={() => setCursorHover('READ FEATURED', featuredPost.coverImage)}
+            onMouseEnter={() => setCursorHover('READ FEATURED', getAssetUrl(featuredPost.coverImage))}
             onMouseLeave={resetCursor}
             className="group block p-8 md:p-12 rounded-3xl bg-[var(--card-bg)] border border-[var(--border-color)] hover:border-[var(--accent-color)] transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
           >
@@ -77,7 +78,7 @@ export const Blog: React.FC = () => {
 
               <div className="flex items-center justify-between pt-4 border-t border-[var(--border-color)] text-xs font-mono text-[var(--secondary-color)]">
                 <div className="flex items-center gap-3">
-                  <img src={featuredPost.author.avatar} alt={featuredPost.author.name} className="w-8 h-8 rounded-full object-cover" />
+                  <img src={getAssetUrl(featuredPost.author.avatar)} alt={featuredPost.author.name} className="w-8 h-8 rounded-full object-cover" />
                   <span>By {featuredPost.author.name} · {featuredPost.publishDate}</span>
                 </div>
                 <span className="font-bold text-[var(--accent-color)]">{featuredPost.readTime} →</span>
@@ -141,7 +142,7 @@ export const Blog: React.FC = () => {
               <Link
                 key={post.slug}
                 to={`/blog/${post.slug}`}
-                onMouseEnter={() => setCursorHover('READ ARTICLE', post.coverImage)}
+                onMouseEnter={() => setCursorHover('READ ARTICLE', getAssetUrl(post.coverImage))}
                 onMouseLeave={resetCursor}
                 className="group flex flex-col justify-between space-y-4 rounded-2xl p-6 bg-[var(--card-bg)] border border-[var(--border-color)] hover:border-[var(--accent-color)] transition-all duration-300 h-full"
               >

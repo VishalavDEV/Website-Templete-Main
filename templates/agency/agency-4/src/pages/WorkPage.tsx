@@ -7,6 +7,7 @@ import { ProjectCard } from '../components/ui/ProjectCard';
 import { PROJECTS } from '../data/projects';
 import { CtaSection } from '../components/sections/CtaSection';
 import { Button } from '../components/ui/Button';
+import { getAssetUrl } from '../utils/assets';
 
 const CATEGORIES = ['All', 'Brand Identity', 'Digital Experience', 'Product Design', 'E-commerce', 'Creative Campaign'];
 
@@ -50,7 +51,7 @@ export const WorkPage: React.FC = () => {
         >
           <div className="lg:col-span-7 relative aspect-[16/10] overflow-hidden bg-[#1A1918]">
             <img
-              src={featuredSpotlight.image}
+              src={getAssetUrl(featuredSpotlight.image)}
               alt={featuredSpotlight.title}
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />

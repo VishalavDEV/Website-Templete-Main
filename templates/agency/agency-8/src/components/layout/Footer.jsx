@@ -43,8 +43,8 @@ export default function Footer() {
                   <Sparkles className="w-5 h-5 text-cyan-400" />
                 </div>
               </div>
-              <span className="text-2xl font-extrabold font-syne tracking-tight text-white">
-                LOOP<span className="text-cyan-400">.</span>
+              <span className="text-xl sm:text-2xl font-extrabold font-syne tracking-tight text-white">
+                STUDIO COLLECTIVE<span className="text-cyan-400">.</span>
               </span>
             </a>
 
@@ -143,7 +143,7 @@ export default function Footer() {
 
         {/* Bottom Copyright Bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-slate-500 gap-4">
-          <p>© 2026 LOOP AGENCY. All rights reserved.</p>
+          <p>© 2026 STUDIO COLLECTIVE. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-slate-300">Privacy Policy</a>
             <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-slate-300">Terms & Conditions</a>

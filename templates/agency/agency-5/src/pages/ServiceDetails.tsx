@@ -6,9 +6,11 @@ import { Breadcrumb } from '../components/ui/Breadcrumb';
 import { Badge } from '../components/ui/Badge';
 import { Button } from '../components/ui/Button';
 import { SectionHeading } from '../components/ui/SectionHeading';
+import { ImageWithFallback } from '../components/ui/ImageWithFallback';
 import { FinalCTA } from '../components/sections/FinalCTA';
 import { CheckCircle } from 'lucide-react';
 import { useCustomCursor } from '../hooks/useCustomCursor';
+import { getAssetUrl } from '../utils/assets';
 
 export const ServiceDetails: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -62,7 +64,7 @@ export const ServiceDetails: React.FC = () => {
           </div>
 
           <div className="lg:col-span-5 aspect-[4/3] rounded-3xl overflow-hidden border border-[var(--border-color)]">
-            <img src={service.hoverImage} alt={service.title} className="w-full h-full object-cover" />
+            <ImageWithFallback src={service.hoverImage} alt={service.title} className="w-full h-full object-cover" />
           </div>
         </div>
 
@@ -118,12 +120,12 @@ export const ServiceDetails: React.FC = () => {
                 <Link
                   key={project.slug}
                   to={`/portfolio/${project.slug}`}
-                  onMouseEnter={() => setCursorHover('VIEW CASE STUDY', project.coverImage)}
+                  onMouseEnter={() => setCursorHover('VIEW CASE STUDY', getAssetUrl(project.coverImage))}
                   onMouseLeave={resetCursor}
                   className="group block p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--border-color)] hover:border-[var(--accent-color)] transition-all"
                 >
                   <div className="aspect-[16/10] rounded-xl overflow-hidden mb-4">
-                    <img src={project.coverImage} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <ImageWithFallback src={project.coverImage} alt={project.title} fallbackTitle={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <h4 className="text-xl font-bold text-[var(--text-color)] group-hover:text-[var(--accent-color)] uppercase font-display">{project.title}</h4>
                   <p className="text-xs text-[var(--secondary-color)] mt-1 font-mono">{project.client}</p>

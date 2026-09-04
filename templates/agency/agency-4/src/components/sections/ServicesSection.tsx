@@ -33,11 +33,23 @@ export const ServicesSection: React.FC = () => {
     <section id="services" className="py-24 md:py-32 bg-[#FAF8F5] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <SectionHeader
-          badge="Core Services"
-          title="Capabilities tailored for brand distinction."
-          subtitle="We focus on six core disciplines where deep domain mastery delivers outsized commercial and aesthetic impact."
-        />
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+          <SectionHeader
+            badge="Core Services"
+            title="Capabilities tailored for brand distinction."
+            subtitle="We focus on six core disciplines where deep domain mastery delivers outsized commercial and aesthetic impact."
+          />
+          <div className="mt-6 md:mt-0 flex-shrink-0">
+            <Button
+              variant="outline"
+              size="md"
+              icon={ArrowRight}
+              onClick={() => navigate('/services')}
+            >
+              Explore All Services
+            </Button>
+          </div>
+        </div>
 
         {/* Asymmetric Cards Grid with Rich Images */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -59,7 +71,7 @@ export const ServicesSection: React.FC = () => {
                   {/* Top Image Banner */}
                   <div className="relative aspect-[16/9] overflow-hidden bg-[#EAE6DF]">
                     <img
-                      src={service.image}
+                      src={getAssetUrl(service.image)}
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
                       loading="lazy"

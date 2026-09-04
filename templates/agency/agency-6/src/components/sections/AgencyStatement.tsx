@@ -18,9 +18,9 @@ export const AgencyStatement: React.FC = () => {
             <span>CORE ARCHITECTURAL POSITIONING</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-serif font-black tracking-tighter leading-[0.85] uppercase max-w-6xl text-white">
+          <h2 className="text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-serif font-black tracking-tighter leading-[1.05] sm:leading-[0.92] md:leading-[0.85] uppercase max-w-6xl text-white">
             "BUSINESS IS CHANGING FASTER THAN THE{' '}
-            <span className="text-[#090909] bg-[#D1FF00] px-3 py-0.5 rounded-none inline-block border-2 border-[#090909]">
+            <span className="text-[#090909] bg-[#D1FF00] px-2 sm:px-3 py-0.5 rounded-none inline-block border-2 border-[#090909] max-w-full">
               SYSTEMS
             </span>{' '}
             BUILT TO SUPPORT IT."

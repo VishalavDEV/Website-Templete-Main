@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../utils/assets';
 import React, { useEffect, useState } from 'react';
 import { useIntro } from '../context/IntroContext';
 import { ArrowRight } from 'lucide-react';
@@ -74,7 +75,7 @@ export const IntroAnimation: React.FC = () => {
         >
           {/* Main Showcase Image */}
           <img
-            src="/src/assets/images/aether_spatial_ui_1787880779021.jpg"
+            src={getAssetUrl('images/aether_spatial_ui_1787880779021.jpg')}
             alt="3D Studio Intro"
             className="h-full w-full object-cover rounded-xl opacity-90"
           />

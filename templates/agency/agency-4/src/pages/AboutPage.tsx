@@ -4,6 +4,7 @@ import { SectionHeader } from '../components/ui/SectionHeader';
 import { AboutSection } from '../components/sections/AboutSection';
 import { CtaSection } from '../components/sections/CtaSection';
 import { Compass, Heart, ShieldCheck, Users } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets';
 
 const TEAM = [
   {
@@ -123,7 +124,7 @@ export const AboutPage: React.FC = () => {
               >
                 <div className="aspect-[4/5] bg-[#EAE6DF] overflow-hidden">
                   <img
-                    src={member.avatar}
+                    src={getAssetUrl(member.avatar)}
                     alt={member.name}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />

@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../utils/assets';
 import { ServiceItem } from '../types';
 
 export const servicesData: ServiceItem[] = [
@@ -16,7 +17,7 @@ export const servicesData: ServiceItem[] = [
     ],
     technologies: ['Mixpanel', 'Figma', 'Maze', 'FullStory', 'Hotjar'],
     metric: '99.4% Usability Accuracy',
-    image: '/src/assets/images/service_ux_research_1787881426246.jpg'
+    image: getAssetUrl('images/service_ux_research_1787881426246.jpg')
   },
   {
     id: 'product-strategy',
@@ -33,7 +34,7 @@ export const servicesData: ServiceItem[] = [
     ],
     technologies: ['Miro', 'Notion', 'Productboard', 'Figma'],
     metric: '48% Faster Market Entry',
-    image: '/src/assets/images/service_prod_strategy_1787881442168.jpg'
+    image: getAssetUrl('images/service_prod_strategy_1787881442168.jpg')
   },
   {
     id: 'ui-ux-design',
@@ -50,7 +51,7 @@ export const servicesData: ServiceItem[] = [
     ],
     technologies: ['Figma', 'Framer', 'Illustrator', 'Principle'],
     metric: '3.2x User Engagement',
-    image: '/src/assets/images/service_ui_ux_design_1787881454335.jpg'
+    image: getAssetUrl('images/service_ui_ux_design_1787881454335.jpg')
   },
   {
     id: 'design-systems',
@@ -67,7 +68,7 @@ export const servicesData: ServiceItem[] = [
     ],
     technologies: ['Figma', 'Storybook', 'Tailwind CSS', 'TypeScript', 'Tokens Studio'],
     metric: '65% Dev Time Saved',
-    image: '/src/assets/images/service_design_system_1787881469264.jpg'
+    image: getAssetUrl('images/service_design_system_1787881469264.jpg')
   },
   {
     id: 'prototyping',
@@ -84,7 +85,7 @@ export const servicesData: ServiceItem[] = [
     ],
     technologies: ['Framer', 'Motion / React', 'Rive', 'After Effects', 'Protopie'],
     metric: '0.12s Interaction Response',
-    image: '/src/assets/images/service_prototyping_1787881485704.jpg'
+    image: getAssetUrl('images/service_prototyping_1787881485704.jpg')
   },
   {
     id: 'creative-development',
@@ -101,6 +102,6 @@ export const servicesData: ServiceItem[] = [
     ],
     technologies: ['React', 'TypeScript', 'Three.js', 'Vite', 'Tailwind CSS', 'WebGL'],
     metric: '60 FPS Canvas Smoothness',
-    image: '/src/assets/images/service_creative_3d_1787881502863.jpg'
+    image: getAssetUrl('images/service_creative_3d_1787881502863.jpg')
   }
 ];

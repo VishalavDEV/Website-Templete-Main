@@ -59,8 +59,8 @@ export default function Navbar() {
                 <Sparkles className="w-5 h-5 text-cyan-400 group-hover:rotate-12 transition-transform duration-300" />
               </div>
             </div>
-            <span className="text-2xl font-extrabold font-syne tracking-tight text-white">
-              LOOP<span className="text-cyan-400">.</span>
+            <span className="text-xl sm:text-2xl font-extrabold font-syne tracking-tight text-white">
+              STUDIO COLLECTIVE<span className="text-cyan-400">.</span>
             </span>
           </a>
 
@@ -83,14 +83,14 @@ export default function Navbar() {
           </nav>
 
           {/* Start Project CTA & Hamburger */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             <MagneticButton>
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, '#contact')}
                 onMouseEnter={() => setCursorState('button')}
                 onMouseLeave={() => setCursorState('default')}
-                className="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 text-white font-semibold text-xs uppercase tracking-wider shadow-[0_0_25px_rgba(59,130,246,0.5)] hover:shadow-[0_0_35px_rgba(6,182,212,0.8)] transition-all duration-300 hover:scale-105"
+                className="hidden sm:inline-flex relative items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 text-white font-semibold text-xs uppercase tracking-wider shadow-[0_0_25px_rgba(59,130,246,0.5)] hover:shadow-[0_0_35px_rgba(6,182,212,0.8)] transition-all duration-300 hover:scale-105"
               >
                 <span>Start a Project</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -100,7 +100,7 @@ export default function Navbar() {
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2.5 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
+              className="lg:hidden p-2.5 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors cursor-pointer"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6 text-cyan-400" /> : <Menu className="w-6 h-6 text-white" />}

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui/Button';
+import { getAssetUrl } from '../../utils/assets';
 
 export const CtaSection: React.FC = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ export const CtaSection: React.FC = () => {
         >
           {/* Background Photography Image */}
           <img
-            src="images/pexels-rdne-7947660.jpg"
+            src={getAssetUrl("images/pexels-rdne-7947660.jpg")}
             alt="AURELIA Studio Consultation"
             className="absolute inset-0 w-full h-full object-cover opacity-35"
           />

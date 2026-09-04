@@ -149,27 +149,27 @@ export default function Hero() {
         </motion.div>
 
         {/* Main Heading with Staggered Lines */}
-        <div className="font-syne font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.05] text-slate-100 mb-8">
+        <div className="font-syne font-extrabold text-[clamp(1.85rem,7.5vw,2.5rem)] sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.08] sm:leading-[1.05] text-slate-100 mb-8 break-words">
           <motion.div custom={0} initial="hidden" animate="visible" variants={lineVariants}>
             WE CREATE
           </motion.div>
 
           <motion.div custom={1} initial="hidden" animate="visible" variants={lineVariants} className="flex flex-wrap items-center justify-center gap-3 md:gap-5 my-2">
-            <span className="text-gradient-electric">DIGITAL EXPERIENCES</span>
+            <span className="text-gradient-electric break-words max-w-full">DIGITAL EXPERIENCES</span>
           </motion.div>
 
           <motion.div custom={2} initial="hidden" animate="visible" variants={lineVariants} className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
             <span>THAT GET</span>
             
             {/* Animated Rotating Keyword Pill */}
-            <span className="inline-block relative overflow-hidden bg-white/5 border border-cyan-500/30 px-4 md:px-7 py-1 rounded-2xl align-middle text-cyan-300 min-w-[200px] md:min-w-[320px] text-center shadow-[0_0_30px_rgba(6,182,212,0.2)]">
+            <span className="inline-block relative overflow-hidden bg-white/5 border border-cyan-500/30 px-3 sm:px-4 md:px-7 py-0.5 sm:py-1 rounded-2xl align-middle text-cyan-300 min-w-[150px] sm:min-w-[200px] md:min-w-[320px] max-w-full text-center shadow-[0_0_30px_rgba(6,182,212,0.2)]">
               <motion.span
                 key={keywords[currentKeywordIndex]}
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -40, opacity: 0 }}
                 transition={{ duration: 0.4 }}
-                className="block text-gradient-cyan"
+                className="block text-gradient-cyan text-base sm:text-inherit"
               >
                 {keywords[currentKeywordIndex]}
               </motion.span>

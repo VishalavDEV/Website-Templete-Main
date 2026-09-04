@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { getAssetUrl } from '../../utils/assets';
 
 interface ImageWithFallbackProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -18,6 +19,12 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
 }) => {
   const [hasError, setHasError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const resolvedSrc = getAssetUrl(src);
+
+  useEffect(() => {
+    setHasError(false);
+    setIsLoaded(false);
+  }, [resolvedSrc]);
 
   if (hasError) {
     return (
@@ -47,7 +54,7 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   return (
     <div className={`relative w-full h-full overflow-hidden ${!isLoaded ? 'bg-[var(--card-bg)] animate-pulse' : ''}`}>
       <img
-        src={src}
+        src={resolvedSrc}
         alt={alt}
         onLoad={() => setIsLoaded(true)}
         onError={() => setHasError(true)}

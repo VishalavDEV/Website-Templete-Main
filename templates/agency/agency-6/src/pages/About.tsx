@@ -17,9 +17,9 @@ export const About: React.FC = () => {
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#090909] font-black block mb-4">
             ABOUT VANTA FORM // AGENCY ARCHITECTURE
           </span>
-          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-serif font-black uppercase text-[#090909] tracking-tighter leading-[0.85]">
+          <h1 className="text-3xl sm:text-6xl lg:text-8xl font-serif font-black uppercase text-[#090909] tracking-tighter leading-[1.05] sm:leading-[0.92] md:leading-[0.85]">
             STRATEGY • CREATIVITY <br />
-            <span className="text-[#090909] bg-[#D1FF00] px-3 py-0.5 rounded-none border-2 border-[#090909] inline-block mt-2">
+            <span className="text-[#090909] bg-[#D1FF00] px-3 py-0.5 rounded-none border-2 border-[#090909] inline-block mt-2 max-w-full">
               HIGH TECHNOLOGY
             </span>.
           </h1>

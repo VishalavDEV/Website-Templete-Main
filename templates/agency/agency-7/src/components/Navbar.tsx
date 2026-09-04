@@ -38,7 +38,7 @@ export const Navbar: React.FC = () => {
         </Link>
 
         {/* Center: Desktop Navigation Links with MegaMenu triggers */}
-        <nav className="hidden md:flex items-center space-x-8 font-sans text-sm font-medium">
+        <nav className="hidden lg:flex items-center space-x-8 font-sans text-sm font-medium">
           <div className="relative" onMouseEnter={() => setActiveMenu('work')}>
             <button
               onClick={() => toggleMegaMenu('work')}
@@ -146,7 +146,7 @@ export const Navbar: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(true)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-800 dark:text-neutral-200 md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-800 dark:text-neutral-200 lg:hidden"
             aria-label="Open Mobile Menu"
           >
             <Menu className="h-5 w-5" />

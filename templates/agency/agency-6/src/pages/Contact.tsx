@@ -105,9 +105,9 @@ export const Contact: React.FC = () => {
           <span className="font-mono text-xs uppercase tracking-[0.3em] font-black text-[#D1FF00] block mb-4">
             START A PROJECT // DISCOVERY INITIATION
           </span>
-          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-serif font-black uppercase text-white tracking-tighter leading-[0.85]">
+          <h1 className="text-3xl sm:text-6xl lg:text-8xl font-serif font-black uppercase text-white tracking-tighter leading-[1.05] sm:leading-[0.92] md:leading-[0.85]">
             LET'S INITIATE <br />
-            <span className="text-[#090909] bg-[#D1FF00] px-3 py-0.5 rounded-none border-2 border-[#090909] inline-block mt-2">
+            <span className="text-[#090909] bg-[#D1FF00] px-3 py-0.5 rounded-none border-2 border-[#090909] inline-block mt-2 max-w-full">
               DISCOVERY
             </span>.
           </h1>

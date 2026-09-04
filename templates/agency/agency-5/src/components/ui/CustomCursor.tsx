@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useSpring, useMotionValue } from 'framer-motion';
 import { useCustomCursor } from '../../hooks/useCustomCursor';
+import { getAssetUrl } from '../../utils/assets';
 
 export const CustomCursor: React.FC = () => {
   const { cursorType, previewImage, previewText } = useCustomCursor();
@@ -86,7 +87,7 @@ export const CustomCursor: React.FC = () => {
         {isPreview ? (
           <div className="relative w-full h-full rounded-xl overflow-hidden group">
             <img
-              src={previewImage}
+              src={getAssetUrl(previewImage)}
               alt="Preview"
               className="w-full h-full object-cover rounded-xl"
             />

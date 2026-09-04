@@ -39,8 +39,31 @@ export default function App() {
   const navigateTo = (route: PageRoute, slug?: string) => {
     setCurrentRoute(route);
     setCurrentSlug(slug);
+    if (slug) {
+      window.location.hash = `#/${route}/${slug}`;
+    } else if (route !== 'home') {
+      window.location.hash = `#/${route}`;
+    } else {
+      window.location.hash = '';
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  // Sync state with URL hash on load and hash change
+  useEffect(() => {
+    const handleHash = () => {
+      const rawHash = window.location.hash.replace(/^#\/?/, '');
+      if (!rawHash) return;
+      const [route, slug] = rawHash.split('/');
+      if (route) {
+        setCurrentRoute(route as PageRoute);
+        if (slug) setCurrentSlug(slug);
+      }
+    };
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
 
   // Resolve current item by slug if on detail views
   const currentService = currentSlug

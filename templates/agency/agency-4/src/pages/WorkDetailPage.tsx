@@ -8,38 +8,53 @@ export const WorkDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
-  const projectIndex = PROJECTS.findIndex((p) => p.id === id);
-  const project = PROJECTS[projectIndex] || PROJECTS[0];
-
-  const nextProjectIndex = (projectIndex + 1) % PROJECTS.length;
-  const nextProject = PROJECTS[nextProjectIndex];
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
 
+  const project = PROJECTS.find((p) => p.id === id);
+
+  if (!project) {
+    return (
+      <div className="min-h-screen pt-40 pb-20 flex flex-col items-center justify-center text-center px-4 bg-[#FAF8F5]">
+        <h2 className="text-3xl font-bold font-display text-[#1A1918] mb-4">Project Not Found</h2>
+        <p className="text-[#6B6863] mb-8 max-w-md">The requested portfolio showcase could not be located in our production archive.</p>
+        <Button variant="primary" size="md" icon={ArrowLeft} onClick={() => navigate('/work')}>
+          Back to Portfolio
+        </Button>
+      </div>
+    );
+  }
+
+  const currentIndex = PROJECTS.findIndex((p) => p.id === id);
+  const nextProject = PROJECTS[(currentIndex + 1) % PROJECTS.length];
+
   return (
-    <div className="pt-28 sm:pt-32 pb-20 sm:pb-24 bg-[#FAF8F5]">
+    <div className="pt-32 pb-20 bg-[#FAF8F5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Link */}
-        <Link
-          to="/work"
-          className="inline-flex items-center text-xs uppercase tracking-widest font-bold text-[#6B6863] hover:text-[#D96B43] mb-6 sm:mb-8 transition-colors"
+        <button
+          onClick={() => navigate('/work')}
+          className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#6B6863] hover:text-[#D96B43] transition-colors mb-8 sm:mb-12 group cursor-pointer"
         >
-          <ArrowLeft className="w-4 h-4 mr-2" />
+          <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
           <span>Back to All Work</span>
-        </Link>
+        </button>
 
-        {/* Project Title Header */}
+        {/* Project Header */}
         <div className="space-y-4 mb-8 sm:mb-12">
-          <div className="flex items-center space-x-3 text-xs uppercase tracking-widest text-[#D96B43] font-bold">
-            <span>{project.category}</span>
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs uppercase tracking-widest text-[#D96B43] font-semibold">
+            <span>{project.client}</span>
             <span>•</span>
             <span>{project.year}</span>
+            <span>•</span>
+            <span className="bg-white border border-[#EAE6DF] px-3 py-1 rounded-full text-[#1A1918]">
+              {project.category}
+            </span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold font-display text-[#1A1918] tracking-tight leading-[1.1]">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold font-display tracking-tight text-[#1A1918]">
             {project.title}
           </h1>
 
@@ -51,7 +66,7 @@ export const WorkDetailPage: React.FC = () => {
         {/* Main Editorial Hero Image */}
         <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[16/10] sm:aspect-[16/9] mb-12 sm:mb-16 bg-[#EAE6DF]">
           <img
-            src={project.image}
+            src={getAssetUrl(project.image)}
             alt={project.title}
             className="w-full h-full object-cover"
           />
@@ -160,7 +175,7 @@ export const WorkDetailPage: React.FC = () => {
             {project.gallery.map((imgUrl, idx) => (
               <div key={idx} className="rounded-3xl overflow-hidden aspect-[4/3] bg-[#EAE6DF] shadow-xs">
                 <img
-                  src={imgUrl}
+                  src={getAssetUrl(imgUrl)}
                   alt={`${project.title} artifact ${idx + 1}`}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />

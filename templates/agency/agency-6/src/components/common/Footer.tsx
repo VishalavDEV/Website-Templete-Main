@@ -44,9 +44,9 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
               <span className="font-mono text-xs uppercase tracking-[0.3em] font-extrabold text-[#D1FF00] block mb-3">
                 SYSTEM INITIATION // PROJECT INQUIRY
               </span>
-              <h2 className="text-4xl sm:text-6xl md:text-8xl font-serif font-black tracking-tighter text-white uppercase leading-[0.82]">
+              <h2 className="text-3xl sm:text-6xl md:text-8xl font-serif font-black tracking-tighter text-white uppercase leading-[1.05] sm:leading-[0.92] md:leading-[0.82]">
                 BUILD YOUR <br />
-                <span className="text-[#090909] bg-[#D1FF00] px-3 py-0.5 rounded-none inline-block my-1 border-2 border-[#090909]">
+                <span className="text-[#090909] bg-[#D1FF00] px-3 py-0.5 rounded-none inline-block my-1 border-2 border-[#090909] max-w-full">
                   CATEGORY
                 </span> ARCHITECTURE.
               </h2>

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import type { Project } from '../../types';
+import { getAssetUrl } from '../../utils/assets';
 
 interface ProjectCardProps {
   project: Project;
@@ -39,7 +40,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
-            src={project.image}
+            src={getAssetUrl(project.image)}
             alt={project.title}
             className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             loading="lazy"

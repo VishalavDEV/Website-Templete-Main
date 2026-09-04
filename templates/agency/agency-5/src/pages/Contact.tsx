@@ -4,6 +4,7 @@ import { Badge } from '../components/ui/Badge';
 import { ContactForm } from '../components/forms/ContactForm';
 import { Mail, Phone, Clock } from 'lucide-react';
 import { Reveal } from '../components/ui/Reveal';
+import { getAssetUrl } from '../utils/assets';
 import { FAQSection } from '../components/sections/FAQSection';
 
 const globalHubs = [
@@ -74,7 +75,7 @@ export const Contact: React.FC = () => {
             <Reveal direction="up" delay={0.3}>
               <div className="relative aspect-[16/10] rounded-3xl overflow-hidden border border-[var(--border-color)] bg-[var(--card-bg)] p-6 flex flex-col justify-between group">
                 <img
-                  src="assets/world_hubs_map_1787737657103.png"
+                  src={getAssetUrl("assets/world_hubs_map_1787737657103.png")}
                   alt="Global Studio Hubs Map"
                   className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
                 />
