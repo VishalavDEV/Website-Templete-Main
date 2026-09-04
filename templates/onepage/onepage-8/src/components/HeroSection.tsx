@@ -59,17 +59,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       </div>
 
       {/* Center Cinematic Hero Typography */}
-      <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto my-auto pointer-events-auto px-2 sm:px-4">
+      <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto my-auto pointer-events-auto px-2 sm:px-4 w-full">
         {/* Sub-header badge */}
-        <div className="flex items-center space-x-2 text-[10px] sm:text-xs md:text-sm font-mono tracking-widest text-cyan-400/90 uppercase mb-3">
-          <Terminal className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400" />
+        <div className="flex items-center space-x-2 text-[10px] sm:text-xs md:text-sm font-mono tracking-widest text-cyan-400/90 uppercase mb-3 max-w-full flex-wrap justify-center">
+          <Terminal className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 shrink-0" />
           <span>AI / ML ENGINEER • DEVELOPER • CREATOR</span>
         </div>
 
         {/* AI & ML Engineer Profile Avatar Frame */}
-        <div className="relative mb-5 group cursor-pointer" id="hero-profile-picture-container">
+        <div className="relative mb-4 sm:mb-5 group cursor-pointer" id="hero-profile-picture-container">
           <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500 via-sky-400 to-indigo-500 opacity-70 blur-md group-hover:opacity-100 transition duration-500 animate-pulse" />
-          <div className="relative w-24 h-24 sm:w-36 sm:h-36 rounded-full overflow-hidden border-2 border-cyan-400/80 p-1 bg-[#0a0f18] shadow-[0_0_30px_rgba(6,182,212,0.4)]">
+          <div className="relative w-20 h-20 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-2 border-cyan-400/80 p-1 bg-[#0a0f18] shadow-[0_0_30px_rgba(6,182,212,0.4)]">
             <img
               id="hero-profile-img"
               src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop"
@@ -84,20 +84,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         {/* Main Grand Display Headline */}
-        <h1 className="text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black tracking-tight text-slate-100 uppercase leading-[1.05] drop-shadow-2xl">
+        <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black tracking-tight text-slate-100 uppercase leading-[1.1] drop-shadow-2xl max-w-full">
           BUILDING <br />
-          <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent text-glow-cyan">
+          <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent text-glow-cyan inline-block max-w-full">
             INTELLIGENCE.
           </span>
         </h1>
 
         {/* Concise Description */}
-        <p className="mt-6 text-base sm:text-lg md:text-xl text-slate-300 font-body max-w-2xl leading-relaxed">
+        <p className="mt-4 sm:mt-6 text-sm sm:text-lg md:text-xl text-slate-300 font-body max-w-2xl leading-relaxed px-2">
           Turning data, mathematical algorithms, and neural architectures into intelligent digital experiences.
         </p>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8 w-full sm:w-auto px-4 sm:px-0">
           <button
             id="hero-explore-work-btn"
             onClick={handleScrollToWork}
@@ -106,7 +106,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               setCursorState({ variant: 'interact', text: 'EXPERIMENTS' });
             }}
             onMouseLeave={() => setCursorState({ variant: 'default', text: '' })}
-            className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-400 hover:from-cyan-400 hover:to-cyan-300 text-slate-950 font-mono text-xs font-bold uppercase tracking-wider shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all hover:scale-105 active:scale-95"
+            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-400 hover:from-cyan-400 hover:to-cyan-300 text-slate-950 font-mono text-xs font-bold uppercase tracking-wider shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all hover:scale-105 active:scale-95 text-center"
           >
             VIEW EXPERIMENTS
           </button>
@@ -119,7 +119,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               setCursorState({ variant: 'hover', text: 'EXPLORE' });
             }}
             onMouseLeave={() => setCursorState({ variant: 'default', text: '' })}
-            className="px-6 py-3 rounded-xl bg-[#0a0f18]/80 hover:bg-slate-800/80 border border-slate-700 hover:border-cyan-400/50 text-slate-200 font-mono text-xs font-bold uppercase tracking-wider backdrop-blur-md transition-all"
+            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#0a0f18]/80 hover:bg-slate-800/80 border border-slate-700 hover:border-cyan-400/50 text-slate-200 font-mono text-xs font-bold uppercase tracking-wider backdrop-blur-md transition-all text-center"
           >
             ENTER THE SYSTEM
           </button>
