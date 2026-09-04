@@ -57,7 +57,7 @@ export default function Hero() {
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'radial-gradient(circle at 50% 35%, rgba(0, 102, 204, 0.05) 0%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0.95) 100%)',
+          background: 'var(--gradient-glow)',
           zIndex: 1,
           pointerEvents: 'none'
         }}

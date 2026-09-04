@@ -61,11 +61,11 @@ export default function Navbar({ theme, toggleTheme }) {
           zIndex: 1000,
           transition: 'all 0.3s ease',
           padding: isScrolled ? '12px 0' : '20px 0',
-          background: isScrolled ? 'rgba(255, 255, 255, 0.96)' : 'transparent',
+          background: isScrolled ? (theme === 'dark' ? 'rgba(3, 7, 18, 0.92)' : 'rgba(255, 255, 255, 0.94)') : 'transparent',
           backdropFilter: isScrolled ? 'blur(16px)' : 'none',
           WebkitBackdropFilter: isScrolled ? 'blur(16px)' : 'none',
-          borderBottom: isScrolled ? '1px solid rgba(15, 23, 42, 0.12)' : '1px solid transparent',
-          boxShadow: isScrolled ? '0 4px 24px rgba(0, 0, 0, 0.08)' : 'none'
+          borderBottom: isScrolled ? (theme === 'dark' ? '1px solid rgba(0, 240, 255, 0.18)' : '1px solid rgba(15, 23, 42, 0.1)') : '1px solid transparent',
+          boxShadow: isScrolled ? (theme === 'dark' ? '0 4px 30px rgba(0, 0, 0, 0.6)' : '0 4px 24px rgba(0, 0, 0, 0.08)') : 'none'
         }}
       >
         <div
@@ -202,13 +202,12 @@ export default function Navbar({ theme, toggleTheme }) {
             {/* CTA Button Desktop */}
             <a
               href="#register"
-              className="btn-primary"
+              className="desktop-cta btn-primary"
               style={{
                 padding: '10px 22px',
                 fontSize: '0.88rem',
                 display: 'none'
               }}
-              className="desktop-cta btn-primary"
             >
               Register Pass <ChevronRight size={16} />
             </a>

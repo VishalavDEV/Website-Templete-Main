@@ -21,6 +21,18 @@ export default function Navbar({ theme, onToggleTheme, onOpenRegisterModal, save
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Events', path: '/events' },
@@ -50,7 +62,7 @@ export default function Navbar({ theme, onToggleTheme, onOpenRegisterModal, save
       <header className={`navbar-header ${scrolled ? 'scrolled' : ''}`}>
         <div className="container navbar-container">
           {/* Logo */}
-          <Link to="/" className="navbar-logo">
+          <Link to="/" className="navbar-logo" onClick={() => setMobileMenuOpen(false)}>
             <div className="logo-icon">
               <Calendar size={22} />
             </div>
@@ -82,6 +94,7 @@ export default function Navbar({ theme, onToggleTheme, onOpenRegisterModal, save
               className="theme-toggle-btn"
               title="My Saved Schedule"
               style={{ position: 'relative' }}
+              aria-label="My Saved Schedule"
             >
               <Bookmark size={18} />
               {savedScheduleCount > 0 && (
@@ -96,6 +109,7 @@ export default function Navbar({ theme, onToggleTheme, onOpenRegisterModal, save
               onClick={onToggleTheme}
               className="theme-toggle-btn"
               title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
+              aria-label={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
             >
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
@@ -104,24 +118,33 @@ export default function Navbar({ theme, onToggleTheme, onOpenRegisterModal, save
             <button
               onClick={() => onOpenRegisterModal()}
               className="btn btn-primary btn-sm"
+              style={{ display: 'none' }}
             >
               <Ticket size={16} /> Register Pass
             </button>
 
-            {/* Mobile Menu Toggle */}
+            {/* Mobile Menu Toggle Button */}
             <button
               className="mobile-toggle"
-              onClick={() => setMobileMenuOpen(true)}
+              onClick={() => setMobileMenuOpen(prev => !prev)}
               aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
             >
-              <Menu size={24} />
+              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Drawer Overlay */}
-      <div className={`mobile-nav-overlay ${mobileMenuOpen ? 'open' : ''}`}>
+      {/* Mobile Drawer Backdrop */}
+      <div
+        className={`mobile-backdrop ${mobileMenuOpen ? 'open' : ''}`}
+        onClick={() => setMobileMenuOpen(false)}
+        aria-hidden="true"
+      />
+
+      {/* Mobile Slide-Over Drawer Overlay */}
+      <div className={`mobile-nav-overlay ${mobileMenuOpen ? 'open' : ''}`} role="dialog" aria-modal="true">
         <div className="mobile-nav-header">
           <Link
             to="/"
@@ -129,7 +152,7 @@ export default function Navbar({ theme, onToggleTheme, onOpenRegisterModal, save
             onClick={() => setMobileMenuOpen(false)}
           >
             <div className="logo-icon">
-              <Calendar size={22} />
+              <Calendar size={20} />
             </div>
             <div className="logo-text">
               EVENT<span>ORA</span>
@@ -138,8 +161,25 @@ export default function Navbar({ theme, onToggleTheme, onOpenRegisterModal, save
           <button
             className="theme-toggle-btn"
             onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close navigation menu"
           >
-            <X size={24} />
+            <X size={20} />
+          </button>
+        </div>
+
+        {/* Quick Drawer Actions: Theme Toggle & My Schedule */}
+        <div className="mobile-nav-controls">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main)' }}>
+            {theme === 'dark' ? <Moon size={16} color="var(--primary)" /> : <Sun size={16} color="var(--accent)" />}
+            <span>{theme === 'dark' ? 'Dark Mode' : 'Light Mode'}</span>
+          </div>
+          <button
+            onClick={onToggleTheme}
+            className="theme-toggle-btn"
+            style={{ width: '38px', height: '38px', minWidth: '38px', minHeight: '38px' }}
+            title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
+          >
+            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
           </button>
         </div>
 
@@ -159,14 +199,25 @@ export default function Navbar({ theme, onToggleTheme, onOpenRegisterModal, save
           ))}
         </ul>
 
-        <div style={{ display: 'flex', gap: '1rem', marginTop: 'auto' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: 'auto', paddingTop: '1.5rem', borderTop: '1px solid var(--border)' }}>
+          <button
+            onClick={() => {
+              setMobileMenuOpen(false);
+              onOpenMySchedule();
+            }}
+            className="btn btn-outline btn-md"
+            style={{ width: '100%', justifyContent: 'center' }}
+          >
+            <Bookmark size={18} /> My Saved Schedule ({savedScheduleCount})
+          </button>
+
           <button
             onClick={() => {
               setMobileMenuOpen(false);
               onOpenRegisterModal();
             }}
             className="btn btn-primary btn-lg"
-            style={{ flex: 1 }}
+            style={{ width: '100%', justifyContent: 'center' }}
           >
             <Ticket size={20} /> Register Pass
           </button>
@@ -175,4 +226,5 @@ export default function Navbar({ theme, onToggleTheme, onOpenRegisterModal, save
     </>
   );
 }
+
 
