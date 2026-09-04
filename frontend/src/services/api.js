@@ -3075,7 +3075,7 @@ category: { id: 20153, name: 'Business', slug: 'business' },
     id: 20233,
     name: 'JULIAN RIVIERA — Creative Technologist & AI Architect',
     slug: 'personal-1',
-    previewImage: 'https://images.unsplash.com/photo-1558981403-c5f9899a28b1?auto=format&fit=crop&w=800&q=80',
+    previewImage: '/templates/personal/personal-1/preview.png',
     templateType: 'FREE',
     price: 0,
     category: { id: 20234, name: 'Personal', slug: 'personal' },
@@ -3150,7 +3150,7 @@ category: { id: 20153, name: 'Business', slug: 'business' },
     id: 20243,
     name: 'Living Digital Canvas — Animated Portfolio',
     slug: 'personal-6',
-    previewImage: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=800&q=80',
+    previewImage: '/templates/personal/personal-6/preview.png',
     templateType: 'FREE',
     price: 0,
     category: { id: 20244, name: 'Personal', slug: 'personal' },
@@ -3195,7 +3195,7 @@ category: { id: 20153, name: 'Business', slug: 'business' },
     id: 20249,
     name: 'Gwen — AI Engineer & Full-Stack Developer',
     slug: 'personal-9',
-    previewImage: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=800&q=80',
+    previewImage: '/templates/personal/personal-9/preview.png',
     templateType: 'FREE',
     price: 0,
     category: { id: 20250, name: 'Personal', slug: 'personal' },
@@ -3441,6 +3441,13 @@ export const api = {
   // Templates - Instant In-Memory Filter with fast fallback
   async getTemplates(params = {}) {
     let filtered = [...MOCK_TEMPLATES];
+    const seen = new Set();
+    filtered = filtered.filter(t => {
+      const key = t.slug || t.id;
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
     if (params.category && params.category !== 'all') {
       const target = params.category.toLowerCase().trim();
       filtered = filtered.filter(t => {

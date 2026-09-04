@@ -77,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
           className="flex items-center gap-3 group cursor-pointer focus:outline-none"
         >
           <div className="w-9 h-9 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform">
-            AM
+            GW
           </div>
           <div className="flex flex-col text-left">
             <span
@@ -121,7 +121,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
         </nav>
 
         {/* Actions (Resume CTA & Theme Toggle) */}
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <button
             id="resume-nav-btn"
             onClick={onOpenResume}

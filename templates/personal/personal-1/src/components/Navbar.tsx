@@ -208,7 +208,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </nav>
 
           {/* Action Utilities: Theme, Sound, Resume & Inquire CTA */}
-          <div className="hidden sm:flex items-center gap-2 lg:gap-2.5 shrink-0">
+          <div className="hidden lg:flex items-center gap-2 lg:gap-2.5 shrink-0">
             {/* Audio Toggle */}
             <button
               type="button"
@@ -269,7 +269,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex sm:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-2">
             <button
               type="button"
               id="mobile-theme-toggle-btn"
@@ -302,7 +302,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
             id="mobile-drawer-menu"
-            className="fixed inset-x-0 top-[65px] z-40 bg-[#050505]/98 backdrop-blur-2xl border-b border-white/10 px-6 py-8 shadow-2xl flex flex-col gap-4 sm:hidden max-h-[85vh] overflow-y-auto"
+            className="fixed inset-x-0 top-[65px] z-40 bg-[#050505]/98 backdrop-blur-2xl border-b border-white/10 px-6 py-8 shadow-2xl flex flex-col gap-4 lg:hidden max-h-[85vh] overflow-y-auto"
           >
             <div className="grid grid-cols-2 gap-2.5">
               {ALL_NAV_LINKS.map((link) => (

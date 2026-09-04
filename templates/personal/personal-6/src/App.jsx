@@ -493,7 +493,7 @@ export default function App() {
 
       {/* MAIN CONTENT VIEWPORT */}
       {!loading && (
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '120px 48px 80px', position: 'relative', zIndex: 10 }}>
+        <div className="canvas-content-container" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           
           {/* Phase 1: Identity */}
           {currentPhase === 'identity' && (
@@ -504,13 +504,14 @@ export default function App() {
             >
               <h1 
                 style={{
-                  fontSize: '9vw',
+                  fontSize: 'clamp(2.8rem, 8vw, 7.5rem)',
                   fontWeight: 900,
                   color: '#ffffff',
-                  lineHeight: 0.9,
-                  letterSpacing: '-4px',
+                  lineHeight: 0.95,
+                  letterSpacing: '-2px',
                   margin: 0,
-                  cursor: 'none'
+                  cursor: 'none',
+                  wordBreak: 'break-word'
                 }}
                 onMouseEnter={() => setCustomCursorText('ME')}
                 onMouseLeave={() => setCustomCursorText('')}
@@ -518,12 +519,13 @@ export default function App() {
                 {profile.name}
               </h1>
 
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, marginTop: 24, fontSize: '1rem', fontWeight: 800, color: '#bef264', letterSpacing: '2px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, marginTop: 24, fontSize: 'clamp(0.85rem, 2.5vw, 1rem)', fontWeight: 800, color: '#bef264', letterSpacing: '2px' }}>
                 <span>{profile.title}</span>
               </div>
 
-              <div style={{ display: 'flex', gap: 20, marginTop: 48 }}>
+              <div className="hero-cta-buttons" style={{ display: 'flex', gap: 20, marginTop: 48, flexWrap: 'wrap' }}>
                 <button
+                  className="cta-btn explore-btn"
                   onClick={() => setCurrentPhase('projects')}
                   style={{
                     backgroundColor: '#8b5cf6',
@@ -541,6 +543,7 @@ export default function App() {
                   EXPLORE WORKS
                 </button>
                 <button
+                  className="cta-btn connect-btn"
                   onClick={() => setCurrentPhase('contact')}
                   style={{
                     backgroundColor: 'transparent',
@@ -569,12 +572,13 @@ export default function App() {
               style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
             >
               <h2 style={{
-                fontSize: '4.2rem',
+                fontSize: 'clamp(2rem, 5.5vw, 4.2rem)',
                 fontWeight: 900,
                 color: '#ffffff',
-                lineHeight: 1.1,
-                letterSpacing: '-2px',
-                margin: '0 0 32px'
+                lineHeight: 1.15,
+                letterSpacing: '-1.5px',
+                margin: '0 0 32px',
+                wordBreak: 'break-word'
               }}>
                 I LIKE <span style={{ color: '#bef264' }}>TURNING IDEAS</span> INTO THINGS PEOPLE CAN USE.
               </h2>

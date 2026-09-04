@@ -157,25 +157,25 @@ export const Hero: React.FC<HeroProps> = ({
       <div className="absolute bottom-10 left-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
 
       {/* Top Banner Status Pill */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full pt-4">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 w-full pt-4">
         <motion.div
           initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-[10px] uppercase tracking-[0.25em] font-semibold text-neutral-300 backdrop-blur-xl shadow-2xl"
+          className="inline-flex flex-wrap items-center gap-2 sm:gap-3 px-3.5 sm:px-4 py-1.5 rounded-2xl sm:rounded-full bg-white/[0.03] border border-white/10 text-[9px] sm:text-[10px] uppercase tracking-wider sm:tracking-[0.25em] font-semibold text-neutral-300 backdrop-blur-xl shadow-2xl max-w-full leading-relaxed"
         >
-          <span className="flex h-2 w-2 relative">
+          <span className="flex h-2 w-2 relative shrink-0">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4AF37] opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D4AF37]"></span>
           </span>
           <span className="text-[#D4AF37] font-bold">{PERSONAL_INFO.availability}</span>
-          <span className="text-neutral-600">/</span>
+          <span className="text-neutral-600 hidden sm:inline">/</span>
           <span className="text-neutral-400">{PERSONAL_INFO.location}</span>
         </motion.div>
       </div>
 
       {/* Main Grid: Bold Typography Editorial Layout */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full my-auto py-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 w-full my-auto py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Bold Editorial Headline, Typewriter & CTAs */}
@@ -185,12 +185,12 @@ export const Hero: React.FC<HeroProps> = ({
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-7 flex flex-col items-start text-left space-y-6"
           >
-            <div className="space-y-2">
-              <span className="text-[10px] sm:text-xs uppercase tracking-[0.45em] sm:tracking-[0.5em] text-[#D4AF37] font-semibold block mb-2 font-mono">
+            <div className="space-y-2 w-full">
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.35em] sm:tracking-[0.5em] text-[#D4AF37] font-semibold block mb-2 font-mono">
                 Senior Creative Architect & Technologist
               </span>
 
-              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[100px] leading-[0.88] font-bold tracking-tighter text-white font-serif italic">
+              <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-[100px] leading-[0.92] font-bold tracking-tighter text-white font-serif italic break-words">
                 Julian <br />
                 <span className="not-italic font-display font-black text-white">Riviera</span>
               </h1>
