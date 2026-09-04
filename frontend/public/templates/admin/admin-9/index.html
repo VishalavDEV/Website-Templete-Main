@@ -1,7 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
+    <script>(function(){
+      var p = window.location.pathname;
+      if (p.endsWith('/index.html')) {
+        window.history.replaceState(null, '', p.slice(0, -10) + window.location.search + window.location.hash);
+      } else if (!p.endsWith('/') && !p.endsWith('.html')) {
+        window.location.replace(p + '/' + window.location.search + window.location.hash);
+      }
+    })();</script>
 
     <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
     <script>
@@ -20,6 +27,9 @@
             if (document.getElementById('technosprint-preview-header')) return;
 
             const currentUrl = new URL(window.location.href);
+            if (!currentUrl.pathname.endsWith('/') && !currentUrl.pathname.endsWith('.html')) {
+              currentUrl.pathname += '/';
+            }
             currentUrl.searchParams.set('iframe', 'true');
             
             document.documentElement.className = '';
@@ -254,6 +264,7 @@
     
 
     
+    <base href="/templates/admin/admin-9/" />
     <script type="module" crossorigin src="./assets/index-5F3NPfLi.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-BUPFuvT7.css">
   </head>
