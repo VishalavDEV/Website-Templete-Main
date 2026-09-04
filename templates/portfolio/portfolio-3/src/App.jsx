@@ -17,6 +17,7 @@ import {
 import { portfolioData, projectFilters, filterMapping, SOCIAL_FA_MAP } from './data/portfolioData';
 import NavBar from './components/NavBar';
 import GalleryModal from './components/GalleryModal';
+import ArticleModal from './components/ArticleModal';
 
 // Reusable Section Heading component
 function SectionHeading({ eyebrow, title, lightBg = true }) {
@@ -52,6 +53,7 @@ const ICON_MAP = {
 export default function App() {
   const [selectedFilter, setSelectedFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedArticle, setSelectedArticle] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Testimonial Carousel Index state
@@ -492,7 +494,8 @@ export default function App() {
             {portfolioData.blogPosts.map((post) => (
               <article 
                 key={post.id}
-                className="group bg-white border border-zinc-200 overflow-hidden flex flex-col md:grid md:grid-cols-12 hover:shadow-xl transition-all border-offset-dark"
+                onClick={() => setSelectedArticle(post)}
+                className="group cursor-pointer bg-white border border-zinc-200 overflow-hidden flex flex-col md:grid md:grid-cols-12 hover:shadow-xl transition-all border-offset-dark"
               >
                 {/* Image */}
                 <div className="col-span-12 md:col-span-5 h-[200px] md:h-full relative overflow-hidden bg-zinc-200">
@@ -517,12 +520,16 @@ export default function App() {
                     </p>
                   </div>
 
-                  <a 
-                    href="#blog"
-                    className="text-[10px] font-sans tracking-widest uppercase font-black text-[#2b2b2b] hover:text-[#e74c3c] transition-colors flex items-center gap-1.5 mt-6 border-b border-transparent hover:border-[#e74c3c] w-fit pb-0.5"
+                  <button 
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedArticle(post);
+                    }}
+                    className="text-[10px] font-sans tracking-widest uppercase font-black text-[#2b2b2b] group-hover:text-[#e74c3c] transition-colors flex items-center gap-1.5 mt-6 border-b border-transparent hover:border-[#e74c3c] w-fit pb-0.5"
                   >
                     Read Article <ArrowRight size={10} />
-                  </a>
+                  </button>
                 </div>
               </article>
             ))}
@@ -671,6 +678,13 @@ export default function App() {
         isOpen={isModalOpen}
         project={selectedProject}
         onClose={() => setIsModalOpen(false)}
+      />
+
+      {/* Article Detail modal */}
+      <ArticleModal
+        isOpen={!!selectedArticle}
+        article={selectedArticle}
+        onClose={() => setSelectedArticle(null)}
       />
     </div>
   );

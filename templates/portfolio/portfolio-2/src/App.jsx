@@ -192,8 +192,8 @@ export default function App() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Portrait Photo */}
-          <div className="col-span-12 lg:col-span-5 relative group">
-            <div className="absolute -inset-1.5 rounded-2xl bg-gradient-to-tr from-[#4da6ff]/20 to-transparent blur-md opacity-70 group-hover:opacity-100 transition-opacity" />
+          <div className="col-span-12 lg:col-span-5 relative group w-full max-w-full">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#4da6ff]/20 to-transparent blur-md opacity-70 group-hover:opacity-100 transition-opacity" />
             <div className="relative aspect-[4/3] lg:aspect-[3/4] bg-slate-900 rounded-xl overflow-hidden border border-slate-800">
               <img 
                 src={portfolioData.about.image} 
@@ -475,7 +475,7 @@ export default function App() {
           </div>
 
           {/* Right contact form */}
-          <div className="col-span-12 lg:col-span-7 bg-[#0b0e1a]/80 border border-slate-900/60 p-6 md:p-8 rounded-2xl relative overflow-hidden">
+          <div className="col-span-12 lg:col-span-7 bg-[#0b0e1a]/80 border border-slate-900/60 p-4 sm:p-6 md:p-8 rounded-2xl relative overflow-hidden w-full max-w-full box-border">
             <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#4da6ff] to-transparent" />
             
             <form onSubmit={handleFormSubmit} className="flex flex-col gap-6">

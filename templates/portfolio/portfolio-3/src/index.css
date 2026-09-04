@@ -39,11 +39,23 @@
 
 /* Geometric offsets and outlines */
 .border-offset {
-  box-shadow: 12px 12px 0px 0px #e74c3c;
+  box-shadow: 6px 6px 0px 0px #e74c3c;
+}
+
+@media (min-width: 768px) {
+  .border-offset {
+    box-shadow: 12px 12px 0px 0px #e74c3c;
+  }
 }
 
 .border-offset-dark {
-  box-shadow: 12px 12px 0px 0px #2b2b2b;
+  box-shadow: 6px 6px 0px 0px #2b2b2b;
+}
+
+@media (min-width: 768px) {
+  .border-offset-dark {
+    box-shadow: 12px 12px 0px 0px #2b2b2b;
+  }
 }
 
 .geometric-pattern {

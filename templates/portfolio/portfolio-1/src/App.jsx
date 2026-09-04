@@ -67,11 +67,11 @@ export default function App() {
         </div>
 
         {/* Big Title Row */}
-        <div className="my-8 md:my-12 z-10">
+        <div className="my-8 md:my-12 z-10 w-full max-w-full">
           <span className="text-xs font-sans tracking-[0.25em] text-[#1a2b4a]/60 uppercase font-semibold block mb-2">
             {portfolioData.hero.label}
           </span>
-          <h2 className="text-5xl md:text-8xl lg:text-[7.5rem] font-extrabold tracking-tighter text-[#1a2b4a] leading-[0.9] uppercase">
+          <h2 className="text-3xl sm:text-5xl md:text-8xl lg:text-[7.5rem] font-extrabold tracking-tighter text-[#1a2b4a] leading-tight sm:leading-[0.9] uppercase break-words">
             {portfolioData.hero.title}
           </h2>
         </div>
@@ -159,7 +159,7 @@ export default function App() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           
           {/* Left Architect Portrait */}
-          <div className="col-span-12 lg:col-span-5 flex flex-col gap-4">
+          <div className="col-span-12 lg:col-span-5 flex flex-col gap-4 w-full max-w-md mx-auto lg:max-w-none">
             <motion.div 
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}

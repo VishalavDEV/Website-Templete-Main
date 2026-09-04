@@ -372,19 +372,19 @@ function AboutPage() {
 
           {/* Team Grid */}
           <div className="col-span-12 lg:col-span-6 flex flex-col">
-            <h3 className="text-xl text-white uppercase font-black border-b border-zinc-900 pb-3 mb-8">
+            <h3 className="text-xl text-white uppercase font-black border-b border-zinc-900 pb-3 mb-8 text-left">
               Executive Engineers
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-sans">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 font-sans">
               {agencyData.about.team.map((member, idx) => (
-                <div key={idx} className="bg-zinc-900/40 border border-zinc-900 p-4 flex flex-col gap-4">
+                <div key={idx} className="bg-zinc-900/40 border border-zinc-900 p-4 flex flex-col items-center sm:items-start text-center sm:text-left gap-4 w-full max-w-full">
                   <img 
                     src={member.photo} 
                     alt={member.name} 
-                    className="w-full aspect-square object-cover filter grayscale border border-zinc-800"
+                    className="w-full max-w-[260px] sm:max-w-none aspect-square object-cover filter grayscale border border-zinc-800 mx-auto sm:mx-0"
                   />
-                  <div className="text-left font-sans">
+                  <div className="text-center sm:text-left font-sans w-full">
                     <h4 className="text-xs text-white font-bold uppercase">{member.name}</h4>
                     <span className="text-[9px] text-[#3ecf6e] uppercase tracking-wide font-medium mt-0.5 block">{member.role}</span>
                   </div>
