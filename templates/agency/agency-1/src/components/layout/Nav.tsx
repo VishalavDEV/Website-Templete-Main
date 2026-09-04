@@ -84,7 +84,9 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 transition-[background-color,box-shadow] duration-300 ${
+      className={`fixed inset-x-0 top-0 transition-[background-color,box-shadow] duration-300 ${
+        open ? "z-[90]" : "z-40"
+      } ${
         scrolled
           ? "bg-cream/90 shadow-[0_1px_0_0_var(--color-line)] backdrop-blur-md"
           : "bg-cream/80 backdrop-blur-sm lg:bg-transparent lg:backdrop-blur-none"
@@ -94,7 +96,7 @@ export function Nav() {
         aria-label="Primary"
         className="container-x flex h-[68px] items-center justify-between"
       >
-        <Wordmark />
+        <Wordmark onClick={() => setOpen(false)} />
 
         <ul className="hidden items-center gap-8 lg:flex">
           {LINKS.map((link) => (
@@ -117,6 +119,7 @@ export function Nav() {
         <div className="flex items-center gap-2 sm:gap-3 lg:hidden">
           <Link
             to="/contact"
+            onClick={() => setOpen(false)}
             className="hidden sm:inline-flex items-center rounded-full bg-ink px-4 py-1.5 text-xs font-semibold text-paper hover:bg-coral transition-colors"
           >
             Start a project
@@ -147,7 +150,7 @@ export function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={reduce ? { opacity: 0 } : { opacity: 0, y: "-4%" }}
             transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 top-[68px] z-50 flex flex-col bg-paper lg:hidden overflow-y-auto"
+            className="fixed inset-0 top-[68px] z-50 flex flex-col bg-[#fffdf9] lg:hidden overflow-y-auto min-h-[calc(100vh-68px)]"
           >
             <ul className="flex flex-1 flex-col justify-center gap-2 px-6 py-8">
               {[...LINKS, { to: "/contact", label: "Contact" }].map((link, i) => (
@@ -160,6 +163,7 @@ export function Nav() {
                   <NavLink
                     to={link.to}
                     ref={i === 0 ? firstLinkRef : undefined}
+                    onClick={() => setOpen(false)}
                     className={({ isActive }) =>
                       `display-md block py-2 ${isActive ? "text-coral" : "text-ink"}`
                     }

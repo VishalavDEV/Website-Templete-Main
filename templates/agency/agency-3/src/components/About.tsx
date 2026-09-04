@@ -57,10 +57,18 @@ export default function About() {
           >
             {/* Abstract visual */}
             <div className="aspect-[3/4] bg-gradient-to-br from-terracotta/10 via-mauve/5 to-warm-orange/10 border border-cream/[0.08] relative overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
+                alt="AXIOM Studio Workspace"
+                className="w-full h-full object-cover opacity-60 mix-blend-luminosity"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).style.display = 'none';
+                }}
+              />
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="text-center">
                   <div
-                    className="text-8xl md:text-9xl font-bold text-cream/[0.03] leading-none"
+                    className="text-8xl md:text-9xl font-bold text-cream/[0.05] leading-none"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
                     A
