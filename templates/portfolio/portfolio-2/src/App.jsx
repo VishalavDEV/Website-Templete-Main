@@ -114,19 +114,19 @@ export default function App() {
       <NavBar />
 
       {/* 1. HERO SECTION */}
-      <section id="home" className="min-h-screen flex items-center py-20 px-6 md:px-12 max-w-7xl mx-auto relative overflow-hidden">
-        <div className="w-full flex flex-col items-center text-center z-10">
+      <section id="home" className="min-h-screen flex items-center py-16 sm:py-20 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto relative overflow-hidden">
+        <div className="w-full flex flex-col items-center text-center z-10 max-w-full">
           
           {/* Circular avatar with glowing accent-color ring */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative w-28 h-28 md:w-32 md:h-32 rounded-full p-1 bg-gradient-to-tr from-[#4da6ff] to-transparent glow-ring mb-6"
+            className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full p-1 bg-gradient-to-tr from-[#4da6ff] to-transparent glow-ring mb-6 mx-auto flex-shrink-0"
           >
             <img 
               src={portfolioData.hero.profileImage} 
-              alt="Aiden Drake Profile avatar" 
+              alt="Profile avatar" 
               className="w-full h-full object-cover rounded-full border border-slate-950"
             />
           </motion.div>
@@ -478,10 +478,10 @@ export default function App() {
           <div className="col-span-12 lg:col-span-7 bg-[#0b0e1a]/80 border border-slate-900/60 p-4 sm:p-6 md:p-8 rounded-2xl relative overflow-hidden w-full max-w-full box-border">
             <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#4da6ff] to-transparent" />
             
-            <form onSubmit={handleFormSubmit} className="flex flex-col gap-6">
+            <form onSubmit={handleFormSubmit} className="flex flex-col gap-6 w-full max-w-full box-border">
               
               {/* Name */}
-              <div className="flex flex-col">
+              <div className="flex flex-col w-full max-w-full box-border">
                 <label className="text-[10px] font-sans tracking-widest text-slate-500 uppercase font-bold mb-2">YOUR NAME</label>
                 <input 
                   type="text"
@@ -489,13 +489,13 @@ export default function App() {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Enter name"
-                  className="w-full bg-[#05070f] border border-slate-800/80 focus:border-[#4da6ff]/50 px-4 py-3 rounded-lg text-sm text-slate-200 placeholder-slate-600 outline-none transition-colors"
+                  className="w-full max-w-full box-border bg-[#05070f] border border-slate-800/80 focus:border-[#4da6ff]/50 px-4 py-3 rounded-lg text-sm text-slate-200 placeholder-slate-600 outline-none transition-colors"
                 />
                 {formErrors.name && <span className="text-[10px] font-sans text-rose-400 mt-1.5">{formErrors.name}</span>}
               </div>
 
               {/* Email */}
-              <div className="flex flex-col">
+              <div className="flex flex-col w-full max-w-full box-border">
                 <label className="text-[10px] font-sans tracking-widest text-slate-500 uppercase font-bold mb-2">EMAIL ADDRESS</label>
                 <input 
                   type="email"
@@ -503,13 +503,13 @@ export default function App() {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Enter email"
-                  className="w-full bg-[#05070f] border border-slate-800/80 focus:border-[#4da6ff]/50 px-4 py-3 rounded-lg text-sm text-slate-200 placeholder-slate-600 outline-none transition-colors"
+                  className="w-full max-w-full box-border bg-[#05070f] border border-slate-800/80 focus:border-[#4da6ff]/50 px-4 py-3 rounded-lg text-sm text-slate-200 placeholder-slate-600 outline-none transition-colors"
                 />
                 {formErrors.email && <span className="text-[10px] font-sans text-rose-400 mt-1.5">{formErrors.email}</span>}
               </div>
 
               {/* Message */}
-              <div className="flex flex-col">
+              <div className="flex flex-col w-full max-w-full box-border">
                 <label className="text-[10px] font-sans tracking-widest text-slate-500 uppercase font-bold mb-2">YOUR MESSAGE</label>
                 <textarea 
                   name="message"
@@ -517,7 +517,7 @@ export default function App() {
                   onChange={handleInputChange}
                   placeholder="Describe your project"
                   rows={4}
-                  className="w-full bg-[#05070f] border border-slate-800/80 focus:border-[#4da6ff]/50 px-4 py-3 rounded-lg text-sm text-slate-200 placeholder-slate-600 outline-none transition-colors resize-none"
+                  className="w-full max-w-full box-border bg-[#05070f] border border-slate-800/80 focus:border-[#4da6ff]/50 px-4 py-3 rounded-lg text-sm text-slate-200 placeholder-slate-600 outline-none transition-colors resize-none"
                 />
                 {formErrors.message && <span className="text-[10px] font-sans text-rose-400 mt-1.5">{formErrors.message}</span>}
               </div>
@@ -526,7 +526,7 @@ export default function App() {
               <button
                 type="submit"
                 disabled={formStatus === 'loading'}
-                className="glow-btn w-full py-3.5 rounded-lg bg-[#4da6ff] disabled:bg-slate-800 text-slate-950 font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2 hover:bg-[#3393f2]"
+                className="glow-btn w-full max-w-full box-border py-3.5 px-4 rounded-lg bg-[#4da6ff] disabled:bg-slate-800 text-slate-950 font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2 hover:bg-[#3393f2]"
               >
                 {formStatus === 'loading' ? (
                   <span>Sending Message...</span>

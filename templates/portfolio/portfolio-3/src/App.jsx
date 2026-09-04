@@ -226,13 +226,13 @@ export default function App() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
           {/* Double Offset Photos with Outline behind */}
-          <div className="col-span-12 lg:col-span-6 flex justify-center relative h-[360px] md:h-[450px]">
+          <div className="col-span-12 lg:col-span-6 flex justify-center relative h-[320px] sm:h-[360px] md:h-[450px] w-full max-w-full overflow-hidden sm:overflow-visible">
             
             {/* Outline Behind */}
-            <div className="absolute left-6 top-6 w-[200px] h-[280px] border-4 border-[#e74c3c]/15 pointer-events-none" />
+            <div className="absolute left-2 sm:left-6 top-6 w-[150px] sm:w-[200px] h-[220px] sm:h-[280px] border-4 border-[#e74c3c]/15 pointer-events-none" />
             
             {/* Small Photo */}
-            <div className="absolute left-10 top-10 w-[180px] h-[250px] overflow-hidden bg-zinc-300 z-10 shadow-lg border-2 border-white">
+            <div className="absolute left-6 sm:left-10 top-10 w-[140px] sm:w-[180px] h-[190px] sm:h-[250px] overflow-hidden bg-zinc-300 z-10 shadow-lg border-2 border-white">
               <img 
                 src={portfolioData.about.photoSmall} 
                 alt="Detail shoot" 
@@ -241,10 +241,10 @@ export default function App() {
             </div>
 
             {/* Accent Red square overlap */}
-            <div className="absolute right-12 bottom-6 w-20 h-20 bg-[#e74c3c] z-20 pointer-events-none" />
+            <div className="absolute right-4 sm:right-12 bottom-6 w-14 sm:w-20 h-14 sm:h-20 bg-[#e74c3c] z-20 pointer-events-none" />
 
             {/* Large Photo offset */}
-            <div className="absolute right-16 top-2 w-[220px] h-[310px] overflow-hidden bg-zinc-300 z-10 shadow-2xl border-4 border-white">
+            <div className="absolute right-6 sm:right-16 top-2 w-[160px] sm:w-[220px] h-[220px] sm:h-[310px] overflow-hidden bg-zinc-300 z-10 shadow-2xl border-4 border-white">
               <img 
                 src={portfolioData.about.photoLarge} 
                 alt="Studio setup" 
@@ -597,13 +597,13 @@ export default function App() {
           </div>
 
           {/* Right contact form card */}
-          <div className="col-span-12 lg:col-span-7 bg-[#232323] border border-white/5 p-8 relative">
+          <div className="col-span-12 lg:col-span-7 bg-[#232323] border border-white/5 p-4 sm:p-6 md:p-8 relative w-full max-w-full box-border">
             <div className="absolute top-0 left-0 w-full h-[4px] bg-[#e74c3c]" />
             
-            <form onSubmit={handleFormSubmit} className="flex flex-col gap-6">
+            <form onSubmit={handleFormSubmit} className="flex flex-col gap-6 w-full max-w-full box-border">
               
               {/* Name */}
-              <div className="flex flex-col">
+              <div className="flex flex-col w-full max-w-full box-border">
                 <label className="text-[9px] font-sans tracking-widest text-white/40 uppercase font-black mb-2">YOUR NAME</label>
                 <input 
                   type="text"
@@ -611,13 +611,13 @@ export default function App() {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Enter name"
-                  className="w-full bg-[#2b2b2b] border border-white/5 focus:border-[#e74c3c] px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-colors rounded-none"
+                  className="w-full max-w-full box-border bg-[#2b2b2b] border border-white/5 focus:border-[#e74c3c] px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-colors rounded-none"
                 />
                 {formErrors.name && <span className="text-[10px] font-sans text-rose-400 mt-1.5 font-semibold">{formErrors.name}</span>}
               </div>
 
               {/* Email */}
-              <div className="flex flex-col">
+              <div className="flex flex-col w-full max-w-full box-border">
                 <label className="text-[9px] font-sans tracking-widest text-white/40 uppercase font-black mb-2">EMAIL ADDRESS</label>
                 <input 
                   type="email"
@@ -625,13 +625,13 @@ export default function App() {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Enter email"
-                  className="w-full bg-[#2b2b2b] border border-white/5 focus:border-[#e74c3c] px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-colors rounded-none"
+                  className="w-full max-w-full box-border bg-[#2b2b2b] border border-white/5 focus:border-[#e74c3c] px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-colors rounded-none"
                 />
                 {formErrors.email && <span className="text-[10px] font-sans text-rose-400 mt-1.5 font-semibold">{formErrors.email}</span>}
               </div>
 
               {/* Message */}
-              <div className="flex flex-col">
+              <div className="flex flex-col w-full max-w-full box-border">
                 <label className="text-[9px] font-sans tracking-widest text-white/40 uppercase font-black mb-2">YOUR MESSAGE</label>
                 <textarea 
                   name="message"
@@ -639,7 +639,7 @@ export default function App() {
                   onChange={handleInputChange}
                   placeholder="Describe your design parameters"
                   rows={4}
-                  className="w-full bg-[#2b2b2b] border border-white/5 focus:border-[#e74c3c] px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-colors resize-none rounded-none"
+                  className="w-full max-w-full box-border bg-[#2b2b2b] border border-white/5 focus:border-[#e74c3c] px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-colors resize-none rounded-none"
                 />
                 {formErrors.message && <span className="text-[10px] font-sans text-rose-400 mt-1.5 font-semibold">{formErrors.message}</span>}
               </div>
@@ -648,7 +648,7 @@ export default function App() {
               <button
                 type="submit"
                 disabled={formStatus === 'loading'}
-                className="w-full py-4 bg-[#e74c3c] disabled:bg-zinc-800 text-white font-black text-xs tracking-widest uppercase flex items-center justify-center gap-2 hover:bg-[#c0392b] transition-colors rounded-none"
+                className="w-full max-w-full box-border py-4 px-4 bg-[#e74c3c] disabled:bg-zinc-800 text-white font-black text-xs tracking-widest uppercase flex items-center justify-center gap-2 hover:bg-[#c0392b] transition-colors rounded-none"
               >
                 {formStatus === 'loading' ? (
                   <span>Sending Message...</span>

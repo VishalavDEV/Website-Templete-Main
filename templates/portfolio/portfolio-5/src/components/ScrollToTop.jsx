@@ -40,7 +40,7 @@ export function ScrollToTopButton() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-6 right-6 z-40 w-10 h-10 rounded-full bg-[#e8583f] hover:bg-[#cf472f] text-white flex items-center justify-center shadow-lg transition-colors border border-white/5 cursor-pointer focus:outline-none"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 w-10 h-10 rounded-full bg-[#e8583f] hover:bg-[#cf472f] text-white flex items-center justify-center shadow-lg transition-colors border border-white/5 cursor-pointer focus:outline-none"
     >
       <ArrowUp size={16} />
     </button>

@@ -39,11 +39,11 @@ function PageWrapper({ children }) {
 // Reusable Section Heading
 function SectionHeading({ eyebrow, title }) {
   return (
-    <div className="mb-16 text-left">
+    <div className="mb-12 sm:mb-16 text-left max-w-full">
       <span className="text-[10px] font-sans tracking-[0.25em] text-[#e8583f] uppercase font-black block mb-3">
         {eyebrow}
       </span>
-      <h2 className="text-3xl md:text-5xl font-serif text-white tracking-tight leading-tight">
+      <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif text-white tracking-tight leading-tight break-words max-w-full">
         {title}
       </h2>
       <div className="w-12 h-1 bg-[#e8583f] mt-4" />

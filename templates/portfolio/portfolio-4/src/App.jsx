@@ -97,16 +97,17 @@ export default function App() {
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
           {/* Hero Left Content */}
-          <div className="col-span-12 lg:col-span-7 flex flex-col items-start text-left">
+          <div className="col-span-12 lg:col-span-7 flex flex-col items-start text-left w-full max-w-full">
             <span className="text-[10px] font-sans tracking-[0.25em] text-[#262626]/50 uppercase font-black mb-4 block">
               {portfolioData.hero.eyebrow}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#262626] tracking-tight leading-[1.1] font-light">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-[#262626] tracking-tight leading-[1.1] font-light break-words max-w-full">
               {portfolioData.hero.headline}
             </h1>
             <p className="mt-6 text-sm md:text-base text-zinc-500 max-w-lg leading-relaxed">
               {portfolioData.hero.subtext}
             </p>
+          </div>
 
             {/* CTAs */}
             <div className="mt-8 flex flex-wrap items-center gap-6">
@@ -213,7 +214,7 @@ export default function App() {
         <SectionHeading eyebrow="• SELECTION" title="Selected Work" />
 
         {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {portfolioData.projects.map((project) => (
             <div
               key={project.id}

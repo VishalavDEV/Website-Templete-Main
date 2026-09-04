@@ -181,7 +181,7 @@ function HomePage() {
           </div>
 
           {/* Asymmetric floating info cards grid */}
-          <div className="lg:col-span-5 grid grid-cols-2 gap-4 relative">
+          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4 relative w-full max-w-full">
             <div className="flex flex-col gap-4">
               {/* Card 1: Metric */}
               <div className="bg-[#101010]/80 border border-zinc-900/60 p-6 flex flex-col justify-between h-40">
