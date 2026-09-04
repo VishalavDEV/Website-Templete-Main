@@ -21,6 +21,9 @@
 
             const currentUrl = new URL(window.location.href);
             currentUrl.searchParams.set('iframe', 'true');
+            if (!currentUrl.pathname.endsWith('.html')) {
+              currentUrl.pathname = currentUrl.pathname.replace(/\/+$/, '') + '/index.html';
+            }
             
             document.documentElement.className = '';
             document.documentElement.removeAttribute('style');
@@ -255,6 +258,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="./src/main.jsx"></script>
   </body>
 </html>

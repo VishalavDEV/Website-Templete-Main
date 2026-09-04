@@ -31,7 +31,7 @@ export default function TelemetryCalculator() {
         <div className="sectionTag">ECOLOGICAL TELEMETRY</div>
         <h2 className="sectionTitle">Living Green Wall Impact Calculator</h2>
         <p style={{ color: 'var(--text-body)', maxWidth: 640, margin: '14px auto 0 auto', fontSize: '0.95rem' }}>
-          Adjust the vertical botanical facade footprint to view real-time carbon sequestration and thermal dampening calculations powered by the Spring Boot backend.
+          Adjust the vertical botanical facade footprint to view real-time carbon sequestration and thermal dampening calculations.
         </p>
       </div>
 

@@ -74,7 +74,7 @@ export default function Hero({ onOpenVideoModal }) {
           </h1>
 
           <p className="hero-description">
-            We partner with our clients to build spaces that enhance lives and communities. Engineered with React and Java Spring Boot.
+            We partner with our clients to build spaces that enhance lives and communities. Engineered with sustainable alpine timber, cantilevered glass, and bespoke structural framing.
           </p>
 
           <div className="hero-btn-group">

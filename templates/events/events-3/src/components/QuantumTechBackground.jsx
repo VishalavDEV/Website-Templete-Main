@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-export default function QuantumTechBackground({ mode = 'unified' }) {
+export default function QuantumTechBackground({ mode = 'unified', theme = 'dark' }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function QuantumTechBackground({ mode = 'unified' }) {
         vx: (Math.random() - 0.5) * 0.4,
         vy: (Math.random() - 0.5) * 0.4,
         radius: Math.random() * 2.5 + 1,
-        color: Math.random() > 0.4 ? '#00f0ff' : '#a855f7',
+        color: Math.random() > 0.4 ? (theme === 'light' ? '#0066cc' : '#00f0ff') : (theme === 'light' ? '#7e22ce' : '#a855f7'),
         pulse: Math.random() * Math.PI * 2,
         pulseSpeed: 0.02 + Math.random() * 0.03
       });
@@ -86,20 +86,38 @@ export default function QuantumTechBackground({ mode = 'unified' }) {
 
       ctx.clearRect(0, 0, width, height);
 
-      // Crisp White Background
-      ctx.fillStyle = '#ffffff';
-      ctx.fillRect(0, 0, width, height);
+      const isDark = theme === 'dark';
 
-      // Subtle Soft Cyan/Purple Ambient Glow on White
-      const bgGrad = ctx.createRadialGradient(
-        width * 0.5, height * 0.4, 10,
-        width * 0.5, height * 0.5, Math.max(width, height)
-      );
-      bgGrad.addColorStop(0, 'rgba(0, 180, 216, 0.04)');
-      bgGrad.addColorStop(0.5, 'rgba(124, 58, 237, 0.02)');
-      bgGrad.addColorStop(1, 'rgba(255, 255, 255, 1)');
-      ctx.fillStyle = bgGrad;
-      ctx.fillRect(0, 0, width, height);
+      // Base Canvas Fill
+      if (isDark) {
+        ctx.fillStyle = '#030712';
+        ctx.fillRect(0, 0, width, height);
+
+        // Soft Neon Ambient Radial Glow on Dark
+        const bgGrad = ctx.createRadialGradient(
+          width * 0.5, height * 0.4, 10,
+          width * 0.5, height * 0.5, Math.max(width, height)
+        );
+        bgGrad.addColorStop(0, 'rgba(0, 240, 255, 0.08)');
+        bgGrad.addColorStop(0.4, 'rgba(138, 43, 226, 0.05)');
+        bgGrad.addColorStop(1, 'rgba(3, 7, 18, 1)');
+        ctx.fillStyle = bgGrad;
+        ctx.fillRect(0, 0, width, height);
+      } else {
+        ctx.fillStyle = '#f8fafc';
+        ctx.fillRect(0, 0, width, height);
+
+        // Soft Subtle Ambient Glow on Light
+        const bgGrad = ctx.createRadialGradient(
+          width * 0.5, height * 0.4, 10,
+          width * 0.5, height * 0.5, Math.max(width, height)
+        );
+        bgGrad.addColorStop(0, 'rgba(0, 102, 204, 0.05)');
+        bgGrad.addColorStop(0.5, 'rgba(126, 34, 206, 0.03)');
+        bgGrad.addColorStop(1, '#f8fafc');
+        ctx.fillStyle = bgGrad;
+        ctx.fillRect(0, 0, width, height);
+      }
 
       // --- SECTION A: SPATIAL COMPUTING AR GRID ---
       if (mode === 'spatial' || mode === 'unified') {
@@ -559,7 +577,7 @@ export default function QuantumTechBackground({ mode = 'unified' }) {
       window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [mode]);
+  }, [mode, theme]);
 
   return (
     <canvas

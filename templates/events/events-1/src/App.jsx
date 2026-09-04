@@ -28,9 +28,13 @@ import NotFound from './pages/NotFound';
 import { scheduleData } from './data/schedule';
 
 export default function App() {
-  // Theme State with localStorage persistence (Default Light Mode)
+  // Theme State with localStorage persistence (Default Dark or Saved)
   const [theme, setTheme] = useState(() => {
-    return 'light';
+    try {
+      return localStorage.getItem('theme') || localStorage.getItem('eventora_theme') || 'dark';
+    } catch {
+      return 'dark';
+    }
   });
 
   // Initial Splash Screen Loader
@@ -53,10 +57,22 @@ export default function App() {
   // Toast Notification State
   const [toast, setToast] = useState({ show: false, message: '', type: 'success' });
 
-  // Update theme on <html> tag
+  // Update theme on <html> tag (class and data-theme) and persist to localStorage
   useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+    }
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('eventora_theme', theme);
+    try {
+      localStorage.setItem('theme', theme);
+      localStorage.setItem('eventora_theme', theme);
+    } catch (e) {
+      console.error(e);
+    }
   }, [theme]);
 
   // Initial Loading Screen timeout

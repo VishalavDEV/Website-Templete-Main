@@ -39,7 +39,7 @@ export default function AnimatedBackground({ theme = 'dark' }) {
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseleave', handleMouseLeave);
 
-    const isDark = false;
+    const isDark = theme === 'dark';
 
     // Color definitions for Light Clean Tech Aesthetic
     const primaryRgb = '99, 102, 241';

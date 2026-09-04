@@ -227,7 +227,7 @@ export default function VideoPlayerModal({ isOpen, onClose, onOpenQuote, addToas
         </div>
 
         {/* Video / Drone Viewport */}
-        <div style={{ position: 'relative', width: '100%', height: '480px', background: '#000', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', maxHeight: '60vh', background: '#000', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           {activeChannel === 'video' ? (
             <video
               ref={videoRef}
@@ -237,6 +237,10 @@ export default function VideoPlayerModal({ isOpen, onClose, onOpenQuote, addToas
               playsInline
               loop
               muted
+              onError={(e) => {
+                // Fallback to high-definition MP4 stream if local video missing
+                e.target.src = 'https://assets.mixkit.co/videos/preview/mixkit-modern-building-with-glass-facade-41764-large.mp4';
+              }}
               style={{ width: '100%', height: '100%', objectFit: 'cover', background: '#000' }}
             />
           ) : (

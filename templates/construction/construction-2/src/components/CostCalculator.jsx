@@ -109,7 +109,7 @@ export default function CostCalculator({ onOpenQuote }) {
           <div className="section-tag" style={{ justifyContent: 'center' }}>INSTANT ESTIMATION</div>
           <h2 className="section-title">PROJECT COST CALCULATOR</h2>
           <p className="section-desc" style={{ margin: '12px auto 0 auto' }}>
-            Estimate budget, material allocation, and completion timeline for your architectural or commercial project in real time with our Spring Boot estimation engine.
+            Estimate budget, material allocation, and completion timeline for your architectural or commercial project in real time with our precision estimation engine.
           </p>
         </div>
 

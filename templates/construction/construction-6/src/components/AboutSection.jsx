@@ -27,7 +27,7 @@ export default function AboutSection() {
               <div className="bullet-item">
                 <span className="bullet-check">✓</span>
                 <div>
-                  <strong>Robust Engineering Stack:</strong> Powered by React frontend and Java Spring Boot REST backend microservices.
+                  <strong>Bespoke Structural Engineering:</strong> Advanced structural modeling, passive thermal envelope design, and acoustic isolation.
                 </div>
               </div>
             </div>

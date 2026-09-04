@@ -16,13 +16,37 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 
 export default function App() {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme') || localStorage.getItem('vertex_theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') {
+        return savedTheme;
+      }
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        return 'light';
+      }
+    }
+    return 'dark';
+  });
+
+  // Sync theme with root <html> and localStorage
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+      root.classList.remove('light');
+    } else {
+      root.classList.add('light');
+      root.classList.remove('dark');
+    }
+    root.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    localStorage.setItem('vertex_theme', theme);
+  }, [theme]);
 
   // Dark/Light Theme Toggle Handler
   const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
   };
 
   // Scroll Reveal Observer Setup
@@ -53,15 +77,15 @@ export default function App() {
   }, []);
 
   return (
-    <div className="app-root" style={{ position: 'relative', minHeight: '100vh', background: '#ffffff' }}>
+    <div className="app-root w-full max-w-full overflow-x-hidden min-h-screen relative bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-300">
       <CustomCursor />
       
-      {/* Full-Bleed Interactive Quantum, Neural, Spatial & Pepper Background Canvas on White */}
-      <QuantumTechBackground mode="unified" />
+      {/* Full-Bleed Interactive Quantum, Neural, Spatial & Pepper Background Canvas */}
+      <QuantumTechBackground mode="unified" theme={theme} />
 
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       
-      <main style={{ position: 'relative', zIndex: 5 }}>
+      <main className="relative z-10 w-full max-w-full overflow-x-hidden">
         <Hero />
         <About />
         <Tracks />

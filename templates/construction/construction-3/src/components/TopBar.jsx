@@ -19,7 +19,6 @@ export default function TopBar({ isLightMode, onToggleTheme }) {
             <span>{isLightMode ? '🌙' : '☀️'}</span>
             <span>{isLightMode ? 'DARK MODE' : 'LIGHT MODE'}</span>
           </button>
-          <span>⚡ TEMPLATE 3 — 3D BIM TECH (REACT + SPRING BOOT)</span>
         </div>
       </div>
     </div>

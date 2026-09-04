@@ -16,7 +16,7 @@ export default function Footer() {
               <span className="logo-text">ARCSTONE</span>
             </div>
             <p style={{ color: '#94a3b8', fontSize: '0.85rem', marginTop: '12px', maxWidth: '320px', lineHeight: '1.6' }}>
-              From vision to landmarks. World-class architectural design, turnkey luxury villas, and landmark spaces built with React & Java Spring Boot.
+              From vision to landmarks. World-class architectural design, turnkey luxury villas, and landmark spaces engineered with timeless craftsmanship and sustainable materials.
             </p>
           </div>
 
@@ -33,13 +33,13 @@ export default function Footer() {
             <h4>Offices</h4>
             <span style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Zurich • New York • Dubai</span>
             <span style={{ color: 'var(--color-sage-light)', fontSize: '0.85rem', marginTop: '6px' }}>concierge@arcstone.design</span>
-            <span style={{ color: '#64748b', fontSize: '0.8rem', marginTop: '12px' }}>Tech: React + Spring Boot 3</span>
+            <span style={{ color: '#94a3b8', fontSize: '0.8rem', marginTop: '12px' }}>Licensed Architectural Practice</span>
           </div>
         </div>
 
         <div className="footer-bottom">
           <span>&copy; {new Date().getFullYear()} ARCSTONE Architectural Group. All Rights Reserved.</span>
-          <span>Full Stack Architecture Platform (React 18 + Spring Boot 3)</span>
+          <span>Sustainable Luxury & Precision Construction</span>
         </div>
       </div>
     </footer>

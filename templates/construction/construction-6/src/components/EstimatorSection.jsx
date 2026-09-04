@@ -87,7 +87,7 @@ export default function EstimatorSection({ onShowToast }) {
           <div className="estimator-left">
             <span className="section-subtitle">PROJECT PLANNER</span>
             <h2 className="section-title">Estimate Your Architectural Project</h2>
-            <p className="section-desc">Select your parameters for instant budget takeoff calculated dynamically via Spring Boot backend.</p>
+            <p className="section-desc">Select your parameters for instant budget takeoff calculated dynamically based on real-time architectural indices.</p>
 
             <div className="est-form-group">
               <label>PROJECT CLASSIFICATION:</label>
@@ -123,7 +123,7 @@ export default function EstimatorSection({ onShowToast }) {
             </div>
 
             <div className="est-result-card" style={{ opacity: isCalculating ? 0.7 : 1, transition: 'opacity 0.2s' }}>
-              <span className="est-res-label">ESTIMATED TURNKEY INVESTMENT (SPRING BOOT API)</span>
+              <span className="est-res-label">ESTIMATED TURNKEY INVESTMENT</span>
               <div className="est-total-price" id="estTotalPrice">
                 {estimate.formattedPrice}
               </div>

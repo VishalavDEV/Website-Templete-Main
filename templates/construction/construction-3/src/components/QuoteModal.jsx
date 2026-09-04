@@ -39,7 +39,7 @@ export default function QuoteModal({ isOpen, onClose, showToast }) {
       <div className="modal-card-box" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close-btn" onClick={onClose}>✕</button>
         <div className="smart-tech-pill" style={{ marginBottom: '10px' }}>
-          <span>OFFICIAL EPC INQUIRY (SPRING BOOT BACKED)</span>
+          <span>OFFICIAL EPC TENDER INQUIRY</span>
         </div>
         <h3 style={{ color: 'var(--text-heading)', marginBottom: '14px', fontSize: '1.4rem' }}>
           Request Smart Construction Tender
@@ -110,7 +110,7 @@ export default function QuoteModal({ isOpen, onClose, showToast }) {
             style={{ width: '100%', justifyContent: 'center', marginTop: '10px' }}
             disabled={submitting}
           >
-            {submitting ? 'DISPATCHING TO SPRING BOOT...' : 'DISPATCH TENDER INQUIRY'}
+            {submitting ? 'DISPATCHING INQUIRY...' : 'DISPATCH TENDER INQUIRY'}
           </button>
         </form>
       </div>

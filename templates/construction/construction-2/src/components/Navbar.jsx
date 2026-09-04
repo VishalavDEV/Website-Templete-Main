@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, ArrowRight, Sun, Moon } from 'lucide-react';
+import { Phone, ArrowRight, Sun, Moon, Menu, X } from 'lucide-react';
 
 export default function Navbar({ onOpenQuote, theme, onToggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +33,6 @@ export default function Navbar({ onOpenQuote, theme, onToggleTheme }) {
               {theme === 'light' ? <Moon size={14} /> : <Sun size={14} />}
               <span>{theme === 'light' ? 'DARK MODE' : 'LIGHT MODE'}</span>
             </button>
-            <span className="tpl-tag">REACT + SPRING BOOT 3 • 3D BIM</span>
           </div>
         </div>
       </div>
@@ -96,10 +96,75 @@ export default function Navbar({ onOpenQuote, theme, onToggleTheme }) {
                 GET A QUOTE
                 <ArrowRight size={16} />
               </button>
+
+              <button
+                className="mobile-toggle-btn"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle Menu"
+                style={{
+                  display: 'none',
+                  background: 'none',
+                  border: 'none',
+                  color: 'var(--text-main, #ffffff)',
+                  cursor: 'pointer',
+                  padding: '6px'
+                }}
+              >
+                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
             </div>
           </div>
         </div>
+
+        {/* Mobile / Tablet Navigation Drawer */}
+        {mobileMenuOpen && (
+          <div
+            className="buildhub-mobile-drawer"
+            style={{
+              position: 'absolute',
+              top: '100%',
+              left: 0,
+              right: 0,
+              background: 'var(--bg-card, #0a0f1d)',
+              borderBottom: '2px solid var(--gold-primary, #e5a93c)',
+              padding: '24px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '14px',
+              boxShadow: '0 20px 40px rgba(0,0,0,0.8)',
+              zIndex: 9999
+            }}
+          >
+            <a href="#home" onClick={() => setMobileMenuOpen(false)} style={{ color: '#fff', textDecoration: 'none', fontSize: '1rem', fontWeight: 600, padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>HOME</a>
+            <a href="#bim3d" onClick={() => setMobileMenuOpen(false)} style={{ color: '#fff', textDecoration: 'none', fontSize: '1rem', fontWeight: 600, padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>3D DIGITAL TWIN</a>
+            <a href="#services" onClick={() => setMobileMenuOpen(false)} style={{ color: '#fff', textDecoration: 'none', fontSize: '1rem', fontWeight: 600, padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>SERVICES</a>
+            <a href="#projects" onClick={() => setMobileMenuOpen(false)} style={{ color: '#fff', textDecoration: 'none', fontSize: '1rem', fontWeight: 600, padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>PROJECTS</a>
+            <a href="#calculator" onClick={() => setMobileMenuOpen(false)} style={{ color: '#fff', textDecoration: 'none', fontSize: '1rem', fontWeight: 600, padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>ESTIMATOR</a>
+            <button
+              className="btn btn-primary"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenQuote();
+              }}
+              style={{ width: '100%', justifyContent: 'center', marginTop: '8px' }}
+            >
+              GET A QUOTE →
+            </button>
+          </div>
+        )}
       </header>
+
+      <style>{`
+        @media (max-width: 1024px) {
+          .nav-menu { display: none !important; }
+          .mobile-toggle-btn { display: block !important; }
+          .contact-pill { display: none !important; }
+        }
+        @media (max-width: 768px) {
+          .nav-actions .btn { display: none !important; }
+        }
+      `}</style>
     </>
   );
 }
+

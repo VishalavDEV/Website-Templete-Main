@@ -186,29 +186,44 @@ export default function BimVisualizer({ addToast }) {
     window.addEventListener('touchmove', onTouchMove);
     window.addEventListener('touchend', onTouchEnd);
 
-    // Animation Loop
+    // Animation Loop with Intersection Observer to prevent CPU/memory lag
     let animId;
+    let isVisible = true;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(container);
+
     const animate = () => {
       animId = requestAnimationFrame(animate);
-      if (!isDragging) {
-        buildingGroup.rotation.y += 0.004;
+      if (isVisible) {
+        if (!isDragging) {
+          buildingGroup.rotation.y += 0.003;
+        }
+        renderer.render(scene, camera);
       }
-      renderer.render(scene, camera);
     };
     animate();
 
     const handleResize = () => {
       if (!container) return;
-      const w = container.clientWidth;
-      const h = container.clientHeight;
-      camera.aspect = w / h;
-      camera.updateProjectionMatrix();
-      renderer.setSize(w, h);
+      const w = container.clientWidth || 600;
+      const h = container.clientHeight || 500;
+      if (w > 0 && h > 0) {
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+      }
     };
     window.addEventListener('resize', handleResize);
 
     return () => {
       cancelAnimationFrame(animId);
+      observer.disconnect();
       window.removeEventListener('resize', handleResize);
       container.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
@@ -219,6 +234,7 @@ export default function BimVisualizer({ addToast }) {
       renderer.dispose();
     };
   }, []);
+
 
   const toggleLayer = (layerKey, label) => {
     setLayers(prev => {

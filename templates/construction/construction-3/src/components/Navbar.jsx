@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Navbar({ onOpenQuoteModal }) {
+export default function Navbar({ onOpenQuoteModal, isLightMode, onToggleTheme }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -10,7 +10,7 @@ export default function Navbar({ onOpenQuoteModal }) {
           {/* Brand Logo */}
           <a href="#home" className="futurix-logo">
             <div className="logo-cube">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                 <polygon 
                   points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" 
                   stroke="var(--accent-blue)" 
@@ -40,7 +40,15 @@ export default function Navbar({ onOpenQuoteModal }) {
 
           {/* Right Header Actions */}
           <div className="nav-actions">
-            <button className="btn-cyan-gradient" onClick={onOpenQuoteModal} id="headerQuoteBtn">
+            <button 
+              className="theme-toggle-btn mobile-theme-btn" 
+              onClick={onToggleTheme}
+              title="Toggle Light / Dark Mode"
+              aria-label="Toggle Light / Dark Mode"
+            >
+              <span>{isLightMode ? '🌙' : '☀️'}</span>
+            </button>
+            <button className="btn-cyan-gradient desktop-only-cta" onClick={onOpenQuoteModal} id="headerQuoteBtn">
               GET A QUOTE <span className="arrow">›</span>
             </button>
             <button 
@@ -64,9 +72,18 @@ export default function Navbar({ onOpenQuoteModal }) {
           <a href="#projects" className="nav-link" onClick={() => setMobileOpen(false)}>PROJECTS</a>
           <a href="#estimator" className="nav-link" onClick={() => setMobileOpen(false)}>ESTIMATOR</a>
           <a href="#contact" className="nav-link" onClick={() => setMobileOpen(false)}>CONTACT</a>
+          <div style={{ display: 'flex', gap: '10px', marginTop: '6px' }}>
+            <button 
+              className="theme-toggle-btn" 
+              style={{ width: '100%', justifyContent: 'center', padding: '10px' }}
+              onClick={onToggleTheme}
+            >
+              <span>{isLightMode ? '🌙 DARK MODE' : '☀️ LIGHT MODE'}</span>
+            </button>
+          </div>
           <button 
             className="btn-cyan-gradient" 
-            style={{ width: '100%', justifyContent: 'center' }} 
+            style={{ width: '100%', justifyContent: 'center', marginTop: '4px' }} 
             onClick={() => { setMobileOpen(false); onOpenQuoteModal(); }}
           >
             GET A QUOTE <span className="arrow">›</span>

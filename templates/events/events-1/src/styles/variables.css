@@ -13,18 +13,18 @@
   --dark: #111827;
   --light: #ffffff;
 
-  --bg-main: transparent;
-  --bg-surface: rgba(255, 255, 255, 0.65);
-  --bg-surface-hover: rgba(241, 245, 249, 0.85);
-  --bg-glass: rgba(255, 255, 255, 0.75);
-  --bg-card: rgba(255, 255, 255, 0.7);
+  --bg-main: #f8fafc;
+  --bg-surface: rgba(255, 255, 255, 0.85);
+  --bg-surface-hover: rgba(241, 245, 249, 0.95);
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --bg-card: rgba(255, 255, 255, 0.85);
 
-  --text-main: #1f2937;
-  --text-muted: #6b7280;
-  --text-dim: #9ca3af;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #64748b;
 
-  --border: rgba(226, 232, 240, 0.8);
-  --border-light: rgba(0, 0, 0, 0.06);
+  --border: rgba(226, 232, 240, 0.9);
+  --border-light: rgba(0, 0, 0, 0.08);
   --border-glow: rgba(108, 92, 231, 0.3);
 
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -45,23 +45,24 @@
 }
 
 /* Dark Mode Overrides */
-/* Clean Light Mode Enforced */
+html.dark,
 [data-theme="dark"] {
-  --bg-main: transparent;
-  --bg-surface: rgba(255, 255, 255, 0.75);
-  --bg-surface-hover: rgba(241, 245, 249, 0.85);
-  --bg-glass: rgba(255, 255, 255, 0.8);
-  --bg-card: rgba(255, 255, 255, 0.75);
+  --bg-main: #090d16;
+  --bg-surface: rgba(17, 24, 39, 0.88);
+  --bg-surface-hover: rgba(31, 41, 55, 0.95);
+  --bg-glass: rgba(15, 23, 42, 0.88);
+  --bg-card: rgba(17, 24, 39, 0.82);
 
-  --text-main: #0f172a;
-  --text-muted: #475569;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
   --text-dim: #64748b;
 
-  --border: rgba(226, 232, 240, 0.85);
-  --border-light: rgba(0, 0, 0, 0.06);
-  --border-glow: rgba(108, 92, 231, 0.35);
+  --border: rgba(51, 65, 85, 0.7);
+  --border-light: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(108, 92, 231, 0.45);
 
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 10px 25px -5px rgba(108, 92, 231, 0.08);
-  --shadow-lg: 0 20px 40px -10px rgba(108, 92, 231, 0.15);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
 }
+
