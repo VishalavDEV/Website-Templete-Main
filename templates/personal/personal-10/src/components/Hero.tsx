@@ -112,7 +112,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onViewWork }) => {
                 {/* Photo Container */}
                 <div className="w-full h-full rounded-2xl overflow-hidden relative bg-gray-100 dark:bg-gray-800">
                   <img
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop"
                     alt="Arjun Dev"
                     className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
                   />

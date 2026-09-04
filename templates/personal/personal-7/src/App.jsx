@@ -318,8 +318,8 @@ export default function App() {
                       {/* Laptop Screen widget */}
                       <div className="laptop-drawing shadow-md">
                         <div className="laptop-screen-container">
-                          <div className="screen-text">{profileData?.name || "Alex Vance"}</div>
-                          <div className="screen-bio">{profileData?.title || "Creative Engineer"}</div>
+                          <div className="screen-text">Portfolio OS v2.4</div>
+                          <div className="screen-bio">System Online • Ready</div>
                         </div>
                         <div className="laptop-base"></div>
                       </div>

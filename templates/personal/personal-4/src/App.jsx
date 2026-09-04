@@ -475,7 +475,7 @@ export default function App() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '0 48px',
+        padding: '0 24px',
         zIndex: 1000,
         backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.85)' : 'transparent',
         backdropFilter: scrolled ? 'blur(12px)' : 'none',
@@ -508,7 +508,7 @@ export default function App() {
           </span>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }} className="desktop-menu-links">
+        <div style={{ display: 'flex', alignItems: 'center', gap: 3 }} className="desktop-menu-links">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -516,8 +516,8 @@ export default function App() {
               style={{
                 background: 'none',
                 border: 'none',
-                padding: '8px 14px',
-                fontSize: '0.85rem',
+                padding: '6px 10px',
+                fontSize: '0.82rem',
                 fontWeight: activeSection === item.id ? 700 : 500,
                 color: activeSection === item.id ? '#ea580c' : '#44403c',
                 cursor: 'pointer',
@@ -537,9 +537,9 @@ export default function App() {
             backgroundColor: '#ea580c',
             color: '#ffffff',
             border: 'none',
-            padding: '10px 20px',
+            padding: '8px 16px',
             borderRadius: '99px',
-            fontSize: '0.85rem',
+            fontSize: '0.82rem',
             fontWeight: 600,
             boxShadow: '0 4px 14px rgba(234, 88, 12, 0.2)',
             cursor: 'pointer'
@@ -816,7 +816,7 @@ export default function App() {
                 I love bridging the gap between engineering and clean aesthetics. My design system is built around Light Orange + Cream, evoking warmth, creativity, and professional focus.
               </p>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="about-stats-grid">
                 <div style={{
                   backgroundColor: '#ffffff',
                   padding: '20px',

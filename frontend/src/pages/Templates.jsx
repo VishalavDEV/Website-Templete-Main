@@ -114,11 +114,6 @@ const CATEGORY_META = {
     title: 'Corporate Templates',
     subtitle: 'Explore enterprise corporate portals, investor relations, consulting firms, and business profiles.'
   },
-  corporate: {
-    icon: '🏢',
-    title: 'Corporate Templates',
-    subtitle: 'Explore enterprise corporate portals, investor relations, consulting firms, and business profiles.'
-  },
   all: {
     icon: '📁',
     title: 'Browse Website Templates',
@@ -262,7 +257,14 @@ export default function Templates() {
       return 0;
     });
 
-    return result;
+    // 4. Guaranteed Deduplication (Prevent any template from repeating consecutively or multiple times)
+    const seen = new Set();
+    return result.filter(t => {
+      const key = t.slug || t.id;
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
   }, [allTemplates, selectedCategory, searchQuery, sortBy]);
 
   const matchedCatObj = categories.find(c => c.slug === selectedCategory || c.name.toLowerCase() === selectedCategory.toLowerCase());

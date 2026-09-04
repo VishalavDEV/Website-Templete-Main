@@ -89,7 +89,14 @@ export default function Home({ addToCart, cart }) {
       return 0;
     });
 
-    return result;
+    // 4. Guaranteed Deduplication
+    const seen = new Set();
+    return result.filter(t => {
+      const key = t.slug || t.id;
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
   }, [allTemplates, activeCategory, searchQuery, sortBy]);
 
   // Clean title helper (e.g. "BizConsult — Enterprise Advisory" -> "BizConsult")
