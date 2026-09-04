@@ -81,20 +81,20 @@ export default function Rideora() {
   ];
 
   return (
-    <div className="min-h-screen bg-neutral-900 text-slate-100 font-sans flex flex-col justify-between selection:bg-yellow-400 selection:text-black">
+    <div className="min-h-screen bg-neutral-900 text-slate-100 font-sans flex flex-col justify-between selection:bg-yellow-400 selection:text-black overflow-x-hidden">
       
       {/* Header */}
-      <header className="bg-neutral-950 border-b border-neutral-850 px-6 py-4 flex items-center justify-between sticky top-0 z-40">
+      <header className="bg-neutral-950 border-b border-neutral-850 px-4 sm:px-6 py-4 flex items-center justify-between sticky top-0 z-40">
         <div className="flex items-center gap-2">
-          <div className="h-8 w-8 bg-yellow-400 rounded-full flex items-center justify-center text-black font-black font-outfit text-base">
+          <div className="h-8 w-8 bg-yellow-400 rounded-full flex items-center justify-center text-black font-black font-outfit text-base shrink-0">
             <Zap size={16} className="fill-black" />
           </div>
-          <span className="font-outfit font-black tracking-widest text-lg text-white">RIDEORA</span>
+          <span className="font-outfit font-black tracking-widest text-base sm:text-lg text-white">RIDEORA</span>
         </div>
 
         <div className="flex items-center gap-2">
-          <div className="flex items-center gap-1.5 text-xxs font-mono text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 px-3 py-1.5 rounded-full">
-            <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
+          <div className="flex items-center gap-1.5 text-[10px] sm:text-xxs font-mono text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 px-2.5 sm:px-3 py-1.5 rounded-full">
+            <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse shrink-0" />
             <span className="hidden sm:inline">24/7 ACTIVE NETWORK</span>
             <span className="sm:hidden">ACTIVE</span>
           </div>
@@ -102,48 +102,48 @@ export default function Rideora() {
       </header>
 
       {/* Main Grid Wrapper with Mobile Simulator layout */}
-      <main className="flex-1 flex flex-col items-center gap-8 sm:gap-12 p-4 sm:p-6 w-full">
+      <main className="flex-1 flex flex-col items-center gap-6 sm:gap-12 p-3 sm:p-6 w-full max-w-full overflow-x-hidden">
         
         {/* Smartphone Wrapper Shell Frame */}
         <div className="w-full max-w-md bg-neutral-950 border border-neutral-800 rounded-3xl shadow-2xl flex flex-col relative overflow-hidden">
           <div className="absolute top-2 left-1/2 -translate-x-1/2 h-4 w-32 bg-black rounded-full z-50 pointer-events-none" />
 
-          <div className="pt-8 pb-6 px-4 sm:px-6 flex flex-col gap-6">
+          <div className="pt-8 pb-6 px-3.5 sm:px-6 flex flex-col gap-5 sm:gap-6">
               
               <div className="text-center mt-6">
                 <span className="text-yellow-400 text-[10px] font-bold tracking-widest uppercase block mb-1">RIDE HAILING SERVICE</span>
-                <h2 className="text-2xl font-outfit font-black uppercase text-white">YOUR RIDE IS JUST A TAP AWAY.</h2>
+                <h2 className="text-xl sm:text-2xl font-outfit font-black uppercase text-white tracking-tight">YOUR RIDE IS JUST A TAP AWAY.</h2>
                 <p className="text-neutral-500 text-[11px] font-light leading-normal max-w-xs mx-auto mt-1">
                   Swift pick-up rates and professional drivers in Bengaluru metropolitan areas.
                 </p>
               </div>
 
               {!bookingConfirmed && (
-                <form onSubmit={handleRequestEstimate} className="p-4 rounded-2xl border border-neutral-800 bg-neutral-900/60 flex flex-col gap-4">
+                <form onSubmit={handleRequestEstimate} className="p-3.5 sm:p-4 rounded-2xl border border-neutral-800 bg-neutral-900/60 flex flex-col gap-4">
                   <div className="flex flex-col gap-3">
-                    <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-neutral-950 border border-neutral-800 text-xs">
-                      <MapPin size={14} className="text-emerald-400" />
+                    <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-neutral-950 border border-neutral-800 text-xs min-w-0">
+                      <MapPin size={14} className="text-emerald-400 shrink-0" />
                       <input 
                         type="text" 
                         value={pickup}
                         onChange={(e) => setPickup(e.target.value)}
-                        className="bg-transparent border-none text-white focus:outline-none w-full font-medium"
+                        className="bg-transparent border-none text-white focus:outline-none w-full font-medium min-w-0"
                       />
                     </div>
-                    <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-neutral-950 border border-neutral-800 text-xs">
-                      <Navigation size={14} className="text-yellow-400" />
+                    <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-neutral-950 border border-neutral-800 text-xs min-w-0">
+                      <Navigation size={14} className="text-yellow-400 shrink-0" />
                       <input 
                         type="text" 
                         value={destination}
                         onChange={(e) => setDestination(e.target.value)}
-                        className="bg-transparent border-none text-white focus:outline-none w-full font-medium"
+                        className="bg-transparent border-none text-white focus:outline-none w-full font-medium min-w-0"
                       />
                     </div>
                   </div>
 
                   <button 
                     type="submit"
-                    className="w-full py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md"
+                    className="w-full py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md cursor-pointer"
                   >
                     {calculating ? 'Locating Cabs...' : 'Find Cab Estimate'}
                   </button>
@@ -153,7 +153,7 @@ export default function Rideora() {
               <AnimatePresence>
                 {calculated && !bookingConfirmed && (
                   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col gap-4">
-                    <div className="flex justify-between items-center text-xxs font-mono text-neutral-500 border-b border-neutral-900 pb-2">
+                    <div className="flex flex-wrap justify-between items-center text-[10px] font-mono text-neutral-500 border-b border-neutral-900 pb-2 gap-1">
                       <span>EST. DISTANCE: {estDist} km</span>
                       <span>DURATION: {estTime}</span>
                     </div>
@@ -170,19 +170,19 @@ export default function Rideora() {
                               isSelected ? 'border-yellow-400 bg-yellow-400/5' : 'border-neutral-850 bg-neutral-900/30'
                             }`}
                           >
-                            <div className="flex items-center gap-3">
-                              <div className="text-xs">
-                                <span className="font-bold text-white block">{cat.name}</span>
-                                <span className="text-[9px] text-neutral-500 font-light block">{cat.etaMinutes} mins away • {cat.capacity} seats</span>
+                            <div className="flex items-center gap-3 min-w-0 flex-1">
+                              <div className="text-xs min-w-0">
+                                <span className="font-bold text-white block truncate">{cat.name}</span>
+                                <span className="text-[9px] text-neutral-500 font-light block truncate">{cat.etaMinutes} mins away • {cat.capacity} seats</span>
                               </div>
                             </div>
-                            <span className="font-mono font-bold text-yellow-400 text-sm">₹{price}</span>
+                            <span className="font-mono font-bold text-yellow-400 text-sm shrink-0 ml-2">₹{price}</span>
                           </div>
                         );
                       })}
                     </div>
 
-                    <button onClick={handleBookCab} className="w-full py-3 bg-yellow-400 text-black font-bold text-xs uppercase tracking-wider rounded-xl">
+                    <button onClick={handleBookCab} className="w-full py-3 bg-yellow-400 text-black font-bold text-xs uppercase tracking-wider rounded-xl cursor-pointer">
                       Confirm Booking
                     </button>
                   </motion.div>
@@ -195,13 +195,13 @@ export default function Rideora() {
                     <Check size={24} className="text-emerald-400 mx-auto" />
                     <h4 className="font-bold text-sm text-white uppercase">Your Ride is Confirmed</h4>
                     
-                    <div className="p-3 bg-neutral-950 border border-neutral-850 rounded text-left text-xxs font-mono">
-                      <span>DRIVER: {assignedDriver.name} ({assignedDriver.rating} ★)</span>
-                      <span className="block">VEHICLE: {assignedDriver.vehicle}</span>
+                    <div className="p-3 bg-neutral-950 border border-neutral-850 rounded text-left text-xxs font-mono overflow-hidden">
+                      <span className="block truncate">DRIVER: {assignedDriver.name} ({assignedDriver.rating} ★)</span>
+                      <span className="block truncate">VEHICLE: {assignedDriver.vehicle}</span>
                       <span className="block font-bold text-yellow-400">FARE: ₹{selectedCategory.baseFare + (estDist * selectedCategory.ratePerKm)}</span>
                     </div>
 
-                    <button onClick={() => setBookingConfirmed(false)} className="w-full py-2 border border-neutral-800 text-xs font-semibold rounded text-neutral-400">
+                    <button onClick={() => setBookingConfirmed(false)} className="w-full py-2 border border-neutral-800 text-xs font-semibold rounded text-neutral-400 cursor-pointer">
                       Cancel Ride
                     </button>
                   </motion.div>
@@ -211,9 +211,9 @@ export default function Rideora() {
           </div>
 
         {/* FAQs Panel for corporate passenger audit */}
-        <section className="w-full max-w-lg bg-neutral-950 p-6 rounded-2xl border border-neutral-800">
+        <section className="w-full max-w-lg bg-neutral-950 p-4 sm:p-6 rounded-2xl border border-neutral-800">
           <h3 className="text-sm font-bold text-white mb-4 uppercase tracking-wider flex items-center gap-2">
-            <Info size={16} className="text-yellow-400" /> Rideora FAQs
+            <Info size={16} className="text-yellow-400 shrink-0" /> Rideora FAQs
           </h3>
           <div className="flex flex-col gap-3">
             {faqs.map((faq, idx) => {
@@ -223,10 +223,10 @@ export default function Rideora() {
                   <button
                     type="button"
                     onClick={() => setExpandedFaq(isExp ? null : idx)}
-                    className="w-full p-4 text-left font-bold text-xs text-slate-200 flex justify-between items-center focus:outline-none"
+                    className="w-full p-3 sm:p-4 text-left font-bold text-xs text-slate-200 flex justify-between items-center gap-2 focus:outline-none cursor-pointer"
                   >
-                    <span>{faq.q}</span>
-                    <ChevronRight size={14} className={`transform transition-transform ${isExp ? 'rotate-90 text-yellow-400' : 'text-slate-500'}`} />
+                    <span className="flex-1 min-w-0">{faq.q}</span>
+                    <ChevronRight size={14} className={`transform transition-transform shrink-0 ${isExp ? 'rotate-90 text-yellow-400' : 'text-slate-500'}`} />
                   </button>
                   <AnimatePresence>
                     {isExp && (
@@ -242,9 +242,9 @@ export default function Rideora() {
         </section>
 
         {/* Contact Form */}
-        <section className="w-full max-w-lg bg-neutral-950 p-6 rounded-2xl border border-neutral-800">
+        <section className="w-full max-w-lg bg-neutral-950 p-4 sm:p-6 rounded-2xl border border-neutral-800">
           <h3 className="text-sm font-bold text-white mb-4 uppercase tracking-wider flex items-center gap-2">
-            <User size={16} className="text-yellow-400" /> Support Desk
+            <User size={16} className="text-yellow-400 shrink-0" /> Support Desk
           </h3>
           
           <form onSubmit={handleContactSubmit} className="flex flex-col gap-4 text-xs">

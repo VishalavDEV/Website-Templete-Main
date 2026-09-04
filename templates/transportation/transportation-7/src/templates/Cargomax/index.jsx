@@ -145,28 +145,28 @@ export default function Cargomax() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950">
+      <section className="relative min-h-[85vh] flex items-center py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 overflow-x-hidden">
         <div className="absolute inset-0 z-0">
           <img src={cargomaxImages.hero} alt="Logistics Freight Cargo" className="w-full h-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/40 via-zinc-950/80 to-zinc-950" />
         </div>
 
-        <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center relative z-10">
           <div className="lg:col-span-6">
             <span className="inline-flex items-center gap-1 px-3 py-1 rounded bg-orange-500/10 text-orange-500 text-[10px] font-bold uppercase tracking-widest border border-orange-500/20 mb-6">
-              HEAVY CORGO LOGISTICS
+              HEAVY CARGO LOGISTICS
             </span>
-            <h1 className="text-4xl sm:text-6xl font-outfit font-black tracking-tight leading-none uppercase mb-6">
+            <h1 className="text-3xl xs:text-4xl sm:text-6xl font-outfit font-black tracking-tight leading-none uppercase mb-6 break-words">
               MOVE MORE. <br /> DELIVER <span className="text-orange-500">FASTER</span>.
             </h1>
-            <p className="text-zinc-400 text-sm sm:text-base font-light mb-8 max-w-sm leading-relaxed">
+            <p className="text-zinc-400 text-xs sm:text-base font-light mb-8 max-w-full sm:max-w-sm leading-relaxed">
               Industrial grade cargo shipping, heavy freight road carriage, customs brokerage, and supply chain tracking databases.
             </p>
           </div>
 
           {/* Shipment tracker container */}
-          <div id="tracking" className="lg:col-span-6">
-            <form onSubmit={handleTrack} className="p-6 rounded-2xl border border-zinc-800 bg-zinc-900/60 backdrop-blur-xl">
+          <div id="tracking" className="lg:col-span-6 w-full max-w-full">
+            <form onSubmit={handleTrack} className="p-4 sm:p-6 rounded-2xl border border-zinc-800 bg-zinc-900/60 backdrop-blur-xl w-full max-w-full">
               <h3 className="text-base font-bold text-white mb-4 uppercase tracking-wider flex items-center gap-2">
                 <Search size={18} className="text-orange-500" /> Track Shipment
               </h3>
@@ -177,11 +177,11 @@ export default function Cargomax() {
                   placeholder="Enter Shipment ID (e.g. CMX-2026-10482)"
                   value={trackId}
                   onChange={(e) => setTrackId(e.target.value)}
-                  className="flex-1 bg-zinc-950 border border-zinc-800 rounded p-3 text-xs focus:outline-none focus:border-orange-500 text-white font-mono min-w-0"
+                  className="w-full sm:flex-1 bg-zinc-950 border border-zinc-800 rounded p-3 text-xs focus:outline-none focus:border-orange-500 text-white font-mono min-w-0"
                 />
                 <button 
                   type="submit"
-                  className="px-6 py-3 rounded bg-orange-500 hover:bg-orange-400 text-black font-bold text-xs uppercase tracking-wider shrink-0 cursor-pointer"
+                  className="w-full sm:w-auto px-6 py-3 rounded bg-orange-500 hover:bg-orange-400 text-black font-bold text-xs uppercase tracking-wider shrink-0 cursor-pointer"
                 >
                   Locate
                 </button>
@@ -199,7 +199,7 @@ export default function Cargomax() {
       </section>
 
       {/* Track and trace display */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 w-full max-w-full overflow-x-hidden">
         <AnimatePresence mode="wait">
           {activeShipment && (
             <motion.div 
@@ -207,7 +207,7 @@ export default function Cargomax() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className="p-6 rounded-2xl border border-zinc-850 bg-zinc-900/30 grid grid-cols-1 lg:grid-cols-12 gap-8"
+              className="p-4 sm:p-6 rounded-2xl border border-zinc-850 bg-zinc-900/30 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8"
             >
               <div className="lg:col-span-8">
                 <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider flex flex-wrap items-center gap-2">
@@ -226,7 +226,7 @@ export default function Cargomax() {
                           <span className={`text-xs font-bold block ${isCompleted ? 'text-white' : 'text-zinc-500'}`}>
                             {h.status}
                           </span>
-                          <div className="flex justify-between text-[10px] text-zinc-500 font-mono mt-1">
+                          <div className="flex flex-col sm:flex-row sm:justify-between text-[10px] text-zinc-500 font-mono mt-1 gap-0.5 sm:gap-2">
                             <span>Location: {h.location}</span>
                             <span>Time: {h.time}</span>
                           </div>
@@ -237,13 +237,13 @@ export default function Cargomax() {
                 </div>
               </div>
 
-              <div className="lg:col-span-4 bg-zinc-950 p-6 rounded-xl border border-zinc-850 flex flex-col gap-6">
+              <div className="lg:col-span-4 bg-zinc-950 p-4 sm:p-6 rounded-xl border border-zinc-850 flex flex-col gap-6">
                 <div>
                   <h4 className="text-xs text-zinc-500 uppercase tracking-widest font-semibold mb-1">Expected Delivery</h4>
                   <span className="font-bold text-white text-sm">{activeShipment.estDelivery}</span>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-b border-zinc-900 py-4 font-mono text-xxs text-zinc-400">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 border-t border-b border-zinc-900 py-4 font-mono text-[11px] text-zinc-400">
                   <div>
                     <span className="text-zinc-400 uppercase font-semibold block mb-1">Origin Port</span>
                     <span>{activeShipment.origin}</span>
@@ -268,7 +268,7 @@ export default function Cargomax() {
       </section>
 
       {/* Freight calculator */}
-      <section id="calculator" className="py-24 border-t border-zinc-900 bg-zinc-950/40">
+      <section id="calculator" className="py-16 sm:py-24 border-t border-zinc-900 bg-zinc-950/40 overflow-x-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           
           <div className="w-full">
@@ -319,10 +319,10 @@ export default function Cargomax() {
             </form>
           </div>
 
-          <div className="w-full max-w-full overflow-hidden mx-auto p-6 sm:p-8 rounded-2xl border border-zinc-800 bg-zinc-900/60 text-center shadow-lg">
+          <div className="w-full max-w-full overflow-hidden mx-auto p-4 sm:p-8 rounded-2xl border border-zinc-800 bg-zinc-900/60 text-center shadow-lg">
             <span className="text-[10px] text-zinc-500 uppercase block mb-2 font-bold tracking-wider">Freight Rate Quote</span>
             {calcCost ? (
-              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-mono font-black text-orange-500 my-4 tracking-tighter break-all sm:break-normal">
+              <div className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-mono font-black text-orange-500 my-4 tracking-tighter truncate">
                 ₹{calcCost.toLocaleString('en-IN')}
               </div>
             ) : (
