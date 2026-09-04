@@ -100,11 +100,11 @@ html.light body {
   color: #1e293b;
 }
 
-html.light .bg-[#08080A],
-html.light .bg-[#0A0A0E],
-html.light .bg-[#0C0C12],
+html.light .bg-\[\#08080A\],
+html.light .bg-\[\#0A0A0E\],
+html.light .bg-\[\#0C0C12\],
 html.light .bg-slate-950,
-html.light .bg-[#08080A]/90 {
+html.light .bg-\[\#08080A\]\/90 {
   background-color: #ffffff !important;
 }
 

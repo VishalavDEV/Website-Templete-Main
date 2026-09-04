@@ -118,7 +118,7 @@ FonixAudio->EnableHarmonicDiffraction(EChromaticModel::FlintGlass);`
       </div>
 
       {/* 2. Top Navigation Bar */}
-      <header className="sticky top-0 z-40 backdrop-blur-3xl bg-[#050505]/75 border-b border-white/10">
+      <header className="sticky top-0 z-40 backdrop-blur-3xl bg-[#050505]/75 border-b border-white/10 pt-10 sm:pt-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-teal-400 via-teal-500 to-purple-600 flex items-center justify-center shadow-[0_0_20px_rgba(45,212,191,0.3)]">

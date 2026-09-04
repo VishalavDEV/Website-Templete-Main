@@ -26,7 +26,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
   };
 
   return (
-    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 max-w-[95vw] sm:max-w-none overflow-x-auto flex items-center gap-1.5 sm:gap-2 p-1 sm:p-1.5 bg-[#050505]/90 backdrop-blur-3xl border border-white/20 rounded-full shadow-[0_0_50px_rgba(45,212,191,0.2)]">
+    <div className="fixed top-2 sm:top-4 left-1/2 -translate-x-1/2 z-50 max-w-[95vw] sm:max-w-none overflow-x-auto whitespace-nowrap flex items-center gap-1.5 sm:gap-2 p-1 sm:p-1.5 bg-[#050505]/95 backdrop-blur-3xl border border-white/20 rounded-full shadow-[0_0_50px_rgba(45,212,191,0.2)]">
       {/* View Mode Toggle Pill */}
       <div className="flex items-center gap-1 bg-black/60 p-1 rounded-full border border-white/10">
         <button
