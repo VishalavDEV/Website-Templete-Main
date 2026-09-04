@@ -43,7 +43,9 @@ export default function App() {
     playClick();
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+      const yOffset = -90;
+      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
     }
   };
 

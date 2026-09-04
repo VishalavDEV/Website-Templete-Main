@@ -49,7 +49,54 @@ try {
     }
   }
 
-  // 2. Install frontend dependencies
+  // 3. Build all Portfolio templates
+  const portfolioDir = path.resolve('templates/portfolio');
+  if (fs.existsSync(portfolioDir)) {
+    const templates = fs.readdirSync(portfolioDir).filter(t => 
+      fs.statSync(path.join(portfolioDir, t)).isDirectory()
+    );
+    for (const templateDirName of templates) {
+      const templatePath = path.join(portfolioDir, templateDirName);
+      if (fs.existsSync(path.join(templatePath, 'package.json'))) {
+        console.log(`Building Portfolio template: ${templateDirName}...`);
+        const targetName = templateDirName.toLowerCase();
+        try {
+          execSync(`npx vite build --outDir ${path.resolve('frontend/public/templates/portfolio', targetName)}`, {
+            cwd: templatePath,
+            stdio: 'inherit'
+          });
+        } catch (err) {
+          console.warn(`Failed to build Portfolio ${templateDirName}, proceeding...`);
+        }
+      }
+    }
+  }
+
+  // 4. Build all Restaurant templates
+  const restaurantDir = path.resolve('templates/restaurant');
+  if (fs.existsSync(restaurantDir)) {
+    const templates = fs.readdirSync(restaurantDir).filter(t => 
+      fs.statSync(path.join(restaurantDir, t)).isDirectory()
+    );
+    for (const templateDirName of templates) {
+      const templatePath = path.join(restaurantDir, templateDirName);
+      if (fs.existsSync(path.join(templatePath, 'package.json'))) {
+        console.log(`Building Restaurant template: ${templateDirName}...`);
+        const targetName = templateDirName.toLowerCase();
+        try {
+          execSync(`npx vite build --outDir ${path.resolve('frontend/public/templates/restaurant', targetName)}`, {
+            cwd: templatePath,
+            stdio: 'inherit'
+          });
+        } catch (err) {
+          console.warn(`Failed to build Restaurant ${templateDirName}, proceeding...`);
+        }
+      }
+    }
+  }
+
+
+  // 4. Install frontend dependencies
   console.log('Installing frontend dependencies...');
   execSync('npm install', { cwd: path.resolve('frontend'), stdio: 'inherit' });
 

@@ -51,7 +51,7 @@ export default function Navbar() {
         <nav className={`navbar-pill ${isScrolled ? 'scrolled-pill' : ''}`}>
           {/* Brand Logo Text */}
           <a href="#hero" className="nav-brand-box">
-            <span className="brand-title">Lunara<span>Press</span>.</span>
+            <span className="brand-title">Echoes<span>OfTomorrow</span>.</span>
           </a>
 
           {/* Desktop Navigation Links in Page Order */}
@@ -97,7 +97,7 @@ export default function Navbar() {
       <div className={`mobile-menu ${mobileOpen ? 'open' : ''}`}>
         <div className="mobile-menu-header">
           <div className="nav-brand-box">
-            <span className="brand-title">Lunara<span>Press</span>.</span>
+            <span className="brand-title">Echoes<span>OfTomorrow</span>.</span>
           </div>
           <button 
             onClick={() => setMobileOpen(false)}

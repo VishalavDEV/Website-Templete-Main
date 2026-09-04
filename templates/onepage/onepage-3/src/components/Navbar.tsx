@@ -20,6 +20,15 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleStartProject = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setIsOpen(false);
+    const element = document.getElementById("contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const navLinks = [
     { label: "Work", href: "#work" },
     { label: "Services", href: "#services" },
@@ -67,6 +76,7 @@ export default function Navbar() {
             </nav>
             <a
               href="#contact"
+              onClick={handleStartProject}
               className="group flex items-center gap-2 text-xs font-bold uppercase tracking-wider border border-nye-dark dark:border-nye-light px-5 py-2.5 rounded-full hover:bg-nye-dark hover:text-nye-light dark:hover:bg-nye-light dark:hover:text-nye-dark transition-all duration-300"
             >
               Start a Project
@@ -125,7 +135,7 @@ export default function Navbar() {
             >
               <a
                 href="#contact"
-                onClick={() => setIsOpen(false)}
+                onClick={handleStartProject}
                 className="group flex items-center justify-between w-full border border-nye-light px-6 py-4 rounded-full text-base font-bold uppercase tracking-wider hover:bg-nye-light hover:text-nye-dark transition-all duration-300"
               >
                 Start a Project

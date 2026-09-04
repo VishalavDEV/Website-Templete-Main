@@ -97,6 +97,66 @@ export default function DashboardMockup() {
         </div>
       </div>
 
+      {/* Mobile & Tablet Workspace Switcher Tabs */}
+      <div className="flex lg:hidden items-center gap-2 overflow-x-auto pb-2 mb-3 scrollbar-none border-b border-white/[0.06]">
+        <button 
+          onClick={() => {
+            setActiveWorkspace('auto-flows');
+            showToast('📂 Switched to Auto-Flows workspace');
+          }}
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+            activeWorkspace === 'auto-flows'
+              ? 'text-amber-400 bg-amber-500/15 border border-amber-500/30'
+              : 'text-zinc-400 hover:text-white bg-white/[0.02] border border-white/[0.05]'
+          }`}
+        >
+          <Zap size={13} />
+          Auto-Flows
+        </button>
+        <button 
+          onClick={() => {
+            setActiveWorkspace('pipelines');
+            showToast('⚙️ Switched to Pipelines view');
+          }}
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all cursor-pointer ${
+            activeWorkspace === 'pipelines'
+              ? 'text-amber-400 bg-amber-500/15 border border-amber-500/30 font-semibold'
+              : 'text-zinc-400 hover:text-white bg-white/[0.02] border border-white/[0.05]'
+          }`}
+        >
+          <Layers size={13} />
+          Pipelines
+        </button>
+        <button 
+          onClick={() => {
+            setActiveWorkspace('telemetry');
+            showToast('📊 Live Telemetry stream connected');
+          }}
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all cursor-pointer ${
+            activeWorkspace === 'telemetry'
+              ? 'text-amber-400 bg-amber-500/15 border border-amber-500/30 font-semibold'
+              : 'text-zinc-400 hover:text-white bg-white/[0.02] border border-white/[0.05]'
+          }`}
+        >
+          <Activity size={13} />
+          Telemetry
+        </button>
+        <button 
+          onClick={() => {
+            setActiveWorkspace('security');
+            showToast('🛡️ Security Log audited: OK');
+          }}
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all cursor-pointer ${
+            activeWorkspace === 'security'
+              ? 'text-amber-400 bg-amber-500/15 border border-amber-500/30 font-semibold'
+              : 'text-zinc-400 hover:text-white bg-white/[0.02] border border-white/[0.05]'
+          }`}
+        >
+          <ShieldCheck size={13} />
+          Security Log
+        </button>
+      </div>
+
       {/* Main Grid Content */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
         

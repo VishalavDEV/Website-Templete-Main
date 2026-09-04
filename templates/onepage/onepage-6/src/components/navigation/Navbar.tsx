@@ -29,22 +29,26 @@ export const Navbar: React.FC = () => {
     setMobileMenuOpen(false);
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const yOffset = -80;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
 
   return (
     <header
+      className="main-header"
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
         zIndex: 900,
-        padding: isScrolled ? '16px 5vw' : '28px 5vw',
-        background: isScrolled ? 'rgba(242, 238, 232, 0.85)' : 'transparent',
-        backdropFilter: isScrolled ? 'blur(16px)' : 'none',
-        borderBottom: isScrolled ? '1px solid var(--border-light)' : 'none',
+        padding: isScrolled ? '12px 5vw' : '16px 5vw',
+        background: isScrolled ? 'rgba(242, 238, 232, 0.95)' : 'rgba(242, 238, 232, 0.85)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        borderBottom: '1px solid var(--border-light)',
         transition: 'padding 0.3s var(--ease-out-expo), background 0.3s, border-bottom 0.3s',
         display: 'flex',
         alignItems: 'center',
@@ -149,14 +153,15 @@ export const Navbar: React.FC = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            top: '70px',
+            top: '64px',
             backgroundColor: 'var(--bg-dark)',
             color: 'var(--text-on-dark)',
             zIndex: 999,
             display: 'flex',
             flexDirection: 'column',
-            padding: '40px 8vw',
-            gap: '24px',
+            padding: '30px 8vw',
+            gap: '20px',
+            overflowY: 'auto',
             animation: 'fadeIn 0.3s ease-out'
           }}
         >
@@ -167,7 +172,7 @@ export const Navbar: React.FC = () => {
               onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
               style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: '2rem',
+                fontSize: '1.75rem',
                 color: 'var(--bg-light)',
                 textDecoration: 'none'
               }}

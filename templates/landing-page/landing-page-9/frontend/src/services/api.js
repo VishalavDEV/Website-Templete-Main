@@ -35,7 +35,7 @@ export const fetchVehicles = async (category = '') => {
     return await response.json();
   } catch (error) {
     console.warn('API fetchVehicles fallback used:', error.message);
-    return [
+    const allVehicles = [
       {
         id: 'bmw-m2-cs',
         name: 'BMW M2 CS Shadowline',
@@ -93,5 +93,10 @@ export const fetchVehicles = async (category = '') => {
         featured: false
       }
     ];
+
+    if (category && category !== 'All') {
+      return allVehicles.filter(v => v.category.toLowerCase() === category.toLowerCase());
+    }
+    return allVehicles;
   }
 };

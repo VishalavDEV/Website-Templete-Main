@@ -9,7 +9,7 @@ export default function AboutBook() {
           {/* Left Column Artwork */}
           <div className="about-image-wrapper reveal-on-scroll">
             <img 
-              src="/assets/images/chapter1.jpg" 
+              src="./assets/images/chapter1.jpg" 
               alt="Memory Vault Conceptual Artwork" 
             />
             <div className="about-badge-floating">

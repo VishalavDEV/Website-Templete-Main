@@ -613,3 +613,21 @@ button {
 .delay-4 { transition-delay: 0.48s !important; }
 .delay-5 { transition-delay: 0.60s !important; }
 .delay-6 { transition-delay: 0.72s !important; }
+
+/* Responsive Header Toggle */
+@media (max-width: 1024px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-toggle {
+    display: flex !important;
+  }
+}
+@media (min-width: 1025px) {
+  .desktop-nav {
+    display: flex !important;
+  }
+  .mobile-toggle {
+    display: none !important;
+  }
+}

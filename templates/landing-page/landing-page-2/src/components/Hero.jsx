@@ -206,10 +206,10 @@ export default function Hero({ onOpenContact, onOpenVideo }) {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="absolute -top-4 -left-4 sm:top-2 sm:left-0 p-3 rounded-2xl glass-panel bg-[#0d121f]/90 border border-white/15 shadow-xl flex items-center gap-3 animate-float z-20"
+                className="absolute top-0 left-0 sm:top-2 sm:left-0 p-2.5 sm:p-3 rounded-2xl glass-panel bg-[#0d121f]/90 border border-white/15 shadow-xl flex items-center gap-2.5 sm:gap-3 animate-float z-20"
               >
                 <div className="p-2 rounded-xl bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                  <Bot className="w-5 h-5" />
+                  <Bot className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white">1,000+ Agents</div>
@@ -222,10 +222,10 @@ export default function Hero({ onOpenContact, onOpenVideo }) {
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="absolute -bottom-4 -right-4 sm:bottom-4 sm:right-0 p-3 rounded-2xl glass-panel bg-[#0d121f]/90 border border-white/15 shadow-xl flex items-center gap-3 animate-float-slow z-20"
+                className="absolute bottom-0 right-0 sm:bottom-4 sm:right-0 p-2.5 sm:p-3 rounded-2xl glass-panel bg-[#0d121f]/90 border border-white/15 shadow-xl flex items-center gap-2.5 sm:gap-3 animate-float-slow z-20"
               >
                 <div className="p-2 rounded-xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
-                  <Activity className="w-5 h-5 text-cyan-400" />
+                  <Activity className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white">8.4ms Global Sync</div>
@@ -238,7 +238,7 @@ export default function Hero({ onOpenContact, onOpenVideo }) {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
-                className="absolute bottom-12 -left-6 sm:bottom-16 sm:-left-8 p-2.5 rounded-xl glass-panel bg-[#0d121f]/90 border border-white/15 shadow-xl hidden sm:flex items-center gap-2.5 animate-float z-20"
+                className="absolute bottom-12 left-0 sm:bottom-16 sm:-left-4 p-2.5 rounded-xl glass-panel bg-[#0d121f]/90 border border-white/15 shadow-xl hidden md:flex items-center gap-2.5 animate-float z-20"
               >
                 <div className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#10b981]" />
                 <span className="text-[11px] font-mono text-slate-200 font-medium">

@@ -2,15 +2,22 @@
 
 @layer base {
   :root {
+    color-scheme: dark;
     --font-display: 'Syne', 'Space Grotesk', sans-serif;
     --font-mono: 'IBM Plex Mono', monospace;
     --font-body: 'Space Grotesk', 'Inter', sans-serif;
   }
 
+  html {
+    color-scheme: dark !important;
+    background-color: #040507 !important;
+    color: #e2e8f0 !important;
+  }
+
   body {
     font-family: var(--font-body);
-    background-color: #040507;
-    color: #e2e8f0;
+    background-color: #040507 !important;
+    color: #e2e8f0 !important;
     overflow-x: hidden;
   }
 

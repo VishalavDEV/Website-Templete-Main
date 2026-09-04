@@ -63,9 +63,10 @@ export default function Hero({ onOpenModal, onWatchDemo }) {
     >
       <div className="section-wrapper" style={{ padding: '0 24px', width: '100%' }}>
         <div
+          className="hero-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
             gap: '56px',
             alignItems: 'center',
           }}
@@ -294,7 +295,7 @@ export default function Hero({ onOpenModal, onWatchDemo }) {
 
               {/* Floating Orbit Card 1: Sub-millisecond latency */}
               <motion.div
-                className="glass-panel"
+                className="glass-panel hero-floating-card-1"
                 style={{
                   position: 'absolute',
                   top: '-15px',
@@ -322,7 +323,7 @@ export default function Hero({ onOpenModal, onWatchDemo }) {
 
               {/* Floating Orbit Card 2: Global Clusters */}
               <motion.div
-                className="glass-panel"
+                className="glass-panel hero-floating-card-2"
                 style={{
                   position: 'absolute',
                   bottom: '18px',

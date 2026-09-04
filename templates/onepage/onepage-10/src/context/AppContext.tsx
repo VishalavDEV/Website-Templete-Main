@@ -121,16 +121,28 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   // Apply Theme to DOM
   useEffect(() => {
     const root = document.documentElement;
-    const isDark =
-      preferences.theme === 'dark' ||
-      (preferences.theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
-    if (isDark) {
-      root.classList.add('dark');
-      root.classList.remove('light');
-    } else {
-      root.classList.remove('dark');
-      root.classList.add('light');
+    const applyTheme = () => {
+      const isDark =
+        preferences.theme === 'dark' ||
+        (preferences.theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+      if (isDark) {
+        root.classList.add('dark');
+        root.classList.remove('light');
+      } else {
+        root.classList.remove('dark');
+        root.classList.add('light');
+      }
+    };
+
+    applyTheme();
+
+    if (preferences.theme === 'system') {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const listener = () => applyTheme();
+      mediaQuery.addEventListener('change', listener);
+      return () => mediaQuery.removeEventListener('change', listener);
     }
   }, [preferences.theme]);
 

@@ -31,7 +31,7 @@ export const SkillGalaxySection: React.FC<SkillGalaxySectionProps> = ({
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         {/* 3D WebGL Skill Galaxy */}
-        <div className="lg:col-span-8 h-[480px] md:h-[580px] relative">
+        <div className="lg:col-span-8 h-[340px] sm:h-[480px] md:h-[580px] relative">
           <SkillGalaxyScene
             selectedSkill={selectedSkill}
             onSelectSkill={(skill) => {

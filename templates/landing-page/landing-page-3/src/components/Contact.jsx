@@ -82,9 +82,10 @@ export default function Contact({ onShowToast }) {
 
         {/* Contact Split Grid */}
         <div
+          className="contact-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
             gap: '38px',
             alignItems: 'stretch',
           }}

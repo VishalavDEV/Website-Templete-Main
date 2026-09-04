@@ -75,7 +75,7 @@ export const Hero: React.FC = () => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '120px 5vw 40px 5vw',
+        padding: '140px 5vw 40px 5vw',
         overflow: 'hidden',
         backgroundColor: 'var(--bg-light)'
       }}

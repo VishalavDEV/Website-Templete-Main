@@ -51,7 +51,7 @@ export default function Author() {
           {/* Left Column Author Portrait */}
           <div className="author-image-frame reveal-on-scroll">
             <img 
-              src="/assets/images/author_portrait.jpg" 
+              src="./assets/images/author_portrait.jpg" 
               alt="Mira Rowan Author Portrait" 
             />
           </div>

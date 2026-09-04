@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageSquare, FileText, Calendar, Trello, PenTool, GitBranch } from 'lucide-react';
+import { MessageSquare, FileText, Calendar, Kanban, PenTool, GitBranch } from 'lucide-react';
 import './Integrations.css';
 
 export default function Integrations() {
@@ -22,7 +22,7 @@ export default function Integrations() {
     {
       name: 'Jira',
       desc: 'Synchronize backlog ticket statuses and developer assignments automatically.',
-      icon: <Trello size={20} />,
+      icon: <Kanban size={20} />,
     },
     {
       name: 'Figma',

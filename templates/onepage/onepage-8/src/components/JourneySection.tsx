@@ -28,7 +28,7 @@ export const JourneySection: React.FC<JourneySectionProps> = ({
 
       <div className="relative">
         {/* Central Vertical Glowing Neon Line */}
-        <div className="absolute left-4 md:left-1/2 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-gradient-to-b from-cyan-500 via-purple-500 to-emerald-500 shadow-[0_0_12px_rgba(6,182,212,0.6)]" />
+        <div className="absolute left-6 md:left-1/2 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-gradient-to-b from-cyan-500 via-purple-500 to-emerald-500 shadow-[0_0_12px_rgba(6,182,212,0.6)]" />
 
         <div className="space-y-12 md:space-y-20">
           {EXPERIENCE_DATA.map((exp, idx) => {
@@ -50,10 +50,10 @@ export const JourneySection: React.FC<JourneySectionProps> = ({
                 }}
                 className={`relative flex flex-col md:flex-row items-start ${
                   isEven ? 'md:flex-row-reverse' : ''
-                } gap-8 pl-10 md:pl-0`}
+                } gap-8 pl-12 md:pl-0`}
               >
                 {/* Year Marker on Central Timeline */}
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#050811] border-2 border-cyan-400 flex items-center justify-center font-mono text-xs font-bold text-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.8)] z-10">
+                <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#050811] border-2 border-cyan-400 flex items-center justify-center font-mono text-xs font-bold text-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.8)] z-10">
                   {exp.year.slice(2)}
                 </div>
 

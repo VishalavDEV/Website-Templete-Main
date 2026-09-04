@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plane, Search, Calendar, Users, ArrowRight, ArrowLeft, Check, Compass, Ticket, Award, Star, Info, HelpCircle, ChevronRight } from 'lucide-react';
+import { Plane, Search, Calendar, Users, ArrowRight, ArrowLeft, Check, Compass, Ticket, Award, Star, Info, HelpCircle, ChevronRight, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { skyrouteAirports, mockFlights, cabinClasses } from '../../data/skyrouteData';
 import { skyrouteImages } from '../../data/skyrouteImages';
@@ -11,6 +11,7 @@ export default function Skyroute() {
   const [departDate, setDepartDate] = useState('2026-08-27');
   const [pCount, setPCount] = useState(1);
   const [selectedCabin, setSelectedCabin] = useState(cabinClasses[0]);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Flights search states
   const [searched, setSearched] = useState(false);
@@ -33,6 +34,15 @@ export default function Skyroute() {
   // FAQ state
   const [expandedFaq, setExpandedFaq] = useState(null);
 
+  const handleBackToTemplates = (e) => {
+    if (e) e.preventDefault();
+    if (window.top && window.top !== window) {
+      window.top.location.href = '/templates';
+    } else {
+      window.location.href = '/templates';
+    }
+  };
+
   const handleSearch = (e) => {
     e.preventDefault();
     if (fromAir === toAir) {
@@ -45,7 +55,39 @@ export default function Skyroute() {
 
     setTimeout(() => {
       const matches = mockFlights.filter(f => f.fromCode === fromAir && f.toCode === toAir);
-      setResults(matches);
+      if (matches.length === 0) {
+        const generated = [
+          {
+            id: `SR-${Math.floor(200 + Math.random() * 700)}`,
+            airline: "Skyroute Express",
+            flightNumber: `SR-${Math.floor(200 + Math.random() * 700)}`,
+            fromCode: fromAir,
+            toCode: toAir,
+            departure: "08:30",
+            arrival: "11:15",
+            duration: "2h 45m",
+            stops: "Non-stop",
+            price: 5800,
+            classPrices: { economy: 5800, premium: 10400, business: 22800 }
+          },
+          {
+            id: `SR-${Math.floor(200 + Math.random() * 700)}`,
+            airline: "Skyroute Airways",
+            flightNumber: `SR-${Math.floor(200 + Math.random() * 700)}`,
+            fromCode: fromAir,
+            toCode: toAir,
+            departure: "16:45",
+            arrival: "19:20",
+            duration: "2h 35m",
+            stops: "Non-stop",
+            price: 6900,
+            classPrices: { economy: 6900, premium: 12200, business: 25900 }
+          }
+        ];
+        setResults(generated);
+      } else {
+        setResults(matches);
+      }
       setSearched(true);
       setSearching(false);
     }, 800);
@@ -108,24 +150,86 @@ export default function Skyroute() {
     <div className="min-h-screen bg-slate-950 text-white font-sans overflow-x-hidden selection:bg-amber-500 selection:text-slate-950">
       
       {/* Premium Aviation Navigation */}
-      <nav className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-amber-500/20 px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Plane className="text-amber-400 rotate-45" size={26} />
-          <span className="font-outfit font-black tracking-widest text-xl bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-500 bg-clip-text text-transparent">SKYROUTE</span>
+      <nav className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-amber-500/20 px-4 sm:px-6 py-3 sm:py-4 pt-3 sm:pt-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Plane className="text-amber-400 rotate-45" size={24} />
+            <span className="font-outfit font-black tracking-widest text-lg sm:text-xl bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-500 bg-clip-text text-transparent">SKYROUTE</span>
+          </div>
+
+          <div className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-300">
+            <a href="#booking" className="hover:text-amber-400 transition-colors">Book Travel</a>
+            <a href="#tracking" className="hover:text-amber-400 transition-colors">Cargo Tracking</a>
+            <a href="#cabins" className="hover:text-amber-400 transition-colors">Cabins</a>
+            <a href="#contact" className="hover:text-amber-400 transition-colors">Contact</a>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <button 
+              type="button"
+              onClick={handleBackToTemplates}
+              className="flex items-center gap-1 px-3 sm:px-4 py-1.5 rounded border border-amber-500/30 bg-amber-500/5 text-[10px] font-bold tracking-wider text-amber-400 uppercase hover:bg-amber-400 hover:text-slate-950 transition-all cursor-pointer"
+            >
+              <ArrowLeft size={10} /> Templates
+            </button>
+            <button 
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-1.5 rounded border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 cursor-pointer"
+              aria-label="Toggle Navigation Menu"
+            >
+              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </div>
 
-        <div className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-300">
-          <a href="#booking" className="hover:text-amber-400 transition-colors">Book Travel</a>
-          <a href="#tracking" className="hover:text-amber-400 transition-colors">Cargo Tracking</a>
-          <a href="#cabins" className="hover:text-amber-400 transition-colors">Cabins</a>
-          <a href="#contact" className="hover:text-amber-400 transition-colors">Contact</a>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <Link to="/transportation" className="flex items-center gap-1 px-4 py-1.5 rounded border border-amber-500/30 bg-amber-500/5 text-[10px] font-bold tracking-wider text-amber-400 uppercase hover:bg-amber-400 hover:text-slate-950 transition-all">
-            <ArrowLeft size={10} /> Templates
-          </Link>
-        </div>
+        {/* Mobile Navigation Drawer */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden mt-3 pt-3 border-t border-amber-500/20 flex flex-col gap-3 text-xs uppercase font-bold tracking-wider text-slate-200"
+            >
+              <a 
+                href="#booking" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className="py-2 hover:text-amber-400 transition-colors"
+              >
+                Book Travel
+              </a>
+              <a 
+                href="#tracking" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className="py-2 hover:text-amber-400 transition-colors"
+              >
+                Cargo Tracking
+              </a>
+              <a 
+                href="#cabins" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className="py-2 hover:text-amber-400 transition-colors"
+              >
+                Cabins
+              </a>
+              <a 
+                href="#contact" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className="py-2 hover:text-amber-400 transition-colors"
+              >
+                Contact
+              </a>
+              <button 
+                type="button"
+                onClick={(e) => { setMobileMenuOpen(false); handleBackToTemplates(e); }}
+                className="py-2 text-left text-amber-400 flex items-center gap-1 font-bold border-t border-slate-800 mt-1 pt-2"
+              >
+                <ArrowLeft size={12} /> Back to Templates
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* Hero Section with Aircraft Background */}
@@ -343,6 +447,67 @@ export default function Skyroute() {
               </motion.div>
             )}
           </AnimatePresence>
+        </div>
+      </section>
+
+      {/* Cabins Showcase Section */}
+      <section id="cabins" className="py-24 border-t border-slate-900 bg-slate-950/60">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-amber-400 text-xs font-semibold uppercase tracking-wider block">LUXURY IN FLIGHT</span>
+            <h2 className="text-3xl sm:text-4xl font-outfit font-black tracking-tight text-white uppercase mt-1">CABIN CLASSES & SUITES</h2>
+            <p className="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto mt-3 font-light">
+              Crafted for ultimate relaxation, seamless productivity, and refined aerial gastronomy across all route distances.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {cabinClasses.map((cabin) => (
+              <div 
+                key={cabin.id}
+                className={`rounded-2xl border bg-slate-900/60 overflow-hidden flex flex-col justify-between transition-all hover:border-amber-400/50 ${
+                  selectedCabin?.id === cabin.id ? 'border-amber-400 ring-1 ring-amber-400/30' : 'border-slate-800'
+                }`}
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={cabin.image} 
+                    alt={cabin.name} 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
+                  <span className="absolute bottom-3 left-4 text-sm font-bold text-white uppercase tracking-wider font-outfit">
+                    {cabin.name}
+                  </span>
+                </div>
+
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <p className="text-slate-450 text-xs leading-relaxed font-light mb-6">
+                      {cabin.description}
+                    </p>
+
+                    <div className="space-y-2.5 mb-6">
+                      {cabin.features.map((feat, i) => (
+                        <div key={i} className="flex items-center gap-2 text-xs text-slate-300">
+                          <Check size={14} className="text-amber-400 shrink-0" />
+                          <span>{feat}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <a 
+                    href="#booking"
+                    onClick={() => setSelectedCabin(cabin)}
+                    className="w-full py-2.5 rounded-lg border border-amber-500/30 bg-amber-500/10 hover:bg-amber-400 hover:text-slate-950 text-amber-400 text-xs font-bold uppercase tracking-wider text-center transition-all block"
+                  >
+                    Select {cabin.name}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

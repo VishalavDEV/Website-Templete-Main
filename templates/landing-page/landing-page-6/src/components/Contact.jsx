@@ -40,14 +40,14 @@ export default function Contact() {
             Let's Connect
           </h2>
           <p className="section-desc reveal-on-scroll delay-2">
-            Have questions for Lunara Press, press inquiries, or author event requests? Reach out to our team.
+            Have questions about 'The Echoes of Tomorrow', press inquiries, or author event requests? Reach out to our team.
           </p>
         </div>
 
         <div className="contact-grid">
           {/* Left Column Publisher Info */}
           <div className="contact-info-card reveal-on-scroll">
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '8px' }}>Lunara Press Editorial</h3>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '8px' }}>The Echoes of Tomorrow Editorial Desk</h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', marginBottom: '16px' }}>
               We welcome inquiries from booksellers, reviewers, press, and readers worldwide.
             </p>
@@ -56,7 +56,7 @@ export default function Contact() {
               <div className="contact-icon-box"><Mail size={20} /></div>
               <div>
                 <div className="contact-info-title">Email</div>
-                <div className="contact-info-text">contact@lunarapress.com</div>
+                <div className="contact-info-text">contact@echoesoftomorrow.com</div>
               </div>
             </div>
 
@@ -84,7 +84,7 @@ export default function Contact() {
                 <CheckCircle size={54} color="var(--accent)" />
                 <h3 style={{ fontSize: '1.75rem', marginTop: '16px' }}>Message Received!</h3>
                 <p style={{ color: 'var(--text-secondary)' }}>
-                  Thank you for contacting Lunara Press. A representative will respond to your query within 24 business hours.
+                  Thank you for reaching out. An editorial representative will respond to your query within 24 business hours.
                 </p>
               </div>
             ) : (

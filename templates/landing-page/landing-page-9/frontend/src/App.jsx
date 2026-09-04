@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import PinnacleSection from './components/PinnacleSection';
 import StepCards from './components/StepCards';
+import FleetShowcase from './components/FleetShowcase';
 import SupportSection from './components/SupportSection';
 import SecuritySection from './components/SecuritySection';
 import BookingModal from './components/BookingModal';
@@ -44,6 +45,9 @@ export default function App() {
       {/* 4. Main Landing Hero (Black luxury car with 3D text, active headlight blinking & wheel turning) */}
       <main className="flex-grow">
         <HeroSection onOpenBooking={() => handleOpenBooking()} />
+
+        {/* Fleet Showcase */}
+        <FleetShowcase onSelectVehicle={handleOpenBooking} />
 
         {/* 5. Secondary Features (Pinnacle mountain drive & Step Cards from reference image) */}
         <div id="about">

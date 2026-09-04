@@ -97,16 +97,17 @@ export default function App() {
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
           {/* Hero Left Content */}
-          <div className="col-span-12 lg:col-span-7 flex flex-col items-start text-left">
+          <div className="col-span-12 lg:col-span-7 flex flex-col items-start text-left w-full max-w-full">
             <span className="text-[10px] font-sans tracking-[0.25em] text-[#262626]/50 uppercase font-black mb-4 block">
               {portfolioData.hero.eyebrow}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#262626] tracking-tight leading-[1.1] font-light">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-[#262626] tracking-tight leading-[1.1] font-light break-words max-w-full">
               {portfolioData.hero.headline}
             </h1>
             <p className="mt-6 text-sm md:text-base text-zinc-500 max-w-lg leading-relaxed">
               {portfolioData.hero.subtext}
             </p>
+          </div>
 
             {/* CTAs */}
             <div className="mt-8 flex flex-wrap items-center gap-6">
@@ -139,7 +140,7 @@ export default function App() {
 
           {/* Hero Right: Portrait with floating stat pill badge */}
           <div className="col-span-12 lg:col-span-5 flex justify-center relative">
-            <div className="relative w-[280px] h-[350px] md:w-[340px] md:h-[420px]">
+            <div className="relative w-[250px] h-[320px] sm:w-[280px] sm:h-[350px] md:w-[340px] md:h-[420px] mx-auto">
               
               {/* Photo Card with soft shadow */}
               <div className="w-full h-full overflow-hidden bg-zinc-100 rounded-[20px] shadow-sm border border-zinc-150">
@@ -151,9 +152,9 @@ export default function App() {
               </div>
 
               {/* Floating Stat Pill Badge */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm border border-zinc-200/80 px-5 py-2.5 shadow-md flex items-center gap-2.5 rounded-full w-max">
-                <div className="w-2 h-2 rounded-full bg-zinc-800" />
-                <span className="text-[9px] font-sans tracking-widest uppercase font-bold text-[#262626]">
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm border border-zinc-200/80 px-3 sm:px-5 py-2 sm:py-2.5 shadow-md flex items-center gap-2 rounded-full w-max max-w-[calc(100vw-32px)]">
+                <div className="w-2 h-2 rounded-full bg-zinc-800 flex-shrink-0" />
+                <span className="text-[8px] sm:text-[9px] font-sans tracking-wider sm:tracking-widest uppercase font-bold text-[#262626] whitespace-nowrap overflow-hidden text-ellipsis">
                   {portfolioData.hero.credibilityStat}
                 </span>
               </div>
@@ -169,12 +170,12 @@ export default function App() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
           {/* Stats summary + Second portrait */}
-          <div className="col-span-12 lg:col-span-6 flex flex-col md:flex-row gap-8 items-center lg:items-start justify-center">
+          <div className="col-span-12 lg:col-span-6 flex flex-col md:flex-row gap-8 items-start justify-center w-full max-w-full">
             
             {/* Stat Counters Column */}
-            <div className="flex flex-col gap-6 md:w-1/2 justify-center">
+            <div className="flex flex-col gap-6 w-full md:w-1/2 justify-center">
               {portfolioData.about.stats.map((stat, idx) => (
-                <div key={idx} className="pb-6 border-b border-zinc-150 last:border-0">
+                <div key={idx} className="pb-6 border-b border-zinc-150 last:border-0 text-left">
                   <div className="text-4xl font-serif text-[#262626] font-light tracking-tight">{stat.value}</div>
                   <div className="text-[9px] font-sans tracking-widest text-zinc-400 uppercase font-bold mt-1">{stat.label}</div>
                 </div>
@@ -182,7 +183,7 @@ export default function App() {
             </div>
 
             {/* Small Portrait Column */}
-            <div className="w-[200px] h-[260px] overflow-hidden bg-zinc-100 rounded-2xl shadow-sm border border-zinc-150 md:w-1/2">
+            <div className="w-full max-w-[240px] md:w-1/2 h-[260px] overflow-hidden bg-zinc-100 rounded-2xl shadow-sm border border-zinc-150 mx-auto md:mx-0">
               <img 
                 src={portfolioData.about.portraitSecondary} 
                 alt="Workspace preview" 
@@ -213,7 +214,7 @@ export default function App() {
         <SectionHeading eyebrow="• SELECTION" title="Selected Work" />
 
         {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {portfolioData.projects.map((project) => (
             <div
               key={project.id}

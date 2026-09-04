@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Train, Search, Calendar, Users, ArrowLeft, ArrowRight, Check, Compass, Ticket, Award, ChevronRight, Info } from 'lucide-react';
+import { Train, Search, Calendar, Users, ArrowLeft, ArrowRight, Check, Compass, Ticket, Award, ChevronRight, Info, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { railnovaRoutes, mockTrains, seatClasses } from '../../data/railnovaData';
 import { railnovaImages } from '../../data/railnovaImages';
@@ -10,6 +10,7 @@ export default function Railnova() {
   const [toSt, setToSt] = useState('Chennai Central (MAS)');
   const [journeyDate, setJourneyDate] = useState('2026-08-27');
   const [pCount, setPCount] = useState(1);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Search states
   const [searched, setSearched] = useState(false);
@@ -31,6 +32,15 @@ export default function Railnova() {
   // FAQ state
   const [expandedFaq, setExpandedFaq] = useState(null);
 
+  const handleBackToTemplates = (e) => {
+    if (e) e.preventDefault();
+    if (window.top && window.top !== window) {
+      window.top.location.href = '/templates';
+    } else {
+      window.location.href = '/templates';
+    }
+  };
+
   const handleSearch = (e) => {
     e.preventDefault();
     if (fromSt === toSt) {
@@ -46,7 +56,27 @@ export default function Railnova() {
 
     setTimeout(() => {
       const matches = mockTrains.filter(t => t.from === fromSt && t.to === toSt);
-      setResults(matches);
+      if (matches.length === 0) {
+        const generated = [
+          {
+            id: "RN-EXPRESS-1",
+            trainNumber: "20608",
+            name: "Vande Bharat Express",
+            from: fromSt,
+            to: toSt,
+            departure: "05:45",
+            arrival: "10:10",
+            duration: "4h 25m",
+            classes: [
+              { id: 'cc', name: 'Chair Car (CC)', price: 1080, available: 42 },
+              { id: 'ec', name: 'Exec Chair (EC)', price: 2140, available: 14 }
+            ]
+          }
+        ];
+        setResults(generated);
+      } else {
+        setResults(matches);
+      }
       setSearched(true);
       setSearching(false);
     }, 800);
@@ -99,24 +129,79 @@ export default function Railnova() {
     <div className="min-h-screen bg-stone-900 text-stone-100 font-sans overflow-x-hidden selection:bg-rose-700 selection:text-white">
       
       {/* Classic Railway Navigation */}
-      <nav className="sticky top-0 z-50 bg-stone-950 border-b border-rose-900/40 px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Train className="text-rose-600" size={26} />
-          <span className="font-outfit font-black tracking-widest text-xl text-rose-500">RAILNOVA</span>
-          <span className="hidden sm:inline-block bg-rose-900/30 text-rose-300 border border-rose-900/50 font-bold font-mono px-2 py-0.5 rounded text-[9px] uppercase tracking-wider">National Express</span>
+      <nav className="sticky top-0 z-50 bg-stone-950 border-b border-rose-900/40 px-4 sm:px-6 py-3.5 sm:py-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Train className="text-rose-600" size={26} />
+            <span className="font-outfit font-black tracking-widest text-xl text-rose-500">RAILNOVA</span>
+            <span className="hidden sm:inline-block bg-rose-900/30 text-rose-300 border border-rose-900/50 font-bold font-mono px-2 py-0.5 rounded text-[9px] uppercase tracking-wider">National Express</span>
+          </div>
+
+          <div className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-stone-400">
+            <a href="#booking" className="hover:text-rose-500 transition-colors">Find Trains</a>
+            <a href="#faq" className="hover:text-rose-500 transition-colors">FAQs</a>
+            <a href="#contact" className="hover:text-rose-500 transition-colors">Contact</a>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <button 
+              type="button"
+              onClick={handleBackToTemplates}
+              className="flex items-center gap-1.5 px-3 sm:px-4 py-2 border border-stone-850 rounded bg-stone-900 text-xs font-bold text-stone-300 hover:border-rose-900/50 hover:text-white transition-all cursor-pointer"
+            >
+              <ArrowLeft size={12} /> Templates
+            </button>
+            <button 
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded border border-rose-900/50 text-rose-400 hover:bg-stone-900 cursor-pointer"
+              aria-label="Toggle Menu"
+            >
+              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </div>
 
-        <div className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-stone-400">
-          <a href="#booking" className="hover:text-rose-500 transition-colors">Find Trains</a>
-          <a href="#faq" className="hover:text-rose-500 transition-colors">FAQs</a>
-          <a href="#contact" className="hover:text-rose-500 transition-colors">Contact</a>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <Link to="/transportation" className="flex items-center gap-1.5 px-4 py-2 border border-stone-850 rounded bg-stone-900 text-xs font-bold text-stone-300 hover:border-rose-900/50 hover:text-white transition-all">
-            <ArrowLeft size={12} /> Templates
-          </Link>
-        </div>
+        {/* Mobile Navigation Drawer */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden mt-3 pt-3 border-t border-rose-900/30 flex flex-col gap-3 text-xs uppercase font-semibold tracking-wider text-stone-300 bg-stone-950"
+            >
+              <a 
+                href="#booking" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-rose-500 transition-colors"
+              >
+                Find Trains
+              </a>
+              <a 
+                href="#faq" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-rose-500 transition-colors"
+              >
+                FAQs
+              </a>
+              <a 
+                href="#contact" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1.5 hover:text-rose-500 transition-colors"
+              >
+                Contact
+              </a>
+              <button 
+                type="button"
+                onClick={(e) => { setMobileMenuOpen(false); handleBackToTemplates(e); }}
+                className="py-2 text-left text-rose-500 flex items-center gap-1 font-bold border-t border-stone-850 mt-1 pt-2 cursor-pointer"
+              >
+                <ArrowLeft size={12} /> Back to Templates
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* Hero Section */}

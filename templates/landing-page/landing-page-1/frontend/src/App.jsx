@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustedBy from './components/TrustedBy';
@@ -14,8 +14,17 @@ import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
+import AuthModal from './components/AuthModal';
 
 export default function App() {
+  const [authOpen, setAuthOpen] = useState(false);
+  const [authMode, setAuthMode] = useState('signup');
+
+  const handleOpenAuth = (mode = 'signup') => {
+    setAuthMode(mode);
+    setAuthOpen(true);
+  };
+
   // Intersection Observer for scroll reveal animations
   useEffect(() => {
     const revealElements = document.querySelectorAll('.reveal');
@@ -43,9 +52,9 @@ export default function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar onOpenAuth={handleOpenAuth} />
       <main>
-        <Hero />
+        <Hero onOpenAuth={handleOpenAuth} />
         <TrustedBy />
         <ProblemSolution />
         <CoreFeatures />
@@ -55,11 +64,17 @@ export default function App() {
         <Statistics />
         <Testimonials />
         <Integrations />
-        <Pricing />
+        <Pricing onOpenAuth={handleOpenAuth} />
         <FAQ />
-        <FinalCTA />
+        <FinalCTA onOpenAuth={handleOpenAuth} />
       </main>
-      <Footer />
+      <Footer onOpenAuth={handleOpenAuth} />
+
+      <AuthModal
+        isOpen={authOpen}
+        initialMode={authMode}
+        onClose={() => setAuthOpen(false)}
+      />
     </>
   );
 }

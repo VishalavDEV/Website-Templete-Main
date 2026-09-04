@@ -11,6 +11,7 @@ import {
   MapPin,
   Calendar,
   Briefcase,
+  GraduationCap,
   CheckCircle2,
   Send
 } from 'lucide-react';
@@ -624,7 +625,7 @@ function ContactPage() {
         </div>
 
         {/* Form panel */}
-        <div className="col-span-12 lg:col-span-7 bg-white border border-zinc-200 p-8 relative">
+        <div className="col-span-12 lg:col-span-7 bg-white border border-zinc-200 p-5 md:p-8 relative w-full max-w-full box-border">
           <div className="absolute top-0 left-0 w-full h-[2px] bg-[#d4af37]" />
           
           <form onSubmit={handleFormSubmit} className="flex flex-col gap-6 font-sans text-left">

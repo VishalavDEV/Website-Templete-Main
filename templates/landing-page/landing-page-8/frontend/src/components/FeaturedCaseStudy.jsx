@@ -245,7 +245,7 @@ export default function FeaturedCaseStudy() {
         </div>
 
         {/* Main content: text left, visual right */}
-        <div style={{
+        <div className="featured-study-grid" style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1.1fr',
           height: '480px',
@@ -254,7 +254,7 @@ export default function FeaturedCaseStudy() {
         }}>
 
           {/* Left: active stage text */}
-          <div style={{
+          <div className="featured-study-left" style={{
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -297,7 +297,7 @@ export default function FeaturedCaseStudy() {
           </div>
 
           {/* Right: visual for active stage */}
-          <div style={{ backgroundColor: '#ECEAE4', position: 'relative', overflow: 'hidden' }}>
+          <div className="featured-study-right" style={{ backgroundColor: '#ECEAE4', position: 'relative', overflow: 'hidden' }}>
             <div key={active} className="stage-visual-enter" style={{ width: '100%', height: '100%' }}>
               <Visual />
             </div>
