@@ -64,11 +64,21 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
           <div className="absolute top-4 left-4 font-mono text-[10px] text-cyan-400">
             // 3D HOLOGRAPHIC TIMELINE
           </div>
-          <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#060a12]/80 backdrop-blur-md border border-slate-800 font-mono text-xs">
-            <span className="text-slate-400">CORE PRINCIPLE:</span>
-            <p className="text-slate-200 mt-1 font-sans text-xs leading-relaxed">
-              "Code is the medium; intelligence is the artifact."
-            </p>
+          <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-xl bg-[#060a12]/85 backdrop-blur-md border border-slate-800 font-mono text-xs flex items-center space-x-3">
+            <img
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop"
+              alt="AI Engineer"
+              className="w-10 h-10 rounded-full border border-cyan-400/60 object-cover flex-shrink-0"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop';
+              }}
+            />
+            <div>
+              <span className="text-slate-400 block text-[10px] uppercase tracking-wider">CORE PRINCIPLE</span>
+              <p className="text-slate-200 mt-0.5 font-sans text-xs leading-relaxed">
+                "Code is the medium; intelligence is the artifact."
+              </p>
+            </div>
           </div>
         </div>
 

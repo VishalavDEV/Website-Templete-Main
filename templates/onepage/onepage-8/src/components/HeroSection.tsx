@@ -61,9 +61,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Center Cinematic Hero Typography */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto my-auto pointer-events-auto px-4">
         {/* Sub-header badge */}
-        <div className="flex items-center space-x-2 text-xs sm:text-sm font-mono tracking-widest text-cyan-400/90 uppercase mb-4">
+        <div className="flex items-center space-x-2 text-xs sm:text-sm font-mono tracking-widest text-cyan-400/90 uppercase mb-3">
           <Terminal className="w-4 h-4 text-cyan-400" />
           <span>AI / ML ENGINEER • DEVELOPER • CREATOR</span>
+        </div>
+
+        {/* AI & ML Engineer Profile Avatar Frame */}
+        <div className="relative mb-5 group cursor-pointer" id="hero-profile-picture-container">
+          <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500 via-sky-400 to-indigo-500 opacity-70 blur-md group-hover:opacity-100 transition duration-500 animate-pulse" />
+          <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden border-2 border-cyan-400/80 p-1 bg-[#0a0f18] shadow-[0_0_30px_rgba(6,182,212,0.4)]">
+            <img
+              id="hero-profile-img"
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop"
+              alt="AI & ML Engineer Portrait"
+              className="w-full h-full object-cover rounded-full filter contrast-105 saturate-105 transition-transform duration-500 group-hover:scale-110"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop';
+              }}
+            />
+          </div>
+          <div className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-400 border-2 border-[#040507] shadow-[0_0_8px_rgba(52,211,153,0.8)]" title="AI Systems Online" />
         </div>
 
         {/* Main Grand Display Headline */}
