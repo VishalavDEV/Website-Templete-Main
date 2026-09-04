@@ -89,11 +89,11 @@ function CounterItem({ endVal, label, suffix }) {
   }, [endVal]);
 
   return (
-    <div className="flex flex-col text-left font-sans">
-      <span className="text-3xl md:text-5xl font-serif-normal font-black text-black tracking-tight font-sans">
+    <div className="flex flex-col text-left font-sans min-w-0">
+      <span className="text-3xl sm:text-4xl md:text-5xl font-serif-normal font-black text-black tracking-tight break-words font-sans">
         {count}{suffix}
       </span>
-      <span className="text-[9px] font-bold tracking-wider uppercase text-zinc-400 mt-1 font-sans">
+      <span className="text-[9px] font-bold tracking-wider uppercase text-zinc-400 mt-1 break-words font-sans">
         {label}
       </span>
     </div>
@@ -174,16 +174,16 @@ export default function EditorialPortfolio() {
               {editorialData.hero.supportingParagraph}
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4 font-sans">
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 font-sans w-full sm:w-auto">
               <button
                 onClick={() => setShowBookingModal(true)}
-                className="px-8 py-3.5 bg-black hover:bg-zinc-800 text-white font-bold text-xs tracking-widest uppercase transition-colors cursor-pointer border-none font-sans"
+                className="w-full sm:w-auto px-8 py-3.5 bg-black hover:bg-zinc-800 text-white font-bold text-xs tracking-widest uppercase transition-colors cursor-pointer border-none font-sans text-center"
               >
                 {editorialData.hero.ctaPrimary}
               </button>
               <button
                 onClick={() => handleScrollTo('services')}
-                className="px-8 py-3.5 bg-transparent hover:bg-zinc-100 text-black border border-black font-bold text-xs tracking-widest uppercase transition-colors cursor-pointer font-sans"
+                className="w-full sm:w-auto px-8 py-3.5 bg-transparent hover:bg-zinc-100 text-black border border-black font-bold text-xs tracking-widest uppercase transition-colors cursor-pointer font-sans text-center"
               >
                 {editorialData.hero.ctaSecondary}
               </button>
@@ -192,7 +192,7 @@ export default function EditorialPortfolio() {
 
           {/* Portrait rounded card */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-[300px] h-[400px] md:w-[340px] md:h-[450px] overflow-hidden rounded-3xl shadow-2xl border border-zinc-200/50">
+            <div className="relative w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] aspect-[3/4] overflow-hidden rounded-3xl shadow-2xl border border-zinc-200/50 mx-auto lg:mx-0">
               <img 
                 src={editorialData.hero.photo} 
                 alt="Evelyn support photo" 
@@ -216,9 +216,9 @@ export default function EditorialPortfolio() {
           {editorialData.services.packages.map((pkg, idx) => (
             <div
               key={idx}
-              className={`border p-8 md:p-10 flex flex-col justify-between transition-all relative ${
+              className={`border p-6 sm:p-8 md:p-10 flex flex-col justify-between transition-all relative ${
                 pkg.featured
-                  ? 'bg-black text-white border-black scale-102 shadow-2xl z-10'
+                  ? 'bg-black text-white border-black md:scale-102 shadow-2xl z-10'
                   : 'bg-white text-black border-zinc-200 hover:border-zinc-300'
               }`}
             >
@@ -272,7 +272,7 @@ export default function EditorialPortfolio() {
           
           {/* Portrait Photo */}
           <div className="col-span-12 lg:col-span-5 flex justify-center lg:justify-start">
-            <div className="w-[300px] h-[380px] md:w-[340px] md:h-[420px] overflow-hidden rounded-2xl border border-zinc-200/50 shadow-xl">
+            <div className="w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] aspect-[3/4] overflow-hidden rounded-2xl border border-zinc-200/50 shadow-xl mx-auto lg:mx-0">
               <img 
                 src={editorialData.about.photo} 
                 alt="Executive desk" 
@@ -286,7 +286,7 @@ export default function EditorialPortfolio() {
             <span className="text-[10px] tracking-[0.25em] text-[#1a1a1a]/55 uppercase font-bold block mb-3 font-sans">
               {editorialData.about.eyebrow}
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif-normal font-black text-black tracking-tight leading-tight uppercase mb-6 font-sans">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif-normal font-black text-black tracking-tight leading-tight uppercase mb-6 font-sans break-words">
               {editorialData.about.heading}
             </h2>
             <p className="text-xs md:text-sm text-zinc-500 font-sans leading-relaxed text-justify mb-10">
@@ -294,7 +294,7 @@ export default function EditorialPortfolio() {
             </p>
 
             {/* Stat row counters */}
-            <div className="grid grid-cols-3 gap-8 w-full border-t border-zinc-100 pt-8 mb-10 font-sans">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 w-full border-t border-zinc-100 pt-8 mb-10 font-sans">
               {editorialData.about.stats.map((stat, idx) => (
                 <CounterItem 
                   key={idx}
@@ -330,9 +330,9 @@ export default function EditorialPortfolio() {
             <div className="flex flex-col gap-8 font-sans">
               {editorialData.experience.work.map((wk, idx) => (
                 <div key={idx} className="flex flex-col">
-                  <div className="flex justify-between items-baseline gap-2 font-sans">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 sm:gap-2">
                     <h4 className="text-sm font-bold text-black uppercase font-sans">{wk.role}</h4>
-                    <span className="text-[10px] font-sans font-medium text-zinc-400">{wk.dates}</span>
+                    <span className="text-[10px] font-sans font-medium text-zinc-400 flex-shrink-0">{wk.dates}</span>
                   </div>
                   <span className="text-[10px] font-sans text-zinc-400 font-bold uppercase mt-0.5 tracking-wider font-sans">{wk.company}</span>
                   <p className="text-xs text-zinc-500 font-sans mt-2.5 text-justify leading-relaxed font-sans">{wk.description}</p>
@@ -346,12 +346,12 @@ export default function EditorialPortfolio() {
             <h3 className="text-xl font-serif-normal font-black uppercase tracking-tight border-b border-zinc-200 pb-3 flex items-center gap-2 font-sans">
               <GraduationCap size={18} /> Education & Studies
             </h3>
-            <div className="flex flex-col gap-8 font-sans">
+            <div className="flex flex-col gap-8">
               {editorialData.experience.education.map((edu, idx) => (
                 <div key={idx} className="flex flex-col">
-                  <div className="flex justify-between items-baseline gap-2 font-sans">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 sm:gap-2">
                     <h4 className="text-sm font-bold text-black uppercase font-sans">{edu.degree}</h4>
-                    <span className="text-[10px] font-sans font-medium text-zinc-400">{edu.dates}</span>
+                    <span className="text-[10px] font-sans font-medium text-zinc-400 flex-shrink-0">{edu.dates}</span>
                   </div>
                   <span className="text-[10px] font-sans text-zinc-400 font-bold uppercase mt-0.5 tracking-wider font-sans">{edu.institution}</span>
                   <p className="text-xs text-zinc-500 font-sans mt-2.5 text-justify leading-relaxed font-sans">{edu.description}</p>
@@ -365,7 +365,7 @@ export default function EditorialPortfolio() {
             <img 
               src={editorialData.experience.circularPhoto} 
               alt="Evelyn profile thumbnail" 
-              className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover filter grayscale border-2 border-zinc-200 shadow-lg"
+              className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full object-cover filter grayscale border-2 border-zinc-200 shadow-lg flex-shrink-0"
             />
           </div>
 

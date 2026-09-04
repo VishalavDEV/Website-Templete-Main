@@ -715,4 +715,20 @@ a {
   }
 }
 
+/* Oversized ghost text watermark layer helper */
+.ghost-watermark-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 900;
+  line-height: 1;
+  color: #141414;
+  opacity: 0.04;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+
 

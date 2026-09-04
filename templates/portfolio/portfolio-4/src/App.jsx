@@ -6,10 +6,7 @@ import {
   Send,
   MapPin,
   CheckCircle,
-  Eye,
-  Github,
-  Linkedin,
-  Twitter
+  Eye
 } from 'lucide-react';
 import { portfolioData } from './data/portfolioData';
 import NavBar from './components/NavBar';
@@ -107,7 +104,6 @@ export default function App() {
             <p className="mt-6 text-sm md:text-base text-zinc-500 max-w-lg leading-relaxed">
               {portfolioData.hero.subtext}
             </p>
-          </div>
 
             {/* CTAs */}
             <div className="mt-8 flex flex-wrap items-center gap-6">
@@ -140,19 +136,19 @@ export default function App() {
 
           {/* Hero Right: Portrait with floating stat pill badge */}
           <div className="col-span-12 lg:col-span-5 flex justify-center relative">
-            <div className="relative w-[250px] h-[320px] sm:w-[280px] sm:h-[350px] md:w-[340px] md:h-[420px] mx-auto">
+            <div className="relative w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] aspect-[3/4] mx-auto">
               
               {/* Photo Card with soft shadow */}
               <div className="w-full h-full overflow-hidden bg-zinc-100 rounded-[20px] shadow-sm border border-zinc-150">
                 <img 
                   src={portfolioData.hero.portrait} 
                   alt={portfolioData.brand.siteName} 
-                  className="w-full h-full object-cover filter saturate-75 contrast-95"
+                  className="w-full h-full object-cover object-center filter saturate-75 contrast-95"
                 />
               </div>
 
               {/* Floating Stat Pill Badge */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm border border-zinc-200/80 px-3 sm:px-5 py-2 sm:py-2.5 shadow-md flex items-center gap-2 rounded-full w-max max-w-[calc(100vw-32px)]">
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm border border-zinc-200/80 px-3 sm:px-5 py-2 sm:py-2.5 shadow-md flex items-center gap-2 rounded-full w-max max-w-[calc(100vw-3rem)]">
                 <div className="w-2 h-2 rounded-full bg-zinc-800 flex-shrink-0" />
                 <span className="text-[8px] sm:text-[9px] font-sans tracking-wider sm:tracking-widest uppercase font-bold text-[#262626] whitespace-nowrap overflow-hidden text-ellipsis">
                   {portfolioData.hero.credibilityStat}
@@ -183,11 +179,11 @@ export default function App() {
             </div>
 
             {/* Small Portrait Column */}
-            <div className="w-full max-w-[240px] md:w-1/2 h-[260px] overflow-hidden bg-zinc-100 rounded-2xl shadow-sm border border-zinc-150 mx-auto md:mx-0">
+            <div className="w-full max-w-[240px] sm:max-w-[280px] md:w-1/2 aspect-[4/5] overflow-hidden bg-zinc-100 rounded-2xl shadow-sm border border-zinc-150 mx-auto md:mx-0">
               <img 
                 src={portfolioData.about.portraitSecondary} 
                 alt="Workspace preview" 
-                className="w-full h-full object-cover filter grayscale opacity-80"
+                className="w-full h-full object-cover object-center filter grayscale opacity-80"
               />
             </div>
           </div>

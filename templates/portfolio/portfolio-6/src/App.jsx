@@ -165,7 +165,7 @@ function HomePage() {
                     key={idx}
                     src={av} 
                     alt="Trust avatar" 
-                    className="w-8 h-8 rounded-full object-cover border border-black"
+                    className="w-8 h-8 rounded-full object-cover border border-black flex-shrink-0"
                   />
                 ))}
               </div>
@@ -201,7 +201,7 @@ function HomePage() {
                 <img 
                   src={agencyData.about.team[1].photo} 
                   alt="Team lead" 
-                  className="w-10 h-10 rounded-full object-cover filter grayscale"
+                  className="w-10 h-10 rounded-full object-cover filter grayscale flex-shrink-0"
                 />
                 <div>
                   <span className="text-white text-xs block font-bold font-sans">Evelyn Oswald</span>
@@ -223,7 +223,7 @@ function HomePage() {
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-around gap-8">
           {agencyData.partners.map((partner, idx) => (
             <div key={idx} className="flex items-center gap-2 filter grayscale hover:grayscale-0 opacity-40 hover:opacity-100 transition-all cursor-pointer">
-              <img src={partner.logo} alt={partner.name} className="w-8 h-8 rounded object-cover" />
+              <img src={partner.logo} alt={partner.name} className="w-8 h-8 rounded object-cover flex-shrink-0" />
               <span className="text-xs tracking-wider uppercase font-bold text-zinc-400 font-sans">{partner.name}</span>
             </div>
           ))}
@@ -379,11 +379,13 @@ function AboutPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 font-sans">
               {agencyData.about.team.map((member, idx) => (
                 <div key={idx} className="bg-zinc-900/40 border border-zinc-900 p-4 flex flex-col items-center sm:items-start text-center sm:text-left gap-4 w-full max-w-full">
-                  <img 
-                    src={member.photo} 
-                    alt={member.name} 
-                    className="w-full max-w-[260px] sm:max-w-none aspect-square object-cover filter grayscale border border-zinc-800 mx-auto sm:mx-0"
-                  />
+                  <div className="w-full max-w-[240px] sm:max-w-none aspect-square overflow-hidden bg-zinc-900 border border-zinc-800 mx-auto sm:mx-0">
+                    <img 
+                      src={member.photo} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover filter grayscale"
+                    />
+                  </div>
                   <div className="text-center sm:text-left font-sans w-full">
                     <h4 className="text-xs text-white font-bold uppercase">{member.name}</h4>
                     <span className="text-[9px] text-[#3ecf6e] uppercase tracking-wide font-medium mt-0.5 block">{member.role}</span>
@@ -415,7 +417,7 @@ function NewsPage() {
               onClick={() => setSelectedArticle(art)}
               className="group cursor-pointer bg-[#101010]/50 border border-zinc-900 hover:border-zinc-800 p-4 transition-all flex flex-col gap-4"
             >
-              <div className="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+              <div className="relative w-full aspect-[16/10] overflow-hidden bg-zinc-900">
                 <img 
                   src={art.image} 
                   alt={art.title} 
@@ -469,8 +471,8 @@ function NewsPage() {
                 <X size={15} />
               </button>
 
-              <div className="h-[240px] md:h-[300px] relative overflow-hidden bg-zinc-900">
-                <img src={selectedArticle.image} alt={selectedArticle.title} className="w-full h-full object-cover" />
+              <div className="w-full h-[200px] sm:h-[260px] md:h-[320px] relative overflow-hidden bg-zinc-900">
+                <img src={selectedArticle.image} alt={selectedArticle.title} className="w-full h-full object-cover object-center" />
               </div>
 
               <div className="p-8 md:p-10">

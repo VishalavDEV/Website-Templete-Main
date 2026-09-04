@@ -32,14 +32,14 @@ export default function GalleryModal({ isOpen, project, onClose }) {
           </button>
 
           {/* Left Side Image with solid Red overlay geometric borders */}
-          <div className="col-span-12 md:col-span-7 h-[250px] md:h-full relative overflow-hidden bg-zinc-200">
+          <div className="col-span-12 md:col-span-7 h-[220px] sm:h-[280px] md:h-full min-h-[220px] relative overflow-hidden bg-zinc-200">
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
             {/* Outline shape */}
-            <div className="absolute top-6 left-6 right-6 bottom-6 border-2 border-white/30 pointer-events-none" />
+            <div className="absolute top-4 left-4 right-4 bottom-4 sm:top-6 sm:left-6 sm:right-6 sm:bottom-6 border-2 border-white/30 pointer-events-none" />
           </div>
 
           {/* Right Side Specs & Description */}

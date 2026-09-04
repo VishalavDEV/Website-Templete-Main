@@ -66,7 +66,7 @@ function HomePage() {
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center p-6 md:p-12 border-b border-zinc-900">
         {/* Dimmed Portrait Background */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img 
             src={portfolioData.hero.backgroundPortrait} 
             alt="Hero background" 
@@ -141,7 +141,7 @@ function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           {/* Circular photo with red border ring */}
           <div className="col-span-12 lg:col-span-5 flex justify-center relative">
-            <div className="relative w-[230px] h-[230px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] rounded-full p-2.5 bg-gradient-to-tr from-[#e8583f] to-zinc-900 shadow-xl mx-auto">
+            <div className="relative w-[210px] h-[210px] sm:w-[260px] sm:h-[260px] md:w-[320px] md:h-[320px] rounded-full p-2.5 bg-gradient-to-tr from-[#e8583f] to-zinc-900 shadow-xl mx-auto aspect-square">
               <img 
                 src={portfolioData.hero.avatar} 
                 alt="Evelyn Vance portrait" 
@@ -334,7 +334,7 @@ function PortfolioPage() {
               onClick={() => setLightboxProject(project)}
               className="group cursor-pointer bg-[#141414] border border-zinc-900 p-4 hover:border-zinc-800 transition-all flex flex-col gap-4"
             >
-              <div className="relative aspect-[16/11] overflow-hidden bg-zinc-900">
+              <div className="relative w-full aspect-[16/11] overflow-hidden bg-zinc-900">
                 <img 
                   src={project.image} 
                   alt={project.title} 
@@ -387,8 +387,8 @@ function PortfolioPage() {
                 <X size={16} />
               </button>
 
-              <div className="col-span-12 md:col-span-7 h-[250px] md:h-full relative overflow-hidden bg-zinc-900">
-                <img src={lightboxProject.image} alt={lightboxProject.title} className="w-full h-full object-cover" />
+              <div className="col-span-12 md:col-span-7 h-[220px] sm:h-[280px] md:h-full min-h-[220px] relative overflow-hidden bg-zinc-900">
+                <img src={lightboxProject.image} alt={lightboxProject.title} className="w-full h-full object-cover object-center" />
               </div>
 
               <div className="col-span-12 md:col-span-5 p-8 flex flex-col justify-between">
@@ -479,11 +479,11 @@ function TeamPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {portfolioData.team.map((member, idx) => (
-            <div key={idx} className="bg-[#141414] border border-zinc-900 p-6 flex items-center gap-6">
+            <div key={idx} className="bg-[#141414] border border-zinc-900 p-5 sm:p-6 flex items-center gap-4 sm:gap-6">
               <img 
                 src={member.photo} 
                 alt={member.name} 
-                className="w-20 h-20 rounded-full object-cover filter grayscale border-2 border-zinc-800"
+                className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover filter grayscale border-2 border-zinc-800 flex-shrink-0"
               />
               <div className="font-sans">
                 <h4 className="text-lg text-white font-serif uppercase">{member.name}</h4>

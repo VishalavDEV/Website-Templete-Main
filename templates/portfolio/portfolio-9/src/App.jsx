@@ -176,8 +176,8 @@ function HomePage() {
           <span className="ghost-watermark-text">ABOUT ME</span>
         </div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-          <div className="lg:col-span-8 text-left font-sans">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
+          <div className="md:col-span-7 lg:col-span-8 text-left font-sans">
             <span className="text-[10px] tracking-[0.25em] text-[#d4af37] uppercase font-bold block mb-3">
               THE VISION
             </span>
@@ -195,8 +195,8 @@ function HomePage() {
             </Link>
           </div>
 
-          <div className="lg:col-span-4 flex justify-end">
-            <div className="w-full aspect-[4/5] max-w-[300px] overflow-hidden border border-zinc-200 shadow-xl bg-zinc-100">
+          <div className="md:col-span-5 lg:col-span-4 flex justify-center md:justify-end">
+            <div className="w-full aspect-[4/5] max-w-[260px] md:max-w-[280px] lg:max-w-[300px] overflow-hidden border border-zinc-200 shadow-xl bg-zinc-100">
               <img 
                 src={photographyData.about.photo} 
                 alt="Sasha working" 
@@ -217,9 +217,9 @@ function AboutPage() {
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <SectionHeading eyebrow="THE CREATIVE" title="About Sasha" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 lg:gap-20 items-start">
           
-          <div className="lg:col-span-7 text-left font-sans flex flex-col gap-6 text-sm text-zinc-500 leading-relaxed text-justify">
+          <div className="md:col-span-7 lg:col-span-7 text-left font-sans flex flex-col gap-6 text-sm text-zinc-500 leading-relaxed text-justify">
             <p className="text-black text-base font-medium leading-relaxed font-sans">
               {photographyData.about.intro}
             </p>
@@ -240,8 +240,8 @@ function AboutPage() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 flex justify-end">
-            <div className="w-full max-w-[380px] aspect-[3/4] overflow-hidden border border-zinc-200 shadow-2xl">
+          <div className="md:col-span-5 lg:col-span-5 flex justify-center md:justify-end">
+            <div className="w-full max-w-[320px] md:max-w-[340px] lg:max-w-[380px] aspect-[3/4] overflow-hidden border border-zinc-200 shadow-2xl">
               <img 
                 src={photographyData.about.photo} 
                 alt="Sasha Grey Profile" 
@@ -263,10 +263,10 @@ function ResumePage() {
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <SectionHeading eyebrow="TIMELINES" title="Resume & Skills" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 lg:gap-20 items-start mb-20">
           
           {/* Experience */}
-          <div className="col-span-12 lg:col-span-5 text-left flex flex-col gap-8 font-sans">
+          <div className="col-span-12 md:col-span-5 text-left flex flex-col gap-8 font-sans">
             <h3 className="text-xl font-serif-heading font-black uppercase tracking-tight border-b border-zinc-200 pb-3 flex items-center gap-2">
               <Briefcase size={16} /> Work History
             </h3>
@@ -285,7 +285,7 @@ function ResumePage() {
           </div>
 
           {/* Education */}
-          <div className="col-span-12 lg:col-span-5 text-left flex flex-col gap-8 font-sans">
+          <div className="col-span-12 md:col-span-5 text-left flex flex-col gap-8 font-sans">
             <h3 className="text-xl font-serif-heading font-black uppercase tracking-tight border-b border-zinc-200 pb-3 flex items-center gap-2">
               <GraduationCap size={18} /> Education
             </h3>
@@ -304,11 +304,11 @@ function ResumePage() {
           </div>
 
           {/* Circular Photo */}
-          <div className="col-span-12 lg:col-span-2 flex justify-center lg:justify-end">
+          <div className="col-span-12 md:col-span-2 flex justify-center md:justify-end">
             <img 
               src={photographyData.resume.circularPhoto} 
               alt="Sasha Grey Thumbnail" 
-              className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover filter grayscale border-2 border-zinc-200 shadow-lg"
+              className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full object-cover filter grayscale border-2 border-zinc-200 shadow-lg flex-shrink-0"
             />
           </div>
 
@@ -352,7 +352,7 @@ function ServicesPage() {
           desc={photographyData.services.accent} 
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {photographyData.services.packages.map((srv, idx) => (
             <div key={idx} className="border border-zinc-200 hover:border-black transition-colors bg-white p-6 flex flex-col gap-6 text-left">
               <div className="aspect-[4/3] overflow-hidden bg-zinc-100">
@@ -414,7 +414,7 @@ function PortfolioPage() {
         </div>
 
         {/* Gallery grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {filteredImages.map((img, idx) => (
             <div
               key={img.id}
@@ -586,10 +586,10 @@ function ContactPage() {
 
   return (
     <PageWrapper>
-      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 lg:gap-16">
         
         {/* Info detail block */}
-        <div className="col-span-12 lg:col-span-5 flex flex-col justify-between">
+        <div className="col-span-12 md:col-span-5 flex flex-col justify-between">
           <div>
             <SectionHeading eyebrow="STUDIO LINK" title="Start a Campaign" />
             <p className="text-xs md:text-sm text-zinc-500 font-sans leading-relaxed mb-8 max-w-md text-justify font-sans">
@@ -625,7 +625,7 @@ function ContactPage() {
         </div>
 
         {/* Form panel */}
-        <div className="col-span-12 lg:col-span-7 bg-white border border-zinc-200 p-5 md:p-8 relative w-full max-w-full box-border">
+        <div className="col-span-12 md:col-span-7 bg-white border border-zinc-200 p-5 md:p-8 relative w-full max-w-full box-border">
           <div className="absolute top-0 left-0 w-full h-[2px] bg-[#d4af37]" />
           
           <form onSubmit={handleFormSubmit} className="flex flex-col gap-6 font-sans text-left">

@@ -32,11 +32,11 @@ export default function GalleryModal({ isOpen, project, onClose }) {
           </button>
 
           {/* Left image column */}
-          <div className="col-span-12 md:col-span-7 h-[250px] md:h-full relative overflow-hidden bg-zinc-50 border-r border-zinc-150">
+          <div className="col-span-12 md:col-span-7 h-[220px] sm:h-[260px] md:h-full min-h-[220px] relative overflow-hidden bg-zinc-50 border-b md:border-b-0 md:border-r border-zinc-150">
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
           </div>
 

@@ -190,16 +190,16 @@ export default function App() {
 
           {/* Hero Right: Portrait with Overlapping Geometric Shapes */}
           <div className="col-span-12 lg:col-span-5 flex justify-center relative">
-            <div className="relative w-[280px] h-[350px] md:w-[350px] md:h-[450px]">
+            <div className="relative w-[260px] h-[330px] sm:w-[320px] sm:h-[410px] md:w-[350px] md:h-[450px] max-w-[calc(100vw-4rem)]">
               
               {/* Back outlined geometric square */}
-              <div className="absolute -top-6 -left-6 w-32 h-32 border-4 border-white/10 pointer-events-none" />
+              <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-24 sm:w-32 h-24 sm:h-32 border-2 sm:border-4 border-white/10 pointer-events-none" />
               
               {/* Solid Accent Red Square (offset) */}
-              <div className="absolute -bottom-4 -right-4 w-36 h-36 bg-[#e74c3c] pointer-events-none z-0" />
+              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 w-28 sm:w-36 h-28 sm:h-36 bg-[#e74c3c] pointer-events-none z-0" />
               
               {/* Image Frame */}
-              <div className="w-full h-full relative z-10 overflow-hidden bg-zinc-800 border-4 border-[#2b2b2b]">
+              <div className="w-full h-full relative z-10 overflow-hidden bg-zinc-800 border-2 sm:border-4 border-[#2b2b2b]">
                 <img 
                   src={portfolioData.hero.portrait} 
                   alt={portfolioData.hero.name} 
@@ -226,13 +226,13 @@ export default function App() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
           {/* Double Offset Photos with Outline behind */}
-          <div className="col-span-12 lg:col-span-6 flex justify-center relative h-[320px] sm:h-[360px] md:h-[450px] w-full max-w-full overflow-hidden sm:overflow-visible">
+          <div className="col-span-12 lg:col-span-6 flex justify-center items-center relative h-[280px] xs:h-[320px] sm:h-[360px] md:h-[450px] w-full max-w-[320px] sm:max-w-md mx-auto">
             
             {/* Outline Behind */}
-            <div className="absolute left-2 sm:left-6 top-6 w-[150px] sm:w-[200px] h-[220px] sm:h-[280px] border-4 border-[#e74c3c]/15 pointer-events-none" />
+            <div className="absolute left-2 sm:left-6 top-4 sm:top-6 w-[120px] sm:w-[200px] h-[180px] sm:h-[280px] border-2 sm:border-4 border-[#e74c3c]/15 pointer-events-none" />
             
             {/* Small Photo */}
-            <div className="absolute left-6 sm:left-10 top-10 w-[140px] sm:w-[180px] h-[190px] sm:h-[250px] overflow-hidden bg-zinc-300 z-10 shadow-lg border-2 border-white">
+            <div className="absolute left-4 sm:left-10 top-6 sm:top-10 w-[110px] sm:w-[180px] h-[160px] sm:h-[250px] overflow-hidden bg-zinc-300 z-10 shadow-lg border-2 border-white">
               <img 
                 src={portfolioData.about.photoSmall} 
                 alt="Detail shoot" 
@@ -241,10 +241,10 @@ export default function App() {
             </div>
 
             {/* Accent Red square overlap */}
-            <div className="absolute right-4 sm:right-12 bottom-6 w-14 sm:w-20 h-14 sm:h-20 bg-[#e74c3c] z-20 pointer-events-none" />
+            <div className="absolute right-3 sm:right-12 bottom-3 sm:bottom-6 w-12 sm:w-20 h-12 sm:h-20 bg-[#e74c3c] z-20 pointer-events-none" />
 
             {/* Large Photo offset */}
-            <div className="absolute right-6 sm:right-16 top-2 w-[160px] sm:w-[220px] h-[220px] sm:h-[310px] overflow-hidden bg-zinc-300 z-10 shadow-2xl border-4 border-white">
+            <div className="absolute right-4 sm:right-16 top-2 w-[130px] sm:w-[220px] h-[190px] sm:h-[310px] overflow-hidden bg-zinc-300 z-10 shadow-2xl border-2 sm:border-4 border-white">
               <img 
                 src={portfolioData.about.photoLarge} 
                 alt="Studio setup" 
@@ -386,7 +386,7 @@ export default function App() {
                 onClick={() => handleProjectClick(project)}
                 className="group cursor-pointer bg-zinc-850 p-4 border border-white/5 hover:border-[#e74c3c] transition-all flex flex-col gap-4 relative overflow-hidden"
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-zinc-800">
+                <div className="relative w-full aspect-[16/10] overflow-hidden bg-zinc-800">
                   <img 
                     src={project.image} 
                     alt={project.title} 
@@ -451,7 +451,7 @@ export default function App() {
                   <img 
                     src={portfolioData.testimonials[activeTestimonial].photo} 
                     alt={portfolioData.testimonials[activeTestimonial].name} 
-                    className="w-12 h-12 rounded-full object-cover border-2 border-[#e74c3c]"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-[#e74c3c] flex-shrink-0"
                   />
                   <div>
                     <h4 className="text-sm font-black uppercase text-[#2b2b2b]">
@@ -498,7 +498,7 @@ export default function App() {
                 className="group cursor-pointer bg-white border border-zinc-200 overflow-hidden flex flex-col md:grid md:grid-cols-12 hover:shadow-xl transition-all border-offset-dark"
               >
                 {/* Image */}
-                <div className="col-span-12 md:col-span-5 h-[200px] md:h-full relative overflow-hidden bg-zinc-200">
+                <div className="col-span-12 md:col-span-5 h-[180px] sm:h-[200px] md:h-full relative overflow-hidden bg-zinc-200">
                   <img 
                     src={post.image} 
                     alt={post.title} 

@@ -38,11 +38,11 @@ export default function ArticleModal({ isOpen, article, onClose }) {
             {article.title}
           </h2>
 
-          <div className="w-full h-64 md:h-80 overflow-hidden bg-zinc-100 mb-6 border border-zinc-200">
+          <div className="w-full h-48 sm:h-64 md:h-80 overflow-hidden bg-zinc-100 mb-6 border border-zinc-200">
             <img 
               src={article.image} 
               alt={article.title} 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
           </div>
 
