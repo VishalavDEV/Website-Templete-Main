@@ -1505,9 +1505,11 @@ body.light-mode .f-brand strong {
 }
 
 @media (max-width: 768px) {
+  .container { padding: 0 16px; }
   .specimen-grid-4 { grid-template-columns: 1fr; }
   .feature-specs-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .blueprint-controls-col, .blueprint-preview-col { padding: 24px; }
-  .atelier-minimal-form { padding: 24px; }
+  .blueprint-controls-col, .blueprint-preview-col { padding: 20px 16px; }
+  .atelier-minimal-form { padding: 20px 16px; }
+  .editorial-title { font-size: 1.8rem; }
 }
 

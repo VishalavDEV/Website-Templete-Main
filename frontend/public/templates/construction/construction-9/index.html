@@ -21,6 +21,9 @@
 
             const currentUrl = new URL(window.location.href);
             currentUrl.searchParams.set('iframe', 'true');
+            if (!currentUrl.pathname.endsWith('.html')) {
+              currentUrl.pathname = currentUrl.pathname.replace(/\/+$/, '') + '/index.html';
+            }
             
             document.documentElement.className = '';
             document.documentElement.removeAttribute('style');
@@ -252,11 +255,10 @@
     </script>
 
     
-    
-    <link rel="stylesheet" crossorigin href="./assets/index-B4jpMw0v.css">
+    <script type="module" crossorigin src="./assets/index-CGtSydFY.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CYIWrw2s.css">
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" crossorigin src="./assets/index-DDtg2DNo.js"></script>
   </body>
 </html>

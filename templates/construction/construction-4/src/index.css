@@ -1393,10 +1393,22 @@ body.light-mode .knack-toast {
 }
 
 @media (max-width: 768px) {
+  .container { padding: 0 16px; }
   .nav-menu { display: none; }
   .mobile-menu-btn { display: block; }
+  .knack-logo .logo-caps { font-size: 0.72rem; }
+  .knack-header .nav-inner { padding: 12px 0; }
   .pillars-grid-4,
   .portfolio-grid-3 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .stat-pills-row { flex-wrap: wrap; }
+  .estimator-container-box { padding: 20px 16px; }
+  .grade-toggle-group { flex-direction: column; gap: 8px; }
+  .grade-btn { width: 100%; text-align: center; }
+  .result-top .res-amount { font-size: 1.8rem; }
+  .res-timeline { font-size: 0.78rem; }
+}
+
+@media (max-width: 540px) {
+  .nav-actions .btn-outline-pill { display: none; }
 }

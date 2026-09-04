@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script>(function(){if(window.location.pathname.endsWith('/index.html')){window.history.replaceState(null,'',window.location.pathname.slice(0,-10)+window.location.search+window.location.hash);}})();</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knack Design + Build — Luxury Custom Architectural Villas & Estates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
     <script>
@@ -21,6 +24,9 @@
 
             const currentUrl = new URL(window.location.href);
             currentUrl.searchParams.set('iframe', 'true');
+            if (!currentUrl.pathname.endsWith('.html')) {
+              currentUrl.pathname = currentUrl.pathname.replace(/\/+$/, '') + '/index.html';
+            }
             
             document.documentElement.className = '';
             document.documentElement.removeAttribute('style');
@@ -250,14 +256,10 @@
         }
       })();
     </script>
-
-    
-    
-    <link rel="stylesheet" crossorigin href="./assets/index-_Rih2yHd.css">
+    <script type="module" crossorigin src="./assets/index-Dfbutuo2.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CrO1dqFF.css">
   </head>
   <body>
-  
     <div id="root"></div>
-    <script type="module" crossorigin src="./assets/index-C3WqcYCs.js"></script>
   </body>
 </html>
