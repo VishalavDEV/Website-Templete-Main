@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 import { SectionHeader } from '../ui/SectionHeader';
 import { TESTIMONIALS } from '../../data/testimonials';
+import { getAssetUrl } from '../../utils/assets';
 
 export const TestimonialsSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,7 +41,7 @@ export const TestimonialsSection: React.FC = () => {
             <AnimatePresence mode="wait">
               <motion.img
                 key={current.id}
-                src={current.projectVisual || current.projectImage}
+                src={getAssetUrl(current.projectVisual || current.projectImage)}
                 alt={current.projectTitle || current.company}
                 initial={{ opacity: 0, scale: 1.05 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -91,7 +92,7 @@ export const TestimonialsSection: React.FC = () => {
             <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="flex items-center space-x-4">
                 <img
-                  src={current.avatar}
+                  src={getAssetUrl(current.avatar)}
                   alt={current.author}
                   className="w-12 h-12 rounded-full object-cover border-2 border-[#D96B43]"
                 />

@@ -28,7 +28,7 @@ const Food = () => {
           <FoodTimeline />
 
           {/* Highlights Grid */}
-          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginTop: '4rem' }}>
+          <div className="grid-3" style={{ marginTop: '4rem' }}>
             <div className="cyber-card" style={{ padding: '2rem', textAlign: 'center', backgroundColor: 'rgba(10, 16, 12, 0.85)' }}>
               <Coffee size={36} color="#00ff66" style={{ margin: '0 auto 1rem auto' }} />
               <h3 style={{ fontSize: '1.3rem', color: '#fff', marginBottom: '0.5rem' }}>24/7 ESPRESSO BAR</h3>

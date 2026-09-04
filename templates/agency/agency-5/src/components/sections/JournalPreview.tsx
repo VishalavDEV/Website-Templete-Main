@@ -6,6 +6,7 @@ import { Badge } from '../ui/Badge';
 import { ArrowUpRight } from 'lucide-react';
 import { useCustomCursor } from '../../hooks/useCustomCursor';
 import { ImageWithFallback } from '../ui/ImageWithFallback';
+import { getAssetUrl } from '../../utils/assets';
 
 export const JournalPreview: React.FC = () => {
   const featuredPosts = blogPosts.slice(0, 3);
@@ -27,7 +28,7 @@ export const JournalPreview: React.FC = () => {
             <Link
               key={post.slug}
               to={`/blog/${post.slug}`}
-              onMouseEnter={() => setCursorHover('READ ARTICLE', post.coverImage)}
+              onMouseEnter={() => setCursorHover('READ ARTICLE', getAssetUrl(post.coverImage))}
               onMouseLeave={resetCursor}
               className="group flex flex-col justify-between space-y-4 rounded-2xl p-6 bg-[var(--card-bg)] border border-[var(--border-color)] hover:border-[var(--accent-color)] transition-all duration-300 h-full"
             >

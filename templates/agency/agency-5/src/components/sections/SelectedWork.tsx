@@ -8,6 +8,7 @@ import { Button } from '../ui/Button';
 import { useCustomCursor } from '../../hooks/useCustomCursor';
 import { Reveal } from '../ui/Reveal';
 import { ImageWithFallback } from '../ui/ImageWithFallback';
+import { getAssetUrl } from '../../utils/assets';
 
 export const SelectedWork: React.FC = () => {
   const featuredProjects = projects.filter(p => p.featured).slice(0, 4);
@@ -32,7 +33,7 @@ export const SelectedWork: React.FC = () => {
               <Reveal key={project.slug} direction="up" delay={index * 0.1} className={isLarge ? 'md:col-span-2' : ''}>
                 <Link
                   to={`/portfolio/${project.slug}`}
-                  onMouseEnter={() => setCursorHover('VIEW CASE STUDY', project.coverImage)}
+                  onMouseEnter={() => setCursorHover('VIEW CASE STUDY', getAssetUrl(project.coverImage))}
                   onMouseLeave={resetCursor}
                   className="group block space-y-4 rounded-3xl p-4 md:p-6 bg-[var(--card-bg)] border border-[var(--border-color)] hover:border-[var(--accent-color)] transition-all duration-500 h-full"
                 >

@@ -198,8 +198,19 @@ export const Navbar: React.FC = () => {
               </button>
             </div>
 
-            {/* Mobile Hamburger Toggle */}
+            {/* Mobile Hamburger Toggle & Actions */}
             <div className="flex sm:hidden items-center gap-2">
+              <button
+                onClick={cycleTheme}
+                className="p-2 text-slate-400 hover:text-white rounded-lg bg-[#0A0A0E] border border-white/5"
+                title={`Theme: ${theme}`}
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' && <Moon className="w-4 h-4 text-indigo-400" />}
+                {theme === 'light' && <Sun className="w-4 h-4 text-amber-400" />}
+                {theme === 'system' && <Laptop className="w-4 h-4 text-cyan-400" />}
+              </button>
+
               <button
                 onClick={() => setIsSearchOpen(true)}
                 className="p-2 text-slate-400 hover:text-white"
@@ -248,6 +259,18 @@ export const Navbar: React.FC = () => {
                 </a>
               ))}
               <div className="pt-4 border-t border-white/5 flex flex-col gap-2.5">
+                <button
+                  onClick={cycleTheme}
+                  className="w-full flex items-center justify-between px-4 py-2.5 text-xs font-medium text-slate-300 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10"
+                >
+                  <div className="flex items-center gap-2">
+                    {theme === 'dark' && <Moon className="w-4 h-4 text-indigo-400" />}
+                    {theme === 'light' && <Sun className="w-4 h-4 text-amber-400" />}
+                    {theme === 'system' && <Laptop className="w-4 h-4 text-cyan-400" />}
+                    <span>Theme ({theme})</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-indigo-400 uppercase font-bold">Tap to Cycle</span>
+                </button>
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);

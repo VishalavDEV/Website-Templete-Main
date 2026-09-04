@@ -30,7 +30,7 @@ const Contact = () => {
 
       <section className="section-padding">
         <div className="container">
-          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+          <div className="grid-2">
             {/* Left: Contact Info */}
             <div>
               <h2 style={{ fontSize: '1.8rem', color: '#fff', marginBottom: '1.5rem' }}>COMMUNICATION CHANNELS</h2>

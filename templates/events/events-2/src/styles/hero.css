@@ -183,34 +183,39 @@
 
 /* Floating Stats Badge on hero card */
 .hero-floating-badge {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  background: #ffffff;
-  border: 1px solid var(--border-light);
+  position: relative;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  background: #0f172a;
+  color: #ffffff;
+  border: 1px solid #334155;
   border-radius: var(--radius-lg);
-  padding: 16px 24px;
-  box-shadow: var(--shadow-lg);
+  padding: 14px 18px;
+  box-shadow: var(--shadow-md);
   display: flex;
   align-items: center;
   gap: 14px;
-  animation: floatBadge 4s infinite alternate ease-in-out;
+  box-sizing: border-box;
+  width: 100%;
+  z-index: 10;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-@keyframes floatBadge {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+.hero-main-card:hover .hero-floating-badge {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.2);
 }
 
 .floating-badge-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
   background: rgba(79, 70, 229, 0.1);
   color: var(--accent-purple);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 /* Countdown Container styling */

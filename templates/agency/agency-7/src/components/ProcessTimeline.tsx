@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../utils/assets';
 import React, { useState } from 'react';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 
@@ -8,7 +9,7 @@ const steps = [
     title: 'Contextual Research & User Audit',
     description: 'We immerse ourselves in your domain, interviewing users, auditing existing friction points, and mapping user psychological models.',
     deliverables: ['Contextual User Interviews', 'Behavioral Journey Maps', 'Heuristic Audits'],
-    image: '/src/assets/images/service_ux_research_1787881426246.jpg',
+    image: getAssetUrl('images/service_ux_research_1787881426246.jpg'),
   },
   {
     number: '02',
@@ -16,7 +17,7 @@ const steps = [
     title: 'Product Strategy & IA Framing',
     description: 'We translate raw research into concrete information architecture, core feature matrices, and scalable spatial design systems.',
     deliverables: ['Information Architecture Map', 'Feature Matrix', 'Product Value Map'],
-    image: '/src/assets/images/service_prod_strategy_1787881442168.jpg',
+    image: getAssetUrl('images/service_prod_strategy_1787881442168.jpg'),
   },
   {
     number: '03',
@@ -24,7 +25,7 @@ const steps = [
     title: 'Low-Fidelity Wireframing & Design Tokens',
     description: 'Iterative layout exploration in Figma, testing spatial density, grid proportions, and foundational typography pairings.',
     deliverables: ['Low-Fi Wireframe Decks', 'Typographic Specs', 'Color & Token Foundations'],
-    image: '/src/assets/images/service_design_system_1787881469264.jpg',
+    image: getAssetUrl('images/service_design_system_1787881469264.jpg'),
   },
   {
     number: '04',
@@ -32,7 +33,7 @@ const steps = [
     title: 'High-Fidelity UI & Interactive Prototype',
     description: 'Polishing high-density interface components with micro-interactions, dark/light themes, and interactive prototype flows.',
     deliverables: ['High-Fidelity Figma System', 'Framer Prototype', 'Micro-Interaction Specs'],
-    image: '/src/assets/images/service_ui_ux_design_1787881454335.jpg',
+    image: getAssetUrl('images/service_ui_ux_design_1787881454335.jpg'),
   },
   {
     number: '05',
@@ -40,7 +41,7 @@ const steps = [
     title: 'Creative Development & 3D Shaders',
     description: 'Engineering the frontend in React, Vite, and Three.js with sub-pixel perfection, responsive clamps, and WCAG AA compliance.',
     deliverables: ['Production React Codebase', 'WebGL Shader Engine', 'Storybook Documentation'],
-    image: '/src/assets/images/service_creative_3d_1787881502863.jpg',
+    image: getAssetUrl('images/service_creative_3d_1787881502863.jpg'),
   },
   {
     number: '06',
@@ -48,7 +49,7 @@ const steps = [
     title: 'Quality Assurance & Continuous Evolution',
     description: 'Rigorous cross-browser QA testing, performance profiling, and post-launch analytics telemetry integration.',
     deliverables: ['Cross-Device QA Audit', 'Performance Optimization', 'Post-Launch Telemetry'],
-    image: '/src/assets/images/service_prototyping_1787881485704.jpg',
+    image: getAssetUrl('images/service_prototyping_1787881485704.jpg'),
   },
 ];
 

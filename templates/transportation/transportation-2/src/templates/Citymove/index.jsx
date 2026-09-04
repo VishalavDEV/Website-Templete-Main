@@ -34,15 +34,6 @@ export default function Citymove() {
     setEstCost(cost);
   }, [estDistance, selectedCategory]);
 
-  const handleBackToTemplates = (e) => {
-    if (e) e.preventDefault();
-    if (window.top && window.top !== window) {
-      window.top.location.href = '/templates';
-    } else {
-      window.location.href = '/templates';
-    }
-  };
-
   const handleFindTransport = (e) => {
     e.preventDefault();
     setFindLoading(true);
@@ -105,13 +96,6 @@ export default function Citymove() {
           <div className="flex items-center gap-3">
             <button 
               type="button"
-              onClick={handleBackToTemplates}
-              className="flex items-center gap-1.5 px-3 sm:px-4 py-2 border-2 border-slate-950 rounded bg-white text-xs font-bold text-slate-950 hover:bg-slate-100 transition-all cursor-pointer shadow-[2px_2px_0px_#000]"
-            >
-              <ArrowLeft size={12} /> Templates
-            </button>
-            <button 
-              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden p-2 rounded border-2 border-slate-950 text-slate-950 hover:bg-slate-100 cursor-pointer"
               aria-label="Toggle Menu"
@@ -158,13 +142,7 @@ export default function Citymove() {
               >
                 Contact
               </a>
-              <button 
-                type="button"
-                onClick={(e) => { setMobileMenuOpen(false); handleBackToTemplates(e); }}
-                className="py-2 text-left text-orange-600 flex items-center gap-1 font-black border-t border-slate-200 mt-1 pt-2 cursor-pointer"
-              >
-                <ArrowLeft size={12} /> Back to Templates
-              </button>
+              
             </motion.div>
           )}
         </AnimatePresence>

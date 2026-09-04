@@ -8,6 +8,7 @@ import { Badge } from '../components/ui/Badge';
 import { FinalCTA } from '../components/sections/FinalCTA';
 import { useCustomCursor } from '../hooks/useCustomCursor';
 import { ImageWithFallback } from '../components/ui/ImageWithFallback';
+import { getAssetUrl } from '../utils/assets';
 import { Reveal } from '../components/ui/Reveal';
 
 const categories = ['All', 'Branding', 'Web', 'App', 'Product', 'Experience'];
@@ -71,7 +72,7 @@ export const Portfolio: React.FC = () => {
               >
                 <Link
                   to={`/portfolio/${project.slug}`}
-                  onMouseEnter={() => setCursorHover('EXPLORE CASE STUDY', project.coverImage)}
+                  onMouseEnter={() => setCursorHover('EXPLORE CASE STUDY', getAssetUrl(project.coverImage))}
                   onMouseLeave={resetCursor}
                   className="group block space-y-4 rounded-3xl p-4 md:p-6 bg-[var(--card-bg)] border border-[var(--border-color)] hover:border-[var(--accent-color)] transition-all duration-500"
                 >

@@ -34,15 +34,6 @@ export default function Transitflow() {
   const activeRoute = transitRoutes.find(r => r.id === activeRouteId) || transitRoutes[0];
   const stationTimetable = transitSchedule[activeStationId] || [];
 
-  const handleBackToTemplates = (e) => {
-    if (e) e.preventDefault();
-    if (window.top && window.top !== window) {
-      window.top.location.href = '/templates';
-    } else {
-      window.location.href = '/templates';
-    }
-  };
-
   const handlePlanRoute = (e) => {
     e.preventDefault();
     if (fromStationId === toStationId) {
@@ -118,13 +109,6 @@ export default function Transitflow() {
           <div className="flex items-center gap-3">
             <button 
               type="button"
-              onClick={handleBackToTemplates}
-              className="flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded border border-slate-700 bg-slate-800 text-xs font-semibold text-slate-350 hover:text-white transition-all cursor-pointer"
-            >
-              <ArrowLeft size={12} /> Templates
-            </button>
-            <button 
-              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden p-2 rounded border border-slate-700 text-slate-300 hover:bg-slate-800 cursor-pointer"
               aria-label="Toggle Menu"
@@ -171,13 +155,7 @@ export default function Transitflow() {
               >
                 Contact
               </a>
-              <button 
-                type="button"
-                onClick={(e) => { setMobileMenuOpen(false); handleBackToTemplates(e); }}
-                className="py-2 text-left text-teal-400 flex items-center gap-1 font-bold border-t border-slate-800 mt-1 pt-2 cursor-pointer"
-              >
-                <ArrowLeft size={12} /> Back to Templates
-              </button>
+              
             </motion.div>
           )}
         </AnimatePresence>

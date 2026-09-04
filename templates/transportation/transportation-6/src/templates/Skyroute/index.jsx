@@ -34,15 +34,6 @@ export default function Skyroute() {
   // FAQ state
   const [expandedFaq, setExpandedFaq] = useState(null);
 
-  const handleBackToTemplates = (e) => {
-    if (e) e.preventDefault();
-    if (window.top && window.top !== window) {
-      window.top.location.href = '/templates';
-    } else {
-      window.location.href = '/templates';
-    }
-  };
-
   const handleSearch = (e) => {
     e.preventDefault();
     if (fromAir === toAir) {
@@ -167,13 +158,6 @@ export default function Skyroute() {
           <div className="flex items-center gap-3">
             <button 
               type="button"
-              onClick={handleBackToTemplates}
-              className="flex items-center gap-1 px-3 sm:px-4 py-1.5 rounded border border-amber-500/30 bg-amber-500/5 text-[10px] font-bold tracking-wider text-amber-400 uppercase hover:bg-amber-400 hover:text-slate-950 transition-all cursor-pointer"
-            >
-              <ArrowLeft size={10} /> Templates
-            </button>
-            <button 
-              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden p-1.5 rounded border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 cursor-pointer"
               aria-label="Toggle Navigation Menu"
@@ -220,13 +204,7 @@ export default function Skyroute() {
               >
                 Contact
               </a>
-              <button 
-                type="button"
-                onClick={(e) => { setMobileMenuOpen(false); handleBackToTemplates(e); }}
-                className="py-2 text-left text-amber-400 flex items-center gap-1 font-bold border-t border-slate-800 mt-1 pt-2"
-              >
-                <ArrowLeft size={12} /> Back to Templates
-              </button>
+              
             </motion.div>
           )}
         </AnimatePresence>

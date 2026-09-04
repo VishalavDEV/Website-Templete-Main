@@ -124,8 +124,12 @@ const Home = () => {
             </p>
 
             <div className="hero-cta-group">
-              <Button to="/registration" variant="primary">REGISTER FOR EVENT</Button>
-              <Button to="/gym" variant="outline">EXPLORE GYM</Button>
+              <Button to="/registration" variant="primary" className="hero-btn-register">
+                REGISTER NOW
+              </Button>
+              <Button to="/gym" variant="outline" className="hero-btn-explore">
+                EXPLORE GYM
+              </Button>
             </div>
 
             <div className="event-floating-card">
@@ -332,7 +336,7 @@ const Home = () => {
             <p style={{ color: '#FFF', fontSize: '1.15rem', maxWidth: '750px', lineHeight: '1.7', marginBottom: '2rem' }}>
               A high-energy fitness challenge designed to test maximum strength, muscular endurance, discipline, and mental determination. Compete against top athletes across 5 category divisions for cash prizes and the championship crown.
             </p>
-            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+            <div className="event-cta-buttons" style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
               <Button to="/registration" variant="primary">REGISTER NOW FOR IRON ASCENT</Button>
               <Button to="/event" variant="outline">EXPLORE EVENT DETAILS</Button>
             </div>

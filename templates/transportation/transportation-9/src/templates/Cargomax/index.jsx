@@ -25,15 +25,6 @@ export default function Cargomax() {
   // FAQ state
   const [expandedFaq, setExpandedFaq] = useState(null);
 
-  const handleBackToTemplates = (e) => {
-    if (e) e.preventDefault();
-    if (window.top && window.top !== window) {
-      window.top.location.href = '/templates';
-    } else {
-      window.location.href = '/templates';
-    }
-  };
-
   const handleTrack = (e) => {
     e.preventDefault();
     if (!trackId.trim()) return;
@@ -98,13 +89,7 @@ export default function Cargomax() {
           </div>
 
           <div className="flex items-center gap-3">
-            <button 
-              type="button"
-              onClick={handleBackToTemplates}
-              className="flex items-center gap-1.5 px-3 sm:px-4 py-2 border border-zinc-850 rounded bg-zinc-900 text-xs font-bold text-zinc-300 hover:border-zinc-700 transition-all cursor-pointer"
-            >
-              <ArrowLeft size={12} /> Templates
-            </button>
+            <a href="#contact" className="hidden sm:inline-flex items-center gap-1 px-4 py-2 rounded bg-orange-500 hover:bg-orange-400 text-black font-bold text-xs uppercase tracking-wider transition-colors">Dispatch Quote</a>
             <button 
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -153,20 +138,14 @@ export default function Cargomax() {
               >
                 Contact
               </a>
-              <button 
-                type="button"
-                onClick={(e) => { setMobileMenuOpen(false); handleBackToTemplates(e); }}
-                className="py-2 text-left text-orange-500 flex items-center gap-1 font-bold border-t border-zinc-800 mt-1 pt-2 cursor-pointer"
-              >
-                <ArrowLeft size={12} /> Back to Templates
-              </button>
+              
             </motion.div>
           )}
         </AnimatePresence>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center py-20 px-6 bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950">
+      <section className="relative min-h-[85vh] flex items-center py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950">
         <div className="absolute inset-0 z-0">
           <img src={cargomaxImages.hero} alt="Logistics Freight Cargo" className="w-full h-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/40 via-zinc-950/80 to-zinc-950" />
@@ -192,23 +171,23 @@ export default function Cargomax() {
                 <Search size={18} className="text-orange-500" /> Track Shipment
               </h3>
 
-              <div className="flex gap-2 mb-4">
+              <div className="flex flex-col sm:flex-row gap-2 mb-4">
                 <input 
                   type="text" 
                   placeholder="Enter Shipment ID (e.g. CMX-2026-10482)"
                   value={trackId}
                   onChange={(e) => setTrackId(e.target.value)}
-                  className="flex-1 bg-zinc-950 border border-zinc-800 rounded p-3 text-xs focus:outline-none focus:border-orange-500 text-white font-mono"
+                  className="flex-1 bg-zinc-950 border border-zinc-800 rounded p-3 text-xs focus:outline-none focus:border-orange-500 text-white font-mono min-w-0"
                 />
                 <button 
                   type="submit"
-                  className="px-6 py-3 rounded bg-orange-500 hover:bg-orange-400 text-black font-bold text-xs uppercase tracking-wider"
+                  className="px-6 py-3 rounded bg-orange-500 hover:bg-orange-400 text-black font-bold text-xs uppercase tracking-wider shrink-0 cursor-pointer"
                 >
                   Locate
                 </button>
               </div>
 
-              <div className="text-[10px] text-zinc-500 flex gap-2">
+              <div className="text-[10px] text-zinc-500 flex flex-wrap items-center gap-2">
                 <span>Demo IDs:</span>
                 <button type="button" onClick={() => { setTrackId('CMX-2026-10482'); setActiveShipment(mockShipments['CMX-2026-10482']); }} className="hover:text-orange-500 underline font-mono">10482</button> • 
                 <button type="button" onClick={() => { setTrackId('CMX-2026-90518'); setActiveShipment(mockShipments['CMX-2026-90518']); }} className="hover:text-orange-500 underline font-mono">90518</button> • 
@@ -220,7 +199,7 @@ export default function Cargomax() {
       </section>
 
       {/* Track and trace display */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <AnimatePresence mode="wait">
           {activeShipment && (
             <motion.div 
@@ -231,16 +210,16 @@ export default function Cargomax() {
               className="p-6 rounded-2xl border border-zinc-850 bg-zinc-900/30 grid grid-cols-1 lg:grid-cols-12 gap-8"
             >
               <div className="lg:col-span-8">
-                <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider flex items-center gap-2">
+                <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider flex flex-wrap items-center gap-2">
                   Tracking Timeline <span className="text-xs text-orange-500 font-mono">ID: {activeShipment.id}</span>
                 </h3>
 
-                <div className="flex flex-col gap-6 relative pl-6 border-l border-zinc-800">
+                <div className="flex flex-col gap-6 relative pl-5 sm:pl-6 border-l border-zinc-800 ml-2 sm:ml-3">
                   {activeShipment.history.map((h, i) => {
                     const isCompleted = h.done;
                     return (
                       <div key={i} className="relative">
-                        <div className={`absolute left-[-30px] top-1.5 h-3.5 w-3.5 rounded-full border-2 ${
+                        <div className={`absolute -left-[27px] sm:-left-[31px] top-1.5 h-3.5 w-3.5 rounded-full border-2 ${
                           isCompleted ? 'bg-orange-500 border-orange-500 shadow shadow-orange-500' : 'bg-zinc-900 border-zinc-800'
                         }`} />
                         <div>
@@ -264,21 +243,21 @@ export default function Cargomax() {
                   <span className="font-bold text-white text-sm">{activeShipment.estDelivery}</span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 border-t border-b border-zinc-900 py-4 font-mono text-xxs text-zinc-400">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-b border-zinc-900 py-4 font-mono text-xxs text-zinc-400">
                   <div>
-                    <span className="text-zinc-650 uppercase font-semibold block mb-1">Origin Port</span>
+                    <span className="text-zinc-400 uppercase font-semibold block mb-1">Origin Port</span>
                     <span>{activeShipment.origin}</span>
                   </div>
                   <div>
-                    <span className="text-zinc-650 uppercase font-semibold block mb-1">Destination</span>
+                    <span className="text-zinc-400 uppercase font-semibold block mb-1">Destination</span>
                     <span>{activeShipment.destination}</span>
                   </div>
                   <div>
-                    <span className="text-zinc-650 uppercase font-semibold block mb-1">Weight</span>
+                    <span className="text-zinc-400 uppercase font-semibold block mb-1">Weight</span>
                     <span>{activeShipment.weight}</span>
                   </div>
                   <div>
-                    <span className="text-zinc-650 uppercase font-semibold block mb-1">Class Type</span>
+                    <span className="text-zinc-400 uppercase font-semibold block mb-1">Class Type</span>
                     <span>{activeShipment.serviceType}</span>
                   </div>
                 </div>
@@ -290,7 +269,7 @@ export default function Cargomax() {
 
       {/* Freight calculator */}
       <section id="calculator" className="py-24 border-t border-zinc-900 bg-zinc-950/40">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           
           <div className="w-full">
             <span className="text-orange-500 text-xs font-semibold uppercase tracking-wider block mb-2">FREIGHT QUOTE</span>
@@ -309,7 +288,7 @@ export default function Cargomax() {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest block mb-2">Distance (km)</label>
                   <input 
@@ -354,7 +333,7 @@ export default function Cargomax() {
       </section>
 
       {/* FAQs */}
-      <section id="faq" className="py-24 max-w-4xl mx-auto px-6 border-t border-zinc-900">
+      <section id="faq" className="py-16 sm:py-24 max-w-4xl mx-auto px-4 sm:px-6 border-t border-zinc-900">
         <div className="text-center mb-16">
           <span className="text-orange-500 text-xs font-semibold uppercase tracking-wider block font-bold">FAQ</span>
           <h2 className="text-3xl font-outfit font-black text-white uppercase mt-1">LOGISTICS INSIGHTS</h2>
@@ -388,14 +367,14 @@ export default function Cargomax() {
 
       {/* Contact form */}
       <section id="contact" className="py-24 border-t border-zinc-900 bg-zinc-950">
-        <div className="max-w-3xl mx-auto px-6">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <span className="text-orange-500 text-xs font-semibold uppercase tracking-wider block font-bold">DISPATCH CONTACT</span>
             <h2 className="text-3xl font-outfit font-black uppercase text-white mt-1">GET IN TOUCH</h2>
           </div>
 
-          <form onSubmit={handleContactSubmit} className="p-6 bg-zinc-900 border border-zinc-850 rounded-2xl flex flex-col gap-4 text-xs text-white">
-            <div className="grid grid-cols-2 gap-3">
+          <form onSubmit={handleContactSubmit} className="p-4 sm:p-6 bg-zinc-900 border border-zinc-850 rounded-2xl flex flex-col gap-4 text-xs text-white">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label className="text-[10px] text-zinc-500 uppercase block mb-1">Name *</label>
                 <input 

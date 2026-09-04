@@ -6,6 +6,8 @@ import { Badge } from '../components/ui/Badge';
 import { FinalCTA } from '../components/sections/FinalCTA';
 import { ArrowLeft, ArrowRight, Share2, Check } from 'lucide-react';
 import { useCustomCursor } from '../hooks/useCustomCursor';
+import { ImageWithFallback } from '../components/ui/ImageWithFallback';
+import { getAssetUrl } from '../utils/assets';
 
 export const BlogDetails: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -49,7 +51,7 @@ export const BlogDetails: React.FC = () => {
           {/* Author Info Bar */}
           <div className="flex items-center justify-between py-4 border-y border-[var(--border-color)]">
             <div className="flex items-center gap-3">
-              <img src={post.author.avatar} alt={post.author.name} className="w-10 h-10 rounded-full object-cover border border-[var(--accent-color)]" />
+              <img src={getAssetUrl(post.author.avatar)} alt={post.author.name} className="w-10 h-10 rounded-full object-cover border border-[var(--accent-color)]" />
               <div>
                 <h4 className="text-sm font-bold uppercase text-[var(--text-color)] font-display">{post.author.name}</h4>
                 <p className="text-xs text-[var(--secondary-color)] font-mono">{post.author.role}</p>
@@ -67,7 +69,7 @@ export const BlogDetails: React.FC = () => {
 
           {/* Featured Cover Image */}
           <div className="aspect-[16/10] rounded-3xl overflow-hidden border border-[var(--border-color)]">
-            <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover" />
+            <ImageWithFallback src={post.coverImage} alt={post.title} fallbackTitle={post.title} fallbackCategory={post.category} className="w-full h-full object-cover" />
           </div>
         </div>
 
@@ -118,12 +120,12 @@ export const BlogDetails: React.FC = () => {
                 <Link
                   key={rel.slug}
                   to={`/blog/${rel.slug}`}
-                  onMouseEnter={() => setCursorHover('READ ARTICLE', rel.coverImage)}
+                  onMouseEnter={() => setCursorHover('READ ARTICLE', getAssetUrl(rel.coverImage))}
                   onMouseLeave={resetCursor}
                   className="group block p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--border-color)] hover:border-[var(--accent-color)] transition-colors space-y-3"
                 >
                   <div className="aspect-[16/10] rounded-xl overflow-hidden">
-                    <img src={rel.coverImage} alt={rel.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <ImageWithFallback src={rel.coverImage} alt={rel.title} fallbackTitle={rel.title} fallbackCategory={rel.category} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <Badge variant="accent">{rel.category}</Badge>
                   <h4 className="text-lg font-bold uppercase text-[var(--text-color)] group-hover:text-[var(--accent-color)] font-display line-clamp-2">{rel.title}</h4>
@@ -137,7 +139,7 @@ export const BlogDetails: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-12 border-t border-[var(--border-color)]">
           <Link
             to={`/blog/${prevPost.slug}`}
-            onMouseEnter={() => setCursorHover('PREVIOUS POST', prevPost.coverImage)}
+            onMouseEnter={() => setCursorHover('PREVIOUS POST', getAssetUrl(prevPost.coverImage))}
             onMouseLeave={resetCursor}
             className="flex items-center gap-4 group p-4 rounded-2xl bg-[var(--card-bg)] border border-[var(--border-color)] hover:border-[var(--accent-color)] transition-colors w-full sm:w-auto"
           >
@@ -150,7 +152,7 @@ export const BlogDetails: React.FC = () => {
 
           <Link
             to={`/blog/${nextPost.slug}`}
-            onMouseEnter={() => setCursorHover('NEXT POST', nextPost.coverImage)}
+            onMouseEnter={() => setCursorHover('NEXT POST', getAssetUrl(nextPost.coverImage))}
             onMouseLeave={resetCursor}
             className="flex items-center gap-4 group p-4 rounded-2xl bg-[var(--card-bg)] border border-[var(--border-color)] hover:border-[var(--accent-color)] transition-colors w-full sm:w-auto text-right"
           >

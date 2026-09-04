@@ -59,10 +59,10 @@ export const IndustryDetailView: React.FC<IndustryDetailViewProps> = ({
             Compliance Frameworks &amp; Auditing
           </h3>
           <p className="text-xs text-slate-600 mt-1 max-w-2xl">
-            Our implementations strictly meet: {industry.complianceRequirements.join(', ')}. Zero unencrypted transmission, turnkey RBAC audit logs.
+            Our implementations strictly meet: {(industry.complianceRequirements || industry.challenges || []).join(', ')}. Zero unencrypted transmission, turnkey RBAC audit logs.
           </p>
           <div className="flex flex-wrap gap-2 mt-4">
-            {industry.complianceRequirements.map((req, i) => (
+            {(industry.complianceRequirements || industry.challenges || []).map((req, i) => (
               <span key={i} className="px-3 py-1 rounded-lg bg-white border border-slate-300 text-xs font-mono text-slate-800 font-semibold">
                 {req}
               </span>
@@ -86,7 +86,7 @@ export const IndustryDetailView: React.FC<IndustryDetailViewProps> = ({
                     USE CASE 0{idx + 1}
                   </span>
                   <span className="text-xs font-mono text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded">
-                    {uc.impact}
+                    {uc.expectedROI || uc.impact}
                   </span>
                 </div>
                 <h3 className="text-base font-bold text-slate-900">{uc.title}</h3>

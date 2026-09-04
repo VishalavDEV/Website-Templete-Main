@@ -53,9 +53,9 @@ export const Hero: React.FC<HeroProps> = ({ onCursorChange, onReplayIntro }) => 
 
         {/* Extreme Bold Typography Headline */}
         <div className="space-y-4">
-          <h1 className="text-[52px] sm:text-[90px] md:text-[120px] lg:text-[145px] leading-[0.8] font-black tracking-tighter uppercase text-[#090909] flex flex-col -ml-1">
+          <h1 className="text-[clamp(2.6rem,11.5vw,4.5rem)] sm:text-[90px] md:text-[120px] lg:text-[145px] leading-[0.92] sm:leading-[0.82] font-black tracking-tighter uppercase text-[#090909] flex flex-col -ml-0.5 sm:-ml-1">
             <span className="block">EXTREME</span>
-            <span className="block text-[#090909] bg-[#D1FF00] px-3 py-1 w-fit rounded-sm my-1 shadow-lg border-2 border-[#090909]">
+            <span className="block text-[#090909] bg-[#D1FF00] px-3 py-1 w-fit rounded-sm my-1 shadow-lg border-2 border-[#090909] max-w-full">
               UTILITY
             </span>
             <span className="block">SYSTEMS.</span>

@@ -130,7 +130,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onCursorChange }) => {
       className={`fixed top-0 left-0 right-0 z-[8000] transition-all duration-300 ${
         isScrolled
           ? 'bg-[#090909]/95 text-[#f8f7f4] backdrop-blur-md py-4 border-b-2 border-[#D1FF00] shadow-2xl'
-          : 'bg-transparent py-6'
+          : 'bg-[#f8f7f4]/90 backdrop-blur-sm sm:bg-transparent py-4 sm:py-6 border-b sm:border-b-0 border-[#090909]/10'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">

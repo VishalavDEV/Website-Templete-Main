@@ -1,8 +1,10 @@
 const getDynamicBasename = () => {
   let p = window.location.pathname;
+  const match = p.match(/^(\/templates\/[^\/]+\/[^\/]+)/);
+  if (match) return match[1];
   if (p.endsWith('/index.html')) p = p.slice(0, -11);
   if (p.endsWith('/')) p = p.slice(0, -1);
-  return p;
+  return p || '/';
 };
 
 import React from 'react';

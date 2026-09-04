@@ -6,6 +6,7 @@ import { ABOUT_TABS, STUDIO_STATS } from '../../data/studio';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { useNavigate } from 'react-router-dom';
+import { getAssetUrl } from '../../utils/assets';
 
 export const AboutSection: React.FC = () => {
   const [activeTabId, setActiveTabId] = useState<string>('strategy');
@@ -36,7 +37,7 @@ export const AboutSection: React.FC = () => {
             className="lg:col-span-5 relative rounded-3xl overflow-hidden shadow-lg border border-[#EAE6DF] min-h-[320px] sm:min-h-[400px] lg:min-h-[500px]"
           >
             <img
-              src="images/pexels-andreaedavis-3653849.jpg"
+              src={getAssetUrl("images/pexels-andreaedavis-3653849.jpg")}
               alt="AURELIA Studio Space & Architecture"
               className="w-full h-full object-cover"
             />

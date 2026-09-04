@@ -104,8 +104,15 @@ export default function Hero() {
             className="hidden lg:block absolute top-8 right-0 xl:right-16 w-48 xl:w-64"
           >
             <div className="aspect-[3/4] bg-gradient-to-br from-terracotta/20 via-mauve/10 to-warm-orange/15 border border-warm-orange/10 relative overflow-hidden">
-              {/* Abstract collage */}
-              <div className="absolute inset-0 flex items-center justify-center">
+              <img
+                src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=800&auto=format&fit=crop"
+                alt="AXIOM Art Direction"
+                className="w-full h-full object-cover opacity-70 mix-blend-multiply"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).style.display = 'none';
+                }}
+              />
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="text-hero font-bold text-near-black/5 leading-none select-none"
                   style={{ fontFamily: "var(--font-display)" }}
                 >

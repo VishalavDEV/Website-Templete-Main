@@ -33,9 +33,12 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <HashRouter >
+    <HashRouter>
       <ScrollToTop />
-      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: 'var(--bg-midnight)' }}>
+      <div 
+        className="w-full max-w-full overflow-x-hidden min-h-screen flex flex-col bg-[var(--bg-midnight)]"
+        style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden', minHeight: '100vh', display: 'flex', flexDirection: 'column', background: 'var(--bg-midnight)' }}
+      >
         <AnnouncementBar />
         <Navbar />
 

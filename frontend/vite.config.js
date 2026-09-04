@@ -2,6 +2,11 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import fs from 'fs'
 import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const publicDir = path.resolve(__dirname, 'public');
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -36,7 +41,8 @@ export default defineConfig({
             let pathname = parsedUrl.pathname;
             
             // Check if directory without trailing slash
-            const rawFilePath = path.join(process.cwd(), 'public', pathname);
+            const relativePath = pathname.replace(/^\/+/, '');
+            const rawFilePath = path.resolve(publicDir, relativePath);
             if (fs.existsSync(rawFilePath) && fs.statSync(rawFilePath).isDirectory()) {
               if (!pathname.endsWith('/')) {
                 res.writeHead(301, {
@@ -49,7 +55,7 @@ export default defineConfig({
               pathname += 'index.html';
             }
 
-            const filePath = path.join(process.cwd(), 'public', pathname);
+            const filePath = path.resolve(publicDir, pathname.replace(/^\/+/, ''));
             if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
               const ext = path.extname(filePath).toLowerCase();
               res.setHeader('Content-Type', mimeTypes[ext] || 'application/octet-stream');

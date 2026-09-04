@@ -1,4 +1,31 @@
 /* Responsive Media Queries */
+html, body, #root, .app-root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
 
 @media (max-width: 1200px) {
   .hero-content {
@@ -23,12 +50,14 @@
 }
 
 @media (max-width: 1024px) {
-  .nav-links {
-    display: none;
+  .desktop-nav-wrapper,
+  .nav-links,
+  .nav-cta-desktop {
+    display: none !important;
   }
 
   .mobile-hamburger {
-    display: block;
+    display: inline-flex !important;
   }
 
   .modal-speaker-grid {
@@ -42,16 +71,18 @@
 
 @media (max-width: 768px) {
   .section-padding {
-    padding: 60px 0;
+    padding: 50px 0;
   }
 
   .hero-section {
-    padding-top: 120px;
+    padding-top: 100px;
+    padding-bottom: 40px;
   }
 
   .hero-meta-bar {
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
   }
 
   .speaker-grid,
@@ -69,6 +100,7 @@
 
   .countdown-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
   .form-grid {
@@ -80,7 +112,7 @@
   }
 
   .registration-form-card {
-    padding: 24px;
+    padding: 20px;
   }
 
   .lightbox-prev { left: 10px; }

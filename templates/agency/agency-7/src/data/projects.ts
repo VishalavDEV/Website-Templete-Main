@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../utils/assets';
 import { Project } from '../types';
 
 export const projectsData: Project[] = [
@@ -9,7 +10,7 @@ export const projectsData: Project[] = [
     year: '2026',
     client: 'Aether Labs Inc.',
     services: ['UX Research', 'UI Architecture', 'Product Strategy', 'Design System'],
-    heroImage: '/src/assets/images/aether_spatial_ui_1787880779021.jpg',
+    heroImage: getAssetUrl('images/aether_spatial_ui_1787880779021.jpg'),
     coverAspect: 'aspect-[4/5]',
     summary: 'Aether is an AI-augmented spatial analytics platform designed for urban architects and environmental planners. We established a fluid UI system that translates multidimensional geospatial data into actionable spatial visualizers.',
     challenge: 'Aether previously struggled with fragmented analytics tools, high cognitive load for urban planners, and legacy interface components that failed to scale across dynamic viewport sizes.',
@@ -26,7 +27,7 @@ export const projectsData: Project[] = [
         name: 'Dr. Evelyn Vance',
         role: 'Lead Spatial Planner @ Urbanis',
         quote: 'We need high-density data visualization that feels light as air, allowing us to spot architectural anomalies without friction.',
-        avatar: '/src/assets/images/team_designer_portrait_1787886436203.jpg'
+        avatar: getAssetUrl('images/team_designer_portrait_1787886436203.jpg')
       }
     },
     wireframes: {
@@ -34,12 +35,12 @@ export const projectsData: Project[] = [
       description: 'Iterative low-fidelity wireframing focused on spatial hierarchy, panel docking, and adaptive split viewports.',
       images: [
         {
-          url: '/src/assets/images/service_design_system_1787881469264.jpg',
+          url: getAssetUrl('images/service_design_system_1787881469264.jpg'),
           caption: 'Geospatial Grid Docking & Widget Hierarchy',
           label: 'Wireframe v1.2'
         },
         {
-          url: '/src/assets/images/service_ui_ux_design_1787881454335.jpg',
+          url: getAssetUrl('images/service_ui_ux_design_1787881454335.jpg'),
           caption: 'Multi-layered Elevation Inspection Controls',
           label: 'Wireframe v2.4'
         }
@@ -58,12 +59,12 @@ export const projectsData: Project[] = [
       components: ['Spatial Dock', 'Telemetry Card', '3D Node Inspector', 'Fluid Timeline'],
       images: [
         {
-          url: '/src/assets/images/service_prototyping_1787881485704.jpg',
+          url: getAssetUrl('images/service_prototyping_1787881485704.jpg'),
           title: 'Spatial Dashboard View',
           caption: 'High-density spatial telemetry rendered with sub-pixel precision.'
         },
         {
-          url: '/src/assets/images/aether_spatial_ui_1787880779021.jpg',
+          url: getAssetUrl('images/aether_spatial_ui_1787880779021.jpg'),
           title: '3D Node Inspector Panel',
           caption: 'Contextual inspection drawer expanding smoothly upon building selection.'
         }
@@ -77,7 +78,7 @@ export const projectsData: Project[] = [
           id: 'telemetry',
           label: 'Spatial Telemetry',
           description: 'Real-time monitoring of thermal indices, airflow maps, and density metrics.',
-          mockupUrl: '/src/assets/images/aether_spatial_ui_1787880779021.jpg',
+          mockupUrl: getAssetUrl('images/aether_spatial_ui_1787880779021.jpg'),
           hotspots: [
             { x: 25, y: 35, title: 'Live Node Density', desc: 'Displays real-time structural load and occupancy.' },
             { x: 75, y: 55, title: 'Thermal Layer Toggle', desc: 'Switches GPU shader layers for heat maps.' }
@@ -87,7 +88,7 @@ export const projectsData: Project[] = [
           id: 'editor',
           label: '3D Simulation Canvas',
           description: 'Drag-and-drop architectural placement with parametric constraint checking.',
-          mockupUrl: '/src/assets/images/service_ui_ux_design_1787881454335.jpg',
+          mockupUrl: getAssetUrl('images/service_ui_ux_design_1787881454335.jpg'),
           hotspots: [
             { x: 45, y: 40, title: 'Parametric Controls', desc: 'Adjust building height and solar absorption factors.' }
           ]
@@ -96,7 +97,7 @@ export const projectsData: Project[] = [
           id: 'analytics',
           label: 'Predictive Insights',
           description: 'AI model predictions on 10-year urban expansion and traffic flow changes.',
-          mockupUrl: '/src/assets/images/service_prod_strategy_1787881442168.jpg'
+          mockupUrl: getAssetUrl('images/service_prod_strategy_1787881442168.jpg')
         }
       ]
     },
@@ -117,7 +118,7 @@ export const projectsData: Project[] = [
     year: '2026',
     client: 'Mono Architectural Studio',
     services: ['Brand Identity', 'Spatial Graphics', 'Web Experience', 'Editorial Design'],
-    heroImage: '/src/assets/images/mono_house_arch_1787880863911.jpg',
+    heroImage: getAssetUrl('images/mono_house_arch_1787880863911.jpg'),
     coverAspect: 'aspect-[16/10]',
     summary: 'Mono House is a visionary Scandinavian architecture practice. We redefined their brand identity from the ground up, establishing a physical and digital design system grounded in materiality, negative space, and typographic restraint.',
     challenge: 'Mono House needed a digital presence that mirrored the physical weight and tactile precision of their timber and concrete structures without feeling sterile or distant.',
@@ -134,7 +135,7 @@ export const projectsData: Project[] = [
         name: 'Klaus Lindqvist',
         role: 'Partner @ Mono House',
         quote: 'Our buildings speak through silence and material weight; our digital home must express the exact same quiet confidence.',
-        avatar: '/src/assets/images/team_strategist_portrait_1787886454193.jpg'
+        avatar: getAssetUrl('images/team_strategist_portrait_1787886454193.jpg')
       }
     },
     wireframes: {
@@ -142,7 +143,7 @@ export const projectsData: Project[] = [
       description: 'Designing layout grids based on classic architectural ratios (Golden section & Modulor).',
       images: [
         {
-          url: '/src/assets/images/mono_house_arch_1787880863911.jpg',
+          url: getAssetUrl('images/mono_house_arch_1787880863911.jpg'),
           caption: 'Asymmetric Image Layout & Material Specs Grid',
           label: 'Grid Concept A'
         }
@@ -161,7 +162,7 @@ export const projectsData: Project[] = [
       components: ['Material Selector', 'Architectural Index', 'Full-Bleed Lightbox', 'Spatial Spec Sheet'],
       images: [
         {
-          url: '/src/assets/images/noma_furniture_object_1787880813264.jpg',
+          url: getAssetUrl('images/noma_furniture_object_1787880813264.jpg'),
           title: 'Project Detail Presentation',
           caption: 'Generous whitespace allowing architectural photography to breathe.'
         }
@@ -175,13 +176,13 @@ export const projectsData: Project[] = [
           id: 'exhibition',
           label: 'Residence Portfolio',
           description: 'Editorial layout showcasing private residential masterpieces.',
-          mockupUrl: '/src/assets/images/mono_house_arch_1787880863911.jpg'
+          mockupUrl: getAssetUrl('images/mono_house_arch_1787880863911.jpg')
         },
         {
           id: 'specifications',
           label: 'Material Breakdown',
           description: 'Tactile spec sheets detailing stone origins and thermal performance.',
-          mockupUrl: '/src/assets/images/design_attention_1787880412477.jpg'
+          mockupUrl: getAssetUrl('images/design_attention_1787880412477.jpg')
         }
       ]
     },
@@ -202,7 +203,7 @@ export const projectsData: Project[] = [
     year: '2025',
     client: 'Orbit Global Capital',
     services: ['Product Design', 'Fintech UI', 'Design System', 'Design Strategy'],
-    heroImage: '/src/assets/images/orbit_finance_ui_1787880798145.jpg',
+    heroImage: getAssetUrl('images/orbit_finance_ui_1787880798145.jpg'),
     coverAspect: 'aspect-[4/5]',
     summary: 'Orbit Finance empowers institutional traders with automated liquidity execution and real-time algorithmic risk modeling. We built a high-density, low-latency financial design system crafted for multi-monitor setups.',
     challenge: 'Trading interfaces are notorious for cluttered layouts, visual fatigue, and delayed updates during high-volatility market windows.',
@@ -219,7 +220,7 @@ export const projectsData: Project[] = [
         name: 'Marcus Sterling',
         role: 'Senior Quantitative Trader',
         quote: 'When markets move in milliseconds, every single pixel of visual noise is financial risk. We need extreme visual clarity.',
-        avatar: '/src/assets/images/team_dev_portrait_1787886419155.jpg'
+        avatar: getAssetUrl('images/team_dev_portrait_1787886419155.jpg')
       }
     },
     wireframes: {
@@ -227,7 +228,7 @@ export const projectsData: Project[] = [
       description: 'Systematic wireframing for modular chart docking, execution tickets, and risk monitors.',
       images: [
         {
-          url: '/src/assets/images/orbit_finance_ui_1787880798145.jpg',
+          url: getAssetUrl('images/orbit_finance_ui_1787880798145.jpg'),
           caption: 'High-Density Terminal Layout & Order Entry Panel',
           label: 'Terminal Mockup'
         }
@@ -246,7 +247,7 @@ export const projectsData: Project[] = [
       components: ['Order Book Ladder', 'Algorithmic Execution Ticket', 'Depth Chart Canvas', 'Risk Telemetry'],
       images: [
         {
-          url: '/src/assets/images/service_prod_strategy_1787881442168.jpg',
+          url: getAssetUrl('images/service_prod_strategy_1787881442168.jpg'),
           title: 'Institutional Workspace',
           caption: 'Sub-second real-time market telemetry rendered with low CPU usage.'
         }
@@ -260,13 +261,13 @@ export const projectsData: Project[] = [
           id: 'terminal',
           label: 'Algorithmic Order Entry',
           description: 'Precision entry ticket with dynamic slippage alerts and depth visualization.',
-          mockupUrl: '/src/assets/images/orbit_finance_ui_1787880798145.jpg'
+          mockupUrl: getAssetUrl('images/orbit_finance_ui_1787880798145.jpg')
         },
         {
           id: 'risk',
           label: 'Real-time Risk Heatmap',
           description: 'Portfolio exposure monitoring across multi-currency pools.',
-          mockupUrl: '/src/assets/images/service_design_system_1787881469264.jpg'
+          mockupUrl: getAssetUrl('images/service_design_system_1787881469264.jpg')
         }
       ]
     },
@@ -287,7 +288,7 @@ export const projectsData: Project[] = [
     year: '2025',
     client: 'Noma Design Collective',
     services: ['3D Web Experience', 'E-Commerce UI', 'Generative Art', 'Frontend Engineering'],
-    heroImage: '/src/assets/images/noma_furniture_object_1787880813264.jpg',
+    heroImage: getAssetUrl('images/noma_furniture_object_1787880813264.jpg'),
     coverAspect: 'aspect-[16/10]',
     summary: 'Noma Objects creates limited-edition luxury furniture and digital collectibles. We designed a web experience where physical furniture pieces are rendered in interactive 3D, allowing customers to inspect lighting, materials, and spatial scale in real-time.',
     challenge: 'Traditional e-commerce photography failed to convey the 3D craftsmanship, metallic refractions, and custom textures of Noma’s high-end furniture objects.',
@@ -304,7 +305,7 @@ export const projectsData: Project[] = [
         name: 'Camilla Rossi',
         role: 'Interior Curator',
         quote: 'Buying bespoke furniture online feels risky unless I can rotate the piece, view the joinery, and see how light hits the grain.',
-        avatar: '/src/assets/images/team_lead_portrait_1787886403043.jpg'
+        avatar: getAssetUrl('images/team_lead_portrait_1787886403043.jpg')
       }
     },
     wireframes: {
@@ -312,7 +313,7 @@ export const projectsData: Project[] = [
       description: 'Structuring the canvas to blend 3D canvas viewport controls with e-commerce UI overlays.',
       images: [
         {
-          url: '/src/assets/images/noma_furniture_object_1787880813264.jpg',
+          url: getAssetUrl('images/noma_furniture_object_1787880813264.jpg'),
           caption: 'Interactive 3D Stage & Material Customizer Grid',
           label: '3D Stage Layout'
         }
@@ -331,7 +332,7 @@ export const projectsData: Project[] = [
       components: ['3D Stage Canvas', 'Material Swatch Selector', 'Exploding View Toggle', 'Cart Drawer'],
       images: [
         {
-          url: '/src/assets/images/archive_art_gallery_1787880846677.jpg',
+          url: getAssetUrl('images/archive_art_gallery_1787880846677.jpg'),
           title: 'Interactive Object Inspection',
           caption: 'Real-time raytraced lighting simulation in the browser.'
         }
@@ -345,13 +346,13 @@ export const projectsData: Project[] = [
           id: 'showroom',
           label: 'Object Inspection Stage',
           description: 'Full 360-degree rotation with material surface zoom.',
-          mockupUrl: '/src/assets/images/noma_furniture_object_1787880813264.jpg'
+          mockupUrl: getAssetUrl('images/noma_furniture_object_1787880813264.jpg')
         },
         {
           id: 'materials',
           label: 'Material Shader Customizer',
           description: 'Switch between brushed brass, matte ceramic, and charred oak textures.',
-          mockupUrl: '/src/assets/images/service_creative_3d_1787881502863.jpg'
+          mockupUrl: getAssetUrl('images/service_creative_3d_1787881502863.jpg')
         }
       ]
     },
@@ -372,7 +373,7 @@ export const projectsData: Project[] = [
     year: '2026',
     client: 'Flux Motors AG',
     services: ['Automotive UX', 'HMI Interface', 'Design System', 'Prototyping'],
-    heroImage: '/src/assets/images/flux_ev_cockpit_ui_1787880828618.jpg',
+    heroImage: getAssetUrl('images/flux_ev_cockpit_ui_1787880828618.jpg'),
     coverAspect: 'aspect-[4/5]',
     summary: 'Flux Mobility is a next-generation electric vehicle platform. We designed the human-machine interface (HMI) for in-cabin widescreen displays and companion mobile apps, providing seamless transition between autonomous driving modes and manual telemetry.',
     challenge: 'Designing an automotive display UI that delivers safety-critical driving information instantly without creating driver distraction during manual override.',
@@ -389,7 +390,7 @@ export const projectsData: Project[] = [
         name: 'Soren Vance',
         role: 'EV Fleet Director',
         quote: 'An EV interface must feel like an extension of the driver’s senses — effortless, hyper-responsive, and crystal clear.',
-        avatar: '/src/assets/images/team_strategist_portrait_1787886454193.jpg'
+        avatar: getAssetUrl('images/team_strategist_portrait_1787886454193.jpg')
       }
     },
     wireframes: {
@@ -397,7 +398,7 @@ export const projectsData: Project[] = [
       description: 'Structuring driver display zones across panoramic dashboard displays.',
       images: [
         {
-          url: '/src/assets/images/flux_ev_cockpit_ui_1787880828618.jpg',
+          url: getAssetUrl('images/flux_ev_cockpit_ui_1787880828618.jpg'),
           caption: 'Panoramic Instrument Cluster Layout & Autonomous Visualizer',
           label: 'HMI Wireframe'
         }
@@ -416,7 +417,7 @@ export const projectsData: Project[] = [
       components: ['Speedometer Ring', 'Battery Range Gauge', 'Autonomous LiDAR Radar', 'Climate Bar'],
       images: [
         {
-          url: '/src/assets/images/service_prototyping_1787881485704.jpg',
+          url: getAssetUrl('images/service_prototyping_1787881485704.jpg'),
           title: 'Widescreen Cockpit Mode',
           caption: 'Glanceable telemetry cards designed for zero-distraction driving.'
         }
@@ -430,13 +431,13 @@ export const projectsData: Project[] = [
           id: 'manual',
           label: 'Manual Driver Dashboard',
           description: 'High-contrast speed, battery telemetry, and navigation route.',
-          mockupUrl: '/src/assets/images/flux_ev_cockpit_ui_1787880828618.jpg'
+          mockupUrl: getAssetUrl('images/flux_ev_cockpit_ui_1787880828618.jpg')
         },
         {
           id: 'autonomous',
           label: 'Autonomous LiDAR View',
           description: 'Real-time 3D point-cloud camera feed of surrounding vehicles.',
-          mockupUrl: '/src/assets/images/service_ui_ux_design_1787881454335.jpg'
+          mockupUrl: getAssetUrl('images/service_ui_ux_design_1787881454335.jpg')
         }
       ]
     },
@@ -457,7 +458,7 @@ export const projectsData: Project[] = [
     year: '2026',
     client: 'Foundation for Digital Art',
     services: ['Creative Coding', 'Generative Design', '3D Gallery', 'Web Architecture'],
-    heroImage: '/src/assets/images/archive_art_gallery_1787880846677.jpg',
+    heroImage: getAssetUrl('images/archive_art_gallery_1787880846677.jpg'),
     coverAspect: 'aspect-[16/10]',
     summary: 'Archive 01 is an online gallery dedicated to preserving algorithmic and generative digital art. We created a spatial web museum where visitors navigate through infinite virtual exhibition halls curated by artificial intelligence.',
     challenge: 'Traditional web galleries list artworks in flat image grids, missing the spatial presence and scale of physical art exhibitions.',
@@ -474,7 +475,7 @@ export const projectsData: Project[] = [
         name: 'Amara Sol',
         role: 'Digital Art Curator',
         quote: 'Generative art needs a home that feels as fluid and alive as the code that created it.',
-        avatar: '/src/assets/images/team_designer_portrait_1787886436203.jpg'
+        avatar: getAssetUrl('images/team_designer_portrait_1787886436203.jpg')
       }
     },
     wireframes: {
@@ -482,7 +483,7 @@ export const projectsData: Project[] = [
       description: 'Mapping 3D node connections and artwork placement in virtual space.',
       images: [
         {
-          url: '/src/assets/images/archive_art_gallery_1787880846677.jpg',
+          url: getAssetUrl('images/archive_art_gallery_1787880846677.jpg'),
           caption: '3D Spatial Grid & Artwork Inspection Node',
           label: 'Gallery Map'
         }
@@ -501,7 +502,7 @@ export const projectsData: Project[] = [
       components: ['3D Hall Navigator', 'Artwork Detail Card', 'Audio Soundscape Toggle', 'Curator Notes'],
       images: [
         {
-          url: '/src/assets/images/service_creative_3d_1787881502863.jpg',
+          url: getAssetUrl('images/service_creative_3d_1787881502863.jpg'),
           title: 'Spatial Gallery View',
           caption: 'Generative room lighting dynamically reacting to artwork spectrums.'
         }
@@ -515,13 +516,13 @@ export const projectsData: Project[] = [
           id: 'hall',
           label: 'Generative Art Hall',
           description: 'Explore the 3D gallery corridor with interactive artwork nodes.',
-          mockupUrl: '/src/assets/images/archive_art_gallery_1787880846677.jpg'
+          mockupUrl: getAssetUrl('images/archive_art_gallery_1787880846677.jpg')
         },
         {
           id: 'artwork',
           label: 'Artwork Inspection',
           description: 'High-definition inspection of algorithmic shaders and code provenance.',
-          mockupUrl: '/src/assets/images/design_attention_1787880412477.jpg'
+          mockupUrl: getAssetUrl('images/design_attention_1787880412477.jpg')
         }
       ]
     },

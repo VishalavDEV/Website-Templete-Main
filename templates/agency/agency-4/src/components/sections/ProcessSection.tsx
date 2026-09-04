@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { SectionHeader } from '../ui/SectionHeader';
 import { PROCESS_STEPS } from '../../data/studio';
+import { getAssetUrl } from '../../utils/assets';
 
 export const ProcessSection: React.FC = () => {
   return (
@@ -29,7 +30,7 @@ export const ProcessSection: React.FC = () => {
                 {/* Stage Header Image */}
                 <div className="aspect-[16/10] rounded-2xl overflow-hidden mb-5 bg-[#EAE6DF] relative">
                   <img
-                    src={step.image}
+                    src={getAssetUrl(step.image)}
                     alt={step.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"

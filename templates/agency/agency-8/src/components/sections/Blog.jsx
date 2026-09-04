@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../ui/SectionTitle';
+import ArticleModal from '../ui/ArticleModal';
 import { ArrowUpRight } from 'lucide-react';
 import { useCursor } from '../../context/CursorContext';
 
 export default function Blog() {
   const { setCursorState } = useCursor();
+  const [selectedArticle, setSelectedArticle] = useState(null);
 
   const articles = [
     {
@@ -53,6 +55,7 @@ export default function Blog() {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               onMouseEnter={() => setCursorState('button')}
               onMouseLeave={() => setCursorState('default')}
+              onClick={() => setSelectedArticle(art)}
               className="group glass-panel rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between p-6 cursor-pointer hover:border-cyan-500/40 transition-all duration-500"
             >
               {/* Thumbnail Container */}
@@ -84,6 +87,13 @@ export default function Blog() {
           ))}
         </div>
       </div>
+
+      {/* Interactive Article Modal */}
+      <ArticleModal
+        article={selectedArticle}
+        isOpen={Boolean(selectedArticle)}
+        onClose={() => setSelectedArticle(null)}
+      />
     </section>
   );
 }

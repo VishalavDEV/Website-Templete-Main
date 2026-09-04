@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../utils/assets';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Compass, Zap } from 'lucide-react';
@@ -107,7 +108,7 @@ export const Hero3D: React.FC = () => {
               <div className="relative h-full w-full overflow-hidden rounded-xl bg-neutral-900 border border-neutral-700/60 p-4">
                 {/* Background Image Layer */}
                 <img
-                  src="/src/assets/images/aether_spatial_ui_1787880779021.jpg"
+                  src={getAssetUrl('images/aether_spatial_ui_1787880779021.jpg')}
                   alt="Aether 3D Showcase"
                   className="h-full w-full object-cover rounded-lg opacity-85 transition-transform duration-700"
                   style={

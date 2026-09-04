@@ -79,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Desktop Navigation Links */}
         <nav
           aria-label="Main Navigation"
-          className="hidden md:flex items-center space-x-1 px-3 py-1.5 rounded-full bg-[#0a0f18]/80 backdrop-blur-xl border border-slate-800 pointer-events-auto shadow-2xl"
+          className="hidden lg:flex items-center space-x-1 px-3 py-1.5 rounded-full bg-[#0a0f18]/80 backdrop-blur-xl border border-slate-800 pointer-events-auto shadow-2xl"
         >
           {navLinks.slice(1).map((link) => {
             const isActive = activeSection === link.target;
@@ -147,7 +147,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               setMobileMenuOpen(!mobileMenuOpen);
             }}
             aria-label="Toggle menu"
-            className="md:hidden p-2 sm:p-2.5 rounded-lg bg-[#0a0f18]/90 backdrop-blur-md border border-slate-800 text-slate-300 hover:text-white"
+            className="lg:hidden p-2 sm:p-2.5 rounded-lg bg-[#0a0f18]/90 backdrop-blur-md border border-slate-800 text-slate-300 hover:text-white"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -158,7 +158,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       {mobileMenuOpen && (
         <div
           id="mobile-nav-drawer"
-          className="fixed inset-0 z-40 bg-[#04060a]/95 backdrop-blur-2xl flex flex-col justify-between px-6 sm:px-12 pt-24 pb-8 overflow-y-auto md:hidden"
+          className="fixed inset-0 z-40 bg-[#04060a]/95 backdrop-blur-2xl flex flex-col justify-between px-6 sm:px-12 pt-24 pb-8 overflow-y-auto lg:hidden"
         >
           <div className="absolute top-6 left-6 font-mono text-xs text-cyan-400 flex items-center space-x-2">
             <Terminal className="w-4 h-4" />

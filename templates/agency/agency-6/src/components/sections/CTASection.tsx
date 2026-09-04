@@ -21,9 +21,9 @@ export const CTASection: React.FC = () => {
             INITIATE CONTACT // PROJECT DISCOVERY
           </span>
 
-          <h2 className="text-4xl sm:text-7xl lg:text-[5.5rem] font-serif font-black uppercase text-white tracking-tighter leading-[0.85]">
+          <h2 className="text-3xl sm:text-6xl lg:text-[5.5rem] font-serif font-black uppercase text-white tracking-tighter leading-[1.05] sm:leading-[0.92] md:leading-[0.85]">
             LET'S ARCHITECT YOUR <br />
-            <span className="text-[#090909] bg-[#D1FF00] px-4 py-0.5 rounded-none inline-block border-2 border-[#090909]">
+            <span className="text-[#090909] bg-[#D1FF00] px-3 sm:px-4 py-0.5 rounded-none inline-block border-2 border-[#090909] max-w-full my-1 sm:my-0">
               DIGITAL DOMINANCE
             </span>.
           </h2>

@@ -27,7 +27,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[999] flex flex-col justify-between bg-[#FBF9F5] dark:bg-[#0D0E12] p-6 md:hidden animate-fade-in overflow-y-auto">
+    <div className="fixed inset-0 z-[999] flex flex-col justify-between bg-[#FBF9F5] dark:bg-[#0D0E12] p-6 lg:hidden animate-fade-in overflow-y-auto">
       {/* Top Header */}
       <div className="flex items-center justify-between border-b border-neutral-200 dark:border-neutral-800 pb-4">
         <Link to="/" onClick={onClose} className="font-serif text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">

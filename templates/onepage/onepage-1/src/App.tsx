@@ -50,14 +50,14 @@ export default function App() {
             </span>
           </div>
 
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+          <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
             <a href="#services" className="hover:text-indigo-400 transition-colors">Services</a>
             <a href="#work" className="hover:text-indigo-400 transition-colors">Work</a>
             <a href="#metrics" className="hover:text-indigo-400 transition-colors">Impact</a>
             <a href="#about" className="hover:text-indigo-400 transition-colors">About</a>
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
             <a 
               href="#contact" 
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium text-sm shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
@@ -69,7 +69,8 @@ export default function App() {
 
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-slate-300 hover:text-white"
+            className="lg:hidden p-2 text-slate-300 hover:text-white"
+            aria-label="Toggle navigation"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -77,32 +78,32 @@ export default function App() {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="md:hidden px-6 pt-4 pb-6 bg-[#090d16]/98 border-b border-slate-800 space-y-4">
+          <div className="lg:hidden fixed inset-x-0 top-20 bg-[#090d16]/98 border-b border-slate-800 z-50 p-6 space-y-4 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto backdrop-blur-2xl">
             <a 
               href="#services" 
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-slate-300 hover:text-indigo-400 py-2 border-b border-slate-800/60 font-medium"
+              className="block text-slate-300 hover:text-indigo-400 py-2.5 border-b border-slate-800/60 font-medium"
             >
               Services
             </a>
             <a 
               href="#work" 
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-slate-300 hover:text-indigo-400 py-2 border-b border-slate-800/60 font-medium"
+              className="block text-slate-300 hover:text-indigo-400 py-2.5 border-b border-slate-800/60 font-medium"
             >
               Work
             </a>
             <a 
               href="#metrics" 
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-slate-300 hover:text-indigo-400 py-2 border-b border-slate-800/60 font-medium"
+              className="block text-slate-300 hover:text-indigo-400 py-2.5 border-b border-slate-800/60 font-medium"
             >
               Impact
             </a>
             <a 
               href="#about" 
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-slate-300 hover:text-indigo-400 py-2 border-b border-slate-800/60 font-medium"
+              className="block text-slate-300 hover:text-indigo-400 py-2.5 border-b border-slate-800/60 font-medium"
             >
               About
             </a>

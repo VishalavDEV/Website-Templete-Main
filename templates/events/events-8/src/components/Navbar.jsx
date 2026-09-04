@@ -251,6 +251,10 @@ const Navbar = () => {
             border: '1px solid rgba(0, 255, 102, 0.4)',
             color: '#00ff66',
             padding: '0.45rem',
+            minWidth: '44px',
+            minHeight: '44px',
+            alignItems: 'center',
+            justifyContent: 'center',
             borderRadius: '6px',
             cursor: 'pointer'
           }}
@@ -266,17 +270,19 @@ const Navbar = () => {
             position: 'fixed',
             top: 'var(--nav-height)',
             left: 0,
-            width: '100vw',
+            width: '100%',
+            maxWidth: '100%',
             height: 'calc(100vh - var(--nav-height))',
             backgroundColor: 'rgba(5, 8, 6, 0.98)',
             backdropFilter: 'blur(20px)',
             borderTop: '1px solid #00ff66',
-            padding: '1.5rem 1.25rem',
+            padding: '1.25rem 1rem',
             display: 'flex',
             flexDirection: 'column',
-            gap: '0.75rem',
+            gap: '0.6rem',
             overflowY: 'auto',
-            zIndex: 9999
+            zIndex: 9999,
+            boxSizing: 'border-box'
           }}
         >
           {navLinks.map((link, idx) => {
@@ -288,16 +294,18 @@ const Navbar = () => {
                 onClick={(e) => handleNavClick(e, link)}
                 style={{
                   fontFamily: 'var(--font-heading)',
-                  fontSize: '1rem',
+                  fontSize: '0.95rem',
                   color: isActive ? '#00ff66' : '#ffffff',
                   textDecoration: 'none',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  padding: '0.65rem 0.85rem',
+                  padding: '0.75rem 1rem',
+                  minHeight: '44px',
                   backgroundColor: isActive ? 'rgba(0, 255, 102, 0.1)' : 'rgba(255, 255, 255, 0.02)',
                   border: `1px solid ${isActive ? '#00ff66' : 'rgba(255, 255, 255, 0.05)'}`,
-                  borderRadius: '6px'
+                  borderRadius: '6px',
+                  boxSizing: 'border-box'
                 }}
               >
                 <span>{link.name}</span>
@@ -312,6 +320,7 @@ const Navbar = () => {
             style={{
               marginTop: '0.75rem',
               width: '100%',
+              minHeight: '48px',
               padding: '0.9rem',
               fontSize: '0.95rem'
             }}

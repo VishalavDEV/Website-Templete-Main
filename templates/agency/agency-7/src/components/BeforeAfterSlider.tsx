@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../utils/assets';
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { Layers } from 'lucide-react';
 
@@ -62,7 +63,7 @@ export const BeforeAfterSlider: React.FC = () => {
       >
         {/* AFTER IMAGE (Final UI) - FULL BACKGROUND */}
         <img
-          src="/src/assets/images/service_ui_ux_design_1787881454335.jpg"
+          src={getAssetUrl('images/service_ui_ux_design_1787881454335.jpg')}
           alt="Final UI Render"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -77,7 +78,7 @@ export const BeforeAfterSlider: React.FC = () => {
           style={{ width: `${sliderPos}%` }}
         >
           <img
-            src="/src/assets/images/service_design_system_1787881469264.jpg"
+            src={getAssetUrl('images/service_design_system_1787881469264.jpg')}
             alt="Wireframe Layout"
             className="absolute inset-0 h-full w-full object-cover max-w-none"
             style={{ width: containerRef.current ? containerRef.current.clientWidth : '100%' }}

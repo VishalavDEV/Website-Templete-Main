@@ -179,10 +179,13 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  padding: 1rem 2.2rem;
+  padding: 0.85rem 1.8rem;
+  min-height: 48px;
+  max-width: 100%;
+  box-sizing: border-box;
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   text-decoration: none;
@@ -192,34 +195,23 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
   overflow: hidden;
   transition: var(--transition-fast);
-  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+  text-align: center;
+  white-space: nowrap;
 }
 
 .btn-primary {
   background: var(--color-yellow);
   color: #08080A;
-  box-shadow: 0 0 20px var(--color-yellow-glow);
-}
-
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transition: 0.5s;
-}
-
-.btn-primary:hover::before {
-  left: 100%;
+  font-weight: 900;
+  box-shadow: 0 0 18px var(--color-yellow-glow);
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px) scale(1.02);
-  background: #FFF000;
-  box-shadow: 0 0 30px var(--color-yellow);
+  background: #FFFFFF;
+  color: #000000;
+  box-shadow: 0 0 25px rgba(255, 230, 0, 0.6);
+  transform: translateY(-2px);
 }
 
 .btn-purple {

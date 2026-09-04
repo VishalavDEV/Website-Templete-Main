@@ -48,7 +48,7 @@ const ScrollToTop = () => {
         zIndex: 999,
         transition: 'all 0.3s ease'
       }}
-      className="interactive"
+      className="scroll-to-top-btn interactive"
       onMouseEnter={(e) => {
         e.currentTarget.style.backgroundColor = '#00ff66';
         e.currentTarget.style.color = '#000';

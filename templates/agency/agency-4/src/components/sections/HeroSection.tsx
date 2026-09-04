@@ -5,6 +5,7 @@ import { Button } from '../ui/Button';
 import { useNavigate } from 'react-router-dom';
 import { STUDIO_INFO } from '../../data/studio';
 import { BrandLogos } from '../ui/BrandLogos';
+import { getAssetUrl } from '../../utils/assets';
 
 export const HeroSection: React.FC = () => {
   const navigate = useNavigate();
@@ -107,7 +108,7 @@ export const HeroSection: React.FC = () => {
               className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#EAE6DF] aspect-[4/3] sm:aspect-[4/5] bg-white group"
             >
               <img
-                src="images/pexels-fotografiarqmx-9511923.jpg"
+                src={getAssetUrl("images/pexels-fotografiarqmx-9511923.jpg")}
                 alt="AURELIA Hero Editorial Composition"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />

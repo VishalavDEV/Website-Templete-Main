@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Clock } from 'lucide-react';
 import type { Insight } from '../../types';
+import { getAssetUrl } from '../../utils/assets';
 
 interface ArticleCardProps {
   article: Insight;
@@ -24,7 +25,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({ article, index = 0 }) 
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.1, ease: [0.25, 1, 0.5, 1] }}
-          src={article.image}
+          src={getAssetUrl(article.image)}
           alt={article.title}
           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           loading="lazy"
@@ -59,7 +60,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({ article, index = 0 }) 
         <div className="pt-4 border-t border-[#EAE6DF] flex items-center justify-between mt-auto">
           <div className="flex items-center space-x-3">
             <img
-              src={article.author.avatar}
+              src={getAssetUrl(article.author.avatar)}
               alt={article.author.name}
               className="w-8 h-8 rounded-full object-cover border border-[#EAE6DF]"
             />

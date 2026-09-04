@@ -3,6 +3,7 @@ import { SectionHeader } from '../components/ui/SectionHeader';
 import { ContactSection } from '../components/sections/ContactSection';
 import { MapPin, Calendar } from 'lucide-react';
 import { STUDIO_INFO } from '../data/studio';
+import { getAssetUrl } from '../utils/assets';
 
 export const ContactPage: React.FC = () => {
   useEffect(() => {
@@ -28,7 +29,7 @@ export const ContactPage: React.FC = () => {
           <div className="bg-white rounded-3xl overflow-hidden border border-[#EAE6DF] shadow-sm flex flex-col justify-between group">
             <div className="aspect-[16/9] overflow-hidden bg-[#EAE6DF] relative">
               <img
-                src="images/pexels-ann-h-45017-32417522.jpg"
+                src={getAssetUrl("images/pexels-ann-h-45017-32417522.jpg")}
                 alt="Copenhagen Studio Headquarters"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -55,7 +56,7 @@ export const ContactPage: React.FC = () => {
           <div className="bg-white rounded-3xl overflow-hidden border border-[#EAE6DF] shadow-sm flex flex-col justify-between group">
             <div className="aspect-[16/9] overflow-hidden bg-[#EAE6DF] relative">
               <img
-                src="images/pexels-karola-g2-6224.jpg"
+                src={getAssetUrl("images/pexels-karola-g2-6224.jpg")}
                 alt="Executive Discovery Consultation"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />

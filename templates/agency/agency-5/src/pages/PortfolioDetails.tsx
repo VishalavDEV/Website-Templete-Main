@@ -7,6 +7,7 @@ import { SectionHeading } from '../components/ui/SectionHeading';
 import { FinalCTA } from '../components/sections/FinalCTA';
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useCustomCursor } from '../hooks/useCustomCursor';
+import { getAssetUrl } from '../utils/assets';
 import { Reveal } from '../components/ui/Reveal';
 import { ImageWithFallback } from '../components/ui/ImageWithFallback';
 
@@ -129,7 +130,7 @@ export const PortfolioDetails: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {project.galleryImages.map((img, idx) => (
               <div key={idx} className="rounded-3xl overflow-hidden border border-[var(--border-color)] aspect-[16/10]">
-                <img src={img} alt={`${project.title} Gallery ${idx + 1}`} className="w-full h-full object-cover" />
+                <ImageWithFallback src={img} alt={`${project.title} Gallery ${idx + 1}`} fallbackTitle={project.title} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
@@ -139,7 +140,7 @@ export const PortfolioDetails: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-12 border-t border-[var(--border-color)]">
           <Link
             to={`/portfolio/${prevProject.slug}`}
-            onMouseEnter={() => setCursorHover('PREVIOUS WORK', prevProject.coverImage)}
+            onMouseEnter={() => setCursorHover('PREVIOUS WORK', getAssetUrl(prevProject.coverImage))}
             onMouseLeave={resetCursor}
             className="flex items-center gap-4 group p-4 rounded-2xl bg-[var(--card-bg)] border border-[var(--border-color)] hover:border-[var(--accent-color)] transition-colors w-full sm:w-auto"
           >
@@ -152,7 +153,7 @@ export const PortfolioDetails: React.FC = () => {
 
           <Link
             to={`/portfolio/${nextProject.slug}`}
-            onMouseEnter={() => setCursorHover('NEXT WORK', nextProject.coverImage)}
+            onMouseEnter={() => setCursorHover('NEXT WORK', getAssetUrl(nextProject.coverImage))}
             onMouseLeave={resetCursor}
             className="flex items-center gap-4 group p-4 rounded-2xl bg-[var(--card-bg)] border border-[var(--border-color)] hover:border-[var(--accent-color)] transition-colors w-full sm:w-auto text-right"
           >

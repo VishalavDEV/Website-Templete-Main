@@ -114,15 +114,6 @@ export default function Roadline() {
     { q: "Do you offer climate-controlled vehicles?", a: "Yes, we have a specialized fleet of refrigerated containers and luxury Volvo coaches designed for sensitive cargo and passenger comfort." }
   ];
 
-  const handleBackToTemplates = (e) => {
-    if (e) e.preventDefault();
-    if (window.top && window.top !== window) {
-      window.top.location.href = '/templates';
-    } else {
-      window.location.href = '/templates';
-    }
-  };
-
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-orange-600 selection:text-white">
       
@@ -141,15 +132,6 @@ export default function Roadline() {
         </div>
 
         <div className="flex items-center gap-3">
-          <a 
-            href="/templates" 
-            onClick={handleBackToTemplates}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-slate-200 bg-white text-xs font-semibold text-slate-700 hover:border-orange-500 hover:text-orange-500 hover:bg-slate-50 transition-all cursor-pointer"
-            title="Back to Templates"
-          >
-            <ArrowLeft size={12} /> Templates
-          </a>
-
           <button 
             type="button"
             aria-label="Toggle Navigation Menu"
@@ -174,13 +156,7 @@ export default function Roadline() {
             <a href="#tickets" onClick={() => setMobileMenuOpen(false)} className="py-2.5 hover:text-orange-500 border-b border-slate-100 text-slate-700 transition-colors">Book Buses</a>
             <a href="#services" onClick={() => setMobileMenuOpen(false)} className="py-2.5 hover:text-orange-500 border-b border-slate-100 text-slate-700 transition-colors">Services</a>
             <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="py-2.5 hover:text-orange-500 border-b border-slate-100 text-slate-700 transition-colors">Contact</a>
-            <a 
-              href="/templates" 
-              onClick={(e) => { setMobileMenuOpen(false); handleBackToTemplates(e); }}
-              className="mt-2 py-2.5 text-orange-600 flex items-center justify-center gap-1.5 bg-orange-50 rounded-lg cursor-pointer"
-            >
-              <ArrowLeft size={14} /> Back to Templates
-            </a>
+            
           </motion.div>
         )}
       </AnimatePresence>

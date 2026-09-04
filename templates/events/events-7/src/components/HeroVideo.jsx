@@ -1,12 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Flag, Award, Eye, Volume2, VolumeX, ChevronDown } from 'lucide-react';
+import { audioManager } from '../utils/audioManager';
 
 export default function HeroVideo() {
-  const [isMuted, setIsMuted] = useState(true);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
   const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    return audioManager.subscribe(setIsPlayingAudio);
+  }, []);
 
   // Parallax scroll listener
   useEffect(() => {
@@ -33,8 +38,8 @@ export default function HeroVideo() {
 
     // Particles system
     const dustParticles = Array.from({ length: 40 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
+      x: Math.random() * (canvas.width || 800),
+      y: Math.random() * (canvas.height || 600),
       radius: Math.random() * 2 + 1,
       vx: (Math.random() - 0.5) * 0.4,
       vy: -Math.random() * 0.6 - 0.2,
@@ -44,8 +49,8 @@ export default function HeroVideo() {
     // Crowd light cheer points on left & right sides
     const crowdLights = Array.from({ length: 30 }, () => ({
       side: Math.random() > 0.5 ? 'left' : 'right',
-      x: Math.random() * (canvas.width * 0.25),
-      y: canvas.height * 0.4 + Math.random() * (canvas.height * 0.5),
+      x: Math.random() * ((canvas.width || 800) * 0.25),
+      y: (canvas.height || 600) * 0.4 + Math.random() * ((canvas.height || 600) * 0.5),
       size: Math.random() * 4 + 2,
       color: Math.random() > 0.5 ? '#FF6B2C' : '#E92B2B',
       pulse: Math.random() * Math.PI * 2
@@ -149,24 +154,26 @@ export default function HeroVideo() {
     <section 
       id="hero"
       ref={containerRef}
+      className="hero-video-container w-full max-w-full box-border"
       style={{
         position: 'relative',
         width: '100%',
-        height: 'calc(100vh - var(--navbar-height))',
-        minHeight: '600px',
-        maxHeight: '900px',
+        maxWidth: '100%',
+        minHeight: 'calc(100vh - var(--navbar-height))',
         overflow: 'hidden',
         background: '#090A0D',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        padding: '70px 16px 60px',
+        boxSizing: 'border-box'
       }}
     >
       {/* Background High Quality Video Loop */}
       <video
         autoPlay
         loop
-        muted={isMuted}
+        muted={true}
         playsInline
         poster="https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=1920&q=80"
         style={{
@@ -227,28 +234,33 @@ export default function HeroVideo() {
       }} />
 
       {/* Main Hero Foreground Content */}
-      <div style={{
-        position: 'relative',
-        zIndex: 10,
-        maxWidth: 'var(--max-width)',
-        width: '100%',
-        margin: '0 auto',
-        padding: '0 24px',
-        textAlign: 'center',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}>
+      <div 
+        className="max-w-full box-border w-full"
+        style={{
+          position: 'relative',
+          zIndex: 10,
+          maxWidth: 'var(--max-width)',
+          width: '100%',
+          margin: '0 auto',
+          padding: '0 16px',
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          boxSizing: 'border-box'
+        }}
+      >
         
         {/* Top Location & Date Badge */}
         <div 
-          className="badge-tag"
+          className="badge-tag max-w-full box-border"
           style={{
             marginBottom: '20px',
             boxShadow: '0 0 20px var(--glow-red)',
             padding: '8px 20px',
-            fontSize: '0.82rem'
+            fontSize: '0.82rem',
+            boxSizing: 'border-box'
           }}
         >
           <Flag size={14} /> CHENNAI • 15 NOVEMBER 2026
@@ -256,80 +268,121 @@ export default function HeroVideo() {
 
         {/* Main Taglines */}
         <h1 
-          className="font-display text-gradient"
+          className="font-display text-gradient max-w-full box-border"
           style={{
-            fontSize: 'clamp(3.5rem, 9vw, 7.5rem)',
-            lineHeight: 0.92,
+            fontSize: 'clamp(2.8rem, 8vw, 7.5rem)',
+            lineHeight: 0.95,
             textTransform: 'uppercase',
             marginBottom: '12px',
             letterSpacing: '2px',
-            textShadow: '0 10px 40px rgba(0,0,0,0.9)'
+            textShadow: '0 10px 40px rgba(0,0,0,0.9)',
+            wordBreak: 'break-word',
+            boxSizing: 'border-box'
           }}
         >
           RUN YOUR MOMENT.
         </h1>
 
         <h2 
-          className="font-heading"
+          className="font-heading max-w-full box-border"
           style={{
-            fontSize: 'clamp(1.2rem, 3.5vw, 2.4rem)',
+            fontSize: 'clamp(1.1rem, 3.5vw, 2.4rem)',
             fontWeight: 800,
             color: 'var(--bright-orange)',
-            letterSpacing: '4px',
+            letterSpacing: '3px',
             textTransform: 'uppercase',
             marginBottom: '16px',
-            textShadow: '0 4px 20px rgba(233,43,43,0.5)'
+            textShadow: '0 4px 20px rgba(233,43,43,0.5)',
+            boxSizing: 'border-box'
           }}
         >
           VAYORA RUNFEST 2026
         </h2>
 
-        <p style={{
-          fontSize: 'clamp(1rem, 2vw, 1.35rem)',
-          color: 'var(--warm-white)',
-          maxWidth: '640px',
-          margin: '0 auto 36px auto',
-          fontWeight: 400,
-          opacity: 0.95,
-          fontStyle: 'italic',
-          letterSpacing: '0.5px',
-          textShadow: '0 2px 10px rgba(0,0,0,0.8)'
-        }}>
+        <p 
+          className="max-w-full box-border"
+          style={{
+            fontSize: 'clamp(0.95rem, 2vw, 1.35rem)',
+            color: 'var(--warm-white)',
+            maxWidth: '640px',
+            margin: '0 auto 36px auto',
+            fontWeight: 400,
+            opacity: 0.95,
+            fontStyle: 'italic',
+            letterSpacing: '0.5px',
+            textShadow: '0 2px 10px rgba(0,0,0,0.8)',
+            lineHeight: 1.5,
+            boxSizing: 'border-box'
+          }}
+        >
           “Thousands of runners. One road. Unforgettable stories.”
         </p>
 
         {/* CTA Buttons */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-          <Link to="/register" className="btn-primary" style={{ padding: '16px 40px', fontSize: '1rem' }}>
+        <div 
+          className="max-w-full box-border flex items-center justify-center gap-4 flex-wrap w-full"
+          style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            gap: '16px', 
+            flexWrap: 'wrap', 
+            width: '100%',
+            maxWidth: '100%',
+            boxSizing: 'border-box'
+          }}
+        >
+          <Link 
+            to="/register" 
+            className="btn-primary max-w-full box-border" 
+            style={{ 
+              padding: '16px 36px', 
+              fontSize: '1rem', 
+              minWidth: 'min(200px, 100%)',
+              boxSizing: 'border-box'
+            }}
+          >
             <Award size={18} /> REGISTER NOW
           </Link>
-          <Link to="/race-info" className="btn-secondary" style={{ padding: '16px 36px', fontSize: '1rem' }}>
+          <Link 
+            to="/race-info" 
+            className="btn-secondary max-w-full box-border" 
+            style={{ 
+              padding: '16px 32px', 
+              fontSize: '1rem', 
+              minWidth: 'min(200px, 100%)',
+              boxSizing: 'border-box'
+            }}
+          >
             <Eye size={18} /> EXPLORE THE RACE
           </Link>
         </div>
       </div>
 
-      {/* Mute/Unmute Audio Toggle */}
+      {/* Floating Audio Playback Toggle Button */}
       <button
-        onClick={() => setIsMuted(!isMuted)}
-        className="glass-panel"
+        onClick={() => audioManager.toggle()}
+        className="glass-panel hero-audio-toggle"
         style={{
           position: 'absolute',
-          right: '24px',
-          top: '24px',
+          right: '20px',
+          top: '20px',
           zIndex: 20,
-          padding: '10px',
-          border: 'none',
-          color: '#FFFFFF',
+          width: '44px',
+          height: '44px',
+          border: isPlayingAudio ? '1px solid var(--bright-orange)' : '1px solid rgba(255,255,255,0.15)',
+          color: isPlayingAudio ? 'var(--bright-orange)' : '#FFFFFF',
           cursor: 'pointer',
           borderRadius: '50%',
-          display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          background: isPlayingAudio ? 'rgba(255, 107, 44, 0.25)' : 'rgba(9, 10, 13, 0.75)',
+          transition: 'all 0.25s ease'
         }}
-        aria-label="Toggle sound"
+        aria-label="Toggle race sound"
+        title={isPlayingAudio ? "Mute sound" : "Play race sound"}
       >
-        {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} color="var(--bright-orange)" />}
+        {isPlayingAudio ? <Volume2 size={20} color="var(--bright-orange)" /> : <VolumeX size={20} />}
       </button>
 
       {/* Scroll Down Indicator */}
@@ -337,7 +390,7 @@ export default function HeroVideo() {
         className="bounce-indicator"
         style={{
           position: 'absolute',
-          bottom: '20px',
+          bottom: '16px',
           left: '50%',
           transform: 'translateX(-50%)',
           zIndex: 20,

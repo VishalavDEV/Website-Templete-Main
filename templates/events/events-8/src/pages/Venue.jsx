@@ -59,7 +59,7 @@ const Venue = () => {
       {/* Address & Quick Info Grid */}
       <section className="section-padding">
         <div className="container">
-          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem', marginBottom: '4rem' }}>
+          <div className="grid-2" style={{ marginBottom: '4rem' }}>
             {/* Left: Venue Address Card */}
             <div className="cyber-card" style={{ padding: '2.5rem', backgroundColor: 'rgba(10, 16, 12, 0.9)' }}>
               <div className="cyber-corner-tl" />

@@ -61,7 +61,6 @@ export default function App() {
     <Router >
       <ScrollToTop />
       <div className="page-wrapper">
-        <CustomCursor />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

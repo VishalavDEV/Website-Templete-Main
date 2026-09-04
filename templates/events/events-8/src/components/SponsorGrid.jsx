@@ -15,6 +15,7 @@ const SponsorModal = ({ onClose }) => {
 
   return (
     <div
+      className="modal-overlay"
       style={{
         position: 'fixed',
         top: 0,
@@ -27,10 +28,12 @@ const SponsorModal = ({ onClose }) => {
         justifyContent: 'center',
         zIndex: 10002,
         padding: '1rem',
-        backdropFilter: 'blur(10px)'
+        backdropFilter: 'blur(10px)',
+        boxSizing: 'border-box'
       }}
     >
       <div
+        className="modal-content-box"
         style={{
           width: '100%',
           maxWidth: '600px',
@@ -39,7 +42,8 @@ const SponsorModal = ({ onClose }) => {
           borderRadius: '12px',
           padding: '2.5rem',
           position: 'relative',
-          boxShadow: '0 0 50px rgba(0, 255, 102, 0.3)'
+          boxShadow: '0 0 50px rgba(0, 255, 102, 0.3)',
+          boxSizing: 'border-box'
         }}
       >
         <button
@@ -64,7 +68,7 @@ const SponsorModal = ({ onClose }) => {
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+            <div className="form-grid-2" style={{ marginBottom: '1rem' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.8rem', color: '#94a3b8', fontFamily: 'var(--font-mono)', marginBottom: '0.35rem' }}>
                   Company Name:
@@ -79,7 +83,7 @@ const SponsorModal = ({ onClose }) => {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+            <div className="form-grid-2" style={{ marginBottom: '1rem' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.8rem', color: '#94a3b8', fontFamily: 'var(--font-mono)', marginBottom: '0.35rem' }}>
                   Work Email:
@@ -106,7 +110,7 @@ const SponsorModal = ({ onClose }) => {
               <textarea rows={3} placeholder="Tell us your recruitment or tech API goals..." className="cyber-input" />
             </div>
 
-            <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
+            <button type="submit" className="btn btn-primary" style={{ width: '100%', minHeight: '48px' }}>
               <Send size={16} /> REQUEST SPONSORSHIP DECK
             </button>
           </form>
@@ -160,7 +164,7 @@ const SponsorGrid = () => {
   return (
     <div>
       {/* Tiers Grid */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '3.5rem', marginBottom: '5rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', marginBottom: '4rem' }}>
         {sponsorTiers.map((tierGroup, tIdx) => (
           <div key={tIdx} style={{ textAlign: 'center' }}>
             <div className="badge-tag" style={{ marginBottom: '1.5rem', fontSize: '0.85rem', letterSpacing: '2px' }}>
@@ -170,9 +174,10 @@ const SponsorGrid = () => {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: `repeat(auto-fit, minmax(${tIdx === 0 ? '300px' : '220px'}, 1fr))`,
-                gap: '1.5rem',
-                justifyContent: 'center'
+                gridTemplateColumns: `repeat(auto-fit, minmax(${tIdx === 0 ? '240px' : '180px'}, 1fr))`,
+                gap: '1.25rem',
+                justifyContent: 'center',
+                width: '100%'
               }}
             >
               {tierGroup.sponsors.map((sp, sIdx) => (
@@ -180,7 +185,7 @@ const SponsorGrid = () => {
                   key={sIdx}
                   className="cyber-card"
                   style={{
-                    padding: tIdx === 0 ? '2.5rem 1.5rem' : '1.5rem 1rem',
+                    padding: tIdx === 0 ? '2.25rem 1.5rem' : '1.5rem 1rem',
                     textAlign: 'center',
                     backgroundColor: 'rgba(10, 16, 12, 0.85)',
                     border: tIdx === 0 ? '1px solid #00ff66' : '1px solid rgba(0, 255, 102, 0.2)',
@@ -190,7 +195,7 @@ const SponsorGrid = () => {
                   <div
                     style={{
                       fontFamily: 'var(--font-heading)',
-                      fontSize: tIdx === 0 ? '1.8rem' : '1.3rem',
+                      fontSize: tIdx === 0 ? '1.6rem' : '1.2rem',
                       fontWeight: '800',
                       color: '#ffffff',
                       letterSpacing: '1px',
@@ -213,7 +218,7 @@ const SponsorGrid = () => {
         WHY SPONSOR NEXORA AFTERDARK?
       </h3>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', marginBottom: '3.5rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem', marginBottom: '3.5rem', width: '100%' }}>
         {sponsorBenefits.map((ben, idx) => {
           const IconComp = ben.icon;
           return (

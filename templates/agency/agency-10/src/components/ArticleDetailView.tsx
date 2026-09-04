@@ -38,7 +38,7 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
             <span>&bull;</span>
             <span className="text-slate-400">{post.publishedDate}</span>
             <span>&bull;</span>
-            <span className="text-slate-400">{post.readTime}</span>
+            <span className="text-slate-400">{post.readingTime || post.readTime || '5 min read'}</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-display text-white leading-tight">
@@ -48,14 +48,18 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
           <div className="mt-8 flex items-center justify-between pt-6 border-t border-slate-800">
             <div className="flex items-center gap-3">
               <img
-                src={post.authorAvatar}
-                alt={post.author}
+                src={typeof post.author === 'object' ? post.author.avatar : (post.authorAvatar || 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80')}
+                alt={typeof post.author === 'object' ? post.author.name : (post.author || 'Author')}
                 className="w-10 h-10 rounded-full object-cover border border-slate-700"
                 referrerPolicy="no-referrer"
               />
               <div>
-                <p className="text-sm font-bold text-white">{post.author}</p>
-                <p className="text-xs text-slate-400">{post.authorRole}</p>
+                <p className="text-sm font-bold text-white">
+                  {typeof post.author === 'object' ? post.author.name : (post.author || 'Kraftlab Editorial')}
+                </p>
+                <p className="text-xs text-slate-400">
+                  {typeof post.author === 'object' ? post.author.role : (post.authorRole || 'Engineering Team')}
+                </p>
               </div>
             </div>
 
@@ -95,31 +99,51 @@ export const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({
         </div>
 
         {/* Content formatted with clean typography */}
-        <div className="prose prose-slate max-w-none text-sm sm:text-base leading-relaxed text-slate-700 space-y-6">
-          {post.content.split('\n\n').map((paragraph, idx) => {
-            if (paragraph.startsWith('### ')) {
-              return (
-                <h3 key={idx} className="text-xl font-bold text-slate-950 font-display mt-8 pt-4 border-t border-slate-150">
-                  {paragraph.replace('### ', '')}
+        <div className="prose prose-slate max-w-none text-sm sm:text-base leading-relaxed text-slate-700 space-y-8">
+          {post.contentSections && post.contentSections.length > 0 ? (
+            post.contentSections.map((section, idx) => (
+              <div key={section.id || idx} className="space-y-4">
+                <h3 className="text-xl font-bold text-slate-950 font-display mt-8 pt-4 border-t border-slate-200">
+                  {section.heading}
                 </h3>
-              );
-            }
-            if (paragraph.startsWith('- ')) {
-              const items = paragraph.split('\n');
+                {section.body.map((paragraph, pIdx) => (
+                  <p key={pIdx} className="text-slate-600 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+                {section.callout && (
+                  <div className="p-4 rounded-xl bg-blue-50/80 border-l-4 border-blue-500 text-blue-900 text-sm font-medium italic my-4">
+                    {section.callout}
+                  </div>
+                )}
+              </div>
+            ))
+          ) : (
+            (post.content || '').split('\n\n').map((paragraph, idx) => {
+              if (paragraph.startsWith('### ')) {
+                return (
+                  <h3 key={idx} className="text-xl font-bold text-slate-950 font-display mt-8 pt-4 border-t border-slate-150">
+                    {paragraph.replace('### ', '')}
+                  </h3>
+                );
+              }
+              if (paragraph.startsWith('- ')) {
+                const items = paragraph.split('\n');
+                return (
+                  <ul key={idx} className="space-y-2 list-disc pl-5 text-sm">
+                    {items.map((it, i) => (
+                      <li key={i}>{it.replace('- ', '')}</li>
+                    ))}
+                  </ul>
+                );
+              }
               return (
-                <ul key={idx} className="space-y-2 list-disc pl-5 text-sm">
-                  {items.map((it, i) => (
-                    <li key={i}>{it.replace('- ', '')}</li>
-                  ))}
-                </ul>
+                <p key={idx} className="text-slate-600 leading-relaxed">
+                  {paragraph}
+                </p>
               );
-            }
-            return (
-              <p key={idx} className="text-slate-600 leading-relaxed">
-                {paragraph}
-              </p>
-            );
-          })}
+            })
+          )}
         </div>
 
         {/* Tags */}

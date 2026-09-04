@@ -84,15 +84,19 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 transition-[background-color,box-shadow] duration-300 ${
-        scrolled ? "bg-cream/85 shadow-[0_1px_0_0_var(--color-line)] backdrop-blur-md" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 transition-[background-color,box-shadow] duration-300 ${
+        open ? "z-[90]" : "z-40"
+      } ${
+        scrolled
+          ? "bg-cream/90 shadow-[0_1px_0_0_var(--color-line)] backdrop-blur-md"
+          : "bg-cream/80 backdrop-blur-sm lg:bg-transparent lg:backdrop-blur-none"
       }`}
     >
       <nav
         aria-label="Primary"
         className="container-x flex h-[68px] items-center justify-between"
       >
-        <Wordmark />
+        <Wordmark onClick={() => setOpen(false)} />
 
         <ul className="hidden items-center gap-8 lg:flex">
           {LINKS.map((link) => (
@@ -112,17 +116,26 @@ export function Nav() {
           </Magnetic>
         </div>
 
-        <button
-          ref={burgerRef}
-          type="button"
-          className="flex size-11 items-center justify-center rounded-full text-ink lg:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X size={26} weight="bold" /> : <List size={26} weight="bold" />}
-        </button>
+        <div className="flex items-center gap-2 sm:gap-3 lg:hidden">
+          <Link
+            to="/contact"
+            onClick={() => setOpen(false)}
+            className="hidden sm:inline-flex items-center rounded-full bg-ink px-4 py-1.5 text-xs font-semibold text-paper hover:bg-coral transition-colors"
+          >
+            Start a project
+          </Link>
+          <button
+            ref={burgerRef}
+            type="button"
+            className="flex size-10 sm:size-11 items-center justify-center rounded-full text-ink hover:bg-black/5 transition-colors"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X size={26} weight="bold" /> : <List size={26} weight="bold" />}
+          </button>
+        </div>
       </nav>
 
       <AnimatePresence>
@@ -137,9 +150,9 @@ export function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={reduce ? { opacity: 0 } : { opacity: 0, y: "-4%" }}
             transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 top-[68px] z-50 flex flex-col bg-paper lg:hidden"
+            className="fixed inset-0 top-[68px] z-50 flex flex-col bg-[#fffdf9] lg:hidden overflow-y-auto min-h-[calc(100vh-68px)]"
           >
-            <ul className="flex flex-1 flex-col justify-center gap-2 px-6">
+            <ul className="flex flex-1 flex-col justify-center gap-2 px-6 py-8">
               {[...LINKS, { to: "/contact", label: "Contact" }].map((link, i) => (
                 <motion.li
                   key={link.to}
@@ -150,6 +163,7 @@ export function Nav() {
                   <NavLink
                     to={link.to}
                     ref={i === 0 ? firstLinkRef : undefined}
+                    onClick={() => setOpen(false)}
                     className={({ isActive }) =>
                       `display-md block py-2 ${isActive ? "text-coral" : "text-ink"}`
                     }

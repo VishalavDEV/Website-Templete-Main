@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Award } from 'lucide-react';
 import { SectionHeader } from './SectionHeader';
+import { getAssetUrl } from '../../utils/assets';
 
 const GALLERY_IMAGES = [
   {
@@ -76,7 +77,7 @@ export const StudioGallery: React.FC = () => {
               className="group relative rounded-3xl overflow-hidden aspect-[3/4] bg-[#EAE6DF] shadow-md border border-[#EAE6DF]"
             >
               <img
-                src={img.url}
+                src={getAssetUrl(img.url)}
                 alt={img.title}
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
                 loading="lazy"

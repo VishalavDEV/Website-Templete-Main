@@ -101,7 +101,7 @@ const Workshops = () => {
 
       <section className="section-padding">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.75rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', width: '100%' }}>
             {workshopList.map((ws) => (
               <WorkshopCard key={ws.id} workshop={ws} />
             ))}

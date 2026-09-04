@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../utils/assets';
 import { JournalArticle } from '../types';
 
 export const journalArticles: JournalArticle[] = [
@@ -10,10 +11,10 @@ export const journalArticles: JournalArticle[] = [
     author: {
       name: 'Maya Chen',
       role: 'Creative Director',
-      avatar: '/src/assets/images/team_lead_portrait_1787886403043.jpg'
+      avatar: getAssetUrl('images/team_lead_portrait_1787886403043.jpg')
     },
     category: 'Design Philosophy',
-    coverImage: '/src/assets/images/design_attention_1787880412477.jpg',
+    coverImage: getAssetUrl('images/design_attention_1787880412477.jpg'),
     content: [
       {
         type: 'paragraph',
@@ -46,10 +47,10 @@ export const journalArticles: JournalArticle[] = [
     author: {
       name: 'Arjun Rao',
       role: 'Lead Product Designer',
-      avatar: '/src/assets/images/team_strategist_portrait_1787886454193.jpg'
+      avatar: getAssetUrl('images/team_strategist_portrait_1787886454193.jpg')
     },
     category: 'UI/UX Ergonomics',
-    coverImage: '/src/assets/images/service_ui_ux_design_1787881454335.jpg',
+    coverImage: getAssetUrl('images/service_ui_ux_design_1787881454335.jpg'),
     content: [
       {
         type: 'paragraph',
@@ -74,10 +75,10 @@ export const journalArticles: JournalArticle[] = [
     author: {
       name: 'Leo Martin',
       role: 'Lead Creative Developer',
-      avatar: '/src/assets/images/team_dev_portrait_1787886419155.jpg'
+      avatar: getAssetUrl('images/team_dev_portrait_1787886419155.jpg')
     },
     category: 'Creative Technology',
-    coverImage: '/src/assets/images/service_creative_3d_1787881502863.jpg',
+    coverImage: getAssetUrl('images/service_creative_3d_1787881502863.jpg'),
     content: [
       {
         type: 'paragraph',
@@ -102,10 +103,10 @@ export const journalArticles: JournalArticle[] = [
     author: {
       name: 'Elena Park',
       role: 'Head of UX Strategy',
-      avatar: '/src/assets/images/team_designer_portrait_1787886436203.jpg'
+      avatar: getAssetUrl('images/team_designer_portrait_1787886436203.jpg')
     },
     category: 'Interaction Design',
-    coverImage: '/src/assets/images/service_prototyping_1787881485704.jpg',
+    coverImage: getAssetUrl('images/service_prototyping_1787881485704.jpg'),
     content: [
       {
         type: 'paragraph',
@@ -122,10 +123,10 @@ export const journalArticles: JournalArticle[] = [
     author: {
       name: 'Arjun Rao',
       role: 'Lead Product Designer',
-      avatar: '/src/assets/images/team_strategist_portrait_1787886454193.jpg'
+      avatar: getAssetUrl('images/team_strategist_portrait_1787886454193.jpg')
     },
     category: 'Design Systems',
-    coverImage: '/src/assets/images/service_design_system_1787881469264.jpg',
+    coverImage: getAssetUrl('images/service_design_system_1787881469264.jpg'),
     content: [
       {
         type: 'paragraph',
