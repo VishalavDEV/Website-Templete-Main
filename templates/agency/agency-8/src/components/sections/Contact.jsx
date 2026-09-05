@@ -30,7 +30,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-28 px-6 md:px-12 bg-[#070915] overflow-hidden">
+    <section id="contact" className="relative py-20 sm:py-28 px-4 sm:px-6 md:px-12 bg-[#070915] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           badge="GET IN TOUCH"
@@ -38,52 +38,52 @@ export default function Contact() {
           description="Fill out the form below or reach out directly to initiate your project."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Contact Direct Info Column */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="glass-panel p-8 md:p-10 rounded-3xl border border-white/10 space-y-8">
-              <h3 className="text-2xl font-syne font-bold text-white">Direct Contacts</h3>
+          <div className="lg:col-span-5 space-y-6 sm:space-y-8">
+            <div className="glass-panel p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-white/10 space-y-6 sm:space-y-8">
+              <h3 className="text-xl sm:text-2xl font-syne font-bold text-white">Direct Contacts</h3>
 
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
-                    <Mail className="w-6 h-6" />
+              <div className="space-y-5 sm:space-y-6">
+                <div className="flex items-center gap-3.5 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shrink-0">
+                    <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <div>
-                    <span className="text-xs font-mono text-slate-500 uppercase block">EMAIL US</span>
-                    <a href="mailto:hello@loop.agency" className="text-lg font-syne font-bold text-white hover:text-cyan-400 transition-colors">
+                  <div className="min-w-0">
+                    <span className="text-[10px] sm:text-xs font-mono text-slate-500 uppercase block">EMAIL US</span>
+                    <a href="mailto:hello@loop.agency" className="text-base sm:text-lg font-syne font-bold text-white hover:text-cyan-400 transition-colors truncate block">
                       hello@loop.agency
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
-                    <Phone className="w-6 h-6" />
+                <div className="flex items-center gap-3.5 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                    <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <div>
-                    <span className="text-xs font-mono text-slate-500 uppercase block">CALL US</span>
-                    <a href="tel:+919876543210" className="text-lg font-syne font-bold text-white hover:text-cyan-400 transition-colors">
+                  <div className="min-w-0">
+                    <span className="text-[10px] sm:text-xs font-mono text-slate-500 uppercase block">CALL US</span>
+                    <a href="tel:+919876543210" className="text-base sm:text-lg font-syne font-bold text-white hover:text-cyan-400 transition-colors truncate block">
                       +91 98765 43210
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
-                    <MapPin className="w-6 h-6" />
+                <div className="flex items-center gap-3.5 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
+                    <MapPin className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <div>
-                    <span className="text-xs font-mono text-slate-500 uppercase block">LOCATION</span>
-                    <p className="text-lg font-syne font-bold text-white">Chennai, India</p>
+                  <div className="min-w-0">
+                    <span className="text-[10px] sm:text-xs font-mono text-slate-500 uppercase block">LOCATION</span>
+                    <p className="text-base sm:text-lg font-syne font-bold text-white">Chennai, India</p>
                   </div>
                 </div>
               </div>
 
               {/* Social Channels */}
-              <div className="pt-6 border-t border-white/5">
-                <span className="text-xs font-mono text-slate-500 uppercase block mb-4">FOLLOW LOOP AGENCY</span>
-                <div className="flex gap-3">
+              <div className="pt-4 sm:pt-6 border-t border-white/5">
+                <span className="text-[10px] sm:text-xs font-mono text-slate-500 uppercase block mb-3 sm:mb-4">FOLLOW LOOP AGENCY</span>
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {['Instagram', 'LinkedIn', 'Dribbble', 'Behance'].map((social) => (
                     <a
                       key={social}
@@ -91,7 +91,7 @@ export default function Contact() {
                       onClick={(e) => e.preventDefault()}
                       onMouseEnter={() => setCursorState('button')}
                       onMouseLeave={() => setCursorState('default')}
-                      className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-syne font-bold text-slate-300 hover:bg-cyan-400 hover:text-black transition-all"
+                      className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 border border-white/10 text-xs font-syne font-bold text-slate-300 hover:bg-cyan-400 hover:text-black transition-all"
                     >
                       {social}
                     </a>
@@ -103,7 +103,7 @@ export default function Contact() {
 
           {/* Interactive Form Column */}
           <div className="lg:col-span-7">
-            <div className="glass-panel p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden">
+            <div className="glass-panel p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl border border-white/10 relative overflow-hidden">
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}

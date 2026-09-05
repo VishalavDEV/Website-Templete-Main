@@ -15,7 +15,7 @@ const projects = [
       "A complete brand overhaul for a next-generation lifestyle brand. From strategy to digital presence.",
     result: "+240% brand recall",
     color: "from-terracotta/30 to-deep-brown/20",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
+    image: "/templates/agency/agency-3/images/noma.jpg",
     size: "large",
   },
   {
@@ -28,7 +28,7 @@ const projects = [
       "An interactive 3D product configurator and immersive brand experience for a tech-forward beauty company.",
     result: "3.2× engagement",
     color: "from-muted-purple/30 to-mauve/20",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop",
+    image: "/templates/agency/agency-3/images/vera.jpg",
     size: "medium",
   },
   {
@@ -41,7 +41,7 @@ const projects = [
       "A multi-channel campaign that redefined how wellness brands communicate. Bold, quiet, and intentional.",
     result: "12M+ impressions",
     color: "from-warm-orange/25 to-terracotta/15",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
+    image: "/templates/agency/agency-3/images/kora.jpg",
     size: "medium",
   },
   {
@@ -54,7 +54,7 @@ const projects = [
       "A bespoke website for an architecture studio. Every detail crafted to mirror their design philosophy.",
     result: "4.8s avg. session",
     color: "from-near-black/40 to-deep-brown/30",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop",
+    image: "/templates/agency/agency-3/images/mono.jpg",
     size: "large",
   },
   {
@@ -67,7 +67,7 @@ const projects = [
       "Strategic positioning and visual identity for a sustainability-focused innovation lab.",
     result: "28 markets reached",
     color: "from-warm-orange/20 to-mauve/15",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop",
+    image: "/templates/agency/agency-3/images/luma.jpg",
     size: "full",
   },
 ];
@@ -159,7 +159,11 @@ export default function Work() {
                         alt={project.client}
                         className="w-full h-full object-cover mix-blend-multiply opacity-85 transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => {
-                          (e.currentTarget as HTMLImageElement).style.display = 'none';
+                          const target = e.currentTarget as HTMLImageElement;
+                          const filename = project.image.split('/').pop();
+                          if (filename && !target.src.endsWith(filename)) {
+                            target.src = `./images/${filename}`;
+                          }
                         }}
                       />
                       <span

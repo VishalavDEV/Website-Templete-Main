@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
 import { useCursor } from '../../context/CursorContext';
+import ProjectModal from '../ui/ProjectModal';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,6 +12,7 @@ export default function HorizontalProjects() {
   const { setCursorState } = useCursor();
   const sectionRef = useRef(null);
   const containerRef = useRef(null);
+  const [selectedPanel, setSelectedPanel] = useState(null);
 
   const showcasePanels = [
     {
@@ -73,15 +75,15 @@ export default function HorizontalProjects() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-[#05070f] py-16">
+    <section ref={sectionRef} className="relative overflow-hidden bg-[#05070f] py-12 sm:py-16">
       {/* Pinned Header */}
-      <div className="px-6 md:px-12 mb-8 flex justify-between items-end max-w-7xl mx-auto">
+      <div className="px-4 sm:px-6 md:px-12 mb-6 sm:mb-8 flex justify-between items-end max-w-7xl mx-auto">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-mono tracking-widest uppercase mb-2">
             <Sparkles className="w-3.5 h-3.5" />
             <span>EXPERIMENTAL LABS</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-syne font-extrabold text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-syne font-extrabold text-white">
             HORIZONTAL SHOWCASE
           </h2>
         </div>
@@ -93,13 +95,14 @@ export default function HorizontalProjects() {
 
       {/* Horizontal Slider Track Container */}
       <div className="w-full overflow-hidden">
-        <div ref={containerRef} className="flex gap-8 px-6 md:px-12 w-max">
+        <div ref={containerRef} className="flex gap-4 sm:gap-8 px-4 sm:px-6 md:px-12 w-max">
           {showcasePanels.map((panel) => (
             <div
               key={panel.id}
+              onClick={() => setSelectedPanel(panel)}
               onMouseEnter={() => setCursorState('view', 'EXPLORE')}
               onMouseLeave={() => setCursorState('default')}
-              className="w-[85vw] md:w-[65vw] lg:w-[50vw] h-[60vh] md:h-[65vh] glass-panel rounded-3xl p-6 md:p-10 border border-white/10 relative overflow-hidden flex flex-col justify-between group cursor-pointer shrink-0"
+              className="w-[88vw] sm:w-[65vw] lg:w-[50vw] h-[54vh] sm:h-[65vh] glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-10 border border-white/10 relative overflow-hidden flex flex-col justify-between group cursor-pointer shrink-0 hover:border-cyan-500/50 transition-all duration-300"
             >
               {/* Background Image */}
               <div
@@ -110,20 +113,20 @@ export default function HorizontalProjects() {
 
               {/* Header Badge */}
               <div className="relative z-10 flex justify-between items-center">
-                <span className="text-4xl md:text-5xl font-syne font-extrabold text-white/30 group-hover:text-cyan-400 transition-colors">
+                <span className="text-3xl sm:text-4xl md:text-5xl font-syne font-extrabold text-white/30 group-hover:text-cyan-400 transition-colors">
                   {panel.id}
                 </span>
-                <span className="text-xs font-mono tracking-widest text-slate-300 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+                <span className="text-[10px] sm:text-xs font-mono tracking-widest text-slate-300 bg-black/50 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-full border border-white/10 truncate max-w-[200px] sm:max-w-none">
                   {panel.category} — {panel.year}
                 </span>
               </div>
 
               {/* Content Description */}
-              <div className="relative z-10 space-y-3">
-                <h3 className="text-2xl md:text-4xl font-syne font-bold text-white group-hover:text-cyan-300 transition-colors">
+              <div className="relative z-10 space-y-2 sm:space-y-3">
+                <h3 className="text-xl sm:text-2xl md:text-4xl font-syne font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
                   {panel.title}
                 </h3>
-                <p className="text-sm md:text-base text-slate-300 font-light max-w-xl line-clamp-2">
+                <p className="text-xs sm:text-sm md:text-base text-slate-300 font-light max-w-xl line-clamp-2">
                   {panel.desc}
                 </p>
               </div>
@@ -131,6 +134,13 @@ export default function HorizontalProjects() {
           ))}
         </div>
       </div>
+
+      {/* Case Study Modal */}
+      <ProjectModal
+        project={selectedPanel}
+        isOpen={Boolean(selectedPanel)}
+        onClose={() => setSelectedPanel(null)}
+      />
     </section>
   );
 }

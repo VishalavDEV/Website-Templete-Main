@@ -42,24 +42,24 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 w-full z-[90] transition-all duration-500 ${
-          scrolled ? 'py-3 bg-[#05070f]/80 backdrop-blur-xl border-b border-white/5 shadow-2xl' : 'py-6 bg-transparent'
+          scrolled ? 'py-3 bg-[#05070f]/90 backdrop-blur-xl border-b border-white/5 shadow-2xl' : 'py-4 sm:py-6 bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
             onMouseEnter={() => setCursorState('button')}
             onMouseLeave={() => setCursorState('default')}
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-2 group shrink-0"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-cyan-500 to-purple-600 p-[1.5px] transition-transform duration-300 group-hover:scale-105">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-cyan-500 to-purple-600 p-[1.5px] transition-transform duration-300 group-hover:scale-105 shrink-0">
               <div className="w-full h-full bg-[#05070f] rounded-[10.5px] flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-cyan-400 group-hover:rotate-12 transition-transform duration-300" />
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 group-hover:rotate-12 transition-transform duration-300" />
               </div>
             </div>
-            <span className="text-xl sm:text-2xl font-extrabold font-syne tracking-tight text-white">
+            <span className="text-base sm:text-xl md:text-2xl font-extrabold font-syne tracking-tight text-white whitespace-nowrap">
               STUDIO COLLECTIVE<span className="text-cyan-400">.</span>
             </span>
           </a>
@@ -83,7 +83,7 @@ export default function Navbar() {
           </nav>
 
           {/* Start Project CTA & Hamburger */}
-          <div className="flex items-center gap-3 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <MagneticButton>
               <a
                 href="#contact"
@@ -100,10 +100,10 @@ export default function Navbar() {
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2.5 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors cursor-pointer"
+              className="lg:hidden p-2 sm:p-2.5 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors cursor-pointer"
               aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6 text-cyan-400" /> : <Menu className="w-6 h-6 text-white" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-white" />}
             </button>
           </div>
         </div>

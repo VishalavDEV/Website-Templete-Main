@@ -37,7 +37,7 @@ export default function Blog() {
   ];
 
   return (
-    <section id="blog" className="relative py-28 px-6 md:px-12 bg-[#05070f] overflow-hidden">
+    <section id="blog" className="relative py-20 sm:py-28 px-4 sm:px-6 md:px-12 bg-[#05070f] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           badge="LATEST THINKING"
@@ -45,7 +45,7 @@ export default function Blog() {
           description="Explorations into digital craft, motion design, web architecture, and strategy."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {articles.map((art, idx) => (
             <motion.article
               key={art.title}
@@ -56,24 +56,24 @@ export default function Blog() {
               onMouseEnter={() => setCursorState('button')}
               onMouseLeave={() => setCursorState('default')}
               onClick={() => setSelectedArticle(art)}
-              className="group glass-panel rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between p-6 cursor-pointer hover:border-cyan-500/40 transition-all duration-500"
+              className="group glass-panel rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between p-5 sm:p-6 cursor-pointer hover:border-cyan-500/40 transition-all duration-500"
             >
               {/* Thumbnail Container */}
-              <div className="relative h-64 w-full rounded-2xl overflow-hidden mb-6">
+              <div className="relative h-48 sm:h-64 w-full rounded-xl sm:rounded-2xl overflow-hidden mb-4 sm:mb-6">
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
                   style={{ backgroundImage: `url(${art.image})` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#05070f] via-transparent to-transparent opacity-60" />
-                <span className="absolute top-4 left-4 text-xs font-mono tracking-widest text-cyan-300 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-cyan-500/30">
+                <span className="absolute top-3 sm:top-4 left-3 sm:left-4 text-[10px] sm:text-xs font-mono tracking-widest text-cyan-300 bg-black/60 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-full border border-cyan-500/30">
                   {art.category}
                 </span>
               </div>
 
               {/* Text Info */}
               <div>
-                <span className="text-xs font-mono text-slate-500 block mb-2">{art.date}</span>
-                <h3 className="text-2xl font-syne font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug mb-4">
+                <span className="text-[10px] sm:text-xs font-mono text-slate-500 block mb-1.5 sm:mb-2">{art.date}</span>
+                <h3 className="text-lg sm:text-2xl font-syne font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug mb-3 sm:mb-4">
                   {art.title}
                 </h3>
               </div>
@@ -81,7 +81,7 @@ export default function Blog() {
               {/* Footer CTA */}
               <div className="flex items-center gap-2 text-xs font-mono text-cyan-400 group-hover:translate-x-1 transition-transform">
                 <span>READ ARTICLE</span>
-                <ArrowUpRight className="w-4 h-4" />
+                <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
             </motion.article>
           ))}

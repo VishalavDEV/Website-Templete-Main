@@ -58,11 +58,14 @@ export default function About() {
             {/* Abstract visual */}
             <div className="aspect-[3/4] bg-gradient-to-br from-terracotta/10 via-mauve/5 to-warm-orange/10 border border-cream/[0.08] relative overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
+                src="/templates/agency/agency-3/images/about-studio.jpg"
                 alt="AXIOM Studio Workspace"
-                className="w-full h-full object-cover opacity-60 mix-blend-luminosity"
+                className="w-full h-full object-cover opacity-75 mix-blend-luminosity"
                 onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.display = 'none';
+                  const target = e.currentTarget as HTMLImageElement;
+                  if (!target.src.endsWith('about-studio.jpg')) {
+                    target.src = './images/about-studio.jpg';
+                  }
                 }}
               />
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -82,11 +85,11 @@ export default function About() {
             </div>
 
             {/* Metadata */}
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <div className="text-micro text-warm-gray/50 mb-1">TEAM</div>
                 <div
-                  className="text-2xl font-light text-cream"
+                  className="text-lg sm:text-xl md:text-2xl font-light text-cream"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   12 CREATIVES
@@ -95,7 +98,7 @@ export default function About() {
               <div>
                 <div className="text-micro text-warm-gray/50 mb-1">PROJECTS</div>
                 <div
-                  className="text-2xl font-light text-cream"
+                  className="text-lg sm:text-xl md:text-2xl font-light text-cream"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   120+ DELIVERED
@@ -104,7 +107,7 @@ export default function About() {
               <div>
                 <div className="text-micro text-warm-gray/50 mb-1">FOCUS</div>
                 <div
-                  className="text-2xl font-light text-cream"
+                  className="text-lg sm:text-xl md:text-2xl font-light text-cream"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   QUALITY
@@ -113,7 +116,7 @@ export default function About() {
               <div>
                 <div className="text-micro text-warm-gray/50 mb-1">ETHOS</div>
                 <div
-                  className="text-2xl font-light text-cream"
+                  className="text-lg sm:text-xl md:text-2xl font-light text-cream"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   BOLD

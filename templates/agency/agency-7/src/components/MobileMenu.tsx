@@ -27,15 +27,20 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[999] flex flex-col justify-between bg-[#FBF9F5] dark:bg-[#0D0E12] p-6 lg:hidden animate-fade-in overflow-y-auto">
+    <div
+      className="fixed inset-0 z-[9999] flex flex-col justify-between bg-[#FBF9F5] dark:bg-[#0D0E12] p-6 sm:p-8 lg:hidden animate-fade-in overflow-y-auto w-full h-[100dvh]"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobile Navigation Menu"
+    >
       {/* Top Header */}
       <div className="flex items-center justify-between border-b border-neutral-200 dark:border-neutral-800 pb-4">
-        <Link to="/" onClick={onClose} className="font-serif text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
+        <Link to="/" onClick={onClose} className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
           STRATA<span className="text-blue-600 dark:text-blue-400 font-mono">//</span>AGENCY
         </Link>
         <button
           onClick={onClose}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-200/60 dark:bg-neutral-800/60 text-neutral-800 dark:text-neutral-200"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-200/60 dark:bg-neutral-800/60 text-neutral-800 dark:text-neutral-200 cursor-pointer hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-colors"
           aria-label="Close Menu"
         >
           <X className="h-5 w-5" />

@@ -44,7 +44,7 @@ export default function Process() {
   ];
 
   return (
-    <section id="process" className="relative py-28 px-6 md:px-12 bg-[#070915] overflow-hidden">
+    <section id="process" className="relative py-20 sm:py-28 px-4 sm:px-6 md:px-12 bg-[#070915] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           badge="HOW WE WORK"
@@ -56,7 +56,7 @@ export default function Process() {
           {/* Central Connecting Timeline Line (Desktop) */}
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-blue-600 via-cyan-400 to-purple-600 -translate-x-1/2 shadow-[0_0_15px_#22d3ee]" />
 
-          <div className="space-y-12 lg:space-y-16">
+          <div className="space-y-6 sm:space-y-12 lg:space-y-16">
             {steps.map((step, idx) => {
               const isEven = idx % 2 === 0;
               const IconComponent = step.icon;
@@ -66,7 +66,7 @@ export default function Process() {
                   key={step.num}
                   className={`flex flex-col lg:flex-row items-center ${
                     isEven ? 'lg:flex-row-reverse' : ''
-                  } gap-8 relative`}
+                  } gap-6 sm:gap-8 relative`}
                 >
                   {/* Content Card Side */}
                   <motion.div
@@ -76,20 +76,20 @@ export default function Process() {
                     transition={{ duration: 0.6, delay: idx * 0.1 }}
                     className="w-full lg:w-1/2"
                   >
-                    <div className="glass-panel p-8 rounded-3xl border border-white/10 relative overflow-hidden group hover:border-cyan-500/40 transition-all duration-300">
-                      <div className="flex items-center gap-4 mb-4">
-                        <span className="text-4xl font-syne font-extrabold text-cyan-400">
+                    <div className="glass-panel p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/10 relative overflow-hidden group hover:border-cyan-500/40 transition-all duration-300">
+                      <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                        <span className="text-3xl sm:text-4xl font-syne font-extrabold text-cyan-400">
                           {step.num}
                         </span>
-                        <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-300">
-                          <IconComponent className="w-5 h-5" />
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-300">
+                          <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
                         </div>
                       </div>
 
-                      <h3 className="text-2xl font-syne font-bold text-white mb-3">
+                      <h3 className="text-xl sm:text-2xl font-syne font-bold text-white mb-2 sm:mb-3">
                         {step.title}
                       </h3>
-                      <p className="text-slate-400 font-light text-base leading-relaxed">
+                      <p className="text-slate-400 font-light text-sm sm:text-base leading-relaxed">
                         {step.desc}
                       </p>
                     </div>

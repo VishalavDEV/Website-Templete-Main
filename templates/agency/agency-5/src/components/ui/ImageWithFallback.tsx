@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { getAssetUrl } from '../../utils/assets';
 
 interface ImageWithFallbackProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -19,14 +19,17 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
 }) => {
   const [hasError, setHasError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
   const resolvedSrc = getAssetUrl(src);
 
   useEffect(() => {
     setHasError(false);
-    setIsLoaded(false);
+    if (imgRef.current && imgRef.current.complete && imgRef.current.naturalWidth > 0) {
+      setIsLoaded(true);
+    }
   }, [resolvedSrc]);
 
-  if (hasError) {
+  if (hasError || !resolvedSrc) {
     return (
       <div
         className={`relative w-full h-full min-h-[220px] bg-gradient-to-tr from-[#121212] via-[#1E1E1E] to-[#252525] border border-[var(--border-color)] p-6 flex flex-col justify-between overflow-hidden group ${className}`}
@@ -52,13 +55,15 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   }
 
   return (
-    <div className={`relative w-full h-full overflow-hidden ${!isLoaded ? 'bg-[var(--card-bg)] animate-pulse' : ''}`}>
+    <div className="relative w-full h-full overflow-hidden bg-[#121212]">
       <img
+        ref={imgRef}
         src={resolvedSrc}
         alt={alt}
+        loading="eager"
         onLoad={() => setIsLoaded(true)}
         onError={() => setHasError(true)}
-        className={`${className} ${!isLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}
+        className={`${className} transition-transform duration-500`}
         {...props}
       />
     </div>

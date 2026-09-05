@@ -35,6 +35,7 @@ export const App: React.FC = () => {
         <div className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/index.html" element={<HomePage />} />
             <Route path="/work" element={<WorkPage />} />
             <Route path="/work/:id" element={<WorkDetailPage />} />
             <Route path="/about" element={<AboutPage />} />
@@ -42,6 +43,7 @@ export const App: React.FC = () => {
             <Route path="/insights" element={<InsightsPage />} />
             <Route path="/insights/:id" element={<InsightDetailPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<HomePage />} />
           </Routes>
         </div>
 

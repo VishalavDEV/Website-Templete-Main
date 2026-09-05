@@ -49,7 +49,7 @@ export default function Testimonials() {
   const current = testimonials[currentIndex];
 
   return (
-    <section id="testimonials" className="relative py-28 px-6 md:px-12 bg-[#05070f] overflow-hidden">
+    <section id="testimonials" className="relative py-20 sm:py-28 px-4 sm:px-6 md:px-12 bg-[#05070f] overflow-hidden">
       <div className="max-w-5xl mx-auto">
         <SectionTitle
           badge="WHAT CLIENTS SAY"
@@ -57,8 +57,8 @@ export default function Testimonials() {
           center={true}
         />
 
-        <div className="relative glass-panel rounded-3xl border border-white/10 p-8 md:p-14 overflow-hidden">
-          <Quote className="absolute top-6 right-8 w-24 h-24 text-white/5 pointer-events-none" />
+        <div className="relative glass-panel rounded-2xl sm:rounded-3xl border border-white/10 p-6 sm:p-8 md:p-14 overflow-hidden">
+          <Quote className="absolute top-4 sm:top-6 right-4 sm:right-8 w-16 sm:w-24 h-16 sm:h-24 text-white/5 pointer-events-none" />
 
           <AnimatePresence mode="wait">
             <motion.div
@@ -67,32 +67,32 @@ export default function Testimonials() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -40 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col items-center text-center space-y-6"
+              className="flex flex-col items-center text-center space-y-4 sm:space-y-6"
             >
               {/* Star Rating */}
               <div className="flex gap-1 text-amber-400">
                 {Array.from({ length: current.rating }).map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-amber-400" />
+                  <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-amber-400" />
                 ))}
               </div>
 
               {/* Quote Text */}
-              <p className="text-xl md:text-3xl font-syne font-medium leading-relaxed text-slate-200 max-w-3xl italic">
+              <p className="text-base sm:text-xl md:text-3xl font-syne font-medium leading-relaxed text-slate-200 max-w-3xl italic">
                 "{current.quote}"
               </p>
 
               {/* Client Info */}
-              <div className="flex items-center gap-4 pt-4">
+              <div className="flex items-center gap-3 sm:gap-4 pt-2 sm:pt-4">
                 <img
                   src={current.image}
                   alt={current.name}
-                  className="w-14 h-14 rounded-full object-cover border-2 border-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.4)]"
+                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.4)] shrink-0"
                 />
                 <div className="text-left">
-                  <h4 className="text-lg font-syne font-bold text-white">
+                  <h4 className="text-base sm:text-lg font-syne font-bold text-white">
                     {current.name}
                   </h4>
-                  <p className="text-xs font-mono text-cyan-400">
+                  <p className="text-[11px] sm:text-xs font-mono text-cyan-400">
                     {current.position} — <span className="text-slate-400">{current.company}</span>
                   </p>
                 </div>
@@ -101,35 +101,35 @@ export default function Testimonials() {
           </AnimatePresence>
 
           {/* Navigation Controls */}
-          <div className="flex justify-between items-center mt-8 pt-6 border-t border-white/5">
-            <div className="flex gap-2">
+          <div className="flex justify-between items-center mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-white/5">
+            <div className="flex gap-1.5 sm:gap-2">
               {testimonials.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    idx === currentIndex ? 'w-8 bg-cyan-400' : 'w-2 bg-slate-700'
+                  className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
+                    idx === currentIndex ? 'w-6 sm:w-8 bg-cyan-400' : 'w-1.5 sm:w-2 bg-slate-700'
                   }`}
                 />
               ))}
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex gap-2 sm:gap-3">
               <button
                 onClick={handlePrev}
                 onMouseEnter={() => setCursorState('button')}
                 onMouseLeave={() => setCursorState('default')}
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:bg-cyan-400 hover:text-black text-white flex items-center justify-center transition-all"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/5 border border-white/10 hover:bg-cyan-400 hover:text-black text-white flex items-center justify-center transition-all"
               >
-                <ChevronLeft className="w-5 h-5" />
+                <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
               <button
                 onClick={handleNext}
                 onMouseEnter={() => setCursorState('button')}
                 onMouseLeave={() => setCursorState('default')}
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:bg-cyan-400 hover:text-black text-white flex items-center justify-center transition-all"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/5 border border-white/10 hover:bg-cyan-400 hover:text-black text-white flex items-center justify-center transition-all"
               >
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </div>
           </div>

@@ -16,12 +16,12 @@ export default function Intro() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3 flex flex-row lg:flex-col gap-6 lg:gap-0 justify-between lg:justify-start"
+            className="lg:col-span-3 grid grid-cols-3 sm:flex sm:flex-row lg:flex-col gap-2 sm:gap-6 lg:gap-0 justify-between lg:justify-start"
           >
             <div>
               <div className="text-micro text-warm-gray mb-1">FOUNDED</div>
               <div
-                className="text-2xl font-light text-near-black"
+                className="text-base sm:text-xl md:text-2xl font-light text-near-black"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 2026
@@ -30,7 +30,7 @@ export default function Intro() {
             <div className="lg:mt-8">
               <div className="text-micro text-warm-gray mb-1">BASED IN</div>
               <div
-                className="text-2xl font-light text-near-black"
+                className="text-base sm:text-xl md:text-2xl font-light text-near-black"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 GLOBAL
@@ -39,7 +39,7 @@ export default function Intro() {
             <div className="lg:mt-8">
               <div className="text-micro text-warm-gray mb-1">TYPE</div>
               <div
-                className="text-2xl font-light text-near-black"
+                className="text-base sm:text-xl md:text-2xl font-light text-near-black break-words"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 INDEPENDENT

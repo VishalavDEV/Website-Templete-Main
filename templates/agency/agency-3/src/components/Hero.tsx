@@ -40,18 +40,18 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Abstract geometric elements */}
+      {/* Abstract geometric elements - hidden on mobile/tablet to avoid headline collision */}
       <motion.div
         style={{ y: y2 }}
-        className="absolute top-32 right-10 md:right-20 lg:right-32 w-24 h-32 md:w-40 md:h-56 border border-warm-orange/20 z-0"
+        className="hidden xl:block absolute top-28 right-8 xl:right-12 w-48 h-64 border border-warm-orange/20 z-0 pointer-events-none"
       />
       <motion.div
         style={{ y: y1 }}
-        className="absolute top-48 left-8 md:left-24 lg:left-40 w-16 h-16 md:w-24 md:h-24 bg-terracotta/10 rounded-full z-0"
+        className="hidden md:block absolute top-48 left-8 md:left-24 lg:left-40 w-16 h-16 md:w-24 md:h-24 bg-terracotta/10 rounded-full z-0 pointer-events-none"
       />
       <motion.div
         style={{ y: y2 }}
-        className="absolute bottom-40 right-1/4 w-3 h-3 bg-warm-orange rounded-full z-0"
+        className="hidden sm:block absolute bottom-40 right-1/4 w-3 h-3 bg-warm-orange rounded-full z-0 pointer-events-none"
       />
 
       {/* Dot grid pattern */}
@@ -66,7 +66,7 @@ export default function Hero() {
       {/* Main hero content */}
       <motion.div
         style={{ opacity }}
-        className="relative z-10 min-h-screen flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-32"
+        className="relative z-10 min-h-screen flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-32 pb-16"
       >
         {/* Label */}
         <motion.div
@@ -78,7 +78,7 @@ export default function Hero() {
           [CREATIVE AGENCY / 2026]
         </motion.div>
 
-        {/* Main headline */}
+        {/* Main headline and artwork container */}
         <div className="relative">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -96,43 +96,81 @@ export default function Hero() {
             TO IGNORE.
           </motion.h1>
 
-          {/* Floating element beside headline */}
+          {/* Floating artwork card on tablet and desktop */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="hidden lg:block absolute top-8 right-0 xl:right-16 w-48 xl:w-64"
+            className="hidden md:block absolute top-4 md:top-6 lg:top-8 right-0 md:right-2 lg:right-4 xl:right-16 w-40 md:w-44 lg:w-52 xl:w-64"
           >
-            <div className="aspect-[3/4] bg-gradient-to-br from-terracotta/20 via-mauve/10 to-warm-orange/15 border border-warm-orange/10 relative overflow-hidden">
+            <div className="aspect-[3/4] bg-gradient-to-br from-terracotta/20 via-mauve/10 to-warm-orange/15 border border-warm-orange/20 relative overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=800&auto=format&fit=crop"
+                src="/templates/agency/agency-3/images/hero-art.jpg"
                 alt="AXIOM Art Direction"
-                className="w-full h-full object-cover opacity-70 mix-blend-multiply"
+                className="w-full h-full object-cover opacity-85 mix-blend-multiply"
                 onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.display = 'none';
+                  const target = e.currentTarget as HTMLImageElement;
+                  if (!target.src.endsWith('hero-art.jpg')) {
+                    target.src = './images/hero-art.jpg';
+                  }
                 }}
               />
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="text-hero font-bold text-near-black/5 leading-none select-none"
+                <div
+                  className="text-hero font-bold text-near-black/10 leading-none select-none"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   AX
                 </div>
               </div>
               <div className="absolute bottom-4 left-4 right-4">
-                <div className="w-full h-px bg-near-black/10 mb-2" />
-                <div className="text-micro text-warm-gray">ART DIRECTION</div>
+                <div className="w-full h-px bg-near-black/20 mb-2" />
+                <div className="text-micro text-near-black/70 font-medium">ART DIRECTION</div>
               </div>
             </div>
           </motion.div>
         </div>
+
+        {/* Mobile artwork card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="block md:hidden mt-8 mb-4 w-full max-w-[280px]"
+        >
+          <div className="aspect-[4/3] bg-gradient-to-br from-terracotta/20 via-mauve/10 to-warm-orange/15 border border-warm-orange/20 relative overflow-hidden shadow-lg">
+            <img
+              src="/templates/agency/agency-3/images/hero-art.jpg"
+              alt="AXIOM Art Direction"
+              className="w-full h-full object-cover opacity-85 mix-blend-multiply"
+              onError={(e) => {
+                const target = e.currentTarget as HTMLImageElement;
+                if (!target.src.endsWith('hero-art.jpg')) {
+                  target.src = './images/hero-art.jpg';
+                }
+              }}
+            />
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div
+                className="text-6xl font-bold text-near-black/10 leading-none select-none"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                AX
+              </div>
+            </div>
+            <div className="absolute bottom-3 left-3 right-3">
+              <div className="w-full h-px bg-near-black/20 mb-1.5" />
+              <div className="text-micro text-near-black/70 font-medium">ART DIRECTION</div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Subtitle and CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-10 md:mt-14 flex flex-col md:flex-row md:items-end gap-8 md:gap-16"
+          className="mt-6 md:mt-14 flex flex-col md:flex-row md:items-end gap-8 md:gap-16"
         >
           <p className="text-body-lg text-warm-gray max-w-md leading-relaxed">
             We craft bold identities and digital experiences that cut through the
@@ -185,3 +223,4 @@ export default function Hero() {
     </section>
   );
 }
+

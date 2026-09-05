@@ -24,7 +24,7 @@ export const services: Service[] = [
       { label: 'Avg ROI Increase', value: '3.4x' },
       { label: 'Strategic Audits Completed', value: '140+' }
     ],
-    hoverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80'
+    hoverImage: 'assets/pexels-cottonbro-8721318.jpg'
   },
   {
     slug: 'brand-identity',
@@ -49,7 +49,7 @@ export const services: Service[] = [
       { label: 'Global Design Awards', value: '28' },
       { label: 'Identities Launched', value: '95+' }
     ],
-    hoverImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80'
+    hoverImage: 'assets/pexels-marstion-3495966-10875411.jpg'
   },
   {
     slug: 'product-design',
@@ -74,7 +74,7 @@ export const services: Service[] = [
       { label: 'Daily Active Users Impacted', value: '4.5M+' },
       { label: 'Usability Score Avg', value: '98%' }
     ],
-    hoverImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80'
+    hoverImage: 'assets/pexels-kindelmedia-8566538.jpg'
   },
   {
     slug: 'digital-development',
@@ -99,7 +99,7 @@ export const services: Service[] = [
       { label: 'Lighthouse Performance Score', value: '99/100' },
       { label: 'Lines of Code Written', value: '1.2M+' }
     ],
-    hoverImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80'
+    hoverImage: 'assets/pexels-mediahooch-16385067.jpg'
   },
   {
     slug: 'growth-experience',
@@ -124,6 +124,6 @@ export const services: Service[] = [
       { label: 'Avg Conversion Lift', value: '+145%' },
       { label: 'Client Revenue Generated', value: '$250M+' }
     ],
-    hoverImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80'
+    hoverImage: 'assets/pexels-brett-sayles-5087172.jpg'
   }
 ];

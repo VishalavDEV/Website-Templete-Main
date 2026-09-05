@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="relative py-28 px-6 md:px-12 bg-[#05070f] overflow-hidden">
+    <section className="relative py-20 sm:py-28 px-4 sm:px-6 md:px-12 bg-[#05070f] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           badge="WHY CHOOSE US"
@@ -55,7 +55,7 @@ export default function WhyChooseUs() {
           description="We do not build average websites. We create digital category leaders."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {reasons.map((reason, idx) => {
             const IconComponent = reason.icon;
             return (
@@ -67,15 +67,15 @@ export default function WhyChooseUs() {
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 onMouseEnter={() => setCursorState('button')}
                 onMouseLeave={() => setCursorState('default')}
-                className={`glass-panel p-8 rounded-3xl border border-white/10 relative overflow-hidden transition-all duration-500 hover:-translate-y-2 cursor-pointer ${reason.glow}`}
+                className={`glass-panel p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/10 relative overflow-hidden transition-all duration-500 hover:-translate-y-2 cursor-pointer ${reason.glow}`}
               >
-                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
-                  <IconComponent className="w-7 h-7" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+                  <IconComponent className="w-6 h-6 sm:w-7 sm:h-7" />
                 </div>
-                <h3 className="text-2xl font-syne font-bold text-white mb-3">
+                <h3 className="text-xl sm:text-2xl font-syne font-bold text-white mb-2 sm:mb-3">
                   {reason.title}
                 </h3>
-                <p className="text-slate-400 font-light text-base leading-relaxed">
+                <p className="text-slate-400 font-light text-sm sm:text-base leading-relaxed">
                   {reason.desc}
                 </p>
               </motion.div>

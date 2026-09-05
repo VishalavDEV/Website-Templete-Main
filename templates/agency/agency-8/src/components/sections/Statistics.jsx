@@ -11,11 +11,11 @@ export default function Statistics() {
   ];
 
   return (
-    <section className="relative py-24 px-6 md:px-12 bg-gradient-to-r from-blue-950/40 via-[#070915] to-purple-950/40 border-y border-white/10 overflow-hidden">
+    <section className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-gradient-to-r from-blue-950/40 via-[#070915] to-purple-950/40 border-y border-white/10 overflow-hidden">
       {/* Glow highlight */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-cyan-500/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[600px] h-[200px] sm:h-[300px] bg-cyan-500/10 rounded-full blur-[100px] sm:blur-[150px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-8">
         {stats.map((stat, idx) => (
           <motion.div
             key={stat.label}
@@ -23,12 +23,12 @@ export default function Statistics() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: idx * 0.1 }}
-            className="flex flex-col items-center text-center p-6 glass-panel rounded-3xl border border-white/10 hover:border-cyan-500/40 transition-all duration-300"
+            className="flex flex-col items-center text-center p-4 sm:p-6 glass-panel rounded-2xl sm:rounded-3xl border border-white/10 hover:border-cyan-500/40 transition-all duration-300"
           >
-            <div className="text-5xl sm:text-6xl lg:text-7xl font-syne font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-300 to-blue-500 tracking-tight mb-2">
+            <div className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-syne font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-300 to-blue-500 tracking-tight mb-1 sm:mb-2">
               <Counter value={stat.value} suffix={stat.suffix} />
             </div>
-            <p className="text-xs sm:text-sm font-mono tracking-widest text-slate-400 uppercase">
+            <p className="text-[10px] sm:text-xs md:text-sm font-mono tracking-wider sm:tracking-widest text-slate-400 uppercase">
               {stat.label}
             </p>
           </motion.div>

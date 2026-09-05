@@ -94,7 +94,7 @@ export function CustomCursor() {
   return (
     <motion.div
       aria-hidden="true"
-      className="pointer-events-none fixed left-0 top-0 z-[80]"
+      className="pointer-events-none fixed left-0 top-0 z-[9999]"
       style={{ x: sx, y: sy }}
     >
       <AnimatePresence mode="popLayout">

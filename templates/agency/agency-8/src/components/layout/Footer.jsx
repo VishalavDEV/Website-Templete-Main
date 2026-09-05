@@ -23,45 +23,45 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#03050b] text-slate-300 pt-20 border-t border-white/10 overflow-hidden">
       {/* Infinite Footer Marquee Banner */}
-      <div className="border-b border-white/5 py-4 overflow-hidden select-none bg-white/[0.02]">
+      <div className="border-b border-white/5 py-3 sm:py-4 overflow-hidden select-none bg-white/[0.02]">
         <div className="animate-marquee flex whitespace-nowrap">
           {Array.from({ length: 4 }).map((_, i) => (
-            <span key={i} className="text-2xl md:text-4xl font-syne font-black tracking-widest text-slate-700 uppercase mx-4">
+            <span key={i} className="text-xl sm:text-2xl md:text-4xl font-syne font-black tracking-widest text-slate-700 uppercase mx-3 sm:mx-4">
               {footerMarqueeText}
             </span>
           ))}
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-12 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-12 mb-12 sm:mb-16">
           {/* Agency Brand Column */}
-          <div className="lg:col-span-4 space-y-6">
-            <a href="#home" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-cyan-500 to-purple-600 p-[1.5px]">
+          <div className="lg:col-span-4 space-y-4 sm:space-y-6">
+            <a href="#home" className="flex items-center gap-2 shrink-0">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-cyan-500 to-purple-600 p-[1.5px] shrink-0">
                 <div className="w-full h-full bg-[#05070f] rounded-[10.5px] flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-cyan-400" />
+                  <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
                 </div>
               </div>
-              <span className="text-xl sm:text-2xl font-extrabold font-syne tracking-tight text-white">
+              <span className="text-lg sm:text-2xl font-extrabold font-syne tracking-tight text-white whitespace-nowrap">
                 STUDIO COLLECTIVE<span className="text-cyan-400">.</span>
               </span>
             </a>
 
-            <p className="text-sm text-slate-400 font-light max-w-sm leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-400 font-light max-w-sm leading-relaxed">
               Designing tomorrow's digital experiences. We engineer high-end websites, motion design systems, and brand strategies for global leaders.
             </p>
 
             {/* Newsletter Input */}
-            <div className="space-y-3 pt-2">
-              <span className="text-xs font-mono uppercase text-slate-400 block">SUBSCRIBE TO INSIGHTS</span>
+            <div className="space-y-2 sm:space-y-3 pt-2">
+              <span className="text-[10px] sm:text-xs font-mono uppercase text-slate-400 block">SUBSCRIBE TO INSIGHTS</span>
               <form onSubmit={handleSubscribe} className="relative flex items-center max-w-sm">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="w-full px-4 py-3 rounded-full bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 text-xs font-mono pr-12"
+                  className="w-full px-4 py-2.5 sm:py-3 rounded-full bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 text-xs font-mono pr-12"
                 />
                 <button
                   type="submit"

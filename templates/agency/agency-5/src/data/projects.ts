@@ -39,10 +39,10 @@ export const projects: Project[] = [
     challenge: 'Managing fragmented grid data across 14 European nations with variable bandwidth networks without compromising speed or reliability.',
     approach: 'Engineered an edge-cached Web Socket dashboard architecture with offline-first client syncing and dynamic SVG grid maps.',
     result: 'Increased station utilization rates by 38% while cutting customer support calls by half.',
-    coverImage: 'https://images.unsplash.com/photo-1558442074-3c19857bc1dc?auto=format&fit=crop&w=1600&q=80',
+    coverImage: 'assets/pexels-cottonbro-8721318.jpg',
     galleryImages: [
-      'https://images.unsplash.com/photo-1558442074-3c19857bc1dc?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80'
+      'assets/pexels-cottonbro-8721318.jpg',
+      'assets/pexels-shvetsa-12663061.jpg'
     ],
     services: ['Web Architecture', 'Frontend Engineering', 'API Integration', 'Performance Tuning'],
     metrics: [
@@ -64,10 +64,10 @@ export const projects: Project[] = [
     challenge: 'Designing an intuitive touch interface for highly technical acoustic frequency parameters without overwhelming casual creators.',
     approach: 'Crafted a fluid gestural equalizer powered by custom Canvas shaders and tactile haptic feedback modeling.',
     result: 'Achieved 4.9/5 star average rating across 120,000 pro audio user downloads in year one.',
-    coverImage: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1600&q=80',
+    coverImage: 'assets/pexels-mediahooch-16385067.jpg',
     galleryImages: [
-      'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1600&q=80'
+      'assets/pexels-mediahooch-16385067.jpg',
+      'assets/pexels-mart-production-8471969.jpg'
     ],
     services: ['Mobile App Design', 'Cross-platform Dev', 'Sound Design', 'Brand Architecture'],
     metrics: [
@@ -89,10 +89,10 @@ export const projects: Project[] = [
     challenge: 'Balancing centuries of Swiss banking heritage with modern generative AI security visual cues.',
     approach: 'Formulated a sophisticated typographic system paired with precision micro-interactions and dark monolithic styling.',
     result: 'Attracted €850M in new institutional capital within 6 months post-rebrand.',
-    coverImage: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1600&q=80',
+    coverImage: 'assets/pexels-rdne-7947660.jpg',
     galleryImages: [
-      'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1600&q=80'
+      'assets/pexels-rdne-7947660.jpg',
+      'assets/pexels-pavel-danilyuk-8294625.jpg'
     ],
     services: ['Brand Strategy', 'Visual Identity', 'Typography', 'Digital Portal Design'],
     metrics: [
@@ -114,10 +114,10 @@ export const projects: Project[] = [
     challenge: 'Displaying dense multi-dimensional patient bio-markers with zero margin for visual ambiguity.',
     approach: 'Built high-contrast visual hierarchy guidelines paired with accessible color-blind friendly diagnostic heatmaps.',
     result: 'Reduced patient case review time from 45 minutes down to 12 minutes per specialist.',
-    coverImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80',
+    coverImage: 'assets/pexels-shvetsa-12662890.jpg',
     galleryImages: [
-      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1600&q=80'
+      'assets/pexels-shvetsa-12662890.jpg',
+      'assets/pexels-shvetsa-4226122.jpg'
     ],
     services: ['Clinical UI/UX', 'Accessibility Audit', 'Design System', 'Data Visualization'],
     metrics: [
@@ -141,7 +141,7 @@ export const projects: Project[] = [
     coverImage: 'assets/solaris_grid_preview_1787737627417.png',
     galleryImages: [
       'assets/solaris_grid_preview_1787737627417.png',
-      'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1600&q=80'
+      'assets/world_hubs_map_1787737657103.png'
     ],
     services: ['Data Visualization', 'Fullstack Web Dev', 'Cloud Architecture'],
     metrics: [
@@ -164,7 +164,7 @@ export const projects: Project[] = [
     coverImage: 'assets/kairo_horology_preview_1787737712313.png',
     galleryImages: [
       'assets/kairo_horology_preview_1787737712313.png',
-      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1600&q=80'
+      'assets/pexels-cottonbro-6804606.jpg'
     ],
     services: ['3D WebGL Configurator', 'Experience Design', 'E-Commerce Integration'],
     metrics: [
@@ -185,9 +185,10 @@ export const projects: Project[] = [
     challenge: 'Coordinating multi-agent conflict resolution algorithms into a non-cluttered map GUI.',
     approach: 'Layered vector maps with context-sensitive alert triggers and tactile physical controller keyboard shortcuts.',
     result: 'Engineered zero incident safety metric across 2.4 million automated flights.',
-    coverImage: 'https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=1600&q=80',
+    coverImage: 'assets/pexels-kindelmedia-8566473.jpg',
     galleryImages: [
-      'https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=1600&q=80'
+      'assets/pexels-kindelmedia-8566473.jpg',
+      'assets/pexels-kindelmedia-8566538.jpg'
     ],
     services: ['Control Center UX', 'Realtime Engineering', 'Design System'],
     metrics: [
@@ -207,9 +208,10 @@ export const projects: Project[] = [
     challenge: 'Generating viral excitement for a limited 50-unit vehicle production run.',
     approach: 'Synthesized cinematic video clips with interactive scroll-triggered canvas animations.',
     result: 'All 50 build slots sold out in 4 minutes following live stream reveal.',
-    coverImage: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1600&q=80',
+    coverImage: 'assets/pexels-brett-sayles-5087172.jpg',
     galleryImages: [
-      'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1600&q=80'
+      'assets/pexels-brett-sayles-5087172.jpg',
+      'assets/pexels-marstion-3495966-10875411.jpg'
     ],
     services: ['Interactive Launch Campaign', '3D Motion Design', 'Brand Storytelling'],
     metrics: [
@@ -229,9 +231,10 @@ export const projects: Project[] = [
     challenge: 'Reflecting the tactile materiality of wood, concrete, and light within digital screens.',
     approach: 'High-contrast monochrome typography, generous whitespace, and smooth image transition masks.',
     result: 'Named Site of the Month on FWA and Awwwards.',
-    coverImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80',
+    coverImage: 'assets/pexels-darlene-alderson-4389465.jpg',
     galleryImages: [
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80'
+      'assets/pexels-darlene-alderson-4389465.jpg',
+      'assets/pexels-bulat843-1243575272-35072831.jpg'
     ],
     services: ['Identity System', 'Editorial Design', 'Web Design & Dev'],
     metrics: [
@@ -251,9 +254,10 @@ export const projects: Project[] = [
     challenge: 'Ensuring biometric security compliance while keeping transfer execution under 2 taps.',
     approach: 'Simplified card-based UI with micro-motion feedback and biometric passkey authentication.',
     result: 'Processed $1.8 Billion in international trade volume during pilot phase.',
-    coverImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=80',
+    coverImage: 'assets/pexels-cookiecutter-17489150.jpg',
     galleryImages: [
-      'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=80'
+      'assets/pexels-cookiecutter-17489150.jpg',
+      'assets/pexels-markusspiske-12081657.jpg'
     ],
     services: ['Fintech Mobile UX', 'Security Interface', 'Brand Identity'],
     metrics: [
@@ -273,9 +277,10 @@ export const projects: Project[] = [
     challenge: 'Providing frame-level timeline control over generative video model outputs.',
     approach: 'Created a dual timeline canvas interface integrating traditional NLE controls with node-based prompt graphs.',
     result: 'Adopted by 12 major film production houses in Los Angeles and London.',
-    coverImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1600&q=80',
+    coverImage: 'assets/pexels-tara-winstead-8386437.jpg',
     galleryImages: [
-      'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1600&q=80'
+      'assets/pexels-tara-winstead-8386437.jpg',
+      'assets/pexels-pavel-danilyuk-8294625.jpg'
     ],
     services: ['AI Interface Design', 'Complex Canvas Architecture', 'Product Strategy'],
     metrics: [

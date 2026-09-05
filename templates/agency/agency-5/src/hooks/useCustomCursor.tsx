@@ -39,13 +39,9 @@ export const CursorProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     checkTouch();
   }, []);
 
-  const setCursorHover = (text?: string, image?: string) => {
+  const setCursorHover = (text?: string, _image?: string) => {
     if (isTouch) return;
-    if (image) {
-      setPreviewImage(image);
-      setPreviewText(text || 'VIEW');
-      setCursorType('preview');
-    } else if (text) {
+    if (text) {
       setPreviewText(text);
       setCursorType('hover');
     } else {

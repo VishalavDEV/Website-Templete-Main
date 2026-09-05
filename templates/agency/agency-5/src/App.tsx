@@ -44,6 +44,7 @@ export const App: React.FC = () => {
           <PageTransition>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/index.html" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/services/:slug" element={<ServiceDetails />} />

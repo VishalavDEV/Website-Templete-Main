@@ -43,7 +43,7 @@ export default function Team() {
   const socialIcons = [Globe, Share2, ExternalLink, MessageCircle];
 
   return (
-    <section id="team" className="relative py-28 px-6 md:px-12 bg-[#05070f] overflow-hidden">
+    <section id="team" className="relative py-20 sm:py-28 px-4 sm:px-6 md:px-12 bg-[#05070f] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <SectionTitle
           badge="MEET THE CREATORS"
@@ -51,7 +51,7 @@ export default function Team() {
           description="A multidisciplinary team of designers, engineers, and strategists obsessed with perfection."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {members.map((member, idx) => (
             <motion.div
               key={member.name}
@@ -61,7 +61,7 @@ export default function Team() {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               onMouseEnter={() => setCursorState('button')}
               onMouseLeave={() => setCursorState('default')}
-              className="group relative glass-panel rounded-3xl overflow-hidden border border-white/10 h-[420px] flex flex-col justify-between p-6 cursor-pointer"
+              className="group relative glass-panel rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 h-[360px] sm:h-[420px] flex flex-col justify-between p-5 sm:p-6 cursor-pointer"
             >
               {/* Portrait Image */}
               <div
@@ -74,29 +74,29 @@ export default function Team() {
 
               {/* Top Role Badge */}
               <div className="relative z-10">
-                <span className="text-xs font-mono tracking-widest text-cyan-400 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-cyan-500/30">
+                <span className="text-[10px] sm:text-xs font-mono tracking-widest text-cyan-400 bg-black/60 backdrop-blur-md px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-cyan-500/30">
                   {member.role}
                 </span>
               </div>
 
               {/* Bottom Details & Sliding Social Icons */}
-              <div className="relative z-10 space-y-4">
+              <div className="relative z-10 space-y-3 sm:space-y-4">
                 <div>
-                  <h3 className="text-2xl font-syne font-bold text-white group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-syne font-bold text-white group-hover:text-cyan-300 transition-colors">
                     {member.name}
                   </h3>
                 </div>
 
-                {/* Social Icons Sliding Up on Hover */}
-                <div className="flex items-center gap-3 pt-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                {/* Social Icons */}
+                <div className="flex items-center gap-2.5 sm:gap-3 pt-1 sm:pt-2 opacity-90 sm:opacity-0 sm:translate-y-4 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                   {socialIcons.map((Icon, i) => (
                     <a
                       key={i}
                       href="#"
                       onClick={(e) => e.preventDefault()}
-                      className="w-9 h-9 rounded-full bg-white/10 hover:bg-cyan-400 hover:text-black text-white flex items-center justify-center transition-all duration-300"
+                      className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-cyan-400 hover:text-black text-white flex items-center justify-center transition-all duration-300"
                     >
-                      <Icon className="w-4 h-4" />
+                      <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </a>
                   ))}
                 </div>
