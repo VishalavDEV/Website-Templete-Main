@@ -26,13 +26,19 @@ export default function Navbar() {
     e.preventDefault();
     setMobileMenuOpen(false);
     setActiveDropdown(null);
-    if (!href || href === '#') {
+    if (!href || href === '#' || href === '#hero') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
     const target = document.querySelector(href);
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const topOffset = 80;
+      const elementPosition = target.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - topOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 

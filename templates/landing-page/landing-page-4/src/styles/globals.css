@@ -166,7 +166,9 @@ button, input, textarea {
 .absolute { position: absolute; }
 .fixed { position: fixed; }
 .static { position: static; }
+.sticky { position: sticky; }
 
+.inset-0 { inset: 0; top: 0; right: 0; bottom: 0; left: 0; }
 .top-0 { top: 0; }
 .bottom-0 { bottom: 0; }
 .left-0 { left: 0; }
@@ -185,6 +187,7 @@ button, input, textarea {
 
 .-top-4 { top: -1rem; }
 .-top-6 { top: -1.5rem; }
+.-top-24 { top: -6rem; }
 .-left-6 { left: -1.5rem; }
 .-bottom-6 { bottom: -1.5rem; }
 .-right-6 { right: -1.5rem; }
@@ -195,9 +198,21 @@ button, input, textarea {
 .z-0 { z-index: 0; }
 .z-10 { z-index: 10; }
 .z-20 { z-index: 20; }
+.z-30 { z-index: 30; }
+.z-40 { z-index: 40; }
 .z-50 { z-index: 50; }
+.z-100 { z-index: 100; }
+.z-\[1000\] { z-index: 1000; }
 .-z-0 { z-index: 0; }
 .-z-10 { z-index: -10; }
+
+.navbar-wrapper {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000 !important;
+}
 
 .w-full { width: 100%; }
 .w-auto { width: auto; }

@@ -46,6 +46,8 @@ export default function Newsletter() {
 
   return (
     <section id="newsletter" className="py-20 md:py-28 relative">
+      <div id="news" className="absolute -top-24" />
+      <div id="contact" className="absolute -top-24" />
       
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-amber-500/5 blur-[160px] pointer-events-none"></div>
