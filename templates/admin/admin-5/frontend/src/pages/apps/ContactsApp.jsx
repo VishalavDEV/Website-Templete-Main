@@ -6,7 +6,7 @@ export const ContactsApp = () => {
   const { setActiveModal, addToast } = useApp();
   const [search, setSearch] = useState('');
   const [contacts, setContacts] = useState([
-    { id: 1, name: 'Alex Morgan', role: 'Administrator', company: 'TS Smart Admin', email: 'alex.morgan@tssmartadmin.io', phone: '+1 (555) 019-2834', avatar: '/assets/avatar_alex.jpg' },
+    { id: 1, name: 'Alex Morgan', role: 'Administrator', company: 'TS Smart Admin', email: 'alex.morgan@tssmartadmin.io', phone: '+1 (555) 019-2834', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150' },
     { id: 2, name: 'Marcus Chen', role: 'Senior Engineer', company: 'TS Smart Admin', email: 'marcus.chen@tssmartadmin.io', phone: '+1 (555) 018-9921', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150' },
     { id: 3, name: 'Sarah Jenkins', role: 'Product Designer', company: 'TS Smart Admin', email: 'sarah.j@tssmartadmin.io', phone: '+1 (555) 017-4412', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150' },
     { id: 4, name: 'David Kim', role: 'Finance Lead', company: 'TS Smart Admin', email: 'david.k@tssmartadmin.io', phone: '+1 (555) 016-8831', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150' },
@@ -24,24 +24,7 @@ export const ContactsApp = () => {
   );
 
   const handleAddContact = () => {
-    const name = prompt('Enter Contact Name:');
-    if (!name) return;
-    const role = prompt('Enter Role / Position:') || 'Team Member';
-    const email = prompt('Enter Email Address:') || `${name.toLowerCase().replace(/\s+/g, '.')}@tssmartadmin.io`;
-    const phone = prompt('Enter Phone Number:') || '+1 (555) 019-9999';
-
-    const newContact = {
-      id: Date.now(),
-      name,
-      role,
-      company: 'TS Smart Admin',
-      email,
-      phone,
-      avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'
-    };
-
-    setContacts(prev => [newContact, ...prev]);
-    addToast(`Added new contact "${name}"`, 'success');
+    setActiveModal('customer');
   };
 
   const handleCall = (c) => {

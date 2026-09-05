@@ -136,7 +136,10 @@ export const InvoiceViewPage = () => {
           <button className="btn btn-secondary btn-sm" onClick={handlePrint}>
             <Printer size={16} /> Print Receipt
           </button>
-          <button className="btn btn-primary btn-sm" onClick={() => addToast('Downloading PDF Invoice...', 'success')}>
+          <button className="btn btn-primary btn-sm" onClick={() => {
+            exportToPDF('Invoice_INV-2026-001.pdf', 'INVOICE #INV-2026-001', 'Customer: TechCorp Enterprise\nAmount: ₹4,250.00\nStatus: PAID IN FULL\nDate: August 20, 2026');
+            addToast('Downloaded PDF Invoice #INV-2026-001', 'success');
+          }}>
             <Download size={16} /> Download PDF
           </button>
         </div>

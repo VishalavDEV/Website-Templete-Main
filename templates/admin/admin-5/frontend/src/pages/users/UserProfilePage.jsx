@@ -10,7 +10,7 @@ export const UserProfilePage = () => {
       <div className="glass-card" style={{ padding: 32, marginBottom: 24 }}>
         <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>
           <img
-            src="/assets/avatar_alex.jpg"
+            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150"
             alt="Alex Morgan"
             style={{ width: 100, height: 100, borderRadius: '50%', objectFit: 'cover', border: '4px solid var(--brand-primary)' }}
           />

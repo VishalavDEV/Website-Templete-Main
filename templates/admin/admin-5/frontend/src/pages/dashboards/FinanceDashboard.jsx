@@ -4,6 +4,8 @@ import ReactApexChart from 'react-apexcharts';
 import { useApp } from '../../context/AppContext';
 import { useTheme } from '../../context/ThemeContext';
 
+import { exportToCSV } from '../../utils/export';
+
 export const FinanceDashboard = () => {
   const { theme } = useTheme();
   const { addToast, navigateTo } = useApp();
@@ -52,7 +54,10 @@ export const FinanceDashboard = () => {
           <p>Cash flow graphs, income vs operating expenses, treasury ledger, and budget summaries.</p>
         </div>
         <div className="page-header-actions">
-          <button className="btn btn-primary btn-sm" onClick={() => addToast('Downloading financial graph statement...', 'success')}>
+          <button className="btn btn-primary btn-sm" onClick={() => {
+            exportToCSV('finance_statement_report', transactions);
+            addToast('Exported financial statement report CSV!', 'success');
+          }}>
             <Download size={16} /> Export Financial Graphs
           </button>
         </div>

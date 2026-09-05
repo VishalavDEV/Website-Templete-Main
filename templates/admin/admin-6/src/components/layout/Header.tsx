@@ -47,10 +47,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileSidebar }) => {
     <header className="sticky top-0 z-30 h-16 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 transition-colors">
       <div className="h-full px-4 sm:px-6 flex items-center justify-between gap-4">
         {/* Left: Mobile Toggle & Global Search Button */}
-        <div className="flex items-center gap-3 flex-1 max-w-xl">
+        <div className="flex items-center gap-2 sm:gap-3 flex-1 max-w-xl min-w-0">
           <button
             onClick={onOpenMobileSidebar}
-            className="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden"
+            className="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden shrink-0"
           >
             <Menu className="w-5 h-5" />
           </button>
@@ -58,13 +58,16 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileSidebar }) => {
           {/* Search Trigger Input */}
           <button
             onClick={openSearch}
-            className="flex-1 flex items-center justify-between px-4 py-2 bg-slate-100 dark:bg-slate-800/80 border border-transparent hover:border-slate-300 dark:hover:border-slate-700 rounded-xl text-slate-500 dark:text-slate-400 text-sm transition-all shadow-inner"
+            className="flex-1 min-w-0 flex items-center justify-between px-3 sm:px-4 py-2 bg-slate-100 dark:bg-slate-800/80 border border-transparent hover:border-slate-300 dark:hover:border-slate-700 rounded-xl text-slate-500 dark:text-slate-400 text-xs sm:text-sm transition-all shadow-inner cursor-pointer"
           >
-            <div className="flex items-center gap-2.5">
-              <Search className="w-4 h-4 text-slate-400" />
-              <span>Search customers, products, orders...</span>
+            <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
+              <Search className="w-4 h-4 text-slate-400 shrink-0" />
+              <span className="truncate whitespace-nowrap">
+                <span className="hidden xs:inline">Search customers, products, orders...</span>
+                <span className="xs:hidden">Search...</span>
+              </span>
             </div>
-            <kbd className="hidden sm:inline-flex items-center gap-0.5 px-2 py-0.5 text-[10px] font-bold text-slate-400 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-md shadow-2xs">
+            <kbd className="hidden sm:inline-flex items-center gap-0.5 px-2 py-0.5 text-[10px] font-bold text-slate-400 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-md shadow-2xs shrink-0">
               Ctrl K
             </kbd>
           </button>

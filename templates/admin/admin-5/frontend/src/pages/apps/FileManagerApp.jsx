@@ -1,17 +1,37 @@
 import React, { useState } from 'react';
 import { Folder, FileText, Image, HardDrive, Upload, Grid, List, Search } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
+import { exportToTXT } from '../../utils/export';
 
 export const FileManagerApp = () => {
   const { addToast } = useApp();
   const [viewMode, setViewMode] = useState('grid');
 
-  const files = [
+  const [files, setFiles] = useState([
     { id: 1, name: 'TS_Smart_Admin_Architecture.pdf', type: 'PDF Document', size: '4.2 MB', updated: 'Today, 12:40' },
     { id: 2, name: 'Spring_Boot_Backend_Schema.sql', type: 'SQL File', size: '128 KB', updated: 'Yesterday' },
     { id: 3, name: 'Dashboard_Glass_Mockup.png', type: 'PNG Image', size: '2.8 MB', updated: '18 Aug 2026' },
     { id: 4, name: 'Customer_Invoices_Q3_2026.xlsx', type: 'Spreadsheet', size: '1.4 MB', updated: '15 Aug 2026' }
-  ];
+  ]);
+
+  const handleDownload = (f) => {
+    exportToTXT(f.name, `Content file payload for ${f.name}\nType: ${f.type}\nExported from TS Smart Admin Cloud Drive.`);
+    addToast(`Downloaded file "${f.name}" successfully!`, 'success');
+  };
+
+  const handleUpload = () => {
+    const filename = prompt('Enter name of file to upload:');
+    if (!filename) return;
+    const newFile = {
+      id: Date.now(),
+      name: filename,
+      type: filename.includes('.') ? filename.split('.').pop().toUpperCase() + ' File' : 'Document',
+      size: '1.2 MB',
+      updated: 'Just now'
+    };
+    setFiles(prev => [newFile, ...prev]);
+    addToast(`Uploaded file "${filename}" to Cloud Storage`, 'success');
+  };
 
   return (
     <div className="app-page">
@@ -25,7 +45,7 @@ export const FileManagerApp = () => {
             <button className={`btn btn-sm ${viewMode === 'grid' ? 'btn-primary' : ''}`} onClick={() => setViewMode('grid')}><Grid size={16} /></button>
             <button className={`btn btn-sm ${viewMode === 'list' ? 'btn-primary' : ''}`} onClick={() => setViewMode('list')}><List size={16} /></button>
           </div>
-          <button className="btn btn-primary btn-sm" onClick={() => addToast('File upload zone activated', 'info')}>
+          <button className="btn btn-primary btn-sm" onClick={handleUpload}>
             <Upload size={16} /> Upload File
           </button>
         </div>
@@ -53,7 +73,7 @@ export const FileManagerApp = () => {
               <h4 style={{ fontSize: 14, fontWeight: 700, wordBreak: 'break-all' }}>{f.name}</h4>
               <p style={{ fontSize: 12, color: 'var(--text-muted)' }}>{f.type} • {f.size}</p>
             </div>
-            <button className="btn btn-secondary btn-sm" onClick={() => addToast(`Downloading ${f.name}`, 'success')}>
+            <button className="btn btn-secondary btn-sm" onClick={() => handleDownload(f)}>
               Download
             </button>
           </div>

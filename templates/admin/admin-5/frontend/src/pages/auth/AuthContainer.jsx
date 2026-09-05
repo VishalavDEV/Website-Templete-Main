@@ -92,7 +92,7 @@ export const AuthContainer = () => {
         <form onSubmit={handleSubmit}>
           {authView === 'lock-screen' && (
             <div style={{ textAlign: 'center', marginBottom: 20 }}>
-              <img src="/assets/avatar_alex.jpg" alt="Alex Morgan" style={{ width: 80, height: 80, borderRadius: '50%', marginBottom: 10 }} />
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" alt="Alex Morgan" style={{ width: 80, height: 80, borderRadius: '50%', marginBottom: 10, objectFit: 'cover' }} />
               <h3 style={{ fontSize: 16, fontWeight: 700 }}>Alex Morgan</h3>
               <p style={{ fontSize: 12, color: 'var(--text-muted)' }}>alex.morgan@tssmartadmin.io</p>
             </div>

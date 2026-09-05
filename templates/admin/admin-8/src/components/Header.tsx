@@ -81,7 +81,7 @@ export default function Header({
 
             <div className="flex flex-col min-w-0">
               <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] font-semibold text-[#9b928a] tracking-tight">
-                <span className="text-[#706861] font-bold">Spark Admin</span>
+                <span className="text-[#706861] font-bold">Ember Glow</span>
                 <span>/</span>
                 <span className="text-[#ff6a3d] truncate font-medium">{getBreadcrumb()}</span>
               </div>

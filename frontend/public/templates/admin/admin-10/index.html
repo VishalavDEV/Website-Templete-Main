@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" class="h-full">
   <head>
-    <script>(function(){
-      var p = window.location.pathname;
-      if (p.endsWith('/index.html')) {
-        window.history.replaceState(null, '', p.slice(0, -10) + window.location.search + window.location.hash);
-      } else if (!p.endsWith('/') && !p.endsWith('.html')) {
-        window.location.replace(p + '/' + window.location.search + window.location.hash);
-      }
-    })();</script>
-
-    <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232558eb'><rect width='24' height='24' rx='6' fill='%231e38af'/><path d='M7 17V11M12 17V7M17 17V13' stroke='white' stroke-width='2' stroke-linecap='round'/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech-Admin — Enterprise SaaS Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+      <!-- TechnoSprint Responsive Template Preview Wrapper Script -->
     <script>
       (function() {
         const isTop = window.self === window.top;
@@ -19,22 +18,13 @@
         
         if (isTop && !isIframe) {
           function buildPreviewWrapper() {
-            const body = document.body;
-            if (!body) {
-              setTimeout(buildPreviewWrapper, 10);
-              return;
-            }
-            if (document.getElementById('technosprint-preview-header')) return;
-
             const currentUrl = new URL(window.location.href);
-            if (!currentUrl.pathname.endsWith('/') && !currentUrl.pathname.endsWith('.html')) {
-              currentUrl.pathname += '/';
-            }
             currentUrl.searchParams.set('iframe', 'true');
             
             document.documentElement.className = '';
             document.documentElement.removeAttribute('style');
             
+            const body = document.body;
             body.className = '';
             body.innerHTML = '';
             body.removeAttribute('style');
@@ -44,7 +34,7 @@
             overrideStyle.textContent = 'html, body { margin: 0 !important; padding: 0 !important; width: 100vw !important; height: 100vh !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important; color: #0f172a !important; } #technosprint-preview-header { background-color: #ffffff !important; color: #0f172a !important; }';
             document.head.appendChild(overrideStyle);
             
-            body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important;';
+            body.style.cssText = 'margin: 0 !important; padding: 0 !important; height: 100vh !important; width: 100vw !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; background-color: #f8fafc !important; background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px) !important; background-size: 20px 20px !important;';
             
             const topBar = document.createElement('header');
             topBar.id = 'technosprint-preview-header';
@@ -83,7 +73,7 @@
             
             switcherDiv.innerHTML = '' +
               '<button id="view-desktop" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.15s; outline: none; box-sizing: border-box; box-shadow: 0 1px 2px rgba(37,99,235,0.08);">' +
-              '  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12.01" y2="21"></line></svg>' +
+              '  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>' +
               '  Desktop' +
               '</button>' +
               '<button id="view-tablet" style="background: transparent; color: #64748b; border: 1px solid transparent; padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.15s; outline: none; box-sizing: border-box;">' +
@@ -196,7 +186,6 @@
                 frameContainer.style.height = '100%';
                 frameContainer.style.maxWidth = '100%';
                 frameContainer.style.maxHeight = '100%';
-                frameContainer.style.backgroundColor = 'transparent';
                 frameContainer.style.border = 'none';
                 frameContainer.style.borderRadius = '12px';
               } else if (activeMode === 'tablet') {
@@ -228,7 +217,7 @@
                 
                 const isPortrait = orientation === 'portrait';
                 frameContainer.style.width = isPortrait ? '375px' : '667px';
-                frameContainer.style.height = isPortrait ? '375px' : '667px';
+                frameContainer.style.height = isPortrait ? '667px' : '375px';
                 frameContainer.style.maxWidth = '100%';
                 frameContainer.style.maxHeight = '100%';
                 frameContainer.style.border = '12px solid #0f172a';
@@ -251,24 +240,18 @@
             });
           }
           
-          if (document.readyState === 'interactive' || document.readyState === 'complete') {
-            buildPreviewWrapper();
-          } else {
+          if (document.readyState === 'loading') {
             window.addEventListener('DOMContentLoaded', buildPreviewWrapper);
-            window.addEventListener('load', buildPreviewWrapper);
+          } else {
+            buildPreviewWrapper();
           }
         }
       })();
     </script>
-
-    
-
-    
-    <script type="module" crossorigin src="./assets/index-DEbuvFBL.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DUilACJc.css">
-    <base href="/templates/admin/admin-10/" />
+    <script type="module" crossorigin src="./assets/index-B4gFBZkA.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B9KxGrqi.css">
   </head>
   <body class="h-full bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white transition-colors duration-300">
-    <div id="root" class="h-full"></div>
+    <div id="root" class="h-full"></div>
   </body>
 </html>

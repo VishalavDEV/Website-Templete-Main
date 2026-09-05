@@ -4,6 +4,8 @@ import ReactApexChart from 'react-apexcharts';
 import { useApp } from '../../context/AppContext';
 import { useTheme } from '../../context/ThemeContext';
 
+import { exportToCSV } from '../../utils/export';
+
 export const MarketingDashboard = () => {
   const { theme } = useTheme();
   const { addToast } = useApp();
@@ -46,7 +48,10 @@ export const MarketingDashboard = () => {
           <h1 style={{ fontSize: 24, fontWeight: 800 }}>Marketing & Campaign Analytics</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: 14 }}>Track campaign ROI graphs, ad spend vs revenue, CPL, and click-through rates.</p>
         </div>
-        <button className="btn btn-primary btn-sm" onClick={() => addToast('Exporting campaign graphs...', 'success')}>
+        <button className="btn btn-primary btn-sm" onClick={() => {
+          exportToCSV('marketing_campaigns_report', campaigns);
+          addToast('Exported campaign graphs CSV report!', 'success');
+        }}>
           <Download size={16} /> Export Graphs
         </button>
       </div>

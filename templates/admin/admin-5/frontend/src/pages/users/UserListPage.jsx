@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { UserPlus, Search, Edit2, Trash2, ShieldCheck, Eye } from 'lucide-react';
+import { UserPlus, Search, Edit2, Trash2, ShieldCheck, Eye, Download } from 'lucide-react';
 import { fetchUsers } from '../../services/api';
 import { useApp } from '../../context/AppContext';
+import { exportToCSV } from '../../utils/export';
 
 export const UserListPage = () => {
-  const { addToast, navigateTo } = useApp();
+  const { addToast, navigateTo, setActiveModal } = useApp();
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState('');
 
@@ -23,6 +24,11 @@ export const UserListPage = () => {
     addToast(`User ${name} deleted successfully`, 'danger');
   };
 
+  const handleExportUsers = () => {
+    exportToCSV('user_directory_export', filteredUsers);
+    addToast('Exported users directory CSV!', 'success');
+  };
+
   return (
     <div className="user-page">
       <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
@@ -30,9 +36,14 @@ export const UserListPage = () => {
           <h1 style={{ fontSize: 24, fontWeight: 800 }}>User Management Directory</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: 14 }}>Manage user accounts, department assignments, and permission roles.</p>
         </div>
-        <button className="btn btn-primary btn-sm" onClick={() => navigateTo('users', 'user-edit')}>
-          <UserPlus size={16} /> Add New User
-        </button>
+        <div style={{ display: 'flex', gap: 12 }}>
+          <button className="btn btn-secondary btn-sm" onClick={handleExportUsers}>
+            <Download size={16} /> Export CSV
+          </button>
+          <button className="btn btn-primary btn-sm" onClick={() => setActiveModal('customer')}>
+            <UserPlus size={16} /> Add New User / Customer
+          </button>
+        </div>
       </div>
 
       <div className="glass-card" style={{ marginBottom: 24, padding: 16 }}>

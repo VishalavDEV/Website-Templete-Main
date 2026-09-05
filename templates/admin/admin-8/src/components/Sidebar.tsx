@@ -23,6 +23,8 @@ interface SidebarProps {
   setCollapsed: (collapsed: boolean) => void;
   mobileOpen: boolean;
   setMobileOpen: (open: boolean) => void;
+  onUpgradeClick?: () => void;
+  currentPlan?: 'Free' | 'Pro' | 'Enterprise';
 }
 
 export default function Sidebar({
@@ -31,7 +33,9 @@ export default function Sidebar({
   collapsed,
   setCollapsed,
   mobileOpen,
-  setMobileOpen
+  setMobileOpen,
+  onUpgradeClick,
+  currentPlan = 'Free'
 }: SidebarProps) {
 
   // Prevent background scroll when mobile sidebar is open
@@ -64,12 +68,12 @@ export default function Sidebar({
       <div className={`flex items-center justify-between p-4 sm:p-6 border-b border-black/[0.04] ${collapsed ? 'justify-center' : ''}`}>
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#ff6a3d] to-[#ff3d77] flex items-center justify-center shadow-md shadow-[#ff6a3d]/10 transition-transform duration-300 hover:scale-105">
-            <span className="text-white font-extrabold text-sm">S</span>
+            <span className="text-white font-extrabold text-sm">E</span>
           </div>
           {!collapsed && (
             <div className="flex flex-col">
-              <span className="font-extrabold text-[15px] tracking-tight text-[#211d1a]">Spark Admin</span>
-              <span className="text-[9px] uppercase tracking-wider text-[#ff6a3d] font-bold">Ember Glow</span>
+              <span className="font-extrabold text-[15px] tracking-tight text-[#211d1a]">Ember Glow</span>
+              <span className="text-[9px] uppercase tracking-wider text-[#ff6a3d] font-bold">Analytics Hub</span>
             </div>
           )}
         </div>
@@ -112,15 +116,30 @@ export default function Sidebar({
         })}
       </nav>
 
-      {/* Pro Plan promotion panel from Clean Minimalism */}
+      {/* Pro Plan promotion panel */}
       {!collapsed && (
         <div className="px-4 py-4 mb-4 mx-3 rounded-[10px] bg-[#ff6a3d]/8 border border-[#ff6a3d]/12 flex flex-col gap-2">
-          <div className="text-[10px] font-extrabold uppercase tracking-widest text-[#ff6a3d]">Pro Plan</div>
+          <div className="flex items-center justify-between">
+            <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#ff6a3d]">
+              {currentPlan !== 'Free' ? `${currentPlan} Plan` : 'Pro Plan'}
+            </span>
+            {currentPlan !== 'Free' && (
+              <span className="text-[9px] bg-emerald-500 text-white font-bold px-1.5 py-0.5 rounded-full uppercase">
+                Active
+              </span>
+            )}
+          </div>
           <p className="text-[11px] text-[#706861] leading-relaxed">
-            Unlock advanced analytics and CSV exports.
+            {currentPlan !== 'Free' 
+              ? `You have active ${currentPlan} tier capabilities unlocked.` 
+              : 'Unlock advanced analytics and CSV exports.'}
           </p>
-          <button className="w-full py-1.5 bg-white text-[11px] font-bold text-[#211d1a] rounded-lg border border-black/[0.05] shadow-xs hover:bg-[#faf8f2] transition-colors cursor-pointer">
-            Upgrade Now
+          <button 
+            id="sidebar-upgrade-btn"
+            onClick={onUpgradeClick}
+            className="w-full py-1.5 bg-white text-[11px] font-bold text-[#211d1a] rounded-lg border border-black/[0.05] shadow-xs hover:bg-[#faf8f2] active:scale-95 transition-all cursor-pointer"
+          >
+            {currentPlan !== 'Free' ? 'Manage Plan' : 'Upgrade Now'}
           </button>
         </div>
       )}

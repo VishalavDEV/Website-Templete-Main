@@ -13,6 +13,7 @@ import TransactionsTable from './components/TransactionsTable';
 import ProductOverview from './components/ProductOverview';
 import ViewPerformanceCard from './components/ViewPerformanceCard';
 import MiniCalendar from './components/MiniCalendar';
+import UpgradeModal from './components/UpgradeModal';
 
 import { 
   INITIAL_TRANSACTIONS, 
@@ -29,6 +30,10 @@ export default function App() {
   const [currentTab, setCurrentTab] = useState('overview');
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  // Upgrade Plan State
+  const [upgradeModalOpen, setUpgradeModalOpen] = useState(false);
+  const [currentPlan, setCurrentPlan] = useState<'Free' | 'Pro' | 'Enterprise'>('Free');
 
   // Core Data States
   const [transactions, setTransactions] = useState<Transaction[]>(INITIAL_TRANSACTIONS);
@@ -105,6 +110,13 @@ export default function App() {
     }
   }, [toastMessage, isRefreshing]);
 
+  // Handle upgrading plan
+  const handleSelectPlan = (plan: 'Pro' | 'Enterprise') => {
+    setCurrentPlan(plan);
+    setUpgradeModalOpen(false);
+    setToastMessage(`Congratulations! You have successfully upgraded to the ${plan} Plan.`);
+  };
+
   // Export full reports
   const handleExportReport = () => {
     const csvContent = exportToCSV(transactions);
@@ -112,7 +124,7 @@ export default function App() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.setAttribute('href', url);
-    link.setAttribute('download', `spark_admin_report_full_export.csv`);
+    link.setAttribute('download', `ember_glow_report_full_export.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -136,6 +148,8 @@ export default function App() {
           setCollapsed={setCollapsed}
           mobileOpen={mobileOpen}
           setMobileOpen={setMobileOpen}
+          onUpgradeClick={() => setUpgradeModalOpen(true)}
+          currentPlan={currentPlan}
         />
 
         {/* Workspace Panels */}
@@ -293,6 +307,13 @@ export default function App() {
           </div>
         </div>
       )}
+      {/* Upgrade Plan Modal */}
+      <UpgradeModal
+        isOpen={upgradeModalOpen}
+        onClose={() => setUpgradeModalOpen(false)}
+        currentPlan={currentPlan}
+        onSelectPlan={handleSelectPlan}
+      />
     </div>
   );
 }

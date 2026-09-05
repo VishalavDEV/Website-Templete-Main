@@ -182,6 +182,13 @@
                 btn.style.boxShadow = 'none';
               });
               
+              const isSmallScreen = window.innerWidth < 640;
+              const isMediumScreen = window.innerWidth < 1024;
+              if (isSmallScreen) {
+                topBar.style.padding = '0 10px';
+                canvas.style.padding = '8px';
+              }
+
               if (activeMode === 'desktop') {
                 btnDesktop.style.background = '#eff6ff';
                 btnDesktop.style.color = '#2563eb';
@@ -210,11 +217,11 @@
                 notch.style.display = 'none';
                 
                 const isPortrait = orientation === 'portrait';
-                frameContainer.style.width = isPortrait ? '768px' : '1024px';
+                frameContainer.style.width = isPortrait ? (isMediumScreen ? '100%' : '768px') : (isMediumScreen ? '100%' : '1024px');
                 frameContainer.style.height = isPortrait ? '1024px' : '768px';
                 frameContainer.style.maxWidth = '100%';
                 frameContainer.style.maxHeight = '100%';
-                frameContainer.style.border = '12px solid #0f172a';
+                frameContainer.style.border = isSmallScreen ? '4px solid #0f172a' : '12px solid #0f172a';
                 frameContainer.style.borderRadius = '24px';
               } else if (activeMode === 'mobile') {
                 btnMobile.style.background = '#eff6ff';
@@ -227,12 +234,12 @@
                 notch.style.display = 'flex';
                 
                 const isPortrait = orientation === 'portrait';
-                frameContainer.style.width = isPortrait ? '375px' : '667px';
+                frameContainer.style.width = isPortrait ? (isSmallScreen ? '100%' : '375px') : (isSmallScreen ? '100%' : '667px');
                 frameContainer.style.height = isPortrait ? '667px' : '375px';
                 frameContainer.style.maxWidth = '100%';
                 frameContainer.style.maxHeight = '100%';
-                frameContainer.style.border = '12px solid #0f172a';
-                frameContainer.style.borderRadius = '36px';
+                frameContainer.style.border = isSmallScreen ? '4px solid #0f172a' : '12px solid #0f172a';
+                frameContainer.style.borderRadius = isSmallScreen ? '18px' : '36px';
               }
             }
             

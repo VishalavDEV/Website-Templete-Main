@@ -16,7 +16,7 @@ export const fetchOverviewStats = async () => {
 
 export const fetchUsers = async () => {
   return [
-    { id: 1, name: 'Alex Morgan', email: 'alex.morgan@tssmartadmin.io', role: 'Administrator', status: 'Active', avatar: '/assets/avatar_alex.jpg', department: 'Executive Engineering' },
+    { id: 1, name: 'Alex Morgan', email: 'alex.morgan@tssmartadmin.io', role: 'Administrator', status: 'Active', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150', department: 'Executive Engineering' },
     { id: 2, name: 'Marcus Chen', email: 'marcus.chen@tssmartadmin.io', role: 'Senior Engineer', status: 'Active', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150', department: 'Backend Systems' },
     { id: 3, name: 'Sarah Jenkins', email: 'sarah.j@tssmartadmin.io', role: 'Product Designer', status: 'Active', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150', department: 'Design Systems' },
     { id: 4, name: 'David Kim', email: 'david.k@tssmartadmin.io', role: 'Finance Lead', status: 'Pending', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150', department: 'Treasury & Finance' },

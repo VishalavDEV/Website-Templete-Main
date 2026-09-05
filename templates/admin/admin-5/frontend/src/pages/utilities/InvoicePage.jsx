@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Printer, Download, ArrowLeft, CheckCircle } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
+import { exportToPDF } from '../../utils/export';
+
 export const InvoicePage = () => {
   const { addToast } = useApp();
   const [viewDetail, setViewDetail] = useState(true);
@@ -22,7 +24,10 @@ export const InvoicePage = () => {
           <button className="btn btn-secondary btn-sm" onClick={handlePrint}>
             <Printer size={16} /> Print Invoice
           </button>
-          <button className="btn btn-primary btn-sm" onClick={() => addToast('PDF invoice downloaded', 'success')}>
+          <button className="btn btn-primary btn-sm" onClick={() => {
+            exportToPDF('Invoice_INV-2026-089.pdf', 'INVOICE #INV-2026-089', 'Customer: Robert Vance (TechCorp Solutions)\nAmount Paid: ₹1,700.00\nStatus: PAID IN FULL');
+            addToast('PDF invoice downloaded', 'success');
+          }}>
             <Download size={16} /> Download PDF
           </button>
         </div>

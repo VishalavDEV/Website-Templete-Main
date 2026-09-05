@@ -18,6 +18,11 @@ export const ModalContainer = () => {
   const [emailSubject, setEmailSubject] = useState('');
   const [emailBody, setEmailBody] = useState('');
 
+  const [custName, setCustName] = useState('');
+  const [custEmail, setCustEmail] = useState('');
+  const [custCompany, setCustCompany] = useState('');
+  const [custRole, setCustRole] = useState('Enterprise Client');
+
   const [callActive, setCallActive] = useState(false);
 
   if (!activeModal) return null;
@@ -45,6 +50,15 @@ export const ModalContainer = () => {
     handleClose();
   };
 
+  const handleCustomerSubmit = (e) => {
+    e.preventDefault();
+    addToast(`Customer / User "${custName || 'New Customer'}" created successfully!`, 'success');
+    setCustName('');
+    setCustEmail('');
+    setCustCompany('');
+    handleClose();
+  };
+
   return (
     <div className="modal-backdrop" onClick={handleClose}>
       <div className="modal-content glass-card" onClick={e => e.stopPropagation()}>
@@ -54,6 +68,7 @@ export const ModalContainer = () => {
             {activeModal === 'ticket' && <><LifeBuoy size={20} /> <h3>Create Support Ticket</h3></>}
             {activeModal === 'mail' && <><Send size={20} /> <h3>Compose New Email</h3></>}
             {activeModal === 'call' && <><PhoneCall size={20} /> <h3>Voice Call Dialer</h3></>}
+            {(activeModal === 'customer' || activeModal === 'user') && <><UserPlus size={20} /> <h3>Create New Customer / User Account</h3></>}
           </div>
           <button className="btn-icon" onClick={handleClose}><X size={18} /></button>
         </div>
@@ -220,6 +235,59 @@ export const ModalContainer = () => {
                 </button>
               </div>
             </div>
+          )}
+
+          {(activeModal === 'customer' || activeModal === 'user') && (
+            <form onSubmit={handleCustomerSubmit}>
+              <div className="form-group">
+                <label>Full Name / Account Name</label>
+                <input 
+                  type="text" 
+                  placeholder="e.g. Eleanor Vance" 
+                  value={custName} 
+                  onChange={e => setCustName(e.target.value)} 
+                  required 
+                />
+              </div>
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Email Address</label>
+                  <input 
+                    type="email" 
+                    placeholder="eleanor@example.com" 
+                    value={custEmail} 
+                    onChange={e => setCustEmail(e.target.value)} 
+                    required 
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Company / Account</label>
+                  <input 
+                    type="text" 
+                    placeholder="e.g. Apex Global" 
+                    value={custCompany} 
+                    onChange={e => setCustCompany(e.target.value)} 
+                    required 
+                  />
+                </div>
+              </div>
+              <div className="form-group">
+                <label>Permission Role</label>
+                <select value={custRole} onChange={e => setCustRole(e.target.value)}>
+                  <option>Enterprise Client</option>
+                  <option>Administrator</option>
+                  <option>Senior Engineer</option>
+                  <option>Product Designer</option>
+                  <option>Finance Lead</option>
+                </select>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" onClick={handleClose}>Cancel</button>
+                <button type="submit" className="btn btn-primary">
+                  <UserPlus size={16} /> Create Customer Account
+                </button>
+              </div>
+            </form>
           )}
         </div>
       </div>

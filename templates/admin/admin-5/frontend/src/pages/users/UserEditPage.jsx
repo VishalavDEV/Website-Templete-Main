@@ -38,7 +38,7 @@ export const UserEditPage = () => {
           <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 24, paddingBottom: 24, borderBottom: '1px solid var(--border-color)' }}>
             <div style={{ position: 'relative' }}>
               <img
-                src="/assets/avatar_alex.jpg"
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150"
                 alt="Avatar"
                 style={{ width: 80, height: 80, borderRadius: '50%', objectFit: 'cover' }}
               />

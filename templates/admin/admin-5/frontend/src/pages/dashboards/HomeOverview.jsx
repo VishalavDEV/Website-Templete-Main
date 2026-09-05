@@ -5,6 +5,8 @@ import { fetchOverviewStats } from '../../services/api';
 import { useApp } from '../../context/AppContext';
 import { useTheme } from '../../context/ThemeContext';
 
+import { exportToCSV } from '../../utils/export';
+
 export const HomeOverview = () => {
   const { theme } = useTheme();
   const { navigateTo, addToast } = useApp();
@@ -165,7 +167,10 @@ export const HomeOverview = () => {
               <h3 style={{ fontSize: 16, fontWeight: 700 }}>Revenue Growth & Target Baseline Graph</h3>
               <p style={{ fontSize: 12, color: 'var(--text-secondary)' }}>Comparing actual revenue performance vs target budget</p>
             </div>
-            <button className="btn btn-secondary btn-sm" onClick={() => addToast('Graph data exported', 'success')}>
+            <button className="btn btn-secondary btn-sm" onClick={() => {
+              exportToCSV('overview_revenue_data', recentOrders);
+              addToast('Graph data exported to CSV!', 'success');
+            }}>
               <Download size={14} /> Export Graph
             </button>
           </div>

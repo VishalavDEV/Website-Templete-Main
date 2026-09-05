@@ -58,6 +58,36 @@ export const CollaborationSubPages: React.FC<{ subPage: string }> = ({ subPage }
   const [uploadProjectName, setUploadProjectName] = useState('Enterprise Cloud Migration');
   const [uploadSizeMB, setUploadSizeMB] = useState('4.8');
 
+  // Knowledge Base Modal Reader State
+  const [selectedArticle, setSelectedArticle] = useState<any>(null);
+  const [bookmarkedArticles, setBookmarkedArticles] = useState<Record<string, boolean>>({});
+
+  const handleToggleBookmark = (id: string, title: string) => {
+    setBookmarkedArticles(prev => {
+      const nextState = !prev[id];
+      addToast(nextState ? `Bookmarked article "${title}".` : `Removed bookmark for "${title}".`, 'info');
+      return { ...prev, [id]: nextState };
+    });
+  };
+
+  const handleCopyLink = (title: string) => {
+    navigator.clipboard.writeText(window.location.href);
+    addToast(`Article link for "${title}" copied to clipboard!`, 'success');
+  };
+
+  const handleDownloadArticle = (title: string) => {
+    const blob = new Blob([`CoreVista Knowledge Base Article\nTitle: ${title}\nGenerated on: ${new Date().toISOString()}\n\nContent:\nStandard architecture guideline and procedures document for team alignment.`], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${title.toLowerCase().replace(/[^a-z0-9]/g, '_')}_guide.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    addToast(`Downloaded KB article document: "${title}".`, 'success');
+  };
+
   const handleUploadSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!uploadFileName.trim()) return;
@@ -123,9 +153,81 @@ export const CollaborationSubPages: React.FC<{ subPage: string }> = ({ subPage }
   ];
 
   const knowledgeArticles = [
-    { id: 'kb-1', title: 'Microservices Communication Guidelines (gRPC vs REST)', author: 'Sophia Chen', reads: '1.2k' },
-    { id: 'kb-2', title: 'SOC2 Type II Security Standard Compliance Standard', author: 'Alexandra Vance', reads: '840' },
-    { id: 'kb-3', title: 'Continuous Delivery Pipeline & Zero-Downtime Deployment', author: 'Marcus Sterling', reads: '2.1k' }
+    {
+      id: 'kb-1',
+      title: 'Microservices Communication Guidelines (gRPC vs REST)',
+      author: 'Sophia Chen',
+      category: 'Architecture',
+      reads: '1.2k',
+      date: 'Aug 14, 2026',
+      readTime: '6 min read',
+      summary: 'Standardized protocols for synchronous high-performance internal microservice calls using HTTP/2 Protobuf vs external public client REST endpoints.',
+      tags: ['gRPC', 'REST API', 'Protobuf', 'Microservices', 'Network'],
+      sections: [
+        {
+          title: '1. Core Protocol Architectural Decision',
+          body: 'For internal cluster traffic between microservices, gRPC using HTTP/2 multiplexing is mandated. Protobuf serialization yields up to 7x higher throughput compared to JSON stringification over HTTP/1.1.'
+        },
+        {
+          title: '2. Fallback & Public Gateway Rules',
+          body: 'All ingress traffic passing through Envoy / API Gateway must translate public REST/JSON requests into gRPC payloads before reaching core application microservices.'
+        },
+        {
+          title: '3. Error Propagation Standards',
+          body: 'Services must convert internal error statuses into canonical gRPC codes (INVALID_ARGUMENT, UNAUTHENTICATED, NOT_FOUND, RESOURCE_EXHAUSTED) before returning responses.'
+        }
+      ]
+    },
+    {
+      id: 'kb-2',
+      title: 'SOC2 Type II Security Compliance & Audit Standard',
+      author: 'Alexandra Vance',
+      category: 'Security',
+      reads: '840',
+      date: 'Jul 28, 2026',
+      readTime: '10 min read',
+      summary: 'Mandatory operational procedures for least-privilege access, key rotation, database encryption at rest, and continuous log auditing for SOC2 certification.',
+      tags: ['SOC2', 'Compliance', 'KMS', 'RBAC', 'Encryption'],
+      sections: [
+        {
+          title: '1. Data Encryption & KMS Key Rotation',
+          body: 'All database volumes and S3 buckets must be encrypted using AWS KMS customer-managed keys (CMK) with automated 90-day key rotation schedules.'
+        },
+        {
+          title: '2. Role-Based Access Control (RBAC)',
+          body: 'Production access requires MFA-enforced Okta SSO integration with just-in-time (JIT) 2-hour temporary credentials. Root user credentials must remain locked in secure physical vaults.'
+        },
+        {
+          title: '3. Immutable Audit Logging',
+          body: 'All administrative API mutations are streamed live to AWS CloudTrail and Datadog with tamper-evident SHA-256 hash chains enabled.'
+        }
+      ]
+    },
+    {
+      id: 'kb-3',
+      title: 'Continuous Delivery Pipeline & Zero-Downtime Deployment',
+      author: 'Marcus Sterling',
+      category: 'DevOps',
+      reads: '2.1k',
+      date: 'Aug 02, 2026',
+      readTime: '8 min read',
+      summary: 'Step-by-step blue/green and canary release procedures using Kubernetes custom resources, ArgoCD, and automated automated smoke testing.',
+      tags: ['Kubernetes', 'CI/CD', 'ArgoCD', 'Blue-Green', 'Zero-Downtime'],
+      sections: [
+        {
+          title: '1. Progressive Rollouts & Canary Analysis',
+          body: 'New deployments route 5% of production traffic to canary pods for 15 minutes. Prometheus monitors 5xx HTTP error rates and latency p99 metrics automatically.'
+        },
+        {
+          title: '2. Database Schema Migrations',
+          body: 'Schema migrations must always follow the Expand-Contract pattern. Field drops or renames must occur across 2 separate deployment cycles to ensure backward compatibility with active pods.'
+        },
+        {
+          title: '3. Automated Rollback Triggers',
+          body: 'If canary error rate exceeds 0.05% or p99 response time increases by more than 50ms, ArgoCD automatically aborts rollout and restores 100% traffic to stable pods within 3 seconds.'
+        }
+      ]
+    }
   ];
 
   const filteredFiles = files.filter(f => 
@@ -332,19 +434,39 @@ export const CollaborationSubPages: React.FC<{ subPage: string }> = ({ subPage }
       {/* SUBPAGE 5: KNOWLEDGE BASE */}
       {subPage === 'knowledge' && (
         <Card title="Engineering Knowledge Base & Wiki Articles">
-          <div className="space-y-3">
+          <div className="space-y-4">
             {knowledgeArticles.map(a => (
-              <div key={a.id} className="p-4 rounded-xl bg-app-secondary/30 border border-app flex items-center justify-between hover:bg-app-hover/50 transition-colors">
-                <div>
-                  <h4 className="font-bold text-xs text-app-primary flex items-center gap-2">
-                    <BookOpen className="w-4 h-4 text-blue-400" />
+              <div key={a.id} className="p-4 rounded-xl bg-app-secondary/30 border border-app hover:border-blue-500/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all">
+                <div className="space-y-1.5 flex-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 font-bold text-[10px] uppercase tracking-wider">
+                      {a.category}
+                    </span>
+                    <span className="text-[11px] text-app-muted">{a.date} • {a.readTime}</span>
+                    {bookmarkedArticles[a.id] && (
+                      <span className="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-400 font-semibold text-[10px] flex items-center gap-1">
+                        <Bookmark className="w-3 h-3 fill-current" /> Bookmarked
+                      </span>
+                    )}
+                  </div>
+                  <h4 className="font-bold text-sm text-app-primary flex items-center gap-2">
+                    <BookOpen className="w-4 h-4 text-blue-400 shrink-0" />
                     {a.title}
                   </h4>
-                  <p className="text-[11px] text-app-muted mt-1">Author: {a.author} • {a.reads} total reads</p>
+                  <p className="text-xs text-app-secondary line-clamp-2 leading-relaxed">{a.summary}</p>
+                  <div className="flex items-center gap-4 text-[11px] text-app-muted pt-1">
+                    <span>Author: <strong className="text-app-primary font-medium">{a.author}</strong></span>
+                    <span>Reads: <strong className="text-emerald-400 font-mono">{a.reads}</strong></span>
+                  </div>
                 </div>
-                <Button size="sm" variant="outline" icon={<ExternalLink className="w-3.5 h-3.5" />} onClick={() => addToast(`Opened article "${a.title}"`, 'info')}>
-                  Read Article
-                </Button>
+                <div className="flex items-center gap-2 shrink-0">
+                  <Button size="sm" variant="outline" icon={<Bookmark className={`w-3.5 h-3.5 ${bookmarkedArticles[a.id] ? 'fill-current text-amber-400' : ''}`} />} onClick={() => handleToggleBookmark(a.id, a.title)}>
+                    {bookmarkedArticles[a.id] ? 'Saved' : 'Save'}
+                  </Button>
+                  <Button size="sm" variant="primary" icon={<BookOpen className="w-3.5 h-3.5" />} onClick={() => setSelectedArticle(a)}>
+                    Read Article
+                  </Button>
+                </div>
               </div>
             ))}
           </div>
@@ -404,6 +526,78 @@ export const CollaborationSubPages: React.FC<{ subPage: string }> = ({ subPage }
           </div>
         </form>
       </Modal>
+
+      {/* Knowledge Article Modal Reader */}
+      {selectedArticle && (
+        <Modal
+          isOpen={!!selectedArticle}
+          onClose={() => setSelectedArticle(null)}
+          title={selectedArticle.title}
+          size="lg"
+          footer={
+            <div className="flex flex-wrap items-center justify-between w-full gap-2">
+              <div className="flex items-center gap-2">
+                <Button size="sm" variant="outline" icon={<Bookmark className={`w-3.5 h-3.5 ${bookmarkedArticles[selectedArticle.id] ? 'fill-current text-amber-400' : ''}`} />} onClick={() => handleToggleBookmark(selectedArticle.id, selectedArticle.title)}>
+                  {bookmarkedArticles[selectedArticle.id] ? 'Bookmarked' : 'Bookmark'}
+                </Button>
+                <Button size="sm" variant="outline" icon={<ExternalLink className="w-3.5 h-3.5" />} onClick={() => handleCopyLink(selectedArticle.title)}>
+                  Copy Link
+                </Button>
+                <Button size="sm" variant="outline" icon={<Download className="w-3.5 h-3.5" />} onClick={() => handleDownloadArticle(selectedArticle.title)}>
+                  Download PDF
+                </Button>
+              </div>
+              <Button variant="primary" onClick={() => setSelectedArticle(null)}>
+                Done Reading
+              </Button>
+            </div>
+          }
+        >
+          <div className="space-y-5 text-xs text-app-primary">
+            {/* Header Metadata Banner */}
+            <div className="p-4 rounded-xl bg-app-secondary/40 border border-app space-y-2">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-400 font-bold text-[10px] uppercase">
+                  {selectedArticle.category}
+                </span>
+                <span className="text-app-muted">•</span>
+                <span className="text-app-muted">{selectedArticle.date}</span>
+                <span className="text-app-muted">•</span>
+                <span className="text-emerald-400 font-semibold">{selectedArticle.readTime}</span>
+                <span className="text-app-muted">•</span>
+                <span className="text-app-muted font-mono">{selectedArticle.reads} Reads</span>
+              </div>
+              <p className="text-xs text-app-secondary font-medium italic border-l-2 border-blue-500 pl-3 py-0.5">
+                "{selectedArticle.summary}"
+              </p>
+              <div className="flex items-center gap-2 pt-1">
+                <span className="text-app-muted text-[11px]">Written by:</span>
+                <span className="font-bold text-app-primary text-xs">{selectedArticle.author}</span>
+              </div>
+            </div>
+
+            {/* Structured Sections */}
+            <div className="space-y-4">
+              {selectedArticle.sections.map((sec: any, idx: number) => (
+                <div key={idx} className="space-y-2 p-3.5 rounded-xl bg-app-secondary/20 border border-app/50">
+                  <h4 className="font-bold text-sm text-blue-400">{sec.title}</h4>
+                  <p className="text-app-secondary text-xs leading-relaxed">{sec.body}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Article Tags */}
+            <div className="pt-2 border-t border-app flex items-center gap-2 flex-wrap">
+              <span className="text-app-muted font-semibold text-[11px]">Topic Tags:</span>
+              {selectedArticle.tags.map((tag: string) => (
+                <span key={tag} className="px-2 py-0.5 rounded-md bg-app-hover border border-app text-app-secondary text-[10px] font-mono">
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 };

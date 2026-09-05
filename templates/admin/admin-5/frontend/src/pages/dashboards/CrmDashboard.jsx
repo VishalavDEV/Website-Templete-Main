@@ -4,6 +4,8 @@ import ReactApexChart from 'react-apexcharts';
 import { useApp } from '../../context/AppContext';
 import { useTheme } from '../../context/ThemeContext';
 
+import { exportToCSV } from '../../utils/export';
+
 export const CrmDashboard = () => {
   const { theme } = useTheme();
   const { addToast, navigateTo } = useApp();
@@ -51,7 +53,10 @@ export const CrmDashboard = () => {
           <p>Track deal stage values, conversion graphs, high-value opportunities, and sales team activities.</p>
         </div>
         <div className="page-header-actions">
-          <button className="btn btn-primary btn-sm" onClick={() => addToast('Exporting CRM graphs...', 'success')}>
+          <button className="btn btn-primary btn-sm" onClick={() => {
+            exportToCSV('crm_deals_report', highValueDeals);
+            addToast('Exported CRM deals report CSV!', 'success');
+          }}>
             <Download size={16} /> Export CRM Report
           </button>
         </div>

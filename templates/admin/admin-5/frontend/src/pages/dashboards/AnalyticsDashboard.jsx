@@ -4,6 +4,8 @@ import ReactApexChart from 'react-apexcharts';
 import { useApp } from '../../context/AppContext';
 import { useTheme } from '../../context/ThemeContext';
 
+import { exportToCSV } from '../../utils/export';
+
 export const AnalyticsDashboard = () => {
   const { theme } = useTheme();
   const { addToast } = useApp();
@@ -60,7 +62,10 @@ export const AnalyticsDashboard = () => {
           <p>Real-time traffic volume graphs, geographic demographics, and source attribution.</p>
         </div>
         <div className="page-header-actions">
-          <button className="btn btn-primary btn-sm" onClick={() => addToast('Exporting analytics graphs report...', 'success')}>
+          <button className="btn btn-primary btn-sm" onClick={() => {
+            exportToCSV('analytics_graphs_report', trafficSources);
+            addToast('Exported analytics graphs report CSV!', 'success');
+          }}>
             <Download size={16} /> Export Graphs
           </button>
         </div>

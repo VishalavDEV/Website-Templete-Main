@@ -67,7 +67,7 @@ export const StoryModal: React.FC<StoryModalProps> = ({
     <>
       <div className="fixed inset-0 bg-[#203040]/40 backdrop-blur-xs z-50" onClick={onClose} />
       
-      <div className="fixed inset-4 md:inset-x-auto md:inset-y-10 md:max-w-2xl md:mx-auto z-50 bg-white border border-[#DCE7EC] rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+      <div className="fixed inset-4 md:inset-x-0 md:inset-y-10 md:max-w-2xl md:mx-auto z-50 bg-white border border-[#DCE7EC] rounded-2xl shadow-2xl flex flex-col overflow-hidden">
         
         {/* Header */}
         <div className="p-5 border-b border-[#DCE7EC] flex items-center justify-between bg-[#F5F9FB]">
