@@ -134,7 +134,7 @@ export default function Navbar({ onOpenContact, onOpenVideo }) {
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl glass-panel-subtle text-slate-200 hover:text-white border border-white/10 shrink-0 z-50 flex items-center justify-center cursor-pointer"
+              className="lg:hidden p-2 rounded-xl glass-panel-subtle text-slate-200 hover:text-white border border-white/10 shrink-0 flex items-center justify-center cursor-pointer"
               aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={mobileMenuOpen}
             >
@@ -144,68 +144,96 @@ export default function Navbar({ onOpenContact, onOpenVideo }) {
         </motion.div>
       </header>
 
-      {/* Mobile & Tablet Glass Menu Drawer */}
+      {/* Mobile & Tablet Full Screen Glass Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -15, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -15, scale: 0.98 }}
-            transition={{ duration: 0.22, ease: 'easeOut' }}
-            className="fixed inset-x-3 sm:inset-x-6 md:inset-x-auto md:w-[680px] md:left-1/2 md:-translate-x-1/2 top-[72px] sm:top-20 z-50 lg:hidden rounded-2xl glass-panel bg-[#0b0f19]/98 border border-white/15 p-4 sm:p-6 shadow-2xl backdrop-blur-2xl max-h-[calc(100vh-5.5rem)] overflow-y-auto"
-          >
-            {/* Drawer Top Header Row */}
-            <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
-              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-purple-300 flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-                Navigation Menu
-              </span>
-              <button
-                onClick={() => setMobileMenuOpen(false)}
-                className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
-                aria-label="Close menu"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => {
+                document.body.style.overflow = 'auto';
+                setMobileMenuOpen(false);
+              }}
+              className="mobile-nav-overlay lg:hidden"
+            />
 
-            {/* Navigation Links Grid (1 col on mobile, 2 cols on tablet) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4 sm:mb-6">
-              {NAV_LINKS.map((link) => (
-                <button
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)}
-                  className={`w-full flex items-center justify-between p-3 rounded-xl text-left text-sm font-medium transition-all cursor-pointer ${
-                    activeSection === link.id
-                      ? 'bg-purple-600/25 text-white font-semibold border border-purple-500/40 shadow-lg shadow-purple-500/10'
-                      : 'text-slate-300 hover:bg-white/5 hover:text-white border border-transparent'
-                  }`}
-                >
-                  <span>{link.label}</span>
-                  {activeSection === link.id ? (
-                    <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]" />
-                  ) : (
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-500" />
-                  )}
-                </button>
-              ))}
-            </div>
+            {/* Slide-Down Full Viewport Drawer */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.22, ease: 'easeOut' }}
+              className="mobile-nav-drawer lg:hidden"
+            >
+              <div className="mobile-nav-inner">
+                {/* Drawer Top Header Row with Logo and prominent Close Button */}
+                <div className="mobile-nav-header">
+                  <div className="flex items-center gap-2.5">
+                    <div className="relative flex items-center justify-center w-8 h-8 rounded-xl bg-gradient-to-tr from-purple-600 to-cyan-500 text-white shadow-md shadow-purple-500/25">
+                      <Cpu className="w-4 h-4" />
+                    </div>
+                    <span className="text-base font-bold tracking-tight text-white flex items-center gap-1.5">
+                      {BRAND.name}
+                      <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                        {BRAND.badge}
+                      </span>
+                    </span>
+                  </div>
 
-            {/* Bottom Primary Action CTA */}
-            <div className="flex flex-col gap-3 pt-3 border-t border-white/10">
-              <button
-                onClick={() => {
-                  document.body.style.overflow = 'auto';
-                  setMobileMenuOpen(false);
-                  onOpenContact();
-                }}
-                className="w-full py-3 rounded-xl btn-primary text-sm font-semibold flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-purple-500/20"
-              >
-                <span>Get Started with AETHERIA</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </motion.div>
+                  <button
+                    onClick={() => {
+                      document.body.style.overflow = 'auto';
+                      setMobileMenuOpen(false);
+                    }}
+                    className="mobile-nav-close-btn"
+                    aria-label="Close navigation menu"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {/* Navigation Links Grid (1 col on mobile, 2 cols on tablet/landscape) */}
+                <div className="mobile-nav-links-grid">
+                  {NAV_LINKS.map((link) => {
+                    const isActive = activeSection === link.id;
+                    return (
+                      <button
+                        key={link.id}
+                        onClick={() => scrollToSection(link.id)}
+                        className={`mobile-nav-link-btn ${isActive ? 'active' : ''}`}
+                      >
+                        <span>{link.label}</span>
+                        {isActive ? (
+                          <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]" />
+                        ) : (
+                          <ArrowRight className="w-4 h-4 text-slate-500" />
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Bottom Primary Action CTA */}
+                <div className="mobile-nav-footer">
+                  <button
+                    onClick={() => {
+                      document.body.style.overflow = 'auto';
+                      setMobileMenuOpen(false);
+                      onOpenContact();
+                    }}
+                    className="btn-primary mobile-nav-cta"
+                  >
+                    <span>Get Started with AETHERIA</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>

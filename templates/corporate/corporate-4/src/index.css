@@ -316,6 +316,13 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 
+.hero-circle-badge-wrapper {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  z-index: 15;
+}
+
 .circle-cta-badge:hover {
   transform: scale(1.1) rotate(12deg);
   background-color: var(--text-espresso);
@@ -1072,114 +1079,174 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
+  html, body, #root, main {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
   .editorial-nav-links,
-  .editorial-nav-container .pill-btn {
+  .editorial-nav-container .pill-btn.header-cta-pill {
     display: none !important;
   }
   .mobile-menu-circle-btn {
     display: flex !important;
   }
+  .hero-poster-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+  .hero-circle-badge-wrapper {
+    top: 10px !important;
+    right: 10px !important;
+  }
+  .hero-floating-tag {
+    bottom: 12px !important;
+    left: 12px !important;
+    right: auto !important;
+    max-width: calc(100% - 24px) !important;
+    padding: 0.65rem 0.9rem !important;
+    font-size: 0.72rem !important;
+  }
+  .hero-vertical-wire {
+    display: none !important;
+  }
+  .magazine-about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
   .editorial-project-row,
   .editorial-project-row.alternate {
-    grid-template-columns: 1fr;
-    direction: ltr;
-    gap: 2.5rem;
+    grid-template-columns: 1fr !important;
+    direction: ltr !important;
+    gap: 2rem !important;
   }
   .project-asymmetric-frame {
-    height: 300px;
-    border-radius: 36px 8px 36px 8px;
-    box-shadow: 8px 8px 0 var(--bg-espresso);
+    height: 280px !important;
+    border-radius: 28px 8px 28px 8px !important;
+    box-shadow: 0 8px 0 var(--bg-espresso) !important;
+    max-width: 100% !important;
   }
   .circle-cta-badge {
-    width: 68px;
-    height: 68px;
-    font-size: 0.65rem;
-    top: -15px;
-    right: -15px;
+    width: 64px !important;
+    height: 64px !important;
+    font-size: 0.62rem !important;
   }
   .service-row-drawer {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
   }
   .warm-system-canvas-box {
-    padding: 1.75rem 1.25rem;
-    box-shadow: 8px 8px 0 var(--bg-terracotta);
-    border-radius: 20px;
+    padding: 1.5rem 1.15rem !important;
+    box-shadow: 0 8px 0 var(--bg-terracotta) !important;
+    border-radius: 20px !important;
+    max-width: 100% !important;
   }
   .system-nodes-warm-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.65rem !important;
+    margin-top: 1.5rem !important;
   }
   .system-node-warm-pill {
-    padding: 1.25rem 0.5rem;
+    padding: 1rem 0.5rem !important;
   }
   .warm-system-diagnostic-box {
-    padding: 1.5rem 1.25rem;
-    border-radius: 16px;
-    margin-top: 1.75rem;
+    padding: 1.25rem 1rem !important;
+    border-radius: 16px !important;
+    margin-top: 1.5rem !important;
   }
   .magazine-about-image-frame {
-    height: 340px;
-    border-radius: 20px 60px 20px 60px;
-    box-shadow: 8px 8px 0 var(--bg-terracotta);
+    height: 280px !important;
+    border-radius: 20px 48px 20px 48px !important;
+    box-shadow: 0 8px 0 var(--bg-terracotta) !important;
+    max-width: 100% !important;
   }
   .magazine-about-numbers-grid {
-    gap: 1.25rem;
-    padding-top: 1.75rem;
+    gap: 1rem !important;
+    padding-top: 1.5rem !important;
   }
   .services-card-item {
-    padding: 1.75rem 1.25rem;
-    box-shadow: 6px 6px 0 var(--bg-terracotta);
-    border-radius: 18px;
+    padding: 1.5rem 1.15rem !important;
+    box-shadow: 0 6px 0 var(--bg-terracotta) !important;
+    border-radius: 18px !important;
+    max-width: 100% !important;
   }
   .services-right-panel {
-    padding: 1.75rem 1.25rem;
-    border-radius: 14px;
+    padding: 1.5rem 1.15rem !important;
+    border-radius: 14px !important;
+    max-width: 100% !important;
   }
   .editorial-wrap,
   .editorial-wrap-wide {
-    padding: 0 1.25rem;
+    padding: 0 1rem !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .hero-main-frame {
+    height: 320px !important;
+    border-radius: 36px 14px 36px 14px !important;
+    box-shadow: 0 8px 0 var(--bg-espresso) !important;
+    max-width: 100% !important;
   }
 }
 
 @media (max-width: 540px) {
   .system-nodes-warm-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.5rem !important;
   }
   .system-node-warm-pill {
-    padding: 1rem 0.35rem;
+    padding: 0.85rem 0.35rem !important;
   }
   .system-node-warm-pill .editorial-tag {
-    font-size: 0.58rem;
-    letter-spacing: 0.06em;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.04em !important;
   }
   .services-capabilities-subgrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
   .editorial-form-row {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
   }
   .magazine-about-image-frame {
-    height: 250px;
-    border-radius: 16px 40px 16px 40px;
+    height: 230px !important;
+    border-radius: 16px 36px 16px 36px !important;
   }
   .magazine-about-numbers-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
   }
   .hero-main-frame {
-    height: 320px;
-    border-radius: 40px 16px 40px 16px;
-    box-shadow: 8px 8px 0 var(--bg-espresso);
+    height: 270px !important;
+    border-radius: 28px 12px 28px 12px !important;
   }
   .circle-cta-badge {
-    width: 56px;
-    height: 56px;
-    font-size: 0.58rem;
-    top: -10px;
-    right: -10px;
+    width: 52px !important;
+    height: 52px !important;
+    font-size: 0.54rem !important;
+  }
+  .hero-serif-title {
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
+  }
+  .section-serif-heading {
+    font-size: clamp(1.8rem, 7vw, 2.4rem) !important;
+  }
+  .industry-huge-name {
+    font-size: clamp(1.3rem, 5.2vw, 1.8rem) !important;
+  }
+  .work-metrics-strip {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.75rem !important;
+    padding: 1rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .work-metrics-strip {
+    grid-template-columns: 1fr !important;
+  }
+  .magazine-about-numbers-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
   }
 }

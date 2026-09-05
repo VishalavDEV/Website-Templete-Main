@@ -10,14 +10,14 @@ export default function Services() {
 
   // Floating thumbnail preview details for hover effects
   const servicePreviews = [
-    "/services/brand-strategy.jpg",
-    "/services/visual-identity.jpg",
-    "/services/creative-direction.jpg",
-    "/services/web-design.jpg",
-    "/services/web-development.jpg",
-    "/services/digital-experiences.jpg",
-    "/services/content-campaigns.jpg",
-    "/services/growth-optimization.jpg"
+    "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=300&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=300&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1542744094-3a31f103e35f?q=80&w=300&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=300&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=300&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=300&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=300&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=300&auto=format&fit=crop"
   ];
 
   return (

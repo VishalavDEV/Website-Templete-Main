@@ -104,7 +104,7 @@ export default function About() {
             <span>DEEP ARCHITECTURAL BLUEPRINT</span>
           </div>
           <h2 className="section-title">
-            Engineering the Infrastructure for <br />
+            Engineering the Infrastructure for <br className="hero-br" />
             <span className="text-gradient-cyan">Autonomous Synthetic Cognition</span>
           </h2>
           <p className="section-description">
@@ -113,17 +113,9 @@ export default function About() {
         </motion.div>
 
         {/* Split Interactive Showcase */}
-        <div
-          className="about-grid"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
-            gap: '36px',
-            alignItems: 'stretch',
-          }}
-        >
+        <div className="about-grid">
           {/* Left Column: Interactive Tab Selectors */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%', minWidth: 0 }}>
+          <div className="about-tabs-col" style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%', minWidth: 0 }}>
             {ARCHITECTURE_TABS.map((tab) => {
               const isSelected = activeTab.id === tab.id;
               const TabIcon = tab.icon;
@@ -132,44 +124,37 @@ export default function About() {
                 <motion.div
                   key={tab.id}
                   onClick={() => setActiveTab(tab)}
-                  className="about-tab-card"
+                  className={`about-tab-card ${isSelected ? 'active' : ''}`}
                   style={{
-                    padding: '24px',
-                    borderRadius: '22px',
                     background: isSelected ? 'rgba(15, 20, 36, 0.92)' : 'rgba(13, 17, 28, 0.5)',
                     border: isSelected ? '1px solid var(--neon-cyan)' : '1px solid rgba(255, 255, 255, 0.08)',
                     boxShadow: isSelected ? '0 12px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 229, 255, 0.18)' : 'none',
                     cursor: 'pointer',
                     transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                    width: '100%',
-                    boxSizing: 'border-box',
                   }}
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
                 >
-                  <div className="about-tab-header" style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', width: '100%' }}>
+                  <div className="about-tab-header">
                     <div
                       className="about-tab-icon"
                       style={{
-                        padding: '12px',
-                        borderRadius: '14px',
                         background: isSelected ? 'linear-gradient(135deg, #00E5FF, #8A2BE2)' : 'rgba(255, 255, 255, 0.05)',
                         color: isSelected ? '#040508' : '#00E5FF',
                         transition: 'all 0.3s ease',
                         boxShadow: isSelected ? '0 0 18px rgba(0, 229, 255, 0.35)' : 'none',
-                        flexShrink: 0,
                       }}
                     >
-                      <TabIcon size={24} />
+                      <TabIcon size={22} />
                     </div>
 
-                    <div style={{ flex: 1, minWidth: 0, width: '100%' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px', gap: '8px' }}>
-                        <h3 style={{ fontSize: '1.22rem', color: isSelected ? '#FFFFFF' : '#CBD5E1', wordBreak: 'break-word' }}>{tab.title}</h3>
+                    <div className="about-tab-content" style={{ flex: 1, minWidth: 0 }}>
+                      <div className="about-tab-title-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px', gap: '8px' }}>
+                        <h3 className="about-tab-title" style={{ color: isSelected ? '#FFFFFF' : '#CBD5E1' }}>{tab.title}</h3>
                         {isSelected && <ArrowUpRight size={18} color="var(--neon-cyan)" style={{ flexShrink: 0 }} />}
                       </div>
 
-                      <p style={{ fontSize: '0.92rem', color: isSelected ? 'var(--text-secondary)' : 'var(--text-muted)', lineHeight: 1.6, wordBreak: 'normal', overflowWrap: 'break-word' }}>
+                      <p className="about-tab-desc" style={{ color: isSelected ? 'var(--text-secondary)' : 'var(--text-muted)' }}>
                         {tab.description}
                       </p>
 
@@ -179,23 +164,13 @@ export default function About() {
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: 'auto' }}
                           className="about-metrics-bar"
-                          style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 90px), 1fr))',
-                            gap: '12px',
-                            marginTop: '20px',
-                            paddingTop: '16px',
-                            borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-                            width: '100%',
-                            boxSizing: 'border-box',
-                          }}
                         >
                           {tab.metrics.map((m, idx) => (
-                            <div key={idx} style={{ minWidth: 0 }}>
-                              <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontFamily: 'var(--font-mono)', lineHeight: 1.3, wordBreak: 'normal', overflowWrap: 'break-word' }}>
+                            <div key={idx} className="about-metric-item">
+                              <div className="about-metric-label">
                                 {m.label}
                               </div>
-                              <div style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--neon-emerald)', marginTop: '3px', wordBreak: 'normal', whiteSpace: 'nowrap' }}>
+                              <div className="about-metric-value">
                                 {m.value}
                               </div>
                             </div>
@@ -211,9 +186,8 @@ export default function About() {
 
           {/* Right Column: Code Editor & Telemetry Inspector */}
           <motion.div
-            className="glass-panel"
+            className="glass-panel about-code-panel"
             style={{
-              padding: '30px',
               borderRadius: '26px',
               display: 'flex',
               flexDirection: 'column',
@@ -230,6 +204,7 @@ export default function About() {
             {/* Terminal Window Header */}
             <div>
               <div
+                className="about-code-header"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -237,13 +212,17 @@ export default function About() {
                   paddingBottom: '16px',
                   borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
                   marginBottom: '20px',
+                  flexWrap: 'wrap',
+                  gap: '10px',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#FF5F56' }} />
-                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#FFBD2E' }} />
-                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#27C93F' }} />
-                  <span style={{ marginLeft: '12px', fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', minWidth: 0, flexWrap: 'wrap' }}>
+                  <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#FF5F56' }} />
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#FFBD2E' }} />
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#27C93F' }} />
+                  </div>
+                  <span style={{ marginLeft: '8px', fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: 'var(--text-muted)', overflowWrap: 'anywhere' }}>
                     synapse://cluster/{activeTab.id}.ts
                   </span>
                 </div>
@@ -263,6 +242,7 @@ export default function About() {
                     fontSize: '0.74rem',
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
+                    flexShrink: 0,
                   }}
                 >
                   {copied ? <CheckCircle2 size={13} /> : <Copy size={13} />}
@@ -272,9 +252,10 @@ export default function About() {
 
               {/* Code Snippet */}
               <pre
+                className="about-code-pre"
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.88rem',
+                  fontSize: '0.86rem',
                   lineHeight: '1.65',
                   color: '#A5B4FC',
                   overflowX: 'auto',
@@ -282,6 +263,8 @@ export default function About() {
                   borderRadius: '14px',
                   background: 'rgba(0, 0, 0, 0.5)',
                   border: '1px solid rgba(255, 255, 255, 0.05)',
+                  maxWidth: '100%',
+                  boxSizing: 'border-box',
                 }}
               >
                 <code>{activeTab.codeSnippet}</code>
@@ -290,41 +273,45 @@ export default function About() {
 
             {/* Live Telemetry Radar Card */}
             <div
+              className="about-telemetry-box"
               style={{
                 marginTop: '24px',
-                padding: '18px 20px',
+                padding: '16px 18px',
                 borderRadius: '18px',
                 background: 'rgba(0, 229, 255, 0.05)',
                 border: '1px solid rgba(0, 229, 255, 0.22)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '12px',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: 0 }}>
                 <div
                   style={{
-                    width: '40px',
-                    height: '40px',
+                    width: '38px',
+                    height: '38px',
                     borderRadius: '12px',
                     background: 'rgba(0, 229, 255, 0.15)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: '#00E5FF',
+                    flexShrink: 0,
                   }}
                 >
-                  <Gauge size={22} />
+                  <Gauge size={20} />
                 </div>
-                <div>
-                  <div style={{ fontSize: '0.9rem', fontWeight: 600, color: '#FFFFFF' }}>Live Cluster Telemetry</div>
-                  <div style={{ fontSize: '0.76rem', color: 'var(--neon-emerald)', fontFamily: 'var(--font-mono)' }}>● 0 packet drops in last 24h</div>
+                <div style={{ minWidth: 0 }}>
+                  <div style={{ fontSize: '0.88rem', fontWeight: 600, color: '#FFFFFF', wordBreak: 'break-word' }}>Live Cluster Telemetry</div>
+                  <div style={{ fontSize: '0.74rem', color: 'var(--neon-emerald)', fontFamily: 'var(--font-mono)', wordBreak: 'break-word' }}>● 0 packet drops in last 24h</div>
                 </div>
               </div>
 
-              <div style={{ textAlign: 'right' }}>
-                <span style={{ fontSize: '0.74rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>THROUGHPUT</span>
-                <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#00E5FF' }}>99.999%</div>
+              <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                <span style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>THROUGHPUT</span>
+                <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#00E5FF' }}>99.999%</div>
               </div>
             </div>
           </motion.div>

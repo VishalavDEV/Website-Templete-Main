@@ -86,13 +86,13 @@ export const WorkPage = ({ onOpenContact }) => {
                     </p>
 
                     {/* Benchmark Strip */}
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.25rem", background: "rgba(30, 22, 17, 0.04)", padding: "1.25rem 1.5rem", borderRadius: "12px", border: "1px solid var(--border-espresso-thin)", marginBottom: "2rem" }}>
+                    <div className="work-metrics-strip" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 140px), 1fr))", gap: "1.25rem", background: "rgba(30, 22, 17, 0.04)", padding: "1.25rem 1.5rem", borderRadius: "12px", border: "1px solid var(--border-espresso-thin)", marginBottom: "2rem" }}>
                       {project.metrics.map((m, mIdx) => (
-                        <div key={mIdx}>
+                        <div key={mIdx} style={{ minWidth: 0 }}>
                           <div style={{ fontFamily: "var(--font-serif)", fontSize: "1.35rem", fontWeight: "700", color: "var(--text-espresso)" }}>
                             {m.value}
                           </div>
-                          <div className="editorial-tag" style={{ color: "var(--text-espresso-dim)", fontSize: "0.65rem", marginTop: "2px" }}>
+                          <div className="editorial-tag" style={{ color: "var(--text-espresso-dim)", fontSize: "0.65rem", marginTop: "2px", wordBreak: "break-word" }}>
                             {m.label}
                           </div>
                         </div>

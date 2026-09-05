@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Sparkles,
@@ -130,6 +130,18 @@ export default function Showcase({ onOpenContact }) {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
 
+  // Manage body scroll lock
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [selectedProject]);
+
   const categories = ['All', 'Spatial UI', 'Autonomous Agents', 'Neural Workflows'];
 
   const filteredProjects =
@@ -160,10 +172,9 @@ export default function Showcase({ onOpenContact }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight max-w-3xl mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4"
           >
-            Pioneering Spatial AI & <br />
-            <span className="gradient-text-accent">Autonomous Swarm Architectures</span>
+            Engineered for Autonomous Scale
           </motion.h2>
 
           <motion.p
@@ -171,31 +182,34 @@ export default function Showcase({ onOpenContact }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-400 text-sm sm:text-base max-w-2xl leading-relaxed mb-8"
+            className="text-slate-400 max-w-2xl text-sm sm:text-base"
           >
-            Explore live production instances deployed with AETHERIA NEXUS across defense, aerospace, quantitative finance, and high-fidelity 3D commerce.
+            Discover live enterprise topologies powered by the AETHERIA cognitive runtime and neural streaming engine.
           </motion.p>
-
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl glass-panel-subtle">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs font-medium transition-all ${
-                  activeCategory === cat
-                    ? 'bg-purple-600 text-white font-semibold shadow-lg shadow-purple-600/30'
-                    : 'text-slate-400 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
         </div>
 
-        {/* 3D Tilt Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Filter Categories */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-4 py-2 rounded-xl text-xs font-mono font-medium transition-all ${
+                activeCategory === cat
+                  ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/30'
+                  : 'glass-panel-subtle text-slate-400 hover:text-white border border-white/5'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Project Grid */}
+        <motion.div
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           <AnimatePresence>
             {filteredProjects.map((project) => (
               <TiltCard key={project.id} project={project} onSelect={setSelectedProject} />
@@ -207,83 +221,89 @@ export default function Showcase({ onOpenContact }) {
       {/* Project Lightbox Inspection Modal */}
       <AnimatePresence>
         {selectedProject && (
-          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+          <div className="modal-overlay-wrapper">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedProject(null)}
-              className="absolute inset-0 bg-black/85 backdrop-blur-md"
+              className="fixed inset-0 bg-black/85 backdrop-blur-md"
             />
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative z-10 w-full max-w-2xl rounded-3xl glass-panel bg-[#0d121f]/95 border border-white/15 p-6 sm:p-8 shadow-2xl overflow-hidden"
+              exit={{ opacity: 0, scale: 0.95, y: 15 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+              className="modal-dialog-card max-w-2xl"
             >
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="absolute top-5 right-5 p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
-
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-mono px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">
-                  {selectedProject.category}
-                </span>
-                <span className="text-xs font-mono text-slate-400">
-                  Client: <strong className="text-white">{selectedProject.client}</strong>
-                </span>
-              </div>
-
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-                {selectedProject.title}
-              </h3>
-
-              <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                {selectedProject.description}
-              </p>
-
-              {/* Stats Breakdown */}
-              <div className="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 mb-6">
-                {Object.entries(selectedProject.stats).map(([k, v], idx) => (
-                  <div key={idx} className="text-center">
-                    <div className="text-[10px] font-mono text-slate-400 uppercase">{k}</div>
-                    <div className="text-base sm:text-lg font-bold text-cyan-300 font-mono mt-0.5">{v}</div>
+              <div className="modal-dialog-body">
+                <div className="flex items-center justify-between gap-3 mb-4">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-xs font-mono px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                      {selectedProject.category}
+                    </span>
+                    <span className="text-xs font-mono text-slate-400">
+                      Client: <strong className="text-white">{selectedProject.client}</strong>
+                    </span>
                   </div>
-                ))}
-              </div>
 
-              <div className="flex flex-wrap gap-2 mb-8">
-                {selectedProject.tags.map((tag, tIdx) => (
-                  <span
-                    key={tIdx}
-                    className="text-xs font-mono px-3 py-1 rounded-lg bg-white/5 text-slate-300 border border-white/5"
+                  <button
+                    onClick={() => setSelectedProject(null)}
+                    className="modal-close-button"
+                    aria-label="Close modal"
                   >
-                    #{tag}
-                  </span>
-                ))}
-              </div>
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
 
-              <div className="flex items-center justify-end gap-3 pt-4 border-t border-white/10">
-                <button
-                  onClick={() => setSelectedProject(null)}
-                  className="px-5 py-2.5 rounded-xl btn-secondary text-xs font-semibold"
-                >
-                  Close
-                </button>
-                <button
-                  onClick={() => {
-                    setSelectedProject(null);
-                    onOpenContact();
-                  }}
-                  className="px-6 py-2.5 rounded-xl btn-primary text-xs font-semibold flex items-center gap-2"
-                >
-                  <span>Deploy Similar Cluster</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                  {selectedProject.title}
+                </h3>
+
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-5">
+                  {selectedProject.description}
+                </p>
+
+                {/* Stats Breakdown */}
+                <div className="grid grid-cols-3 gap-2 sm:gap-3 p-3 sm:p-4 rounded-2xl bg-white/5 border border-white/10 mb-5">
+                  {Object.entries(selectedProject.stats).map(([k, v], idx) => (
+                    <div key={idx} className="text-center">
+                      <div className="text-[9px] sm:text-[10px] font-mono text-slate-400 uppercase">{k}</div>
+                      <div className="text-sm sm:text-lg font-bold text-cyan-300 font-mono mt-0.5">{v}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6">
+                  {selectedProject.tags.map((tag, tIdx) => (
+                    <span
+                      key={tIdx}
+                      className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-white/5 text-slate-300 border border-white/5"
+                    >
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex items-center justify-end gap-3 pt-4 border-t border-white/10">
+                  <button
+                    onClick={() => setSelectedProject(null)}
+                    className="px-4 py-2 rounded-xl btn-secondary text-xs font-semibold"
+                  >
+                    Close
+                  </button>
+                  <button
+                    onClick={() => {
+                      setSelectedProject(null);
+                      onOpenContact();
+                    }}
+                    className="px-5 py-2 rounded-xl btn-primary text-xs font-semibold flex items-center gap-2"
+                  >
+                    <span>Deploy Similar Cluster</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
             </motion.div>
           </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Play, Pause, Volume2, VolumeX, Maximize2, Sparkles, CheckCircle, Cpu, Zap, Activity } from 'lucide-react';
 
@@ -6,6 +6,18 @@ export default function VideoModal({ isOpen, onClose }) {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(false);
   const [activeChapter, setActiveChapter] = useState(0);
+
+  // Manage body scroll lock
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen]);
 
   const chapters = [
     { time: '0:00', title: '1. Neural Mesh Spin-up', desc: 'Auto-clustering 42 edge cognitive agents' },
@@ -16,38 +28,40 @@ export default function VideoModal({ isOpen, onClose }) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
-        {/* Backdrop */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={onClose}
-          className="absolute inset-0 bg-black/85 backdrop-blur-md"
-        />
+        <div className="modal-overlay-wrapper">
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="fixed inset-0 bg-black/85 backdrop-blur-md"
+          />
 
-        {/* Modal content */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.9, y: 20 }}
-          className="relative z-10 w-full max-w-4xl rounded-2xl glass-panel bg-[#090d16]/95 border border-white/15 shadow-2xl overflow-hidden"
-        >
-          {/* Header */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-white/5">
-            <div className="flex items-center gap-3">
-              <div className="w-3 h-3 rounded-full bg-rose-500 animate-pulse" />
-              <span className="text-sm font-semibold text-white">
-                AETHERIA NEXUS 3.5 — Product Architecture Walkthrough (120 FPS)
-              </span>
+          {/* Modal content */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 15 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="modal-dialog-card max-w-4xl"
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 border-b border-white/10 bg-white/5">
+              <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 pr-2">
+                <div className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse shrink-0" />
+                <span className="text-xs sm:text-sm font-semibold text-white truncate">
+                  AETHERIA NEXUS 3.5 — Architecture Walkthrough
+                </span>
+              </div>
+              <button
+                onClick={onClose}
+                className="modal-close-button"
+                aria-label="Close video walkthrough"
+              >
+                <X className="w-4 h-4" />
+              </button>
             </div>
-            <button
-              onClick={onClose}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
 
           {/* Interactive Simulated Video Player Canvas */}
           <div className="relative aspect-video bg-[#04060a] flex items-center justify-center overflow-hidden group">

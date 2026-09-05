@@ -590,36 +590,120 @@ section[id] {
     border-radius: 12px !important;
   }
 
-  /* About Section Card Overhaul */
+  /* About Section Styles */
   .about-grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+    gap: 36px;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .about-tabs-col {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
 
   .about-tab-card {
-    padding: 16px !important;
-    border-radius: 18px !important;
+    padding: 24px;
+    border-radius: 22px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .about-tab-header {
-    gap: 12px !important;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
 
   .about-tab-icon {
-    padding: 8px !important;
-    border-radius: 10px !important;
+    padding: 12px;
+    border-radius: 14px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .about-tab-icon svg {
-    width: 20px !important;
-    height: 20px !important;
+  .about-tab-content {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .about-tab-title {
+    font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+    font-weight: 700;
+    line-height: 1.3;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .about-tab-desc {
+    font-size: clamp(0.85rem, 1.6vw, 0.94rem);
+    line-height: 1.6;
+    word-break: normal;
+    overflow-wrap: break-word;
+    max-width: 100%;
   }
 
   .about-metrics-bar {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px 14px !important;
-    margin-top: 14px !important;
-    padding-top: 12px !important;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .about-metric-item {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .about-metric-label {
+    font-size: clamp(0.62rem, 1.3vw, 0.72rem);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-family: var(--font-mono);
+    line-height: 1.3;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .about-metric-value {
+    font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+    font-weight: 700;
+    color: var(--neon-emerald);
+    margin-top: 3px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .about-code-panel {
+    padding: 30px;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   /* Features & Services Grid */
@@ -677,18 +761,93 @@ section[id] {
   }
 }
 
-@media (max-width: 480px) {
-  .section-wrapper {
-    padding: 40px 12px !important;
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
   }
 
   .about-tab-card {
-    padding: 14px 12px !important;
+    padding: 16px 14px !important;
+    border-radius: 18px !important;
+  }
+
+  .about-tab-header {
+    gap: 12px !important;
+  }
+
+  .about-tab-icon {
+    padding: 8px !important;
+    border-radius: 10px !important;
+  }
+
+  .about-tab-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .about-metrics-bar {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px 12px !important;
+    margin-top: 14px !important;
+    padding-top: 12px !important;
+  }
+
+  .about-code-panel {
+    padding: 20px 16px !important;
+    border-radius: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-wrapper {
+    padding: 36px 12px !important;
+  }
+
+  .about-tab-card {
+    padding: 14px 10px !important;
+    border-radius: 16px !important;
+  }
+
+  .about-tab-header {
+    gap: 10px !important;
+  }
+
+  .about-tab-icon {
+    padding: 7px !important;
+    border-radius: 8px !important;
+  }
+
+  .about-tab-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .about-tab-title {
+    font-size: 1.02rem !important;
+  }
+
+  .about-tab-desc {
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
   }
 
   .about-metrics-bar {
     grid-template-columns: 1fr 1fr !important;
     gap: 8px 10px !important;
+  }
+
+  .about-metric-label {
+    font-size: 0.6rem !important;
+  }
+
+  .about-metric-value {
+    font-size: 0.92rem !important;
+  }
+
+  .about-code-panel {
+    padding: 16px 12px !important;
+    border-radius: 16px !important;
   }
 
   .hero-floating-card-1 {
@@ -703,5 +862,18 @@ section[id] {
 
   .demo-metrics-grid {
     grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .about-tab-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+
+  .about-metrics-bar {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
   }
 }

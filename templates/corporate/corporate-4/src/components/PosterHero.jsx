@@ -60,14 +60,7 @@ export const PosterHero = ({ onOpenProjectModal }) => {
             </div>
 
             {/* Circular Explore CTA Badge */}
-            <div
-              style={{
-                position: "absolute",
-                top: "-25px",
-                right: "-25px",
-                zIndex: 15
-              }}
-            >
+            <div className="hero-circle-badge-wrapper">
               <button
                 className="circle-cta-badge"
                 onClick={scrollToExplore}
