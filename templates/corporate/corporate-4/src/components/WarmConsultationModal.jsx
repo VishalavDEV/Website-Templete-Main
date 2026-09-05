@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { X, ArrowUpRight, CheckCircle2, ShieldCheck } from "lucide-react";
 
 export const WarmConsultationModal = ({ isOpen, onClose }) => {
@@ -11,6 +11,17 @@ export const WarmConsultationModal = ({ isOpen, onClose }) => {
     message: ""
   });
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -34,11 +45,12 @@ export const WarmConsultationModal = ({ isOpen, onClose }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "1.5rem"
+        padding: "1rem"
       }}
       onClick={onClose}
     >
       <div
+        className="consultation-modal-box"
         style={{
           backgroundColor: "var(--bg-sand-light)",
           color: "var(--text-espresso)",
@@ -47,7 +59,7 @@ export const WarmConsultationModal = ({ isOpen, onClose }) => {
           borderRadius: "28px",
           border: "2px solid var(--bg-espresso)",
           boxShadow: "16px 16px 0 var(--bg-terracotta)",
-          padding: "3rem",
+          padding: "clamp(1.5rem, 5vw, 3rem)",
           position: "relative",
           maxHeight: "90vh",
           overflowY: "auto"
@@ -58,16 +70,22 @@ export const WarmConsultationModal = ({ isOpen, onClose }) => {
           onClick={onClose}
           style={{
             position: "absolute",
-            top: "1.5rem",
-            right: "1.5rem",
-            background: "transparent",
+            top: "1.25rem",
+            right: "1.25rem",
+            background: "rgba(30,22,17,0.06)",
             border: "none",
+            borderRadius: "50%",
+            width: "36px",
+            height: "36px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             cursor: "pointer",
             color: "var(--text-espresso)"
           }}
           aria-label="Close modal"
         >
-          <X size={24} />
+          <X size={20} />
         </button>
 
         {!submitted ? (
@@ -76,16 +94,16 @@ export const WarmConsultationModal = ({ isOpen, onClose }) => {
               INITIATE PROJECT BRIEF
             </div>
 
-            <h3 style={{ fontSize: "2.2rem", marginBottom: "0.5rem" }}>
+            <h3 style={{ fontSize: "clamp(1.6rem, 4vw, 2.2rem)", marginBottom: "0.5rem" }}>
               Let's make something matter.
             </h3>
 
-            <p style={{ color: "var(--text-espresso-muted)", fontSize: "0.95rem", marginBottom: "2rem" }}>
+            <p style={{ color: "var(--text-espresso-muted)", fontSize: "0.95rem", marginBottom: "1.75rem" }}>
               Direct access to our senior engineering partners. NDA protected by default.
             </p>
 
             <form onSubmit={handleSubmit}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
+              <div className="editorial-form-row" style={{ marginBottom: "1rem" }}>
                 <div>
                   <label className="editorial-tag" style={{ display: "block", marginBottom: "0.4rem", fontSize: "0.72rem" }}>
                     FULL NAME *
@@ -135,7 +153,7 @@ export const WarmConsultationModal = ({ isOpen, onClose }) => {
                 </div>
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
+              <div className="editorial-form-row" style={{ marginBottom: "1rem" }}>
                 <div>
                   <label className="editorial-tag" style={{ display: "block", marginBottom: "0.4rem", fontSize: "0.72rem" }}>
                     ORGANIZATION
@@ -211,13 +229,13 @@ export const WarmConsultationModal = ({ isOpen, onClose }) => {
                 ></textarea>
               </div>
 
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.78rem", color: "var(--text-espresso-dim)" }}>
                   <ShieldCheck size={16} color="var(--bg-terracotta)" />
                   Mutual NDA Protected
                 </div>
 
-                <button type="submit" className="pill-btn pill-btn-dark">
+                <button type="submit" className="pill-btn pill-btn-dark" style={{ width: "auto" }}>
                   <span>SUBMIT PROJECT BRIEF</span>
                   <ArrowUpRight size={16} />
                 </button>

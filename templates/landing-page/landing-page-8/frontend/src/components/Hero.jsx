@@ -387,14 +387,18 @@ export default function Hero() {
           <div 
             ref={canvasRef}
             data-cursor="explore"
+            className="hero-canvas-wrap"
             style={{
               position: 'relative',
               width: '100%',
+              maxWidth: '100%',
               aspectRatio: '1 / 1',
               backgroundColor: 'rgba(17, 17, 17, 0.02)',
               border: '1px solid var(--border-color)',
               borderRadius: '4px',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              touchAction: 'pan-y',
+              boxSizing: 'border-box'
             }}
             onMouseMove={handleMouseMove}
             onMouseEnter={() => {

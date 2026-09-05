@@ -100,13 +100,15 @@ export default function ContactCTA() {
 
           {/* Contact Form */}
           <div 
-            className="reveal-on-scroll"
+            className="reveal-on-scroll contact-form-card"
             style={{
               backgroundColor: 'rgba(255, 255, 255, 0.02)',
               border: '1px solid rgba(255, 255, 255, 0.1)',
               padding: '3rem',
               borderRadius: '4px',
-              width: '100%'
+              width: '100%',
+              maxWidth: '100%',
+              boxSizing: 'border-box'
             }}
           >
             {formSubmitted ? (
@@ -120,10 +122,10 @@ export default function ContactCTA() {
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '2rem', width: '100%' }}>
                 
                 {/* Name */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', width: '100%' }}>
                   <label htmlFor="form-name" style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(245,243,239,0.6)' }}>Your Name *</label>
                   <input 
                     type="text" 
@@ -141,6 +143,8 @@ export default function ContactCTA() {
                       fontSize: '1rem',
                       fontFamily: 'var(--font-body)',
                       outline: 'none',
+                      width: '100%',
+                      boxSizing: 'border-box',
                       transition: 'var(--transition-fast)'
                     }}
                     onFocus={(e) => e.target.style.borderBottomColor = 'var(--accent-color)'}
@@ -149,7 +153,7 @@ export default function ContactCTA() {
                 </div>
 
                 {/* Email */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', width: '100%' }}>
                   <label htmlFor="form-email" style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(245,243,239,0.6)' }}>Email Address *</label>
                   <input 
                     type="email" 
@@ -167,6 +171,8 @@ export default function ContactCTA() {
                       fontSize: '1rem',
                       fontFamily: 'var(--font-body)',
                       outline: 'none',
+                      width: '100%',
+                      boxSizing: 'border-box',
                       transition: 'var(--transition-fast)'
                     }}
                     onFocus={(e) => e.target.style.borderBottomColor = 'var(--accent-color)'}
@@ -175,7 +181,7 @@ export default function ContactCTA() {
                 </div>
 
                 {/* Project Brief */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', width: '100%' }}>
                   <label htmlFor="form-brief" style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(245,243,239,0.6)' }}>Project Brief</label>
                   <textarea 
                     id="form-brief" 
@@ -193,6 +199,8 @@ export default function ContactCTA() {
                       fontFamily: 'var(--font-body)',
                       outline: 'none',
                       resize: 'none',
+                      width: '100%',
+                      boxSizing: 'border-box',
                       transition: 'var(--transition-fast)'
                     }}
                     onFocus={(e) => e.target.style.borderBottomColor = 'var(--accent-color)'}
@@ -208,7 +216,9 @@ export default function ContactCTA() {
                     borderColor: 'var(--accent-color)',
                     color: '#FFF',
                     justifyContent: 'center',
-                    marginTop: '1rem'
+                    marginTop: '1rem',
+                    width: '100%',
+                    padding: '1rem'
                   }}
                 >
                   <span>Start a conversation</span>
@@ -227,7 +237,12 @@ export default function ContactCTA() {
         @media (max-width: 900px) {
           .contact-grid {
             grid-template-columns: 1fr !important;
-            gap: 4rem !important;
+            gap: 3.5rem !important;
+          }
+        }
+        @media (max-width: 600px) {
+          .contact-form-card {
+            padding: 1.75rem 1.25rem !important;
           }
         }
       `}</style>

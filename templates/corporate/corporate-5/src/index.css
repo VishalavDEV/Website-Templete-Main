@@ -1107,3 +1107,200 @@ input, textarea, select {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ==========================================================================
+   RESPONSIVE SUB-PAGES & ASYMMETRIC COMPONENTS
+   ========================================================================== */
+
+/* Company Standards Grid */
+.company-standards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .company-standards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .company-standards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Company Principles Row */
+.company-principles-row {
+  display: grid;
+  grid-template-columns: 100px 1.2fr 1.6fr;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--border-light);
+  align-items: flex-start;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .company-principles-row {
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: auto auto;
+    gap: 12px;
+    padding: 26px 0;
+  }
+  .company-principles-row > p {
+    grid-column: 2 / -1;
+  }
+}
+
+@media (max-width: 580px) {
+  .company-principles-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 22px 0;
+  }
+}
+
+/* Company Leadership Grid */
+.company-leadership-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.company-leadership-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.company-leadership-card.card-staggered {
+  margin-top: 30px;
+}
+
+@media (max-width: 1024px) {
+  .company-leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .company-leadership-card.card-staggered {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .company-leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .company-leadership-card.card-staggered {
+    margin-top: 0;
+  }
+}
+
+/* Industry Metric Box */
+.industry-metric-box {
+  background: var(--c-charcoal);
+  color: #FFFFFF;
+  padding: 22px 28px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 20px;
+}
+
+@media (max-width: 640px) {
+  .industry-metric-box {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 20px;
+    gap: 14px;
+  }
+  .industry-metric-label {
+    text-align: left !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Industry Benchmarks Grid */
+.industry-benchmarks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 1024px) {
+  .industry-benchmarks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .industry-benchmarks-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Tech Layers Grid */
+.tech-layers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .tech-layers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .tech-layers-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Tech Sim Grid */
+.tech-sim-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+@media (max-width: 900px) {
+  .tech-sim-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 24px !important;
+  }
+}
+
+/* Lifecycle Grid */
+.lifecycle-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .lifecycle-grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .lifecycle-grid-5 {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}

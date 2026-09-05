@@ -60,30 +60,14 @@ export default function Services() {
             {servicesData.map((svc) => (
               <div
                 key={svc.id}
-                style={{
-                  backgroundColor: '#111111',
-                  border: '1px solid rgba(255, 255, 255, 0.14)',
-                  padding: '48px',
-                  borderRadius: '4px',
-                }}
+                className="capability-service-card"
               >
-                <div
-                  style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    alignItems: 'baseline',
-                    justifyContent: 'space-between',
-                    gap: '20px',
-                    borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-                    paddingBottom: '24px',
-                    marginBottom: '32px',
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                    <span style={{ fontSize: '20px', fontWeight: 800, color: '#C8F169' }}>
+                <div className="capability-service-header">
+                  <div className="capability-service-title-group">
+                    <span style={{ fontSize: '20px', fontWeight: 800, color: '#C8F169', flexShrink: 0 }}>
                       {svc.number}
                     </span>
-                    <h3 style={{ fontSize: '32px', fontWeight: 800, color: '#FFFFFF' }}>
+                    <h3 className="capability-service-title">
                       {svc.title}
                     </h3>
                   </div>
@@ -98,17 +82,11 @@ export default function Services() {
                   </Link>
                 </div>
 
-                <p style={{ fontSize: '18px', color: '#F4F4F4', marginBottom: '32px', maxWidth: '880px', lineHeight: 1.6 }}>
+                <p style={{ fontSize: '18px', color: '#F4F4F4', marginBottom: '32px', maxWidth: '880px', lineHeight: 1.6, wordBreak: 'break-word' }}>
                   {svc.tagline}
                 </p>
 
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-                    gap: '24px',
-                  }}
-                >
+                <div className="capability-offerings-grid">
                   {svc.offerings.map((off, i) => (
                     <div
                       key={i}
@@ -117,12 +95,13 @@ export default function Services() {
                         backgroundColor: '#191919',
                         border: '1px solid rgba(255, 255, 255, 0.08)',
                         borderRadius: '2px',
+                        boxSizing: 'border-box',
                       }}
                     >
-                      <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>
+                      <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px', wordBreak: 'break-word' }}>
                         {off.title}
                       </h4>
-                      <p style={{ fontSize: '14px', color: '#9B9B9B', lineHeight: 1.5 }}>
+                      <p style={{ fontSize: '14px', color: '#9B9B9B', lineHeight: 1.5, wordBreak: 'break-word' }}>
                         {off.desc}
                       </p>
                     </div>
@@ -150,34 +129,20 @@ export default function Services() {
             </h2>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '40px',
-            }}
-          >
+          <div className="engagement-models-grid">
             {models.map((mod, idx) => (
               <div
                 key={idx}
-                style={{
-                  padding: '40px',
-                  backgroundColor: '#191919',
-                  border: '1px solid rgba(255, 255, 255, 0.12)',
-                  borderRadius: '2px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                }}
+                className="engagement-model-card"
               >
                 <div>
                   <div style={{ fontSize: '12px', fontWeight: 700, color: '#C8F169', letterSpacing: '0.1em', marginBottom: '16px' }}>
                     FRAMEWORK 0{idx + 1}
                   </div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 800, color: '#FFFFFF', marginBottom: '16px' }}>
+                  <h3 style={{ fontSize: '20px', fontWeight: 800, color: '#FFFFFF', marginBottom: '16px', wordBreak: 'break-word' }}>
                     {mod.title}
                   </h3>
-                  <p style={{ fontSize: '15px', color: '#9B9B9B', lineHeight: 1.6 }}>
+                  <p style={{ fontSize: '15px', color: '#9B9B9B', lineHeight: 1.6, wordBreak: 'break-word' }}>
                     {mod.desc}
                   </p>
                 </div>

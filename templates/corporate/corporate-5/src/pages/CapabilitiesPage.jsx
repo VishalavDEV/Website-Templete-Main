@@ -112,7 +112,7 @@ export default function CapabilitiesPage() {
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(30px, 3.6vw, 46px)', fontWeight: 700, color: 'var(--c-charcoal)' }}>SYSTEMS ENGINEERING LIFECYCLE</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '20px' }}>
+          <div className="lifecycle-grid-5">
             {PROCESS_STAGES.map((stage) => (
               <div key={stage.step} style={{ background: 'var(--c-ivory-pure)', border: '1px solid var(--border-light)', padding: '30px 20px', borderRadius: '2px' }}>
                 <div style={{ fontFamily: 'var(--font-serif)', fontSize: '28px', fontWeight: 700, color: 'var(--c-copper)', marginBottom: '8px' }}>

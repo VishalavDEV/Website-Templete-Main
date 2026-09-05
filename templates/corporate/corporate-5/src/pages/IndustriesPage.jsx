@@ -64,16 +64,16 @@ export default function IndustriesPage() {
               </p>
 
               {/* Metric Card */}
-              <div style={{ background: 'var(--c-charcoal)', color: '#FFFFFF', padding: '22px 28px', borderRadius: '2px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+              <div className="industry-metric-box">
                 <div>
                   <div className="meta-tag-eucalyptus" style={{ color: 'var(--c-eucalyptus-light)', marginBottom: '4px' }}>
                     MEASURED BENCHMARK
                   </div>
-                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '40px', fontWeight: 700, color: 'var(--c-copper)' }}>
+                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 700, color: 'var(--c-copper)' }}>
                     {currentInd.metric}
                   </div>
                 </div>
-                <div style={{ fontSize: '13px', color: 'var(--c-eucalyptus-light)', textAlign: 'right', maxWidth: '240px' }}>
+                <div className="industry-metric-label" style={{ fontSize: '13px', color: 'var(--c-eucalyptus-light)', textAlign: 'right', maxWidth: '240px' }}>
                   {currentInd.metricLabel}
                 </div>
               </div>
@@ -111,7 +111,7 @@ export default function IndustriesPage() {
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 3.4vw, 42px)', fontWeight: 700, color: '#FFFFFF' }}>GLOBAL BENCHMARKS</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '28px' }}>
+          <div className="industry-benchmarks-grid">
             <div style={{ background: 'var(--c-charcoal-surface)', border: '1px solid var(--border-dark)', padding: '32px', borderRadius: '2px' }}>
               <div style={{ fontFamily: 'var(--font-serif)', fontSize: '44px', fontWeight: 700, color: 'var(--c-copper)', marginBottom: '8px' }}>
                 $4.2T

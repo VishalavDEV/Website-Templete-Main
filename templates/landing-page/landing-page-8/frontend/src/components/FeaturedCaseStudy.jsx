@@ -197,14 +197,27 @@ export default function FeaturedCaseStudy() {
         </div>
 
         {/* Stage selector tabs */}
-        <div style={{ display: 'flex', gap: '0', marginBottom: '0', borderBottom: '1px solid var(--border-color)' }}>
+        <div 
+          className="stage-tabs-container"
+          style={{ 
+            display: 'flex', 
+            gap: '0', 
+            marginBottom: '0', 
+            borderBottom: '1px solid var(--border-color)',
+            overflowX: 'auto',
+            WebkitOverflowScrolling: 'touch',
+            scrollbarWidth: 'none',
+            maxWidth: '100%'
+          }}
+        >
           {stages.map((s, i) => (
             <button
               key={s.id}
               onClick={() => setActive(i)}
               style={{
-                flex: 1,
-                padding: '0.9rem 0.5rem',
+                flex: '1 0 auto',
+                minWidth: '70px',
+                padding: '0.9rem 0.6rem',
                 background: 'none',
                 border: 'none',
                 borderBottom: active === i ? '2px solid var(--accent-color)' : '2px solid transparent',
@@ -227,7 +240,7 @@ export default function FeaturedCaseStudy() {
                 {s.label}
               </span>
               <span style={{
-                fontSize: '0.6rem',
+                fontSize: '0.65rem',
                 fontWeight: 600,
                 color: active === i ? 'var(--text-primary)' : 'var(--text-secondary)',
                 textAlign: 'center',

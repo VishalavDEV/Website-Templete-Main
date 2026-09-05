@@ -41,7 +41,7 @@ export default function TechnologyPage() {
             <h2 className="edit-heading-section" style={{ color: '#FFFFFF' }}>COMMAND ARCHITECTURE</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+          <div className="tech-layers-grid">
             {TECH_STACK_LAYERS.map((layer) => {
               const isSelected = activeLayer.id === layer.id;
               return (
@@ -90,7 +90,7 @@ export default function TechnologyPage() {
             <h2 className="edit-heading-section" style={{ color: 'var(--c-charcoal)' }}>TELEMETRY BENCHMARK ENGINE</h2>
           </div>
 
-          <div style={{ background: 'var(--c-ivory-pure)', border: '1px solid var(--border-light)', padding: '50px', borderRadius: '2px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px' }}>
+          <div className="tech-sim-grid" style={{ background: 'var(--c-ivory-pure)', border: '1px solid var(--border-light)', padding: '50px', borderRadius: '2px' }}>
             <div>
               <div style={{ marginBottom: '36px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>

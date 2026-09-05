@@ -154,8 +154,23 @@ export default function Insights() {
         </div>
 
         {/* Thought Leadership Dispatch Box */}
-        <div style={{ marginTop: '4.5rem', padding: '2.5rem', borderRadius: '4px', border: '1px solid var(--border-color)', backgroundColor: 'rgba(255,255,255,0.02)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '2rem' }}>
-          <div>
+        <div 
+          className="dispatch-box"
+          style={{ 
+            marginTop: '4.5rem', 
+            padding: '2.5rem', 
+            borderRadius: '4px', 
+            border: '1px solid var(--border-color)', 
+            backgroundColor: 'rgba(255,255,255,0.02)', 
+            display: 'flex', 
+            flexWrap: 'wrap', 
+            alignItems: 'center', 
+            justifyContent: 'space-between', 
+            gap: '2rem',
+            boxSizing: 'border-box'
+          }}
+        >
+          <div style={{ maxWidth: '480px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.75rem', fontFamily: 'monospace', color: 'var(--accent-color)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
               <Sparkles size={14} />
               <span>Vanta Quarterly Dispatch</span>
@@ -168,7 +183,7 @@ export default function Insights() {
             </p>
           </div>
 
-          <form onSubmit={handleSubscribe} style={{ display: 'flex', gap: '0.75rem', width: '100%', maxWidth: '420px' }}>
+          <form onSubmit={handleSubscribe} className="dispatch-form" style={{ display: 'flex', gap: '0.75rem', width: '100%', maxWidth: '420px', boxSizing: 'border-box' }}>
             {subscribed ? (
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#10b981', fontSize: '0.9rem', fontWeight: 600 }}>
                 <CheckCircle2 size={20} />
@@ -184,19 +199,21 @@ export default function Insights() {
                   onChange={(e) => setEmail(e.target.value)}
                   style={{
                     flex: 1,
+                    minWidth: '0',
                     padding: '0.85rem 1rem',
                     backgroundColor: 'transparent',
                     border: '1px solid var(--border-color)',
                     borderRadius: '2px',
                     color: 'var(--text-primary)',
                     fontSize: '0.88rem',
-                    outline: 'none'
+                    outline: 'none',
+                    boxSizing: 'border-box'
                   }}
                 />
                 <button
                   type="submit"
                   className="btn-primary"
-                  style={{ padding: '0.85rem 1.5rem', whiteSpace: 'nowrap' }}
+                  style={{ padding: '0.85rem 1.5rem', whiteSpace: 'nowrap', justifyContent: 'center' }}
                 >
                   <span>Join</span>
                   <ArrowUpRight size={15} />
@@ -207,6 +224,23 @@ export default function Insights() {
         </div>
 
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .dispatch-box {
+            padding: 1.5rem 1.25rem !important;
+            gap: 1.5rem !important;
+          }
+          .dispatch-form {
+            flex-direction: column !important;
+            width: 100% !important;
+          }
+          .dispatch-form input,
+          .dispatch-form button {
+            width: 100% !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

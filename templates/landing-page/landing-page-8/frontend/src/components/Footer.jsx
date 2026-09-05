@@ -130,9 +130,15 @@ export default function Footer() {
       </div>
 
       <style>{`
+        @media (max-width: 768px) {
+          .footer-links-container {
+            gap: 3rem !important;
+            width: 100% !important;
+          }
+        }
         @media (max-width: 480px) {
           .footer-links-container {
-            gap: 4rem !important;
+            gap: 2.5rem !important;
             width: 100% !important;
             justify-content: space-between !important;
           }

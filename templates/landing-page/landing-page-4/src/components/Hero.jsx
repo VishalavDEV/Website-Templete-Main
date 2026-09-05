@@ -8,7 +8,7 @@ export default function Hero() {
   const { openAuthModal, openDemoModal } = useModal();
 
   return (
-    <section id="hero" className="relative pt-28 pb-16 md:pt-40 md:pb-28 overflow-hidden w-full max-w-full">
+    <section id="hero" className="relative pt-36 sm:pt-40 md:pt-48 pb-16 md:pb-28 overflow-hidden w-full max-w-full">
       
       {/* Radial Amber Backdrop Glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[900px] h-[450px] bg-gradient-to-b from-amber-500/20 via-amber-600/5 to-transparent blur-[140px] pointer-events-none -z-10"></div>
@@ -23,7 +23,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
           onClick={() => openAuthModal('growth')}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-amber-500/30 text-xs md:text-sm font-medium text-amber-300 shadow-lg shadow-amber-500/10 backdrop-blur-md mb-6 hover:border-amber-500/60 transition-all cursor-pointer group max-w-full flex-wrap justify-center"
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-amber-500/30 text-xs md:text-sm font-medium text-amber-300 shadow-lg shadow-amber-500/10 backdrop-blur-md mb-6 hover:border-amber-500/60 transition-all cursor-pointer group max-w-full flex-wrap justify-center mx-auto"
         >
           <span className="flex h-2 w-2 relative">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>

@@ -884,6 +884,7 @@ input:focus, textarea:focus, select:focus {
 /* SM: >= 640px */
 @media (min-width: 640px) {
   .hidden.sm\:inline { display: inline !important; }
+  .hidden.sm\:inline-flex { display: inline-flex !important; }
   .hidden.sm\:flex { display: flex !important; }
   .hidden.sm\:block { display: block !important; }
   .sm\:inline { display: inline !important; }
@@ -925,8 +926,10 @@ input:focus, textarea:focus, select:focus {
 /* MD: >= 768px */
 @media (min-width: 768px) {
   .hidden.md\:flex { display: flex !important; }
+  .hidden.md\:inline-flex { display: inline-flex !important; }
   .hidden.md\:block { display: block !important; }
   .md\:flex { display: flex !important; }
+  .md\:inline-flex { display: inline-flex !important; }
   .md\:block { display: block !important; }
   .md\:hidden { display: none !important; }
   .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }

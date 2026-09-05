@@ -123,7 +123,7 @@ export default function About() {
           }}
         >
           {/* Left Column: Interactive Tab Selectors */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%', minWidth: 0 }}>
             {ARCHITECTURE_TABS.map((tab) => {
               const isSelected = activeTab.id === tab.id;
               const TabIcon = tab.icon;
@@ -132,20 +132,24 @@ export default function About() {
                 <motion.div
                   key={tab.id}
                   onClick={() => setActiveTab(tab)}
+                  className="about-tab-card"
                   style={{
-                    padding: '26px',
+                    padding: '24px',
                     borderRadius: '22px',
                     background: isSelected ? 'rgba(15, 20, 36, 0.92)' : 'rgba(13, 17, 28, 0.5)',
                     border: isSelected ? '1px solid var(--neon-cyan)' : '1px solid rgba(255, 255, 255, 0.08)',
                     boxShadow: isSelected ? '0 12px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 229, 255, 0.18)' : 'none',
                     cursor: 'pointer',
                     transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                    width: '100%',
+                    boxSizing: 'border-box',
                   }}
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '18px' }}>
+                  <div className="about-tab-header" style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', width: '100%' }}>
                     <div
+                      className="about-tab-icon"
                       style={{
                         padding: '12px',
                         borderRadius: '14px',
@@ -153,18 +157,19 @@ export default function About() {
                         color: isSelected ? '#040508' : '#00E5FF',
                         transition: 'all 0.3s ease',
                         boxShadow: isSelected ? '0 0 18px rgba(0, 229, 255, 0.35)' : 'none',
+                        flexShrink: 0,
                       }}
                     >
                       <TabIcon size={24} />
                     </div>
 
-                    <div style={{ flex: 1 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
-                        <h3 style={{ fontSize: '1.22rem', color: isSelected ? '#FFFFFF' : '#CBD5E1' }}>{tab.title}</h3>
-                        {isSelected && <ArrowUpRight size={18} color="var(--neon-cyan)" />}
+                    <div style={{ flex: 1, minWidth: 0, width: '100%' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px', gap: '8px' }}>
+                        <h3 style={{ fontSize: '1.22rem', color: isSelected ? '#FFFFFF' : '#CBD5E1', wordBreak: 'break-word' }}>{tab.title}</h3>
+                        {isSelected && <ArrowUpRight size={18} color="var(--neon-cyan)" style={{ flexShrink: 0 }} />}
                       </div>
 
-                      <p style={{ fontSize: '0.92rem', color: isSelected ? 'var(--text-secondary)' : 'var(--text-muted)', lineHeight: 1.6 }}>
+                      <p style={{ fontSize: '0.92rem', color: isSelected ? 'var(--text-secondary)' : 'var(--text-muted)', lineHeight: 1.6, wordBreak: 'normal', overflowWrap: 'break-word' }}>
                         {tab.description}
                       </p>
 
@@ -173,21 +178,24 @@ export default function About() {
                         <motion.div
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: 'auto' }}
+                          className="about-metrics-bar"
                           style={{
                             display: 'grid',
-                            gridTemplateColumns: 'repeat(3, 1fr)',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 90px), 1fr))',
                             gap: '12px',
                             marginTop: '20px',
                             paddingTop: '16px',
                             borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                            width: '100%',
+                            boxSizing: 'border-box',
                           }}
                         >
                           {tab.metrics.map((m, idx) => (
-                            <div key={idx}>
-                              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>
+                            <div key={idx} style={{ minWidth: 0 }}>
+                              <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontFamily: 'var(--font-mono)', lineHeight: 1.3, wordBreak: 'normal', overflowWrap: 'break-word' }}>
                                 {m.label}
                               </div>
-                              <div style={{ fontSize: '1.08rem', fontWeight: 700, color: 'var(--neon-emerald)', marginTop: '2px' }}>
+                              <div style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--neon-emerald)', marginTop: '3px', wordBreak: 'normal', whiteSpace: 'nowrap' }}>
                                 {m.value}
                               </div>
                             </div>

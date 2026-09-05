@@ -17,6 +17,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+section[id], div[id] {
+  scroll-margin-top: 85px;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--bg-primary);
@@ -331,7 +335,12 @@ button, input, textarea {
 .pt-6 { padding-top: 1.5rem; }
 .pt-8 { padding-top: 2rem; }
 .pt-20 { padding-top: 5rem; }
+.pt-28 { padding-top: 7rem; }
 .pt-32 { padding-top: 8rem; }
+.pt-36 { padding-top: 9rem; }
+.pt-40 { padding-top: 10rem; }
+.pt-44 { padding-top: 11rem; }
+.pt-48 { padding-top: 12rem; }
 
 .pb-1\.5 { padding-bottom: 0.375rem; }
 .pb-2 { padding-bottom: 0.5rem; }
@@ -744,6 +753,8 @@ button, input, textarea {
   .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sm\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .sm\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .sm\:pt-36 { padding-top: 9rem; }
+  .sm\:pt-40 { padding-top: 10rem; }
   .sm\:text-sm { font-size: 0.875rem; line-height: 1.25rem; }
   .sm\:text-base { font-size: 1rem; line-height: 1.5rem; }
   .sm\:text-lg { font-size: 1.125rem; line-height: 1.75rem; }
@@ -756,6 +767,7 @@ button, input, textarea {
 /* md: 768px and up */
 @media (min-width: 768px) {
   .md\:flex { display: flex; }
+  .md\:inline-flex { display: inline-flex; }
   .md\:block { display: block; }
   .md\:hidden { display: none; }
   .md\:px-8 { padding-left: 2rem; padding-right: 2rem; }
@@ -767,6 +779,8 @@ button, input, textarea {
   .md\:p-14 { padding: 3.5rem; }
   .md\:p-20 { padding: 5rem; }
   .md\:pt-40 { padding-top: 10rem; }
+  .md\:pt-44 { padding-top: 11rem; }
+  .md\:pt-48 { padding-top: 12rem; }
   .md\:pb-28 { padding-bottom: 7rem; }
   .md\:py-28 { padding-top: 7rem; padding-bottom: 7rem; }
   .md\:py-32 { padding-top: 8rem; padding-bottom: 8rem; }
@@ -793,6 +807,7 @@ button, input, textarea {
 /* lg: 1024px and up */
 @media (min-width: 1024px) {
   .lg\:flex { display: flex; }
+  .lg\:inline-flex { display: inline-flex; }
   .lg\:block { display: block; }
   .lg\:hidden { display: none; }
   .lg\:grid { display: grid; }

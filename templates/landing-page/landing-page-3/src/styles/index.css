@@ -441,6 +441,12 @@ button {
   animation: toast-in 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Section Anchor Scroll Margin (Prevents Fixed Navbar Overlap) */
+section[id] {
+  scroll-margin-top: 85px;
+}
+
+/* Keyframes */
 @keyframes toast-in {
   from {
     opacity: 0;
@@ -506,6 +512,10 @@ button {
     max-width: 100vw !important;
   }
 
+  section[id] {
+    scroll-margin-top: 75px;
+  }
+
   .section-wrapper {
     padding: 48px 16px !important;
     overflow-x: hidden !important;
@@ -517,12 +527,13 @@ button {
   }
 
   .section-header {
-    margin-bottom: 32px !important;
+    margin-bottom: 28px !important;
   }
 
   .section-title {
-    font-size: clamp(1.8rem, 6.5vw, 2.3rem) !important;
-    margin-bottom: 14px !important;
+    font-size: clamp(1.75rem, 6.2vw, 2.25rem) !important;
+    margin-bottom: 12px !important;
+    line-height: 1.16 !important;
   }
 
   .section-description {
@@ -532,7 +543,7 @@ button {
 
   .hero-grid {
     grid-template-columns: 1fr !important;
-    gap: 32px !important;
+    gap: 28px !important;
   }
 
   .hero-br {
@@ -540,8 +551,13 @@ button {
   }
 
   .hero-status-pill {
-    font-size: 0.7rem !important;
+    font-size: 0.68rem !important;
     padding: 4px 10px !important;
+  }
+
+  .hero-cta-group {
+    flex-direction: column !important;
+    gap: 10px !important;
   }
 
   .hero-cta-group button {
@@ -549,46 +565,143 @@ button {
     justify-content: center !important;
   }
 
-  .features-grid, .about-grid, .services-grid, .contact-grid {
+  .hero-trust-badges {
+    flex-direction: column !important;
+    gap: 10px !important;
+    text-align: center !important;
+  }
+
+  .hero-matrix-visual {
+    max-width: 340px !important;
+    min-height: 340px !important;
+  }
+
+  .hero-floating-card-1 {
+    top: -10px !important;
+    right: 0px !important;
+    padding: 8px 12px !important;
+    border-radius: 12px !important;
+  }
+
+  .hero-floating-card-2 {
+    bottom: -6px !important;
+    left: 0px !important;
+    padding: 8px 12px !important;
+    border-radius: 12px !important;
+  }
+
+  /* About Section Card Overhaul */
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .about-tab-card {
+    padding: 16px !important;
+    border-radius: 18px !important;
+  }
+
+  .about-tab-header {
+    gap: 12px !important;
+  }
+
+  .about-tab-icon {
+    padding: 8px !important;
+    border-radius: 10px !important;
+  }
+
+  .about-tab-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .about-metrics-bar {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px 14px !important;
+    margin-top: 14px !important;
+    padding-top: 12px !important;
+  }
+
+  /* Features & Services Grid */
+  .features-grid, .services-grid, .contact-grid {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
   }
 
+  .features-grid > div,
+  .services-grid > div {
+    padding: 22px 18px !important;
+    border-radius: 20px !important;
+    min-height: auto !important;
+  }
+
+  /* Interactive Demo */
   .demo-card-container {
-    padding: 16px !important;
+    padding: 18px 14px !important;
     border-radius: 20px !important;
   }
 
   .demo-controls-grid {
     grid-template-columns: 1fr !important;
-    gap: 18px !important;
+    gap: 16px !important;
+    padding-bottom: 18px !important;
+    margin-bottom: 18px !important;
   }
 
   .demo-telemetry-grid {
     grid-template-columns: 1fr !important;
-    gap: 16px !important;
+    gap: 14px !important;
+  }
+
+  .demo-metrics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .demo-metrics-grid > div {
+    padding: 12px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Contact & Toast */
+  .toast-container {
+    bottom: 12px !important;
+    right: 12px !important;
+    left: 12px !important;
+  }
+
+  .toast-box {
+    padding: 12px 16px !important;
+    font-size: 0.86rem !important;
+    border-radius: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-wrapper {
+    padding: 40px 12px !important;
+  }
+
+  .about-tab-card {
+    padding: 14px 12px !important;
+  }
+
+  .about-metrics-bar {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px 10px !important;
+  }
+
+  .hero-floating-card-1 {
+    font-size: 0.75rem !important;
+    padding: 6px 10px !important;
+  }
+
+  .hero-floating-card-2 {
+    font-size: 0.75rem !important;
+    padding: 6px 10px !important;
   }
 
   .demo-metrics-grid {
     grid-template-columns: 1fr 1fr !important;
-    gap: 10px !important;
-  }
-
-  .hero-floating-card-1 {
-    top: -8px !important;
-    right: -4px !important;
-    padding: 8px 12px !important;
-  }
-
-  .hero-floating-card-2 {
-    bottom: -8px !important;
-    left: -4px !important;
-    padding: 8px 12px !important;
-  }
-
-  .toast-container {
-    bottom: 16px !important;
-    right: 16px !important;
-    left: 16px !important;
   }
 }

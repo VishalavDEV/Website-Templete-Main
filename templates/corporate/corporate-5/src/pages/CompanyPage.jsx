@@ -86,7 +86,7 @@ export default function CompanyPage() {
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(30px, 3.6vw, 46px)', fontWeight: 700, color: '#FFFFFF' }}>ENTERPRISE STANDARDS</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+          <div className="company-standards-grid">
             {STANDARDS.map((std, idx) => (
               <div key={idx} style={{ background: 'var(--c-charcoal-surface)', border: '1px solid var(--border-dark)', padding: '32px', borderRadius: '2px' }}>
                 <div className="meta-tag-copper" style={{ marginBottom: '10px' }}>
@@ -114,7 +114,7 @@ export default function CompanyPage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', borderTop: '1px solid var(--border-light)' }}>
             {VALUES.map((val) => (
-              <div key={val.num} style={{ display: 'grid', gridTemplateColumns: '100px 1.2fr 1.6fr', padding: '34px 0', borderBottom: '1px solid var(--border-light)', alignItems: 'flex-start' }}>
+              <div key={val.num} className="company-principles-row">
                 <div style={{ fontFamily: 'var(--font-serif)', fontSize: '32px', fontWeight: 700, color: 'var(--c-copper)' }}>
                   {val.num}
                 </div>
@@ -138,9 +138,9 @@ export default function CompanyPage() {
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(30px, 3.6vw, 46px)', fontWeight: 700, color: 'var(--c-charcoal)' }}>ENGINEERING LEADERSHIP</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr 1.2fr', gap: '28px', alignItems: 'flex-start' }}>
+          <div className="company-leadership-grid">
             {LEADERSHIP_PROFILES.map((leader, idx) => (
-              <div key={idx} style={{ display: 'flex', flexDirection: 'column', marginTop: idx % 2 === 1 ? '30px' : '0' }}>
+              <div key={idx} className={`company-leadership-card ${idx % 2 === 1 ? 'card-staggered' : ''}`}>
                 <img
                   src={leader.image}
                   alt={leader.name}

@@ -55,7 +55,7 @@ export default function BookPreview() {
               <ChevronLeft size={18} /> Previous Page
             </button>
 
-            <a href="#purchase" className="btn-primary" style={{ padding: '8px 20px', fontSize: '0.875rem' }}>
+            <a href="#purchase" className="btn-primary preview-continue-btn" style={{ padding: '8px 20px', fontSize: '0.875rem' }}>
               Continue Reading <ArrowRight size={14} />
             </a>
 

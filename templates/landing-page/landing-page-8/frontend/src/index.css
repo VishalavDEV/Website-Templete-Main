@@ -41,7 +41,8 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -49,6 +50,12 @@ body {
   color: var(--text-primary);
   overflow-x: hidden;
   position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+section[id] {
+  scroll-margin-top: 85px;
 }
 
 /* Custom Scrollbar */
@@ -320,13 +327,22 @@ a {
     gap: 2.5rem;
   }
 
-  html, body {
-    overflow-x: hidden !important;
+  .text-huge {
+    font-size: clamp(2.35rem, 8.5vw, 4.5rem) !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .text-editorial-h2 {
+    font-size: clamp(1.85rem, 6.5vw, 3rem) !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .container {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
+    box-sizing: border-box !important;
   }
 
   .section-padding {
