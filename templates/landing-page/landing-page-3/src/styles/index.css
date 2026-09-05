@@ -452,7 +452,54 @@ button {
   }
 }
 
-/* Mobile Responsive Engine */
+/* Tablet & Mobile Responsive Engine */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .hero-content-col {
+    align-items: center !important;
+    text-align: center !important;
+    max-width: 680px !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-content-col .badge-pill,
+  .hero-status-pill {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero-main-title {
+    text-align: center !important;
+  }
+
+  .hero-description-text {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero-cta-group {
+    justify-content: center !important;
+  }
+
+  .hero-trust-badges {
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-matrix-visual {
+    width: 100% !important;
+    max-width: 440px !important;
+    margin: 0 auto !important;
+  }
+}
+
 @media (max-width: 768px) {
   html, body {
     overflow-x: hidden !important;
@@ -460,43 +507,83 @@ button {
   }
 
   .section-wrapper {
-    padding: 50px 16px !important;
+    padding: 48px 16px !important;
     overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  .hero-section-wrapper {
+    padding: 0 16px !important;
   }
 
   .section-header {
-    margin-bottom: 36px !important;
+    margin-bottom: 32px !important;
   }
 
   .section-title {
-    font-size: clamp(1.85rem, 7vw, 2.4rem) !important;
+    font-size: clamp(1.8rem, 6.5vw, 2.3rem) !important;
     margin-bottom: 14px !important;
   }
 
   .section-description {
-    font-size: 0.95rem !important;
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
   }
 
   .hero-grid {
     grid-template-columns: 1fr !important;
-    gap: 36px !important;
+    gap: 32px !important;
   }
 
-  .features-grid, .about-grid, .services-grid, .demo-grid, .contact-grid {
+  .hero-br {
+    display: none !important;
+  }
+
+  .hero-status-pill {
+    font-size: 0.7rem !important;
+    padding: 4px 10px !important;
+  }
+
+  .hero-cta-group button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .features-grid, .about-grid, .services-grid, .contact-grid {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
   }
 
+  .demo-card-container {
+    padding: 16px !important;
+    border-radius: 20px !important;
+  }
+
+  .demo-controls-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .demo-telemetry-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .demo-metrics-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
   .hero-floating-card-1 {
-    top: -10px !important;
-    right: 0px !important;
-    padding: 10px 14px !important;
+    top: -8px !important;
+    right: -4px !important;
+    padding: 8px 12px !important;
   }
 
   .hero-floating-card-2 {
-    bottom: -10px !important;
-    left: 0px !important;
-    padding: 10px 14px !important;
+    bottom: -8px !important;
+    left: -4px !important;
+    padding: 8px 12px !important;
   }
 
   .toast-container {

@@ -7,8 +7,6 @@ export default function VideoModal({ isOpen, onClose }) {
   const [isMuted, setIsMuted] = useState(false);
   const [activeChapter, setActiveChapter] = useState(0);
 
-  if (!isOpen) return null;
-
   const chapters = [
     { time: '0:00', title: '1. Neural Mesh Spin-up', desc: 'Auto-clustering 42 edge cognitive agents' },
     { time: '0:45', title: '2. Spatial 3D Synthesis', desc: 'Real-time WebGL rendering from prompt' },
@@ -17,7 +15,8 @@ export default function VideoModal({ isOpen, onClose }) {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      {isOpen && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -150,6 +149,7 @@ export default function VideoModal({ isOpen, onClose }) {
           </div>
         </motion.div>
       </div>
+      )}
     </AnimatePresence>
   );
 }

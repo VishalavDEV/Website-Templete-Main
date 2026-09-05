@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowRight, Sparkles, Layers } from 'lucide-react';
+import { Menu, X, ArrowRight, Layers } from 'lucide-react';
 import { navLinks } from '../data/landingData';
 
 export default function Navbar() {
@@ -28,6 +28,29 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
+  // Close on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [mobileMenuOpen]);
+
   return (
     <>
       <motion.header
@@ -40,8 +63,8 @@ export default function Navbar() {
           left: 0,
           right: 0,
           zIndex: 1000,
-          padding: isScrolled ? '0.85rem 0' : '1.5rem 0',
-          background: isScrolled ? 'rgba(250, 248, 242, 0.88)' : 'transparent',
+          padding: isScrolled ? '0.75rem 0' : '1.25rem 0',
+          background: isScrolled ? 'rgba(250, 248, 242, 0.92)' : 'transparent',
           backdropFilter: isScrolled ? 'blur(16px)' : 'none',
           WebkitBackdropFilter: isScrolled ? 'blur(16px)' : 'none',
           borderBottom: isScrolled ? '1px solid rgba(200, 120, 115, 0.15)' : '1px solid transparent',
@@ -49,27 +72,37 @@ export default function Navbar() {
           transition: 'all 0.35s ease',
         }}
       >
-        <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div
+          className="container"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '1rem',
+          }}
+        >
           {/* Animated Brand Logo */}
           <a
             href="#home"
+            onClick={(e) => handleScrollTo(e, '#home')}
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: '0.65rem',
-              fontSize: '1.4rem',
+              fontSize: 'clamp(1.2rem, 3vw, 1.4rem)',
               fontWeight: 800,
               fontFamily: 'var(--font-heading)',
               letterSpacing: '-0.02em',
               color: '#1e1b18',
+              flexShrink: 0,
             }}
           >
             <motion.div
               whileHover={{ rotate: 180, scale: 1.08 }}
               transition={{ duration: 0.4 }}
               style={{
-                width: 38,
-                height: 38,
+                width: 36,
+                height: 36,
                 borderRadius: '10px',
                 background: 'linear-gradient(135deg, #c87873, #dfba89)',
                 display: 'flex',
@@ -77,9 +110,10 @@ export default function Navbar() {
                 justifyContent: 'center',
                 boxShadow: '0 4px 15px rgba(200, 120, 115, 0.3)',
                 color: '#ffffff',
+                flexShrink: 0,
               }}
             >
-              <Layers size={20} />
+              <Layers size={19} />
             </motion.div>
             <span>
               AURA<span style={{ color: '#c87873' }}>FLOW</span>
@@ -91,9 +125,9 @@ export default function Navbar() {
             style={{
               display: 'none',
               alignItems: 'center',
-              gap: '0.5rem',
-              background: isScrolled ? 'rgba(255, 255, 255, 0.6)' : 'rgba(255, 255, 255, 0.5)',
-              padding: '0.4rem 0.6rem',
+              gap: '0.35rem',
+              background: isScrolled ? 'rgba(255, 255, 255, 0.75)' : 'rgba(255, 255, 255, 0.55)',
+              padding: '0.35rem 0.6rem',
               borderRadius: 9999,
               border: '1px solid rgba(200, 120, 115, 0.2)',
               backdropFilter: 'blur(12px)',
@@ -110,7 +144,7 @@ export default function Navbar() {
                 onMouseLeave={() => setHoveredIdx(null)}
                 style={{
                   position: 'relative',
-                  padding: '0.45rem 1rem',
+                  padding: '0.45rem 0.95rem',
                   fontSize: '0.9rem',
                   fontWeight: 600,
                   color: hoveredIdx === idx ? '#b35d58' : '#5e5750',
@@ -137,37 +171,41 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Right Action Button & Mobile Hamburger */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          {/* Right Action Area */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexShrink: 0 }}>
             <motion.a
               href="#contact"
               onClick={(e) => handleScrollTo(e, '#contact')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              className="btn-primary"
-              style={{ padding: '0.65rem 1.45rem', fontSize: '0.9rem' }}
+              className="btn-primary nav-cta-btn"
+              style={{ padding: '0.55rem 1.25rem', fontSize: '0.85rem' }}
             >
               <span>Get Started</span>
-              <ArrowRight size={15} />
+              <ArrowRight size={14} />
             </motion.a>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="mobile-toggle"
-              aria-label="Toggle Mobile Menu"
+              aria-label="Toggle Navigation Menu"
               style={{
-                width: 40,
-                height: 40,
+                width: 42,
+                height: 42,
                 borderRadius: '50%',
-                background: 'rgba(255, 255, 255, 0.8)',
+                background: 'rgba(255, 255, 255, 0.9)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: '#1e1b18',
-                border: '1px solid rgba(200, 120, 115, 0.2)',
+                border: '1px solid rgba(200, 120, 115, 0.3)',
+                boxShadow: '0 2px 8px rgba(200, 120, 115, 0.15)',
+                cursor: 'pointer',
+                flexShrink: 0,
+                zIndex: 1001,
               }}
             >
-              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {mobileMenuOpen ? <X size={22} color="#c87873" /> : <Menu size={22} />}
             </button>
           </div>
         </div>
@@ -177,44 +215,67 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, clipPath: 'circle(0% at top right)' }}
-            animate={{ opacity: 1, clipPath: 'circle(150% at top right)' }}
-            exit={{ opacity: 0, clipPath: 'circle(0% at top right)' }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             style={{
               position: 'fixed',
               inset: 0,
               zIndex: 999,
-              backgroundColor: '#faf8f2',
+              backgroundColor: 'rgba(250, 248, 242, 0.98)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
-              padding: '2rem',
+              padding: '5rem 2rem 3rem 2rem',
+              overflowY: 'auto',
             }}
           >
             {/* Ambient Rose Glow in Drawer */}
             <div
               className="ambient-glow ambient-rose"
-              style={{ top: '30%', left: '20%', width: 350, height: 350 }}
+              style={{ top: '20%', left: '15%', width: 320, height: 320, opacity: 0.5 }}
+            />
+            <div
+              className="ambient-glow ambient-champagne"
+              style={{ bottom: '20%', right: '15%', width: 300, height: 300, opacity: 0.4 }}
             />
 
-            <nav style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.75rem', position: 'relative', zIndex: 1 }}>
+            <nav
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '1.5rem',
+                position: 'relative',
+                zIndex: 2,
+                width: '100%',
+                maxWidth: 320,
+              }}
+            >
               {navLinks.map((link, idx) => (
                 <motion.a
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleScrollTo(e, link.href)}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + idx * 0.06 }}
+                  transition={{ delay: 0.05 + idx * 0.05 }}
                   style={{
-                    fontSize: '1.75rem',
+                    fontSize: '1.5rem',
                     fontWeight: 700,
                     fontFamily: 'var(--font-heading)',
                     color: '#1e1b18',
+                    padding: '0.4rem 1rem',
+                    borderRadius: '12px',
+                    width: '100%',
+                    textAlign: 'center',
+                    transition: 'all 0.2s ease',
                   }}
-                  whileHover={{ scale: 1.1, color: '#c87873' }}
+                  whileHover={{ scale: 1.05, color: '#c87873', backgroundColor: 'rgba(200, 120, 115, 0.08)' }}
                 >
                   {link.name}
                 </motion.a>
@@ -223,14 +284,20 @@ export default function Navbar() {
               <motion.a
                 href="#contact"
                 onClick={(e) => handleScrollTo(e, '#contact')}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 0.4 }}
                 className="btn-primary"
-                style={{ marginTop: '1.5rem', padding: '0.85rem 2.25rem', fontSize: '1.1rem' }}
+                style={{
+                  marginTop: '1rem',
+                  padding: '0.85rem 2rem',
+                  fontSize: '1rem',
+                  width: '100%',
+                  justifyContent: 'center',
+                }}
               >
-                <span>Get Started Now</span>
-                <ArrowRight size={18} />
+                <span>Get Started</span>
+                <ArrowRight size={17} />
               </motion.a>
             </nav>
           </motion.div>
@@ -238,12 +305,23 @@ export default function Navbar() {
       </AnimatePresence>
 
       <style>{`
+        .mobile-toggle {
+          display: flex !important;
+        }
+        @media (max-width: 640px) {
+          .nav-cta-btn {
+            display: none !important;
+          }
+        }
         @media (min-width: 992px) {
           .desktop-nav {
             display: flex !important;
           }
           .mobile-toggle {
             display: none !important;
+          }
+          .nav-cta-btn {
+            display: inline-flex !important;
           }
         }
       `}</style>

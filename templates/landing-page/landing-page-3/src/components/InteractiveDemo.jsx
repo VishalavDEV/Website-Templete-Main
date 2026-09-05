@@ -111,31 +111,37 @@ export default function InteractiveDemo({ onShowToast }) {
 
         {/* Playground Container */}
         <div
-          className="glass-panel-elevated"
+          className="glass-panel-elevated demo-card-container"
           style={{
-            padding: '36px',
+            padding: 'clamp(20px, 4vw, 36px)',
             border: '1px solid rgba(0, 229, 255, 0.35)',
             boxShadow: '0 24px 70px rgba(0, 0, 0, 0.7), 0 0 45px rgba(0, 229, 255, 0.15)',
             borderRadius: '28px',
+            width: '100%',
+            boxSizing: 'border-box',
+            overflow: 'hidden',
           }}
         >
           {/* Controls Bar */}
           <div
+            className="demo-controls-grid"
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '28px',
-              paddingBottom: '28px',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+              gap: '24px',
+              paddingBottom: '24px',
               borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-              marginBottom: '32px',
+              marginBottom: '28px',
+              width: '100%',
+              boxSizing: 'border-box',
             }}
           >
             {/* Model Architecture Selector */}
-            <div>
+            <div style={{ width: '100%', minWidth: 0 }}>
               <label style={{ display: 'block', fontSize: '0.78rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', marginBottom: '10px' }}>
                 1. SELECT NEURAL ARCHITECTURE
               </label>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '100%' }}>
                 {MODELS.map((model) => (
                   <button
                     key={model.id}
@@ -144,15 +150,19 @@ export default function InteractiveDemo({ onShowToast }) {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      padding: '12px 16px',
+                      flexWrap: 'wrap',
+                      gap: '4px',
+                      padding: '12px 14px',
                       borderRadius: '12px',
                       background: selectedModel.id === model.id ? 'rgba(0, 229, 255, 0.14)' : 'rgba(255, 255, 255, 0.03)',
                       border: selectedModel.id === model.id ? '1px solid var(--neon-cyan)' : '1px solid rgba(255, 255, 255, 0.06)',
                       color: selectedModel.id === model.id ? '#FFFFFF' : 'var(--text-secondary)',
-                      fontSize: '0.88rem',
+                      fontSize: '0.86rem',
                       fontWeight: 600,
                       transition: 'all 0.2s ease',
                       textAlign: 'left',
+                      width: '100%',
+                      boxSizing: 'border-box',
                     }}
                   >
                     <span>{model.name}</span>
@@ -163,9 +173,9 @@ export default function InteractiveDemo({ onShowToast }) {
             </div>
 
             {/* Batch Size & Prompt Selector */}
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: '100%', minWidth: 0 }}>
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                   <label style={{ fontSize: '0.78rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>
                     2. CONCURRENT BATCH SIZE
                   </label>
@@ -183,7 +193,8 @@ export default function InteractiveDemo({ onShowToast }) {
                     width: '100%',
                     accentColor: 'var(--neon-cyan)',
                     cursor: 'pointer',
-                    marginBottom: '18px',
+                    marginBottom: '16px',
+                    boxSizing: 'border-box',
                   }}
                 />
               </div>
@@ -197,13 +208,15 @@ export default function InteractiveDemo({ onShowToast }) {
                   onChange={(e) => setActivePrompt(e.target.value)}
                   style={{
                     width: '100%',
-                    padding: '12px 16px',
+                    padding: '12px 14px',
                     borderRadius: '12px',
-                    background: 'rgba(8, 12, 22, 0.9)',
+                    background: 'rgba(8, 12, 22, 0.95)',
                     border: '1px solid rgba(255, 255, 255, 0.12)',
                     color: '#FFFFFF',
-                    fontSize: '0.88rem',
+                    fontSize: '0.86rem',
                     outline: 'none',
+                    boxSizing: 'border-box',
+                    maxWidth: '100%',
                   }}
                 >
                   {PRESET_PROMPTS.map((prompt, idx) => (
@@ -214,12 +227,12 @@ export default function InteractiveDemo({ onShowToast }) {
                 </select>
               </div>
 
-              <div style={{ marginTop: '18px' }}>
+              <div style={{ marginTop: '16px' }}>
                 <button
                   onClick={runSimulation}
                   disabled={isRunning}
                   className="btn-primary"
-                  style={{ width: '100%', padding: '14px', borderRadius: '12px' }}
+                  style={{ width: '100%', padding: '13px', borderRadius: '12px', fontSize: '0.94rem' }}
                 >
                   <Play size={16} fill="currentColor" />
                   <span>{isRunning ? 'Synthesizing Stream...' : 'Trigger Neural Inference'}</span>
@@ -230,73 +243,94 @@ export default function InteractiveDemo({ onShowToast }) {
 
           {/* Telemetry Output & Live Terminal */}
           <div
+            className="demo-telemetry-grid"
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '24px',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+              gap: '20px',
+              width: '100%',
+              boxSizing: 'border-box',
             }}
           >
             {/* Live Metrics Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-              <div style={{ padding: '18px', borderRadius: '16px', background: 'rgba(0, 229, 255, 0.05)', border: '1px solid rgba(0, 229, 255, 0.22)' }}>
-                <div style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>REAL-TIME LATENCY</div>
-                <div style={{ fontSize: '1.7rem', fontWeight: 800, color: 'var(--neon-cyan)', marginTop: '4px' }}>{telemetry.latency} ms</div>
-                <div style={{ fontSize: '0.76rem', color: 'var(--neon-emerald)', marginTop: '4px' }}>↓ 89% vs AWS g5</div>
+            <div className="demo-metrics-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 130px), 1fr))', gap: '14px', width: '100%' }}>
+              <div style={{ padding: '16px', borderRadius: '16px', background: 'rgba(0, 229, 255, 0.05)', border: '1px solid rgba(0, 229, 255, 0.22)', boxSizing: 'border-box' }}>
+                <div style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>REAL-TIME LATENCY</div>
+                <div style={{ fontSize: 'clamp(1.3rem, 3.2vw, 1.65rem)', fontWeight: 800, color: 'var(--neon-cyan)', marginTop: '4px' }}>{telemetry.latency} ms</div>
+                <div style={{ fontSize: '0.72rem', color: 'var(--neon-emerald)', marginTop: '4px' }}>↓ 89% vs AWS g5</div>
               </div>
 
-              <div style={{ padding: '18px', borderRadius: '16px', background: 'rgba(138, 43, 226, 0.05)', border: '1px solid rgba(138, 43, 226, 0.22)' }}>
-                <div style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>EFFECTIVE TFLOPS</div>
-                <div style={{ fontSize: '1.7rem', fontWeight: 800, color: '#8A2BE2', marginTop: '4px' }}>{telemetry.tflops}</div>
-                <div style={{ fontSize: '0.76rem', color: 'var(--neon-cyan)', marginTop: '4px' }}>FP8 Precision Active</div>
+              <div style={{ padding: '16px', borderRadius: '16px', background: 'rgba(138, 43, 226, 0.05)', border: '1px solid rgba(138, 43, 226, 0.22)', boxSizing: 'border-box' }}>
+                <div style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>EFFECTIVE TFLOPS</div>
+                <div style={{ fontSize: 'clamp(1.3rem, 3.2vw, 1.65rem)', fontWeight: 800, color: '#8A2BE2', marginTop: '4px' }}>{telemetry.tflops}</div>
+                <div style={{ fontSize: '0.72rem', color: 'var(--neon-cyan)', marginTop: '4px' }}>FP8 Precision Active</div>
               </div>
 
-              <div style={{ padding: '18px', borderRadius: '16px', background: 'rgba(0, 255, 163, 0.05)', border: '1px solid rgba(0, 255, 163, 0.22)' }}>
-                <div style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>THROUGHPUT</div>
-                <div style={{ fontSize: '1.7rem', fontWeight: 800, color: 'var(--neon-emerald)', marginTop: '4px' }}>
-                  {(telemetry.tokensPerSec / 1000).toFixed(0)}k <span style={{ fontSize: '0.9rem' }}>tok/s</span>
+              <div style={{ padding: '16px', borderRadius: '16px', background: 'rgba(0, 255, 163, 0.05)', border: '1px solid rgba(0, 255, 163, 0.22)', boxSizing: 'border-box' }}>
+                <div style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>THROUGHPUT</div>
+                <div style={{ fontSize: 'clamp(1.3rem, 3.2vw, 1.65rem)', fontWeight: 800, color: 'var(--neon-emerald)', marginTop: '4px' }}>
+                  {(telemetry.tokensPerSec / 1000).toFixed(0)}k <span style={{ fontSize: '0.82rem' }}>tok/s</span>
                 </div>
-                <div style={{ fontSize: '0.76rem', color: 'var(--text-secondary)', marginTop: '4px' }}>Stream Parallelism</div>
+                <div style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', marginTop: '4px' }}>Stream Parallelism</div>
               </div>
 
-              <div style={{ padding: '18px', borderRadius: '16px', background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
-                <div style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>EST. INFERENCE COST</div>
-                <div style={{ fontSize: '1.7rem', fontWeight: 800, color: '#FFFFFF', marginTop: '4px' }}>{telemetry.costPerMillion}</div>
-                <div style={{ fontSize: '0.76rem', color: 'var(--neon-emerald)', marginTop: '4px' }}>Per 1M Tokens</div>
+              <div style={{ padding: '16px', borderRadius: '16px', background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.08)', boxSizing: 'border-box' }}>
+                <div style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>EST. INFERENCE COST</div>
+                <div style={{ fontSize: 'clamp(1.3rem, 3.2vw, 1.65rem)', fontWeight: 800, color: '#FFFFFF', marginTop: '4px' }}>{telemetry.costPerMillion}</div>
+                <div style={{ fontSize: '0.72rem', color: 'var(--neon-emerald)', marginTop: '4px' }}>Per 1M Tokens</div>
               </div>
             </div>
 
             {/* Terminal Stream Display */}
             <div
+              className="demo-terminal-box"
               style={{
                 borderRadius: '18px',
                 background: '#040508',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
-                padding: '18px',
+                padding: '16px',
                 fontFamily: 'var(--font-mono)',
-                fontSize: '0.84rem',
-                minHeight: '210px',
+                fontSize: '0.82rem',
+                minHeight: '200px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
+                width: '100%',
+                maxWidth: '100%',
+                boxSizing: 'border-box',
+                overflow: 'hidden',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid rgba(255, 255, 255, 0.06)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '8px', borderBottom: '1px solid rgba(255, 255, 255, 0.06)', gap: '8px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Terminal size={14} color="var(--neon-cyan)" />
-                  <span style={{ color: 'var(--text-secondary)' }}>LIVE TOKEN STREAM</span>
+                  <Terminal size={14} color="var(--neon-cyan)" style={{ flexShrink: 0 }} />
+                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.76rem', fontWeight: 600 }}>LIVE TOKEN STREAM</span>
                 </div>
-                <span style={{ color: isRunning ? 'var(--neon-emerald)' : 'var(--text-muted)', fontSize: '0.74rem' }}>
-                  {isRunning ? '● ACTIVE STREAM' : '✓ COMPLETE'}
+                <span style={{ color: isRunning ? 'var(--neon-emerald)' : 'var(--text-muted)', fontSize: '0.72rem', whiteSpace: 'nowrap' }}>
+                  {isRunning ? '● ACTIVE' : '✓ COMPLETE'}
                 </span>
               </div>
 
-              <pre style={{ whiteSpace: 'pre-wrap', color: '#00E5FF', margin: '12px 0', lineHeight: 1.55, flex: 1 }}>
+              <pre
+                style={{
+                  whiteSpace: 'pre-wrap',
+                  wordBreak: 'break-word',
+                  overflowWrap: 'anywhere',
+                  color: '#00E5FF',
+                  margin: '12px 0',
+                  lineHeight: 1.5,
+                  fontSize: 'clamp(0.72rem, 1.8vw, 0.82rem)',
+                  flex: 1,
+                  maxWidth: '100%',
+                  overflowX: 'auto',
+                }}
+              >
                 {streamedTokens}
                 {isRunning && <span className="animate-pulse" style={{ color: '#00FFA3' }}> ▋</span>}
               </pre>
 
-              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                Instruction: "{activePrompt.substring(0, 45)}..."
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', wordBreak: 'break-word', overflowWrap: 'anywhere' }}>
+                Instruction: "{activePrompt.substring(0, 40)}..."
               </div>
             </div>
           </div>

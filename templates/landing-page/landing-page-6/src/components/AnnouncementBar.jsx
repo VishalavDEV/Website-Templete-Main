@@ -10,9 +10,12 @@ export default function AnnouncementBar() {
     <div className={`announcement-bar ${!isVisible ? 'hidden' : ''}`}>
       <div className="announcement-content">
         <span className="announcement-badge">New Release</span>
-        <span>Enter the world of <strong>The Echoes of Tomorrow</strong></span>
+        <span className="announcement-text">
+          Enter the world of <strong>The Echoes of Tomorrow</strong>
+        </span>
         <a href="#purchase" className="announcement-link">
-          Order Now <ArrowRight size={14} />
+          <span>Order Now</span>
+          <ArrowRight size={13} />
         </a>
       </div>
       <button 
@@ -20,7 +23,7 @@ export default function AnnouncementBar() {
         onClick={() => setIsVisible(false)}
         aria-label="Close announcement bar"
       >
-        <X size={16} />
+        <X size={15} />
       </button>
     </div>
   );

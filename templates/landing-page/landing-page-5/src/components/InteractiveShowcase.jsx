@@ -16,8 +16,8 @@ export default function InteractiveShowcase() {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateY = ((x - centerX) / centerX) * 7;
-    const rotateX = -((y - centerY) / centerY) * 7;
+    const rotateY = ((x - centerX) / centerX) * 5;
+    const rotateX = -((y - centerY) / centerY) * 5;
 
     setRotation({ x: rotateX, y: rotateY });
   };
@@ -51,13 +51,16 @@ export default function InteractiveShowcase() {
           <div
             style={{
               display: 'inline-flex',
-              gap: '0.5rem',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              gap: '0.4rem',
               padding: '0.4rem',
               background: 'rgba(255, 255, 255, 0.75)',
               borderRadius: 9999,
               border: '1px solid rgba(200, 120, 115, 0.22)',
               marginTop: '1.5rem',
               boxShadow: '0 4px 15px -4px rgba(200, 120, 115, 0.1)',
+              maxWidth: '100%',
             }}
           >
             {[
@@ -69,7 +72,7 @@ export default function InteractiveShowcase() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 style={{
-                  padding: '0.5rem 1.25rem',
+                  padding: '0.5rem 1.15rem',
                   borderRadius: 9999,
                   fontSize: '0.85rem',
                   fontWeight: 600,
@@ -77,6 +80,7 @@ export default function InteractiveShowcase() {
                   background: activeTab === tab.id ? 'linear-gradient(135deg, #c87873, #dfba89)' : 'transparent',
                   boxShadow: activeTab === tab.id ? '0 4px 15px rgba(200, 120, 115, 0.35)' : 'none',
                   transition: 'all 0.25s ease',
+                  cursor: 'pointer',
                 }}
               >
                 {tab.label}
@@ -93,6 +97,7 @@ export default function InteractiveShowcase() {
           style={{
             perspective: 1200,
             cursor: 'crosshair',
+            width: '100%',
           }}
         >
           <motion.div
@@ -101,16 +106,18 @@ export default function InteractiveShowcase() {
               rotateY: rotation.y,
             }}
             transition={{ type: 'spring', stiffness: 120, damping: 20 }}
-            className="glass-panel"
+            className="glass-panel showcase-console-panel"
             style={{
               transformStyle: 'preserve-3d',
-              borderRadius: '2.5rem',
+              borderRadius: 'clamp(1.5rem, 3vw, 2.5rem)',
               border: '1.5px solid rgba(255, 255, 255, 0.95)',
               background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(250, 244, 237, 0.85) 100%)',
               boxShadow: '0 40px 100px -20px rgba(200, 120, 115, 0.25), 0 0 50px rgba(252, 219, 216, 0.4)',
-              padding: '2.5rem',
+              padding: 'clamp(1.25rem, 3vw, 2.5rem)',
               position: 'relative',
               overflow: 'hidden',
+              width: '100%',
+              boxSizing: 'border-box',
             }}
           >
             {/* Header Bar */}
@@ -119,144 +126,191 @@ export default function InteractiveShowcase() {
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                paddingBottom: '1.75rem',
+                flexWrap: 'wrap',
+                gap: '1rem',
+                paddingBottom: '1.25rem',
                 borderBottom: '1px solid rgba(200, 120, 115, 0.15)',
-                marginBottom: '2rem',
+                marginBottom: '1.75rem',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
                 <div
                   style={{
-                    width: 44,
-                    height: 44,
+                    width: 40,
+                    height: 40,
                     borderRadius: 12,
                     background: 'linear-gradient(135deg, #c87873, #dfba89)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: '#ffffff',
+                    flexShrink: 0,
                   }}
                 >
-                  <Cpu size={22} />
+                  <Cpu size={20} />
                 </div>
                 <div>
-                  <h4 style={{ fontSize: '1.15rem', color: '#1e1b18' }}>Aura Autonomous Mesh v2.8</h4>
-                  <p style={{ fontSize: '0.8rem', color: '#766e65' }}>Theme: Rose Gold Blend Mode Architecture</p>
+                  <h4 style={{ fontSize: 'clamp(0.95rem, 2vw, 1.15rem)', color: '#1e1b18', margin: 0, fontWeight: 700 }}>
+                    Aura Autonomous Mesh v2.8
+                  </h4>
+                  <p style={{ fontSize: '0.78rem', color: '#766e65', margin: 0 }}>
+                    Theme: Rose Gold Blend Mode Architecture
+                  </p>
                 </div>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                <span className="glass-pill" style={{ marginBottom: 0 }}>
+                <span className="glass-pill" style={{ marginBottom: 0, padding: '0.35rem 0.85rem', fontSize: '0.78rem' }}>
                   <Radio size={12} color="#10b981" />
                   <span>ONLINE 99.99%</span>
                 </span>
               </div>
             </div>
 
-            {/* Dashboard Visual Grid */}
+            {/* Dashboard Visual Grid - 3 Metric Cards */}
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: '1.75rem',
-                marginBottom: '2rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
+                gap: '1.25rem',
+                marginBottom: '1.75rem',
               }}
             >
               {/* Telemetry Block 1 */}
               <div
+                className="metric-card"
                 style={{
-                  padding: '1.5rem',
+                  padding: '1.35rem',
                   borderRadius: '1.25rem',
-                  background: 'rgba(255, 255, 255, 0.8)',
+                  background: 'rgba(255, 255, 255, 0.82)',
                   border: '1px solid rgba(200, 120, 115, 0.18)',
                   boxShadow: '0 4px 15px -4px rgba(200, 120, 115, 0.08)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  gap: '0.75rem',
+                  boxSizing: 'border-box',
                 }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', color: '#766e65', fontSize: '0.85rem', marginBottom: '0.5rem' }}>
-                  <span>Atmospheric Aura Throughput</span>
-                  <Activity size={16} color="#c87873" />
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#766e65', fontSize: '0.82rem' }}>
+                  <span style={{ fontWeight: 600 }}>Atmospheric Aura Throughput</span>
+                  <Activity size={16} color="#c87873" style={{ flexShrink: 0 }} />
                 </div>
-                <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#1e1b18', marginBottom: '0.5rem' }}>
-                  4.82M <span style={{ fontSize: '0.9rem', color: '#10b981', fontWeight: 600 }}>+18.4%</span>
+                <div style={{ display: 'flex', alignItems: 'baseline', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <span style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.2rem)', fontWeight: 800, color: '#1e1b18', lineHeight: 1.1 }}>
+                    4.82M
+                  </span>
+                  <span style={{ fontSize: '0.82rem', color: '#10b981', fontWeight: 700, background: 'rgba(16, 185, 129, 0.1)', padding: '0.2rem 0.5rem', borderRadius: 9999 }}>
+                    +18.4%
+                  </span>
                 </div>
-                <div style={{ fontSize: '0.8rem', color: '#766e65' }}>Processed in the last 60 seconds with zero frame drop.</div>
+                <div style={{ fontSize: '0.78rem', color: '#766e65', lineHeight: 1.45 }}>
+                  Processed in the last 60 seconds with zero frame drop.
+                </div>
               </div>
 
               {/* Telemetry Block 2 */}
               <div
+                className="metric-card"
                 style={{
-                  padding: '1.5rem',
+                  padding: '1.35rem',
                   borderRadius: '1.25rem',
-                  background: 'rgba(255, 255, 255, 0.8)',
+                  background: 'rgba(255, 255, 255, 0.82)',
                   border: '1px solid rgba(200, 120, 115, 0.18)',
                   boxShadow: '0 4px 15px -4px rgba(200, 120, 115, 0.08)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  gap: '0.75rem',
+                  boxSizing: 'border-box',
                 }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', color: '#766e65', fontSize: '0.85rem', marginBottom: '0.5rem' }}>
-                  <span>P99 Blend Pipeline Latency</span>
-                  <Network size={16} color="#dfba89" />
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#766e65', fontSize: '0.82rem' }}>
+                  <span style={{ fontWeight: 600 }}>P99 Blend Pipeline Latency</span>
+                  <Network size={16} color="#dfba89" style={{ flexShrink: 0 }} />
                 </div>
-                <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#1e1b18', marginBottom: '0.5rem' }}>
-                  0.38ms <span style={{ fontSize: '0.9rem', color: '#b35d58', fontWeight: 600 }}>Optimal</span>
+                <div style={{ display: 'flex', alignItems: 'baseline', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <span style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.2rem)', fontWeight: 800, color: '#1e1b18', lineHeight: 1.1 }}>
+                    0.38ms
+                  </span>
+                  <span style={{ fontSize: '0.82rem', color: '#b35d58', fontWeight: 700, background: 'rgba(200, 120, 115, 0.12)', padding: '0.2rem 0.5rem', borderRadius: 9999 }}>
+                    Optimal
+                  </span>
                 </div>
-                <div style={{ fontSize: '0.8rem', color: '#766e65' }}>Hardware-accelerated CSS filter compositor active.</div>
+                <div style={{ fontSize: '0.78rem', color: '#766e65', lineHeight: 1.45 }}>
+                  Hardware-accelerated CSS filter compositor active.
+                </div>
               </div>
 
               {/* Telemetry Block 3 */}
               <div
+                className="metric-card"
                 style={{
-                  padding: '1.5rem',
+                  padding: '1.35rem',
                   borderRadius: '1.25rem',
-                  background: 'rgba(255, 255, 255, 0.8)',
+                  background: 'rgba(255, 255, 255, 0.82)',
                   border: '1px solid rgba(200, 120, 115, 0.18)',
                   boxShadow: '0 4px 15px -4px rgba(200, 120, 115, 0.08)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  gap: '0.75rem',
+                  boxSizing: 'border-box',
                 }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', color: '#766e65', fontSize: '0.85rem', marginBottom: '0.5rem' }}>
-                  <span>Shader Purity & Integrity</span>
-                  <ShieldAlert size={16} color="#10b981" />
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#766e65', fontSize: '0.82rem' }}>
+                  <span style={{ fontWeight: 600 }}>Shader Purity & Integrity</span>
+                  <ShieldAlert size={16} color="#10b981" style={{ flexShrink: 0 }} />
                 </div>
-                <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#1e1b18', marginBottom: '0.5rem' }}>
-                  100% <span style={{ fontSize: '0.9rem', color: '#10b981', fontWeight: 600 }}>Zero Artifacts</span>
+                <div style={{ display: 'flex', alignItems: 'baseline', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <span style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.2rem)', fontWeight: 800, color: '#1e1b18', lineHeight: 1.1 }}>
+                    100%
+                  </span>
+                  <span style={{ fontSize: '0.82rem', color: '#10b981', fontWeight: 700, background: 'rgba(16, 185, 129, 0.1)', padding: '0.2rem 0.5rem', borderRadius: 9999 }}>
+                    Zero Artifacts
+                  </span>
                 </div>
-                <div style={{ fontSize: '0.8rem', color: '#766e65' }}>Full multiply composite over base #faf8f2 color.</div>
+                <div style={{ fontSize: '0.78rem', color: '#766e65', lineHeight: 1.45 }}>
+                  Full multiply composite over base #faf8f2 color.
+                </div>
               </div>
             </div>
 
             {/* Bottom Graphic Matrix Wave */}
             <div
               style={{
-                padding: '1.75rem',
-                borderRadius: '1.5rem',
-                background: 'rgba(255, 255, 255, 0.75)',
+                padding: '1.25rem 1.5rem',
+                borderRadius: '1.25rem',
+                background: 'rgba(255, 255, 255, 0.78)',
                 border: '1px solid rgba(200, 120, 115, 0.15)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 flexWrap: 'wrap',
-                gap: '1.5rem',
+                gap: '1.25rem',
+                boxSizing: 'border-box',
               }}
             >
-              <div>
-                <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#1e1b18', marginBottom: '0.25rem' }}>
+              <div style={{ minWidth: 200, flex: '1 1 220px' }}>
+                <div style={{ fontSize: '0.92rem', fontWeight: 700, color: '#1e1b18', marginBottom: '0.2rem' }}>
                   Real-Time Neural Synchronizer
                 </div>
-                <div style={{ fontSize: '0.85rem', color: '#766e65' }}>
+                <div style={{ fontSize: '0.8rem', color: '#766e65', lineHeight: 1.4 }}>
                   Interactive reactive stream updating synchronously with mouse tracking.
                 </div>
               </div>
 
-              {/* Graphical equalizer bars in rose gold and champagne */}
-              <div style={{ display: 'flex', alignItems: 'flex-end', gap: 5, height: 42 }}>
+              {/* Graphical equalizer bars */}
+              <div style={{ display: 'flex', alignItems: 'flex-end', gap: 4, height: 36, flexShrink: 0 }}>
                 {[45, 68, 85, 30, 92, 100, 75, 60, 88, 52, 70, 95, 80, 65, 90, 100].map((h, i) => (
                   <div
                     key={i}
                     style={{
-                      width: 6,
+                      width: 5,
                       height: `${h}%`,
                       borderRadius: 3,
                       background: i % 2 === 0 ? '#c87873' : '#dfba89',
-                      boxShadow: i % 3 === 0 ? '0 0 8px rgba(200, 120, 115, 0.4)' : 'none',
+                      boxShadow: i % 3 === 0 ? '0 0 6px rgba(200, 120, 115, 0.35)' : 'none',
                     }}
                   />
                 ))}

@@ -63,7 +63,7 @@ export default function Hero({ onOpenContact, onOpenVideo }) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.08] mb-6"
+              className="text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.12] mb-6"
             >
               Architect Next-Gen <br className="hidden sm:inline" />
               <span className="gradient-text-accent">Spatial Intelligence</span> <br className="hidden sm:inline" />
@@ -153,9 +153,9 @@ export default function Hero({ onOpenContact, onOpenVideo }) {
           </div>
 
           {/* Right Column: 3D Holographic Visual & Floating Glass Cards */}
-          <div className="lg:col-span-5 relative flex items-center justify-center">
+          <div className="lg:col-span-5 relative flex items-center justify-center overflow-visible">
             {/* Central Hologram Orb & Gyroscope */}
-            <div className="relative w-[320px] sm:w-[420px] h-[320px] sm:h-[420px] flex items-center justify-center">
+            <div className="relative w-[280px] sm:w-[420px] h-[280px] sm:h-[420px] max-w-full flex items-center justify-center">
               {/* Outer Orbit 1 */}
               <motion.div
                 animate={{ rotate: 360 }}

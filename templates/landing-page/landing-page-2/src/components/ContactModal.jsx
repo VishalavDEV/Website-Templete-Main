@@ -15,8 +15,6 @@ export default function ContactModal({ isOpen, onClose }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  if (!isOpen) return null;
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email) {
@@ -39,7 +37,8 @@ export default function ContactModal({ isOpen, onClose }) {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      {isOpen && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -186,6 +185,7 @@ export default function ContactModal({ isOpen, onClose }) {
           )}
         </motion.div>
       </div>
+      )}
     </AnimatePresence>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Compass, Shield, Cpu, Activity, Play } from 'lucide-react';
+import { ArrowRight, Sparkles, Cpu, Activity, Play, Shield } from 'lucide-react';
 import { heroData } from '../data/landingData';
 
 export default function Hero() {
@@ -14,8 +14,8 @@ export default function Hero() {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        paddingTop: '8.5rem',
-        paddingBottom: '5rem',
+        paddingTop: 'clamp(6.5rem, 12vh, 8.5rem)',
+        paddingBottom: 'clamp(3rem, 6vh, 5rem)',
         overflow: 'hidden',
       }}
     >
@@ -33,8 +33,8 @@ export default function Hero() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '4rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
+            gap: 'clamp(2.5rem, 4vw, 4rem)',
             alignItems: 'center',
           }}
         >
@@ -54,11 +54,11 @@ export default function Hero() {
             {/* Word-by-Word Reveal Headline */}
             <h1
               style={{
-                fontSize: 'clamp(2.8rem, 5.2vw, 4.75rem)',
+                fontSize: 'clamp(2.4rem, 4.8vw, 4.5rem)',
                 fontWeight: 900,
-                lineHeight: 1.08,
+                lineHeight: 1.1,
                 letterSpacing: '-0.03em',
-                marginBottom: '1.75rem',
+                marginBottom: '1.5rem',
                 color: '#1e1b18',
               }}
             >
@@ -92,11 +92,11 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
               style={{
-                fontSize: 'clamp(1.1rem, 1.8vw, 1.25rem)',
+                fontSize: 'clamp(1rem, 1.6vw, 1.2rem)',
                 color: 'var(--text-muted)',
-                lineHeight: 1.75,
+                lineHeight: 1.7,
                 maxWidth: '560px',
-                marginBottom: '2.75rem',
+                marginBottom: '2.25rem',
               }}
             >
               {heroData.subheadline}
@@ -110,17 +110,17 @@ export default function Hero() {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '1.25rem',
+                gap: '1rem',
                 flexWrap: 'wrap',
               }}
             >
-              <a href="#about" className="btn-primary" style={{ padding: '0.95rem 2.2rem', fontSize: '1.05rem' }}>
+              <a href="#about" className="btn-primary" style={{ padding: '0.85rem 1.85rem', fontSize: '0.95rem' }}>
                 <span>{heroData.ctaPrimary}</span>
-                <ArrowRight size={18} />
+                <ArrowRight size={17} />
               </a>
 
-              <a href="#showcase" className="btn-secondary" style={{ padding: '0.95rem 2.2rem', fontSize: '1.05rem' }}>
-                <Play size={16} color="#c87873" fill="#c87873" />
+              <a href="#showcase" className="btn-secondary" style={{ padding: '0.85rem 1.85rem', fontSize: '0.95rem' }}>
+                <Play size={15} color="#c87873" fill="#c87873" />
                 <span>{heroData.ctaSecondary}</span>
               </a>
             </motion.div>
@@ -136,18 +136,21 @@ export default function Hero() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              minHeight: 480,
+              minHeight: 'clamp(360px, 45vw, 480px)',
+              width: '100%',
+              maxWidth: 420,
+              margin: '0 auto',
             }}
           >
-            {/* Concentric Rotating Orbital Rings in Rose Gold */}
+            {/* Concentric Rotating Orbital Rings */}
             <div
               className="animate-spin-slow"
               style={{
                 position: 'absolute',
-                width: 440,
-                height: 440,
+                width: 'min(440px, 90vw)',
+                height: 'min(440px, 90vw)',
                 borderRadius: '50%',
-                border: '1.5px dashed rgba(200, 120, 115, 0.3)',
+                border: '1.5px dashed rgba(200, 120, 115, 0.25)',
                 pointerEvents: 'none',
               }}
             />
@@ -155,10 +158,10 @@ export default function Hero() {
               className="animate-spin-slow"
               style={{
                 position: 'absolute',
-                width: 340,
-                height: 340,
+                width: 'min(340px, 75vw)',
+                height: 'min(340px, 75vw)',
                 borderRadius: '50%',
-                border: '1.5px dashed rgba(223, 186, 137, 0.35)',
+                border: '1.5px dashed rgba(223, 186, 137, 0.3)',
                 animationDirection: 'reverse',
                 pointerEvents: 'none',
               }}
@@ -166,21 +169,22 @@ export default function Hero() {
 
             {/* Central Main Glass Console */}
             <div
-              className="glass-panel animate-float-slow interactive-card"
+              className="glass-panel animate-float-slow"
               style={{
                 position: 'relative',
                 width: '100%',
-                maxWidth: 380,
-                padding: '2.5rem 2rem',
+                maxWidth: 360,
+                padding: 'clamp(1.5rem, 3vw, 2.25rem) clamp(1.25rem, 2.5vw, 1.85rem)',
                 zIndex: 2,
-                borderRadius: '2rem',
+                borderRadius: '1.75rem',
                 border: '1.5px solid rgba(255, 255, 255, 0.9)',
                 background: 'linear-gradient(145deg, rgba(255, 255, 255, 0.88) 0%, rgba(250, 244, 238, 0.78) 100%)',
                 boxShadow: '0 30px 60px -15px rgba(200, 120, 115, 0.2), 0 0 30px rgba(252, 219, 216, 0.4)',
+                boxSizing: 'border-box',
               }}
             >
               {/* Header inside console */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.75rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
                   <div
                     style={{
@@ -192,13 +196,14 @@ export default function Hero() {
                       alignItems: 'center',
                       justifyContent: 'center',
                       color: '#ffffff',
+                      flexShrink: 0,
                     }}
                   >
                     <Cpu size={18} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#1e1b18' }}>Aura Neural Mesh</h3>
-                    <p style={{ fontSize: '0.75rem', color: '#766e65' }}>Rose Gold Atmospheric Core</p>
+                    <h3 style={{ fontSize: '0.92rem', fontWeight: 700, color: '#1e1b18', margin: 0 }}>Aura Neural Mesh</h3>
+                    <p style={{ fontSize: '0.75rem', color: '#766e65', margin: 0 }}>Rose Gold Atmospheric Core</p>
                   </div>
                 </div>
 
@@ -209,15 +214,16 @@ export default function Hero() {
                     borderRadius: '50%',
                     backgroundColor: '#10b981',
                     boxShadow: '0 0 10px #10b981',
+                    flexShrink: 0,
                   }}
                   className="animate-pulse-beacon"
                 />
               </div>
 
               {/* Graphical Metric Bars */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1.75rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', marginBottom: '1.5rem' }}>
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#5e5750', marginBottom: '0.35rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: '#5e5750', marginBottom: '0.3rem' }}>
                     <span>Aura Blend Density</span>
                     <span style={{ color: '#b35d58', fontWeight: 700 }}>99.98%</span>
                   </div>
@@ -227,7 +233,7 @@ export default function Hero() {
                 </div>
 
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#5e5750', marginBottom: '0.35rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: '#5e5750', marginBottom: '0.3rem' }}>
                     <span>Fluid Kinetic Refresh</span>
                     <span style={{ color: '#b35d58', fontWeight: 700 }}>120 FPS</span>
                   </div>
@@ -243,93 +249,95 @@ export default function Hero() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  padding: '0.75rem 1rem',
-                  borderRadius: 14,
+                  padding: '0.65rem 0.85rem',
+                  borderRadius: 12,
                   background: 'rgba(200, 120, 115, 0.08)',
                   border: '1px solid rgba(200, 120, 115, 0.2)',
-                  fontSize: '0.8rem',
+                  fontSize: '0.78rem',
                   color: '#1e1b18',
                   fontWeight: 600,
                 }}
               >
-                <span>Atmospheric GPU Multiply Mode</span>
+                <span>GPU Multiply Mode</span>
                 <span style={{ color: '#b35d58' }}>Active</span>
               </div>
             </div>
 
             {/* Satellite Floating Card 1: Top Left */}
             <div
-              className="glass-panel animate-float-medium interactive-card"
+              className="glass-panel animate-float-medium hero-satellite-1"
               style={{
                 position: 'absolute',
-                top: 10,
-                left: -20,
-                padding: '0.85rem 1.25rem',
+                top: 0,
+                left: 0,
+                padding: '0.65rem 1rem',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '0.75rem',
+                gap: '0.65rem',
                 zIndex: 3,
-                borderRadius: '1rem',
+                borderRadius: '0.85rem',
                 border: '1px solid rgba(255, 255, 255, 0.9)',
-                background: 'rgba(255, 255, 255, 0.85)',
-                boxShadow: '0 15px 35px -5px rgba(200, 120, 115, 0.15)',
+                background: 'rgba(255, 255, 255, 0.9)',
+                boxShadow: '0 10px 25px -5px rgba(200, 120, 115, 0.15)',
               }}
             >
               <div
                 style={{
-                  width: 32,
-                  height: 32,
+                  width: 28,
+                  height: 28,
                   borderRadius: 8,
                   background: 'rgba(200, 120, 115, 0.15)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: '#c87873',
+                  flexShrink: 0,
                 }}
               >
-                <Activity size={17} />
+                <Activity size={15} />
               </div>
               <div>
-                <div style={{ fontSize: '0.7rem', color: '#766e65', textTransform: 'uppercase' }}>Atmosphere</div>
-                <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#1e1b18' }}>Rose Gold</div>
+                <div style={{ fontSize: '0.65rem', color: '#766e65', textTransform: 'uppercase' }}>Atmosphere</div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#1e1b18' }}>Rose Gold</div>
               </div>
             </div>
 
             {/* Satellite Floating Card 2: Bottom Right */}
             <div
-              className="glass-panel animate-float-fast interactive-card"
+              className="glass-panel animate-float-fast hero-satellite-2"
               style={{
                 position: 'absolute',
-                bottom: 20,
-                right: -25,
-                padding: '0.85rem 1.25rem',
+                bottom: 10,
+                right: 0,
+                padding: '0.65rem 1rem',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '0.75rem',
+                gap: '0.65rem',
                 zIndex: 3,
-                borderRadius: '1rem',
+                borderRadius: '0.85rem',
                 border: '1px solid rgba(255, 255, 255, 0.9)',
-                background: 'rgba(255, 255, 255, 0.85)',
-                boxShadow: '0 15px 35px -5px rgba(200, 120, 115, 0.15)',
+                background: 'rgba(255, 255, 255, 0.9)',
+                boxShadow: '0 10px 25px -5px rgba(200, 120, 115, 0.15)',
               }}
             >
               <div
                 style={{
-                  width: 32,
-                  height: 32,
+                  width: 28,
+                  height: 28,
                   borderRadius: 8,
                   background: 'rgba(223, 186, 137, 0.2)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: '#b35d58',
+                  flexShrink: 0,
                 }}
               >
-                <Shield size={17} />
+                <Shield size={15} />
               </div>
               <div>
-                <div style={{ fontSize: '0.7rem', color: '#766e65', textTransform: 'uppercase' }}>Blend Mode</div>
-                <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#1e1b18' }}>Multiply 130px</div>
+                <div style={{ fontSize: '0.65rem', color: '#766e65', textTransform: 'uppercase' }}>Blend Mode</div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#1e1b18' }}>Multiply 130px</div>
               </div>
             </div>
           </motion.div>

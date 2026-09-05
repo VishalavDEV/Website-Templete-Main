@@ -56,18 +56,18 @@ export default function Hero({ onOpenModal, onWatchDemo }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: '130px',
-        paddingBottom: '80px',
+        paddingTop: 'clamp(92px, 14vh, 130px)',
+        paddingBottom: 'clamp(48px, 8vh, 80px)',
         overflow: 'hidden',
       }}
     >
-      <div className="section-wrapper" style={{ padding: '0 24px', width: '100%' }}>
+      <div className="section-wrapper hero-section-wrapper" style={{ padding: '0 24px', width: '100%' }}>
         <div
           className="hero-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
-            gap: '56px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 380px), 1fr))',
+            gap: 'clamp(32px, 5vw, 56px)',
             alignItems: 'center',
           }}
         >
@@ -76,39 +76,44 @@ export default function Hero({ onOpenModal, onWatchDemo }) {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', zIndex: 2 }}
+            className="hero-content-col"
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', zIndex: 2, width: '100%' }}
           >
             {/* Live Status Pill */}
-            <motion.div variants={itemVariants} className="badge-pill badge-pill-pulse" style={{ marginBottom: '22px' }}>
-              <Radio size={14} className="animate-spin-slow" />
+            <motion.div variants={itemVariants} className="badge-pill badge-pill-pulse hero-status-pill" style={{ marginBottom: '18px', maxWidth: '100%', wordBreak: 'break-word' }}>
+              <Radio size={14} className="animate-spin-slow" style={{ flexShrink: 0 }} />
               <span>SYNAPSE SPATIAL FABRIC V3.4 // LIVE ACROSS 250+ EDGES</span>
             </motion.div>
 
             {/* Kinetic Headline */}
             <motion.h1
               variants={itemVariants}
+              className="hero-main-title"
               style={{
-                fontSize: 'clamp(2.6rem, 5.4vw, 4.4rem)',
-                lineHeight: 1.08,
+                fontSize: 'clamp(2.1rem, 4.8vw, 4.2rem)',
+                lineHeight: 1.1,
                 fontWeight: 800,
-                letterSpacing: '-0.038em',
-                marginBottom: '24px',
+                letterSpacing: '-0.035em',
+                marginBottom: '18px',
+                width: '100%',
               }}
             >
-              Synthesize <br />
-              <span className="text-gradient-neon">Spatial Intelligence</span> <br />
+              Synthesize <br className="hero-br" />
+              <span className="text-gradient-neon">Spatial Intelligence</span> <br className="hero-br" />
               at Sub-Millisecond Speed.
             </motion.h1>
 
             {/* Subtitle Description */}
             <motion.p
               variants={itemVariants}
+              className="hero-description-text"
               style={{
-                fontSize: 'clamp(1.05rem, 1.6vw, 1.25rem)',
+                fontSize: 'clamp(0.95rem, 1.4vw, 1.2rem)',
                 color: 'var(--text-secondary)',
-                lineHeight: 1.65,
+                lineHeight: 1.6,
                 maxWidth: '560px',
-                marginBottom: '38px',
+                marginBottom: '28px',
+                width: '100%',
               }}
             >
               The hyper-dimensional neural cloud built for autonomous systems, spatial computing, and zero-latency generative inference. Scale across global GPU clusters with a single command.
@@ -117,20 +122,21 @@ export default function Hero({ onOpenModal, onWatchDemo }) {
             {/* CTA Action Buttons */}
             <motion.div
               variants={itemVariants}
+              className="hero-cta-group"
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: '16px',
+                gap: '14px',
                 alignItems: 'center',
                 width: '100%',
-                marginBottom: '42px',
+                marginBottom: '32px',
               }}
             >
               <button
                 onClick={() => onOpenModal && onOpenModal('Start Free Trial')}
                 className="btn-primary"
                 id="hero-primary-cta"
-                style={{ padding: '16px 32px', fontSize: '1.02rem', borderRadius: '14px' }}
+                style={{ padding: '14px 28px', fontSize: '0.98rem', borderRadius: '14px' }}
               >
                 <span>Deploy Free Cluster</span>
                 <ArrowRight size={18} />
@@ -140,7 +146,7 @@ export default function Hero({ onOpenModal, onWatchDemo }) {
                 onClick={() => scrollToSection('playground')}
                 className="btn-secondary"
                 id="hero-secondary-cta"
-                style={{ padding: '16px 28px', fontSize: '1.02rem', borderRadius: '14px' }}
+                style={{ padding: '14px 26px', fontSize: '0.98rem', borderRadius: '14px' }}
               >
                 <Play size={16} fill="currentColor" />
                 <span>Try Live Playground</span>
@@ -150,11 +156,13 @@ export default function Hero({ onOpenModal, onWatchDemo }) {
             {/* Developer Trust Proof Badges */}
             <motion.div
               variants={itemVariants}
+              className="hero-trust-badges"
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '18px',
-                paddingTop: '22px',
+                flexWrap: 'wrap',
+                gap: '16px',
+                paddingTop: '18px',
                 borderTop: '1px solid rgba(255, 255, 255, 0.08)',
                 width: '100%',
               }}
@@ -171,8 +179,8 @@ export default function Hero({ onOpenModal, onWatchDemo }) {
                     src={avatar}
                     alt={`Developer avatar ${idx + 1}`}
                     style={{
-                      width: '38px',
-                      height: '38px',
+                      width: '36px',
+                      height: '36px',
                       borderRadius: '50%',
                       border: '2px solid #040508',
                       marginLeft: idx > 0 ? '-10px' : '0',
@@ -182,7 +190,7 @@ export default function Hero({ onOpenModal, onWatchDemo }) {
                   />
                 ))}
               </div>
-              <div style={{ fontSize: '0.88rem' }}>
+              <div style={{ fontSize: '0.86rem' }}>
                 <span style={{ color: '#FFFFFF', fontWeight: 700 }}>45,000+ engineers</span> & 800+ AI startups deploy daily
               </div>
             </motion.div>
@@ -190,12 +198,14 @@ export default function Hero({ onOpenModal, onWatchDemo }) {
 
           {/* Right Column: 3D Holographic Parallax Matrix Visual */}
           <div
+            className="hero-matrix-visual"
             style={{
               position: 'relative',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              minHeight: '490px',
+              minHeight: '440px',
+              width: '100%',
             }}
           >
             {/* Parallax Container driven by mouse coordinates */}

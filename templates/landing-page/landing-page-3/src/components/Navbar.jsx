@@ -47,6 +47,18 @@ export default function Navbar({ onOpenModal }) {
     return () => window.removeEventListener('scroll', handleScrollSpy);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   const handleNavClick = (e, href) => {
     e.preventDefault();
     setMobileMenuOpen(false);
@@ -297,26 +309,30 @@ export default function Navbar({ onOpenModal }) {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -16, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -16, scale: 0.98 }}
             transition={{ duration: 0.25 }}
             style={{
               position: 'fixed',
-              top: '80px',
+              top: '76px',
               left: '16px',
               right: '16px',
-              background: 'rgba(8, 11, 20, 0.96)',
+              maxHeight: 'calc(100dvh - 90px)',
+              overflowY: 'auto',
+              WebkitOverflowScrolling: 'touch',
+              overscrollBehavior: 'contain',
+              background: 'rgba(8, 11, 20, 0.97)',
               backdropFilter: 'blur(28px)',
               WebkitBackdropFilter: 'blur(28px)',
               zIndex: 999,
-              padding: '24px',
+              padding: '20px',
               borderRadius: '24px',
-              border: '1px solid rgba(0, 229, 255, 0.3)',
-              boxShadow: '0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 229, 255, 0.15)',
+              border: '1px solid rgba(0, 229, 255, 0.35)',
+              boxShadow: '0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(0, 229, 255, 0.2)',
               display: 'flex',
               flexDirection: 'column',
-              gap: '12px',
+              gap: '14px',
             }}
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -325,20 +341,20 @@ export default function Navbar({ onOpenModal }) {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: idx * 0.04 }}
+                  transition={{ delay: idx * 0.03 }}
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     padding: '12px 16px',
                     borderRadius: '12px',
-                    fontSize: '1rem',
+                    fontSize: '0.98rem',
                     fontWeight: 600,
                     color: activeSection === link.href.substring(1) ? 'var(--neon-cyan)' : '#FFFFFF',
-                    background: activeSection === link.href.substring(1) ? 'rgba(0, 229, 255, 0.1)' : 'rgba(255, 255, 255, 0.03)',
-                    border: '1px solid rgba(255, 255, 255, 0.06)',
+                    background: activeSection === link.href.substring(1) ? 'rgba(0, 229, 255, 0.12)' : 'rgba(255, 255, 255, 0.03)',
+                    border: activeSection === link.href.substring(1) ? '1px solid rgba(0, 229, 255, 0.3)' : '1px solid rgba(255, 255, 255, 0.06)',
                   }}
                 >
                   <span>{link.name}</span>
@@ -347,17 +363,18 @@ export default function Navbar({ onOpenModal }) {
               ))}
             </div>
 
-            <div style={{ paddingTop: '16px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+            <div style={{ paddingTop: '14px', paddingBottom: '4px', borderTop: '1px solid rgba(255, 255, 255, 0.1)', flexShrink: 0 }}>
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenModal && onOpenModal('Launch Console');
                 }}
                 className="btn-primary"
-                style={{ width: '100%', padding: '14px', borderRadius: '12px' }}
+                style={{ width: '100%', padding: '14px', borderRadius: '12px', fontSize: '0.96rem' }}
+                id="mobile-drawer-launch-btn"
               >
                 <Sparkles size={18} />
-                <span>Launch Neural Studio</span>
+                <span>Launch Studio</span>
               </button>
             </div>
           </motion.div>
