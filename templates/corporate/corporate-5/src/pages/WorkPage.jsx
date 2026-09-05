@@ -40,15 +40,15 @@ export default function WorkPage() {
             <div className="asym-proj-comp-01">
               <div>
                 <div className="meta-tag-copper" style={{ marginBottom: '8px' }}>PROJECT 01 // {CASE_STUDIES[0].industry}</div>
-                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '34px', fontWeight: 700, color: 'var(--c-charcoal)', marginBottom: '8px' }}>
+                <h2 className="asym-proj-title" style={{ marginBottom: '8px' }}>
                   {CASE_STUDIES[0].title}
                 </h2>
                 <div className="meta-tag-eucalyptus" style={{ marginBottom: '14px' }}>CLIENT: {CASE_STUDIES[0].client}</div>
                 <p style={{ fontSize: '16px', color: 'var(--c-eucalyptus)', lineHeight: '1.65', marginBottom: '20px' }}>
                   {CASE_STUDIES[0].subtitle}
                 </p>
-                <div style={{ borderLeft: '3px solid var(--c-copper)', paddingLeft: '18px', marginBottom: '22px' }}>
-                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '40px', fontWeight: 700, color: 'var(--c-copper)' }}>{CASE_STUDIES[0].impactMetric}</div>
+                <div className="asym-impact-card">
+                  <div className="asym-impact-metric-text">{CASE_STUDIES[0].impactMetric}</div>
                   <div className="meta-tag-eucalyptus">{CASE_STUDIES[0].impactLabel}</div>
                 </div>
                 <div style={{ marginBottom: '18px' }}>
@@ -79,15 +79,15 @@ export default function WorkPage() {
               </div>
               <div>
                 <div className="meta-tag-copper" style={{ marginBottom: '8px' }}>PROJECT 02 // {CASE_STUDIES[1].industry}</div>
-                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '34px', fontWeight: 700, color: 'var(--c-charcoal)', marginBottom: '8px' }}>
+                <h2 className="asym-proj-title" style={{ marginBottom: '8px' }}>
                   {CASE_STUDIES[1].title}
                 </h2>
                 <div className="meta-tag-eucalyptus" style={{ marginBottom: '14px' }}>CLIENT: {CASE_STUDIES[1].client}</div>
                 <p style={{ fontSize: '16px', color: 'var(--c-eucalyptus)', lineHeight: '1.65', marginBottom: '20px' }}>
                   {CASE_STUDIES[1].subtitle}
                 </p>
-                <div style={{ borderLeft: '3px solid var(--c-copper)', paddingLeft: '18px', marginBottom: '22px' }}>
-                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '40px', fontWeight: 700, color: 'var(--c-copper)' }}>{CASE_STUDIES[1].impactMetric}</div>
+                <div className="asym-impact-card">
+                  <div className="asym-impact-metric-text">{CASE_STUDIES[1].impactMetric}</div>
                   <div className="meta-tag-eucalyptus">{CASE_STUDIES[1].impactLabel}</div>
                 </div>
                 <div style={{ marginBottom: '18px' }}>
@@ -113,7 +113,7 @@ export default function WorkPage() {
               <img src={PROJECT_PHOTOS[2]} alt={CASE_STUDIES[2].title} className="asym-proj-bg-img" />
               <div className="asym-proj-overlap-card">
                 <div className="meta-tag-copper" style={{ marginBottom: '6px' }}>PROJECT 03 // {CASE_STUDIES[2].industry}</div>
-                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '30px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>
+                <h2 className="asym-proj-title" style={{ color: '#FFFFFF', marginBottom: '8px' }}>
                   {CASE_STUDIES[2].title}
                 </h2>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--c-eucalyptus-light)', marginBottom: '12px' }}>
@@ -122,8 +122,8 @@ export default function WorkPage() {
                 <p style={{ fontSize: '15px', color: 'var(--c-eucalyptus-light)', lineHeight: '1.6', marginBottom: '16px' }}>
                   {CASE_STUDIES[2].subtitle}
                 </p>
-                <div style={{ marginBottom: '18px' }}>
-                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '36px', fontWeight: 700, color: 'var(--c-copper)' }}>{CASE_STUDIES[2].impactMetric}</div>
+                <div className="asym-impact-card" style={{ marginBottom: '18px' }}>
+                  <div className="asym-impact-metric-text">{CASE_STUDIES[2].impactMetric}</div>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--c-eucalyptus-light)', textTransform: 'uppercase' }}>{CASE_STUDIES[2].impactLabel}</div>
                 </div>
                 <Link to="/contact" className="btn-copper-primary">
@@ -140,15 +140,15 @@ export default function WorkPage() {
               </div>
               <div>
                 <div className="meta-tag-copper" style={{ marginBottom: '8px' }}>PROJECT 04 // {CASE_STUDIES[3].industry}</div>
-                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '34px', fontWeight: 700, color: 'var(--c-charcoal)', marginBottom: '8px' }}>
+                <h2 className="asym-proj-title" style={{ marginBottom: '8px' }}>
                   {CASE_STUDIES[3].title}
                 </h2>
                 <div className="meta-tag-eucalyptus" style={{ marginBottom: '14px' }}>CLIENT: {CASE_STUDIES[3].client}</div>
                 <p style={{ fontSize: '16px', color: 'var(--c-eucalyptus)', lineHeight: '1.65', marginBottom: '20px' }}>
                   {CASE_STUDIES[3].subtitle}
                 </p>
-                <div style={{ borderLeft: '3px solid var(--c-copper)', paddingLeft: '18px', marginBottom: '22px' }}>
-                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '40px', fontWeight: 700, color: 'var(--c-copper)' }}>{CASE_STUDIES[3].impactMetric}</div>
+                <div className="asym-impact-card">
+                  <div className="asym-impact-metric-text">{CASE_STUDIES[3].impactMetric}</div>
                   <div className="meta-tag-eucalyptus">{CASE_STUDIES[3].impactLabel}</div>
                 </div>
                 <div style={{ marginBottom: '18px' }}>

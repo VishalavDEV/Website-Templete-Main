@@ -153,16 +153,25 @@ export const RegisterPage: React.FC = () => {
             <p className="text-[11px] text-red-600">{errors.acceptTerms.message}</p>
           )}
 
-          <Button
-            type="submit"
-            variant="primary"
-            size="md"
-            className="w-full mt-2"
-            isLoading={isSubmitting}
-            icon={<ArrowRight className="w-4 h-4" />}
-          >
-            Create Organization Account
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-2 mt-2">
+            <Button
+              type="submit"
+              variant="primary"
+              size="md"
+              className="flex-1"
+              isLoading={isSubmitting}
+              icon={<ArrowRight className="w-4 h-4" />}
+            >
+              Create Organization Account
+            </Button>
+            <Button
+              to="/"
+              variant="secondary"
+              size="md"
+            >
+              Cancel
+            </Button>
+          </div>
 
           <div className="text-center pt-4 border-t border-slate-200 text-xs text-slate-600">
             Already have an account?{' '}

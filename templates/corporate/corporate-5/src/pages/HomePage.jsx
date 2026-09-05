@@ -178,7 +178,7 @@ export default function HomePage() {
           </div>
 
           {/* Active Specification Detail Card */}
-          <div style={{ background: 'var(--c-charcoal-surface)', border: '1px solid var(--border-dark)', padding: '36px', marginTop: '30px', borderRadius: '2px', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '40px' }}>
+          <div className="asym-service-spec-card" style={{ background: 'var(--c-charcoal-surface)', border: '1px solid var(--border-dark)', padding: '36px', marginTop: '30px', borderRadius: '2px' }}>
             <div>
               <div className="meta-tag-copper" style={{ marginBottom: '8px' }}>
                 ACTIVE SPECIFICATION // {CAPABILITIES_DATA[activeServiceIdx].code}
@@ -231,7 +231,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: '36px', alignItems: 'stretch' }}>
+          <div className="asym-solutions-grid">
             {/* Left: Nucleus Command Hub */}
             <div style={{ background: 'var(--c-charcoal)', color: '#FFFFFF', padding: '40px 36px', borderRadius: '2px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 20px 50px rgba(23, 34, 27, 0.15)' }}>
               <div>
@@ -267,7 +267,7 @@ export default function HomePage() {
             </div>
 
             {/* Right: 6 Clean Architectural Nodes (3x2 Grid) */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px' }}>
+            <div className="asym-solutions-nodes-grid">
               {TECH_STACK_LAYERS.map((node) => {
                 const isSelected = selectedTechNode.id === node.id;
                 return (
@@ -423,15 +423,15 @@ export default function HomePage() {
             <div className="asym-proj-comp-01">
               <div>
                 <div className="meta-tag-copper" style={{ marginBottom: '8px' }}>PROJECT 01 // {CASE_STUDIES[0].industry}</div>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '34px', fontWeight: 700, color: 'var(--c-charcoal)', marginBottom: '8px' }}>
+                <h3 className="asym-proj-title">
                   {CASE_STUDIES[0].title}
                 </h3>
                 <div className="meta-tag-eucalyptus" style={{ marginBottom: '16px' }}>CLIENT: {CASE_STUDIES[0].client}</div>
                 <p style={{ fontSize: '16px', color: 'var(--c-eucalyptus)', lineHeight: '1.65', marginBottom: '22px' }}>
                   {CASE_STUDIES[0].subtitle}
                 </p>
-                <div style={{ borderLeft: '3px solid var(--c-copper)', paddingLeft: '16px', marginBottom: '24px' }}>
-                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '40px', fontWeight: 700, color: 'var(--c-copper)' }}>{CASE_STUDIES[0].impactMetric}</div>
+                <div className="asym-impact-card">
+                  <div className="asym-impact-metric-text">{CASE_STUDIES[0].impactMetric}</div>
                   <div className="meta-tag-eucalyptus">{CASE_STUDIES[0].impactLabel}</div>
                 </div>
                 <Link to="/work" className="btn-copper-primary">
@@ -451,15 +451,15 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="meta-tag-copper" style={{ marginBottom: '8px' }}>PROJECT 02 // {CASE_STUDIES[1].industry}</div>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '34px', fontWeight: 700, color: 'var(--c-charcoal)', marginBottom: '8px' }}>
+                <h3 className="asym-proj-title">
                   {CASE_STUDIES[1].title}
                 </h3>
                 <div className="meta-tag-eucalyptus" style={{ marginBottom: '16px' }}>CLIENT: {CASE_STUDIES[1].client}</div>
                 <p style={{ fontSize: '16px', color: 'var(--c-eucalyptus)', lineHeight: '1.65', marginBottom: '22px' }}>
                   {CASE_STUDIES[1].subtitle}
                 </p>
-                <div style={{ borderLeft: '3px solid var(--c-copper)', paddingLeft: '16px', marginBottom: '24px' }}>
-                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '40px', fontWeight: 700, color: 'var(--c-copper)' }}>{CASE_STUDIES[1].impactMetric}</div>
+                <div className="asym-impact-card">
+                  <div className="asym-impact-metric-text">{CASE_STUDIES[1].impactMetric}</div>
                   <div className="meta-tag-eucalyptus">{CASE_STUDIES[1].impactLabel}</div>
                 </div>
                 <Link to="/work" className="btn-copper-primary">
@@ -474,14 +474,14 @@ export default function HomePage() {
               <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80" alt={CASE_STUDIES[2].title} className="asym-proj-img" />
               <div style={{ maxWidth: '650px' }}>
                 <div className="meta-tag-copper" style={{ marginBottom: '6px' }}>PROJECT 03 // {CASE_STUDIES[2].industry}</div>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '34px', fontWeight: 700, color: 'var(--c-charcoal)', marginBottom: '8px' }}>
+                <h3 className="asym-proj-title">
                   {CASE_STUDIES[2].title}
                 </h3>
                 <p style={{ fontSize: '16px', color: 'var(--c-eucalyptus)', lineHeight: '1.65', marginBottom: '18px' }}>
                   {CASE_STUDIES[2].subtitle}
                 </p>
-                <div style={{ borderLeft: '3px solid var(--c-copper)', paddingLeft: '16px', marginBottom: '24px' }}>
-                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '40px', fontWeight: 700, color: 'var(--c-copper)' }}>{CASE_STUDIES[2].impactMetric}</div>
+                <div className="asym-impact-card">
+                  <div className="asym-impact-metric-text">{CASE_STUDIES[2].impactMetric}</div>
                   <div className="meta-tag-eucalyptus">{CASE_STUDIES[2].impactLabel}</div>
                 </div>
                 <Link to="/work" className="btn-copper-primary">
@@ -496,14 +496,14 @@ export default function HomePage() {
               <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80" alt={CASE_STUDIES[3].title} className="asym-proj-bg-img" />
               <div className="asym-proj-overlap-card">
                 <div className="meta-tag-copper" style={{ marginBottom: '8px' }}>PROJECT 04 // {CASE_STUDIES[3].industry}</div>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '34px', fontWeight: 700, color: '#FFFFFF', marginBottom: '10px' }}>
+                <h3 className="asym-proj-title" style={{ color: '#FFFFFF' }}>
                   {CASE_STUDIES[3].title}
                 </h3>
                 <p style={{ fontSize: '15px', color: 'var(--c-eucalyptus-light)', lineHeight: '1.6', marginBottom: '20px' }}>
                   {CASE_STUDIES[3].subtitle}
                 </p>
-                <div style={{ borderLeft: '3px solid var(--c-copper)', paddingLeft: '16px', marginBottom: '20px' }}>
-                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '38px', fontWeight: 700, color: 'var(--c-copper)' }}>{CASE_STUDIES[3].impactMetric}</div>
+                <div className="asym-impact-card" style={{ marginBottom: '20px' }}>
+                  <div className="asym-impact-metric-text">{CASE_STUDIES[3].impactMetric}</div>
                   <div className="meta-tag-on-dark">{CASE_STUDIES[3].impactLabel}</div>
                 </div>
                 <Link to="/work" className="btn-copper-primary">

@@ -88,16 +88,6 @@ export default function CaseStudies() {
             {filteredStudies.map((study) => (
               <div
                 key={study.id}
-                style={{
-                  backgroundColor: '#191919',
-                  border: '1px solid rgba(255, 255, 255, 0.14)',
-                  borderRadius: '4px',
-                  padding: '48px',
-                  display: 'grid',
-                  gridTemplateColumns: 'minmax(280px, 360px) 1fr',
-                  gap: '48px',
-                  alignItems: 'center',
-                }}
                 className="study-row-card"
               >
                 {/* Image */}
@@ -143,12 +133,13 @@ export default function CaseStudies() {
                   <Link to={`/case-studies/${study.id}`}>
                     <h3
                       style={{
-                        fontSize: 'clamp(24px, 2.5vw, 32px)',
+                        fontSize: 'clamp(22px, 2.5vw, 32px)',
                         fontWeight: 800,
                         color: '#FFFFFF',
                         lineHeight: 1.2,
                         marginBottom: '12px',
                         transition: 'color 0.2s ease',
+                        wordBreak: 'break-word',
                       }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = '#C8F169')}
                       onMouseLeave={(e) => (e.currentTarget.style.color = '#FFFFFF')}
@@ -157,7 +148,7 @@ export default function CaseStudies() {
                     </h3>
                   </Link>
 
-                  <p style={{ fontSize: '15px', color: '#9B9B9B', lineHeight: 1.6, marginBottom: '24px' }}>
+                  <p style={{ fontSize: '15px', color: '#9B9B9B', lineHeight: 1.6, marginBottom: '24px', wordBreak: 'break-word' }}>
                     {study.headline}
                   </p>
 
@@ -165,7 +156,7 @@ export default function CaseStudies() {
                   <div
                     style={{
                       display: 'grid',
-                      gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))',
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 110px), 1fr))',
                       gap: '16px',
                       paddingTop: '20px',
                       borderTop: '1px solid rgba(255, 255, 255, 0.08)',

@@ -74,13 +74,12 @@ export default function Navbar() {
               </Link>
 
               <button
-                className="btn-charcoal-outline"
-                style={{ display: 'none', padding: '8px 10px' }}
+                className="asym-mobile-toggle-btn"
                 id="asym-mobile-trigger"
                 onClick={() => setMobileOpen(true)}
                 aria-label="Open navigation menu"
               >
-                <Menu size={18} />
+                <Menu size={20} />
               </button>
             </div>
           </div>
@@ -97,46 +96,46 @@ export default function Navbar() {
 
           <button
             onClick={() => setMobileOpen(false)}
-            style={{ width: '40px', height: '40px', borderRadius: '2px', background: 'rgba(255,255,255,0.1)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            className="asym-mobile-close-btn"
             aria-label="Close menu"
           >
             <X size={20} />
           </button>
         </div>
 
-        <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '24px', margin: '40px 0' }}>
+        <ul className="asym-mobile-links-list">
           <li>
-            <NavLink to="/company" style={{ fontFamily: 'var(--font-serif)', fontSize: '32px', color: '#FFFFFF' }}>
+            <NavLink to="/company" onClick={() => setMobileOpen(false)}>
               01 // About
             </NavLink>
           </li>
           <li>
-            <NavLink to="/capabilities" style={{ fontFamily: 'var(--font-serif)', fontSize: '32px', color: '#FFFFFF' }}>
+            <NavLink to="/capabilities" onClick={() => setMobileOpen(false)}>
               02 // Capabilities
             </NavLink>
           </li>
           <li>
-            <NavLink to="/technology" style={{ fontFamily: 'var(--font-serif)', fontSize: '32px', color: '#FFFFFF' }}>
+            <NavLink to="/technology" onClick={() => setMobileOpen(false)}>
               03 // Solutions
             </NavLink>
           </li>
           <li>
-            <NavLink to="/industries" style={{ fontFamily: 'var(--font-serif)', fontSize: '32px', color: '#FFFFFF' }}>
+            <NavLink to="/industries" onClick={() => setMobileOpen(false)}>
               04 // Industries
             </NavLink>
           </li>
           <li>
-            <NavLink to="/work" style={{ fontFamily: 'var(--font-serif)', fontSize: '32px', color: '#FFFFFF' }}>
+            <NavLink to="/work" onClick={() => setMobileOpen(false)}>
               05 // Work
             </NavLink>
           </li>
           <li>
-            <NavLink to="/insights" style={{ fontFamily: 'var(--font-serif)', fontSize: '32px', color: '#FFFFFF' }}>
+            <NavLink to="/insights" onClick={() => setMobileOpen(false)}>
               06 // Insights
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contact" style={{ fontFamily: 'var(--font-serif)', fontSize: '32px', color: 'var(--c-copper)' }}>
+            <NavLink to="/contact" onClick={() => setMobileOpen(false)} style={{ color: 'var(--c-copper)' }}>
               07 // Contact
             </NavLink>
           </li>

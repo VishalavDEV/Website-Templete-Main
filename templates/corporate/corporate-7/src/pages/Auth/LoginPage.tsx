@@ -125,16 +125,25 @@ export const LoginPage: React.FC = () => {
             </label>
           </div>
 
-          <Button
-            type="submit"
-            variant="primary"
-            size="md"
-            className="w-full mt-2"
-            isLoading={isSubmitting}
-            icon={<ArrowRight className="w-4 h-4" />}
-          >
-            Sign In to Portal
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-2 mt-2">
+            <Button
+              type="submit"
+              variant="primary"
+              size="md"
+              className="flex-1"
+              isLoading={isSubmitting}
+              icon={<ArrowRight className="w-4 h-4" />}
+            >
+              Sign In to Portal
+            </Button>
+            <Button
+              to="/"
+              variant="secondary"
+              size="md"
+            >
+              Cancel
+            </Button>
+          </div>
 
           <div className="text-center pt-4 border-t border-slate-200 text-xs text-slate-600">
             Don't have an enterprise account?{' '}

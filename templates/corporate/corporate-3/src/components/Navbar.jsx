@@ -206,14 +206,18 @@ export default function Navbar() {
           height: '70px',
           backgroundColor: '#111111',
           borderBottom: '1px solid rgba(255, 255, 255, 0.14)',
-          zIndex: 998,
+          zIndex: 1001,
           display: 'none',
           alignItems: 'center',
           justifyContent: 'space-between',
           padding: '0 24px',
         }}
       >
-        <Link to="/" style={{ fontSize: '20px', fontWeight: 800, color: '#FFFFFF', letterSpacing: '0.08em' }}>
+        <Link
+          to="/"
+          onClick={() => setMobileMenuOpen(false)}
+          style={{ fontSize: '20px', fontWeight: 800, color: '#FFFFFF', letterSpacing: '0.08em' }}
+        >
           VANTAGE <span style={{ color: '#C8F169' }}>■</span>
         </Link>
 
@@ -227,7 +231,9 @@ export default function Navbar() {
             padding: '8px 14px',
             border: '1px solid rgba(255, 255, 255, 0.2)',
             borderRadius: '2px',
+            cursor: 'pointer',
           }}
+          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
         >
           {mobileMenuOpen ? 'CLOSE ✕' : 'MENU'}
         </button>
@@ -236,31 +242,37 @@ export default function Navbar() {
       {/* MOBILE FULL-SCREEN MENU OVERLAY */}
       {mobileMenuOpen && (
         <div
+          className="mobile-nav-overlay"
           style={{
             position: 'fixed',
             inset: 0,
             backgroundColor: '#111111',
-            zIndex: 999,
-            padding: '100px 32px 40px 32px',
+            zIndex: 1000,
+            padding: '90px 24px 36px 24px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
+            overflowY: 'auto',
+            WebkitOverflowScrolling: 'touch',
+            maxHeight: '100vh',
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <div style={{ fontSize: '11px', letterSpacing: '0.14em', color: '#9B9B9B', textTransform: 'uppercase' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
+            <div style={{ fontSize: '11px', letterSpacing: '0.14em', color: '#9B9B9B', textTransform: 'uppercase', marginBottom: '8px' }}>
               NAVIGATION
             </div>
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
+                onClick={() => setMobileMenuOpen(false)}
                 style={{
-                  fontSize: '26px',
+                  fontSize: 'clamp(20px, 5vw, 26px)',
                   fontWeight: 800,
                   color: location.pathname.startsWith(link.path) ? '#C8F169' : '#FFFFFF',
                   display: 'flex',
                   justifyContent: 'space-between',
+                  alignItems: 'center',
                   borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
                   paddingBottom: '14px',
                 }}
@@ -271,12 +283,14 @@ export default function Navbar() {
             ))}
             <Link
               to="/solutions"
+              onClick={() => setMobileMenuOpen(false)}
               style={{
-                fontSize: '26px',
+                fontSize: 'clamp(20px, 5vw, 26px)',
                 fontWeight: 800,
                 color: location.pathname === '/solutions' ? '#C8F169' : '#FFFFFF',
                 display: 'flex',
                 justifyContent: 'space-between',
+                alignItems: 'center',
                 borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
                 paddingBottom: '14px',
               }}
@@ -286,11 +300,12 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <div>
+          <div style={{ paddingTop: '16px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
             <Link
               to="/contact"
+              onClick={() => setMobileMenuOpen(false)}
               className="btn btn-primary"
-              style={{ width: '100%', padding: '18px 0', fontSize: '14px' }}
+              style={{ width: '100%', padding: '16px 0', fontSize: '13px' }}
             >
               <span>LET'S TALK</span>
               <span style={{ fontSize: '16px' }}>↗</span>

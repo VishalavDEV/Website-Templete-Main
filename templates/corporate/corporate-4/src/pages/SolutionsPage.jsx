@@ -129,15 +129,9 @@ export const SolutionsPage = ({ onOpenContact }) => {
                 <div
                   key={sol.id}
                   id={sol.id}
-                  style={{
-                    backgroundColor: "var(--bg-sand-light)",
-                    border: "2px solid var(--bg-espresso)",
-                    borderRadius: "24px",
-                    padding: "3rem",
-                    boxShadow: "10px 10px 0 var(--bg-terracotta)"
-                  }}
+                  className="services-card-item"
                 >
-                  <div style={{ display: "grid", gridTemplateColumns: "1.25fr 0.75fr", gap: "3.5rem" }}>
+                  <div className="services-card-grid">
                     {/* Left Details */}
                     <div>
                       <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1rem" }}>
@@ -168,7 +162,7 @@ export const SolutionsPage = ({ onOpenContact }) => {
                         <div className="editorial-tag" style={{ color: "var(--text-espresso)", marginBottom: "0.75rem" }}>
                           ARCHITECTURAL PILLARS
                         </div>
-                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
+                        <div className="services-capabilities-subgrid">
                           {sol.pillars.map((pil, pIdx) => (
                             <div key={pIdx} style={{ display: "flex", alignItems: "flex-start", gap: "0.6rem", fontSize: "0.92rem", color: "var(--text-espresso)" }}>
                               <CheckCircle2 size={16} color="var(--bg-terracotta)" style={{ marginTop: "3px", flexShrink: 0 }} />
@@ -203,17 +197,7 @@ export const SolutionsPage = ({ onOpenContact }) => {
                     </div>
 
                     {/* Right Outcomes Box */}
-                    <div
-                      style={{
-                        backgroundColor: "var(--bg-espresso)",
-                        color: "var(--text-cream)",
-                        borderRadius: "18px",
-                        padding: "2.25rem",
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "space-between"
-                      }}
-                    >
+                    <div className="services-right-panel">
                       <div>
                         <div className="editorial-tag" style={{ color: "var(--accent-chartreuse)", marginBottom: "1.25rem" }}>
                           IMPACT BENCHMARK & TELEMETRY

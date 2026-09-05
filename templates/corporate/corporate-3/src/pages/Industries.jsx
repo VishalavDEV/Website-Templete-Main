@@ -41,12 +41,7 @@ export default function Industries() {
             {industriesData.map((ind) => (
               <div
                 key={ind.id}
-                style={{
-                  backgroundColor: '#111111',
-                  border: '1px solid rgba(255, 255, 255, 0.14)',
-                  padding: '48px',
-                  borderRadius: '4px',
-                }}
+                className="industry-sector-card"
               >
                 <div
                   style={{
@@ -64,7 +59,7 @@ export default function Industries() {
                     <span style={{ fontSize: '14px', fontWeight: 800, color: '#C8F169' }}>
                       {ind.code}
                     </span>
-                    <h3 style={{ fontSize: '32px', fontWeight: 800, color: '#FFFFFF' }}>
+                    <h3 style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 800, color: '#FFFFFF' }}>
                       {ind.name}
                     </h3>
                   </div>
@@ -76,7 +71,7 @@ export default function Industries() {
                   </div>
                 </div>
 
-                <p style={{ fontSize: '18px', color: '#F4F4F4', marginBottom: '24px', lineHeight: 1.6 }}>
+                <p style={{ fontSize: '17px', color: '#F4F4F4', marginBottom: '24px', lineHeight: 1.6, wordBreak: 'break-word' }}>
                   {ind.tagline}
                 </p>
 
@@ -90,24 +85,16 @@ export default function Industries() {
                 </div>
 
                 {/* Challenges & Solutions Split */}
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                    gap: '32px',
-                    paddingTop: '24px',
-                    borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-                  }}
-                >
+                <div className="industry-split-grid">
                   <div>
                     <div style={{ fontSize: '12px', fontWeight: 800, color: '#FFFFFF', letterSpacing: '0.1em', marginBottom: '12px' }}>
                       PRIMARY SECTOR VULNERABILITIES
                     </div>
-                    <ul style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                       {ind.challenges.map((c, i) => (
-                        <li key={i} style={{ fontSize: '14px', color: '#9B9B9B', display: 'flex', gap: '8px' }}>
-                          <span style={{ color: '#9B9B9B' }}>•</span>
-                          <span>{c}</span>
+                        <li key={i} style={{ fontSize: '14px', color: '#9B9B9B', display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                          <span style={{ color: '#9B9B9B', flexShrink: 0, marginTop: '2px' }}>•</span>
+                          <span style={{ minWidth: 0, wordBreak: 'break-word', overflowWrap: 'break-word' }}>{c}</span>
                         </li>
                       ))}
                     </ul>
@@ -117,11 +104,11 @@ export default function Industries() {
                     <div style={{ fontSize: '12px', fontWeight: 800, color: '#C8F169', letterSpacing: '0.1em', marginBottom: '12px' }}>
                       VANTAGE TRANSFORMATION RESPONSE
                     </div>
-                    <ul style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                       {ind.solutions.map((s, i) => (
-                        <li key={i} style={{ fontSize: '14px', color: '#F4F4F4', display: 'flex', gap: '8px' }}>
-                          <span style={{ color: '#C8F169' }}>✓</span>
-                          <span>{s}</span>
+                        <li key={i} style={{ fontSize: '14px', color: '#F4F4F4', display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                          <span style={{ color: '#C8F169', flexShrink: 0, marginTop: '2px' }}>✓</span>
+                          <span style={{ minWidth: 0, wordBreak: 'break-word', overflowWrap: 'break-word' }}>{s}</span>
                         </li>
                       ))}
                     </ul>

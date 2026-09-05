@@ -94,7 +94,7 @@ export const WarmDigitalSystem = () => {
           </div>
 
           {/* Active Diagnostic Detail Box */}
-          <div style={{ marginTop: "2.5rem", background: "var(--bg-espresso-card)", borderRadius: "20px", border: "1px solid var(--border-cream-thin)", padding: "2rem 2.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "2rem" }}>
+          <div className="warm-system-diagnostic-box">
             <div>
               <div className="editorial-tag" style={{ color: "var(--accent-chartreuse)", marginBottom: "0.5rem" }}>
                 INSPECTING {current.title} TIER

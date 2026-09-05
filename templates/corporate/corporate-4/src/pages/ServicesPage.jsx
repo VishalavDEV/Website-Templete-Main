@@ -30,15 +30,9 @@ export const ServicesPage = ({ onOpenContact }) => {
               <div
                 key={service.id}
                 id={service.id}
-                style={{
-                  backgroundColor: "var(--bg-sand-light)",
-                  border: "2px solid var(--bg-espresso)",
-                  borderRadius: "24px",
-                  padding: "3rem",
-                  boxShadow: "10px 10px 0 var(--bg-terracotta)"
-                }}
+                className="services-card-item"
               >
-                <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "3rem" }}>
+                <div className="services-card-grid">
                   {/* Left Column: Details */}
                   <div>
                     <div style={{ display: "flex", alignItems: "baseline", gap: "1.25rem", marginBottom: "1rem" }}>
@@ -66,7 +60,7 @@ export const ServicesPage = ({ onOpenContact }) => {
                       <div className="editorial-tag" style={{ color: "var(--text-espresso)", marginBottom: "0.75rem" }}>
                         KEY CAPABILITIES
                       </div>
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
+                      <div className="services-capabilities-subgrid">
                         {service.capabilities.map((cap, cIdx) => (
                           <div key={cIdx} style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.92rem", color: "var(--text-espresso)" }}>
                             <span style={{ color: "var(--bg-terracotta)", fontWeight: "bold" }}>✔</span>
@@ -101,17 +95,7 @@ export const ServicesPage = ({ onOpenContact }) => {
                   </div>
 
                   {/* Right Column: Outcomes & Action */}
-                  <div
-                    style={{
-                      backgroundColor: "var(--bg-espresso)",
-                      color: "var(--text-cream)",
-                      borderRadius: "18px",
-                      padding: "2.25rem",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-between"
-                    }}
-                  >
+                  <div className="services-right-panel">
                     <div>
                       <div className="editorial-tag" style={{ color: "var(--accent-chartreuse)", marginBottom: "1.25rem" }}>
                         DELIVERABLES & BENCHMARKS

@@ -82,30 +82,48 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <div className={`mobile-drawer ${mobileMenuOpen ? 'is-open' : ''}`}>
-        <div>
+        <div className="mobile-drawer-content">
           <p className="font-mono text-secondary" style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '1.5rem' }}>
             Navigation Index
           </p>
           <nav className="mobile-nav-list">
             {navLinks.map((link, idx) => (
-              <Link key={link.path} to={link.path} className="mobile-nav-item">
+              <Link
+                key={link.path}
+                to={link.path}
+                className="mobile-nav-item"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 <span>{link.name}</span>
                 <span className="font-mono" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>0{idx + 1}</span>
               </Link>
             ))}
-            <Link to="/team" className="mobile-nav-item">
+            <Link
+              to="/team"
+              className="mobile-nav-item"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               <span>Leadership Team</span>
               <span className="font-mono" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>07</span>
             </Link>
-            <Link to="/careers" className="mobile-nav-item">
+            <Link
+              to="/careers"
+              className="mobile-nav-item"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               <span>Careers</span>
               <span className="font-mono" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>08</span>
             </Link>
           </nav>
         </div>
 
-        <div style={{ paddingTop: '2rem', borderTop: '1px solid var(--border-light)' }}>
-          <Link to="/contact" className="btn-editorial-primary" style={{ width: '100%', justifyContent: 'space-between' }}>
+        <div className="mobile-drawer-footer">
+          <Link
+            to="/contact"
+            className="btn-editorial-primary"
+            onClick={() => setMobileMenuOpen(false)}
+            style={{ width: '100%', justifyContent: 'space-between' }}
+          >
             <span>Start a conversation</span>
             <ArrowUpRight size={16} />
           </Link>

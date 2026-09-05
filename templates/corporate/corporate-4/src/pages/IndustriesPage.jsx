@@ -46,15 +46,9 @@ export const IndustriesPage = ({ onOpenContact }) => {
               <div
                 key={ind.id}
                 id={ind.id}
-                style={{
-                  backgroundColor: "var(--bg-sand-light)",
-                  border: "2px solid var(--bg-espresso)",
-                  borderRadius: "24px",
-                  padding: "3rem",
-                  boxShadow: "10px 10px 0 var(--bg-terracotta)"
-                }}
+                className="services-card-item"
               >
-                <div style={{ display: "grid", gridTemplateColumns: "1.25fr 0.75fr", gap: "3.5rem" }}>
+                <div className="services-card-grid">
                   <div>
                     <div style={{ display: "flex", alignItems: "baseline", gap: "1.25rem", marginBottom: "1rem" }}>
                       <span style={{ fontFamily: "var(--font-mono)", fontSize: "1.35rem", color: "var(--bg-terracotta)", fontWeight: "700" }}>
@@ -81,7 +75,7 @@ export const IndustriesPage = ({ onOpenContact }) => {
                       <div className="editorial-tag" style={{ color: "var(--text-espresso)", marginBottom: "0.75rem" }}>
                         KEY STRATEGIC CHALLENGES SOLVED
                       </div>
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
+                      <div className="services-capabilities-subgrid">
                         {ind.keyChallengesSolved.map((chal, cIdx) => (
                           <div key={cIdx} style={{ display: "flex", alignItems: "flex-start", gap: "0.6rem", fontSize: "0.92rem", color: "var(--text-espresso)" }}>
                             <CheckCircle2 size={16} color="var(--bg-terracotta)" style={{ marginTop: "3px", flexShrink: 0 }} />
@@ -93,17 +87,7 @@ export const IndustriesPage = ({ onOpenContact }) => {
                   </div>
 
                   {/* Right: Sector Impact Callout Box */}
-                  <div
-                    style={{
-                      backgroundColor: "var(--bg-espresso)",
-                      color: "var(--text-cream)",
-                      borderRadius: "18px",
-                      padding: "2.25rem",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-between"
-                    }}
-                  >
+                  <div className="services-right-panel">
                     <div>
                       <div className="editorial-tag" style={{ color: "var(--accent-chartreuse)", marginBottom: "1.25rem" }}>
                         SECTOR IMPACT & BENCHMARK

@@ -272,7 +272,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 50;
+  z-index: 101;
   background-color: var(--bg-cream);
   border-bottom: 1px solid var(--border-light);
   padding: 1.25rem 0;
@@ -342,14 +342,15 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
+  z-index: 102;
 }
 
 .mobile-drawer {
   position: fixed;
   inset: 0;
-  z-index: 40;
+  z-index: 100;
   background-color: var(--bg-cream);
-  padding: 6.5rem 1.5rem 2rem 1.5rem;
+  padding: 6.5rem 1.5rem 2.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -357,12 +358,25 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
   pointer-events: none;
   transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100vh;
 }
 
 .mobile-drawer.is-open {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
+}
+
+.mobile-drawer-content {
+  flex: 1 0 auto;
+}
+
+.mobile-drawer-footer {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-light);
+  margin-top: 2rem;
 }
 
 .mobile-nav-list {
@@ -1381,6 +1395,77 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* 6. Industries Interactive Explorer */
+.industry-tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-light);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.industry-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.25rem;
+  background-color: var(--bg-cream-100);
+  border: 1px solid var(--border-light);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--text-charcoal);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.industry-tab-btn:hover {
+  border-color: var(--text-charcoal);
+  background-color: var(--bg-cream-200);
+}
+
+.industry-tab-btn.is-active {
+  background-color: var(--text-charcoal);
+  color: var(--bg-cream);
+  border-color: var(--text-charcoal);
+}
+
+.industry-tab-btn.is-active span:first-child {
+  color: var(--accent-ochre) !important;
+  font-weight: 700;
+}
+
+.industry-tab-btn.is-active span:last-child {
+  color: var(--bg-cream);
+}
+
+.industry-showcase-grid {
+  display: grid;
+  grid-template-columns: 6fr 6fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.industry-explorer-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.industry-explorer-caps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
 .industry-explorer-wrap {
   display: grid;
   grid-template-columns: 4.5fr 7.5fr;
@@ -1518,7 +1603,22 @@ h1, h2, h3, h4, h5, h6 {
   gap: 2rem;
 }
 
-/* 8. Team Editorial Spread (Different image proportions) */
+.case-study-split-grid {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: 3.5rem;
+  border-top: 1px solid var(--border-light);
+  padding-top: 3rem;
+}
+
+.about-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* 8. Team Editorial Spread */
 .team-editorial-spread {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -1628,6 +1728,16 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--accent-terracotta);
 }
 
+.career-expandable-body {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 3rem;
+  align-items: center;
+}
+
 /* 10. Magazine-Style Blog Index */
 .magazine-featured-cover {
   display: grid;
@@ -1667,12 +1777,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   RESPONSIVE BREAKPOINTS FOR REDESIGNED INTERNAL PAGES
+   RESPONSIVE BREAKPOINTS & MOBILE ADAPTATION
    ========================================================================== */
 @media (max-width: 1024px) {
   .container {
     padding-left: 40px;
     padding-right: 40px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .hero-editorial-comp {
+    margin-left: 0;
+    max-width: 100%;
   }
 
   .page-hero-header-grid {
@@ -1712,7 +1832,54 @@ h1, h2, h3, h4, h5, h6 {
     gap: 3rem;
   }
 
+  .industry-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
   .case-index-grid-a, .case-index-grid-b {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .case-study-split-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-top: 2rem;
+  }
+
+  .service-row-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .service-action-col {
+    justify-content: flex-start;
+  }
+
+  .work-comp-right-offset {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 4.5rem;
+  }
+
+  .work-comp-overlapping {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 4.5rem;
+  }
+
+  .work-comp-panoramic .panoramic-content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .values-row-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .career-expandable-body {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
@@ -1747,6 +1914,11 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr;
     gap: 4rem;
   }
+
+  .service-report-asymmetric-visuals {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1755,7 +1927,8 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: 20px;
   }
 
-  .section-py { padding-top: 80px; padding-bottom: 80px; }
+  .section-py { padding-top: 70px; padding-bottom: 70px; }
+  .section-py-sm { padding-top: 50px; padding-bottom: 50px; }
   .page-header-pt { padding-top: 110px; }
 
   .navbar-nav, .navbar-cta {
@@ -1764,6 +1937,52 @@ h1, h2, h3, h4, h5, h6 {
 
   .mobile-menu-btn {
     display: flex;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    padding: 2rem 1.25rem;
+  }
+
+  .stat-item:nth-child(odd) {
+    border-right: 1px solid var(--border-light);
+  }
+
+  .stat-item:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+
+  .stat-number {
+    font-size: 3.25rem;
+  }
+
+  .stat-suffix {
+    font-size: 2rem;
+  }
+
+  .service-row-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .service-title-col {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .service-title-link {
+    font-size: 2rem;
+  }
+
+  .service-deliverables-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
 
   .about-offset-stats-grid {
@@ -1782,22 +2001,81 @@ h1, h2, h3, h4, h5, h6 {
     border-top: none;
   }
 
-  .services-directory-grid {
+  .about-pillars-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .services-directory-grid {
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .services-directory-title {
+    font-size: 1.75rem;
   }
 
   .services-directory-desc {
-    grid-column: span 1;
+    font-size: 0.95rem;
+    width: 100%;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .services-directory-arrow {
+    align-self: flex-end;
   }
 
   .solutions-row-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
+    align-items: flex-start;
   }
 
   .solutions-row-desc {
-    grid-column: span 1;
+    font-size: 0.95rem;
+    width: 100%;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .solutions-row-action {
+    align-self: flex-start;
+  }
+
+  .work-metric-box {
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .work-metric-number {
+    font-size: 2.5rem;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .work-metric-label {
+    font-size: 0.75rem;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .team-editorial-masonry {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .team-masonry-item:nth-child(2) {
+    transform: none;
+  }
+
+  .team-masonry-item:nth-child(5) {
+    transform: none;
   }
 
   .team-editorial-spread {
@@ -1818,6 +2096,76 @@ h1, h2, h3, h4, h5, h6 {
   .magazine-card-col-8,
   .magazine-card-col-6 {
     grid-column: span 1;
+  }
+
+  .industry-tab-bar {
+    gap: 0.5rem 0.75rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .industry-tab-btn {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.75rem;
+  }
+
+  .industry-explorer-stats-bar {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .hero-editorial-comp {
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  .hero-main-frame {
+    width: 100%;
+  }
+
+  .hero-secondary-frame {
+    display: none;
+  }
+
+  .work-comp-overlapping .layered-image-group {
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  .work-comp-overlapping .layered-primary-frame {
+    width: 100%;
+  }
+
+  .work-comp-overlapping .layered-secondary-frame {
+    display: none;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-item:nth-child(odd) {
+    border-right: none;
+  }
+
+  .stat-item:nth-last-child(-n+2) {
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .stat-item:last-child {
+    border-bottom: none;
+  }
+
+  .service-deliverables-grid {
+    grid-template-columns: 1fr;
   }
 }
 

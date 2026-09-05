@@ -46,14 +46,14 @@ export const ContactPage = () => {
       {/* Main Grid: Form + Office Directory */}
       <section className="editorial-section-sm" style={{ borderTop: "1px solid var(--border-espresso-thin)" }}>
         <div className="editorial-wrap">
-          <div style={{ display: "grid", gridTemplateColumns: "1.3fr 0.7fr", gap: "4rem" }}>
+          <div className="editorial-contact-grid">
             {/* Left Form */}
             <div
               style={{
                 backgroundColor: "var(--bg-sand-light)",
                 border: "2px solid var(--bg-espresso)",
                 borderRadius: "24px",
-                padding: "3rem",
+                padding: "clamp(1.5rem, 3vw, 3rem)",
                 boxShadow: "12px 12px 0 var(--bg-terracotta)"
               }}
             >
@@ -69,7 +69,7 @@ export const ContactPage = () => {
                     Complete the fields below and our technical advisory board will review strategic alignment.
                   </p>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.25rem", marginBottom: "1.25rem" }}>
+                  <div className="editorial-form-row">
                     <div>
                       <label className="editorial-tag" style={{ display: "block", marginBottom: "0.4rem", fontSize: "0.72rem" }}>
                         FULL NAME *
@@ -118,7 +118,7 @@ export const ContactPage = () => {
                     </div>
                   </div>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.25rem", marginBottom: "1.25rem" }}>
+                  <div className="editorial-form-row">
                     <div>
                       <label className="editorial-tag" style={{ display: "block", marginBottom: "0.4rem", fontSize: "0.72rem" }}>
                         ORGANIZATION NAME *
@@ -166,7 +166,7 @@ export const ContactPage = () => {
                     </div>
                   </div>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.25rem", marginBottom: "1.25rem" }}>
+                  <div className="editorial-form-row">
                     <div>
                       <label className="editorial-tag" style={{ display: "block", marginBottom: "0.4rem", fontSize: "0.72rem" }}>
                         CAPABILITY OF INTEREST

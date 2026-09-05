@@ -28,7 +28,7 @@ export const AboutPage = ({ onOpenContact }) => {
       {/* Editorial Story */}
       <section className="editorial-section-sm" style={{ borderTop: "1px solid var(--border-espresso-thin)" }}>
         <div className="editorial-wrap">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.15fr", gap: "4.5rem", alignItems: "center" }}>
+          <div className="magazine-about-grid">
             <div>
               <div className="editorial-tag" style={{ color: "var(--bg-terracotta)", marginBottom: "1rem" }}>
                 OUR PHILOSOPHY
@@ -48,20 +48,10 @@ export const AboutPage = ({ onOpenContact }) => {
               </p>
             </div>
 
-            <div
-              style={{
-                width: "100%",
-                height: "460px",
-                borderRadius: "24px 80px 24px 80px",
-                overflow: "hidden",
-                border: "2px solid var(--bg-espresso)",
-                boxShadow: "14px 14px 0 var(--bg-terracotta)"
-              }}
-            >
+            <div className="magazine-about-image-frame">
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80"
                 alt="Leadership"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             </div>
           </div>

@@ -285,6 +285,63 @@ input, textarea, select {
   background: var(--c-copper);
 }
 
+.asym-mobile-toggle-btn {
+  display: none;
+  background: transparent;
+  color: var(--c-charcoal);
+  padding: 8px 10px;
+  border-radius: 2px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.asym-mobile-toggle-btn:hover {
+  color: var(--c-copper);
+}
+
+.asym-mobile-close-btn {
+  color: var(--c-ivory);
+  background: transparent;
+  padding: 8px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.asym-mobile-close-btn:hover {
+  color: var(--c-copper);
+}
+
+.asym-mobile-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: auto 0;
+  padding: 0;
+}
+
+.asym-mobile-links-list a {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--c-ivory);
+  text-decoration: none;
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+  display: inline-block;
+}
+
+.asym-mobile-links-list a:hover,
+.asym-mobile-links-list a.active {
+  color: var(--c-copper);
+  padding-left: 8px;
+}
+
 .asym-mobile-curtain {
   position: fixed;
   top: 0;
@@ -314,7 +371,10 @@ input, textarea, select {
 
 @media (max-width: 960px) {
   .asym-nav-links-list, .asym-nav-cta {
-    display: none;
+    display: none !important;
+  }
+  .asym-mobile-toggle-btn {
+    display: flex !important;
   }
 }
 
@@ -437,6 +497,9 @@ input, textarea, select {
 /* ==========================================================================
    SERVICES (FULL-WIDTH 4-COLUMN ALIGNED ROWS)
    ========================================================================== */
+/* ==========================================================================
+   SERVICES (FULL-WIDTH 4-COLUMN ALIGNED ROWS)
+   ========================================================================== */
 .asym-services-section {
   padding: 100px 0;
   background: var(--c-charcoal);
@@ -497,11 +560,31 @@ input, textarea, select {
   padding-right: 20px;
 }
 
+.asym-service-spec-card {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+}
+
 @media (max-width: 900px) {
   .asym-service-row {
     grid-template-columns: 40px 1fr 30px;
     gap: 12px;
-    padding: 24px 12px;
+    padding: 20px 10px;
+  }
+  .asym-service-row > div:nth-of-type(2) {
+    display: none;
+  }
+  .asym-service-spec-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 18px !important;
+  }
+  .asym-service-spec-card > div:last-child {
+    border-left: none !important;
+    border-top: 1px solid var(--border-dark);
+    padding-left: 0 !important;
+    padding-top: 20px;
   }
 }
 
@@ -512,6 +595,18 @@ input, textarea, select {
   padding: 100px 0;
   background: var(--c-ivory);
   border-bottom: 1px solid var(--border-light);
+}
+
+.asym-solutions-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 30px;
+}
+
+.asym-solutions-nodes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
 
 .asym-radial-node-card {
@@ -529,6 +624,22 @@ input, textarea, select {
   background: #FFFFFF;
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(184, 92, 56, 0.12);
+}
+
+@media (max-width: 1100px) {
+  .asym-solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .asym-solutions-nodes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 580px) {
+  .asym-solutions-nodes-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ==========================================================================
@@ -605,13 +716,43 @@ input, textarea, select {
 }
 
 /* ==========================================================================
-   PROJECTS STREAM
+   PROJECTS STREAM & CASE STUDY PRESENTATIONS
    ========================================================================== */
 .asym-projects-stream {
   display: flex;
   flex-direction: column;
   gap: 80px;
   margin-top: 40px;
+}
+
+.asym-proj-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 2.6vw, 36px);
+  font-weight: 700;
+  color: var(--c-charcoal);
+  line-height: 1.15;
+  margin-bottom: 8px;
+  word-break: break-word;
+}
+
+.asym-impact-card {
+  background: var(--c-ivory-surface);
+  border-left: 3px solid var(--c-copper);
+  padding: 16px 20px;
+  margin-bottom: 22px;
+  border-radius: 0 2px 2px 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.asym-impact-metric-text {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 3.2vw, 36px);
+  font-weight: 700;
+  color: var(--c-copper);
+  line-height: 1.1;
+  margin-bottom: 4px;
+  word-break: break-word;
 }
 
 .asym-proj-comp-01 {
@@ -628,6 +769,13 @@ input, textarea, select {
   align-items: center;
 }
 
+.asym-proj-comp-04 {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 50px;
+  align-items: center;
+}
+
 .asym-proj-comp-03 {
   position: relative;
   min-height: 480px;
@@ -635,6 +783,7 @@ input, textarea, select {
   align-items: flex-end;
   border-radius: 2px;
   overflow: hidden;
+  background: var(--c-charcoal);
 }
 
 .asym-proj-comp-03 .asym-proj-bg-img {
@@ -669,15 +818,29 @@ input, textarea, select {
 }
 
 @media (max-width: 900px) {
-  .asym-proj-comp-01, .asym-proj-comp-02 {
+  .asym-proj-comp-01,
+  .asym-proj-comp-02,
+  .asym-proj-comp-04 {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
   .asym-proj-comp-03 {
+    flex-direction: column;
+    min-height: auto;
     align-items: stretch;
   }
-  .asym-proj-comp-03 .asym-proj-overlap-card {
-    margin: 0;
+  .asym-proj-comp-03 .asym-proj-bg-img {
+    position: relative;
+    height: 260px;
     width: 100%;
+  }
+  .asym-proj-comp-03 .asym-proj-overlap-card {
+    position: relative;
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+    box-shadow: none;
+    padding: 28px 20px;
   }
 }
 
@@ -725,6 +888,13 @@ input, textarea, select {
   }
 }
 
+@media (max-width: 540px) {
+  .asym-stats-long-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
 /* ==========================================================================
    PROCESS SECTION
    ========================================================================== */
@@ -732,6 +902,12 @@ input, textarea, select {
   padding: 100px 0;
   background: var(--c-ivory);
   border-bottom: 1px solid var(--border-light);
+}
+
+@media (max-width: 900px) {
+  .asym-process-section > div > div:last-child {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ==========================================================================
@@ -811,11 +987,51 @@ input, textarea, select {
   font-weight: 700;
   color: var(--c-charcoal);
   text-align: left;
+  line-height: 1.3;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .asym-article-row {
-    grid-template-columns: 40px 1fr 30px;
+    grid-template-columns: 40px 150px 1fr 30px;
+    gap: 16px;
+    padding: 24px 8px;
+  }
+  .asym-article-row > span:nth-of-type(3) {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .asym-article-row {
+    display: grid;
+    grid-template-columns: 36px 1fr 24px;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "num cat arrow"
+      "num title title"
+      "num meta meta";
+    gap: 6px 12px;
+    padding: 18px 4px;
+  }
+  .asym-article-row > span:nth-of-type(1) {
+    grid-area: num;
+    align-self: start;
+    padding-top: 4px;
+  }
+  .asym-article-row > span:nth-of-type(2) {
+    grid-area: cat;
+  }
+  .asym-article-row > .asym-article-title {
+    grid-area: title;
+    margin: 4px 0;
+  }
+  .asym-article-row > span:nth-of-type(3) {
+    grid-area: meta;
+    display: block !important;
+  }
+  .asym-article-row > div:last-child {
+    grid-area: arrow;
+    justify-self: end;
   }
 }
 

@@ -69,7 +69,7 @@ export default function CaseStudyDetails() {
       <section className="container" style={{ paddingBottom: '100px', display: 'flex', flexDirection: 'column', gap: '5rem' }}>
         
         {/* The Challenge */}
-        <div style={{ display: 'grid', gridTemplateColumns: '4fr 8fr', gap: '3.5rem', borderTop: '1px solid var(--border-light)', paddingTop: '3rem' }}>
+        <div className="case-study-split-grid">
           <div>
             <span className="font-mono text-terracotta" style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em' }}>01 / THE CONTEXT</span>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.25rem', marginTop: '0.5rem' }}>The Challenge</h2>
@@ -80,7 +80,7 @@ export default function CaseStudyDetails() {
         </div>
 
         {/* The Approach */}
-        <div style={{ display: 'grid', gridTemplateColumns: '4fr 8fr', gap: '3.5rem', borderTop: '1px solid var(--border-light)', paddingTop: '3rem' }}>
+        <div className="case-study-split-grid">
           <div>
             <span className="font-mono text-terracotta" style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em' }}>02 / STRATEGIC ARCHITECTURE</span>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.25rem', marginTop: '0.5rem' }}>The Approach</h2>
@@ -102,7 +102,7 @@ export default function CaseStudyDetails() {
         </div>
 
         {/* The Results: Large Metrics & Scorecard */}
-        <div style={{ display: 'grid', gridTemplateColumns: '4fr 8fr', gap: '3.5rem', borderTop: '1px solid var(--border-light)', paddingTop: '3rem' }}>
+        <div className="case-study-split-grid">
           <div>
             <span className="font-mono text-terracotta" style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em' }}>03 / QUANTIFIED IMPACT</span>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.25rem', marginTop: '0.5rem' }}>The Result</h2>

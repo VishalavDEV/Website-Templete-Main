@@ -39,11 +39,11 @@ export const NewspaperInsights = () => {
               agentic loops, and how enterprise boards can govern the transition without risking data sovereignty.
             </p>
 
-            <div style={{ width: "100%", height: "280px", borderRadius: "16px", overflow: "hidden", border: "1px solid var(--border-espresso-thin)", marginBottom: "2rem" }}>
+            <div style={{ width: "100%", height: "auto", aspectRatio: "16/9", maxHeight: "300px", borderRadius: "16px", overflow: "hidden", border: "1px solid var(--border-espresso-thin)", marginBottom: "2rem" }}>
               <img
                 src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
                 alt="AI in Business"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
             </div>
 

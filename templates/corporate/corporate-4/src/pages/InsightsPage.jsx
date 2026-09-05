@@ -58,31 +58,21 @@ export const InsightsPage = () => {
       {/* Essays Gallery Grid */}
       <section className="editorial-section-sm" style={{ borderTop: "1px solid var(--border-espresso-thin)" }}>
         <div className="editorial-wrap">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "3rem" }}>
+          <div className="insights-cards-grid">
             {filteredInsights.map((article) => (
               <div
                 key={article.id}
-                style={{
-                  backgroundColor: "var(--bg-sand-light)",
-                  border: "2px solid var(--bg-espresso)",
-                  borderRadius: "20px",
-                  overflow: "hidden",
-                  boxShadow: "8px 8px 0 var(--bg-terracotta)",
-                  cursor: "pointer",
-                  display: "flex",
-                  flexDirection: "column"
-                }}
+                className="insights-card-item"
                 onClick={() => setActiveArticle(article)}
               >
-                <div style={{ width: "100%", height: "220px", overflow: "hidden" }}>
+                <div className="insights-image-wrapper">
                   <img
                     src={article.image}
                     alt={article.title}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   />
                 </div>
 
-                <div style={{ padding: "2rem", display: "flex", flexDirection: "column", flex: 1 }}>
+                <div style={{ padding: "1.75rem 1.5rem", display: "flex", flexDirection: "column", flex: 1 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
                     <span className="editorial-tag" style={{ color: "var(--bg-terracotta)" }}>
                       {article.category}

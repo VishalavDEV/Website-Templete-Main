@@ -53,7 +53,7 @@ export default function IndustriesExplorer() {
           </div>
 
           {/* Stats Bar */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', padding: '1.25rem 0', borderTop: '1px solid var(--border-light)', borderBottom: '1px solid var(--border-light)' }}>
+          <div className="industry-explorer-stats-bar">
             {activeIndustry.stats.map((st, i) => (
               <div key={i}>
                 <p style={{ fontFamily: 'var(--font-serif)', fontSize: '1.75rem', color: 'var(--text-charcoal)', lineHeight: '1' }}>{st.value}</p>
@@ -65,7 +65,7 @@ export default function IndustriesExplorer() {
           {/* Capabilities */}
           <div>
             <p className="font-mono text-secondary" style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.75rem' }}>Core Capabilities</p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.5rem', fontSize: '0.8rem' }}>
+            <div className="industry-explorer-caps-grid">
               {activeIndustry.capabilities.map((cap, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <span style={{ width: '6px', height: '6px', backgroundColor: 'var(--accent-terracotta)', borderRadius: '50%', flexShrink: 0 }}></span>

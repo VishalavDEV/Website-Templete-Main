@@ -103,7 +103,7 @@ export default function Careers() {
                 </div>
 
                 {isExpanded && (
-                  <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-light)', display: 'grid', gridTemplateColumns: '8fr 4fr', gap: '3rem', alignItems: 'center' }}>
+                  <div className="career-expandable-body">
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                       <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: '1.7' }}>
                         {job.description}

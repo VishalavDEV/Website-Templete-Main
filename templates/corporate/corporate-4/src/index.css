@@ -435,9 +435,14 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 3rem 2rem;
+  padding: 2.5rem 1.75rem;
   transform: translateX(100%);
   transition: transform 0.5s var(--ease-editorial);
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
 }
 
 .mobile-editorial-drawer.open {
@@ -448,15 +453,16 @@ h1, h2, h3, h4, h5, h6 {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin: auto 0;
+  gap: clamp(0.6rem, 1.8vh, 1.25rem);
+  margin: 1.5rem 0 2rem 0;
 }
 
 .mobile-drawer-links a {
   font-family: var(--font-serif);
-  font-size: 2.5rem;
+  font-size: clamp(1.35rem, 4vw, 2.2rem);
   color: var(--text-cream);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .mobile-drawer-links a:hover {
@@ -549,6 +555,40 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
+   MAGAZINE ABOUT / OVERVIEW
+   ========================================================================== */
+
+.magazine-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.magazine-about-image-frame {
+  width: 100%;
+  height: 560px;
+  border-radius: 24px 100px 24px 100px;
+  overflow: hidden;
+  border: 2px solid var(--bg-espresso);
+  box-shadow: 16px 16px 0 var(--bg-terracotta);
+}
+
+.magazine-about-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.magazine-about-numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  border-top: 2px solid var(--bg-espresso);
+  padding-top: 2.5rem;
+}
+
+/* ==========================================================================
    SERVICES (Accordion-Style Experience)
    ========================================================================== */
 
@@ -635,6 +675,41 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ==========================================================================
+   SERVICES & SOLUTIONS CARDS (Deep Dives)
+   ========================================================================== */
+
+.services-card-item {
+  background-color: var(--bg-sand-light);
+  border: 2px solid var(--bg-espresso);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 10px 10px 0 var(--bg-terracotta);
+}
+
+.services-card-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+.services-capabilities-subgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.services-right-panel {
+  background-color: var(--bg-espresso);
+  color: var(--text-cream);
+  border-radius: 18px;
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* ==========================================================================
@@ -729,7 +804,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .system-nodes-warm-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 1.5rem;
   margin-top: 3rem;
 }
@@ -742,6 +817,8 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   cursor: pointer;
   transition: all 0.35s var(--ease-editorial);
+  min-width: 0;
+  word-break: break-word;
 }
 
 .system-node-warm-pill:hover,
@@ -750,6 +827,19 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--bg-espresso);
   border-color: var(--accent-chartreuse);
   transform: translateY(-6px);
+}
+
+.warm-system-diagnostic-box {
+  margin-top: 2.5rem;
+  background: var(--bg-espresso-card);
+  border-radius: 20px;
+  border: 1px solid var(--border-cream-thin);
+  padding: 2rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 /* ==========================================================================
@@ -804,7 +894,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   INSIGHTS (Newspaper / Editorial Layout)
+   INSIGHTS (Newspaper / Editorial Layout & Cards)
    ========================================================================== */
 
 .newspaper-insights-grid {
@@ -829,6 +919,59 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 2rem;
 }
 
+.insights-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 3rem;
+}
+
+.insights-card-item {
+  background-color: var(--bg-sand-light);
+  border: 2px solid var(--bg-espresso);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 8px 8px 0 var(--bg-terracotta);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.insights-card-item:hover {
+  transform: translateY(-4px);
+}
+
+.insights-image-wrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.insights-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================================================
+   CONTACT PAGE & FORMS
+   ========================================================================== */
+
+.editorial-contact-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 4rem;
+}
+
+.editorial-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 /* ==========================================================================
    KEYFRAME ANIMATIONS
    ========================================================================== */
@@ -847,6 +990,10 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
+  .magazine-about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
   .newspaper-insights-grid {
     grid-template-columns: 1fr;
   }
@@ -857,7 +1004,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 3rem;
   }
   .system-nodes-warm-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .process-timeline-horizontal {
     grid-template-columns: 1fr;
@@ -865,6 +1012,14 @@ h1, h2, h3, h4, h5, h6 {
   }
   .process-timeline-horizontal::before {
     display: none;
+  }
+  .services-card-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .editorial-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }
 
@@ -880,18 +1035,88 @@ h1, h2, h3, h4, h5, h6 {
   .editorial-project-row.alternate {
     grid-template-columns: 1fr;
     direction: ltr;
+    gap: 2.5rem;
+  }
+  .project-asymmetric-frame {
+    height: 300px;
+    border-radius: 36px 8px 36px 8px;
+    box-shadow: 8px 8px 0 var(--bg-espresso);
   }
   .service-row-drawer {
     grid-template-columns: 1fr;
-  }
-  .system-nodes-warm-grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
   .warm-system-canvas-box {
-    padding: 2rem;
+    padding: 1.75rem 1.25rem;
+    box-shadow: 8px 8px 0 var(--bg-terracotta);
+    border-radius: 20px;
+  }
+  .system-nodes-warm-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+  .system-node-warm-pill {
+    padding: 1.25rem 0.5rem;
+  }
+  .warm-system-diagnostic-box {
+    padding: 1.5rem 1.25rem;
+    border-radius: 16px;
+    margin-top: 1.75rem;
+  }
+  .magazine-about-image-frame {
+    height: 340px;
+    border-radius: 20px 60px 20px 60px;
+    box-shadow: 8px 8px 0 var(--bg-terracotta);
+  }
+  .magazine-about-numbers-grid {
+    gap: 1.25rem;
+    padding-top: 1.75rem;
+  }
+  .services-card-item {
+    padding: 1.75rem 1.25rem;
+    box-shadow: 6px 6px 0 var(--bg-terracotta);
+    border-radius: 18px;
+  }
+  .services-right-panel {
+    padding: 1.75rem 1.25rem;
+    border-radius: 14px;
   }
   .editorial-wrap,
   .editorial-wrap-wide {
-    padding: 0 1.5rem;
+    padding: 0 1.25rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .system-nodes-warm-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+  .system-node-warm-pill {
+    padding: 1rem 0.35rem;
+  }
+  .system-node-warm-pill .editorial-tag {
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
+  }
+  .services-capabilities-subgrid {
+    grid-template-columns: 1fr;
+  }
+  .editorial-form-row {
+    grid-template-columns: 1fr;
+  }
+  .magazine-about-image-frame {
+    height: 250px;
+    border-radius: 16px 40px 16px 40px;
+  }
+  .magazine-about-numbers-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+  .hero-main-frame {
+    height: 360px;
+    border-radius: 60px 16px 60px 16px;
+    box-shadow: 8px 8px 0 var(--bg-espresso);
   }
 }

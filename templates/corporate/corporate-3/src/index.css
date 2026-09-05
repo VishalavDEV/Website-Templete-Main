@@ -369,3 +369,68 @@ ul, ol {
   border-radius: var(--radius-sm);
   color: var(--text-muted);
 }
+
+/* ==================================================
+   RESPONSIVE COMPONENT ADJUSTMENTS
+   ================================================== */
+.industry-sector-card {
+  background-color: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 48px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.industry-split-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.study-row-card {
+  background-color: #191919;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 4px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  gap: 48px;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .industry-sector-card {
+    padding: 28px 20px !important;
+  }
+  .industry-split-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .study-row-card {
+    grid-template-columns: 1fr !important;
+    padding: 28px 20px !important;
+    gap: 28px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  .industry-sector-card {
+    padding: 24px 16px !important;
+  }
+  .study-row-card {
+    padding: 24px 16px !important;
+  }
+}
+

@@ -200,8 +200,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
             ))}
           </nav>
 
-          {/* Right Header Action Items */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Desktop Right Header Action Items (>= 1024px) */}
+          <div className="hidden lg:flex items-center gap-3">
             {/* Search Trigger Button */}
             <button
               onClick={onOpenSearch}
@@ -209,7 +209,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
               title="Search directory (Cmd + K)"
             >
               <Search className="w-4 h-4" />
-              <span className="hidden md:inline font-mono text-[11px] text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">⌘K</span>
+              <span className="font-mono text-[11px] text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">⌘K</span>
             </button>
 
             {/* Client Portal Link */}
@@ -230,17 +230,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
             </Button>
           </div>
 
-          {/* Mobile Hamburger Toggle */}
-          <div className="flex sm:hidden items-center gap-2">
+          {/* Tablet & Mobile Header Right (< 1024px) */}
+          <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={onOpenSearch}
-              className="p-2 text-slate-600 hover:text-slate-900"
+              className="p-2 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100 transition"
+              aria-label="Search directory"
             >
               <Search className="w-5 h-5" />
             </button>
+            <Link
+              to="/contact"
+              className="hidden sm:inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 cursor-pointer select-none bg-zinc-900 hover:bg-zinc-800 text-white shadow-sm px-3.5 py-1.5 text-xs"
+            >
+              Get Started
+            </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-700 hover:text-slate-900 focus:outline-none"
+              className="p-2 text-slate-700 hover:text-slate-900 focus:outline-none rounded-lg hover:bg-slate-100 transition"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -249,31 +257,33 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile & Tablet Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="sm:hidden bg-white border-b border-slate-200 shadow-xl overflow-hidden"
+            className="lg:hidden bg-white border-b border-slate-200 shadow-2xl overflow-hidden"
           >
-            <div className="px-4 pt-3 pb-6 space-y-2">
+            <div className="px-4 pt-3 pb-8 space-y-2 max-h-[calc(100vh-75px)] overflow-y-auto overscroll-contain">
               {navLinks.map((link) => (
                 <div key={link.label}>
                   <Link
                     to={link.path}
-                    className="block px-3 py-2 text-base font-semibold text-slate-800 hover:text-slate-950 hover:bg-slate-50 rounded-xl"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-3 py-2 text-base font-semibold text-slate-800 hover:text-slate-950 hover:bg-slate-50 rounded-xl transition"
                   >
                     {link.label}
                   </Link>
                   {link.hasDropdown && (
-                    <div className="pl-6 space-y-1 my-1">
+                    <div className="pl-5 space-y-1 my-1 border-l-2 border-slate-100 ml-3">
                       {link.items?.map((sub) => (
                         <Link
                           key={sub.path}
                           to={sub.path}
-                          className="block py-1 text-xs text-slate-500 hover:text-slate-900"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="block py-1.5 px-2 text-xs text-slate-600 hover:text-slate-950 hover:bg-slate-50 rounded-lg transition"
                         >
                           • {sub.label}
                         </Link>
@@ -283,14 +293,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
                 </div>
               ))}
 
-              <div className="pt-4 border-t border-slate-100 space-y-3">
+              <div className="pt-4 border-t border-slate-100 space-y-3 mt-4">
                 <Link
                   to="/login"
-                  className="block text-center py-2 text-sm font-semibold text-slate-600 hover:text-slate-900"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-center py-2.5 text-sm font-semibold text-slate-700 hover:text-slate-950 bg-slate-50 hover:bg-slate-100 rounded-xl transition"
                 >
                   Client Portal Login
                 </Link>
-                <Button to="/contact" variant="primary" size="md" className="w-full">
+                <Button
+                  to="/contact"
+                  variant="primary"
+                  size="md"
+                  className="w-full"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
                   Get Started
                 </Button>
               </div>
