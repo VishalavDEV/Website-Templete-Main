@@ -91,18 +91,12 @@ export default function AurelisPage() {
 
   return (
     <div className="min-h-screen bg-white text-[#1E293B] font-serif antialiased selection:bg-[#D4AF37] selection:text-white">
-      {/* 1. TOP HEADER REDIRECT */}
-      <div className="bg-[#FAF6EB] border-b border-[#E6DFD3] py-2.5 text-center text-[10px] font-bold tracking-[0.2em] font-sans text-stone-600 hover:text-[#B2902B] transition-colors z-50 relative">
-        <Link to="/">← EXPLORE ALL TEMPLATES</Link>
-      </div>
-
       {/* 2. STICKY NAVBAR */}
       <header
-        className={`sticky top-0 z-40 transition-all duration-300 w-full px-6 md:px-12 ${
-          isScrolled 
-            ? 'bg-white/90 backdrop-blur-md py-4 shadow-md border-b border-stone-200' 
+        className={`sticky top-0 z-40 transition-all duration-300 w-full px-6 md:px-12 ${isScrolled
+            ? 'bg-white/90 backdrop-blur-md py-4 shadow-md border-b border-stone-200'
             : 'bg-transparent py-6 border-b border-transparent'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Brand Logo */}
@@ -340,7 +334,7 @@ export default function AurelisPage() {
                   {/* Overlay shadow bar */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                
+
                 <div className="p-6 relative">
                   <h3 className="text-lg font-normal text-[#0F172A]">{lead.name}</h3>
                   <span className="text-[9px] font-sans font-bold tracking-widest text-[#D4AF37] uppercase mt-1 block">
@@ -374,7 +368,7 @@ export default function AurelisPage() {
                 alt={cs.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              
+
               {/* Dynamic hover overlay */}
               <div className="absolute inset-0 bg-[#0F172A]/85 flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-all duration-500">
                 <span className="text-[9px] font-sans font-bold text-[#D4AF37] tracking-widest uppercase mb-2">

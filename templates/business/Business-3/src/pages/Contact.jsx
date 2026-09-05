@@ -65,7 +65,7 @@ const Contact = () => {
 
   return (
     <AnimatedPage>
-      <div className="pt-24 pb-20 overflow-hidden">
+      <div className="pt-28 md:pt-32 pb-20 overflow-hidden">
         {/* HEADER */}
         <section className="relative max-w-7xl mx-auto px-6 py-12 text-center flex flex-col items-center gap-6">
           <div className="absolute top-[-30%] left-[20%] w-96 h-96 bg-[#7C3AED]/10 rounded-full blur-[100px] -z-10" />

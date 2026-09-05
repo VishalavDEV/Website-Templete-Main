@@ -25,12 +25,7 @@ export default function NexoraPage() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
-      {/* 1. TOP HEADER REDIRECT */}
-      <div className="bg-[#030712] border-b border-slate-900 py-2.5 text-center text-[10px] font-bold tracking-[0.25em] font-mono text-slate-500 hover:text-cyan-400 transition-colors z-50 relative">
-        <Link to="/">← EXPLORE ALL TEMPLATES</Link>
-      </div>
-
-      {/* 2. STICKY GLASS HEADER */}
+      {/* STICKY GLASS HEADER */}
       <header className="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-slate-900/60 py-5 px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}

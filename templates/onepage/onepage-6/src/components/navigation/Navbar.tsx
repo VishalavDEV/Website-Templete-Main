@@ -36,150 +36,196 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <header
-      className="main-header"
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 900,
-        padding: isScrolled ? '12px 5vw' : '16px 5vw',
-        background: isScrolled ? 'rgba(242, 238, 232, 0.95)' : 'rgba(242, 238, 232, 0.85)',
-        backdropFilter: 'blur(16px)',
-        WebkitBackdropFilter: 'blur(16px)',
-        borderBottom: '1px solid var(--border-light)',
-        transition: 'padding 0.3s var(--ease-out-expo), background 0.3s, border-bottom 0.3s',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-      }}
-    >
-      {/* Brand Title */}
-      <a
-        href="#home"
-        onClick={(e) => { e.preventDefault(); handleNavClick('#home'); }}
+    <>
+      <header
+        className="main-header"
         style={{
-          fontFamily: 'var(--font-serif)',
-          fontSize: '1.4rem',
-          fontWeight: 600,
-          letterSpacing: '0.05em',
-          color: 'var(--text-main)',
-          textDecoration: 'none',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 900,
+          padding: isScrolled ? '12px 5vw' : '16px 5vw',
+          background: isScrolled ? 'rgba(242, 238, 232, 0.95)' : 'rgba(242, 238, 232, 0.85)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          borderBottom: '1px solid var(--border-light)',
+          transition: 'padding 0.3s var(--ease-out-expo), background 0.3s, border-bottom 0.3s',
           display: 'flex',
           alignItems: 'center',
-          gap: '8px'
+          justifyContent: 'space-between'
         }}
-        data-cursor="HOME"
       >
-        <span>NOVA//ECHO</span>
-        <span style={{ fontSize: '0.65rem', fontFamily: 'var(--font-grotesk)', color: 'var(--accent-warm)' }}>
-          [2026]
-        </span>
-      </a>
+        {/* Brand Title */}
+        <a
+          href="#home"
+          onClick={(e) => { e.preventDefault(); handleNavClick('#home'); }}
+          style={{
+            fontFamily: 'var(--font-serif)',
+            fontSize: '1.4rem',
+            fontWeight: 600,
+            letterSpacing: '0.05em',
+            color: 'var(--text-main)',
+            textDecoration: 'none',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px'
+          }}
+          data-cursor="HOME"
+        >
+          <span>NOVA//ECHO</span>
+          <span style={{ fontSize: '0.65rem', fontFamily: 'var(--font-grotesk)', color: 'var(--accent-warm)' }}>
+            [2026]
+          </span>
+        </a>
 
-      {/* Desktop Nav Links */}
-      <nav
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '2.5rem'
-        }}
-        aria-label="Main Navigation"
-        className="desktop-nav"
-      >
-        {navLinks.map(link => (
-          <a
-            key={link.label}
-            href={link.href}
-            onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-            className="hover-underline"
-            style={{
-              fontFamily: 'var(--font-grotesk)',
-              fontSize: '0.85rem',
-              letterSpacing: '0.12em',
-              fontWeight: 500,
-              color: 'var(--text-main)',
-              textTransform: 'uppercase'
-            }}
-            data-cursor={link.label}
-          >
-            {link.label}
-          </a>
-        ))}
-
-        {/* Quick Audio Toggle Button */}
-        <button
-          onClick={togglePlay}
+        {/* Desktop Nav Links */}
+        <nav
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '8px',
-            padding: '8px 18px',
-            backgroundColor: isPlaying ? 'var(--bg-dark)' : 'var(--accent-warm)',
-            color: isPlaying ? 'var(--coral)' : '#FFFFFF',
-            borderRadius: '2px',
-            fontFamily: 'var(--font-grotesk)',
-            fontSize: '0.8rem',
-            fontWeight: 700,
-            letterSpacing: '0.1em',
-            transition: 'var(--transition-smooth)'
+            gap: '2.5rem'
           }}
-          data-cursor={isPlaying ? 'PAUSE' : 'PLAY'}
-          aria-label={isPlaying ? 'Pause Audio' : 'Listen Now'}
-        >
-          {isPlaying ? <Pause size={14} /> : <Play size={14} />}
-          <span>{isPlaying ? 'PAUSE' : '[LISTEN]'}</span>
-        </button>
-      </nav>
-
-      {/* Mobile Hamburger Toggle */}
-      <button
-        className="mobile-toggle"
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        style={{
-          display: 'none',
-          padding: '8px',
-          color: 'var(--text-main)'
-        }}
-        aria-label="Toggle Navigation Menu"
-      >
-        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
-
-      {/* Mobile Drawer Menu */}
-      {mobileMenuOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            inset: 0,
-            top: '60px',
-            backgroundColor: 'var(--bg-dark)',
-            color: 'var(--text-on-dark)',
-            zIndex: 999,
-            display: 'flex',
-            flexDirection: 'column',
-            padding: '30px 8vw',
-            gap: '20px',
-            overflowY: 'auto',
-            animation: 'fadeIn 0.3s ease-out'
-          }}
+          aria-label="Main Navigation"
+          className="desktop-nav"
         >
           {navLinks.map(link => (
             <a
               key={link.label}
               href={link.href}
               onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
+              className="hover-underline"
               style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: '1.5rem',
-                color: 'var(--bg-light)',
-                textDecoration: 'none'
+                fontFamily: 'var(--font-grotesk)',
+                fontSize: '0.85rem',
+                letterSpacing: '0.12em',
+                fontWeight: 500,
+                color: 'var(--text-main)',
+                textTransform: 'uppercase'
               }}
+              data-cursor={link.label}
             >
               {link.label}
             </a>
           ))}
+
+          {/* Quick Audio Toggle Button */}
+          <button
+            onClick={togglePlay}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '8px 18px',
+              backgroundColor: isPlaying ? 'var(--bg-dark)' : 'var(--accent-warm)',
+              color: isPlaying ? 'var(--coral)' : '#FFFFFF',
+              borderRadius: '2px',
+              fontFamily: 'var(--font-grotesk)',
+              fontSize: '0.8rem',
+              fontWeight: 700,
+              letterSpacing: '0.1em',
+              transition: 'var(--transition-smooth)'
+            }}
+            data-cursor={isPlaying ? 'PAUSE' : 'PLAY'}
+            aria-label={isPlaying ? 'Pause Audio' : 'Listen Now'}
+          >
+            {isPlaying ? <Pause size={14} /> : <Play size={14} />}
+            <span>{isPlaying ? 'PAUSE' : '[LISTEN]'}</span>
+          </button>
+        </nav>
+
+        {/* Mobile / Tablet Actions */}
+        <div className="mobile-actions" style={{ display: 'none', alignItems: 'center', gap: '8px' }}>
+          <button
+            onClick={togglePlay}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '38px',
+              height: '38px',
+              backgroundColor: isPlaying ? 'var(--bg-dark)' : 'var(--accent-warm)',
+              color: isPlaying ? 'var(--coral)' : '#FFFFFF',
+              borderRadius: '4px',
+              border: 'none',
+              cursor: 'pointer'
+            }}
+            aria-label={isPlaying ? 'Pause Audio' : 'Play Audio'}
+          >
+            {isPlaying ? <Pause size={16} /> : <Play size={16} />}
+          </button>
+
+          <button
+            className="mobile-toggle"
+            onClick={() => setMobileMenuOpen(prev => !prev)}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '40px',
+              height: '40px',
+              padding: '8px',
+              color: 'var(--text-main)',
+              background: 'transparent',
+              border: '1px solid var(--border-light)',
+              borderRadius: '4px',
+              cursor: 'pointer'
+            }}
+            aria-label="Toggle Navigation Menu"
+          >
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile / Tablet Drawer Menu - Placed outside header to avoid stacking context issues */}
+      {mobileMenuOpen && (
+        <div
+          className="mobile-drawer-menu"
+          style={{
+            position: 'fixed',
+            inset: 0,
+            top: isScrolled ? '57px' : '65px',
+            backgroundColor: 'rgba(36, 31, 35, 0.98)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            color: 'var(--text-on-dark)',
+            zIndex: 9999,
+            display: 'flex',
+            flexDirection: 'column',
+            padding: '28px 8vw 40px 8vw',
+            gap: '18px',
+            overflowY: 'auto',
+            WebkitOverflowScrolling: 'touch',
+            animation: 'fadeIn 0.2s ease-out'
+          }}
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            {navLinks.map(link => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
+                style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '1.4rem',
+                  color: 'var(--bg-light)',
+                  textDecoration: 'none',
+                  padding: '8px 0',
+                  borderBottom: '1px solid rgba(242, 238, 232, 0.08)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <span>{link.label}</span>
+                <span style={{ fontSize: '0.75rem', fontFamily: 'var(--font-grotesk)', color: 'var(--accent-warm)' }}>
+                  →
+                </span>
+              </a>
+            ))}
+          </div>
+
           <div style={{ marginTop: 'auto', paddingTop: '20px', borderTop: '1px solid var(--border-dark)' }}>
             <button
               onClick={() => { togglePlay(); setMobileMenuOpen(false); }}
@@ -190,8 +236,11 @@ export const Navbar: React.FC = () => {
                 color: '#FFF',
                 fontFamily: 'var(--font-grotesk)',
                 fontWeight: 700,
-                fontSize: '0.9rem',
+                fontSize: '0.85rem',
                 letterSpacing: '0.1em',
+                borderRadius: '4px',
+                border: 'none',
+                cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -199,7 +248,7 @@ export const Navbar: React.FC = () => {
               }}
             >
               {isPlaying ? <Pause size={18} /> : <Play size={18} />}
-              <span>{isPlaying ? `NOW PLAYING: ${currentTrack.title}` : '[LISTEN NOW]'}</span>
+              <span>{isPlaying ? `NOW PLAYING: ${currentTrack?.title || 'TRACK'}` : '[LISTEN NOW]'}</span>
             </button>
           </div>
         </div>
@@ -208,9 +257,9 @@ export const Navbar: React.FC = () => {
       <style>{`
         @media (max-width: 1024px) {
           .desktop-nav { display: none !important; }
-          .mobile-toggle { display: block !important; }
+          .mobile-actions { display: flex !important; }
         }
       `}</style>
-    </header>
+    </>
   );
 };

@@ -6,13 +6,15 @@
 /* Services Grid Catalog */
 .services-catalog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 30px;
+  width: 100%;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .services-catalog-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
@@ -23,6 +25,13 @@
   gap: 24px;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+}
+
+@media (max-width: 576px) {
+  .services-catalog-card {
+    padding: 28px 20px;
+  }
 }
 
 .card-top {

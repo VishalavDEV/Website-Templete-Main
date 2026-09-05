@@ -77,12 +77,7 @@ export default function LumoraLabsPage() {
         className="absolute top-1/2 -right-16 w-32 h-32 rounded-3xl border border-pink-100 bg-pink-50/10 pointer-events-none z-0"
       />
 
-      {/* 1. TOP HEADER REDIRECT */}
-      <div className="bg-[#FAF9FF] border-b border-[#EBE8FC] py-2.5 text-center text-[10px] font-bold tracking-[0.25em] font-mono text-indigo-500 hover:text-indigo-700 transition-colors z-50 relative">
-        <Link to="/">← EXPLORE ALL TEMPLATES</Link>
-      </div>
-
-      {/* 2. FLOATING HEADER */}
+      {/* FLOATING HEADER */}
       <header className="sticky top-0 z-40 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between bg-white/90 backdrop-blur border border-indigo-50 shadow-md rounded-2xl px-6 py-3.5">
           {/* Logo */}

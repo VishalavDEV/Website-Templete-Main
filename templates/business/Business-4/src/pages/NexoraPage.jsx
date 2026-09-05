@@ -24,12 +24,7 @@ export default function NexoraPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
-      {/* 1. TOP HEADER REDIRECT */}
-      <div className="bg-[#030712] border-b border-slate-900 py-2.5 text-center text-[10px] font-bold tracking-[0.25em] font-mono text-slate-500 hover:text-cyan-400 transition-colors z-50 relative">
-        <Link to="/">← EXPLORE ALL TEMPLATES</Link>
-      </div>
-
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-cyan-500 selection:text-slate-950">
       {/* 2. STICKY GLASS HEADER */}
       <header className="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-slate-900/60 py-5 px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -96,7 +91,6 @@ export default function NexoraPage() {
       {/* 3. HERO SECTION (With Floating Widgets) */}
       <section id="home" className="py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto relative overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
           {/* Left Text */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -296,7 +290,7 @@ export default function NexoraPage() {
                 >
                   {/* Subtle top card gradient border highlight on hover */}
                   <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  
+
                   <div className="p-3 bg-slate-900 text-cyan-400 rounded-lg w-fit group-hover:scale-105 group-hover:rotate-3 transition-transform">
                     <IconComp size={20} />
                   </div>
@@ -316,7 +310,6 @@ export default function NexoraPage() {
       {/* 7. INTERACTIVE ARCHITECTURE DIAGRAM (SVG highlights from step hover) */}
       <section id="architecture" className="py-24 px-6 md:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
           {/* Steps list */}
           <div className="lg:col-span-6 flex flex-col text-left">
             <span className="text-[10px] font-mono font-bold tracking-[0.25em] text-cyan-400 uppercase mb-4 block">
@@ -368,7 +361,7 @@ export default function NexoraPage() {
                   strokeWidth="2"
                   className="transition-all duration-300"
                 />
-                
+
                 {/* Node 2A: Event Gateway */}
                 <circle
                   cx="50"

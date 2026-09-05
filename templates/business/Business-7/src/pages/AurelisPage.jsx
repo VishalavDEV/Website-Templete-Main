@@ -91,12 +91,7 @@ export default function AurelisPage() {
 
   return (
     <div className="min-h-screen bg-white text-[#1E293B] font-serif antialiased selection:bg-[#D4AF37] selection:text-white">
-      {/* 1. TOP HEADER REDIRECT */}
-      <div className="bg-[#FAF6EB] border-b border-[#E6DFD3] py-2.5 text-center text-[10px] font-bold tracking-[0.2em] font-sans text-stone-600 hover:text-[#B2902B] transition-colors z-50 relative">
-        <Link to="/">← EXPLORE ALL TEMPLATES</Link>
-      </div>
-
-      {/* 2. STICKY NAVBAR */}
+      {/* STICKY NAVBAR */}
       <header
         className={`sticky top-0 z-40 transition-all duration-300 w-full px-6 md:px-12 ${
           isScrolled 

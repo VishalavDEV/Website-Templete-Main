@@ -193,7 +193,11 @@
 .card-footer-author {
   margin-top: auto;
   border-top: 1px solid var(--border-glass);
-  padding-top: 20px;
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
 
 .author-details-box h4 {
@@ -205,6 +209,27 @@
 .author-details-box p {
   font-size: 0.8rem;
   color: var(--text-muted);
+}
+
+.read-article-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.read-article-link-btn:hover {
+  background: rgba(0, 242, 254, 0.1);
+  transform: translateX(3px);
 }
 
 /* Empty State */
@@ -224,4 +249,191 @@
   color: var(--text-secondary);
   max-width: 500px;
   margin-bottom: 10px;
+}
+
+/* Article Reader Modal */
+.article-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 0, 20, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.article-modal-card {
+  width: 100%;
+  max-width: 780px;
+  background: rgba(11, 7, 32, 0.97);
+  border: 1px solid var(--border-glass-glow);
+  border-radius: var(--border-radius-lg);
+  padding: 40px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .article-modal-card {
+    padding: 24px 20px;
+  }
+}
+
+.article-modal-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.article-tag-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reading-time-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.article-modal-header h1 {
+  font-size: 2.1rem;
+  line-height: 1.25;
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+.article-author-byline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.author-avatar-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--grad-cyan-blue);
+  color: #030014;
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+}
+
+.article-author-byline h4 {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.article-author-byline p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.article-takeaways-box {
+  background: rgba(0, 242, 254, 0.04);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  border-radius: var(--border-radius-md);
+  padding: 18px 22px;
+}
+
+.takeaways-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.takeaways-header h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.article-takeaways-box p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.article-full-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.article-lead-p {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.article-full-body h3 {
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  margin-top: 10px;
+}
+
+.article-modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-glass);
+  padding-top: 20px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.article-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.article-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.article-action-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.article-action-btn.liked {
+  background: rgba(0, 242, 254, 0.12);
+  border-color: var(--color-blue);
+  color: var(--color-blue);
 }

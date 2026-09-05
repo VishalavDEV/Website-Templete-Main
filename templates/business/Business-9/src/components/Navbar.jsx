@@ -20,6 +20,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent background scroll when mobile menu drawer is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -45,19 +57,19 @@ export default function Navbar() {
   };
 
   const menuVariants = {
-    hidden: { opacity: 0, y: -20 },
+    hidden: { opacity: 0, y: -15 },
     visible: { 
       opacity: 1, 
       y: 0,
       transition: { 
-        staggerChildren: 0.08,
-        delayChildren: 0.1
+        staggerChildren: 0.05,
+        delayChildren: 0.05
       }
     },
     exit: { 
       opacity: 0, 
-      y: -20, 
-      transition: { duration: 0.25 } 
+      y: -15, 
+      transition: { duration: 0.2 } 
     }
   };
 
@@ -137,6 +149,7 @@ export default function Navbar() {
               padding: '0.25rem'
             }}
             className="hamburger-btn"
+            aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
@@ -144,60 +157,93 @@ export default function Navbar() {
 
       </div>
 
-      {/* Mobile Menu Panel */}
+      {/* Mobile Menu Panel & Backdrop */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            variants={menuVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            style={{
-              position: 'absolute',
-              top: '100%',
-              left: 0,
-              width: '100%',
-              background: 'var(--bg-dark-card)',
-              backdropFilter: 'blur(20px)',
-              padding: '2rem 1.5rem',
-              borderBottom: '1px solid rgba(249, 115, 22, 0.15)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1.25rem',
-              zIndex: 999
-            }}
-          >
-            {navLinks.map((link) => (
-              <motion.div key={link.name} variants={linkVariants}>
-                <NavLink
-                  to={link.path}
-                  style={({ isActive }) => ({
-                    display: 'block',
-                    fontFamily: 'var(--font-title)',
-                    fontSize: '1.15rem',
-                    fontWeight: 600,
-                    color: isActive ? 'var(--primary)' : 'rgba(255, 255, 255, 0.8)',
-                    padding: '0.5rem 0'
-                  })}
-                  onClick={handleMobileLinkClick}
+          <>
+            {/* Backdrop overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setMobileMenuOpen(false)}
+              className="mobile-menu-backdrop"
+              style={{
+                position: 'fixed',
+                top: '0',
+                left: 0,
+                width: '100vw',
+                height: '100vh',
+                background: 'rgba(0, 0, 0, 0.65)',
+                backdropFilter: 'blur(4px)',
+                WebkitBackdropFilter: 'blur(4px)',
+                zIndex: 998
+              }}
+            />
+
+            {/* Scrollable Mobile Drawer */}
+            <motion.div
+              variants={menuVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="mobile-menu-drawer custom-scrollbar"
+              style={{
+                position: 'absolute',
+                top: '100%',
+                left: 0,
+                width: '100%',
+                maxHeight: 'calc(100vh - 75px)',
+                overflowY: 'auto',
+                WebkitOverflowScrolling: 'touch',
+                background: 'var(--bg-dark-card)',
+                backdropFilter: 'blur(24px)',
+                WebkitBackdropFilter: 'blur(24px)',
+                padding: '1.25rem 1.5rem 2.5rem',
+                borderBottom: '1px solid rgba(249, 115, 22, 0.25)',
+                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.5)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.65rem',
+                zIndex: 999
+              }}
+            >
+              {navLinks.map((link) => (
+                <motion.div key={link.name} variants={linkVariants}>
+                  <NavLink
+                    to={link.path}
+                    style={({ isActive }) => ({
+                      display: 'block',
+                      fontFamily: 'var(--font-title)',
+                      fontSize: '1.1rem',
+                      fontWeight: 600,
+                      color: isActive ? 'var(--primary)' : 'rgba(255, 255, 255, 0.85)',
+                      padding: '0.45rem 0.75rem',
+                      borderRadius: '8px',
+                      background: isActive ? 'rgba(249, 115, 22, 0.12)' : 'transparent',
+                      transition: 'all 0.2s ease'
+                    })}
+                    onClick={handleMobileLinkClick}
+                  >
+                    {link.name}
+                  </NavLink>
+                </motion.div>
+              ))}
+              <motion.div variants={linkVariants} style={{ marginTop: '0.5rem', paddingTop: '0.75rem', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                <button 
+                  className="btn btn-primary" 
+                  style={{ width: '100%', padding: '0.85rem' }}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    navigate('/contact');
+                  }}
                 >
-                  {link.name}
-                </NavLink>
+                  Get Started <ArrowRight size={16} />
+                </button>
               </motion.div>
-            ))}
-            <motion.div variants={linkVariants} style={{ marginTop: '0.5rem' }}>
-              <button 
-                className="btn btn-primary" 
-                style={{ width: '100%' }}
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  navigate('/contact');
-                }}
-              >
-                Get Started <ArrowRight size={16} />
-              </button>
             </motion.div>
-          </motion.div>
+          </>
         )}
       </AnimatePresence>
 
@@ -209,6 +255,19 @@ export default function Navbar() {
           .hamburger-btn {
             display: block !important;
           }
+        }
+        .mobile-menu-drawer::-webkit-scrollbar {
+          width: 5px;
+        }
+        .mobile-menu-drawer::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.2);
+        }
+        .mobile-menu-drawer::-webkit-scrollbar-thumb {
+          background: rgba(249, 115, 22, 0.5);
+          border-radius: 4px;
+        }
+        .mobile-menu-drawer::-webkit-scrollbar-thumb:hover {
+          background: rgba(249, 115, 22, 0.8);
         }
       `}</style>
     </nav>

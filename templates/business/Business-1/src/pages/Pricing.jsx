@@ -1,11 +1,39 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Check, X, Zap, Shield, ArrowRight, HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Check, X, Zap, Shield, ArrowRight, HelpCircle, ChevronDown, ChevronUp, Sparkles, Send, CheckCircle2, Clock, Calendar } from 'lucide-react';
 import './Pricing.css';
 
 export default function Pricing() {
+  const navigate = useNavigate();
   const [billingCycle, setBillingCycle] = useState('monthly'); // monthly | yearly
   const [activeFaq, setActiveFaq] = useState(null);
+  const [selectedPlan, setSelectedPlan] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [bookingSubmitted, setBookingSubmitted] = useState(false);
+  const [bookingForm, setBookingForm] = useState({
+    name: '',
+    email: '',
+    company: '',
+    timeline: 'Immediate (Next 2 Weeks)',
+    notes: ''
+  });
+
+  const handleOpenPlanModal = (plan) => {
+    setSelectedPlan(plan);
+    setBookingSubmitted(false);
+    setIsModalOpen(true);
+  };
+
+  const handleBookingSubmit = (e) => {
+    e.preventDefault();
+    setBookingSubmitted(true);
+  };
+
+  const handleGoToContact = (planName) => {
+    setIsModalOpen(false);
+    navigate('/contact', { state: { plan: planName, billing: billingCycle } });
+  };
 
   const plans = [
     {
@@ -139,7 +167,11 @@ export default function Pricing() {
               </div>
 
               <div className="pricing-card-footer">
-                <button className={`btn ${p.popular ? 'btn-primary' : 'btn-secondary'} pricing-cta-btn`}>
+                <button
+                  onClick={() => handleOpenPlanModal(p)}
+                  className={`btn ${p.popular ? 'btn-primary' : 'btn-secondary'} pricing-cta-btn`}
+                  aria-label={`Select ${p.name} Plan`}
+                >
                   {p.cta} <ArrowRight size={16} />
                 </button>
               </div>
@@ -226,6 +258,165 @@ export default function Pricing() {
           </div>
         </div>
       </section>
+
+      {/* Interactive Sprint Booking Modal */}
+      <AnimatePresence>
+        {isModalOpen && selectedPlan && (
+          <div className="pricing-modal-backdrop" onClick={() => setIsModalOpen(false)}>
+            <motion.div
+              className="pricing-modal-card glass-card"
+              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ duration: 0.25 }}
+            >
+              {/* Close Button */}
+              <button
+                className="modal-close-btn"
+                onClick={() => setIsModalOpen(false)}
+                aria-label="Close modal"
+              >
+                <X size={20} />
+              </button>
+
+              {!bookingSubmitted ? (
+                <>
+                  <div className="modal-header-section">
+                    <div className="modal-plan-badge">
+                      <Sparkles size={14} />
+                      <span>{selectedPlan.name} Tier & Sprint Setup</span>
+                    </div>
+                    <h2>Initialize Your Engagement</h2>
+                    <p className="modal-subtitle">
+                      Confirm your {billingCycle} sprint scope for <strong>${selectedPlan.prices[billingCycle]}/month</strong>.
+                    </p>
+                  </div>
+
+                  <div className="modal-plan-summary-box">
+                    <div className="summary-left">
+                      <h4>{selectedPlan.name} Plan</h4>
+                      <p>{selectedPlan.desc}</p>
+                      <div className="modal-features-pill-list">
+                        {selectedPlan.features.slice(0, 3).map((f, i) => (
+                          <span key={i} className="feature-pill"><Check size={12} /> {f}</span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="summary-right">
+                      <span className="summary-price">${selectedPlan.prices[billingCycle]}</span>
+                      <span className="summary-period">per month ({billingCycle})</span>
+                    </div>
+                  </div>
+
+                  <form onSubmit={handleBookingSubmit} className="modal-booking-form">
+                    <div className="form-row-2col">
+                      <div className="form-group">
+                        <label>Your Name *</label>
+                        <input
+                          type="text"
+                          required
+                          placeholder="e.g. Alex Morgan"
+                          value={bookingForm.name}
+                          onChange={(e) => setBookingForm(prev => ({ ...prev, name: e.target.value }))}
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label>Work Email *</label>
+                        <input
+                          type="email"
+                          required
+                          placeholder="alex@company.com"
+                          value={bookingForm.email}
+                          onChange={(e) => setBookingForm(prev => ({ ...prev, email: e.target.value }))}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="form-row-2col">
+                      <div className="form-group">
+                        <label>Company / Organization</label>
+                        <input
+                          type="text"
+                          placeholder="e.g. Apex Global"
+                          value={bookingForm.company}
+                          onChange={(e) => setBookingForm(prev => ({ ...prev, company: e.target.value }))}
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label>Desired Timeline</label>
+                        <select
+                          value={bookingForm.timeline}
+                          onChange={(e) => setBookingForm(prev => ({ ...prev, timeline: e.target.value }))}
+                        >
+                          <option>Immediate (Next 2 Weeks)</option>
+                          <option>Next Quarter (Q3/Q4)</option>
+                          <option>Exploratory Architecture Review</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div className="form-group">
+                      <label>Sprint Goals / Specific Integrations</label>
+                      <textarea
+                        rows={3}
+                        placeholder="Tell us about your tech stack, databases, or growth targets..."
+                        value={bookingForm.notes}
+                        onChange={(e) => setBookingForm(prev => ({ ...prev, notes: e.target.value }))}
+                      />
+                    </div>
+
+                    <div className="modal-actions-row">
+                      <button type="submit" className="btn btn-primary modal-submit-btn">
+                        Confirm Sprint Reservation <Send size={16} />
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-secondary modal-contact-btn"
+                        onClick={() => handleGoToContact(selectedPlan.name)}
+                      >
+                        Detailed Consultation Form
+                      </button>
+                    </div>
+                  </form>
+                </>
+              ) : (
+                <div className="modal-success-state text-center">
+                  <div className="success-icon-wrapper">
+                    <CheckCircle2 size={54} color="#00ffaa" />
+                  </div>
+                  <h2>Sprint Reservation Received!</h2>
+                  <p className="success-lead">
+                    Thank you <strong>{bookingForm.name || 'Partner'}</strong>. Our Lead Solutions Architect has been assigned to your <strong>{selectedPlan.name}</strong> sprint onboarding.
+                  </p>
+                  <div className="success-details-card glass-card">
+                    <div className="success-row">
+                      <span><Clock size={16} /> Response SLA:</span>
+                      <strong>Under 4 Business Hours</strong>
+                    </div>
+                    <div className="success-row">
+                      <span><Calendar size={16} /> Timeline:</span>
+                      <strong>{bookingForm.timeline}</strong>
+                    </div>
+                    <div className="success-row">
+                      <span>Plan Selected:</span>
+                      <strong>{selectedPlan.name} (${selectedPlan.prices[billingCycle]}/{billingCycle === 'yearly' ? 'yr' : 'mo'})</strong>
+                    </div>
+                  </div>
+                  <div className="modal-actions-row" style={{ justifyContent: 'center' }}>
+                    <button
+                      className="btn btn-primary"
+                      onClick={() => setIsModalOpen(false)}
+                    >
+                      Done & Return to Pricing
+                    </button>
+                  </div>
+                </div>
+              )}
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

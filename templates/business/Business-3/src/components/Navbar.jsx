@@ -44,10 +44,10 @@ const Navbar = () => {
   const inactiveLinkStyle = "text-secondaryText hover:text-primaryText transition-colors font-medium relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primaryAccent after:rounded-full hover:after:w-full after:transition-all after:duration-300";
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'glass-panel py-3.5 shadow-sm border-b border-customBorder' 
-        : 'bg-transparent py-6'
+    <header className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${
+      isScrolled || isOpen
+        ? 'bg-[#180A2B]/95 backdrop-blur-xl py-3.5 shadow-xl border-b border-[#3B2163]' 
+        : 'bg-[#180A2B]/90 md:bg-[#180A2B]/85 backdrop-blur-xl py-4.5 border-b border-[#3B2163]/50 shadow-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
@@ -113,56 +113,82 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu Panel */}
+      {/* Mobile Menu Backdrop & Panel */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-panel border-b border-customBorder absolute top-full left-0 w-full overflow-hidden shadow-lg"
-          >
-            <div className="px-6 py-5 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className={`text-lg py-1 ${location.pathname === link.path ? 'text-primaryAccent font-bold' : 'text-secondaryText font-medium'}`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <hr className="border-customBorder my-1" />
-              {isLoggedIn ? (
-                <div className="flex flex-col gap-3">
-                  <Link 
-                    to="/admin" 
-                    className="flex items-center gap-2 text-primaryText font-semibold py-1"
+          <>
+            {/* Backdrop overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 top-[60px] bg-[#0D0517]/75 backdrop-blur-xs -z-10 md:hidden"
+            />
+            
+            {/* Solid Opaque Dropdown Panel */}
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden bg-[#180A2B] border-b border-[#3B2163] absolute top-full left-0 w-full overflow-hidden shadow-2xl z-50"
+            >
+              <div className="px-6 py-5 flex flex-col gap-2">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-base py-2.5 px-3 rounded-xl transition-colors ${
+                      location.pathname === link.path 
+                        ? 'text-white bg-[#2E1A47] font-bold border border-[#7C3AED]/40' 
+                        : 'text-secondaryText hover:text-white hover:bg-[#2E1A47]/60 font-medium'
+                    }`}
                   >
-                    <LayoutDashboard size={18} />
-                    Admin Dashboard
+                    {link.name}
                   </Link>
-                  <button 
-                    onClick={handleLogout}
-                    className="flex items-center gap-2 text-red-400 font-semibold py-1 text-left cursor-pointer"
-                  >
-                    <LogOut size={18} />
-                    Logout
-                  </button>
-                </div>
-              ) : (
-                <Link 
-                  to="/contact" 
-                  className="gradient-bg text-white py-3 rounded-xl font-semibold text-center shadow-lg shadow-purple-500/20 block"
-                >
-                  Get Started
-                </Link>
-              )}
-            </div>
-          </motion.div>
+                ))}
+                <hr className="border-[#3B2163] my-2" />
+                {isLoggedIn ? (
+                  <div className="flex flex-col gap-2 pt-1">
+                    <Link 
+                      to="/admin" 
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center gap-2 text-primaryText font-semibold py-2 px-3 rounded-xl hover:bg-[#2E1A47]"
+                    >
+                      <LayoutDashboard size={18} />
+                      Admin Dashboard
+                    </Link>
+                    <button 
+                      onClick={() => {
+                        setIsOpen(false);
+                        handleLogout();
+                      }}
+                      className="flex items-center gap-2 text-red-400 font-semibold py-2 px-3 rounded-xl hover:bg-red-950/30 text-left cursor-pointer"
+                    >
+                      <LogOut size={18} />
+                      Logout
+                    </button>
+                  </div>
+                ) : (
+                  <div className="pt-2">
+                    <Link 
+                      to="/contact" 
+                      onClick={() => setIsOpen(false)}
+                      className="gradient-bg text-white py-3 rounded-xl font-semibold text-center shadow-lg shadow-purple-500/20 block hover:opacity-95"
+                    >
+                      Get Started
+                    </Link>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
-    </nav>
+    </header>
   );
 };
 

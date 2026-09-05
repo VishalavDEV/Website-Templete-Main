@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Calendar, Clock, User, ArrowRight, BookOpen } from 'lucide-react';
+import { Search, Calendar, Clock, User, ArrowRight, BookOpen, X, Sparkles, Share2, ThumbsUp, BookmarkCheck } from 'lucide-react';
 import { apiService } from '../utils/api';
 import './Blog.css';
 
@@ -12,6 +11,9 @@ export default function Blog() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(true);
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [liked, setLiked] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const categories = ['All', 'Innovation', 'Technology', 'Strategy', 'Marketing', 'Business'];
 
@@ -33,6 +35,31 @@ export default function Blog() {
     };
     fetchBlogs();
   }, []);
+
+  // Keyboard close support for article modal
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setSelectedArticle(null);
+      }
+    };
+    if (selectedArticle) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedArticle]);
+
+  const handleOpenArticle = (article) => {
+    setSelectedArticle(article);
+    setLiked(false);
+    setCopied(false);
+  };
+
+  const handleShare = () => {
+    navigator.clipboard?.writeText(window.location.href);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
 
   const handleSearchAndFilter = (category, query) => {
     setActiveCategory(category);
@@ -147,14 +174,18 @@ export default function Blog() {
                     <p>{featuredBlog.summary}</p>
                     
                     <div className="blog-meta-row">
-                      <span><User size={14} /> {featuredBlog.author}</span>
+                      <span><User size={14} /> {featuredBlog.author} ({featuredBlog.authorRole})</span>
                       <span><Calendar size={14} /> {featuredBlog.date}</span>
                       <span><Clock size={14} /> {featuredBlog.readTime}</span>
                     </div>
 
-                    <a href={`#blog-${featuredBlog.id}`} className="btn btn-primary featured-read-btn">
+                    <button
+                      onClick={() => handleOpenArticle(featuredBlog)}
+                      className="btn btn-primary featured-read-btn"
+                      aria-label="Read Featured Article"
+                    >
                       Read Full Article <BookOpen size={16} />
-                    </a>
+                    </button>
                   </div>
                 </motion.div>
               )}
@@ -166,7 +197,6 @@ export default function Blog() {
                     <motion.article
                       className="blog-article-card glass-card"
                       key={blog.id}
-                      id={`blog-${blog.id}`}
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.95 }}
@@ -183,11 +213,6 @@ export default function Blog() {
                       <div className="card-body-content">
                         <h3>{blog.title}</h3>
                         <p>{blog.summary}</p>
-                        
-                        {/* Nested Content Overlay representing full text */}
-                        <div className="article-body-details">
-                          <p>{blog.content}</p>
-                        </div>
                       </div>
 
                       <div className="card-footer-author">
@@ -195,6 +220,13 @@ export default function Blog() {
                           <h4>{blog.author}</h4>
                           <p>{blog.authorRole}</p>
                         </div>
+                        <button
+                          onClick={() => handleOpenArticle(blog)}
+                          className="read-article-link-btn"
+                          aria-label={`Read article ${blog.title}`}
+                        >
+                          Read Article <ArrowRight size={14} />
+                        </button>
                       </div>
                     </motion.article>
                   ))}
@@ -214,6 +246,100 @@ export default function Blog() {
           )}
         </div>
       </section>
+
+      {/* Dedicated Article Reader Modal */}
+      <AnimatePresence>
+        {selectedArticle && (
+          <div className="article-modal-backdrop" onClick={() => setSelectedArticle(null)}>
+            <motion.div
+              className="article-modal-card glass-card"
+              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0, scale: 0.92, y: 30 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 30 }}
+              transition={{ duration: 0.25 }}
+            >
+              {/* Top Modal Controls */}
+              <div className="article-modal-nav">
+                <div className="article-tag-group">
+                  <span className="blog-meta-tag">{selectedArticle.category}</span>
+                  <span className="reading-time-pill"><Clock size={13} /> {selectedArticle.readTime}</span>
+                </div>
+                <button
+                  className="modal-close-btn"
+                  onClick={() => setSelectedArticle(null)}
+                  aria-label="Close article reader"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+
+              {/* Article Header */}
+              <div className="article-modal-header">
+                <h1>{selectedArticle.title}</h1>
+                <div className="article-author-byline">
+                  <div className="author-avatar-badge">
+                    {selectedArticle.author.split(' ').map(n => n[0]).join('')}
+                  </div>
+                  <div>
+                    <h4>{selectedArticle.author}</h4>
+                    <p>{selectedArticle.authorRole} • Published on {selectedArticle.date}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Key Takeaways Callout */}
+              <div className="article-takeaways-box">
+                <div className="takeaways-header">
+                  <Sparkles size={16} color="var(--color-blue)" />
+                  <h4>Key Strategic Takeaways</h4>
+                </div>
+                <p>{selectedArticle.summary}</p>
+              </div>
+
+              {/* Full Article Content */}
+              <div className="article-full-body">
+                <p className="article-lead-p">{selectedArticle.content}</p>
+                
+                <h3>Core Strategic Principles & Operational Takeaways</h3>
+                <p>
+                  When deploying systems of this magnitude, continuous testing and cross-functional alignment are crucial. Organizations that combine technical modernization with employee onboarding programs achieve a 40% faster milestone turnaround and significantly lower maintenance overhead.
+                </p>
+                <p>
+                  Whether you are scaling custom microservices or refactoring legacy architectures, having structured metric benchmarks allows leadership to observe real ROI from sprint zero.
+                </p>
+              </div>
+
+              {/* Article Footer & Actions */}
+              <div className="article-modal-footer">
+                <div className="article-action-buttons">
+                  <button
+                    className={`article-action-btn ${liked ? 'liked' : ''}`}
+                    onClick={() => setLiked(prev => !prev)}
+                  >
+                    <ThumbsUp size={16} />
+                    <span>{liked ? 'Liked (1)' : 'Helpful'}</span>
+                  </button>
+                  <button
+                    className="article-action-btn"
+                    onClick={handleShare}
+                  >
+                    {copied ? <BookmarkCheck size={16} color="#00ffaa" /> : <Share2 size={16} />}
+                    <span>{copied ? 'Link Copied!' : 'Share Article'}</span>
+                  </button>
+                </div>
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => setSelectedArticle(null)}
+                >
+                  Back to Insights
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
+

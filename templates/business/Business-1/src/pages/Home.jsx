@@ -20,9 +20,9 @@ function AnimatedCounter({ value, duration = 2, suffix = "" }) {
   }, [inView, count, value, duration]);
 
   return (
-    <span ref={ref}>
-      <motion.span>{rounded}</motion.span>
-      {suffix}
+    <span ref={ref} className="animated-counter-wrapper">
+      <motion.span className="animated-counter-value">{rounded}</motion.span>
+      <span className="animated-counter-suffix">{suffix}</span>
     </span>
   );
 }
@@ -85,17 +85,17 @@ export default function Home() {
         <div className="hero-container container">
           <motion.div 
             className="hero-content"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
           >
             <div className="hero-badge">
               <Zap size={14} className="badge-icon" />
               <span>Next-Gen Enterprise Consulting</span>
             </div>
-            <h1>
-              Accelerate Your <br />
-              <span className="text-gradient">Business Strategy</span> <br />
+            <h1 className="hero-title">
+              Accelerate Your <br className="hero-title-br" />
+              <span className="text-gradient">Business Strategy</span> <br className="hero-title-br" />
               Into the Future
             </h1>
             <p>
@@ -129,9 +129,9 @@ export default function Home() {
 
           <motion.div 
             className="hero-visual"
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
           >
             <div className="ecosystem-container glass-card">
               {/* Interactive Vector Ecosystem */}

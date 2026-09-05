@@ -80,7 +80,7 @@ const ProjectDetails = () => {
 
   return (
     <AnimatedPage>
-      <div className="pt-24 pb-20 overflow-hidden">
+      <div className="pt-28 md:pt-32 pb-20 overflow-hidden">
         {/* HEADER BAR */}
         <div className="max-w-7xl mx-auto px-6 py-6 flex items-center">
           <Link 

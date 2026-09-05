@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  ArrowRight, CheckCircle, Target, Zap, Users, TrendingUp,
+  ArrowRight, CheckCircle, CheckCircle2, Target, Zap, Users, TrendingUp,
   X, Star
 } from 'lucide-react';
 import Hero from '../components/Hero/Hero';
@@ -17,6 +17,7 @@ import { services } from '../data/services';
 import { projects } from '../data/projects';
 import { testimonials } from '../data/testimonials';
 import './Home.css';
+import './Services.css';
 
 const whyUsPoints = [
   { icon: <Target size={18} />, title: 'Outcome-Driven', desc: 'We measure success by your business results, not lines of code.' },
@@ -29,11 +30,13 @@ const whyUsPoints = [
 
 const Home = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedService, setSelectedService] = useState(null);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const navigate = useNavigate();
 
   // Prevent background scrolling when modal is open
   useEffect(() => {
-    if (selectedProject) {
+    if (selectedProject || selectedService) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -41,7 +44,7 @@ const Home = () => {
     return () => {
       document.body.style.overflow = '';
     };
-  }, [selectedProject]);
+  }, [selectedProject, selectedService]);
 
   const handleTestimonialNext = () => {
     setCurrentTestimonial((c) => (c + 1) % testimonials.length);
@@ -83,7 +86,12 @@ const Home = () => {
 
           <div className="grid-3">
             {services.slice(0, 6).map((service, i) => (
-              <ServiceCard key={service.id} service={service} index={i} />
+              <ServiceCard
+                key={service.id}
+                service={service}
+                index={i}
+                onLearnMore={setSelectedService}
+              />
             ))}
           </div>
 
@@ -350,6 +358,95 @@ const Home = () => {
                     <span key={t} className="project-card__tag">{t}</span>
                   ))}
                 </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Service detail modal */}
+      <AnimatePresence>
+        {selectedService && (
+          <motion.div
+            className="modal-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedService(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`Service details: ${selectedService.title}`}
+          >
+            <motion.div
+              className="modal-content services__modal"
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="modal-close"
+                onClick={() => setSelectedService(null)}
+                aria-label="Close modal"
+              >
+                <X size={18} />
+              </button>
+
+              <div
+                className="services__modal-header"
+                style={{ '--accent': selectedService.color }}
+              >
+                <span className="section-tag" style={{ color: selectedService.color }}>Service Detail</span>
+                <h2 className="modal-title">{selectedService.title}</h2>
+              </div>
+
+              <div className="modal-body">
+                <p className="modal-desc">{selectedService.fullDescription}</p>
+
+                <div>
+                  <h4 className="modal-section-title">Key Benefits</h4>
+                  <ul className="services__modal-benefits">
+                    {selectedService.benefits.map((b) => (
+                      <li key={b} className="services__modal-benefit">
+                        <CheckCircle2 size={15} style={{ color: selectedService.color, flexShrink: 0 }} />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="modal-section-title">Technologies & Tools</h4>
+                  <div className="modal-tags">
+                    {selectedService.technologies.map((t) => (
+                      <span
+                        key={t}
+                        className="project-card__tag"
+                        style={{
+                          color: selectedService.color,
+                          background: `color-mix(in srgb, ${selectedService.color} 12%, transparent)`,
+                          borderColor: `color-mix(in srgb, ${selectedService.color} 25%, transparent)`,
+                        }}
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <Button
+                  variant="primary"
+                  size="lg"
+                  fullWidth
+                  icon={<ArrowRight size={16} />}
+                  onClick={() => {
+                    setSelectedService(null);
+                    navigate('/contact');
+                  }}
+                >
+                  Discuss This Service
+                </Button>
               </div>
             </motion.div>
           </motion.div>

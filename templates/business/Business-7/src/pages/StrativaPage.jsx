@@ -67,12 +67,7 @@ export default function StrativaPage() {
 
   return (
     <div className="min-h-screen bg-[#F9F9F7] text-slate-800 font-sans antialiased border-stone-300">
-      {/* 1. TOP HEADER REDIRECT */}
-      <div className="bg-[#F0F0EC] border-b border-[#E1E1DC] py-2.5 text-center text-[10px] font-bold tracking-[0.25em] font-mono text-stone-600 hover:text-emerald-600 transition-colors z-50 relative">
-        <Link to="/">← EXPLORE ALL TEMPLATES</Link>
-      </div>
-
-      {/* 2. NAVIGATION BAR */}
+      {/* NAVIGATION BAR */}
       <header className="sticky top-0 z-40 bg-[#F9F9F7]/95 backdrop-blur-sm border-b border-stone-200/60 py-4 px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}

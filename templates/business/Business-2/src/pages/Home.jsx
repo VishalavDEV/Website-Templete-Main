@@ -69,7 +69,7 @@ const Home = () => {
 
   return (
     <AnimatedPage>
-      <div className="pt-24 overflow-hidden">
+      <div className="pt-28 md:pt-32 overflow-hidden">
         {/* HERO SECTION */}
         <section className="relative max-w-7xl mx-auto px-6 pt-12 pb-20 md:pb-28 flex flex-col lg:flex-row items-center gap-16 z-10">
           {/* Background Decorative Gradients */}

@@ -94,12 +94,7 @@ export default function VantaStudioPage() {
         </motion.div>
       )}
 
-      {/* 1. TOP HEADER REDIRECT */}
-      <div className="bg-[#EDE9DF] border-b border-[#DCD7C9] py-2.5 text-center text-[10px] font-bold tracking-[0.25em] font-mono text-stone-600 hover:text-rose-600 transition-colors z-50 relative">
-        <Link to="/">← EXPLORE ALL TEMPLATES</Link>
-      </div>
-
-      {/* 2. NAVIGATION BAR */}
+      {/* NAVIGATION BAR */}
       <header className="sticky top-0 z-40 bg-[#F5F2EB]/90 backdrop-blur-sm border-b border-stone-200 py-6 px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
