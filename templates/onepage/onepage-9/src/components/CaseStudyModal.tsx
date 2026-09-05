@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CaseStudy } from '../types';
 import { X, ExternalLink, Bookmark, Share2, CheckCircle, Sparkles, ArrowRight, Layers, ShieldCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -24,19 +24,37 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 }) => {
   const [activeTab, setActiveTab] = useState<'overview' | 'architecture' | 'metrics'>('overview');
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    if (isOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen || !caseStudy) return null;
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-black/80 backdrop-blur-md">
+      <div
+        className="fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-md p-3 sm:p-6 flex items-start justify-center"
+        onClick={onClose}
+      >
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative w-full max-w-4xl bg-neutral-900 border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden my-8"
+          onClick={(e) => e.stopPropagation()}
+          className="relative w-full max-w-4xl bg-neutral-900 border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden my-4 sm:my-8"
         >
           {/* Header Bar */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-800 bg-neutral-950/80">
+          <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-neutral-800 bg-neutral-950/90 sticky top-0 z-20">
             <div className="flex items-center gap-2">
               <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-amber-400/10 text-amber-300 border border-amber-400/20">
                 {caseStudy.category}
@@ -53,6 +71,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                     : 'bg-neutral-900 border-neutral-800 text-neutral-400 hover:text-white'
                 }`}
                 title="Bookmark Case Study"
+                aria-label="Bookmark Case Study"
               >
                 <Bookmark className={`w-4 h-4 ${isBookmarked ? 'fill-amber-300' : ''}`} />
               </button>
@@ -61,16 +80,19 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                 onClick={() => onShare(caseStudy.title)}
                 className="p-2 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white transition-colors"
                 title="Share Case Study"
+                aria-label="Share Case Study"
               >
                 <Share2 className="w-4 h-4" />
               </button>
 
               <button
                 onClick={onClose}
-                className="p-2 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white transition-colors"
-                title="Close"
+                className="p-2 rounded-lg bg-amber-400/10 border border-amber-400/30 text-amber-300 hover:bg-amber-400/20 hover:text-amber-200 transition-colors flex items-center gap-1 text-xs font-semibold cursor-pointer"
+                title="Close modal"
+                aria-label="Close modal"
               >
                 <X className="w-4 h-4" />
+                <span className="hidden sm:inline">Close</span>
               </button>
             </div>
           </div>
@@ -98,10 +120,10 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
           </div>
 
           {/* Navigation Tabs */}
-          <div className="flex border-b border-neutral-800 bg-neutral-950/40 px-6">
+          <div className="flex border-b border-neutral-800 bg-neutral-950/40 px-4 sm:px-6 overflow-x-auto">
             <button
               onClick={() => setActiveTab('overview')}
-              className={`px-4 py-3 text-xs font-semibold border-b-2 transition-all ${
+              className={`px-4 py-3 text-xs font-semibold border-b-2 whitespace-nowrap transition-all ${
                 activeTab === 'overview'
                   ? 'border-amber-400 text-amber-300'
                   : 'border-transparent text-neutral-400 hover:text-neutral-200'
@@ -111,7 +133,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             </button>
             <button
               onClick={() => setActiveTab('architecture')}
-              className={`px-4 py-3 text-xs font-semibold border-b-2 transition-all ${
+              className={`px-4 py-3 text-xs font-semibold border-b-2 whitespace-nowrap transition-all ${
                 activeTab === 'architecture'
                   ? 'border-amber-400 text-amber-300'
                   : 'border-transparent text-neutral-400 hover:text-neutral-200'
@@ -121,7 +143,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             </button>
             <button
               onClick={() => setActiveTab('metrics')}
-              className={`px-4 py-3 text-xs font-semibold border-b-2 transition-all ${
+              className={`px-4 py-3 text-xs font-semibold border-b-2 whitespace-nowrap transition-all ${
                 activeTab === 'metrics'
                   ? 'border-amber-400 text-amber-300'
                   : 'border-transparent text-neutral-400 hover:text-neutral-200'
@@ -132,7 +154,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
           </div>
 
           {/* Tab Content */}
-          <div className="p-6 sm:p-8 max-h-[50vh] overflow-y-auto space-y-6">
+          <div className="p-6 sm:p-8 space-y-6">
             {activeTab === 'overview' && (
               <div className="space-y-6">
                 <div>
@@ -232,10 +254,14 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
           </div>
 
           {/* Footer CTAs */}
-          <div className="flex flex-wrap items-center justify-between gap-4 p-6 bg-neutral-950 border-t border-neutral-800">
-            <div className="text-xs text-neutral-400 font-mono">
-              CLIENT ENGAGEMENT // FULL IP TRANSFERRED
-            </div>
+          <div className="flex flex-wrap items-center justify-between gap-4 p-4 sm:p-6 bg-neutral-950 border-t border-neutral-800">
+            <button
+              onClick={onClose}
+              className="px-4 py-2.5 rounded-xl bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 hover:text-white text-xs font-semibold transition-colors flex items-center gap-2 cursor-pointer"
+            >
+              <X className="w-4 h-4" />
+              <span>Close Case Study</span>
+            </button>
 
             <div className="flex items-center gap-3">
               <button
@@ -243,7 +269,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                   onClose();
                   onOpenContact(`Case Study: ${caseStudy.title}`);
                 }}
-                className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-neutral-950 font-bold text-xs flex items-center gap-2 shadow-lg shadow-amber-400/20 hover:scale-[1.02] transition-transform"
+                className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-neutral-950 font-bold text-xs flex items-center gap-2 shadow-lg shadow-amber-400/20 hover:scale-[1.02] transition-transform cursor-pointer"
               >
                 <Sparkles className="w-4 h-4" />
                 <span>Build Similar Architecture</span>

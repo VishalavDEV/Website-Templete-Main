@@ -120,8 +120,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               })}
             </nav>
 
-            {/* Actions & Utilities */}
-            <div className="hidden sm:flex items-center gap-3">
+            {/* Desktop Actions & Utilities */}
+            <div className="hidden lg:flex items-center gap-3">
               {/* Quick Search Shortcut */}
               <button
                 onClick={onOpenCommand}
@@ -171,35 +171,45 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
             </div>
 
-            {/* Mobile Menu Toggle */}
-            <div className="flex sm:hidden items-center gap-2">
+            {/* Mobile & Tablet Actions & Menu Toggle */}
+            <div className="flex lg:hidden items-center gap-2">
               <button
                 onClick={onOpenCommand}
-                className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400"
+                className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-colors"
                 aria-label="Search"
+                title="Search Command Palette"
               >
                 <Search className="w-4 h-4" />
               </button>
+
+              <button
+                onClick={onOpenContact}
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold text-xs transition-all shadow-md shadow-indigo-500/20"
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Book Discovery</span>
+              </button>
+
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-200"
+                className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 hover:text-white transition-colors flex items-center justify-center cursor-pointer"
                 aria-label="Toggle navigation menu"
               >
-                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {mobileMenuOpen ? <X className="w-5 h-5 text-indigo-400" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile & Tablet Drawer Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-x-0 top-[65px] z-30 bg-[#0A0A0B]/95 backdrop-blur-2xl border-b border-slate-800 p-6 shadow-2xl flex flex-col gap-4 sm:hidden"
+            className="fixed inset-x-0 top-[65px] z-30 bg-[#0A0A0B]/95 backdrop-blur-2xl border-b border-slate-800 p-6 shadow-2xl flex flex-col gap-4 lg:hidden max-h-[calc(100vh-75px)] overflow-y-auto"
           >
             <div className="flex flex-col gap-1">
               {navLinks.map((item) => (

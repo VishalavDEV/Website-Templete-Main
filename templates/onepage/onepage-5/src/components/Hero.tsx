@@ -83,7 +83,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenConsultationModal 
         </div>
 
         {/* ================= EXECUTIVE BUSINESS PERFORMANCE DASHBOARD ================= */}
-        <div className="mt-16 bg-white border border-slate-300 rounded-none shadow-xl p-6 sm:p-8 space-y-8 relative">
+        <div className="mt-16 bg-white border border-slate-300 rounded-none shadow-xl p-4 sm:p-8 space-y-6 sm:space-y-8 relative">
           
           {/* Section Header inside Dashboard */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200">
@@ -98,7 +98,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenConsultationModal 
             </div>
 
             {/* Quarter Selector Tabs */}
-            <div className="flex items-center space-x-1 bg-slate-100 p-1 border border-slate-200 font-mono text-xs">
+            <div className="flex items-center space-x-1 bg-slate-100 p-1 border border-slate-200 font-mono text-xs overflow-x-auto max-w-full">
               {(['Q1', 'Q2', 'Q3', 'Q4', 'YTD'] as const).map((q) => (
                 <button
                   key={q}
@@ -116,68 +116,76 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenConsultationModal 
           </div>
 
           {/* 4 Metric Counter Displays */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             
-            <div className="p-5 bg-[#F8F9FA] border border-slate-200/80 space-y-2">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-500 block">
-                REVENUE GROWTH
-              </span>
-              <div className="flex items-baseline justify-between">
-                <span className="text-3xl sm:text-4xl font-extrabold font-mono text-slate-950">
-                  {currentMetrics.revenue}
+            <div className="p-4 sm:p-5 bg-[#F8F9FA] border border-slate-200/80 rounded-none flex flex-col justify-between space-y-2 overflow-hidden">
+              <div className="flex items-center justify-between gap-1.5">
+                <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 leading-tight truncate">
+                  REVENUE GROWTH
                 </span>
-                <span className="inline-flex items-center text-[10px] font-mono font-bold text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded">
-                  <ArrowUp className="w-3 h-3 mr-0.5" />
+                <span className="inline-flex items-center text-[10px] font-mono font-bold text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded shrink-0 whitespace-nowrap">
+                  <ArrowUp className="w-2.5 h-2.5 mr-0.5" />
                   Q/Q
                 </span>
               </div>
-              <p className="text-xs text-slate-500 font-sans">Compounded expansion velocity</p>
+              <div className="py-0.5">
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-mono text-slate-950 tracking-tight block truncate">
+                  {currentMetrics.revenue}
+                </span>
+              </div>
+              <p className="text-[11px] sm:text-xs text-slate-500 font-sans leading-snug">Compounded expansion velocity</p>
             </div>
 
-            <div className="p-5 bg-[#F8F9FA] border border-slate-200/80 space-y-2">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-500 block">
-                EFFICIENCY BOOST
-              </span>
-              <div className="flex items-baseline justify-between">
-                <span className="text-3xl sm:text-4xl font-extrabold font-mono text-slate-950">
-                  {currentMetrics.efficiency}
+            <div className="p-4 sm:p-5 bg-[#F8F9FA] border border-slate-200/80 rounded-none flex flex-col justify-between space-y-2 overflow-hidden">
+              <div className="flex items-center justify-between gap-1.5">
+                <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 leading-tight truncate">
+                  EFFICIENCY BOOST
                 </span>
-                <span className="inline-flex items-center text-[10px] font-mono font-bold text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded">
-                  <ArrowUp className="w-3 h-3 mr-0.5" />
+                <span className="inline-flex items-center text-[10px] font-mono font-bold text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded shrink-0 whitespace-nowrap">
+                  <ArrowUp className="w-2.5 h-2.5 mr-0.5" />
                   OpEx
                 </span>
               </div>
-              <p className="text-xs text-slate-500 font-sans">Automated workflow savings</p>
+              <div className="py-0.5">
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-mono text-slate-950 tracking-tight block truncate">
+                  {currentMetrics.efficiency}
+                </span>
+              </div>
+              <p className="text-[11px] sm:text-xs text-slate-500 font-sans leading-snug">Automated workflow savings</p>
             </div>
 
-            <div className="p-5 bg-[#F8F9FA] border border-slate-200/80 space-y-2">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-500 block">
-                CLIENT RETENTION
-              </span>
-              <div className="flex items-baseline justify-between">
-                <span className="text-3xl sm:text-4xl font-extrabold font-mono text-slate-950">
-                  {currentMetrics.retention}
+            <div className="p-4 sm:p-5 bg-[#F8F9FA] border border-slate-200/80 rounded-none flex flex-col justify-between space-y-2 overflow-hidden">
+              <div className="flex items-center justify-between gap-1.5">
+                <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 leading-tight truncate">
+                  CLIENT RETENTION
                 </span>
-                <span className="inline-flex items-center text-[10px] font-mono font-bold text-blue-700 bg-blue-100 px-1.5 py-0.5 rounded">
+                <span className="inline-flex items-center text-[10px] font-mono font-bold text-blue-700 bg-blue-100 px-1.5 py-0.5 rounded shrink-0 whitespace-nowrap">
                   SLA 99.9%
                 </span>
               </div>
-              <p className="text-xs text-slate-500 font-sans">Post-implementation audit score</p>
+              <div className="py-0.5">
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-mono text-slate-950 tracking-tight block truncate">
+                  {currentMetrics.retention}
+                </span>
+              </div>
+              <p className="text-[11px] sm:text-xs text-slate-500 font-sans leading-snug">Post-implementation audit score</p>
             </div>
 
-            <div className="p-5 bg-[#F8F9FA] border border-slate-200/80 space-y-2">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-500 block">
-                AVERAGE ROI
-              </span>
-              <div className="flex items-baseline justify-between">
-                <span className="text-3xl sm:text-4xl font-extrabold font-mono text-emerald-600">
-                  {currentMetrics.roi}
+            <div className="p-4 sm:p-5 bg-[#F8F9FA] border border-slate-200/80 rounded-none flex flex-col justify-between space-y-2 overflow-hidden">
+              <div className="flex items-center justify-between gap-1.5">
+                <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 leading-tight truncate">
+                  AVERAGE ROI
                 </span>
-                <span className="inline-flex items-center text-[10px] font-mono font-bold text-emerald-800 bg-emerald-100 px-1.5 py-0.5 rounded">
+                <span className="inline-flex items-center text-[10px] font-mono font-bold text-emerald-800 bg-emerald-100 px-1.5 py-0.5 rounded shrink-0 whitespace-nowrap">
                   3-Yr Benchmark
                 </span>
               </div>
-              <p className="text-xs text-slate-500 font-sans">Return on capital invested</p>
+              <div className="py-0.5">
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-mono text-emerald-600 tracking-tight block truncate">
+                  {currentMetrics.roi}
+                </span>
+              </div>
+              <p className="text-[11px] sm:text-xs text-slate-500 font-sans leading-snug">Return on capital invested</p>
             </div>
 
           </div>

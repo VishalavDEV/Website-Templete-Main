@@ -6,13 +6,13 @@ export function PhilosophySection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="philosophy" className="bg-black py-28 md:py-40 px-6 overflow-hidden flex justify-center">
+    <section id="philosophy" className="bg-black py-16 sm:py-28 md:py-40 px-4 sm:px-6 overflow-hidden flex justify-center">
       <div className="w-full max-w-6xl" ref={ref}>
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl lg:text-8xl text-white tracking-tight mb-16 md:mb-24"
+          className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-white tracking-tight mb-8 sm:mb-16 md:mb-24"
         >
           Innovation <span className="font-serif italic text-white/40">x</span> Vision
         </motion.h2>
@@ -22,7 +22,7 @@ export function PhilosophySection() {
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="rounded-3xl overflow-hidden aspect-[4/3]"
+            className="rounded-2xl sm:rounded-3xl overflow-hidden aspect-[4/3]"
           >
             <video
               className="w-full h-full object-cover"

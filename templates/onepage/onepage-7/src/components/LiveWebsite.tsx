@@ -102,7 +102,7 @@ FonixAudio->EnableHarmonicDiffraction(EChromaticModel::FlintGlass);`
   };
 
   return (
-    <div id="fonix-live-website-root" className="relative min-h-screen bg-[#050505] text-[#f0f0f0] selection:bg-teal-500/30 selection:text-teal-200">
+    <div id="fonix-live-website-root" className="relative w-full max-w-full min-h-screen bg-[#050505] text-[#f0f0f0] selection:bg-teal-500/30 selection:text-teal-200 overflow-x-hidden">
       {/* 1. Global Persistent 3D WebGL Background Canvas with Ambient Orbs */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <FonixCanvas3D
@@ -118,13 +118,13 @@ FonixAudio->EnableHarmonicDiffraction(EChromaticModel::FlintGlass);`
       </div>
 
       {/* 2. Top Navigation Bar */}
-      <header className="sticky top-0 z-40 backdrop-blur-3xl bg-[#050505]/75 border-b border-white/10 pt-10 sm:pt-0">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-teal-400 via-teal-500 to-purple-600 flex items-center justify-center shadow-[0_0_20px_rgba(45,212,191,0.3)]">
-              <Radio className="w-4 h-4 text-black font-bold" />
+      <header className="sticky top-0 z-40 backdrop-blur-3xl bg-[#050505]/85 border-b border-white/10 pt-14 sm:pt-16 lg:pt-0">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 min-h-14 sm:min-h-16 py-2 sm:py-0 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-gradient-to-br from-teal-400 via-teal-500 to-purple-600 flex items-center justify-center shadow-[0_0_20px_rgba(45,212,191,0.3)]">
+              <Radio className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-black font-bold" />
             </div>
-            <span className="font-extrabold text-lg tracking-wider text-white uppercase">
+            <span className="font-extrabold text-base sm:text-lg tracking-wider text-white uppercase">
               fonix<span className="text-teal-400">.</span>
             </span>
             <span className="hidden sm:inline-block px-2.5 py-0.5 rounded-full bg-white/[0.06] border border-white/15 text-[10px] font-mono tracking-widest uppercase text-teal-300">
@@ -132,12 +132,12 @@ FonixAudio->EnableHarmonicDiffraction(EChromaticModel::FlintGlass);`
             </span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             {/* Audio Drone Toggle */}
             <button
               onClick={toggleAudio}
               id="audio-drone-toggle-btn"
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all ${
                 isAudioActive
                   ? 'bg-teal-500/20 border border-teal-400 text-teal-300 shadow-[0_0_20px_rgba(45,212,191,0.3)] animate-pulse'
                   : 'bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 text-zinc-300'
@@ -151,7 +151,7 @@ FonixAudio->EnableHarmonicDiffraction(EChromaticModel::FlintGlass);`
             <button
               onClick={onOpenPRD}
               id="open-prd-spec-nav-btn"
-              className="flex items-center gap-1.5 px-4 py-1.5 bg-purple-600 hover:bg-purple-500 text-white rounded-xl text-xs font-semibold shadow-[0_0_20px_rgba(168,85,247,0.35)] transition-all hover:scale-[1.02]"
+              className="flex items-center gap-1.5 px-3 sm:px-4 py-1.5 bg-purple-600 hover:bg-purple-500 text-white rounded-xl text-xs font-semibold shadow-[0_0_20px_rgba(168,85,247,0.35)] transition-all hover:scale-[1.02]"
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>Inspect PRD Spec</span>

@@ -11,7 +11,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-24 md:py-32 relative bg-[#070709] border-t border-white/[0.06]">
+    <section id="faq" className="py-24 md:py-32 relative bg-[#070709] border-t border-white/[0.06] overflow-hidden w-full max-w-full">
       <div id="resources" className="absolute -top-24" />
       
       {/* Subtle Amber Glow */}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { AudioProvider } from './context/AudioContext';
 import { ToastProvider } from './context/ToastContext';
 import { LoadingExperience } from './components/LoadingExperience';
@@ -20,12 +20,16 @@ import { Footer } from './components/navigation/Footer';
 export function App() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  const handleLoadingComplete = useCallback(() => {
+    setIsLoading(false);
+  }, []);
+
   return (
     <AudioProvider>
       <ToastProvider>
         {/* Cinematic Loading Overlay (< 1.5s) */}
         {isLoading && (
-          <LoadingExperience onComplete={() => setIsLoading(false)} />
+          <LoadingExperience onComplete={handleLoadingComplete} />
         )}
 
         {/* Global Fluid Energy Custom Cursor */}

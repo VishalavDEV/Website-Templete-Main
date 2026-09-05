@@ -120,29 +120,29 @@ function App() {
         />
         
         {/* Sticky/Floating Navbar */}
-        <header className="sticky top-0 z-30 px-6 py-6 w-full pointer-events-none">
+        <header className="sticky top-0 z-30 px-3 sm:px-6 py-3 sm:py-6 w-full pointer-events-none">
           <nav 
             aria-label="Main Navigation"
-            className="liquid-glass rounded-full max-w-4xl mx-auto px-6 py-3.5 flex justify-between items-center pointer-events-auto backdrop-blur-md"
+            className="liquid-glass rounded-full max-w-4xl mx-auto px-3.5 sm:px-6 py-2 sm:py-3.5 flex justify-between items-center pointer-events-auto backdrop-blur-md"
           >
-            <a href="#" className="flex items-center gap-2 text-white hover:opacity-90 transition-opacity">
-              <Globe className="w-5 h-5 text-white" />
-              <span className="text-white font-semibold text-lg tracking-tight">Asme</span>
+            <a href="#" className="flex items-center gap-1.5 sm:gap-2 text-white hover:opacity-90 transition-opacity shrink-0">
+              <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+              <span className="text-white font-semibold text-sm sm:text-lg tracking-tight">Asme</span>
             </a>
 
-            <div className="flex items-center gap-6 sm:gap-8">
-              <a href="#about" className="text-white/70 hover:text-white text-xs sm:text-sm font-medium tracking-wide transition-colors">
+            <div className="flex items-center gap-2.5 sm:gap-8">
+              <a href="#about" className="text-white/70 hover:text-white text-[11px] sm:text-sm font-medium tracking-wide transition-colors">
                 About
               </a>
-              <a href="#philosophy" className="text-white/70 hover:text-white text-xs sm:text-sm font-medium tracking-wide transition-colors">
+              <a href="#philosophy" className="text-white/70 hover:text-white text-[11px] sm:text-sm font-medium tracking-wide transition-colors">
                 Vision
               </a>
-              <a href="#services" className="text-white/70 hover:text-white text-xs sm:text-sm font-medium tracking-wide transition-colors">
+              <a href="#services" className="text-white/70 hover:text-white text-[11px] sm:text-sm font-medium tracking-wide transition-colors">
                 Services
               </a>
               <a 
                 href="#newsletter" 
-                className="hidden sm:inline-flex liquid-glass rounded-full px-4 py-1.5 text-white text-xs font-medium hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center liquid-glass rounded-full px-3 py-1 sm:px-4 sm:py-1.5 text-white text-[11px] sm:text-xs font-medium hover:bg-white/10 active:scale-95 transition-all shrink-0"
               >
                 Join
               </a>

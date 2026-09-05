@@ -98,19 +98,19 @@ export const About: React.FC<AboutProps> = ({ onOpenAboutModal, onNavigate }) =>
                 <circle cx="350" cy="300" r="4" fill="#10b981" />
               </svg>
 
-              <div className="grid grid-cols-2 gap-4 relative z-10">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 relative z-10">
                 {metrics.map((m, idx) => (
-                  <div key={idx} className="bg-white p-5 border border-slate-200 space-y-2 hover:border-slate-900 transition-colors group">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">{m.trend}</span>
-                      <TrendingUp className="w-3.5 h-3.5 text-emerald-600 opacity-60 group-hover:opacity-100 transition-opacity" />
+                  <div key={idx} className="bg-white p-4 sm:p-5 border border-slate-200 space-y-2 hover:border-slate-900 transition-colors group overflow-hidden">
+                    <div className="flex items-center justify-between gap-1">
+                      <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider truncate">{m.trend}</span>
+                      <TrendingUp className="w-3.5 h-3.5 text-emerald-600 opacity-60 group-hover:opacity-100 transition-opacity shrink-0" />
                     </div>
-                    <div className="text-3xl sm:text-4xl font-extrabold font-mono text-slate-950">
+                    <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-mono text-slate-950 truncate">
                       {m.value}
                     </div>
                     <div>
-                      <h4 className="text-xs font-mono font-bold text-slate-900 uppercase tracking-wider">{m.label}</h4>
-                      <p className="text-[11px] text-slate-500 font-sans mt-0.5">{m.subtext}</p>
+                      <h4 className="text-xs font-mono font-bold text-slate-900 uppercase tracking-wider leading-tight">{m.label}</h4>
+                      <p className="text-[11px] text-slate-500 font-sans mt-0.5 leading-tight">{m.subtext}</p>
                     </div>
                   </div>
                 ))}

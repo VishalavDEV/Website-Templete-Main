@@ -15,10 +15,13 @@ html {
   color-scheme: dark;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
 }
 
 section[id], div[id] {
-  scroll-margin-top: 85px;
+  scroll-margin-top: 90px;
 }
 
 body {
@@ -26,7 +29,9 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   min-height: 100vh;
-  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
   line-height: 1.6;
   position: relative;
   background-image: 
@@ -88,6 +93,7 @@ button, input, textarea {
   margin-right: auto;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+  box-sizing: border-box;
 }
 
 .container-wide {
@@ -97,6 +103,7 @@ button, input, textarea {
   margin-right: auto;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {

@@ -20,12 +20,12 @@ import Toast from './components/Toast';
 export default function App() {
   return (
     <ModalProvider>
-      <div className="relative min-h-screen bg-[#050505] text-white selection:bg-amber-500 selection:text-black">
+      <div className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-[#050505] text-white selection:bg-amber-500 selection:text-black">
         {/* Top Fixed Blurred Navbar */}
         <Navbar />
 
         {/* Main Content Sections */}
-        <main id="main-content">
+        <main id="main-content" className="w-full max-w-full overflow-x-hidden">
           <Hero />
           <TrustSection />
           <Features />

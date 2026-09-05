@@ -40,7 +40,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#f0f0f0] antialiased font-sans selection:bg-teal-500/30 selection:text-teal-200">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#050505] text-[#f0f0f0] antialiased font-sans selection:bg-teal-500/30 selection:text-teal-200">
       {/* Floating Top Nav Mode Switcher */}
       <HeaderNav
         viewMode={viewMode}

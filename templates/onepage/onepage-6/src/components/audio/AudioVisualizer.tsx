@@ -3,7 +3,7 @@ import { useAudio } from '../../context/AudioContext';
 
 export const AudioVisualizer: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const { isPlaying, audioFrequencyData } = useAudio();
+  const { isPlaying, getFrequencyData } = useAudio();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -13,7 +13,7 @@ export const AudioVisualizer: React.FC = () => {
 
     let animFrame: number;
     let width = (canvas.width = canvas.parentElement?.clientWidth || 800);
-    let height = (canvas.height = 180);
+    const height = (canvas.height = 180);
 
     const handleResize = () => {
       if (canvas.parentElement) {
@@ -41,10 +41,11 @@ export const AudioVisualizer: React.FC = () => {
 
       const numBars = 32;
       const barWidth = (width / numBars) - 6;
+      const freqArray = getFrequencyData();
 
       // 1. Draw Vertical Frequency Bars
       for (let i = 0; i < numBars; i++) {
-        const freqVal = audioFrequencyData[i % audioFrequencyData.length] || (isPlaying ? Math.floor(Math.sin(phase + i) * 60 + 80) : 10);
+        const freqVal = freqArray[i % freqArray.length] || (isPlaying ? Math.floor(Math.sin(phase + i) * 60 + 80) : 10);
         const barHeight = Math.max(6, (freqVal / 255) * (height * 0.6));
         const x = i * (barWidth + 6) + 3;
         const y = height - barHeight - 20;
@@ -97,7 +98,7 @@ export const AudioVisualizer: React.FC = () => {
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animFrame);
     };
-  }, [isPlaying, audioFrequencyData]);
+  }, [isPlaying, getFrequencyData]);
 
   return (
     <div style={{ width: '100%', position: 'relative', marginTop: '2rem' }}>

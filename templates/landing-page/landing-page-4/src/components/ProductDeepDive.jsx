@@ -52,7 +52,7 @@ export default function ProductDeepDive() {
   const { openAuthModal } = useModal();
 
   return (
-    <section id="solutions" className="py-24 md:py-32 relative bg-[#070709] border-t border-b border-white/[0.06]">
+    <section id="solutions" className="py-24 md:py-32 relative bg-[#070709] border-t border-b border-white/[0.06] overflow-hidden w-full max-w-full">
       
       {/* Ambient background glow */}
       <div className="absolute top-1/2 left-1/3 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-[160px] pointer-events-none"></div>

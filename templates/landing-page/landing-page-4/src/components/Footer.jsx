@@ -46,7 +46,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="pt-20 pb-12 bg-[#040406] border-t border-white/[0.08] relative text-zinc-400 text-sm">
+    <footer className="pt-20 pb-12 bg-[#040406] border-t border-white/[0.08] relative text-zinc-400 text-sm overflow-hidden w-full max-w-full">
       <div className="container mx-auto px-4">
         
         {/* Top Footer Grid */}

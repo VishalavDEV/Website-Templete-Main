@@ -17,7 +17,7 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="py-24 md:py-32 relative">
+    <section id="pricing" className="py-24 md:py-32 relative overflow-hidden w-full max-w-full">
       
       {/* Background radial glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-amber-500/5 blur-[180px] pointer-events-none"></div>

@@ -45,7 +45,7 @@ export default function Newsletter() {
   };
 
   return (
-    <section id="newsletter" className="py-20 md:py-28 relative">
+    <section id="newsletter" className="py-20 md:py-28 relative overflow-hidden w-full max-w-full">
       <div id="news" className="absolute -top-24" />
       <div id="contact" className="absolute -top-24" />
       

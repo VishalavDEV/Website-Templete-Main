@@ -89,9 +89,9 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled
-            ? 'py-3 bg-[#08080A]/90 backdrop-blur-xl border-b border-white/5 shadow-2xl shadow-indigo-950/20'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled || mobileMenuOpen
+            ? 'py-3 bg-[#08080A] backdrop-blur-2xl border-b border-white/10 shadow-2xl shadow-indigo-950/30'
             : 'py-5 bg-transparent'
         }`}
       >
@@ -198,8 +198,8 @@ export const Navbar: React.FC = () => {
               </button>
             </div>
 
-            {/* Mobile Hamburger Toggle & Actions */}
-            <div className="flex sm:hidden items-center gap-2">
+            {/* Mobile / Tablet Hamburger Toggle & Actions */}
+            <div className="flex lg:hidden items-center gap-2">
               <button
                 onClick={cycleTheme}
                 className="p-2 text-slate-400 hover:text-white rounded-lg bg-[#0A0A0E] border border-white/5"
@@ -239,9 +239,9 @@ export const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Slide-down Drawer */}
+        {/* Mobile / Tablet Slide-down Drawer */}
         {mobileMenuOpen && (
-          <div className="sm:hidden px-4 pt-4 pb-6 bg-[#08080A]/98 border-b border-white/5 backdrop-blur-2xl transition-all">
+          <div className="lg:hidden px-4 pt-4 pb-6 bg-[#08080A] border-b border-white/10 shadow-2xl max-h-[calc(100vh-70px)] overflow-y-auto">
             <nav className="flex flex-col gap-2">
               {NAV_ITEMS.map(item => (
                 <a

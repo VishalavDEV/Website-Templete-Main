@@ -7,7 +7,7 @@ export default function FinalCTA() {
   const { openAuthModal, openDemoModal } = useModal();
 
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+    <section className="py-24 md:py-32 relative overflow-hidden w-full max-w-full">
       
       {/* Intense Amber Core Radial Flare */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] md:w-[1100px] h-[550px] bg-gradient-to-tr from-amber-500/15 via-amber-600/10 to-orange-500/5 blur-[160px] pointer-events-none -z-10"></div>

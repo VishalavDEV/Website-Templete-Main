@@ -27,7 +27,7 @@ export default function Testimonials() {
   return (
     <section 
       id="testimonials" 
-      className="py-24 md:py-32 relative bg-[#070709] border-t border-white/[0.06] overflow-hidden"
+      className="py-24 md:py-32 relative bg-[#070709] border-t border-white/[0.06] overflow-hidden w-full max-w-full"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >

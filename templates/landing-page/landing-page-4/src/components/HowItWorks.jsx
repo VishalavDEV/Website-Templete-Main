@@ -11,7 +11,7 @@ const stepIcons = {
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 md:py-32 relative">
+    <section id="how-it-works" className="py-24 md:py-32 relative overflow-hidden w-full max-w-full">
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-80 bg-amber-500/5 blur-[160px] pointer-events-none"></div>

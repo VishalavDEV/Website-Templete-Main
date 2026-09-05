@@ -22,7 +22,7 @@ export function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="bg-black py-28 md:py-40 px-6 overflow-hidden relative flex justify-center">
+    <section id="services" className="bg-black py-16 sm:py-28 md:py-40 px-4 sm:px-6 overflow-hidden relative flex justify-center">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.02)_0%,_transparent_60%)] pointer-events-none" />
       
       <div className="w-full max-w-6xl relative z-10" ref={ref}>
@@ -30,10 +30,10 @@ export function ServicesSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.7 }}
-          className="flex justify-between items-end mb-12 md:mb-16"
+          className="flex justify-between items-end mb-8 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-3xl md:text-5xl text-white tracking-tight">What we do</h2>
-          <span className="text-white/40 text-sm hidden md:block">Our services</span>
+          <h2 className="text-2xl sm:text-3xl md:text-5xl text-white tracking-tight">What we do</h2>
+          <span className="text-white/40 text-xs sm:text-sm hidden sm:block">Our services</span>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -43,7 +43,7 @@ export function ServicesSection() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: idx * 0.15 }}
-              className="liquid-glass rounded-3xl overflow-hidden group flex flex-col"
+              className="liquid-glass rounded-2xl sm:rounded-3xl overflow-hidden group flex flex-col"
             >
               <div className="relative aspect-video overflow-hidden">
                 <video
@@ -58,7 +58,7 @@ export function ServicesSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
               </div>
               
-              <div className="p-6 md:p-8 flex-1 flex flex-col">
+              <div className="p-4 sm:p-6 md:p-8 flex-1 flex flex-col">
                 <div className="flex justify-between items-start mb-6">
                   <span className="uppercase tracking-widest text-white/40 text-xs">
                     {card.tag}

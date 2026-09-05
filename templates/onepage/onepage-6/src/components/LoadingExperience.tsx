@@ -9,6 +9,20 @@ export const LoadingExperience: React.FC<LoadingExperienceProps> = ({ onComplete
   const [isFading, setIsFading] = useState<boolean>(false);
 
   useEffect(() => {
+    let animFrame: number;
+    let fadeTimer: number;
+    let safetyTimer: number;
+    let isFinished = false;
+
+    const finish = () => {
+      if (isFinished) return;
+      isFinished = true;
+      setIsFading(true);
+      fadeTimer = window.setTimeout(() => {
+        onComplete();
+      }, 350);
+    };
+
     // Respect reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
@@ -16,25 +30,34 @@ export const LoadingExperience: React.FC<LoadingExperienceProps> = ({ onComplete
       return;
     }
 
-    const duration = 1400; // 1.4 seconds cinematic load
+    const duration = 1200; // 1.2 seconds cinematic load
     const startTime = performance.now();
 
     const updateProgress = (now: number) => {
+      if (isFinished) return;
       const elapsed = now - startTime;
       const pct = Math.min(100, Math.floor((elapsed / duration) * 100));
       setProgress(pct);
 
       if (pct < 100) {
-        requestAnimationFrame(updateProgress);
+        animFrame = requestAnimationFrame(updateProgress);
       } else {
-        setIsFading(true);
-        setTimeout(() => {
-          onComplete();
-        }, 350);
+        finish();
       }
     };
 
-    requestAnimationFrame(updateProgress);
+    animFrame = requestAnimationFrame(updateProgress);
+
+    // Hard safety timer: guarantee dismissal after 1.8s regardless of tab suspension/delays
+    safetyTimer = window.setTimeout(() => {
+      finish();
+    }, 1800);
+
+    return () => {
+      cancelAnimationFrame(animFrame);
+      clearTimeout(fadeTimer);
+      clearTimeout(safetyTimer);
+    };
   }, [onComplete]);
 
   return (
